@@ -238,7 +238,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     alert.classList.remove('show');
                     alert.style.display = 'none';
                 }
-            }, 1000); // This is the new content
+            }, 1000); //S
         });
     </script>
 </body>
