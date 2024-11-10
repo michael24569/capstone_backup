@@ -285,7 +285,7 @@ checkAdminAccess();
 
   <div class="panel" id="imagePanel">
     <div class="panelHeader">
-        Center Aisle
+        Chapel
         <button class="closebtnP" id="closePanel">&times;</button>
     </div>
     <div class="SliderContaier">
