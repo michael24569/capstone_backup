@@ -1,0 +1,107 @@
+.blurred {
+    filter: blur(5px);
+}
+.panel {
+    position: fixed;
+    max-width: 200%;
+    top: 50%;
+    left: 50%;
+    height: 440px;
+    transform: translate(-50%, -50%);
+    width: 310px;
+    box-shadow: 0 0 80px 20px black;
+    opacity: 0;
+    border-radius: 10px;
+    z-index: 100;
+    visibility: hidden  ;
+    overflow: hidden;
+    transition: width 0.5s ease, opacity 0.5s ease, visibility 0.5s;
+}
+.panel.open {
+    width: 600px;  
+    opacity: 1;
+    visibility: visible;
+}
+.panelHeader{
+    background-color: #012302;
+    padding: 8px;
+    height: 50px;
+    color: white;
+    text-align: center;
+    font-size: 16px;
+    
+}
+.closebtnP {
+    position: absolute;
+    top: 5px;
+    right: 15px;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+    transition: transform 0.5s ease;
+}
+.closebtnP:hover{
+    transform: scale(1.3);
+}
+.SliderContaier {
+    width: 100%;
+    height: 450px;
+    position: relative;
+    margin: 0; /* Ensure no margin around the container */
+    padding: 0; /* Ensure no padding around the container */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any paddings */
+}
+
+.slide {
+    min-width: 100%;
+    margin: 0; /* Remove any margins */
+    padding: 0; /* Remove any paddings */
+}
+
+.slide img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0; /* Set to 0 if rounding causes spacing */
+    margin: 0; /* Ensure no margin around images */
+}
+
+.sliderNav{
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    padding: 0 10px;
+}
+
+.sliderNav button {
+    background-color: #00000080;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 10px;
+    display: flex;
+    align-items: center;.blurred {
+    filter: blur(5px); 
+    }
+}
+
+.sliderNav button:hover {
+    background-color: #000000cc;
+}
+
+.arrow {
+    font-size: 10px;
+}

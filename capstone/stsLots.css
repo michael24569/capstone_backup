@@ -1,0 +1,1146 @@
+.RAF{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #011f11;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.RAFaclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.RAFaclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.RAFgrid{
+  
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(6, 70px); 
+  gap: 10px;
+  }
+
+.grid-itemRAF {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemRAF:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idRAF {
+    display: none;
+    clear: both;
+}
+
+#idRAF.active {
+    display: block; 
+}
+
+
+
+.stPeter{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #011f11;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  z-index: 100;
+
+}
+
+.stPeter::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stPeter::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stPeter::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stPeter::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stPeter::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.peterclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.peterclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.petergrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 70px); 
+  gap: 10px;
+  }
+  .petergrid::-webkit-scrollbar {
+      width: 10px; /* Set the width of the scrollbar */
+  }
+
+.grid-itempeter {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itempeter:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idpeter {
+    display: none;
+    clear: both;
+}
+
+#idpeter.active {
+    display: block; 
+}
+
+
+
+
+.stPaul{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #052516;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.stPaul::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stPaul::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stPaul::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stPaul::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stPaul::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.paulclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.paulclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.paulgrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(8, 70px); 
+  gap: 10px;
+  }
+.paulgrid::-webkit-scrollbar {
+      width: 10px; /* Set the width of the scrollbar */
+  }
+
+.grid-itempaul {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itempaul:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idpaul {
+    display: none;
+    clear: both;
+}
+
+#idpaul.active {
+    display: block; 
+}
+
+
+
+
+
+
+.stAgustine{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #052516;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.stAgustine::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stAgustine::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stAgustine::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stAgustine::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stAgustine::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.agustineclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.agustineclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.agustinegrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(16, 70px); 
+  gap: 10px;
+  }
+.agustinegrid::-webkit-scrollbar {
+      width: 10px; 
+  }
+
+.grid-itemagustine {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemagustine:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idagustine {
+    display: none;
+    clear: both;
+}
+
+#idagustine.active {
+    display: block; 
+}
+
+
+
+
+
+
+.stJames{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #052516;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.stJames::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stJames::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stJames::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stJames::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stJames::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.jamesclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.jamesclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.jamesgrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(28, 70px); 
+  gap: 10px;
+  }
+.jamesgrid::-webkit-scrollbar {
+      width: 10px; 
+  }
+
+.grid-itemjames {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemjames:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idjames {
+    display: none;
+    clear: both;
+}
+
+#idjames.active {
+    display: block; 
+}
+
+
+
+
+
+
+.stJoseph{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #052516;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.stJoseph::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stJoseph::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stJoseph::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stJoseph::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stJoseph::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.josephclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.josephclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.josephgrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(18, 70px); 
+  gap: 10px;
+  }
+.josephgrid::-webkit-scrollbar {
+      width: 10px; 
+  }
+
+.grid-itemjoseph {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemjoseph:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idjoseph {
+    display: none;
+    clear: both;
+}
+
+#idjoseph.active {
+    display: block; 
+}
+
+
+
+
+
+.stJohn{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #052516;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.stJohn::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stJohn::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stJohn::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stJohn::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stJohn::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.johnclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.johnclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.johngrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(14, 70px); 
+  gap: 10px;
+  }
+.johngrid::-webkit-scrollbar {
+      width: 10px; 
+  }
+
+.grid-itemjohn {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemjohn:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idjohn {
+    display: none;
+    clear: both;
+}
+
+#idjohn.active {
+    display: block; 
+}
+
+
+
+
+
+
+
+
+.stJude{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #052516;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.stJude::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stJude::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stJude::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stJude::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stJude::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.judeclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.judeclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.judegrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(19, 70px); 
+  gap: 10px;
+  }
+.judegrid::-webkit-scrollbar {
+      width: 10px; 
+  }
+
+.grid-itemjude {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemjude:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idjude {
+    display: none;
+    clear: both;
+}
+
+#idjude.active {
+    display: block; 
+}
+
+
+
+
+
+
+.stMatthew{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 240px;
+  height: 170px;
+  width: 900px;
+  right: 310px;
+  background-color: #011f11;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.matthewclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.matthewclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.matthewgrid{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 60px); 
+  gap: 10px;
+  }
+
+.grid-itemmatthew {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemmatthew:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idmatthew {
+    display: none;
+    clear: both;
+}
+
+#idmatthew.active {
+    display: block; 
+}
+
+
+
+
+
+
+.stpm{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 240px;
+  height: 220px;
+  width: 900px;
+  right: 310px;
+  background-color: #011f11;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.pmclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.pmclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.pmgrid{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(12, 60px); 
+  gap: 10px;
+  }
+
+.grid-itempm {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itempm:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idpm {
+    display: none;
+    clear: both;
+}
+
+#idpm.active {
+    display: block; 
+}
+
+
+
+
+
+
+
+
+
+
+.stIsidore{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 180px;
+  height: 270px;
+  width: 900px;
+  right: 310px;
+  background-color: #011f11;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.isidoreclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.isidoreclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.isidoregrid{
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(2, 70px); 
+  gap: 10px;
+  }
+
+.grid-itemisidore {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemisidore:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idisidore {
+    display: none;
+    clear: both;
+}
+
+#idisidore.active {
+    display: block; 
+}
+
+
+
+
+
+.stDominic{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 40px;
+  height: 570px;
+  width: 900px;
+  right: 310px;
+  background-color: #052516;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  overflow: auto;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+.stDominic::-webkit-scrollbar {
+  width: 10px;
+}
+
+.stDominic::-webkit-scrollbar-track {
+  border-radius: 10px; 
+}
+
+.stDominic::-webkit-scrollbar-thumb {
+  background-color: #ccd5ce; 
+  border-radius: 5px; 
+}
+.stDominic::-webkit-scrollbar-thumb:hover {
+  background-color: #797d7a; 
+}
+.stDominic::-webkit-scrollbar-corner {
+  background: #0b3d24; 
+}
+
+.dominicclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.dominicclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.dominicgrid{
+  scroll-behavior: smooth;
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  grid-template-rows: repeat(31, 70px); 
+  gap: 10px;
+  }
+.dominicgrid::-webkit-scrollbar {
+      width: 10px; 
+  }
+
+.grid-itemdominic {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemdominic:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #iddominic {
+    display: none;
+    clear: both;
+}
+
+#iddominic.active {
+    display: block; 
+}
+
+
+
+
+.stMark{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 260px;
+  height: 170px;
+  width: 900px;
+  right: 310px;
+  background-color: #011f11;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+}
+
+.markclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.markclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.markgrid{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 60px); 
+  gap: 10px;
+  }
+
+.grid-itemmark {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemmark:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idmark {
+    display: none;
+    clear: both;
+}
+
+#idmark.active {
+    display: block; 
+}
+
+
+
+
+
+.stLuke{
+  text-align: center;
+  border-radius: 15px;
+  bottom: 250px;
+  height: 220px;
+  width: 900px;
+  right: 310px;
+  background-color: #011f11;
+  border: 2px solid black;
+  position: absolute;
+  padding: 20px;
+  align-items: center;
+  justify-content: center;
+  z-index: 100;
+  display: none;
+ 
+}
+
+
+
+.lukeclosebtn {
+  position: absolute;
+  top: 10px;  
+  right: 20px;
+  background: none;
+  border: none;
+  font-size: 40px;
+  cursor: pointer;
+  transition: transform 0.5s ease;
+  color: white;
+}
+.lukeclosebtn:hover{
+  transform: scale(1.1);
+  color: #bfbfbf;
+}
+.lukegrid{
+  text-align: center;
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: repeat(6, 60px); 
+  gap: 10px;
+  }
+
+.grid-itemluke {
+  cursor: pointer;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+  }
+  .grid-itemluke:hover{
+    transform: scale(1.2);
+    border-radius: 10px;
+  }
+  #idluke {
+    display: none;
+    clear: both;
+}
+
+#idluke.active {
+    display: block; 
+}
