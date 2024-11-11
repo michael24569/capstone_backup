@@ -1,0 +1,17 @@
+@keyframes blurryFadeIn {
+    0% {
+      opacity: 0;
+      filter: blur(10px); 
+      transform: scale(0.95); 
+    }
+    100% {
+      opacity: 1;
+      transform: scale(1); 
+    }
+  }
+  
+  #responsiveImage, #Apart3,  #Apart2, #Apart1, #Colum2, #Colum1, #Rafael, #Jude, #Michael, #Peter, #James, #Isidore, #Dominic, #John, #Agustine, #Paul, #Joseph, #Luke, #Mark, #Matthew{
+    animation: blurryFadeIn 3s ease-in-out forwards;
+    max-width: 100%; 
+  }
+  
