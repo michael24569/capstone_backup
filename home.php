@@ -285,7 +285,7 @@ checkStaffAccess();
 
   <div class="panel" id="imagePanel">
     <div class="panelHeader">
-        Center Aisle
+        Chapel
         <button class="closebtnP" id="closePanel">&times;</button>
     </div>
     <div class="SliderContaier">
@@ -3019,7 +3019,7 @@ checkStaffAccess();
             Apartment 3
           </div>
         
-          <area shape="poly" coords="3582,559,3672,590,3722,667,3708,761,3641,815,3546,815,3474,770,3456,662,3497,599" href="#" title="Center Aisle" id="Paiyakan">
+          <area shape="poly" coords="3582,559,3672,590,3722,667,3708,761,3641,815,3546,815,3474,770,3456,662,3497,599" href="#" title="Chapel" id="Paiyakan">
           <area shape="poly" coords="3582,559,3672,590,3722,667,3708,761,3641,815,3546,815,3474,770,3456,662,3497,599" href="#" title="Memorial Church" id="Church">
           <area shape="poly" coords="3286,2867,3128,2804,3028,3033,3178,3096" href="#" title="Memorial Church">
           <div class="Rafael" id="Rafael">
