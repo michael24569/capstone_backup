@@ -93,7 +93,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                     </a>
                 </li>
                 <li>
-                    <a href="#">
+                    <a href="about.html">
                         <span class="icon"><ion-icon name="alert-outline"></ion-icon></span>
                         <span class="text">About</span>
                     </a>
