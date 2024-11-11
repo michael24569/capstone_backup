@@ -7387,7 +7387,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('C22ndflrSB').classList.add('highlight-border');//block
             document.getElementById('C22SB2').classList.add('highlight-border');//side
         }
-        //Columbarium 2 2nd floor block 3 side A
+        //Columbarium 2 2nd floor block 3 side A aguisgdu
         if (matchedElement.classList.contains('grid-itemblk3AC2')) {
             document.getElementById('C22ndflr').classList.add('highlight-border');//floor
             document.getElementById('C22ndflrblck3').classList.add('highlight-border');//block
