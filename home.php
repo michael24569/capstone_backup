@@ -4975,7 +4975,7 @@ checkStaffAccess();
                     </a>
                 </li>
                 <li>
-                    <a href="about.html">
+                    <a href="staff_about.php">
                         <span class="icon"><ion-icon name="alert-outline"></ion-icon></span>
                         <span class="text">About</span>
                     </a>
