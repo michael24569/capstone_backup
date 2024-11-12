@@ -12,24 +12,34 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     } else {
         $searchQuery = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
     }
+    $itemsPerPage = 100; // Define items per page
+    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $offset = ($page - 1) * $itemsPerPage;
 
-    $sql = "SELECT * FROM records";
-    
+    // Use prepared statements for security
+    $sql = "SELECT Lot_No, mem_lots, mem_sts, LO_name, mem_address, id FROM records";
     if ($searchQuery != '') {
-        $sql .= " WHERE Lot_No LIKE '%$searchQuery%' 
-                  OR mem_lots LIKE '%$searchQuery%' 
-                  OR mem_sts LIKE '%$searchQuery%' 
-                  OR LO_name LIKE '%$searchQuery%'";
+        $sql .= " WHERE Lot_No LIKE ? OR mem_lots LIKE ? OR mem_sts LIKE ? OR LO_name LIKE ?";
+    }
+    $sql .= " LIMIT ?, ?";
+    $stmt = $conn->prepare($sql);
+
+    if ($searchQuery != '') {
+        $searchTerm = "%$searchQuery%";
+        $stmt->bind_param('ssssii', $searchTerm, $searchTerm, $searchTerm, $searchTerm, $offset, $itemsPerPage);
+    } else {
+        $stmt->bind_param('ii', $offset, $itemsPerPage);
     }
 
-    $result = mysqli_query($conn, $sql);
+    $stmt->execute();
+    $result = $stmt->get_result();
+    $noRecords = $result->num_rows == 0;
 
-    if (!$result) {
-        die("Query failed: " . mysqli_error($conn));
-    }
-
-    // Check if records exist
-    $noRecords = mysqli_num_rows($result) == 0;
+    $stmtTotal = $conn->prepare("SELECT COUNT(*) as total FROM records");
+    $stmtTotal->execute();
+    $totalResult = $stmtTotal->get_result()->fetch_assoc();
+    $totalRecords = $totalResult['total'];
+    $totalPages = ceil($totalRecords / $itemsPerPage);
 ?>
 <!DOCTYPE html>
 <html lang="en">
