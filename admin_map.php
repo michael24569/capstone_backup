@@ -5004,7 +5004,7 @@ checkAdminAccess();
                     </a>
                 </li>
                 <li>
-                    <a href="about.html">
+                    <a href="about.php">
                         <span class="icon"><ion-icon name="alert-outline"></ion-icon></span>
                         <span class="text">About</span>
                     </a>
