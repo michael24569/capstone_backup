@@ -13,7 +13,7 @@ checkStaffAccess();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home for Staffs</title>
+    <title>Home Administrator</title>
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="map.css">
     <link rel="stylesheet" href="LotInfo.css">
@@ -3028,7 +3028,7 @@ checkStaffAccess();
           </div>
           <div class="RAF" id="idRAF"><h3 style="color: white;">St. Rafael</h3><br>
             <button id="IDRAFaclosebtn" class="RAFaclosebtn">&times;</button>
-            <div class="Saints" id="legendBox" style="top: 680px;">
+            <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3117,7 +3117,7 @@ checkStaffAccess();
             
             <div class="stPeter" id="idpeter"><h3 style="color: white;">St. Peter</h3><br>
                 <button id="IDpeterclosebtn" class="peterclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="top: 680px;">
+                <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3218,7 +3218,7 @@ checkStaffAccess();
             <div class="stPaul" id="idpaul"><h3 style="color: white;">St. Paul</h3><br>
                 <button id="IDpaulclosebtn" class="paulclosebtn">&times;</button>
                
-                <div class="Saints" id="legendBox" style="top: 680px;">
+                <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3317,7 +3317,7 @@ checkStaffAccess();
             </div>
             <div class="stJude" id="idjude"><h3 style="color: white;">St. Jude</h3><br>
                 <button id="IDjudeclosebtn" class="judeclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="top: 680px;">
+                <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3543,7 +3543,7 @@ checkStaffAccess();
             </div>
             <div class="stJohn" id="idjohn"><h3 style="color: white;">St. John</h3><br>
                 <button id="IDjohnclosebtn" class="johnclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="top: 680px;">
+                <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3711,7 +3711,7 @@ checkStaffAccess();
             </div>
             <div class="stJoseph" id="idjoseph"><h3 style="color: white;">St. Joseph</h3><br>
                 <button id="IDjosephclosebtn" class="josephclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="top: 680px;">
+                <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3922,7 +3922,7 @@ checkStaffAccess();
           </div>
           <div class="stJames" id="idjames"><h3 style="color: white;">St. James</h3><br>
             <button id="IDjamesclosebtn" class="jamesclosebtn">&times;</button>
-            <div class="Saints" id="legendBox" style="top: 680px;">
+            <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4271,7 +4271,7 @@ checkStaffAccess();
 
             <div class="stAgustine" id="idagustine"><h3 style="color: white;">St. Augustin</h3><br>
                 <button id="IDagustineclosebtn" class="agustineclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="top: 680px;">
+                <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4460,7 +4460,7 @@ checkStaffAccess();
             </div>
             <div class="stDominic" id="iddominic"><h3 style="color: white;">St. Dominic</h3><br>
                 <button id="IDdominicclosebtn" class="dominicclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="top: 680px;">
+                <div class="Saints" id="legendBox" style="bottom: 5%;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4946,9 +4946,9 @@ checkStaffAccess();
       </map>
        
     </div>
-
-    <?php include 'staff_sidebar.php'; ?> 
-
+    
+    <?php include 'staff_sidebar.php'; ?>
+    
      <div class="LotOverview" id="overview">
         <div class="Content">
           <p class="overview-title">Lot Overview</p>
@@ -5262,7 +5262,6 @@ function closePopup(popup) {
     bg.addEventListener('click', function(event) {
     event.stopPropagation(); 
 });
-
 
 
 
@@ -7003,7 +7002,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //Javascript condition for the div
-
 document.addEventListener('DOMContentLoaded', () => {
     fetch('fetch_all_records.php')
         .then(response => response.json())
@@ -7087,8 +7085,6 @@ document.addEventListener('DOMContentLoaded', () => {
         })
         .catch(error => console.error('Error fetching records:', error));
 });
-
-
 
 const popup = document.createElement('div');
 popup.id = 'noRecordPopup';
@@ -7326,7 +7322,7 @@ document.addEventListener('DOMContentLoaded', () => {
             document.getElementById('C22ndflrSB').classList.add('highlight-border');//block
             document.getElementById('C22SB2').classList.add('highlight-border');//side
         }
-        //Columbarium 2 2nd floor block 3 side A
+        //Columbarium 2 2nd floor block 3 side A aguisgdu
         if (matchedElement.classList.contains('grid-itemblk3AC2')) {
             document.getElementById('C22ndflr').classList.add('highlight-border');//floor
             document.getElementById('C22ndflrblck3').classList.add('highlight-border');//block
