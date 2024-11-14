@@ -176,7 +176,7 @@ unset($_SESSION['error'], $_SESSION['successful']);
     }
     </script>
 </head>
-<body style="font-family: Michroma, sans-serif;">
+<body style="font-family: Michroma, sans-serif;" style="background: #071c14;">
 
 <div class="center_record">
     <div class="container">

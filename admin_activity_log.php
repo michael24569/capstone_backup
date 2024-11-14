@@ -32,7 +32,7 @@ $result = $conn->query($sql);
 body {
   font-family: "Michroma", "sans-serif";
   height: 100vh;
-  background-color: #1d3a2e;
+  background-color: #071c14;";
 }
 
 /* Sidebar Styling */
@@ -62,7 +62,9 @@ body {
   list-style: none;
 }
 .sidebar ul li:hover{
-  background: #dae2de;
+  transition: 0.8s;
+  background: #b3d1b3;
+  
 }
 .sidebar ul li a{
   position: relative;
@@ -190,7 +192,7 @@ body {
 }
 
 .styled-table thead tr {
-  background-color: #009879;
+  background-color: #033512;
   color: #ffffff;
   text-align: center;
 }
@@ -211,7 +213,8 @@ body {
 }
 
 .styled-table tr:last-of-type {
-  border-bottom: 2px solid #009879;
+  border-bottom: 2px solid #033512;
+  
 }
 
 .styled-table th {

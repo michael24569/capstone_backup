@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     <link rel="stylesheet" href="style1.css">
 </head>
-<body>
+<body style="background: #071c14;">
 
 <?php include 'admin_sidebar.php'; ?>
 

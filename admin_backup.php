@@ -26,7 +26,7 @@ unset($_SESSION['backup_file']);
     <link rel="stylesheet" href="style1.css">
 
 </head>
-<body style= "font-family: Michroma, sans-serif;">
+<body style= "font-family: Michroma, sans-serif;" style="background: #071c14;">
 
 <?php include 'admin_sidebar.php'; ?> 
 

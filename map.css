@@ -107,6 +107,7 @@ z-index: 10;
 }
 .sidebar:hover{
   width: 300px;
+  
 }
 .sidebar ul{
   position: relative;
@@ -116,7 +117,8 @@ z-index: 10;
   list-style: none;
 }
 .sidebar ul li:hover{
-  background: #dae2de;
+  transition: 0.8s;
+  background: #b3d1b3;
 }
 .sidebar ul li a{
   position: relative;

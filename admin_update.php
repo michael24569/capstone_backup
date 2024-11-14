@@ -148,7 +148,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         }
     </style>
 </head>
-<body>
+<body style="background: #071c14;">
     <div class="container my-5">
         <h2>Edit Clients Information</h2>
         <?php

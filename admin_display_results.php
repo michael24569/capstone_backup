@@ -113,26 +113,28 @@ function displayRecordStatus() {
             align-items: start;
             height: 100vh;
             padding-top: 20px;
+            background: #071c14;
             
         }
         table {
             width: 95%;
             border-collapse: collapse;
             margin-left:70px;
+            
         }
         table, th, td {
             border: 1px solid black;
-            
-
+       
         }
         th, td {
             padding: 10px;
             text-align: center;
             
+            
         }
         th {
-            background-color: #caf2cb;
-           
+            background-color: #004100;   
+            color: white  
         }
             h1{
             color:white;
@@ -146,7 +148,7 @@ function displayRecordStatus() {
         }
     </style>
 </head>
-<body>
+<body style="background: #071c14;"> 
 
 <h1>Summary of Status Report</h1><br>
 

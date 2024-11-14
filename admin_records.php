@@ -138,7 +138,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 </head>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<body>
+<body style="background: #071c14;"> 
 <?php include 'admin_sidebar.php'; ?>
     <div id="recordsContent" class="center_record">
     <!-- Success/Error Alert Box -->

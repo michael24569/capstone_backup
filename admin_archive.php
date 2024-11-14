@@ -34,7 +34,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
     <link rel="stylesheet" href="style1.css">
 </head>
-<body>
+<body style="background: #071c14;">
 
 <?php include 'admin_sidebar.php'; ?>
 

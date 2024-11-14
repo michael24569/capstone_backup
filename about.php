@@ -39,7 +39,8 @@ checkAdminAccess();
             list-style: none;
         }
         .sidebar ul li:hover {
-            background: #dae2de;
+            transition: 0.8s;
+            background: #b3d1b3;
         }
         .sidebar ul li a {
             position: relative;
