@@ -181,7 +181,7 @@ checkStaffAccess();
                 <div class="name">Kyle Cyrus Ambat <br><span>Role</span></div>
             </div>
             <div class="team-member">
-                <img src="aboutimg/michael.jfif" alt="Team Member 2">
+                <img src="aboutimg/michael.png" alt="Team Member 2">
                 <div class="name">Michael Enoza <br><span>Role</span></div>
             </div>
             <div class="team-member">
