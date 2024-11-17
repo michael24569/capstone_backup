@@ -80,76 +80,6 @@ checkAdminAccess();
     height: 400px; 
     }
         /*label*/
-.Colum1 {
- text-align: center;
- color: white;
- padding: 5px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none; 
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 145px; 
- left: 640px;
-}
-.Colum2 {
- text-align: center;
- color: white;
- padding: 5px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none; 
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 145px; 
- left: 549px;
-}
-.Apart1 {
- text-align: center;
- color: white;
- padding: 10px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none;
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 215px; 
- left: 439px;
-}
-.Apart2 {
- text-align: center;
- color: white;
- padding: 10px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none;
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 175px; 
- left: 439px;
-}
-.Apart3 {
- text-align: center;
- color: white;
- padding: 10px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none;
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 135px; 
- left: 439px;
-}
 .Saints {
   width: 0;
   height: 40px;
@@ -308,7 +238,9 @@ checkAdminAccess();
     </div>
 </div>
         
+   
       <img src="map1.png" usemap="#mymap" id="responsiveImage">
+
 
 <!-- Search button for the map-->
 <div class="input-group">
@@ -3705,7 +3637,7 @@ checkAdminAccess();
         <div data-lotno="135" data-memsts="St. John" data-memlot="Lawn Lots" class="grid-itemjohn">135</div>
                     </div>
             </div>
-          <area shape="poly" coords="3533,185,4046,190,4032,671,3798,689,3744,541,3605,473,3528,473" href="#" title="St. Joseph">
+         
           <div class="Joseph" id="Joseph">
               St. Joseph
             </div>

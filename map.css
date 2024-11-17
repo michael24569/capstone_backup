@@ -664,8 +664,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 320px; 
-  left: 1058px;
+  top: 46%; 
+  left: 69%;
   transition: transform 0.3s ease;
 }
 .Dominic:hover{
@@ -685,8 +685,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 540px; 
-  left: 770px;
+  top: 76%; 
+  left: 49.7%;;
   transition: transform 0.3s ease;
 }
 .Rafael:hover{
@@ -706,8 +706,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 463px; 
-  left: 770px;
+  top: 66%; 
+  left: 49.7%;;
   transition: transform 0.3s ease;
 }
 .Peter:hover{
@@ -727,8 +727,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 393px; 
-  left: 770px;
+  top: 56%; 
+  left: 49.7%;
   transition: transform 0.3s ease;
 }
 .Paul:hover{
@@ -748,8 +748,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 95px; 
-  left: 785px;
+  top: 13.5%; 
+  left: 51.5%;
   transition: transform 0.3s ease;
 }
 .Jude:hover{
@@ -769,8 +769,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 95px; 
-  left: 880px;
+  top: 13.5%; 
+  left: 57.5%;
   transition: transform 0.3s ease;
 }
 
@@ -791,8 +791,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 95px; 
-  left: 980px;
+  top: 13.5%; 
+  left: 63.5%;
   transition: transform 0.3s ease;
 }
 .Joseph:hover{
@@ -813,8 +813,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 95px; 
-  left: 1125px;
+  top: 13.5%; 
+  left: 73%;
   transition: transform 0.3s ease;
 }
 .James:hover{
@@ -835,8 +835,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 545px; 
-  left: 930px;
+  top: 77%; 
+  left: 60.8%;
   transition: transform 0.3s ease;
 }
 
@@ -859,8 +859,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 390px; 
-  left: 1121px;
+  top: 60%; 
+  left: 72%;
   transition: transform 0.3s ease;
 }
 
@@ -881,8 +881,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 145px; 
-  left: 740px;
+  top: 24%; 
+  left: 48%;
   transition: transform 0.3s ease;
 }
 .Matthew:hover{
@@ -903,8 +903,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 41px; 
-  left: 810px;
+  top: 5.8%; 
+  left: 53%;
   transition: transform 0.3s ease;
 }
 .Mark:hover{
@@ -925,8 +925,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 41px; 
-  left: 1060px;
+  top: 5.8%; 
+  left: 69%;
   transition: transform 0.3s ease;
 }
 .Luke:hover{
@@ -946,8 +946,8 @@ z-index: 10;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 280px; 
-  left: 770px;
+  top: 40%; 
+  left: 50%;
   transition: transform 0.3s ease;
 }
 .Michael:hover{
@@ -956,7 +956,76 @@ z-index: 10;
   color: #ffffff;
 } 
 
-
+.Colum1 {
+  text-align: center;
+  color: white;
+  padding: 5px; 
+  padding-bottom: 20px;
+  border-radius: 5px; 
+  font-size: 8px;
+  pointer-events: none; 
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; 
+  top: 20.7%; 
+  left: 41.8%;
+ }
+ .Colum2 {
+  text-align: center;
+  color: white;
+  padding: 5px; 
+  padding-bottom: 20px;
+  border-radius: 5px; 
+  font-size: 8px;
+  pointer-events: none; 
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; 
+  top: 20.7%; ; 
+  left: 35.8%;
+ }
+ .Apart1 {
+  text-align: center;
+  color: white;
+  padding: 10px; 
+  padding-bottom: 20px;
+  border-radius: 5px; 
+  font-size: 8px;
+  pointer-events: none;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; 
+  top: 30.8%; 
+  left:  28.2%;
+ }
+ .Apart2 {
+  text-align: center;
+  color: white;
+  padding: 10px; 
+  padding-bottom: 20px;
+  border-radius: 5px; 
+  font-size: 8px;
+  pointer-events: none;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; 
+  top: 25.3%; 
+  left: 28.2%;
+ }
+ .Apart3 {
+  text-align: center;
+  color: white;
+  padding: 10px; 
+  padding-bottom: 20px;
+  border-radius: 5px; 
+  font-size: 8px;
+  pointer-events: none;
+  font-weight: bold;
+  cursor: pointer;
+  position: absolute; 
+  top: 19.4%; 
+  left: 28.2%;
+ }
 
 .sideAa1{
   border-radius: 15px;
