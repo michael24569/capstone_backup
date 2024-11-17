@@ -79,77 +79,7 @@ checkStaffAccess();
     width: 300px; 
     height: 400px; 
     }
-        /*label*/
-.Colum1 {
- text-align: center;
- color: white;
- padding: 5px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none; 
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 145px; 
- left: 640px;
-}
-.Colum2 {
- text-align: center;
- color: white;
- padding: 5px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none; 
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 145px; 
- left: 549px;
-}
-.Apart1 {
- text-align: center;
- color: white;
- padding: 10px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none;
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 215px; 
- left: 439px;
-}
-.Apart2 {
- text-align: center;
- color: white;
- padding: 10px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none;
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 175px; 
- left: 439px;
-}
-.Apart3 {
- text-align: center;
- color: white;
- padding: 10px; 
- padding-bottom: 20px;
- border-radius: 5px; 
- font-size: 8px;
- pointer-events: none;
- font-weight: bold;
- cursor: pointer;
- position: absolute; 
- top: 135px; 
- left: 439px;
-}
+   
 .Saints {
   width: 0;
   height: 40px;
