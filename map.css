@@ -882,7 +882,7 @@ z-index: 10;
   cursor: pointer;
   position: absolute; 
   top: 24%; 
-  left: 48%;
+  left: 49%;
   transition: transform 0.3s ease;
 }
 .Matthew:hover{
@@ -960,22 +960,32 @@ z-index: 10;
   text-align: center;
   color: white;
   padding: 5px; 
-  padding-bottom: 20px;
+  width: 100px;
+  background-color: #504e4e80; 
+  padding-bottom: 8px;
   border-radius: 5px; 
   font-size: 8px;
   pointer-events: none; 
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 20.7%; 
-  left: 41.8%;
+  top: 21.7%; 
+  left: 41.3%;
+  transition: transform 0.3s ease;
  }
+ .Colum1:hover{
+  transform: scale(1.5);
+  background-color: #11cf70a2;
+  color: #ffffff;
+}
  .Colum2 {
   text-align: center;
   color: white;
   padding: 5px; 
-  padding-bottom: 20px;
+  width: 100px;
+  padding-bottom: 8px;
   border-radius: 5px; 
+  background-color: #504e4e80; 
   font-size: 8px;
   pointer-events: none; 
   font-weight: bold;
@@ -983,7 +993,13 @@ z-index: 10;
   position: absolute; 
   top: 20.7%; ; 
   left: 35.8%;
+  transition: transform 0.3s ease;
  }
+ .Colum2:hover{
+  transform: scale(1.5);
+  background-color: #151716a2;
+  color: #ffffff;
+}
  .Apart1 {
   text-align: center;
   color: white;
