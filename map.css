@@ -259,7 +259,8 @@ z-index: 10;
   transform: scale(1.1);
   box-shadow: 10px 5px 30px 5px #00000080;
 
-}.A1close-button {
+}
+.A1close-button {
   color: white;
   position: absolute;
   bottom: 300px;
@@ -965,17 +966,16 @@ z-index: 10;
   padding-bottom: 8px;
   border-radius: 5px; 
   font-size: 8px;
-  pointer-events: none; 
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 21.7%; 
+  top: 20.7%; 
   left: 41.3%;
   transition: transform 0.3s ease;
  }
  .Colum1:hover{
-  transform: scale(1.5);
-  background-color: #11cf70a2;
+  transform: scale(1.2);
+  background-color: #151716a2;
   color: #ffffff;
 }
  .Colum2 {
@@ -987,62 +987,78 @@ z-index: 10;
   border-radius: 5px; 
   background-color: #504e4e80; 
   font-size: 8px;
-  pointer-events: none; 
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 20.7%; ; 
-  left: 35.8%;
+  left: 34.8%;
   transition: transform 0.3s ease;
  }
  .Colum2:hover{
-  transform: scale(1.5);
+  transform: scale(1.2);
   background-color: #151716a2;
   color: #ffffff;
 }
  .Apart1 {
   text-align: center;
   color: white;
-  padding: 10px; 
-  padding-bottom: 20px;
+  padding: 5px; 
+  width: 100px;
+  padding-bottom: 8px;
   border-radius: 5px; 
+  background-color: #504e4e80; 
   font-size: 8px;
-  pointer-events: none;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 30.8%; 
+  top: 31.3%; 
   left:  28.2%;
  }
+ .Apart1:hover{
+  transform: scale(1.2);
+  background-color: #151716a2;
+  color: #ffffff;
+}
  .Apart2 {
   text-align: center;
   color: white;
-  padding: 10px; 
-  padding-bottom: 20px;
+  padding: 5px; 
+  width: 100px;
+  padding-bottom: 8px;
   border-radius: 5px; 
+  background-color: #504e4e80; 
   font-size: 8px;
-  pointer-events: none;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 25.3%; 
+  top: 25.7%; 
   left: 28.2%;
  }
+ .Apart2:hover{
+  transform: scale(1.2);
+  background-color: #151716a2;
+  color: #ffffff;
+}
  .Apart3 {
   text-align: center;
   color: white;
-  padding: 10px; 
-  padding-bottom: 20px;
+  padding: 5px; 
+  width: 100px;
+  padding-bottom: 8px;
   border-radius: 5px; 
+  background-color: #504e4e80; 
   font-size: 8px;
-  pointer-events: none;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
-  top: 19.4%; 
+  top: 20.07%; 
   left: 28.2%;
  }
-
+ .Apart3:hover{
+  transform: scale(1.2);
+  background-color: #151716a2;
+  color: #ffffff;
+}
 .sideAa1{
   border-radius: 15px;
   bottom: 120px;

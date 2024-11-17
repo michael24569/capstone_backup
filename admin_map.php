@@ -79,7 +79,7 @@ checkAdminAccess();
     width: 300px; 
     height: 400px; 
     }
-        /*label*/
+   
 .Saints {
   width: 0;
   height: 40px;
@@ -2924,15 +2924,15 @@ checkAdminAccess();
       
         <map name="mymap" id="mymap">
             
-          <area shape="rect" coords="993,493,1377,565" href="#" title="Apartment 3" id="A3triggerPopup" >
+          <area shape="rect" coords="993,493,1377,565" href="#" title="Apartment 3"  >
           
-          <area shape="rect" coords="997,677,1381,749" href="#" title="Apartment 2" id="A2triggerPopup">
+          <area shape="rect" coords="997,677,1381,749" href="#" title="Apartment 2" >
        
-          <area shape="rect" coords="997,861,1397,929" href="#" title="Apartment 1" id="A1triggerPopup">
+          <area shape="rect" coords="997,861,1397,929" href="#" title="Apartment 1" >
           
-          <area shape="rect" coords="1529,378,1903,657" href="#" title="Columbarium 2" id="C2triggerPopup">
+          <area shape="rect" coords="1529,378,1903,657" href="#" title="Columbarium 2" >
          
-          <area shape="rect" coords="1965,378,2338, 662" href="#" title="Columbarium 1" id="C1triggerPopup">
+          <area shape="rect" coords="1965,378,2338, 662" href="#" title="Columbarium 1">
          
          
           
@@ -3637,7 +3637,7 @@ checkAdminAccess();
         <div data-lotno="135" data-memsts="St. John" data-memlot="Lawn Lots" class="grid-itemjohn">135</div>
                     </div>
             </div>
-         
+            <area shape="poly" coords="3533,185,4046,190,4032,671,3798,689,3744,541,3605,473,3528,473" href="#" title="St. Joseph">
           <div class="Joseph" id="Joseph">
               St. Joseph
             </div>
@@ -4945,13 +4945,13 @@ document.addEventListener('DOMContentLoaded', function() {
       var C1 = document.getElementById('C1');
       var C11stflr = document.getElementById('C11stflr');
       var C12ndflr = document.getElementById('C12ndflr');
-      var C1trigger = document.getElementById('C1triggerPopup');
+      var C1trigger = document.getElementById('Colum1');
       var C1closeButton = document.getElementById('C1closePopup');
 
       var C2 = document.getElementById('C2');
       var C21stflr = document.getElementById('C21stflr');
       var C22ndflr = document.getElementById('C22ndflr');
-      var C2trigger = document.getElementById('C2triggerPopup');
+      var C2trigger = document.getElementById('Colum2');
       var C2closeButton = document.getElementById('C2closePopup');
 
       var C11st = document.getElementById('C11st');
@@ -5082,7 +5082,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var A1 = document.getElementById('A1');
       var A1sideA = document.getElementById('A1sideA');
       var A1sideB = document.getElementById('A1sideB');
-      var A1trigger = document.getElementById('A1triggerPopup');
+      var A1trigger = document.getElementById('Apart1');
       var A1closeButton = document.getElementById('A1closePopup');
       
 
@@ -5090,13 +5090,13 @@ document.addEventListener('DOMContentLoaded', function() {
       var A2 = document.getElementById('A2');
       var A2sideA = document.getElementById('A2sideA');
       var A2sideB = document.getElementById('A2sideB');
-      var A2trigger = document.getElementById('A2triggerPopup');
+      var A2trigger = document.getElementById('Apart2');
       var A2closeButton = document.getElementById('A2closePopup');
       
       var A3 = document.getElementById('A3');
       var A3sideA = document.getElementById('A3sideA');
       var A3sideB = document.getElementById('A3sideB');
-      var A3trigger = document.getElementById('A3triggerPopup');
+      var A3trigger = document.getElementById('Apart3');
       var A3closeButton = document.getElementById('A3closePopup');
       
       var image = document.getElementById('responsiveImage');
@@ -5860,10 +5860,10 @@ const C12ndclosebuttonS2 = document.getElementById('C12ndclosebuttonS2');
 const C12ndflrSA = document.getElementById('C12ndflrSA');
 const C12ndclosePopupS = document.getElementById('C12ndclosePopupS');
 
-const C1triggerPopup = document.getElementById('C1triggerPopup');
+const Colum1 = document.getElementById('Colum1');
 const C1closePopup = document.getElementById('C1closePopup');
 
-const C2triggerPopup = document.getElementById('C2triggerPopup');
+const Colum2 = document.getElementById('Colum2');
 const C2closePopup = document.getElementById('C2closePopup');
 
 const C11st = document.getElementById('C11st');
@@ -5878,13 +5878,13 @@ const C2closePopup1st = document.getElementById('C2closePopup1st');
 const C22nd = document.getElementById('C22nd');
 const C2closePopup2nd = document.getElementById('C2closePopup2nd');
 
-const A1triggerPopup = document.getElementById('A1triggerPopup');
+const Apart1 = document.getElementById('Apart1');
 const A1closePopup = document.getElementById('A1closePopup');
 
-const A3triggerPopup = document.getElementById('A3triggerPopup');
+const Apart3 = document.getElementById('Apart3');
 const A3closePopup = document.getElementById('A3closePopup');
 
-const A2triggerPopup = document.getElementById('A2triggerPopup');
+const Apart2 = document.getElementById('Apart2');
 const A2closePopup = document.getElementById('A2closePopup');
 
 
@@ -6068,7 +6068,7 @@ C12ndflrSA.addEventListener('click', function() {
     blurLabels(); 
 });
 
-C1triggerPopup.addEventListener('click', function() {
+Colum1.addEventListener('click', function() {
     blurLabels(); 
 });
 C12ndclosePopupS.addEventListener('click', function() {
@@ -6080,7 +6080,7 @@ C11stclosePopupS.addEventListener('click', function() {
 C1closePopup.addEventListener('click', function() {
     clearBlurLabels();
 });
-C2triggerPopup.addEventListener('click', function() {
+Colum2.addEventListener('click', function() {
     blurLabels(); 
 });
 C12nd.addEventListener('click', function() {
@@ -6121,19 +6121,19 @@ C2closePopup.addEventListener('click', function() {
     clearBlurLabels();
 });
 
-A3triggerPopup.addEventListener('click', function() {
+Apart3.addEventListener('click', function() {
     blurLabels(); 
 });
 A3closePopup.addEventListener('click', function() {
     clearBlurLabels();
 });
-A2triggerPopup.addEventListener('click', function() {
+Apart2.addEventListener('click', function() {
     blurLabels(); 
 });
 A2closePopup.addEventListener('click', function() {
     clearBlurLabels(); 
 });
-A1triggerPopup.addEventListener('click', function() {
+Apart1.addEventListener('click', function() {
     blurLabels(); 
 });
 A1closePopup.addEventListener('click', function() {
