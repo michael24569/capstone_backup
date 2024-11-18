@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkStaffAccess();
+checkAdminAccess();
 
 ?>
 <!DOCTYPE html>
@@ -89,7 +89,6 @@ checkStaffAccess();
   border: 1px solid black;
   border-radius: 20px;
   position: fixed;
-  bottom: 5%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -102,6 +101,24 @@ checkStaffAccess();
   animation: fadeExpand 0.5s ease forwards;
   animation-delay: 0.1s;
 }
+.Saints {
+  bottom: 1%;
+}
+
+/* Target 1920x1080 resolution */
+@media (min-width: 1920px) and (max-height: 1080px) {
+  .Saints {
+    bottom: 1%;
+  }
+}
+
+/* Target 1600x900 resolution */
+@media (min-width: 1600px) and (max-height: 900px) and (max-width: 1920px) {
+  .Saints {
+    bottom: 5%;
+  }
+}
+
 .narrow {
     width: 0;
   height: 40px;
@@ -133,7 +150,7 @@ checkStaffAccess();
   border: 1px solid black;
   border-radius: 20px;
   position: fixed;
-  top: 65%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -238,7 +255,9 @@ checkStaffAccess();
     </div>
 </div>
         
+   
       <img src="map1.png" usemap="#mymap" id="responsiveImage">
+
 
 <!-- Search button for the map-->
 <div class="input-group">
@@ -2922,15 +2941,15 @@ checkStaffAccess();
       
         <map name="mymap" id="mymap">
             
-          <area shape="rect" coords="993,493,1377,565" href="#" title="Apartment 3" id="A3triggerPopup" >
+          <area shape="rect" coords="993,493,1377,565" href="#" title="Apartment 3"  >
           
-          <area shape="rect" coords="997,677,1381,749" href="#" title="Apartment 2" id="A2triggerPopup">
+          <area shape="rect" coords="997,677,1381,749" href="#" title="Apartment 2" >
        
-          <area shape="rect" coords="997,861,1397,929" href="#" title="Apartment 1" id="A1triggerPopup">
+          <area shape="rect" coords="997,861,1397,929" href="#" title="Apartment 1" >
           
-          <area shape="rect" coords="1529,378,1903,657" href="#" title="Columbarium 2" id="C2triggerPopup">
+          <area shape="rect" coords="1529,378,1903,657" href="#" title="Columbarium 2" >
          
-          <area shape="rect" coords="1965,378,2338, 662" href="#" title="Columbarium 1" id="C1triggerPopup">
+          <area shape="rect" coords="1965,378,2338, 662" href="#" title="Columbarium 1">
          
          
           
@@ -2958,7 +2977,7 @@ checkStaffAccess();
           </div>
           <div class="RAF" id="idRAF"><h3 style="color: white;">St. Rafael</h3><br>
             <button id="IDRAFaclosebtn" class="RAFaclosebtn">&times;</button>
-            <div class="Saints" id="legendBox" style="bottom: 5%;">
+            <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3047,7 +3066,7 @@ checkStaffAccess();
             
             <div class="stPeter" id="idpeter"><h3 style="color: white;">St. Peter</h3><br>
                 <button id="IDpeterclosebtn" class="peterclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3148,7 +3167,7 @@ checkStaffAccess();
             <div class="stPaul" id="idpaul"><h3 style="color: white;">St. Paul</h3><br>
                 <button id="IDpaulclosebtn" class="paulclosebtn">&times;</button>
                
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3247,7 +3266,7 @@ checkStaffAccess();
             </div>
             <div class="stJude" id="idjude"><h3 style="color: white;">St. Jude</h3><br>
                 <button id="IDjudeclosebtn" class="judeclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3473,7 +3492,7 @@ checkStaffAccess();
             </div>
             <div class="stJohn" id="idjohn"><h3 style="color: white;">St. John</h3><br>
                 <button id="IDjohnclosebtn" class="johnclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3635,13 +3654,13 @@ checkStaffAccess();
         <div data-lotno="135" data-memsts="St. John" data-memlot="Lawn Lots" class="grid-itemjohn">135</div>
                     </div>
             </div>
-          <area shape="poly" coords="3533,185,4046,190,4032,671,3798,689,3744,541,3605,473,3528,473" href="#" title="St. Joseph">
+            <area shape="poly" coords="3533,185,4046,190,4032,671,3798,689,3744,541,3605,473,3528,473" href="#" title="St. Joseph">
           <div class="Joseph" id="Joseph">
               St. Joseph
             </div>
             <div class="stJoseph" id="idjoseph"><h3 style="color: white;">St. Joseph</h3><br>
                 <button id="IDjosephclosebtn" class="josephclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3852,7 +3871,7 @@ checkStaffAccess();
           </div>
           <div class="stJames" id="idjames"><h3 style="color: white;">St. James</h3><br>
             <button id="IDjamesclosebtn" class="jamesclosebtn">&times;</button>
-            <div class="Saints" id="legendBox" style="bottom: 5%;">
+            <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4201,7 +4220,7 @@ checkStaffAccess();
 
             <div class="stAgustine" id="idagustine"><h3 style="color: white;">St. Augustin</h3><br>
                 <button id="IDagustineclosebtn" class="agustineclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4390,7 +4409,7 @@ checkStaffAccess();
             </div>
             <div class="stDominic" id="iddominic"><h3 style="color: white;">St. Dominic</h3><br>
                 <button id="IDdominicclosebtn" class="dominicclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4744,7 +4763,7 @@ checkStaffAccess();
           </div>
           <div class="stMark" id="idmark"><h3 style="color: white;">St. Mark</h3><br>
             <button id="IDmarkclosebtn" class="markclosebtn">&times;</button>
-            <div class="medium" id="legendBox" >
+            <div class="medium" id="legendBox" style="top: 480px;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4772,7 +4791,7 @@ checkStaffAccess();
           </div>
           <div class="stLuke" id="idluke"><h3 style="color: white;">St. Lukes</h3><br>
             <button id="IDlukeclosebtn" class="lukeclosebtn">&times;</button>
-            <div class="medium" id="legendBox">
+            <div class="medium" id="legendBox" style="top: 500px;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4877,7 +4896,7 @@ checkStaffAccess();
        
     </div>
     
-    <?php include 'staff_sidebar.php'; ?>
+    <?php include 'admin_sidebar.php'; ?>
     
      <div class="LotOverview" id="overview">
         <div class="Content">
@@ -4943,13 +4962,13 @@ document.addEventListener('DOMContentLoaded', function() {
       var C1 = document.getElementById('C1');
       var C11stflr = document.getElementById('C11stflr');
       var C12ndflr = document.getElementById('C12ndflr');
-      var C1trigger = document.getElementById('C1triggerPopup');
+      var C1trigger = document.getElementById('Colum1');
       var C1closeButton = document.getElementById('C1closePopup');
 
       var C2 = document.getElementById('C2');
       var C21stflr = document.getElementById('C21stflr');
       var C22ndflr = document.getElementById('C22ndflr');
-      var C2trigger = document.getElementById('C2triggerPopup');
+      var C2trigger = document.getElementById('Colum2');
       var C2closeButton = document.getElementById('C2closePopup');
 
       var C11st = document.getElementById('C11st');
@@ -5080,7 +5099,7 @@ document.addEventListener('DOMContentLoaded', function() {
       var A1 = document.getElementById('A1');
       var A1sideA = document.getElementById('A1sideA');
       var A1sideB = document.getElementById('A1sideB');
-      var A1trigger = document.getElementById('A1triggerPopup');
+      var A1trigger = document.getElementById('Apart1');
       var A1closeButton = document.getElementById('A1closePopup');
       
 
@@ -5088,13 +5107,13 @@ document.addEventListener('DOMContentLoaded', function() {
       var A2 = document.getElementById('A2');
       var A2sideA = document.getElementById('A2sideA');
       var A2sideB = document.getElementById('A2sideB');
-      var A2trigger = document.getElementById('A2triggerPopup');
+      var A2trigger = document.getElementById('Apart2');
       var A2closeButton = document.getElementById('A2closePopup');
       
       var A3 = document.getElementById('A3');
       var A3sideA = document.getElementById('A3sideA');
       var A3sideB = document.getElementById('A3sideB');
-      var A3trigger = document.getElementById('A3triggerPopup');
+      var A3trigger = document.getElementById('Apart3');
       var A3closeButton = document.getElementById('A3closePopup');
       
       var image = document.getElementById('responsiveImage');
@@ -5858,10 +5877,10 @@ const C12ndclosebuttonS2 = document.getElementById('C12ndclosebuttonS2');
 const C12ndflrSA = document.getElementById('C12ndflrSA');
 const C12ndclosePopupS = document.getElementById('C12ndclosePopupS');
 
-const C1triggerPopup = document.getElementById('C1triggerPopup');
+const Colum1 = document.getElementById('Colum1');
 const C1closePopup = document.getElementById('C1closePopup');
 
-const C2triggerPopup = document.getElementById('C2triggerPopup');
+const Colum2 = document.getElementById('Colum2');
 const C2closePopup = document.getElementById('C2closePopup');
 
 const C11st = document.getElementById('C11st');
@@ -5876,13 +5895,13 @@ const C2closePopup1st = document.getElementById('C2closePopup1st');
 const C22nd = document.getElementById('C22nd');
 const C2closePopup2nd = document.getElementById('C2closePopup2nd');
 
-const A1triggerPopup = document.getElementById('A1triggerPopup');
+const Apart1 = document.getElementById('Apart1');
 const A1closePopup = document.getElementById('A1closePopup');
 
-const A3triggerPopup = document.getElementById('A3triggerPopup');
+const Apart3 = document.getElementById('Apart3');
 const A3closePopup = document.getElementById('A3closePopup');
 
-const A2triggerPopup = document.getElementById('A2triggerPopup');
+const Apart2 = document.getElementById('Apart2');
 const A2closePopup = document.getElementById('A2closePopup');
 
 
@@ -6066,7 +6085,7 @@ C12ndflrSA.addEventListener('click', function() {
     blurLabels(); 
 });
 
-C1triggerPopup.addEventListener('click', function() {
+Colum1.addEventListener('click', function() {
     blurLabels(); 
 });
 C12ndclosePopupS.addEventListener('click', function() {
@@ -6078,7 +6097,7 @@ C11stclosePopupS.addEventListener('click', function() {
 C1closePopup.addEventListener('click', function() {
     clearBlurLabels();
 });
-C2triggerPopup.addEventListener('click', function() {
+Colum2.addEventListener('click', function() {
     blurLabels(); 
 });
 C12nd.addEventListener('click', function() {
@@ -6119,19 +6138,19 @@ C2closePopup.addEventListener('click', function() {
     clearBlurLabels();
 });
 
-A3triggerPopup.addEventListener('click', function() {
+Apart3.addEventListener('click', function() {
     blurLabels(); 
 });
 A3closePopup.addEventListener('click', function() {
     clearBlurLabels();
 });
-A2triggerPopup.addEventListener('click', function() {
+Apart2.addEventListener('click', function() {
     blurLabels(); 
 });
 A2closePopup.addEventListener('click', function() {
     clearBlurLabels(); 
 });
-A1triggerPopup.addEventListener('click', function() {
+Apart1.addEventListener('click', function() {
     blurLabels(); 
 });
 A1closePopup.addEventListener('click', function() {
@@ -7016,19 +7035,62 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching records:', error));
 });
 
+// Create the popup div
 const popup = document.createElement('div');
 popup.id = 'noRecordPopup';
 popup.style.position = 'fixed';
-popup.style.top = '20px';
+popup.style.top = '50%';
 popup.style.left = '50%';
-popup.style.transform = 'translateX(-50%)';
-popup.style.padding = '10px 20px';
-popup.style.backgroundColor = 'red';
+popup.style.transform = 'translate(-50%, -50%)';
+popup.style.padding = '15px 25px';
+popup.style.backgroundColor = '#071c14';
 popup.style.color = 'white';
-popup.style.borderRadius = '5px';
-popup.style.display = 'none';
+popup.style.borderRadius = '8px';
+popup.style.fontSize = '1rem';
+popup.style.textAlign = 'center';
+popup.style.opacity = '0'; // Initially hidden
+popup.style.zIndex = '1000';
+popup.style.transition = 'opacity 0.5s ease';
 popup.innerText = 'No record exists';
+
+// Append the popup to the body
 document.body.appendChild(popup);
+
+// Function to show the popup with animation
+function showPopup() {
+  popup.style.display = 'block';
+  popup.style.animation = 'popupFade 2s ease forwards';
+  
+  // Automatically remove the popup after the animation ends
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 2000); // Duration matches the animation
+}
+
+// Example usage: Call showPopup to show the popup
+showPopup();
+
+// Add keyframes using JavaScript
+const styleSheet = document.createElement('style');
+styleSheet.type = 'text/css';
+styleSheet.innerText = `
+  @keyframes popupFade {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(styleSheet);
+
 
 
 // for the border color of the lots and blocks
