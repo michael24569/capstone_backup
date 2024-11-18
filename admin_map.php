@@ -89,7 +89,6 @@ checkAdminAccess();
   border: 1px solid black;
   border-radius: 20px;
   position: fixed;
-  bottom: 1%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -102,6 +101,26 @@ checkAdminAccess();
   animation: fadeExpand 0.5s ease forwards;
   animation-delay: 0.1s;
 }
+@media (min-width: 1920px) {
+  .Saints {
+    bottom: 1%;
+  }
+}
+
+/* For resolutions between 1366px and 1920px */
+@media (min-width: 1366px) and (max-width: 1919px) {
+  .Saints {
+    bottom: 5%;
+  }
+}
+
+/* For resolutions below 1366px */
+@media (max-width: 1365px) {
+  .Saints {
+    bottom: 5%;
+  }
+}
+
 .narrow {
     width: 0;
   height: 40px;
