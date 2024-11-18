@@ -89,7 +89,7 @@ checkAdminAccess();
   border: 1px solid black;
   border-radius: 20px;
   position: fixed;
-  bottom: 7%;
+  bottom: 1%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
