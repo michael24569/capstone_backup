@@ -89,7 +89,7 @@ checkAdminAccess();
   border: 1px solid black;
   border-radius: 20px;
   position: fixed;
-  bottom: 5%;
+  top: 678px;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -133,7 +133,7 @@ checkAdminAccess();
   border: 1px solid black;
   border-radius: 20px;
   position: fixed;
-  top: 65%;
+  top: 69%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -7018,19 +7018,62 @@ document.addEventListener('DOMContentLoaded', () => {
         .catch(error => console.error('Error fetching records:', error));
 });
 
+// Create the popup div
 const popup = document.createElement('div');
 popup.id = 'noRecordPopup';
 popup.style.position = 'fixed';
-popup.style.top = '20px';
+popup.style.top = '50%';
 popup.style.left = '50%';
-popup.style.transform = 'translateX(-50%)';
-popup.style.padding = '10px 20px';
-popup.style.backgroundColor = 'red';
+popup.style.transform = 'translate(-50%, -50%)';
+popup.style.padding = '15px 25px';
+popup.style.backgroundColor = '#071c14';
 popup.style.color = 'white';
-popup.style.borderRadius = '5px';
-popup.style.display = 'none';
+popup.style.borderRadius = '8px';
+popup.style.fontSize = '1rem';
+popup.style.textAlign = 'center';
+popup.style.opacity = '0'; // Initially hidden
+popup.style.zIndex = '1000';
+popup.style.transition = 'opacity 0.5s ease';
 popup.innerText = 'No record exists';
+
+// Append the popup to the body
 document.body.appendChild(popup);
+
+// Function to show the popup with animation
+function showPopup() {
+  popup.style.display = 'block';
+  popup.style.animation = 'popupFade 2s ease forwards';
+  
+  // Automatically remove the popup after the animation ends
+  setTimeout(() => {
+    popup.style.display = 'none';
+  }, 2000); // Duration matches the animation
+}
+
+// Example usage: Call showPopup to show the popup
+showPopup();
+
+// Add keyframes using JavaScript
+const styleSheet = document.createElement('style');
+styleSheet.type = 'text/css';
+styleSheet.innerText = `
+  @keyframes popupFade {
+    0% {
+      transform: translate(-50%, -50%) scale(0.8);
+      opacity: 0;
+    }
+    50% {
+      transform: translate(-50%, -50%) scale(1.1);
+      opacity: 1;
+    }
+    100% {
+      transform: translate(-50%, -50%) scale(1);
+      opacity: 0;
+    }
+  }
+`;
+document.head.appendChild(styleSheet);
+
 
 
 // for the border color of the lots and blocks

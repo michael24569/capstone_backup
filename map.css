@@ -657,6 +657,7 @@ z-index: 10;
 
 
 .Dominic {
+  backdrop-filter: blur(1.5px);
   color: white;
   background-color: #504e4e58; 
   padding: 17px; 
@@ -666,7 +667,7 @@ z-index: 10;
   cursor: pointer;
   position: absolute; 
   top: 46%; 
-  left: 69%;
+  left: 68.5%;
   transition: transform 0.3s ease;
 }
 .Dominic:hover{
@@ -676,6 +677,7 @@ z-index: 10;
   
 }
 .Rafael {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 100px;
@@ -687,7 +689,7 @@ z-index: 10;
   cursor: pointer;
   position: absolute; 
   top: 76%; 
-  left: 49.7%;;
+  left: 50.2%;
   transition: transform 0.3s ease;
 }
 .Rafael:hover{
@@ -697,6 +699,7 @@ z-index: 10;
   
 }
 .Peter {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 100px;
@@ -708,7 +711,7 @@ z-index: 10;
   cursor: pointer;
   position: absolute; 
   top: 66%; 
-  left: 49.7%;;
+  left: 50.2%;
   transition: transform 0.3s ease;
 }
 .Peter:hover{
@@ -718,6 +721,7 @@ z-index: 10;
   
 }
 .Paul {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 100px;
@@ -729,7 +733,7 @@ z-index: 10;
   cursor: pointer;
   position: absolute; 
   top: 56%; 
-  left: 49.7%;
+  left: 50.2%;
   transition: transform 0.3s ease;
 }
 .Paul:hover{
@@ -739,6 +743,7 @@ z-index: 10;
   
 }
 .Jude {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 90px;
@@ -760,6 +765,7 @@ z-index: 10;
   
 }
 .John {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 90px;
@@ -782,6 +788,7 @@ z-index: 10;
   
 }
 .Joseph {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 110px;
@@ -804,6 +811,7 @@ z-index: 10;
 }
 
 .James {
+  backdrop-filter: blur(1.5px);
  color: white;
   text-align: center;
   width: 100px;
@@ -815,7 +823,7 @@ z-index: 10;
   cursor: pointer;
   position: absolute; 
   top: 13.5%; 
-  left: 73%;
+  left: 74%;
   transition: transform 0.3s ease;
 }
 .James:hover{
@@ -826,6 +834,7 @@ z-index: 10;
   
 }
 .Agustine {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 125px;
@@ -849,6 +858,7 @@ z-index: 10;
   
 }
 .Isidore {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 70px;
@@ -866,11 +876,13 @@ z-index: 10;
 }
 
 .Isidore:hover{
+  backdrop-filter: blur(1.5px);
   transform: scale(1.2);
   background-color: #151716a2;
   color: #ffffff;
 }
 .Matthew {
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 70px;
@@ -893,6 +905,7 @@ z-index: 10;
 }
 
 .Mark{
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 120px;
@@ -915,6 +928,7 @@ z-index: 10;
 }
 
 .Luke{
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 120px;
@@ -937,6 +951,7 @@ z-index: 10;
 }
 
 .Michael{
+  backdrop-filter: blur(1.5px);
   color: white;
   text-align: center;
   width: 106px;
