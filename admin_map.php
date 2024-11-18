@@ -101,6 +101,9 @@ checkAdminAccess();
   animation: fadeExpand 0.5s ease forwards;
   animation-delay: 0.1s;
 }
+.Saints {
+    bottom : 5%;
+}
 @media (min-width: 1920px) {
   .Saints {
     bottom: 1%;
@@ -110,7 +113,7 @@ checkAdminAccess();
 /* For resolutions between 1366px and 1920px */
 @media (min-width: 1366px) and (max-width: 1919px) {
   .Saints {
-    bottom: 5%;
+    bottom: 1%;
   }
 }
 
