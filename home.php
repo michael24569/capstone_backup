@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkAdminAccess();
+checkStaffAccess();
 
 ?>
 <!DOCTYPE html>
@@ -4896,7 +4896,7 @@ checkAdminAccess();
        
     </div>
     
-    <?php include 'admin_sidebar.php'; ?>
+    <?php include 'staff_sidebar.php'; ?> 
     
      <div class="LotOverview" id="overview">
         <div class="Content">
