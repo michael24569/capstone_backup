@@ -89,7 +89,7 @@ checkAdminAccess();
   border: 1px solid black;
   border-radius: 20px;
   position: fixed;
-  top: 678px;
+  bottom: 7%;
   left: 50%;
   transform: translate(-50%, -50%);
   display: flex;
@@ -2960,7 +2960,7 @@ checkAdminAccess();
           </div>
           <div class="RAF" id="idRAF"><h3 style="color: white;">St. Rafael</h3><br>
             <button id="IDRAFaclosebtn" class="RAFaclosebtn">&times;</button>
-            <div class="Saints" id="legendBox" style="bottom: 5%;">
+            <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3049,7 +3049,7 @@ checkAdminAccess();
             
             <div class="stPeter" id="idpeter"><h3 style="color: white;">St. Peter</h3><br>
                 <button id="IDpeterclosebtn" class="peterclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3150,7 +3150,7 @@ checkAdminAccess();
             <div class="stPaul" id="idpaul"><h3 style="color: white;">St. Paul</h3><br>
                 <button id="IDpaulclosebtn" class="paulclosebtn">&times;</button>
                
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3249,7 +3249,7 @@ checkAdminAccess();
             </div>
             <div class="stJude" id="idjude"><h3 style="color: white;">St. Jude</h3><br>
                 <button id="IDjudeclosebtn" class="judeclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3475,7 +3475,7 @@ checkAdminAccess();
             </div>
             <div class="stJohn" id="idjohn"><h3 style="color: white;">St. John</h3><br>
                 <button id="IDjohnclosebtn" class="johnclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3643,7 +3643,7 @@ checkAdminAccess();
             </div>
             <div class="stJoseph" id="idjoseph"><h3 style="color: white;">St. Joseph</h3><br>
                 <button id="IDjosephclosebtn" class="josephclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -3854,7 +3854,7 @@ checkAdminAccess();
           </div>
           <div class="stJames" id="idjames"><h3 style="color: white;">St. James</h3><br>
             <button id="IDjamesclosebtn" class="jamesclosebtn">&times;</button>
-            <div class="Saints" id="legendBox" style="bottom: 5%;">
+            <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4203,7 +4203,7 @@ checkAdminAccess();
 
             <div class="stAgustine" id="idagustine"><h3 style="color: white;">St. Augustin</h3><br>
                 <button id="IDagustineclosebtn" class="agustineclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4392,7 +4392,7 @@ checkAdminAccess();
             </div>
             <div class="stDominic" id="iddominic"><h3 style="color: white;">St. Dominic</h3><br>
                 <button id="IDdominicclosebtn" class="dominicclosebtn">&times;</button>
-                <div class="Saints" id="legendBox" style="bottom: 5%;">
+                <div class="Saints" id="legendBox" >
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4746,7 +4746,7 @@ checkAdminAccess();
           </div>
           <div class="stMark" id="idmark"><h3 style="color: white;">St. Mark</h3><br>
             <button id="IDmarkclosebtn" class="markclosebtn">&times;</button>
-            <div class="medium" id="legendBox" >
+            <div class="medium" id="legendBox" style="top: 480px;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
@@ -4774,7 +4774,7 @@ checkAdminAccess();
           </div>
           <div class="stLuke" id="idluke"><h3 style="color: white;">St. Lukes</h3><br>
             <button id="IDlukeclosebtn" class="lukeclosebtn">&times;</button>
-            <div class="medium" id="legendBox">
+            <div class="medium" id="legendBox" style="top: 500px;">
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
