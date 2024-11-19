@@ -1,3 +1,6 @@
+String.prototype.toProperCase = function() { return this.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }); };
+
+
 document.addEventListener('DOMContentLoaded', (event) => {
     const gridItems = document.querySelectorAll('.grid-itemA3, .grid-itemB3, .grid-itemA2, .grid-itemB2, .grid-itemA,.grid-itemB, .grid-itemC2S1A, ' +
         '.grid-itemC2S1B, .grid-itemC2S2A, .grid-itemC2S2B, .grid-itemC2S12A, .grid-itemC2S12B, .grid-itemC2S22A, ' +
@@ -46,49 +49,49 @@ document.addEventListener('DOMContentLoaded', (event) => {
 
                         switch (memLot) {
                             case "Family Estate":
-                                memLotMessage = 'memorial lot type: family estate';
+                                memLotMessage = 'Memorial Lot Type: Family Estate';
                                 break;
                             case "Garden Lots":
-                                memLotMessage = 'memorial lot type: garden lots';
+                                memLotMessage = 'Memorial Lot Type: Garden Lots';
                                 break;
                             case "Lawn Lots":
-                                memLotMessage = 'memorial lot type: lawn lots';
+                                memLotMessage = 'Memorial Lot Type: Lawn Lots';
                                 break;
                             default:
-                                memLotMessage = 'this lot is currently available for purchase.';
+                                memLotMessage = 'This lot is currently available for purchase.';
                         }
 
                         popupContent.innerHTML = `
                             <div style="text-align: left;">
-                                <h3 style="color: green;">status: available</h3>
+                                <h3 style="color: green;">Status: Available</h3>
                                 <hr><br>
-                                <p style="font-style: italic;">this lot is currently available for purchase.</p>
+                                <p style="font-style: italic;">This lot is currently available for purchase.</p>
                                 <br>
-                                <p style="font-style: italic;">${memLotMessage.toLowerCase()}</p>
+                                <p style="font-style: italic;">${memLotMessage.toProperCase()}</p>
                             </div>`;
                     } else {
                         popupContent.innerHTML = `
                             <div id="backgroundContent" style="text-align: left;">
-                                <h4 style="color: red;">status: sold</h4>
+                                <h4 style="color: red;">Status: Sold</h4>
                                 <hr><br>
                                 <div>
-                                    <label>lot number: ${(data.Lot_No || '').toLowerCase()}</label>
+                                    <label>Lot Number: ${(data.Lot_No || '').toProperCase()}</label>
                                 </div>
                                 <br>
                                 <div>
-                                    <label>memorial lots: ${(data.mem_lots || '').toLowerCase()}</label>
+                                    <label>Memorial Lots: ${(data.mem_lots || '').toProperCase()}</label>
                                 </div>
                                 <br>
                                 <div>
-                                    <label>memorial name: ${(data.mem_sts || '').toLowerCase()}</label>
+                                    <label>Memorial Name: ${(data.mem_sts || '').toProperCase()}</label>
                                 </div>
                                 <br>
                                 <div>
-                                    <label>lot owner: ${(data.LO_name || '').toLowerCase()}</label>
+                                    <label>Lot Owner: ${(data.LO_name || '').toProperCase()}</label>
                                 </div>
                                 <br>
                                 <div>
-                                    <label>address: ${(data.mem_address || '').toLowerCase()}</label>
+                                    <label>Address: ${(data.mem_address || '').toProperCase()}</label>
                                 </div>
                             </div>`;
                     }

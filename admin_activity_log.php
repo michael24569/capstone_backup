@@ -15,9 +15,7 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Logs</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
-    
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <style>
         /* General Styling */
@@ -27,14 +25,18 @@ $result = $conn->query($sql);
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+}    @font-face {
+    font-family: 'MyFont';
+    src: url('fonts/Inter.ttf') format('ttf'),
 }
-
 body {
-  font-family: "Michroma", "sans-serif";
+  font-family: 'MyFont';
   height: 100vh;
   background-color: #071c14;";
 }
-
+tbody, thead, .form-control, td {
+    font-family: 'MyFont';
+}
 /* Sidebar Styling */
 .sidebar{
   bottom: 0px;
@@ -84,7 +86,7 @@ body {
   
 }
 .sidebar ul li a .text{
-  font-family: "Michroma", sans-serif;
+  font-family: 'MyFont';
   position: relative;
   height: 60px;
   display: flex;
@@ -302,12 +304,12 @@ body {
             <tbody>
                 <?php while ($row = $result->fetch_assoc()): ?>
                     <tr>
-                        <td><?php echo strtolower(htmlspecialchars($row['role'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['fullname'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['Lot_No'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['mem_sts'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['action'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['timestamp'])); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['role']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['fullname']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['Lot_No']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_sts']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['action']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['timestamp']))); ?></td>
                     </tr>
                 <?php endwhile; ?>
             </tbody>

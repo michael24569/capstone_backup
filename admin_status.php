@@ -47,7 +47,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Manage Staff Accounts</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
 
     <link rel="stylesheet" href="style1.css">
 </head>
@@ -87,10 +86,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <tbody>
                     <?php while($row = mysqli_fetch_assoc($result)) { ?>
                     <tr>
-                        <td><?php echo strtolower(htmlspecialchars($row['fullname'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['username'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['email'])); ?></td>
-                        <td id="status-<?php echo $row['id']; ?>"><?php echo strtolower(htmlspecialchars($row['accountStatus'])); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['fullname']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['username']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['email']))); ?></td>
+                        <td id="status-<?php echo $row['id']; ?>"><?php echo ucwords(strtolower(htmlspecialchars($row['accountStatus']))); ?></td>
 <td class="action-button">
     <button 
         id="status-btn-<?php echo $row['id']; ?>" 
@@ -154,6 +153,14 @@ function updateStatus(id, currentStatus) {
 }
 </script>
 <style>
+    @font-face {
+    font-family: 'MyFont';
+    src: url('fonts/Inter.ttf') format('ttf'),
+}
+tbody, thead, .form-control, td, .btn-red, .btn-green , .btn, {
+    font-family: 'MyFont';
+}
+      
     .btn-green {
   background-color: #4CAF50;
   justify-content: center;

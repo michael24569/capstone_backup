@@ -60,7 +60,7 @@ body {
   
 }
 .sidebar ul li a .text{
-  font-family: "Michroma", sans-serif;
+  font-family: 'MyFont';
   position: relative;
   height: 60px;
   display: flex;
@@ -232,6 +232,11 @@ body {
 .btn-search {
   background-color: #3f2afc;
   margin-left: 10px;
+  font-family: 'MyFont';
+}
+@font-face {
+  font-family: 'MyFont';
+  src: url('fonts/Inter.ttf') format('ttf'),
 }
 
 /* Aligning Edit and Archive Buttons */

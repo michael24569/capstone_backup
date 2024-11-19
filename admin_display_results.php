@@ -35,59 +35,59 @@ function displayRecordStatus() {
         'grid-itemA' => 'apartment 1 side a',
         'grid-itemB' => 'apartment 1 side b',
     
-        //columbarium 2 1st floor
-        'grid-itemC2S1A' => 'columbarium 2 (1st floor block 1) side a',
-        'grid-itemC2S1B' => 'columbarium 2 (1st floor block 1) side b',
-        'grid-itemC2S2A' => 'columbarium 2 (1st floor block 2) side a',
-        'grid-itemC2S2B' => 'columbarium 2 (1st floor block 2) side b',
-        'grid-itemC2blk3A' => 'columbarium 2 (1st floor block 3) side a',
-        'grid-itemC2blk3B' => 'columbarium 2 (1st floor block 3) side b',
-        'grid-itemC2blk4A' => 'columbarium 2 (1st floor block 3) side a',
-        'grid-itemC2blk4B' => 'columbarium 2 (1st floor block 3) side b',
-        //columbarium 2 2nd floor
-        'grid-itemC2S12A' => 'columbarium 2 (2nd floor block 1) side a',
-        'grid-itemC2S12B' => 'columbarium 2 (2nd floor block 1) side b',
-        'grid-itemC2S22A' => 'columbarium 2 (2nd floor block 2) side a',
-        'grid-itemC2S22B' => 'columbarium 2 (2nd floor block 2) side b',
-        'grid-itemblk3AC2' => 'columbarium 2 (2nd floor block 3) side a',
-        'grid-itemblk3BC2' => 'columbarium 2 (2nd floor block 3) side b',
-        'grid-itemblk4AC2' => 'columbarium 2 (2nd floor block 4) side a',
-        'grid-itemblk4BC2' => 'columbarium 2 (2nd floor block 4) side b',
+        //Columbarium 2 1st floor
+        'grid-itemC2S1A' => 'Columbarium 2 (1st floor block 1) side a',
+        'grid-itemC2S1B' => 'Columbarium 2 (1st floor block 1) side b',
+        'grid-itemC2S2A' => 'Columbarium 2 (1st floor block 2) side a',
+        'grid-itemC2S2B' => 'Columbarium 2 (1st floor block 2) side b',
+        'grid-itemC2blk3A' => 'Columbarium 2 (1st floor block 3) side a',
+        'grid-itemC2blk3B' => 'Columbarium 2 (1st floor block 3) side b',
+        'grid-itemC2blk4A' => 'Columbarium 2 (1st floor block 3) side a',
+        'grid-itemC2blk4B' => 'Columbarium 2 (1st floor block 3) side b',
+        //Columbarium 2 2nd floor
+        'grid-itemC2S12A' => 'Columbarium 2 (2nd floor block 1) side a',
+        'grid-itemC2S12B' => 'Columbarium 2 (2nd floor block 1) side b',
+        'grid-itemC2S22A' => 'Columbarium 2 (2nd floor block 2) side a',
+        'grid-itemC2S22B' => 'Columbarium 2 (2nd floor block 2) side b',
+        'grid-itemblk3AC2' => 'Columbarium 2 (2nd floor block 3) side a',
+        'grid-itemblk3BC2' => 'Columbarium 2 (2nd floor block 3) side b',
+        'grid-itemblk4AC2' => 'Columbarium 2 (2nd floor block 4) side a',
+        'grid-itemblk4BC2' => 'Columbarium 2 (2nd floor block 4) side b',
     
-        //columbarium 1 1st floor
-        'grid-itemC1S11A' => 'columbarium 1 (1st floor block 1) side a',
-        'grid-itemC1S11B' => 'columbarium 1 (1st floor block 1) side b',
-        'grid-itemC1S22A' => 'columbarium 1 (1st floor block 2) side a',
-        'grid-itemC1S22B' => 'columbarium 1 (1st floor block 2) side b',
-        'grid-itemC1BLK3A' => 'columbarium 1 (1st floor block 3) side a',
-        'grid-itemC1BLK3B' => 'columbarium 1 (1st floor block 3) side b',
-        'grid-itemC1BLK4A' => 'columbarium 1 (1st floor block 4) side a',
-        'grid-itemC1BLK4B' => 'columbarium 1 (1st floor block 4) side b',
-        //columbarium 1 2nd floor
-        'grid-itemC1S1A' => 'columbarium 1 (2nd floor block 1) side a',
-        'grid-itemC1S1B' => 'columbarium 1 (2nd floor block 1) side b',
-        'grid-itemC1SA' => 'columbarium 1 (2nd floor block 2) side a',
-        'grid-itemC1SB' => 'columbarium 1 (2nd floor block 2) side b',
-        'grid-itemC1blk3A2nd' => 'columbarium 1 (2nd floor block 3) side a',
-        'grid-itemC1blk3B2nd' => 'columbarium 1 (2nd floor block 3) side b',
-        'grid-itemC1blk4A2nd' => 'columbarium 1 (2nd floor block 4) side a',
-        'grid-itemC1blk4B2nd' => 'columbarium 1 (2nd floor block 4) side b',
+        //Columbarium 1 1st floor
+        'grid-itemC1S11A' => 'Columbarium 1 (1st floor block 1) side a',
+        'grid-itemC1S11B' => 'Columbarium 1 (1st floor block 1) side b',
+        'grid-itemC1S22A' => 'Columbarium 1 (1st floor block 2) side a',
+        'grid-itemC1S22B' => 'Columbarium 1 (1st floor block 2) side b',
+        'grid-itemC1BLK3A' => 'Columbarium 1 (1st floor block 3) side a',
+        'grid-itemC1BLK3B' => 'Columbarium 1 (1st floor block 3) side b',
+        'grid-itemC1BLK4A' => 'Columbarium 1 (1st floor block 4) side a',
+        'grid-itemC1BLK4B' => 'Columbarium 1 (1st floor block 4) side b',
+        //Columbarium 1 2nd floor
+        'grid-itemC1S1A' => 'Columbarium 1 (2nd floor block 1) side a',
+        'grid-itemC1S1B' => 'Columbarium 1 (2nd floor block 1) side b',
+        'grid-itemC1SA' => 'Columbarium 1 (2nd floor block 2) side a',
+        'grid-itemC1SB' => 'Columbarium 1 (2nd floor block 2) side b',
+        'grid-itemC1blk3A2nd' => 'Columbarium 1 (2nd floor block 3) side a',
+        'grid-itemC1blk3B2nd' => 'Columbarium 1 (2nd floor block 3) side b',
+        'grid-itemC1blk4A2nd' => 'Columbarium 1 (2nd floor block 4) side a',
+        'grid-itemC1blk4B2nd' => 'Columbarium 1 (2nd floor block 4) side b',
     
         //all of the Saints
-        'grid-itemRAF' => 'st. rafael',
-        'grid-itempeter' => 'st. peter',
-        'grid-itempaul' => 'st. paul',
-        'grid-itemjude' => 'st. jude',
-        'grid-itemjohn' => 'st. john',
-        'grid-itemjoseph' => 'st. joseph',
-        'grid-itemjames' => 'st. james',
-        'grid-itemmatthew' => 'st. matthew',
-        'grid-itemagustine' => 'st. agustine',
-        'grid-itemdominic' => 'st. dominic',
-        'grid-itemmark' => 'st. mark',
-        'grid-itemluke' => 'st. luke',
-        'grid-itemisidore' => 'st. isidore',
-        'grid-itempm' => 'st. michael and st. patrick'
+        'grid-itemRAF' => 'St. Rafael',
+        'grid-itempeter' => 'St. Peter',
+        'grid-itempaul' => 'St. Paul',
+        'grid-itemjude' => 'St. Jude',
+        'grid-itemjohn' => 'St. John',
+        'grid-itemjoseph' => 'St. Joseph',
+        'grid-itemjames' => 'St. James',
+        'grid-itemmatthew' => 'St. Matthew',
+        'grid-itemagustine' => 'St. Agustine',
+        'grid-itemdominic' => 'St. Dominic',
+        'grid-itemmark' => 'St. Mark',
+        'grid-itemluke' => 'St. Luke',
+        'grid-itemisidore' => 'St. Isidore',
+        'grid-itempm' => 'St. Michael and St. Patrick'
     ];
     
     asort($memorialNames);
@@ -106,7 +106,7 @@ function displayRecordStatus() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Record Status Summary</title>
     <style>
-    
+ 
         body {
             display: block;
             justify-content: start;
@@ -190,6 +190,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <style>
+           @font-face {
+    font-family: 'MyFont';
+    src: url('fonts/Inter.ttf') format('ttf'),
+}
+body {
+    font-family: 'MyFont';
+}
 
         .center-record {
             position: fixed;

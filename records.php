@@ -48,9 +48,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Record Section</title>
     <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
 
     <style>
+           @font-face {
+    font-family: 'MyFont';
+    src: url('fonts/Inter.ttf') format('ttf'),
+}
+tbody, thead, .form-control, td {
+    font-family: 'MyFont';
+}
         .refresh-icon {
             background-color: #00000093;
             margin-left: 10px;
@@ -176,11 +182,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             <tbody>
                 <?php while($row = mysqli_fetch_assoc($result)) { ?>
                 <tr data-id="<?php echo htmlspecialchars($row['id']); ?>">
-                    <td><?php echo strtolower(htmlspecialchars($row['Lot_No'])); ?></td>
-                    <td><?php echo strtolower(htmlspecialchars($row['mem_lots'])); ?></td>
-                    <td><?php echo strtolower(htmlspecialchars($row['mem_sts'])); ?></td>
-                    <td><?php echo strtolower(htmlspecialchars($row['LO_name'])); ?></td>
-                    <td><?php echo strtolower(htmlspecialchars($row['mem_address'])); ?></td>
+                <td><?php echo ucwords(strtolower(htmlspecialchars($row['Lot_No']))); ?></td>
+                <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_lots']))); ?></td>
+                <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_sts']))); ?></td>
+                <td><?php echo ucwords(strtolower(htmlspecialchars($row['LO_name']))); ?></td>
+                <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_address']))); ?></td>
+
                     <td class="action-buttons">
                         <a class='btn btn-edit' href='update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
                         <a class='btn btn-archive' href='#' onclick="confirmArchive(event, '<?php echo htmlspecialchars($row["id"]); ?>')">Archive</a>

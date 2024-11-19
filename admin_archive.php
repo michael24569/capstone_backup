@@ -31,8 +31,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive section</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
     <link rel="stylesheet" href="style1.css">
+    <style>
+         @font-face {
+    font-family: 'MyFont';
+    src: url('fonts/Inter.ttf') format('ttf'),
+}
+tbody, thead, .form-control, td {
+    font-family: 'MyFont';
+}
+    </style>
 </head>
 <body style="background: #071c14;">
 
@@ -65,12 +73,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                     while($row = mysqli_fetch_assoc($result)) {
                     ?>
                     <tr>
-                        <td><?php echo strtolower(htmlspecialchars($row['Lot_No'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['mem_lots'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['mem_sts'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['LO_name'])); ?></td>
-                        <td><?php echo strtolower(htmlspecialchars($row['mem_address'])); ?></td>
-                    </tr>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['Lot_No']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_lots']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_sts']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['LO_name']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_address']))); ?></td>
+
                     <tr class="divider-row">
                         <td colspan="6"></td>
                     </tr>
