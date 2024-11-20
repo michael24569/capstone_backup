@@ -10,11 +10,12 @@ checkAdminAccess();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    <script type="module" src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@5.4.0/dist/ionicons/ionicons.js"></script>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
+    
+    
+    
     <style>
         .sidebar {
+          
   bottom: 0px;
   position: fixed;
   width: 60px;
@@ -55,6 +56,7 @@ checkAdminAccess();
 }
 
 .sidebar ul li a .icon {
+  bottom:15px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -66,12 +68,12 @@ checkAdminAccess();
 }
 
 .sidebar ul li a .text {
-  font-family: "Michroma", sans-serif;
+  bottom:15px;
   position: relative;
   height: 60px;
   display: flex;
   align-items: center;
-  font-size: 10px;
+  font-size: 15px;
   color: #222222;
   text-transform: uppercase;
 }
@@ -81,6 +83,7 @@ checkAdminAccess();
 }
 
 .sidebar .icon-logo .text {
+  
   font-size: 11px;
   font-weight: 300;
   font-weight: bold;
@@ -161,8 +164,10 @@ checkAdminAccess();
   }
 }
 
+
         body {
-            font-family: "Michroma", sans-serif;
+            
+            
             margin: 0;
             padding: 0;
             box-sizing: border-box;

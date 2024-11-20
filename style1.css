@@ -33,6 +33,7 @@ body {
 .sidebar ul {
   position: relative;
   height: 100vh;
+  right:0px;
 }
 
 .sidebar ul li {
@@ -67,7 +68,7 @@ body {
   height: 60px;
   display: flex;
   align-items: center;
-  font-size: 10px;
+  font-size: 15px;
   color: #222222;
   text-transform: uppercase;
 }
@@ -299,6 +300,7 @@ body {
  
 }
 .btn-edit {
+
   background-color: #4CAF50;
   margin-right: 5px;
   

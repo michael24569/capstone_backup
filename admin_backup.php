@@ -20,8 +20,7 @@ unset($_SESSION['backup_file']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Backup Records</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
     <link rel="stylesheet" href="backupButton.css">
     <link rel="stylesheet" href="style1.css">
 <style>
@@ -61,7 +60,7 @@ unset($_SESSION['backup_file']);
 }
 </style>
 </head>
-<body style= "font-family: Michroma, sans-serif;" style="background: #071c14;">
+<body style="background: #071c14;">
 <button id="sidebarToggle" class="sidebar-toggle-btn">
     <ion-icon name="menu-outline"></ion-icon>
 </button>
@@ -70,13 +69,13 @@ unset($_SESSION['backup_file']);
 
 <div class="center_record">
     <div class="container">
-        <h1 class="form-title">Backup Records</h1>
+        <h1 style= "font-size: 40px;"class="form-title">Backup Records</h1>
 
         <!-- Form for backup submission -->
         <form action="backupCondition.php" method="POST">
             <div class="input-group">
             <i class="fas fa-lock"></i>
-                <input type="password" name="password" id="password" placeholder="Enter Password" >
+                <input type="password" name="password" id="password" placeholder="Enter Password">
                 <label for="password">Password</label>
             </div>
 
@@ -104,7 +103,6 @@ unset($_SESSION['backup_file']);
     </div>
 </div>
 
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 </body>
 </html>
