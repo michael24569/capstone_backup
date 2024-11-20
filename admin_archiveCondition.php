@@ -19,7 +19,7 @@ if (isset($_GET["id"])) {
     $fullname = $_SESSION['fullname'];
     $userRole = $_SESSION['role'];
 
-    $sql = "SELECT Lot_No, mem_sts FROM records WHERE id = ?";
+    $sql = "SELECT * FROM records WHERE id = ?";
     $stmt = $connection->prepare($sql);
     $stmt->bind_param("i", $id);
     $stmt->execute();
@@ -32,13 +32,19 @@ if (isset($_GET["id"])) {
         $action = "archived"; 
         
         // Insert log entry
-        $logSql = "INSERT INTO record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
+        $logSql = "INSERT INTO record_logs (role, fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
         $logStmt = $connection->prepare($logSql);
-        $logStmt->bind_param("sssss",  $userRole, $fullname, $lot, $mem_sts, $action);
+        $logStmt->bind_param("sssss", $userRole, $fullname, $lot, $mem_sts, $action);
         $logStmt->execute();
+
+        // Insert record into archive table
+        $archiveSql = "INSERT INTO archive ( Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
+        $archiveStmt = $connection->prepare($archiveSql);
+        $archiveStmt->bind_param("sssss", $row['Lot_No'], $row['mem_lots'], $row['mem_sts'], $row['LO_name'], $row['mem_address']);
+        $archiveStmt->execute();
     }
 
-    // Delete the record
+    // Delete the record from the records table
     $sql = "DELETE FROM records WHERE id = ?";
     $stmt = $connection->prepare($sql);
     $stmt->bind_param("i", $id);
@@ -54,3 +60,4 @@ if (isset($_GET["id"])) {
     header("Location: admin_records.php?status=error");
     exit();
 }
+?>

@@ -1,9 +1,23 @@
 <?php
+
 $error = null;
-include 'db-connection.php';
+$databaseError = null;
 
+// Try connecting to the database
+try {
+    include 'db-connection.php'; // Adjust to your database connection logic
+    if (!$conn) {
+        throw new Exception("Database connection failed");
+    }
+} catch (Exception $e) {
+    $databaseError = $e->getMessage();
+    // Redirect to a database setup page
+    header("Location: setup-database.php");
+    exit();
+}
+
+// Main Sign-in Logic
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
-
     function validate($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -32,12 +46,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
 
-            // Check if the account is active
             if ($row['accountStatus'] !== 'Active') {
                 $error = "Account is not active. Please contact the administrator.";
-            }
-            // Check plain text password or hashed password
-            else if (password_verify($password, $row['password'])) {
+            } else if (password_verify($password, $row['password'])) {
                 loginUser($row, $row['role']);
             } else {
                 $error = "Incorrect password.";
@@ -48,7 +59,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
     }
 
     if ($error !== null) {
-        $_SESSION['error'] = $error;  // Store error in the session
+        $_SESSION['error'] = $error;
         header("Location: index.php");
         exit();
     }
@@ -62,9 +73,8 @@ function loginUser($row, $role) {
 
     if ($role === 'Admin') {
         header('Location: admin_map.php');
-         // Redirect admin to admin dashboard
     } else if ($role === 'Staff') {
-        header('Location: home.php'); // Redirect staff to staff dashboard
+        header('Location: home.php');
     }
     exit();
 }

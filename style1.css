@@ -172,6 +172,7 @@ body {
   align-items: center;
   width: 100%;
   margin: 0 auto;
+  overflow-x: auto;
 }
 .align img {
   margin-top: 30px;
@@ -210,6 +211,11 @@ body {
 }
 
 /* Records Table Styling */
+@media (max-width: 600px) {
+  th, td {
+    font-size: 0.9em;
+  }
+}
 .table-responsive {
   margin-top: 20px;
   width: 100%;
@@ -218,6 +224,7 @@ body {
   margin-right: 10px;
   margin-left: 5rem;
   padding: 10px;
+  border-collapse: collapse;
 }
 .audit {
     margin-top: 20px;

@@ -54,11 +54,22 @@ if (checkAdminPassword($inputPassword, $connection)) {
     }
 
     foreach ($tables as $table) {
+        // Get table structure
         $query = "SHOW CREATE TABLE $table";
         $result = $connection->query($query);
         if ($result) {
-            $row = $result->fetch_row();
-            $sqlScript .= "\n\n" . $row[1] . ";\n\n";
+            $row = $result->fetch_assoc();
+            $sqlScript .= "\n\n" . $row['Create Table'] . ";\n\n";
+
+            // Get triggers related to the table
+            $triggerQuery = "SHOW TRIGGERS LIKE '$table'";
+            $triggerResult = $connection->query($triggerQuery);
+            while ($triggerRow = $triggerResult->fetch_assoc()) {
+                $sqlScript .= "\n\n";
+                $sqlScript .= "CREATE TRIGGER " . $triggerRow['Trigger'] . " " . $triggerRow['Timing'] . " " . $triggerRow['Event'] . " ON " . $triggerRow['Table'] . " FOR EACH ROW " . $triggerRow['Statement'] . ";\n";
+            }
+
+            // Get table data
             $query = "SELECT * FROM $table";
             $result = $connection->query($query);
             if ($result) {
