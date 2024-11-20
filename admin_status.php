@@ -157,7 +157,7 @@ function updateStatus(id, currentStatus) {
     font-family: 'MyFont';
     src: url('fonts/Inter.ttf') format('ttf'),
 }
-tbody, thead, .form-control, td, .btn-red, .btn-green , .btn, {
+tbody, thead, .form-control, td {
     font-family: 'MyFont';
 }
       

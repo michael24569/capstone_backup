@@ -171,7 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         class="form-control" 
                         name="lot" 
                         value="<?php echo htmlspecialchars($lot) ?>" 
-                        oninput="validateNumber(this)">
+                        oninput="validateNumber(this)" required>
     </div>
 </div>
 
@@ -218,7 +218,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Lot Owner</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($name) ?>">
+                    <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($name) ?>" required>
                 </div>
             </div>
             <div class="row mb-3">

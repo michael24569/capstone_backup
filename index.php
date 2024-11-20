@@ -29,7 +29,7 @@ require("loginCondition.php");
     </svg>
   </div>
   <div class="input-field">
-    <input type="text" name="username" id="username" placeholder="Username" required>
+    <input type="text" name="username" id="username" placeholder="Username">
     <label for="username">Username</label>
             </div>
             <div class="input-group">
@@ -37,10 +37,9 @@ require("loginCondition.php");
             <path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"/></svg>
   </div>
   <div class="input-field">
-                <input type="password" name="password" id="password" placeholder="Password" required>
+                <input type="password" name="password" id="password" placeholder="Password">
                 <label for="password">Password</label>
             </div>
-            <p class="recover"><a href="recover.php">Forgot password?</a></p>
             <?php
             if (isset($_SESSION['error'])) {
                 echo '<p class="error">' . $_SESSION['error'] . '</p>';

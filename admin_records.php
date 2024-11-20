@@ -145,6 +145,8 @@ tbody, thead, .form-control, td {
 </head>
 <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+<script src="sweetalert/jquery-3.7.1.min.js"></script>
+<script src="sweetalert/sweetalert2.all.min.js"></script>
 <body>
     
 <?php include 'admin_sidebar.php'; ?> 
@@ -156,7 +158,7 @@ tbody, thead, .form-control, td {
 <div id="recordsContent" class="center_record">
     <div class="table-responsive">
         <h1 id="header1">Records Section</h1>
-        <a class="btn btn-primary btn-add" href="addRecord.php" role="button">Add new record</a>
+        <a class="btn btn-primary btn-add" href="admin_addRecord.php" role="button">Add new record</a>
         <br>
         <form method="GET" action="">
             <div class="input-group">
@@ -189,8 +191,9 @@ tbody, thead, .form-control, td {
                 <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_address']))); ?></td>
 
                     <td class="action-buttons">
-                        <a class='btn btn-edit' href='update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
-                        <a class='btn btn-archive' href='#' onclick="confirmArchive(event, '<?php echo htmlspecialchars($row["id"]); ?>')">Archive</a>
+                        <a class='btn btn-edit' href='admin_update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
+                        <a href="admin_archiveCondition.php?id=<?= $row['id']; ?>" class="btn btn-archive">Archive</a>
+
                     </td>
                 </tr>
                 <tr class="divider-row">
@@ -199,10 +202,14 @@ tbody, thead, .form-control, td {
                 <?php } ?>
             </tbody>
         </table>
+        <?php if (isset($_GET['m'])) : ?>
+            <div class="flash-data" data-flashdata="<?= htmlspecialchars($_GET['m']); ?>"></div>
+        <?php endif; ?> 
+
     </div>
 </div>
 
-<!-- Custom confirmation modal -->
+<!-- Custom confirmation modal
 <div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
         <p>Are you sure you want to archive this record?</p>
@@ -212,7 +219,7 @@ tbody, thead, .form-control, td {
         </div>
     </div>
 </div>
-
+                -->
 <!-- No Records Modal -->
 <div id="noRecordsModal" class="modal">
     <div class="modal-content">
@@ -225,7 +232,7 @@ tbody, thead, .form-control, td {
 </div>
 
 <script>
-    // Confirm Archive function
+    /* Confirm Archive function
     function confirmArchive(event, id) {
         event.preventDefault();
         const modal = document.getElementById('confirmModal');
@@ -238,7 +245,41 @@ tbody, thead, .form-control, td {
         document.getElementById('cancelButton').onclick = function() {
             modal.style.display = 'none';
         };
+    }*/
+    $(document).ready(function () {
+    // Event listener for the archive button
+    $('.btn-archive').on('click', function (e) {
+        e.preventDefault(); // Prevent the default anchor click action
+        const href = $(this).attr('href'); // Get the URL from the href attribute
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'Record will be archived!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Archive Record',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect to the archive link if confirmed
+                document.location.href = href;
+            }
+        });
+    });
+
+    // Handle flash messages
+    const flashdata = $('.flash-data').data('flashdata');
+    if (flashdata) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Record has been archived.',
+        });
     }
+});
+
 
     // Show modal if no records found
     <?php if ($noRecords): ?>

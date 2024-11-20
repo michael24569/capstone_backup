@@ -40,10 +40,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
             else if (password_verify($password, $row['password'])) {
                 loginUser($row, $row['role']);
             } else {
-                $error = "Incorrect Username or Password";
+                $error = "Incorrect password.";
             }
         } else {
-            $error = "Incorrect Username or Password";
+            $error = "Username not found.";
         }
     }
 

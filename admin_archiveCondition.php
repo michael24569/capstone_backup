@@ -48,7 +48,7 @@ if (isset($_GET["id"])) {
     $connection->close();
 
     // Redirect with success message
-    header("Location: admin_records.php?status=success");
+    header("Location: admin_records.php?m=1");
     exit();
 } else {
     header("Location: admin_records.php?status=error");
