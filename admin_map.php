@@ -19,7 +19,7 @@ checkAdminAccess();
     <link rel="stylesheet" href="LotInfo.css">
     <link rel="stylesheet" href="stsLots.css">
     <link rel ="stylesheet" href="Paiyakan.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
+    
     <script src="script.js"></script>
     <style>
 
@@ -268,7 +268,8 @@ checkAdminAccess();
     <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
     <br>
     <button class='btn btn-search' type="button" id="searchButton">
-        <ion-icon name="search-outline"></ion-icon>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  style="width: 20px; height: 20px; fill: white;">
+        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
     </button>
 </div>
 
@@ -4935,7 +4936,7 @@ checkAdminAccess();
       </div>
     <script src="paiyakan.js"></script>
     <script src="LotInfo.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
         

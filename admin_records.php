@@ -54,7 +54,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
   display: none; /* Default: hidden, visible in responsive view */
   position: absolute; /* Position inside the sidebar */
   top: 20px; /* Adjust position from the top of the sidebar */
-  left: 5px; /* Align inside the sidebar */
+  left: -5px; /* Align inside the sidebar */
   background: none; /* No background */
   border: none; /* Remove border */
   padding: 10px;
@@ -79,7 +79,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     display: block; /* Show the toggle button on smaller screens */
   }
 
-  
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar by default */
+    transition: transform 0.3s ease-in-out;
+  }
+
   .sidebar.active {
     transform: translateX(0); /* Show sidebar when active */
   }
@@ -177,7 +181,7 @@ tbody, thead, .form-control, td {
         }
     </style>
 </head>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="sweetalert/jquery-3.7.1.min.js"></script>
 <script src="sweetalert/sweetalert2.all.min.js"></script>

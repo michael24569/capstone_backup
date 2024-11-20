@@ -19,7 +19,7 @@ $result = $conn->query($sql);
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <style>
         /* General Styling */
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -39,6 +39,7 @@ tbody, thead, .form-control, td {
 }
 /* Sidebar Styling */
 .sidebar {
+  
   bottom: 0px;
   position: fixed;
   width: 60px;
@@ -52,6 +53,7 @@ tbody, thead, .form-control, td {
 }
 
 .sidebar:hover {
+  
   width: 300px;
 }
 
@@ -72,6 +74,7 @@ tbody, thead, .form-control, td {
 }
 
 .sidebar ul li a {
+  
   position: relative;
   display: flex;
   white-space: nowrap;
@@ -94,7 +97,7 @@ tbody, thead, .form-control, td {
   height: 60px;
   display: flex;
   align-items: center;
-  font-size: 10px;
+  font-size: 15px;
   color: #222222;
   text-transform: uppercase;
 }
