@@ -224,6 +224,7 @@ checkAdminAccess();
     </style>
 
 </head>
+
 <body style="background: #071c14;" id="bg">
 <div id="loader" class="loader">
         <div class="background"></div>
@@ -255,9 +256,11 @@ checkAdminAccess();
     </div>
 </div>
         
-   
+        <!-- appear this button when the sidebar is hide-->
       <img src="map1.png" usemap="#mymap" id="responsiveImage">
-
+      <button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+</button>
 
 <!-- Search button for the map-->
 <div class="input-group">
@@ -4935,6 +4938,9 @@ checkAdminAccess();
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
+        
+
+        
         //try for responsive imagemap
 window.onload = function() {
             var img = document.getElementById('responsiveImage');

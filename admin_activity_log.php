@@ -38,9 +38,9 @@ tbody, thead, .form-control, td {
     font-family: 'MyFont';
 }
 /* Sidebar Styling */
-.sidebar{
+.sidebar {
   bottom: 0px;
-  position:fixed;
+  position: fixed;
   width: 60px;
   height: 100vh;
   background: #dee7e2;
@@ -48,33 +48,37 @@ tbody, thead, .form-control, td {
   transition: 0.5s;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  box-shadow: 0 50px 40px  black;
+  box-shadow: 0 50px 40px black;
 }
-.sidebar:hover{
+
+.sidebar:hover {
   width: 300px;
 }
-.sidebar ul{
+
+.sidebar ul {
   position: relative;
   height: 100vh;
-  margin-left: -30px;
+  right:30px;
+}
 
+.sidebar ul li {
+  list-style: none;
   
 }
-.sidebar ul li{
-  list-style: none;
-}
-.sidebar ul li:hover{
+
+.sidebar ul li:hover {
   transition: 0.8s;
   background: #b3d1b3;
-  
 }
-.sidebar ul li a{
+
+.sidebar ul li a {
   position: relative;
   display: flex;
   white-space: nowrap;
   text-decoration: none;
 }
-.sidebar ul li a .icon{
+
+.sidebar ul li a .icon {
   position: relative;
   display: flex;
   justify-content: center;
@@ -83,7 +87,6 @@ tbody, thead, .form-control, td {
   height: 60px;
   font-size: 1.5rem;
   color: #222222;
-  
 }
 .sidebar ul li a .text{
   font-family: 'MyFont';
@@ -96,23 +99,90 @@ tbody, thead, .form-control, td {
   text-transform: uppercase;
 }
 
-.sidebar .icon-logo{
+.sidebar .icon-logo {
   margin-bottom: 20px;
 }
-.sidebar .icon-logo .text{
+
+.sidebar .icon-logo .text {
   font-size: 11px;
   font-weight: 300;
   font-weight: bold;
 }
-.sidebar .icon-logo .text:hover{
+
+.sidebar .icon-logo .text:hover {
   background: #dee7e2;
 }
-.bottom{
+
+.bottom {
   position: absolute;
   bottom: 0;
   width: 100%;
 }
 
+/* Sidebar toggle button */
+/* Sidebar toggle button */
+.sidebar-toggle-btn {
+  display: none; /* Default: hidden, visible in responsive view */
+  position: absolute; /* Position inside the sidebar */
+  top: 20px; /* Adjust position from the top of the sidebar */
+  left: 15px; /* Align inside the sidebar */
+  background: none; /* No background */
+  border: none; /* Remove border */
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.sidebar-toggle-btn ion-icon {
+  font-size: 2rem; /* Adjust icon size */
+  color: white; /* White icon color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for toggle button */
+.sidebar-toggle-btn:hover ion-icon {
+  color: #b3d1b3; /* Change icon color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar by default */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .sidebar {
+    width: 50px;
+  }
+
+  .sidebar:hover {
+    width: 150px;
+  }
+
+  .sidebar ul li a .icon {
+    min-width: 50px;
+    height: 50px;
+    font-size: 1.2rem;
+  }
+
+  .sidebar ul li a .text {
+    font-size: 9px;
+  }
+
+  .sidebar .icon-logo .text {
+    font-size: 10px;
+  }
+}
 /* Page Content Styling */
 .align {
   display: flex;
@@ -285,7 +355,9 @@ tbody, thead, .form-control, td {
     </style>
 </head>
 <body>
-  
+<button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+</button>s
 <?php include 'admin_sidebar.php'; ?>
    
     <div class="audit" >
