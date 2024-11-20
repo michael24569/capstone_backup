@@ -190,7 +190,41 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <style>
+.sidebar-toggle-btn {
+  display: none; /* Default: hidden, visible in responsive view */
+  position: absolute; /* Position inside the sidebar */
+  top: 20px; /* Adjust position from the top of the sidebar */
+  left: 15px; /* Align inside the sidebar */
+  background: none; /* No background */
+  border: none; /* Remove border */
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
 
+.sidebar-toggle-btn ion-icon {
+  font-size: 2rem; /* Adjust icon size */
+  color: white; /* White icon color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for toggle button */
+.sidebar-toggle-btn:hover ion-icon {
+  color: #b3d1b3; /* Change icon color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+}
         .center-record {
             position: fixed;
             top: 50%;
@@ -206,6 +240,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <body>
 <?php include 'admin_sidebar.php'; ?>
 <!-- Popup Structure -->
+<button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+</button>
 <div id="reportPopup" class="center-record" style="display:none;">
     <div id="reportContent" class="table-responsive"></div>
     <button id="closeReportPopup">Close</button>

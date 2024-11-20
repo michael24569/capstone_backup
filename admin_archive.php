@@ -33,9 +33,48 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <title>Archive section</title>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
     <link rel="stylesheet" href="style1.css">
+    <style>
+        .sidebar-toggle-btn {
+  display: none; /* Default: hidden, visible in responsive view */
+  position: absolute; /* Position inside the sidebar */
+  top: 20px; /* Adjust position from the top of the sidebar */
+  left: 15px; /* Align inside the sidebar */
+  background: none; /* No background */
+  border: none; /* Remove border */
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.sidebar-toggle-btn ion-icon {
+  font-size: 2rem; /* Adjust icon size */
+  color: white; /* White icon color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for toggle button */
+.sidebar-toggle-btn:hover ion-icon {
+  color: #b3d1b3; /* Change icon color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+}
+    </style>
 </head>
 <body style="background: #071c14;">
-
+<button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+</button>
 <?php include 'admin_sidebar.php'; ?>
 
     <div id="recordsContent" class="center_record">
