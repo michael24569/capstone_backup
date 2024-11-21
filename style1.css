@@ -13,28 +13,33 @@ body {
   transition: 0.8s;
   background: #071c14;
 }
+/* Sidebar Styles */
 .sidebar {
-  z-index: 1000;
+  font-size: 15px;
   bottom: 0px;
   position: fixed;
-  width: 60px;
+  width: 60px; /* Sidebar width when collapsed */
   height: 100vh;
   background: #dee7e2;
   overflow: hidden;
-  transition: 0.5s;
+  transition: width 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for width and box-shadow */
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
 }
 
-.sidebar:hover {
-  width: 300px;
+.sidebar.active {
+  width: 300px; /* Expanded sidebar width */
 }
 
+.sidebar:hover {
+  width: 300px; /* Ensure that hover expands the sidebar */
+}
+
+/* Sidebar Content Styles */
 .sidebar ul {
   position: relative;
   height: 100vh;
-  right:0px;
 }
 
 .sidebar ul li {
@@ -63,7 +68,8 @@ body {
   font-size: 1.5rem;
   color: #222222;
 }
-.sidebar ul li a .text{
+
+.sidebar ul li a .text {
   font-family: 'MyFont';
   position: relative;
   height: 60px;
@@ -94,28 +100,27 @@ body {
   width: 100%;
 }
 
-/* Sidebar toggle button */
-/* Sidebar toggle button */
+/* Sidebar Toggle Button Styles */
 .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; /* Position inside the sidebar */
-  top: 20px; /* Adjust position from the top of the sidebar */
-  left: 15px; /* Align inside the sidebar */
-  background: none; /* No background */
-  border: none; /* Remove border */
+  position: absolute; 
+  top: 20px;
+  left: 15px;
+  background: none;
+  border: none;
   padding: 10px;
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.sidebar-toggle-btn ion-icon {
+.sidebar-toggle-btn svg {
   font-size: 2rem; /* Adjust icon size */
   color: white; /* White icon color */
   transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 /* Hover effect for toggle button */
-.sidebar-toggle-btn:hover ion-icon {
+.sidebar-toggle-btn:hover svg {
   color: #b3d1b3; /* Change icon color on hover */
 }
 
@@ -127,7 +132,7 @@ body {
 
   .sidebar {
     transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for sliding effect */
   }
 
   .sidebar.active {
@@ -158,6 +163,7 @@ body {
     font-size: 10px;
   }
 }
+
 
 
 /* Page Content Styling */

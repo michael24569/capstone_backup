@@ -270,7 +270,7 @@ checkAdminAccess();
 
 .main-content {
   text-align: center;
-}s
+}
     </style>
 </head>
 <body>

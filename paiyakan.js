@@ -719,3 +719,18 @@
     function updateSliderPosition() {
         slider.style.transform = `translateX(-${currentIndex * 100}%)`;
     }
+
+
+
+
+// Function to toggle the sidebar visibility with timer
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('active'); // Open the sidebar by adding the 'active' class
+  
+    // Set a timer to close the sidebar after 5 seconds
+    setTimeout(function() {
+      sidebar.classList.remove('active'); // Close the sidebar after 5 seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+  }
+  

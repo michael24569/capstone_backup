@@ -201,7 +201,7 @@ tbody, thead, .form-control, td {
     </style>
 </head>
 
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
 <script src="sweetalert/jquery-3.7.1.min.js"></script>
 <script src="sweetalert/sweetalert2.all.min.js"></script>
 <body>
@@ -210,12 +210,10 @@ tbody, thead, .form-control, td {
 
 
 <body style="background: #071c14;"> 
-<button id="sidebarToggle" class="sidebar-toggle-btn">
-<button class="top-left-button">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-      <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
-    </svg>
-  </button>
+<button class="top-left-button" onclick="toggleSidebar()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+  </svg>
 </button>
 <?php include 'admin_sidebar.php'; ?>
     <div id="recordsContent" class="center_record">
@@ -370,7 +368,19 @@ tbody, thead, .form-control, td {
     <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
         showAlert('Error archiving record.', 'error');
     <?php endif; ?>
+    // Function to toggle the sidebar visibility with timer
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('active'); // Open the sidebar by adding the 'active' class
+  
+    // Set a timer to close the sidebar after 5 seconds
+    setTimeout(function() {
+      sidebar.classList.remove('active'); // Close the sidebar after 5 seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+  }
+  
 </script>
+
 </body>
 </html>
 <?php

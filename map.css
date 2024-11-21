@@ -96,26 +96,31 @@ z-index: 10;
 }
   
 
+/* Sidebar Styles */
+/* Sidebar Styles */
 .sidebar {
   font-size: 15px;
   bottom: 0px;
   position: fixed;
-  width: 60px;
+  width: 60px; /* Sidebar width when collapsed */
   height: 100vh;
   background: #dee7e2;
   overflow: hidden;
-  transition: 0.5s;
+  transition: width 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for width and box-shadow */
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
 }
 
-
-
-.sidebar:hover {
-  width: 300px;
+.sidebar.active {
+  width: 300px; /* Expanded sidebar width */
 }
 
+.sidebar:hover {
+  width: 300px; /* Ensure that hover expands the sidebar */
+}
+
+/* Sidebar Content Styles */
 .sidebar ul {
   position: relative;
   height: 100vh;
@@ -147,7 +152,8 @@ z-index: 10;
   font-size: 1.5rem;
   color: #222222;
 }
-.sidebar ul li a .text{
+
+.sidebar ul li a .text {
   font-family: 'MyFont';
   position: relative;
   height: 60px;
@@ -178,8 +184,7 @@ z-index: 10;
   width: 100%;
 }
 
-/* Sidebar toggle button */
-/* Sidebar toggle button */
+/* Sidebar Toggle Button Styles */
 .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
   position: absolute; 
@@ -191,7 +196,6 @@ z-index: 10;
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
 }
-
 
 .sidebar-toggle-btn svg {
   font-size: 2rem; /* Adjust icon size */
@@ -210,10 +214,9 @@ z-index: 10;
     display: block; /* Show the toggle button on smaller screens */
   }
 
-
   .sidebar {
     transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for sliding effect */
   }
 
   .sidebar.active {
@@ -244,6 +247,7 @@ z-index: 10;
     font-size: 10px;
   }
 }
+
 
 
 
@@ -803,6 +807,7 @@ z-index: 10;
   color: #ffffff;
   
 }
+
 .Peter {
   color: white;
   text-align: center;
@@ -2135,7 +2140,8 @@ z-index: 10;
 
 .legends {
   font-weight: bold;
-  margin-right: 10px;
+  margin-right: 60px;
+  margin-left: 20px;
   text-align: center;
 }
 
