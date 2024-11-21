@@ -59,8 +59,8 @@ unset($_SESSION['error'], $_SESSION['successful']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Email</title>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    
     <link rel="stylesheet" href="backupButton.css">
     <link rel="stylesheet" href="style1.css">
 
@@ -176,11 +176,11 @@ unset($_SESSION['error'], $_SESSION['successful']);
     }
     </script>
 </head>
-<body style="font-family: Michroma, sans-serif;" style="background: #071c14;">
+<body  style="background: #071c14;">
 
 <div class="center_record">
     <div class="container">
-        <h1 class="form-title">Update Email</h1>
+        <h1 class="form-title" style="font-size:30px;">Update Email</h1>
 
         <!-- Form for email update -->
         <form id="updateEmailForm" action="" method="POST">
@@ -216,7 +216,7 @@ unset($_SESSION['error'], $_SESSION['successful']);
                 <input type="password" id="password" placeholder="Enter your password" required>
                 <br>
                 <div class="modal-buttons">
-                    <button type="button" onclick="submitForm()" class="btn btn-confirm">Confirm</button>
+                    <button type="button" onclick="submitForm()" class="btn btn-confirm" >Confirm</button>
                     <button type="button" onclick="closeModal()" class="btn btn-cancel">Cancel</button>
                 </div>
             </div>
@@ -224,7 +224,7 @@ unset($_SESSION['error'], $_SESSION['successful']);
     </div>
 </div>
 
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+
+
 </body>
 </html>

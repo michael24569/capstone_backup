@@ -40,6 +40,25 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 tbody, thead, .form-control, td {
     font-family: 'MyFont';
 }
+.top-left-button {
+  fill: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4caf4f00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.top-left-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-content {
+  text-align: center;
+}
     </style>
     <style>
         .sidebar-toggle-btn {
@@ -81,7 +100,11 @@ tbody, thead, .form-control, td {
 </head>
 <body style="background: #071c14;">
 <button id="sidebarToggle" class="sidebar-toggle-btn">
-    <ion-icon name="menu-outline"></ion-icon>
+<button class="top-left-button">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+      <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+    </svg>
+  </button>
 </button>
 <?php include 'admin_sidebar.php'; ?>
 

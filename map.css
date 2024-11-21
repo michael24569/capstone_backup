@@ -94,7 +94,7 @@ z-index: 10;
 .errorMessage{
   font-size: 10px;
 }
-
+  
 
 .sidebar {
   font-size: 15px;
@@ -182,24 +182,25 @@ z-index: 10;
 /* Sidebar toggle button */
 .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; /* Position inside the sidebar */
-  top: 20px; /* Adjust position from the top of the sidebar */
-  left: 15px; /* Align inside the sidebar */
-  background: none; /* No background */
-  border: none; /* Remove border */
+  position: absolute; 
+  top: 20px;
+  left: 15px;
+  background: none;
+  border: none;
   padding: 10px;
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.sidebar-toggle-btn ion-icon {
+
+.sidebar-toggle-btn svg {
   font-size: 2rem; /* Adjust icon size */
   color: white; /* White icon color */
   transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 /* Hover effect for toggle button */
-.sidebar-toggle-btn:hover ion-icon {
+.sidebar-toggle-btn:hover svg {
   color: #b3d1b3; /* Change icon color on hover */
 }
 
@@ -208,6 +209,7 @@ z-index: 10;
   .sidebar-toggle-btn {
     display: block; /* Show the toggle button on smaller screens */
   }
+
 
   .sidebar {
     transform: translateX(-100%); /* Hide sidebar by default */
@@ -242,6 +244,29 @@ z-index: 10;
     font-size: 10px;
   }
 }
+
+
+
+.top-left-button {
+  fill: white;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #4caf4f00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.top-left-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-content {
+  text-align: center;
+}
+
 
 
 .Map {
