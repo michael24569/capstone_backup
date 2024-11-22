@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkAdminAccess();
+checkStaffAccess();
 ?>
 
 <!DOCTYPE html>
@@ -297,7 +297,7 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 
 
-    <?php include 'admin_sidebar.php'; ?>
+    <?php include 'staff_sidebar.php'; ?>
 </body>
 
 </html>

@@ -13,17 +13,20 @@ checkStaffAccess();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home for Staffs</title>
+    <title>Home Administrator</title>
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="map.css">
     <link rel="stylesheet" href="LotInfo.css">
     <link rel="stylesheet" href="stsLots.css">
     <link rel ="stylesheet" href="Paiyakan.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
+    
     <script src="script.js"></script>
     <style>
-
-
+#searchInput{
+     padding-right: 20px; 
+    box-sizing: border-box;
+    width: 200px;
+}
 .input-group {
     display: flex;
     align-items: center;
@@ -220,10 +223,32 @@ checkStaffAccess();
     color: #aaa; /* Color of the clear button */
 }
 
-
+        .suggestion-box {
+           position: fixed;
+           top: 55px;
+           right: 30px;
+           border: 1px solid #ccc;
+           max-height: 150px;
+           overflow-y: auto;
+           background-color: #fff;
+           width: 200px;
+           z-index: 1000;
+           box-shadow: 0 2px 4px rgba(0, 0,  0.1);
+           border-radius: 5px;
+           display: none;
+        }
+        .suggestion-item {
+            padding: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+        }
+        .suggestion-item:hover {
+            background-color: #f0f0f0;
+        }
     </style>
 
 </head>
+
 <body style="background: #071c14;" id="bg">
 <div id="loader" class="loader">
         <div class="background"></div>
@@ -255,20 +280,23 @@ checkStaffAccess();
     </div>
 </div>
         
-   
+        <!-- appear this button when the sidebar is hide-->
       <img src="map1.png" usemap="#mymap" id="responsiveImage">
-
+      <button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+</button>
 
 <!-- Search button for the map-->
 <div class="input-group">
-    <input type="text" class="form-control" name="search" placeholder="Search Owner" id="searchInput">
+    <input type="text" class="form-control" name="search" placeholder="Search Owner" id="searchInput" autocomplete="off">
     <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
     <br>
     <button class='btn btn-search' type="button" id="searchButton">
-        <ion-icon name="search-outline"></ion-icon>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  style="width: 20px; height: 20px; fill: white;">
+        <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>
     </button>
 </div>
-
+<div id="suggestions" class="suggestion-box"></div>
       
         <div class="A3" id="A3"><h3 style="color: #e9f9ef;">Apartment 3</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
           
@@ -4896,7 +4924,7 @@ checkStaffAccess();
        
     </div>
     
-    <?php include 'staff_sidebar.php'; ?> 
+    <?php include 'staff_sidebar.php'; ?>
     
      <div class="LotOverview" id="overview">
         <div class="Content">
@@ -4932,9 +4960,12 @@ checkStaffAccess();
       </div>
     <script src="paiyakan.js"></script>
     <script src="LotInfo.js"></script>
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
+        
+
+        
         //try for responsive imagemap
 window.onload = function() {
             var img = document.getElementById('responsiveImage');
@@ -7469,10 +7500,38 @@ document.addEventListener('DOMContentLoaded', () => {
         searchInput.value = ''; // Clear the input
         clearButton.style.display = 'none'; // Hide the clear button
         searchInput.focus(); // Optionally focus back on the input
+        document.getElementById("suggestions").style.display = "none";
         clearHighlights();
     });
     
 });
+
+//autocomplete name suggestion document.getElementById('searchInput').addEventListener('input', function() {
+    document.getElementById('searchInput').addEventListener('input', function() {
+    const query = this.value;
+
+    if (query.length > 0) {
+        fetch('autocomplete.php?q=' + query)
+            .then(response => response.json())
+            .then(data => {
+                let suggestions = '';
+                data.forEach(name => {
+                    suggestions += `<div class="suggestion-item" onclick="selectName('${name}')">${name}</div>`;
+                });
+                document.getElementById('suggestions').innerHTML = suggestions;
+                document.getElementById('suggestions').style.display = 'block'; // Show suggestions
+            });
+    } else {
+        document.getElementById('suggestions').innerHTML = '';
+        document.getElementById('suggestions').style.display = 'none'; // Hide suggestions
+    }
+});
+
+function selectName(name) {
+    document.getElementById('searchInput').value = name;
+    document.getElementById('suggestions').innerHTML = '';
+    document.getElementById('suggestions').style.display = 'none'; // Hide suggestions
+}
 
 
 //Loading screen

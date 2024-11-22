@@ -185,11 +185,6 @@ tbody, thead, .form-control, td {
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="sweetalert/jquery-3.7.1.min.js"></script>
 <script src="sweetalert/sweetalert2.all.min.js"></script>
-<body>
-    
-<?php include 'admin_sidebar.php'; ?> 
-
-
 <body style="background: #071c14;"> 
 <button id="sidebarToggle" class="sidebar-toggle-btn">
     <ion-icon name="menu-outline"></ion-icon>
@@ -302,7 +297,7 @@ tbody, thead, .form-control, td {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Archive Record',
+            confirmButtonText: 'Confirm',
             cancelButtonText: 'Cancel'
         }).then((result) => {
             if (result.isConfirmed) {

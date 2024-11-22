@@ -38,7 +38,7 @@
                 </a>
             </li>
             <li>
-                <a href="admin_about.php">
+                <a href="staff_about.php">
                     <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 512"  style="width: 24px; height: 24px; fill: #002d1c;">
                         <path d="M96 64c0-17.7-14.3-32-32-32S32 46.3 32 64l0 256c0 17.7 14.3 32 32 32s32-14.3 32-32L96 64zM64 480a40 40 0 1 0 0-80 40 40 0 1 0 0 80z"/></svg>

@@ -50,6 +50,44 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <link rel="stylesheet" href="style1.css">
 
     <style>
+    .sidebar-toggle-btn {
+  display: none; /* Default: hidden, visible in responsive view */
+  position: absolute; /* Position inside the sidebar */
+  top: 20px; /* Adjust position from the top of the sidebar */
+  left: -5px; /* Align inside the sidebar */
+  background: none; /* No background */
+  border: none; /* Remove border */
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.sidebar-toggle-btn ion-icon {
+  font-size: 2rem; /* Adjust icon size */
+  color: white; /* White icon color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for toggle button */
+.sidebar-toggle-btn:hover ion-icon {
+  color: #b3d1b3; /* Change icon color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar by default */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+}
            @font-face {
     font-family: 'MyFont';
     src: url('fonts/Inter.ttf') format('ttf'),
@@ -143,13 +181,16 @@ tbody, thead, .form-control, td {
         }
     </style>
 </head>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<body>
-    
-<?php include 'staff_sidebar.php'; ?> 
+<script src="sweetalert/jquery-3.7.1.min.js"></script>
+<script src="sweetalert/sweetalert2.all.min.js"></script>
 
-
+<body style="background: #071c14;"> 
+<button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+</button>
+<?php include 'staff_sidebar.php'; ?>
     <div id="recordsContent" class="center_record">
     <!-- Success/Error Alert Box -->
     <div id="alertBox" class="alert"></div>
@@ -189,8 +230,9 @@ tbody, thead, .form-control, td {
                 <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_address']))); ?></td>
 
                     <td class="action-buttons">
-                        <a class='btn btn-edit' href='update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
-                        <a class='btn btn-archive' href='#' onclick="confirmArchive(event, '<?php echo htmlspecialchars($row["id"]); ?>')">Archive</a>
+                        <a class='btn btn-edit' href='admin_update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
+                        <a href="admin_archiveCondition.php?id=<?= $row['id']; ?>" class="btn btn-archive">Archive</a>
+
                     </td>
                 </tr>
                 <tr class="divider-row">
@@ -199,10 +241,14 @@ tbody, thead, .form-control, td {
                 <?php } ?>
             </tbody>
         </table>
+        <?php if (isset($_GET['m'])) : ?>
+            <div class="flash-data" data-flashdata="<?= htmlspecialchars($_GET['m']); ?>"></div>
+        <?php endif; ?> 
+
     </div>
 </div>
 
-<!-- Custom confirmation modal -->
+<!-- Custom confirmation modal
 <div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
         <p>Are you sure you want to archive this record?</p>
@@ -212,7 +258,7 @@ tbody, thead, .form-control, td {
         </div>
     </div>
 </div>
-
+                -->
 <!-- No Records Modal -->
 <div id="noRecordsModal" class="modal">
     <div class="modal-content">
@@ -225,7 +271,7 @@ tbody, thead, .form-control, td {
 </div>
 
 <script>
-    // Confirm Archive function
+    /* Confirm Archive function
     function confirmArchive(event, id) {
         event.preventDefault();
         const modal = document.getElementById('confirmModal');
@@ -238,7 +284,41 @@ tbody, thead, .form-control, td {
         document.getElementById('cancelButton').onclick = function() {
             modal.style.display = 'none';
         };
+    }*/
+    $(document).ready(function () {
+    // Event listener for the archive button
+    $('.btn-archive').on('click', function (e) {
+        e.preventDefault(); // Prevent the default anchor click action
+        const href = $(this).attr('href'); // Get the URL from the href attribute
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'Record will be archived!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirm',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect to the archive link if confirmed
+                document.location.href = href;
+            }
+        });
+    });
+
+    // Handle flash messages
+    const flashdata = $('.flash-data').data('flashdata');
+    if (flashdata) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Record has been archived.',
+        });
     }
+});
+
 
     // Show modal if no records found
     <?php if ($noRecords): ?>
