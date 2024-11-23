@@ -7050,11 +7050,11 @@ popup.style.position = 'fixed';
 popup.style.top = '50%';
 popup.style.left = '50%';
 popup.style.transform = 'translate(-50%, -50%)';
-popup.style.padding = '15px 25px';
+popup.style.padding = '50px  60px';
 popup.style.backgroundColor = '#071c14';
 popup.style.color = 'white';
 popup.style.borderRadius = '8px';
-popup.style.fontSize = '1rem';
+popup.style.fontSize = '2rem';
 popup.style.textAlign = 'center';
 popup.style.opacity = '0'; // Initially hidden
 popup.style.zIndex = '1000';
@@ -7067,7 +7067,7 @@ document.body.appendChild(popup);
 // Function to show the popup with animation
 function showPopup() {
   popup.style.display = 'block';
-  popup.style.animation = 'popupFade 2s ease forwards';
+  popup.style.animation = 'popupFade 2.7s ease forwards';
   
   // Automatically remove the popup after the animation ends
   setTimeout(() => {
