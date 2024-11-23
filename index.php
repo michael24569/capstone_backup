@@ -29,7 +29,7 @@ require("loginCondition.php");
     </svg>
   </div>
   <div class="input-field">
-    <input type="text" name="username" id="username" placeholder="Username">
+    <input type="text" name="username" id="username" placeholder="Username" autocomplete="off">
     <label for="username">Username</label>
             </div>
             <div class="input-group">
@@ -37,7 +37,7 @@ require("loginCondition.php");
             <path d="M144 144l0 48 160 0 0-48c0-44.2-35.8-80-80-80s-80 35.8-80 80zM80 192l0-48C80 64.5 144.5 0 224 0s144 64.5 144 144l0 48 16 0c35.3 0 64 28.7 64 64l0 192c0 35.3-28.7 64-64 64L64 512c-35.3 0-64-28.7-64-64L0 256c0-35.3 28.7-64 64-64l16 0z"/></svg>
   </div>
   <div class="input-field">
-                <input type="password" name="password" id="password" placeholder="Password">
+                <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
                 <label for="password">Password</label>
             </div>
             <?php
@@ -151,8 +151,12 @@ require("loginCondition.php");
     transition: 0.9s;
   }
   .btn:hover{
-    background: #540020;
+    background-color: #540020;
   }
+  .btn:focus {
+    background-color: #005434;
+    color: white; 
+}
   .links{
     display: flex;
     justify-content: space-around;
@@ -227,6 +231,24 @@ require("loginCondition.php");
             passwordField.addEventListener('input', hideErrorMessage);
         }
     });
+
+
+
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
 
 </script>
 

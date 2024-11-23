@@ -188,7 +188,7 @@ body {
     font-size: 12px; /* Make the label smaller */
     color: hsl(327, 90%, 28%);
   }
-  .btn{
+  .button{
     font-size: 1.1rem;
     max-width: 300px;
     border-radius: 5px;
@@ -211,7 +211,7 @@ body {
   font-size: 0.9em;
   display: block;
   }
-  .btn:hover{
+  .button:hover{
     background: #07001f;
   }
   .error {

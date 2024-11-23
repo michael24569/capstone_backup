@@ -32,6 +32,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Archive section</title>
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="logoutmodal.css">
     <style>
          @font-face {
     font-family: 'MyFont';
@@ -112,7 +113,7 @@ tbody, thead, .form-control, td {
             <br>
             <form method="GET" action="">
                 <div class="input-group">
-                    <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>">
+                    <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>" autocomplete="off">
                     <br>
                     <button class='btn btn-search' type="submit">Search</button>
                 </div>
@@ -149,10 +150,38 @@ tbody, thead, .form-control, td {
             </table>
         </div>
     </div>
+    <!-- logout confirmation modal -->
+<div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
+            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+               
 
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
+    <script>
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });</script>
 <script src="paiyakan.js"></script>
 
     

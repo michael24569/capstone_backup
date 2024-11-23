@@ -85,63 +85,7 @@ tbody, thead, .form-control, td {
             100% { transform: rotate(360deg); }
         }
         /* Modal styles */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none; /* Start hidden */
-        }
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .modal-buttons {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-            gap: 10px;
-        }
-        .btn-confirm, .btn-cancel {
-            padding: 10px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .btn-confirm {
-            background-color: #28a745;
-            color: white;
-        }
-        .btn-cancel {
-            background-color: #dc3545;
-            color: white;
-        }
-
-        .alert {
-            position: fixed;
-            top: 20%;
-            right: 38%;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            display: none;
-            z-index: 1000;
-        }
-        .alert-success {
-            background-color: #28a745;
-        }
-        .alert-error {
-            background-color: #dc3545;
-        }
+      
         .top-left-button {
   fill: white;
   position: absolute;
@@ -163,20 +107,14 @@ tbody, thead, .form-control, td {
 }
     </style>
 </head>
-
-
+<link rel="stylesheet" href="logoutmodal.css">
+<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 <script src="sweetalert/jquery-3.7.1.min.js"></script>
 <script src="sweetalert/sweetalert2.all.min.js"></script>
-<body>
-    
-<?php include 'admin_sidebar.php'; ?> 
-
 
 <body style="background: #071c14;"> 
-<button class="top-left-button" onclick="toggleSidebar()">
-  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
-  </svg>
+<button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
 </button>
 <?php include 'admin_sidebar.php'; ?>
     <div id="recordsContent" class="center_record">
@@ -189,7 +127,7 @@ tbody, thead, .form-control, td {
         <br>
         <form method="GET" action="">
             <div class="input-group">
-                <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>">
+                <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>" autocomplete="off">
                 <br>
                 <button class='btn btn-search' type="submit"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:20px; fill:white;"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>Search</button> 
                 <button class="refresh-icon" type="submit" name="refresh" value="1">
@@ -236,17 +174,19 @@ tbody, thead, .form-control, td {
     </div>
 </div>
 
-<!-- Custom confirmation modal
+<!-- logout confirmation modal -->
 <div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
-        <p>Are you sure you want to archive this record?</p>
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
         <div class="modal-buttons">
             <button id="confirmButton" class="btn btn-confirm">Confirm</button>
             <button id="cancelButton" class="btn btn-cancel">Cancel</button>
         </div>
     </div>
 </div>
-                -->
+               
+
 <!-- No Records Modal -->
 <div id="noRecordsModal" class="modal">
     <div class="modal-content">
@@ -258,21 +198,10 @@ tbody, thead, .form-control, td {
     </div>
 </div>
 
+
+    <script src="script.js"></script>
 <script>
-    /* Confirm Archive function
-    function confirmArchive(event, id) {
-        event.preventDefault();
-        const modal = document.getElementById('confirmModal');
-        modal.style.display = 'flex';
 
-        document.getElementById('confirmButton').onclick = function() {
-            window.location.href = 'archive.php?id=' + id;
-        };
-
-        document.getElementById('cancelButton').onclick = function() {
-            modal.style.display = 'none';
-        };
-    }*/
     $(document).ready(function () {
     // Event listener for the archive button
     $('.btn-archive').on('click', function (e) {
@@ -286,7 +215,7 @@ tbody, thead, .form-control, td {
             showCancelButton: true,
             confirmButtonColor: '#3085d6',
             cancelButtonColor: '#d33',
-            confirmButtonText: 'Archive Record',
+            confirmButtonText: 'Confirm',
             cancelButtonText: 'Cancel'
         }).then((result) => {
             if (result.isConfirmed) {
@@ -331,19 +260,26 @@ tbody, thead, .form-control, td {
     <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
         showAlert('Error archiving record.', 'error');
     <?php endif; ?>
-    // Function to toggle the sidebar visibility with timer
-function toggleSidebar() {
-    const sidebar = document.querySelector('.sidebar');
-    sidebar.classList.add('active'); // Open the sidebar by adding the 'active' class
-  
-    // Set a timer to close the sidebar after 5 seconds
-    setTimeout(function() {
-      sidebar.classList.remove('active'); // Close the sidebar after 5 seconds
-    }, 5000); // 5000 milliseconds = 5 seconds
-  }
-  
-</script>
 
+
+    
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+
+</script>
 </body>
 </html>
 <?php

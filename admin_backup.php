@@ -23,6 +23,7 @@ unset($_SESSION['backup_file']);
     
     <link rel="stylesheet" href="backupButton.css">
     <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="logoutmodal.css">
 <style>
     .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
@@ -115,15 +116,46 @@ unset($_SESSION['backup_file']);
                 </p>
                 <!-- Provide download link if backup is successful -->
                 <?php if ($backup_file): ?>
-                    <a href="downloadBackup.php?file=<?= urlencode($backup_file) ?>" class="btn btn-download">Proceed Backup</a>
+                    <a href="downloadBackup.php?file=<?= urlencode($backup_file) ?>" class="button btn-download">Proceed Backup</a>
                 <?php endif; ?>
             <?php endif; ?>
         </div>
 
-            <button type="submit" class="btn btn-edit">Confirm</button>
+            <button type="submit" class="button btn-edit">Confirm</button>
         </form>
     </div>
 </div>
+<!-- logout confirmation modal -->
+<div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
+            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+               
+<script src="script.js"></script>
+<script>
+  
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+</script>
 <script src="paiyakan.js"></script>
 
 

@@ -4,13 +4,16 @@ $successful = null;
 
 include 'db-connection.php';
 
+function determineAccountStatus($conn) {
+    // Check the number of active accounts
+    $result = mysqli_query($conn, "SELECT COUNT(*) as active_count FROM staff WHERE accountStatus = 'Active'");
+    $row = mysqli_fetch_assoc($result);
 
-
-function determineAccountStatus($username, $fullname, $email, $password) {
-    // Check if fullname, email, and password are not empty
-    if (!empty($username) && !empty($fullname) && !empty($email) && !empty($password)) {
-        return 'Active'; // Assign 'active' status if all fields are provided
-    } 
+    if ($row['active_count'] >= 3) {
+        return 'Inactive'; // Set to 'Inactive' if there are already 3 active accounts
+    } else {
+        return 'Active'; // Otherwise, set to 'Active'
+    }
 }
 
 if (isset($_POST['signup'])) {
@@ -20,8 +23,8 @@ if (isset($_POST['signup'])) {
     $password = $_POST['password'];
     $confirm_password = $_POST['confirm_password'];
 
-    // Determine the account status based on whether the fields are empty
-    $status = determineAccountStatus($username, $fullname, $email, $password);
+    // Determine the account status based on the number of active accounts
+    $status = determineAccountStatus($conn);
 
     // Check if email already exists in the database using prepared statements
     $stmt = $conn->prepare("SELECT * FROM staff WHERE email = ?");
@@ -48,7 +51,7 @@ if (isset($_POST['signup'])) {
 
             // Insert the new user data into the database using prepared statements
             $stmt = $conn->prepare("INSERT INTO staff (username, fullName, email, accountStatus, password) VALUES (?, ?, ?, ?, ?)");
-            $stmt->bind_param("sssss",$username, $fullname, $email, $status, $hashedPassword);
+            $stmt->bind_param("sssss", $username, $fullname, $email, $status, $hashedPassword);
 
             if ($stmt->execute()) {
                 // Store a success message instead of redirecting

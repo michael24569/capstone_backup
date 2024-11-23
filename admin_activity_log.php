@@ -15,123 +15,22 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Logs</title>
-    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
-    <link href="style1.css" rel="stylesheet"> 
-
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="logoutmodal.css">
     <style>
-        /* General Styling */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}    @font-face {
+      @font-face {
     font-family: 'MyFont';
     src: url('fonts/Inter.ttf') format('ttf'),
-}
-body {
-  font-family: 'MyFont';
-  height: 100vh;
-  background-color: #071c14;";
 }
 tbody, thead, .form-control, td {
     font-family: 'MyFont';
 }
-/* Sidebar Styling */
-/* Sidebar Styles */
-.sidebar {
-  z-index: 100000;
-  font-size: 15px;
-  bottom: 0px;
-  position: fixed;
-  width: 60px; /* Sidebar width when collapsed */
-  height: 100vh;
-  background: #dee7e2;
-  overflow: hidden;
-  transition: width 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for width and box-shadow */
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 50px 40px black;
-}
-
-.sidebar.active {
-  width: 300px; /* Expanded sidebar width */
-}
-
-.sidebar:hover {
-  width: 300px; /* Ensure that hover expands the sidebar */
-}
-
-/* Sidebar Content Styles */
-.sidebar ul {
-  position: relative;
-  height: 100vh;
-}
-
-.sidebar ul li {
-  list-style: none;
-}
-
-.sidebar ul li:hover {
-  transition: 0.8s;
-  background: #b3d1b3;
-}
-
-.sidebar ul li a {
-  position: relative;
-  display: flex;
-  white-space: nowrap;
-  text-decoration: none;
-  right:30px;
-
-}
-
-.sidebar ul li a .icon {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  color: #222222;
-}
-
-.sidebar ul li a .text {
-  font-family: 'MyFont';
-  position: relative;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  color: #222222;
-  text-transform: uppercase;
-}
-
-.sidebar .icon-logo {
-  margin-bottom: 20px;
-}
-
-.sidebar .icon-logo .text {
-  font-size: 11px;
-  font-weight: 300;
-  font-weight: bold;
-}
-
-.sidebar .icon-logo .text:hover {
-  background: #dee7e2;
-}
-
-.bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
 
 /* Sidebar Toggle Button Styles */
 .sidebar-toggle-btn {
+    </style>
+    <style>
+        .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
   position: absolute; 
   top: 20px;
@@ -393,7 +292,9 @@ tbody, thead, .form-control, td {
 <?php include 'admin_sidebar.php'; ?>
    
     <div class="audit" >
-        <h2 id="header">Activity Logs</h2>
+        <div id="header">
+        <h2 >Activity Logs</h2>
+        </div>
         <table class="styled-table text-center">
             <thead>
                 <tr>
@@ -419,6 +320,37 @@ tbody, thead, .form-control, td {
             </tbody>
         </table>
     </div>
+    <!-- logout confirmation modal -->
+<div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
+            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+               
+  <script src="script.js"></script>
+    <script>
+      
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+    </script>
 <script src="paiyakan.js"></script>
     
 </body>

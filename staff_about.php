@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkAdminAccess();
+checkStaffAccess();
 ?>
 
 <!DOCTYPE html>
@@ -10,120 +10,12 @@ checkAdminAccess();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Us</title>
-    
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="logoutmodal.css">
     
     
     <style>
-        .sidebar {
-          
-  bottom: 0px;
-  position: fixed;
-  width: 60px;
-  height: 100vh;
-  background: #dee7e2;
-  overflow: hidden;
-  transition: 0.5s;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 50px 40px black;
-}
-
-.sidebar:hover {
-  width: 300px;
-}
-
-.sidebar ul {
-  position: relative;
-  height: 100vh;
-  right:40px;
-}
-
-.sidebar ul li {
-  list-style: none;
-  
-}
-
-.sidebar ul li:hover {
-  transition: 0.8s;
-  background: #b3d1b3;
-}
-
-.sidebar ul li a {
-  position: relative;
-  display: flex;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.sidebar ul li a .icon {
-  bottom:15px;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  color: #222222;
-}
-
-.sidebar ul li a .text {
-  bottom:15px;
-  position: relative;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  color: #222222;
-  text-transform: uppercase;
-}
-
-.sidebar .icon-logo {
-  margin-bottom: 20px;
-}
-
-.sidebar .icon-logo .text {
-  
-  font-size: 11px;
-  font-weight: 300;
-  font-weight: bold;
-}
-
-.sidebar .icon-logo .text:hover {
-  background: #dee7e2;
-}
-
-.bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-/* Sidebar toggle button */
-/* Sidebar toggle button */
-.sidebar-toggle-btn {
-  display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; /* Position inside the sidebar */
-  top: 20px; /* Adjust position from the top of the sidebar */
-  left: 15px; /* Align inside the sidebar */
-  background: none; /* No background */
-  border: none; /* Remove border */
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-
-.sidebar-toggle-btn ion-icon {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover ion-icon {
-  color: #b3d1b3; /* Change icon color on hover */
-}
-
+ 
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
   .sidebar-toggle-btn {
@@ -132,7 +24,7 @@ checkAdminAccess();
 
   .sidebar {
     transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for sliding effect */
   }
 
   .sidebar.active {
@@ -274,13 +166,12 @@ checkAdminAccess();
     </style>
 </head>
 <body>
-<button id="sidebarToggle" class="sidebar-toggle-btn">
-<button class="top-left-button">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
-      <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
-    </svg>
-  </button>
+<button class="top-left-button" onclick="toggleSidebar()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+  </svg>
 </button>
+<?php include 'staff_sidebar.php'; ?>
     <div class="container">
         <h1>About Us</h1>
         <div class="team-container">
@@ -302,25 +193,53 @@ checkAdminAccess();
             </div>
         </div>
     </div>
+
+
+        <!-- logout confirmation modal -->
+<div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
+            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+<script src="script.js"></script>
     <script>
 
       
-        //for clicking the button *not functioning/ need to fix*
-document.addEventListener("DOMContentLoaded", function () {
-    const sidebarToggleButton = document.getElementById('sidebarToggle');
-    const sidebar = document.getElementById('sidebar');
+       // Function to toggle the sidebar visibility with timer
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.add('active'); // Open the sidebar by adding the 'active' class
+  
+    // Set a timer to close the sidebar after 5 seconds
+    setTimeout(function() {
+      sidebar.classList.remove('active'); // Close the sidebar after 5 seconds
+    }, 5000); // 5000 milliseconds = 5 seconds
+  }
+  
 
-    // Ensure elements exist
-    if (sidebarToggleButton && sidebar) {
-        sidebarToggleButton.addEventListener('click', function () {
-            sidebar.classList.toggle('active'); // Toggle active class on sidebar
+  
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
         });
-    }
-});
 </script>
-
-
-    <?php include 'admin_sidebar.php'; ?>
+<script src="paiyakan.js"></script>
 </body>
 
 </html>

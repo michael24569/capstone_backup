@@ -50,6 +50,44 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <link rel="stylesheet" href="style1.css">
 
     <style>
+    .sidebar-toggle-btn {
+  display: none; /* Default: hidden, visible in responsive view */
+  position: absolute; /* Position inside the sidebar */
+  top: 20px; /* Adjust position from the top of the sidebar */
+  left: -5px; /* Align inside the sidebar */
+  background: none; /* No background */
+  border: none; /* Remove border */
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.sidebar-toggle-btn ion-icon {
+  font-size: 2rem; /* Adjust icon size */
+  color: white; /* White icon color */
+  transition: color 0.3s ease; /* Smooth hover effect */
+}
+
+/* Hover effect for toggle button */
+.sidebar-toggle-btn:hover ion-icon {
+  color: #b3d1b3; /* Change icon color on hover */
+}
+
+/* Responsive design for smaller screens */
+@media screen and (max-width: 768px) {
+  .sidebar-toggle-btn {
+    display: block; /* Show the toggle button on smaller screens */
+  }
+
+  .sidebar {
+    transform: translateX(-100%); /* Hide sidebar by default */
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .sidebar.active {
+    transform: translateX(0); /* Show sidebar when active */
+  }
+}
            @font-face {
     font-family: 'MyFont';
     src: url('fonts/Inter.ttf') format('ttf'),
@@ -83,73 +121,18 @@ tbody, thead, .form-control, td {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        /* Modal styles */
-        .modal {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            display: none; /* Start hidden */
-        }
-        .modal-content {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-            text-align: center;
-        }
-        .modal-buttons {
-            display: flex;
-            justify-content: flex-end;
-            margin-top: 10px;
-            gap: 10px;
-        }
-        .btn-confirm, .btn-cancel {
-            padding: 10px 10px;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-        }
-        .btn-confirm {
-            background-color: #28a745;
-            color: white;
-        }
-        .btn-cancel {
-            background-color: #dc3545;
-            color: white;
-        }
-
-        .alert {
-            position: fixed;
-            top: 20%;
-            right: 38%;
-            padding: 10px 20px;
-            border-radius: 5px;
-            color: white;
-            font-weight: bold;
-            display: none;
-            z-index: 1000;
-        }
-        .alert-success {
-            background-color: #28a745;
-        }
-        .alert-error {
-            background-color: #dc3545;
-        }
     </style>
 </head>
-<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+<link rel="stylesheet" href="logoutmodal.css">
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<body>
-    
-<?php include 'staff_sidebar.php'; ?> 
+<script src="sweetalert/jquery-3.7.1.min.js"></script>
+<script src="sweetalert/sweetalert2.all.min.js"></script>
 
-
+<body style="background: #071c14;"> 
+<button id="sidebarToggle" class="sidebar-toggle-btn">
+    <ion-icon name="menu-outline"></ion-icon>
+</button>
+<?php include 'staff_sidebar.php'; ?>
     <div id="recordsContent" class="center_record">
     <!-- Success/Error Alert Box -->
     <div id="alertBox" class="alert"></div>
@@ -160,7 +143,7 @@ tbody, thead, .form-control, td {
         <br>
         <form method="GET" action="">
             <div class="input-group">
-                <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>">
+                <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>" autocomplete="off">
                 <br>
                 <button class='btn btn-search' type="submit">Search</button> 
                 <button class="refresh-icon" type="submit" name="refresh" value="1">
@@ -189,8 +172,9 @@ tbody, thead, .form-control, td {
                 <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_address']))); ?></td>
 
                     <td class="action-buttons">
-                        <a class='btn btn-edit' href='update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
-                        <a class='btn btn-archive' href='#' onclick="confirmArchive(event, '<?php echo htmlspecialchars($row["id"]); ?>')">Archive</a>
+                        <a class='btn btn-edit' href='admin_update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
+                        <a href="admin_archiveCondition.php?id=<?= $row['id']; ?>" class="btn btn-archive">Archive</a>
+
                     </td>
                 </tr>
                 <tr class="divider-row">
@@ -199,19 +183,25 @@ tbody, thead, .form-control, td {
                 <?php } ?>
             </tbody>
         </table>
+        <?php if (isset($_GET['m'])) : ?>
+            <div class="flash-data" data-flashdata="<?= htmlspecialchars($_GET['m']); ?>"></div>
+        <?php endif; ?> 
+
     </div>
 </div>
 
-<!-- Custom confirmation modal -->
+<!-- logout confirmation modal -->
 <div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
-        <p>Are you sure you want to archive this record?</p>
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
         <div class="modal-buttons">
             <button id="confirmButton" class="btn btn-confirm">Confirm</button>
             <button id="cancelButton" class="btn btn-cancel">Cancel</button>
         </div>
     </div>
 </div>
+               
 
 <!-- No Records Modal -->
 <div id="noRecordsModal" class="modal">
@@ -224,21 +214,44 @@ tbody, thead, .form-control, td {
     </div>
 </div>
 
+
+    <script src="script.js"></script>
 <script>
-    // Confirm Archive function
-    function confirmArchive(event, id) {
-        event.preventDefault();
-        const modal = document.getElementById('confirmModal');
-        modal.style.display = 'flex';
 
-        document.getElementById('confirmButton').onclick = function() {
-            window.location.href = 'archive.php?id=' + id;
-        };
+    $(document).ready(function () {
+    // Event listener for the archive button
+    $('.btn-archive').on('click', function (e) {
+        e.preventDefault(); // Prevent the default anchor click action
+        const href = $(this).attr('href'); // Get the URL from the href attribute
 
-        document.getElementById('cancelButton').onclick = function() {
-            modal.style.display = 'none';
-        };
+        Swal.fire({
+            title: 'Are you sure?',
+            text: 'Record will be archived!',
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Confirm',
+            cancelButtonText: 'Cancel'
+        }).then((result) => {
+            if (result.isConfirmed) {
+                // Redirect to the archive link if confirmed
+                document.location.href = href;
+            }
+        });
+    });
+
+    // Handle flash messages
+    const flashdata = $('.flash-data').data('flashdata');
+    if (flashdata) {
+        Swal.fire({
+            icon: 'success',
+            title: 'Success',
+            text: 'Record has been archived.',
+        });
     }
+});
+
 
     // Show modal if no records found
     <?php if ($noRecords): ?>
@@ -263,6 +276,25 @@ tbody, thead, .form-control, td {
     <?php elseif (isset($_GET['status']) && $_GET['status'] === 'error'): ?>
         showAlert('Error archiving record.', 'error');
     <?php endif; ?>
+
+
+    
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+
 </script>
 </body>
 </html>
