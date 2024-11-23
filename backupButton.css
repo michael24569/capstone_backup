@@ -211,7 +211,7 @@ body {
   font-size: 0.9em;
   display: block;
   }
-  .btn:hover{
+  .button:hover{
     background: #07001f;
   }
   .error {
