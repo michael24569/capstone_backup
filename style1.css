@@ -346,7 +346,8 @@ body {
 }
 #header {
   font-weight: bold;
-  padding-left: 20px;
+  margin-left: 20px;
+  padding-top: 20px;
 }
 .form-control {
   padding-left: 10px;

@@ -93,7 +93,9 @@ tbody, thead, .form-control, td {
 <?php include 'admin_sidebar.php'; ?>
    
     <div class="audit" >
-        <h2 id="header">Activity Logs</h2>
+        <div id="header">
+        <h2 >Activity Logs</h2>
+        </div>
         <table class="styled-table text-center">
             <thead>
                 <tr>
