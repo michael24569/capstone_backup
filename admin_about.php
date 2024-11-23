@@ -14,9 +14,8 @@ checkAdminAccess();
     
     
     <style>
-  /* Sidebar Styles */
-/* Sidebar Styles */
-.sidebar {
+ .sidebar {
+  z-index: 100000;
   font-size: 15px;
   bottom: 0px;
   position: fixed;
@@ -46,12 +45,14 @@ checkAdminAccess();
 
 .sidebar ul li {
   list-style: none;
-  
 }
 
 .sidebar ul li:hover {
   transition: 0.8s;
   background: #b3d1b3;
+
+  
+  
 }
 
 .sidebar ul li a {
@@ -59,7 +60,6 @@ checkAdminAccess();
   display: flex;
   white-space: nowrap;
   text-decoration: none;
-  width: 100px;
   
 }
 
@@ -68,12 +68,11 @@ checkAdminAccess();
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 60px;
+  min-width: 60px;
   height: 60px;
   font-size: 1.5rem;
   color: #222222;
-  right:20px;
-  
+  right: 40px;
 }
 
 .sidebar ul li a .text {
@@ -85,7 +84,7 @@ checkAdminAccess();
   font-size: 15px;
   color: #222222;
   text-transform: uppercase;
-  
+  right: 40px;
 }
 
 .sidebar .icon-logo {
@@ -96,7 +95,6 @@ checkAdminAccess();
   font-size: 11px;
   font-weight: 300;
   font-weight: bold;
-  
 }
 
 .sidebar .icon-logo .text:hover {
@@ -122,16 +120,7 @@ checkAdminAccess();
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.sidebar-toggle-btn svg {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
 
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover svg {
-  color: #b3d1b3; /* Change icon color on hover */
-}
 
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
@@ -172,6 +161,7 @@ checkAdminAccess();
     font-size: 10px;
   }
 }
+
 
 
         body {

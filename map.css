@@ -197,16 +197,7 @@ z-index: 10;
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.sidebar-toggle-btn svg {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
 
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover svg {
-  color: #b3d1b3; /* Change icon color on hover */
-}
 
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {

@@ -16,6 +16,8 @@ $result = $conn->query($sql);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Logs</title>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
+    <link href="style1.css" rel="stylesheet"> 
+
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <style>
         /* General Styling */
@@ -38,48 +40,52 @@ tbody, thead, .form-control, td {
     font-family: 'MyFont';
 }
 /* Sidebar Styling */
+/* Sidebar Styles */
 .sidebar {
-  
+  z-index: 100000;
+  font-size: 15px;
   bottom: 0px;
   position: fixed;
-  width: 60px;
+  width: 60px; /* Sidebar width when collapsed */
   height: 100vh;
   background: #dee7e2;
   overflow: hidden;
-  transition: 0.5s;
+  transition: width 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for width and box-shadow */
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
 }
 
-.sidebar:hover {
-  
-  width: 300px;
+.sidebar.active {
+  width: 300px; /* Expanded sidebar width */
 }
 
+.sidebar:hover {
+  width: 300px; /* Ensure that hover expands the sidebar */
+}
+
+/* Sidebar Content Styles */
 .sidebar ul {
   position: relative;
   height: 100vh;
-  right:30px;
 }
 
 .sidebar ul li {
   list-style: none;
-  
 }
 
 .sidebar ul li:hover {
   transition: 0.8s;
   background: #b3d1b3;
-  width: 1000px;
 }
 
 .sidebar ul li a {
-  
   position: relative;
   display: flex;
   white-space: nowrap;
   text-decoration: none;
+  right:30px;
+
 }
 
 .sidebar ul li a .icon {
@@ -92,7 +98,8 @@ tbody, thead, .form-control, td {
   font-size: 1.5rem;
   color: #222222;
 }
-.sidebar ul li a .text{
+
+.sidebar ul li a .text {
   font-family: 'MyFont';
   position: relative;
   height: 60px;
@@ -123,28 +130,27 @@ tbody, thead, .form-control, td {
   width: 100%;
 }
 
-/* Sidebar toggle button */
-/* Sidebar toggle button */
+/* Sidebar Toggle Button Styles */
 .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; /* Position inside the sidebar */
-  top: 20px; /* Adjust position from the top of the sidebar */
-  left: 15px; /* Align inside the sidebar */
-  background: none; /* No background */
-  border: none; /* Remove border */
+  position: absolute; 
+  top: 20px;
+  left: 15px;
+  background: none;
+  border: none;
   padding: 10px;
   cursor: pointer;
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.sidebar-toggle-btn ion-icon {
+.sidebar-toggle-btn svg {
   font-size: 2rem; /* Adjust icon size */
   color: white; /* White icon color */
   transition: color 0.3s ease; /* Smooth hover effect */
 }
 
 /* Hover effect for toggle button */
-.sidebar-toggle-btn:hover ion-icon {
+.sidebar-toggle-btn:hover svg {
   color: #b3d1b3; /* Change icon color on hover */
 }
 
@@ -156,7 +162,7 @@ tbody, thead, .form-control, td {
 
   .sidebar {
     transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
+    transition: transform 0.3s ease-in-out; /* Smooth transition for sliding effect */
   }
 
   .sidebar.active {
@@ -187,6 +193,7 @@ tbody, thead, .form-control, td {
     font-size: 10px;
   }
 }
+
 /* Page Content Styling */
 .align {
   display: flex;
@@ -412,6 +419,7 @@ tbody, thead, .form-control, td {
             </tbody>
         </table>
     </div>
+<script src="paiyakan.js"></script>
     
 </body>
 </html>

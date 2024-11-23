@@ -124,6 +124,7 @@ unset($_SESSION['backup_file']);
         </form>
     </div>
 </div>
+<script src="paiyakan.js"></script>
 
 
 </body>

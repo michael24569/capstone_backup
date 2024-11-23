@@ -50,44 +50,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <link rel="stylesheet" href="style1.css">
 
     <style>
-    .sidebar-toggle-btn {
-  display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; /* Position inside the sidebar */
-  top: 20px; /* Adjust position from the top of the sidebar */
-  left: -5px; /* Align inside the sidebar */
-  background: none; /* No background */
-  border: none; /* Remove border */
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-
-.sidebar-toggle-btn ion-icon {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover ion-icon {
-  color: #b3d1b3; /* Change icon color on hover */
-}
-
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-  .sidebar-toggle-btn {
-    display: block; /* Show the toggle button on smaller screens */
-  }
-
-  .sidebar {
-    transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .sidebar.active {
-    transform: translateX(0); /* Show sidebar when active */
-  }
-}
+ 
            @font-face {
     font-family: 'MyFont';
     src: url('fonts/Inter.ttf') format('ttf'),
