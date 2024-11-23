@@ -186,9 +186,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Status Report</title>
     <link rel="stylesheet" href="style1.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <link rel="stylesheet" href="logoutmodal.css">
     <style>
            @font-face {
     font-family: 'MyFont';
@@ -283,7 +281,19 @@ body {
     <div id="reportContent" class="table-responsive"></div>
     <button id="closeReportPopup">Close</button>
 </div>
-
+<!-- logout confirmation modal -->
+<div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
+            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+               
+<script src="script.js"></script>
 <script>
 function displayReportPopup(event) {
     event.preventDefault(); // Prevent the default anchor action
@@ -311,6 +321,24 @@ document.getElementById('closeReportPopup').addEventListener('click', function()
     const reportPopup = document.getElementById('reportPopup');
     reportPopup.style.display = 'none';
 });
+
+
+
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
 </script>
 
 </body>

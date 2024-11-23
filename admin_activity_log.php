@@ -15,117 +15,38 @@ $result = $conn->query($sql);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Activity Logs</title>
-    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet"> 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <link rel="stylesheet" href="style1.css">
+    <link rel="stylesheet" href="logoutmodal.css">
     <style>
-        /* General Styling */
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}    @font-face {
+      @font-face {
     font-family: 'MyFont';
     src: url('fonts/Inter.ttf') format('ttf'),
-}
-body {
-  font-family: 'MyFont';
-  height: 100vh;
-  background-color: #071c14;";
 }
 tbody, thead, .form-control, td {
     font-family: 'MyFont';
 }
-/* Sidebar Styling */
-.sidebar {
-  
-  bottom: 0px;
-  position: fixed;
-  width: 60px;
-  height: 100vh;
-  background: #dee7e2;
-  overflow: hidden;
-  transition: 0.5s;
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
-  box-shadow: 0 50px 40px black;
-}
-
-.sidebar:hover {
-  
-  width: 300px;
-}
-
-.sidebar ul {
-  position: relative;
-  height: 100vh;
-  right:30px;
-}
-
-.sidebar ul li {
-  list-style: none;
-  
-}
-
-.sidebar ul li:hover {
-  transition: 0.8s;
-  background: #b3d1b3;
-  width: 1000px;
-}
-
-.sidebar ul li a {
-  
-  position: relative;
-  display: flex;
-  white-space: nowrap;
-  text-decoration: none;
-}
-
-.sidebar ul li a .icon {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-width: 60px;
-  height: 60px;
-  font-size: 1.5rem;
-  color: #222222;
-}
-.sidebar ul li a .text{
-  font-family: 'MyFont';
-  position: relative;
-  height: 60px;
-  display: flex;
-  align-items: center;
-  font-size: 15px;
-  color: #222222;
-  text-transform: uppercase;
-}
-
-.sidebar .icon-logo {
-  margin-bottom: 20px;
-}
-
-.sidebar .icon-logo .text {
-  font-size: 11px;
-  font-weight: 300;
-  font-weight: bold;
-}
-
-.sidebar .icon-logo .text:hover {
-  background: #dee7e2;
-}
-
-.bottom {
+.top-left-button {
+  fill: white;
   position: absolute;
-  bottom: 0;
-  width: 100%;
+  top: 10px;
+  left: 10px;
+  background-color: #4caf4f00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
 }
 
-/* Sidebar toggle button */
-/* Sidebar toggle button */
-.sidebar-toggle-btn {
+.top-left-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-content {
+  text-align: center;
+}
+    </style>
+    <style>
+        .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
   position: absolute; /* Position inside the sidebar */
   top: 20px; /* Adjust position from the top of the sidebar */
@@ -154,227 +75,13 @@ tbody, thead, .form-control, td {
     display: block; /* Show the toggle button on smaller screens */
   }
 
-  .sidebar {
-    transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
-  }
+  
 
   .sidebar.active {
     transform: translateX(0); /* Show sidebar when active */
   }
 }
 
-@media screen and (max-width: 480px) {
-  .sidebar {
-    width: 50px;
-  }
-
-  .sidebar:hover {
-    width: 150px;
-  }
-
-  .sidebar ul li a .icon {
-    min-width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-
-  .sidebar ul li a .text {
-    font-size: 9px;
-  }
-
-  .sidebar .icon-logo .text {
-    font-size: 10px;
-  }
-}
-/* Page Content Styling */
-.align {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-.center_record {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  margin: 0 auto;
-}
-.align img {
-  margin-top: 30px;
-  width: 70%;
-  height: auto;
-  border-radius: 25px;
-}
-
-.popup {
-  position: absolute;
-  width: 50%;
-  height: 80%;
-  padding: 30px 20px;
-  background: #7c9785;
-  border-radius: 20px;
-  z-index: 2;
-  box-sizing: border-box;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-  display: none;
-}
-
-.close-button {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  background: none;
-  border: none;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-.blur {
-  filter: blur(5px); /* Adjust the blur amount as needed */
-}
-
-/* Records Table Styling */
-.table-responsive {
-  margin-top: 20px;
-  width: 100%;
-  background-color: #f3f3f3;
-  border-radius: 10px;
-  margin-right: 10px;
-  margin-left: 5rem;
-  padding: 10px;
-}
-.audit {
-    margin-top: 20px;
-    width: 93%;
-    background-color: #f3f3f3;
-    border-radius: 10px;
-    margin-right: 10px;
-    margin-left: 5rem;
-
-}
-
-.styled-table {
-  border-collapse: collapse;
-  margin: 25px 0;
-  font-size: 0.9em;
-  font-family: 'Poppins', sans-serif;
-  width: 100%;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-}
-
-.styled-table thead tr {
-  background-color: #033512;
-  color: #ffffff;
-  text-align: center;
-}
-
-.styled-table th,
-.styled-table td {
-  padding: 12px 15px;
-  text-align: center;
-  border-bottom: 1px solid #ddd;
-}
-
-.styled-table tr {
-  background-color: #ffffff;
-}
-
-.styled-table tr:nth-of-type(even) {
-  background-color: #f3f3f3;
-}
-
-.styled-table tr:last-of-type {
-  border-bottom: 2px solid #033512;
-  
-}
-
-.styled-table th {
-  font-weight: bold;
-  font-size: 1.1em;
-}
-
-/* Buttons Styling */
-.btn {
-  padding: 10px 20px;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 5px;
-  margin: 2px;
-  font-weight: bold;
-  font-size: 0.9em;
-  display: flex;
-}
-
-.btn-add {
-  background-color: #4CAF50;
-  margin-bottom: 20px;
-  display: inline-block;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
-  text-align: center;
-}
-.btn-edit {
-  background-color: #4CAF50;
-  margin-right: 5px;
-  
-}
-
-.btn-archive {
-  background-color: #f44336;
-}
-.btn-search {
-  background-color: #3f2afc;
-  margin-left: 10px;
-}
-
-/* Aligning Edit and Archive Buttons */
-.action-buttons {
-  display: flex;
-  justify-content: center;
-}
-
-.divider-row {
-  background-color: #009879;
-  height: 2px;
-  border: none;
-}
-.input-group {
-  display: flex;
-  
-}
-#header1 {
-  text-align: center;
-}
-#header {
-  font-weight: bold;
-  padding-left: 20px;
-}
-.form-control {
-  padding-left: 10px;
-}
-.top-left-button {
-  fill: white;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #4caf4f00;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-}
-
-.top-left-button svg {
-  width: 24px;
-  height: 24px;
-}
-
-.main-content {
-  text-align: center;
-}
     </style>
 </head>
 <body>
@@ -412,6 +119,36 @@ tbody, thead, .form-control, td {
             </tbody>
         </table>
     </div>
+    <!-- logout confirmation modal -->
+<div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
+            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
+               
+  <script src="script.js"></script>
+    <script>
+      
+// anti zooom 
     
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+    </script>
 </body>
 </html>

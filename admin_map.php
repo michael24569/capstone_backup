@@ -14,13 +14,15 @@ checkAdminAccess();
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home Administrator</title>
+    
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="map.css">
     <link rel="stylesheet" href="LotInfo.css">
     <link rel="stylesheet" href="stsLots.css">
     <link rel ="stylesheet" href="Paiyakan.css">
-    
-    <script src="script.js"></script>
+    <link rel="stylesheet" href="logoutmodal.css">
+   
+
     <style>
 #searchInput{
      padding-right: 20px; 
@@ -4959,9 +4961,20 @@ checkAdminAccess();
           </div>
         </div>
       </div>
+      <!-- logout confirmation modal -->
+<div id="confirmModal" class="modal" style="display: none;">
+    <div class="modal-content">
+        <h2>Logout Confirmation</h2>
+        <p>Are you sure you want to logout?</p>
+        <div class="modal-buttons">
+            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
+            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+        </div>
+    </div>
+</div>
     <script src="paiyakan.js"></script>
     <script src="LotInfo.js"></script>
-    
+    <script src="script.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
         
@@ -7550,6 +7563,41 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
 
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+
+
+             
+    // When the user clicks the logout button, show the modal
+document.getElementById('sidebarLogoutButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default logout action
+    const modal = document.getElementById('confirmModal');
+    modal.style.display = 'flex'; // Show the modal
+});
+
+// When the user clicks the cancel button, hide the modal
+document.getElementById('cancelButton').addEventListener('click', function() {
+    const modal = document.getElementById('confirmModal');
+    modal.style.display = 'none'; // Hide the modal
+});
+
+// When the user clicks the confirm button, proceed with the logout
+document.getElementById('confirmButton').addEventListener('click', function() {
+    window.location.href = 'logout.php'; // Redirect to the logout page
+});
 
     </script>
 </body>

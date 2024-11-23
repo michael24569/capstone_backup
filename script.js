@@ -47,4 +47,24 @@
         });
         
 
-       
+
+        
+    // When the user clicks the logout button, show the modal
+document.getElementById('sidebarLogoutButton').addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent the default logout action
+    const modal = document.getElementById('confirmModal');
+    modal.style.display = 'flex'; // Show the modal
+});
+
+// When the user clicks the cancel button, hide the modal
+document.getElementById('cancelButton').addEventListener('click', function() {
+    const modal = document.getElementById('confirmModal');
+    modal.style.display = 'none'; // Hide the modal
+});
+
+// When the user clicks the confirm button, proceed with the logout
+document.getElementById('confirmButton').addEventListener('click', function() {
+    window.location.href = 'logout.php'; // Redirect to the logout page
+});
+
+   

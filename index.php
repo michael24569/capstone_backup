@@ -232,6 +232,24 @@ require("loginCondition.php");
         }
     });
 
+
+
+// anti zooom 
+    
+        // Prevent zoom using wheel event
+        document.addEventListener('wheel', function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener('keydown', function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+                e.preventDefault();
+            }
+        });
+
 </script>
 
 </body>
