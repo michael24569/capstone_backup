@@ -7155,7 +7155,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function highlightMatchingRecords() {
         const searchValue = searchInput.value.trim().toLowerCase();
-
+        document.getElementById('suggestions').style.display = 'none';
         // If the search input is empty, remove highlights and exit
         if (!searchValue) {
             clearHighlights();
