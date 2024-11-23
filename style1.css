@@ -318,6 +318,7 @@ body {
   background-color: #f44336;
 }
 .btn-search {
+  padding-left:35px;
   background-color: #3f2afc;
   margin-left: 10px;
   font-family: 'MyFont';

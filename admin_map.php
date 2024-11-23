@@ -208,7 +208,7 @@ checkAdminAccess();
     100% { transform: rotate(360deg); }
 }
 .highlight-border { 
-    border: 3px solid yellow;
+    border: 5px solid yellow;
 }
 .clear-button {
     cursor: pointer;
