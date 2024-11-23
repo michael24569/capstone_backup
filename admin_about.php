@@ -16,6 +16,21 @@ checkAdminAccess();
     
     <style>
  
+/* Sidebar Toggle Button Styles */
+.sidebar-toggle-btn {
+  display: none; /* Default: hidden, visible in responsive view */
+  position: absolute; 
+  top: 20px;
+  left: 15px;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+
+
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
   .sidebar-toggle-btn {
@@ -55,6 +70,7 @@ checkAdminAccess();
     font-size: 10px;
   }
 }
+
 
 
         body {
