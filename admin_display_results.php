@@ -244,29 +244,7 @@ body {
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             
         }
-        .top-left-button {
-  fill: white;
-  position: absolute;
-  top: 10px;
-  left: 10px;
-  background-color: #4caf4f00;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 10;
- 
-}
 
-.top-left-button svg {
-  width: 24px;
-  height: 24px;
-  z-index: 10;
-}
-
-.main-content {
-  text-align: center;
-  z-index: 10;
-}
     </style>
 </head>
 <body>
