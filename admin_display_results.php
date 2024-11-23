@@ -196,44 +196,7 @@ body {
     font-family: 'MyFont';
 }
 
-.sidebar-toggle-btn {
-  display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; /* Position inside the sidebar */
-  top: 20px; /* Adjust position from the top of the sidebar */
-  left: -5px; /* Align inside the sidebar */
-  background: none; /* No background */
-  border: none; /* Remove border */
-  padding: 10px;
-  cursor: pointer;
- 
-}
 
-.sidebar-toggle-btn ion-icon {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover ion-icon {
-  color: #b3d1b3; /* Change icon color on hover */
-}
-
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-  .sidebar-toggle-btn {
-    display: block; /* Show the toggle button on smaller screens */
-  }
-
-  .sidebar {
-    transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .sidebar.active {
-    transform: translateX(0); /* Show sidebar when active */
-  }
-}
         .center-record {
             position: fixed;
             top: 50%;
@@ -244,7 +207,29 @@ body {
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
             
         }
+        .top-left-button {
+  fill: white;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  background-color: #4caf4f00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 10;
+ 
+}
 
+.top-left-button svg {
+  width: 24px;
+  height: 24px;
+  z-index: 10;
+}
+
+.main-content {
+  text-align: center;
+  z-index: 10;
+}
     </style>
 </head>
 <body>
@@ -318,6 +303,8 @@ document.getElementById('closeReportPopup').addEventListener('click', function()
             }
         });
 </script>
+<script src="paiyakan.js"></script>
+
 
 </body>
 </html>
