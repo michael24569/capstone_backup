@@ -213,7 +213,7 @@ body {
   fill: white;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 0px;
   background-color: #4caf4f00;
   border: none;
   padding: 10px;
