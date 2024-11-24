@@ -110,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js" ></script>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
     <style>
-        * {
+         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
@@ -143,19 +143,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-        .floating-alert {
-            position: fixed;
-            top: 40%;
-            right: 40%;
-            z-index: 1050;
-            width: auto;
-            max-width: 300px;
-        }
     </style>
 </head>
 <body>
     <div class="container my-5">
         <h2>Edit Clients Information</h2>
+        <br>
         <?php
         displayMessage($errorMessage, 'error');
         displayMessage($successMessage, 'success');
@@ -247,6 +240,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 var alert = document.querySelector('.floating-alert');
                 if (alert) {
                     alert.classList.remove('show');
+                    alert.style.display = 'none';
                 }
             }, 1000);
         });

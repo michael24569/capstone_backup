@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         body {
             font-family: 'MyFont';
             height: 100vh;
-            background-color: #071c14;";
+            background-color: #005434;";
             justify-content: center;
             align-items: center;
             display: flex;
@@ -141,14 +141,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             text-overflow: ellipsis;
         }
 
-        .floating-alert {
-            position: fixed;
-            top: 40%;
-            right: 40%;
-            z-index: 1050;
-            width: auto;
-            max-width: 300px;
-        }
+       
     </style>
 </head>
 

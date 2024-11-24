@@ -106,34 +106,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
     
     <style>
-         @font-face {
-    font-family: 'MyFont';
-    src: url('fonts/Inter.ttf') format('ttf'),
-}
-        * {
+       * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
+        @font-face {
+  font-family: 'MyFont';
+  src: url('fonts/Inter.ttf') format('ttf'),
+}
 
         body {
-            font-family: 'MyFont';
+           font-family: 'MyFont';
             height: 100vh;
-            background-color: #071c14;
+            background-color: #005434;
             justify-content: center;
             align-items: center;
             display: flex;
         }
-
         .container {
             background: #f4f4f4;
-            padding: 1.5rem;
             width: 850px;
+            padding: 1.5rem;
             margin: 10px auto;
             border-radius: 10px;
             box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
         }
-
         .form-control {
             width: 100%;
             max-width: 100%;
@@ -141,22 +139,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-
-        .floating-alert {
-            position: fixed;
-            top: 40%;
-            right: 40%;
-            z-index: 1050;
-            width: auto;
-            max-width: 300px;
-        }
     </style>
 </head>
 
-<body style="background: #071c14;">
+<body>
     <div class="container my-5">
         <h2 style="font-weight: bold;">Add New Record</h2>
-        
+        <br>
         <?php
         displayMessage($errorMessage, 'error');
         displayMessage($successMessage, 'success');

@@ -143,14 +143,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             white-space: nowrap;
             text-overflow: ellipsis;
         }
-        .floating-alert {
-            position: fixed;
-            top: 40%;
-            right: 40%;
-            z-index: 1050;
-            width: auto;
-            max-width: 300px;
-        }
     </style>
 </head>
 <body>
@@ -247,6 +239,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 var alert = document.querySelector('.floating-alert');
                 if (alert) {
                     alert.classList.remove('show');
+                    alert.style.display = 'none';
                 }
             }, 1000);
         });
