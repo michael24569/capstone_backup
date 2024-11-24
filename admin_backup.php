@@ -121,7 +121,7 @@ unset($_SESSION['backup_file']);
             <?php endif; ?>
         </div>
 
-            <button type="submit" class="button btn-edit">Confirm</button>
+            <button type="submit" class="button btn-edit">Confirm </button>
         </form>
     </div>
 </div>

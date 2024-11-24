@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,900&display=swap');
+
 * {
   padding: 0;
   margin: 0;
@@ -287,6 +287,7 @@ z-index: 10;
 
 
 .A1 {
+  font-size: 25px;
   position: absolute;
   width: 30%;
   height: 50%;
@@ -321,6 +322,7 @@ z-index: 10;
 
 
 .A1sideA{
+  font-size: 25px;
   cursor: pointer;
   top: 30px;
   left: 25px;
@@ -342,6 +344,7 @@ z-index: 10;
 
 }
 .A1sideB{
+  font-size: 25px;
   cursor: pointer;
   bottom: 130px;
   left:220px;
@@ -385,6 +388,7 @@ z-index: 10;
 
 
 .A2 {
+  font-size: 25px;
   position: absolute;
   width: 30%;
   height: 50%;
@@ -416,6 +420,7 @@ z-index: 10;
 
 }
 .A2sideA{
+  font-size: 25px;
   cursor: pointer;
   top: 30px;
   left: 25px;
@@ -437,6 +442,7 @@ z-index: 10;
 
 }
 .A2sideB{
+  font-size: 25px;
   cursor: pointer;
   bottom: 130px;
   left:220px;
@@ -477,6 +483,7 @@ z-index: 10;
 
 
 .A3 {
+  font-size: 25px;
   position: absolute;
   width: 30%;
   height: 50%;
@@ -508,6 +515,7 @@ z-index: 10;
 
 }
 .A3sideA{
+  font-size: 25px;
   cursor: pointer;
   top: 30px;
   left: 25px;
@@ -530,6 +538,7 @@ z-index: 10;
 
 }
 .A3sideB{
+  font-size: 25px;
   cursor: pointer;
   bottom: 130px;
   left:220px;
@@ -568,7 +577,7 @@ z-index: 10;
 }
 
 .C2{
-  
+  font-size: 25px;
   position: absolute;
   width: 30%;
   height: 50%;
@@ -600,6 +609,8 @@ z-index: 10;
 
 }
 .C21stflr{
+  font-size: 25px;
+
   cursor: pointer;
   top: 45%;
   position: absolute;
@@ -621,6 +632,7 @@ z-index: 10;
 
 }
 .C22ndflr{
+  font-size: 25px;
   cursor: pointer;
   top: 45%;
   position: absolute;
@@ -659,6 +671,7 @@ z-index: 10;
 
 
 .C1{
+  font-size: 25px;
   position: absolute;
   width: 30%;
   height: 50%;
@@ -690,6 +703,7 @@ z-index: 10;
 
 }
 .C11stflr{
+  font-size: 25px;
   cursor: pointer;
   top: 45%;
   position: absolute;
@@ -709,6 +723,7 @@ z-index: 10;
 
 }
 .C12ndflr{
+  font-size: 25px;
   cursor: pointer;
   top: 45%;
   position: absolute;
@@ -758,345 +773,354 @@ z-index: 10;
 
 
 .Dominic {
-  
+  font-size: 25px;
   color: white;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 46%; 
   left: 68.5%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
+
 
 }
 .Dominic:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
   
 }
 .Rafael {
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 100px;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 76%; 
   left: 50.2%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
   
 }
 .Rafael:hover{
   background-color: #151716a2;
   color: #ffffff;
-  transform: scale(1.1)
+  font-size: 16px;
+
  
   
 }
 
 .Peter {
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 100px;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 66%; 
   left: 50.2%;
-  transition: all 0.3s ease-in-out;
-
+  transition:  0.1s ease-in;
 }
 .Peter:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
   
 }
 .Paul {
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 100px;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 56%; 
   left: 50.2%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 }
 .Paul:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
   
 }
 .Jude {
+  font-size: 25px;
  
   color: white;
   text-align: center;
   width: 90px;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 13.5%; 
   left: 51.5%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 .Jude:hover{
-  transform: scale(1.2);
+    font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
   
 }
 .John {
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 90px;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 13.5%; 
   left: 57.5%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 
 .John:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
   
 }
 .Joseph {
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 110px;
-  background-color: #504e4e4a; 
   padding: 17px;
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 13.5%; 
   left: 63.5%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 .Joseph:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
   
 }
 
 .James {
+  font-size: 25px;
+
  color: white;
   text-align: center;
   width: 100px;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 13.5%; 
   left: 74%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 .James:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
 
   
 }
 .Agustine {
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 125px;
-  background-color: #504e4e4a; 
   padding: 17px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 77%; 
   left: 60.8%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 
 
 .Agustine:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
   
 }
 .Isidore {
+  font-size: 17px;
   color: white;
   text-align: center;
-  width: 70px;
-  background-color: #504e4e4a; 
+  width: 100px;
   padding: 5px; 
   padding-bottom: 15px;
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 60%; 
   left: 72%;
-  transition: all 0.3s ease-in-out;
-
+  transition:  0.1s ease-in;
 }
 
-.Isidore:hover{
-  transform: scale(1.2);
+.Isidore:hover { 
+  font-size: 18px;
   background-color: #151716a2;
   color: #ffffff;
 }
+
 .Matthew {
+  font-size: 20px;
+
   color: white;
   text-align: center;
   width: 70px;
-  background-color: #504e4e4a; 
   padding: 5px; 
   padding-bottom: 10px;
   border-radius: 5px; 
   font-size: 12px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 24%; 
   left: 49%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 .Matthew:hover{
-  transform: scale(1.5);
+  font-size: 15px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
 
 .Mark{
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 120px;
-  background-color: #504e4e4a; 
   padding: 5px; 
   padding-bottom: 8px;
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 5.8%; 
   left: 53%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 .Mark:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
 
 .Luke{
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 120px;
-  background-color: #504e4e4a; 
   padding: 5px; 
   padding-bottom: 8px;
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 5.8%; 
   left: 69%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 .Luke:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
 
 .Michael{
+  font-size: 25px;
+
   color: white;
   text-align: center;
   width: 106px;
-  background-color: #504e4e4a; 
   padding: 5px; 
   border-radius: 5px; 
   font-size: 15px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 40%; 
   left: 50%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
 }
 .Michael:hover{
-  transform: scale(1.2);
-  background-color: #151716a2;
+  font-size: 17px;
+  
+  background-color: #151716c9;
   color: #ffffff;
 } 
 
 .Colum1 {
+  
   text-align: center;
   color: white;
   padding: 5px; 
   width: 100px;
-  background-color: #504e4e4a; 
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: -5px;
   border-radius: 5px; 
   font-size: 13px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 20.1%; 
   left: 41.3%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
  }
  .Colum1:hover{
   
-  transform: scale(1.2);
+  font-size: 13.5px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
@@ -1105,22 +1129,21 @@ z-index: 10;
   color: white;
   padding: 5px; 
   width: 100px;
-  background-color: #504e4e4a; 
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: -5px;
   border-radius: 5px; 
   font-size: 13px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 20.1%; 
   left: 35.1%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
  }
  .Colum2:hover{
-  transform: scale(1.2);
+  font-size: 13.5px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
@@ -1132,18 +1155,17 @@ z-index: 10;
   width: 100px;
   padding-bottom: 8px;
   border-radius: 5px; 
-  background-color: #504e4e4a; 
   font-size: 13.5px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 31.3%; 
   left:  28.2%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
  }
  .Apart1:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
@@ -1154,18 +1176,17 @@ z-index: 10;
   width: 100px;
   padding-bottom: 8px;
   border-radius: 5px; 
-  background-color: #504e4e4a; 
   font-size: 13.5px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 25.7%; 
   left: 28.2%;
-  transition: all 0.3s ease-in-out;
+  transition:  0.1s ease-in;
 
  }
  .Apart2:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
@@ -1176,18 +1197,16 @@ z-index: 10;
   width: 100px;
   padding-bottom: 8px;
   border-radius: 5px; 
-  background-color: #504e4e4a; 
   font-size: 13.5px;
-  font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 20.07%; 
   left: 28.2%;
-  transition: all 0.3s ease-in-out;
-
+  transition:  0.1s ease-in;
  }
  .Apart3:hover{
-  transform: scale(1.2);
+  font-size: 17px;
+
   background-color: #151716a2;
   color: #ffffff;
 }
@@ -1231,6 +1250,7 @@ z-index: 10;
   color: #cbedd3;
 }
 .SAa1GridA{
+  
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(5, 50px); 
@@ -1244,7 +1264,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -1319,7 +1339,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -1391,7 +1411,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -1461,7 +1481,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -1530,7 +1550,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -1601,7 +1621,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -1651,6 +1671,8 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1671,7 +1693,8 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 2;
-  
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1693,7 +1716,8 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 2;
-  
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1719,6 +1743,8 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1774,6 +1800,8 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1794,6 +1822,7 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 2;
+ line-height: 21px;
   
   border: 1px solid #000;
   transition: transform 0.3s ease;
@@ -1814,6 +1843,7 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 2;
+  line-height: 21px;
  
   border: 1px solid #000;
   transition: transform 0.3s ease;
@@ -1837,6 +1867,9 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  text-align: center;
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1894,6 +1927,8 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1916,7 +1951,7 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 2;
-
+ line-height: 21px;
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -1938,6 +1973,7 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 2;
+  line-height: 21px;
 
   border: 1px solid #000;
   transition: transform 0.3s ease;
@@ -1962,6 +1998,8 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  line-height: 21px;
+  
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -2020,6 +2058,8 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  line-height: 21px;
+
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -2039,6 +2079,7 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 2;
+  line-height: 21px;
  
   border: 1px solid #000;
   transition: transform 0.3s ease;
@@ -2059,6 +2100,7 @@ z-index: 10;
   background: #bfbfbf;
   border-radius: 20px;
   z-index: 10;
+ line-height: 21px;
   
   border: 1px solid #000;
   transition: transform 0.3s ease;
@@ -2082,6 +2124,7 @@ z-index: 10;
   border-radius: 20px;
   z-index: 2;
   display: none;
+  line-height: 21px;
   border: 1px solid #000;
   transition: transform 0.3s ease;
 
@@ -2129,7 +2172,7 @@ z-index: 10;
 }
 
 .A1lgndsSA {
-  width: 0;
+  width: 10px;
   height: 40px;
   font-size: 14px;
   border: 1px solid #ccc;
@@ -2149,9 +2192,12 @@ z-index: 10;
   overflow: hidden;
   animation: fadeExpand 0.5s ease forwards;
   animation-delay: 0.1s;
+  
 }
 
 .legends {
+  
+  font-size: 20px;
   font-weight: bold;
   margin-right: 60px;
   margin-left: 20px;
@@ -2159,24 +2205,28 @@ z-index: 10;
 }
 
 .legendList {
+  font-size: 15.5px;
   display: flex;
   align-items: center;
-  margin-left: 10px;
+  margin-right:30px;
 }
 
 .legendU {
-  width: 15px;
-  height: 15px;
+  width:20px;
+  height: 20px;
   border-radius: 50%;
-  margin-right: 5px; 
+  margin-left: -20px; 
 }
 
 .Available {
   background-color: green;
+  
+  
 }
 
 .Unavailable {
   background-color: blue;
+  
 }
 
 
@@ -2214,6 +2264,7 @@ z-index: 10;
   color: #cbedd3;
 }
 .C11stflrGridSA{
+  
   display: grid;
   grid-template-columns: repeat(10, 1fr);
   grid-template-rows: repeat(4, 55px); 
@@ -2228,7 +2279,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -2292,7 +2343,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -2356,7 +2407,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -2595,6 +2646,8 @@ z-index: 10;
   z-index: 10;
   box-sizing: border-box;
   text-align: center;
+ line-height: 21px;
+  
   justify-content: center;
   align-items: center;
   display: none;
@@ -2672,8 +2725,8 @@ z-index: 10;
   z-index: 10;
   box-sizing: border-box;
   text-align: center;
-  justify-content: center;
-  align-items: center;
+ line-height: 21px;
+  
   display: none;
   box-shadow: 10px 5px 30px 5px  #000000;
 }
@@ -2918,7 +2971,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -2983,7 +3036,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3050,7 +3103,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3118,7 +3171,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3184,7 +3237,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3250,7 +3303,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3318,7 +3371,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3386,7 +3439,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3456,7 +3509,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3525,7 +3578,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3592,7 +3645,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3660,7 +3713,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3726,7 +3779,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3793,7 +3846,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3859,7 +3912,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3925,7 +3978,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -3990,7 +4043,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4057,7 +4110,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4123,7 +4176,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4188,7 +4241,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4254,7 +4307,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4321,7 +4374,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4389,7 +4442,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4454,7 +4507,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4526,7 +4579,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4592,7 +4645,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4659,7 +4712,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4727,7 +4780,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4793,7 +4846,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4859,7 +4912,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4926,7 +4979,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -4994,7 +5047,7 @@ z-index: 10;
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 14px;
+  font-size: 20px;
   font-weight: bold;
   transition: transform 0.3s ease;
   }
@@ -5031,6 +5084,7 @@ z-index: 10;
   z-index: 10;
   box-sizing: border-box;
   text-align: center;
+ line-height: 21px;
   justify-content: center;
   align-items: center;
   display: none;
