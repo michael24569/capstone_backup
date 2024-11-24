@@ -172,8 +172,8 @@ tbody, thead, .form-control, td {
                 <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_address']))); ?></td>
 
                     <td class="action-buttons">
-                        <a class='btn btn-edit' href='admin_update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
-                        <a href="admin_archiveCondition.php?id=<?= $row['id']; ?>" class="btn btn-archive">Archive</a>
+                        <a class='btn btn-edit' href='update.php?id=<?php echo htmlspecialchars($row["id"]); ?>'>Edit</a>
+                        <a href="archive.php?id=<?= $row['id']; ?>" class="btn btn-archive">Archive</a>
 
                     </td>
                 </tr>

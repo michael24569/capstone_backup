@@ -50,44 +50,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <link rel="stylesheet" href="style1.css">
 
     <style>
-    .sidebar-toggle-btn {
-  display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; /* Position inside the sidebar */
-  top: 20px; /* Adjust position from the top of the sidebar */
-  left: -5px; /* Align inside the sidebar */
-  background: none; /* No background */
-  border: none; /* Remove border */
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-
-.sidebar-toggle-btn ion-icon {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
-
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover ion-icon {
-  color: #b3d1b3; /* Change icon color on hover */
-}
-
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-  .sidebar-toggle-btn {
-    display: block; /* Show the toggle button on smaller screens */
-  }
-
-  .sidebar {
-    transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out;
-  }
-
-  .sidebar.active {
-    transform: translateX(0); /* Show sidebar when active */
-  }
-}
+ 
            @font-face {
     font-family: 'MyFont';
     src: url('fonts/Inter.ttf') format('ttf'),
@@ -121,6 +84,27 @@ tbody, thead, .form-control, td {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        /* Modal styles */
+      
+        .top-left-button {
+  fill: white;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  background-color: #4caf4f00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.top-left-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-content {
+  text-align: center;
+}
     </style>
 </head>
 <link rel="stylesheet" href="logoutmodal.css">
@@ -139,13 +123,13 @@ tbody, thead, .form-control, td {
 <div id="recordsContent" class="center_record">
     <div class="table-responsive">
         <h1 id="header1">Records Section</h1>
-        <a class="btn btn-primary btn-add" href="addRecord.php" role="button">Add new record</a>
+        <a class="btn btn-primary btn-add" href="admin_addRecord.php" role="button">Add new record <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" style="height: 19px; margin-left: 5px; fill:white;"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg></a>
         <br>
         <form method="GET" action="">
             <div class="input-group">
                 <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>" autocomplete="off">
                 <br>
-                <button class='btn btn-search' type="submit">Search</button> 
+                <button class='btn btn-search' type="submit"> <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:20px; fill:white;"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>Search</button> 
                 <button class="refresh-icon" type="submit" name="refresh" value="1">
                     <span class="icon">&#x21bb;</span> 
                 </button>

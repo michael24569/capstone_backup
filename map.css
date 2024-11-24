@@ -97,7 +97,6 @@ z-index: 10;
   
 
 /* Sidebar Styles */
-/* Sidebar Styles */
 .sidebar {
   font-size: 15px;
   bottom: 0px;
@@ -197,16 +196,7 @@ z-index: 10;
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.sidebar-toggle-btn svg {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
 
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover svg {
-  color: #b3d1b3; /* Change icon color on hover */
-}
 
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
@@ -255,7 +245,7 @@ z-index: 10;
   fill: white;
   position: absolute;
   top: 10px;
-  left: 10px;
+  left: 0px;
   background-color: #4caf4f00;
   border: none;
   padding: 10px;
@@ -778,7 +768,8 @@ z-index: 10;
   position: absolute; 
   top: 46%; 
   left: 68.5%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Dominic:hover{
   transform: scale(1.2);
@@ -799,12 +790,14 @@ z-index: 10;
   position: absolute; 
   top: 76%; 
   left: 50.2%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+  
 }
 .Rafael:hover{
-  transform: scale(1.2);
   background-color: #151716a2;
   color: #ffffff;
+  transform: scale(1.1)
+ 
   
 }
 
@@ -821,11 +814,12 @@ z-index: 10;
   position: absolute; 
   top: 66%; 
   left: 50.2%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Peter:hover{
   transform: scale(1.2);
-  background-color: #504e4e4a;
+  background-color: #151716a2;
   color: #ffffff;
   
 }
@@ -842,7 +836,7 @@ z-index: 10;
   position: absolute; 
   top: 56%; 
   left: 50.2%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 .Paul:hover{
   transform: scale(1.2);
@@ -864,7 +858,8 @@ z-index: 10;
   position: absolute; 
   top: 13.5%; 
   left: 51.5%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Jude:hover{
   transform: scale(1.2);
@@ -885,7 +880,8 @@ z-index: 10;
   position: absolute; 
   top: 13.5%; 
   left: 57.5%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 
 .John:hover{
@@ -907,7 +903,8 @@ z-index: 10;
   position: absolute; 
   top: 13.5%; 
   left: 63.5%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Joseph:hover{
   transform: scale(1.2);
@@ -929,7 +926,8 @@ z-index: 10;
   position: absolute; 
   top: 13.5%; 
   left: 74%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .James:hover{
   transform: scale(1.2);
@@ -951,7 +949,8 @@ z-index: 10;
   position: absolute; 
   top: 77%; 
   left: 60.8%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 
 
@@ -975,7 +974,8 @@ z-index: 10;
   position: absolute; 
   top: 60%; 
   left: 72%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 
 .Isidore:hover{
@@ -997,7 +997,8 @@ z-index: 10;
   position: absolute; 
   top: 24%; 
   left: 49%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Matthew:hover{
   transform: scale(1.5);
@@ -1019,7 +1020,8 @@ z-index: 10;
   position: absolute; 
   top: 5.8%; 
   left: 53%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Mark:hover{
   transform: scale(1.2);
@@ -1041,7 +1043,8 @@ z-index: 10;
   position: absolute; 
   top: 5.8%; 
   left: 69%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Luke:hover{
   transform: scale(1.2);
@@ -1062,7 +1065,8 @@ z-index: 10;
   position: absolute; 
   top: 40%; 
   left: 50%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
 }
 .Michael:hover{
   transform: scale(1.2);
@@ -1080,13 +1084,14 @@ z-index: 10;
   padding-bottom: 15px;
   padding-left: -5px;
   border-radius: 5px; 
-  font-size: 11px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 20.1%; 
   left: 41.3%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
  }
  .Colum1:hover{
   
@@ -1104,13 +1109,14 @@ z-index: 10;
   padding-bottom: 15px;
   padding-left: -5px;
   border-radius: 5px; 
-  font-size: 11px;
+  font-size: 13px;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 20.1%; 
   left: 35.1%;
-  transition: transform 0.3s ease;
+  transition: all 0.3s ease-in-out;
+
  }
  .Colum2:hover{
   transform: scale(1.2);
@@ -1126,12 +1132,14 @@ z-index: 10;
   padding-bottom: 8px;
   border-radius: 5px; 
   background-color: #504e4e4a; 
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 31.3%; 
   left:  28.2%;
+  transition: all 0.3s ease-in-out;
+
  }
  .Apart1:hover{
   transform: scale(1.2);
@@ -1146,12 +1154,14 @@ z-index: 10;
   padding-bottom: 8px;
   border-radius: 5px; 
   background-color: #504e4e4a; 
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 25.7%; 
   left: 28.2%;
+  transition: all 0.3s ease-in-out;
+
  }
  .Apart2:hover{
   transform: scale(1.2);
@@ -1166,12 +1176,14 @@ z-index: 10;
   padding-bottom: 8px;
   border-radius: 5px; 
   background-color: #504e4e4a; 
-  font-size: 11px;
+  font-size: 13.5px;
   font-weight: bold;
   cursor: pointer;
   position: absolute; 
   top: 20.07%; 
   left: 28.2%;
+  transition: all 0.3s ease-in-out;
+
  }
  .Apart3:hover{
   transform: scale(1.2);

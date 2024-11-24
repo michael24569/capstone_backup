@@ -151,11 +151,19 @@ require("loginCondition.php");
     transition: 0.9s;
   }
   .btn:hover{
-    background-color: #540020;
+    background-color: #337F5B;
   }
   .btn:focus {
-    background-color: #005434;
-    color: white; 
+    font-size: 1.1rem;
+    padding: 15px 0;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    width: 100%;
+    background-color: #337F5B;
+    color: white;
+    cursor: pointer;
+    transition: 0.9s;
 }
   .links{
     display: flex;

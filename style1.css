@@ -113,16 +113,7 @@ body {
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-.sidebar-toggle-btn svg {
-  font-size: 2rem; /* Adjust icon size */
-  color: white; /* White icon color */
-  transition: color 0.3s ease; /* Smooth hover effect */
-}
 
-/* Hover effect for toggle button */
-.sidebar-toggle-btn:hover svg {
-  color: #b3d1b3; /* Change icon color on hover */
-}
 
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
@@ -163,6 +154,9 @@ body {
     font-size: 10px;
   }
 }
+
+
+
 
 
 
@@ -317,6 +311,7 @@ body {
   background-color: #f44336;
 }
 .btn-search {
+  padding-left:35px;
   background-color: #3f2afc;
   margin-left: 10px;
   font-family: 'MyFont';

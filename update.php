@@ -107,17 +107,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Update Records</title>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Michroma&display=swap">
+    <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js" ></script>
+    <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
     <style>
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
+        @font-face {
+  font-family: 'MyFont';
+  src: url('fonts/Inter.ttf') format('ttf'),
+}
+
         body {
-            font-family: "Michroma", sans-serif;
+           font-family: 'MyFont';
             height: 100vh;
             background-color: #005434;
             justify-content: center;
@@ -162,7 +166,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Lot No.</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="Lot_No" value="<?php echo htmlspecialchars($lot) ?>">
+                <input 
+                        type="number" 
+                        class="form-control" 
+                        name="Lot_No" 
+                        value="<?php echo htmlspecialchars($lot) ?>" 
+                        oninput="validateNumber(this)">
                 </div>
             </div>
 
@@ -241,6 +250,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 }
             }, 1000);
         });
+
+
+        //validate the number for the lotno
+        function validateNumber(input) {
+    let value = parseInt(input.value, 10);
+
+    if (isNaN(value) || value < 0) {
+        input.value = 0;
+    }
+}
     </script>
 </body>
 </html>

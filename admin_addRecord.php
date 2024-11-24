@@ -249,6 +249,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 }
             }, 1000); // Adjust the time as needed
         });
+
+         //validate the number for the lotno
+         function validateNumber(input) {
+    let value = parseInt(input.value, 10);
+
+    if (isNaN(value) || value < 0) {
+        input.value = 0;
+    }
+}
     </script>
 </body>
 </html>

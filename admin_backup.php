@@ -59,6 +59,25 @@ unset($_SESSION['backup_file']);
     transform: translateX(0); /* Show sidebar when active */
   }
 }
+.top-left-button {
+  fill: white;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  background-color: #4caf4f00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.top-left-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-content {
+  text-align: center;
+}
 </style>
 </head>
 <body style="background: #071c14;">
@@ -137,5 +156,8 @@ unset($_SESSION['backup_file']);
             }
         });
 </script>
+<script src="paiyakan.js"></script>
+
+
 </body>
 </html>
