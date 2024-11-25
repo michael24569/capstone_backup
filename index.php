@@ -19,6 +19,20 @@ require("loginCondition.php");
    
 </head>
 <body >
+
+
+<div class="blur-box">
+ <!-- Animated Text Section -->
+<div class="animated-container">
+  <div class="animated-text">2D Mapping and<br>Management System</div>
+  <div class="animated-text">for Tagaytay Memorial Park</div>
+  <div class="line"></div>
+</div>
+
+
+
+
+
    <div class="container" id="signin">
         <div class="login-form">
         <h1 class="form-title">Sign In</h1>
@@ -40,6 +54,7 @@ require("loginCondition.php");
                 <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
                 <label for="password">Password</label>
             </div>
+            </div>
             <?php
             if (isset($_SESSION['error'])) {
                 echo '<p class="error">' . $_SESSION['error'] . '</p>';
@@ -50,6 +65,7 @@ require("loginCondition.php");
         </form>
         </div>
     </div>
+          
     <style>
     
 * {
@@ -57,41 +73,60 @@ require("loginCondition.php");
     margin: 0;
     box-sizing: border-box;
   }
-  
+  .blur-box {
+    width: 80%;
+    height:90%;
+    box-shadow: 0  0 30px 0px black;
+    border-radius: 15px;
+    
+ }
   body {
-    font-family: 'MyFont';
+   
     height: 100vh;
     background-color: #c9d6ff;
     background: linear-gradient(to right,#e2e2e2,#c9d6ff);
     justify-content: center;
     align-items: center;
     display: flex;
-    background-image: url('images/loginIMG.jpg');
+    background-image: url('images/s2.jpg');
     background-size: cover;
     background-position: center;
     z-index: 10;
+    
   }
   .container {
-    background: linear-gradient(135deg, #ffffff1a, #ffffff00);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    width: 450px;
-    padding: 1.5rem;
-    margin: 50px auto;
-    border-radius: 10px;
-    box-shadow: 0 8px 32px 0 #00000080;
+  background-color:#ffffffbe;
+  width: 400px;
+  margin-left:60%;
+  margin-top:15%;
+  padding: 1.5rem;
+  border-radius: 2px;
+  box-shadow: 0 8px 32px 0 #00000080;
+  animation: zoomIn 1s ease-out; /* Apply zoom-in animation */
+}
+@keyframes zoomIn {
+  0% {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }
   form{
     margin: 0 2rem;
   
   }
   .form-title{
-    font-size: 1.5rem;
+    font-size: 3.5rem;
     font-weight: bold;
     text-align: center;
     padding: 1.3rem;
     margin-bottom: 0.4rem;
+    
   }
+  
   input{
     color: inherit;
     width: 100%;
@@ -139,19 +174,20 @@ require("loginCondition.php");
     font-size: 15px;
   }
   .btn{
-    font-size: 1.1rem;
+    font-size: 1.5rem;
     padding: 15px 0;
-    border-radius: 5px;
+    border-radius: 50px;
     outline: none;
     border: none;
     width: 100%;
     background-color: #005434;
     color: white;
     cursor: pointer;
-    transition: 0.9s;
+    transition: .1s;
+    font-family:"myfont"
   }
   .btn:hover{
-    background-color: #540020;
+    background-color: #013b25;
   }
   .btn:focus {
     background-color: #005434;
@@ -211,6 +247,76 @@ require("loginCondition.php");
   .space{
     padding-left: 20px;
   }
+
+/* animate */
+  .animated-container {
+    text-align: center;
+    position: absolute;
+    top: 43%;
+    left: 33%;
+    transform: translateX(-50%);
+    width:100%;
+    margin-top:-40px;
+    
+    
+  }
+  .animated-text {
+    text-shadow: 
+        1px 1px 0px #000,      /* Top-left shadow */
+       -1px -1px 0px #000,    /* Bottom-right shadow */
+        1px -1px 0px #000,     /* Bottom-left shadow */
+       -1px 1px 0px #000;      /* Top-right shadow */
+    
+    font-size: 3.1rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transform: translateX(-1000px); /* Starts far left off-screen */
+    animation: lightSpeedInLeft 1s ease-in forwards; /* Animation applied */
+}
+
+@keyframes lightSpeedInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-1000px) skewX(30deg); /* Skew and off-screen */
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(30px) skewX(-10deg); /* Near final position */
+    }
+    80% {
+        transform: translateX(-10px) skewX(5deg); /* Slight rebound effect */
+    }
+    100% {
+        opacity:1;
+        transform: translateX(0) skewX(0); /* Final position */
+    }
+}
+  .line {
+    border-radius:10px;
+    width: 0; /* Initial width, since animation grows */
+    height: 5px; /* Thickness of the line */
+    background: white;
+    margin: 10px auto 0; /* Centers it vertically */
+    
+    animation: growLine 1s ease-out 1s forwards;
+    transform: rotate(90deg); /* Rotates the line */
+    position: relative; /* Add relative positioning */
+    left: 23%;
+    bottom:88px;
+  }
+
+  
+
+  @keyframes growLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 360px;
+    }
+  }
+
   </style>
   <script>
   
