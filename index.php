@@ -40,6 +40,7 @@ require("loginCondition.php");
                 <input type="password" name="password" id="password" placeholder="Password" autocomplete="off">
                 <label for="password">Password</label>
             </div>
+            <p class="recover"><a href="recover.php">Forgot password?</a></p>
             <?php
             if (isset($_SESSION['error'])) {
                 echo '<p class="error">' . $_SESSION['error'] . '</p>';
