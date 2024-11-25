@@ -46,8 +46,8 @@ if (!isset($_SESSION['id'])) {
         </div>
         <div class="input-group">
             <i class="fas fa-lock"></i>
-            <input type="password" name="confirm_password" id="password" placeholder="Confirm Password" required>
-            <label for="password">Confirm Password</label>
+            <input type="password" name="confirm_password" id="confirmPass" placeholder="Confirm Password" required>
+            <label for="confirmPass">Confirm Password</label>
         </div>
 
         
@@ -76,6 +76,18 @@ if (!isset($_SESSION['id'])) {
 
    </div> 
 <script>
+   const inputIds = ['password','confirmPass'];
+
+inputIds.forEach(id => {
+  const input = document.getElementById(id);
+  
+  input.addEventListener('input', function() {
+    this.value = this.value.replace(/\s/g, ''); // Remove spaces
+  });
+
+});
+
+
     var success = document.getElementById('success');
 
     success.style.color = "#4caf50";

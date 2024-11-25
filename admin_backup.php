@@ -104,7 +104,7 @@ unset($_SESSION['backup_file']);
 
 <div class="center_record">
     <div class="container">
-        <h1 style= "font-size: 40px;"class="form-title">Backup Records</h1>
+        <h1 style= "font-size: 40px;"class="form-title">Backup Database</h1>
 
         <!-- Form for backup submission -->
         <form action="backupCondition.php" method="POST">

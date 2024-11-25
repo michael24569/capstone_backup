@@ -222,7 +222,10 @@ require("loginCondition.php");
   }
   </style>
   <script>
-  
+  // will not accept space
+  document.getElementById('password').addEventListener('input', function(e) {
+    this.value = this.value.replace(/\s/g, ''); // Remove spaces
+  });
     // Function to hide the error message when the user starts typing
     function hideErrorMessage() {
         const errorMessage = document.querySelector('.error');

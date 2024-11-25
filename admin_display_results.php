@@ -155,8 +155,8 @@ function displayRecordStatus() {
 <table>
     <tr>
         <th>Memorial Name</th>
-        <th>Occupied</th>
-        <th>Available</th>
+        <th>Total number of owned lots</th>
+        <th>Total number of available lots</th>
     </tr>';
     
     foreach ($recordStatus as $class => $counts) {

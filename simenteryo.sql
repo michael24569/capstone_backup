@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2024 at 02:17 AM
+-- Generation Time: Nov 25, 2024 at 11:56 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -108,34 +108,34 @@ INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_ad
 (25, '8', 'Family Estate', 'St. Lukes', 'QUADALUPE MALABANAN', NULL),
 (26, '9', 'Family Estate', 'St. Lukes', 'JOSEFINA SUSA c/o NANETTE SUSA', NULL),
 (27, '10', 'Family Estate', 'St. Lukes', 'RUPERTO B. PANGILINAN', NULL),
-(28, '11', 'Family Estate', 'St. Lukes', 'ESTRELLA MURRAY - Southridge Subd. Sungay, Tagaytay', NULL),
+(28, '11', 'Family Estate', 'St. Lukes', 'ESTRELLA MURRAY', 'Southridge Su'),
 (29, '1', 'Garden Lots', 'St. Matthew', 'AVELINO SUMAGUI', NULL),
-(30, '2', 'Garden Lots', 'St. Matthew', 'DEMETRIO BALICA c/o CARMELITA LAUREL, Dapdap West', NULL),
+(30, '2', 'Garden Lots', 'St. Matthew', 'DEMETRIO BALICA c/o CARMELITA LAUREL', 'Dapdap West'),
 (31, '3', 'Garden Lots', 'St. Matthew', 'FORTUNATO DE LEON c/o (ATE TESSIE CARAAN)', NULL),
 (32, '4', 'Garden Lots', 'St. Matthew', 'REPARATION SISTERS OF THE HOLY EUCHARIST', NULL),
 (33, '5', 'Garden Lots', 'St. Matthew', 'FLORENCIA ANGCAYA', NULL),
 (34, '6', 'Garden Lots', 'St. Matthew', 'ADELINA MIRANDA', NULL),
-(35, '7', 'Garden Lots', 'St. Matthew', 'YOLANDA BABIERA, Seiz de Junio Village Sungay East', NULL),
-(36, '8', 'Garden Lots', 'St. Matthew', 'BENITO MANALO / BAYOT c/o APOLONIA MANALO - Maitim', NULL),
+(35, '7', 'Garden Lots', 'St. Matthew', 'YOLANDA BABIERA', 'Seiz de Junio'),
+(36, '8', 'Garden Lots', 'St. Matthew', 'BENITO MANALO / BAYOT c/o APOLONIA MANALO', 'Maitim'),
 (37, '1', 'Garden Lots', 'St. Isidore', 'MERLY LUNA c/o EFREN LUNA', NULL),
-(38, '2', 'Garden Lots', 'St. Isidore', 'TEODORO JAVIER - Talon Amadeo Cavite', NULL),
+(38, '2', 'Garden Lots', 'St. Isidore', 'TEODORO JAVIER', 'Talon Amadeo '),
 (39, '3', 'Garden Lots', 'St. Isidore', 'MANUEL DIGO c/o MANNY DIGO - CASTILLO\'S FAMILY', NULL),
-(40, '4', 'Garden Lots', 'St. Isidore', 'JUANA BAYOT - Kaybagal North, Tagaytay City', NULL),
-(41, '5', 'Garden Lots', 'St. Isidore', 'CATALINA ANGCAYA c/o IDAD BURAZON - Kaybagal North', NULL),
-(42, '6', 'Garden Lots', 'St. Isidore', '( ATTY.ISAGANI CORTEZ ) - Jennifer Bayot - Kaybaga', NULL),
+(40, '4', 'Garden Lots', 'St. Isidore', 'JUANA BAYOT', 'Kaybagal Nort'),
+(41, '5', 'Garden Lots', 'St. Isidore', 'CATALINA ANGCAYA c/o IDAD BURAZON', 'Kaybagal Nort'),
+(42, '6', 'Garden Lots', 'St. Isidore', '( ATTY.ISAGANI CORTEZ ) - Jennifer Bayot', 'Kaybagal'),
 (43, '7', 'Garden Lots', 'St. Isidore', 'CARLITO UMALI', NULL),
 (44, '8', 'Garden Lots', 'St. Isidore', 'LILIA ALVAREZ', NULL),
-(45, '9', 'Garden Lots', 'St. Isidore', 'LEOPOLDO UMALI c/o CARLITO UMALI - Francisco Tagaytay', NULL),
-(46, '10', 'Garden Lots', 'St. Isidore', 'ZOSIMO CONTRERAS c/o FRISCO AMBION - Francisco, Tagaytay City', NULL),
+(45, '9', 'Garden Lots', 'St. Isidore', 'LEOPOLDO UMALI c/o CARLITO UMALI', 'Francisco Tag'),
+(46, '10', 'Garden Lots', 'St. Isidore', 'ZOSIMO CONTRERAS c/o FRISCO AMBION', 'Francisco, Ta'),
 (47, '11', 'Garden Lots', 'St. Isidore', 'CESAR SEDUCON', NULL),
 (48, '12', 'Garden Lots', 'St. Isidore', 'ROSARIO LAGATA BY RODOLFO SANGCO & ROGER A. SANGCO', NULL),
 (49, '13', 'Garden Lots', 'St. Isidore', 'ROSARIO LAGATA BY RODOLFO SANGCO & ROGER A. SANGCO', NULL),
 (50, '14', 'Garden Lots', 'St. Isidore', 'JOVITA AMBAT MABUYO c/o MABUYO, REMY + MARCELINA H', NULL),
 (51, '15', 'Garden Lots', 'St. Isidore', 'MARIFE C. QUIAMBAO c/o NANDING ALVAREZ', NULL),
-(52, '16', 'Garden Lots', 'St. Isidore', 'FAYE AVILA c/o SAVINA AVILA - Kaybagal Central, Tagaytay City', NULL),
-(53, '17', 'Garden Lots', 'St. Isidore', 'GERRY RITZMANA c/o EMMA BATINO - Talon Amadeo Cavite', NULL),
+(52, '16', 'Garden Lots', 'St. Isidore', 'FAYE AVILA c/o SAVINA AVILA', 'Kaybagal Cent'),
+(53, '17', 'Garden Lots', 'St. Isidore', 'GERRY RITZMANA c/o EMMA BATINO', 'Talon Amadeo '),
 (54, '18', 'Garden Lots', 'St. Isidore', 'CATALINA CARAAN - Paid by PRISCILA MAGCUYAO', NULL),
-(55, '19', 'Garden Lots', 'St. Isidore', 'CATALINA CARAAN - Brgy. Tolentino, Tagaytay City', NULL),
+(55, '19', 'Garden Lots', 'St. Isidore', 'CATALINA CARAAN', 'Brgy. Tolenti'),
 (56, '1', 'Lawn Lots', 'St. Rafael', 'AGRIFINA VILLANUEVA', NULL),
 (57, '2', 'Lawn Lots', 'St. Rafael', 'AGRIFINA VILLANUEVA', NULL),
 (58, '17', 'Lawn Lots', 'St. Rafael', 'AGRIFINA VILLANUEVA', NULL),
@@ -850,11 +850,11 @@ INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_ad
 (777, '62', 'Lawn Lots', 'St. Dominic', 'RENATO M. CONCEPCION\r\nRONALD CONCEPCION', NULL),
 (778, '63', 'Lawn Lots', 'St. Dominic', 'JOSELITO CARAAN', NULL),
 (779, '64', 'Lawn Lots', 'St. Dominic', 'JORGE ENCARNACION', NULL),
-(780, '65', 'Lawn Lots', 'St. Dominic', 'SHIRLEY DIVINO', NULL);
-INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_address`) VALUES
+(780, '65', 'Lawn Lots', 'St. Dominic', 'SHIRLEY DIVINO', NULL),
 (781, '66', 'Lawn Lots', 'St. Dominic', 'DIANA ESCABA', NULL),
 (782, '67', 'Lawn Lots', 'St. Dominic', 'MELCHOR MENDOZA', NULL),
-(783, '68', 'Lawn Lots', 'St. Dominic', 'ANNABELLE B. BAWAG', NULL),
+(783, '68', 'Lawn Lots', 'St. Dominic', 'ANNABELLE B. BAWAG', NULL);
+INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_address`) VALUES
 (784, '69', 'Lawn Lots', 'St. Dominic', 'JOAQUIA PAJARILLO', NULL),
 (785, '70', 'Lawn Lots', 'St. Dominic', 'VIRGILIO MALIMBAN', NULL),
 (786, '71', 'Lawn Lots', 'St. Dominic', 'LOURDES SALCEDO', NULL),
@@ -1565,43 +1565,6 @@ CREATE TABLE `record_logs` (
   `action` varchar(50) DEFAULT NULL,
   `timestamp` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `record_logs`
---
-
-INSERT INTO `record_logs` (`id`, `role`, `fullname`, `Lot_No`, `mem_sts`, `action`, `timestamp`) VALUES
-(4, 'Admin', 'Michael Enoza', '143', 'St. Michael', 'updated', '2024-10-29 17:37:31'),
-(5, 'Staff', 'Michael Enoza', '144', 'St. Michael', 'updated', '2024-10-29 17:39:08'),
-(6, 'Admin', 'Michael Enoza', '201', 'Columbarium1', 'created', '2024-10-30 10:46:00'),
-(7, 'Admin', 'Michael Enoza', '1', 'Columbarium1', 'created', '2024-10-30 14:06:58'),
-(8, 'Admin', 'Michael Enoza', '1', 'Columbarium1', 'archived', '2024-10-30 14:08:01'),
-(9, 'Admin', 'Michael Enoza', '69', 'St. Michael', 'created', '2024-10-30 15:37:52'),
-(10, 'Admin', 'Michael Enoza', '69', 'St. Michael', 'archived', '2024-10-30 15:38:22'),
-(11, 'Staff', 'David Pasion', '218', 'Columbarium1', 'created', '2024-10-30 17:04:44'),
-(12, 'Admin', 'Michael Enoza', '218', 'Columbarium1', 'archived', '2024-10-30 17:08:36'),
-(13, 'Staff', 'Michael Enoza', '1', 'Columbarium1', 'created', '2024-11-02 15:37:02'),
-(14, 'Admin', 'Michael Enoza', '1', 'Columbarium1', 'updated', '2024-11-02 16:06:21'),
-(15, 'Staff', 'Michael Enoza', '1', 'Columbarium1', 'updated', '2024-11-02 16:11:45'),
-(16, 'Admin', 'Michael Enoza', '69', 'Columbarium1', 'created', '2024-11-04 10:07:56'),
-(17, 'Admin', 'Michael Enoza', '69', 'Columbarium1', 'archived', '2024-11-04 10:10:59'),
-(18, 'Staff', 'Michael Enoza', '57', 'Columbarium1', 'created', '2024-11-04 10:34:58'),
-(19, 'Admin', 'Michael Enoza', '57', 'Columbarium1', 'updated', '2024-11-04 10:37:24'),
-(20, 'Admin', 'Michael Enoza', '57', 'Columbarium1', 'archived', '2024-11-04 10:37:44'),
-(21, 'Staff', 'Michael Enoza', '44', 'Columbarium1', 'created', '2024-11-04 11:04:55'),
-(22, 'Staff', 'Michael Enoza', '44', 'Columbarium1', 'archived', '2024-11-04 11:05:23'),
-(23, 'Staff', 'Michael Enoza', '3', 'Columbarium1', 'created', '2024-11-05 09:09:16'),
-(24, 'Staff', 'Michael Enoza', '3', 'Columbarium1', 'archived', '2024-11-05 09:11:58'),
-(25, 'Staff', 'Michael Enoza', '13', 'Columbarium1', 'created', '2024-11-05 10:12:50'),
-(26, 'Staff', 'Michael Enoza', '13', 'Columbarium1', 'archived', '2024-11-05 10:14:31'),
-(27, 'Staff', 'Michael Enoza', '80', 'Columbarium2', 'created', '2024-11-10 15:28:45'),
-(28, 'Staff', 'Michael Enoza', '80', 'Columbarium2', 'archived', '2024-11-10 15:48:54'),
-(29, 'Admin', 'Michael Enoza', '145', 'Columbarium1', 'archived', '2024-11-10 16:43:11'),
-(30, 'Admin', 'Michael Enoza', '1', 'Columbarium1', 'updated', '2024-11-10 18:27:39'),
-(31, 'Admin', 'Michael Enoza', '1', 'Columbarium1', 'archived', '2024-11-11 08:36:24'),
-(32, 'Admin', 'Michael Enoza', '201', 'Columbarium1', 'archived', '2024-11-11 10:10:36'),
-(33, 'Admin', 'Michael Enoza', '143', 'Columbarium1', 'updated', '2024-11-12 13:22:03'),
-(34, 'Admin', 'Michael Enoza', '143', 'Columbarium1', 'archived', '2024-11-20 16:57:00');
 
 -- --------------------------------------------------------
 
