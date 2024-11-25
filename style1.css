@@ -312,9 +312,8 @@ body {
   background-color: #f44336;
 }
 .btn-search {
-  padding-left:35px;
   background-color: #3f2afc;
-  margin-left: 10px;
+  text-align: center;
   font-family: 'MyFont';
 }
 @font-face {
@@ -346,5 +345,6 @@ body {
   padding-top: 20px;
 }
 .form-control {
+  margin-right: 10px;
   padding-left: 10px;
 }

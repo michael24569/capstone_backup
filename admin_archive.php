@@ -115,7 +115,7 @@ tbody, thead, .form-control, td {
                 <div class="input-group">
                     <input type="text" class="form-control" name="search" placeholder="Search" value="<?php echo htmlspecialchars($searchQuery); ?>" autocomplete="off">
                     <br>
-                    <button class='btn btn-search' type="submit">Search</button>
+                    <button class='btn btn-search' type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" style="height:20px; fill:white;"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>Search</button>
                 </div>
             </form>
 
@@ -126,7 +126,8 @@ tbody, thead, .form-control, td {
                         <th>Memorial Lots</th>
                         <th>Memorial Name</th>
                         <th>Lot owner</th>
-                        <th>Address</th>                  
+                        <th>Address</th> 
+                        <th>Timestamp</th>                 
                     </tr>
                 </thead>
                 <tbody>
@@ -139,6 +140,7 @@ tbody, thead, .form-control, td {
                         <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_sts']))); ?></td>
                         <td><?php echo ucwords(strtolower(htmlspecialchars($row['LO_name']))); ?></td>
                         <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_address']))); ?></td>
+                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['timestamp']))); ?></td>
 
                     <tr class="divider-row">
                         <td colspan="6"></td>

@@ -38,7 +38,7 @@ if (isset($_GET["id"])) {
         $logStmt->execute();
 
         // Insert record into archive table
-        $archiveSql = "INSERT INTO archive ( Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
+        $archiveSql = "INSERT INTO archive ( Lot_No, mem_lots, mem_sts, LO_name, mem_address, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
         $archiveStmt = $connection->prepare($archiveSql);
         $archiveStmt->bind_param("sssss", $row['Lot_No'], $row['mem_lots'], $row['mem_sts'], $row['LO_name'], $row['mem_address']);
         $archiveStmt->execute();
