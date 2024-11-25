@@ -302,8 +302,8 @@ require("loginCondition.php");
     animation: growLine 1s ease-out 1s forwards;
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
-    left: 23%;
-    bottom:88px;
+    left: 22%;
+    bottom:65px;
   }
 
   
