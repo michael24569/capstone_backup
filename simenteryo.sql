@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 20, 2024 at 03:35 PM
+-- Generation Time: Nov 25, 2024 at 02:17 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -57,38 +57,9 @@ CREATE TABLE `archive` (
   `mem_lots` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `mem_sts` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
   `LO_name` varchar(61) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `mem_address` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
+  `mem_address` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `timestamp` datetime NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `archive`
---
-
-INSERT INTO `archive` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_address`) VALUES
-(1245, '51', 'Family Estate', 'St. Michael', 'Jai perena', 'Tagaytay City'),
-(1246, '34', 'Lawn Lots', 'Columbarium1', 'Jc Julao', 'Amadeo'),
-(1247, '580', 'Lawn Lots', 'Columbarium1', 'Maykol', ''),
-(1248, '45', 'Lawn Lots', 'Columbarium1', 'Malcom Yabia', 'Tagaytay City'),
-(1249, '24', 'Lawn Lots', 'St. Michael', 'Juan Dela Cruz', 'Tagaytay City'),
-(1250, '23', 'Lawn Lots', 'Columbarium1', 'Ednarlim Pornela', 'Tagaytay'),
-(1251, '51', 'Lawn Lots', 'Apartment1', 'Jai Perena', 'Tagaytay City'),
-(1252, '1', 'Lawn Lots', 'Apartment3', 'Malcolm Yabia', 'Tagaytay City'),
-(1253, '25', 'Lawn Lots', 'Columbarium1', 'Kikel', ''),
-(1254, '25', 'Lawn Lots', 'Apartment3', 'Maykol', ''),
-(1255, '185', 'Lawn Lots', 'Columbarium2', 'Michael Enoza', 'Silang Cavite'),
-(1256, '1', 'Lawn Lots', 'Columbarium1', 'Malcolm Yabia', 'Tagaytay City'),
-(1257, '69', 'Family Estate', 'St. Michael', 'Mitch Nieves', 'Maitim'),
-(1258, '218', 'Lawn Lots', 'Columbarium1', 'cashman', 'Tagaytay City'),
-(1259, '69', 'Lawn Lots', 'Columbarium1', 'cash G', 'Tagaytay City'),
-(1260, '57', 'Family Estate', 'Columbarium1', 'mark', 'Tagaytay City'),
-(1261, '44', 'Lawn Lots', 'Columbarium1', 'malupa', 'Tagaytay City'),
-(1262, '3', 'Lawn Lots', 'Columbarium1', 'rayson romeroso', 'Tagaytay City'),
-(1263, '13', 'Lawn Lots', 'Columbarium1', 'kyle francis', 'Tagaytay City'),
-(1264, '80', 'Lawn Lots', 'Columbarium2', 'Michael Eñoza', 'Tagaytay City'),
-(1265, '145', 'Lawn Lots', 'Columbarium1', 'Osaka', ''),
-(1266, '1', 'Lawn Lots', 'Columbarium1', 'Malcolm Yabia', 'Tagaytay City'),
-(1267, '201', 'Lawn Lots', 'Columbarium1', 'YABIA MALCOLM', 'Tagaytay City'),
-(1268, '143', 'Lawn Lots', 'Columbarium1', 'Keykil', '');
 
 -- --------------------------------------------------------
 
