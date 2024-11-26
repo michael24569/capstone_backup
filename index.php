@@ -82,7 +82,7 @@ require("loginCondition.php");
     justify-content: center;
     align-items: center;
     display: flex;
-    background-image: url('images/loginIMG.jpg');
+    background-image: url('images/s2.jpg');
     background-size: cover;
     background-position: center;
     z-index: 10;
@@ -95,6 +95,7 @@ require("loginCondition.php");
     padding: 1.5rem;
     margin-left: 70%;
     margin-top: 15%;
+    padding: 50px;
     border-radius: 10px;
     box-shadow: 0 8px 32px 0 #00000080;
 }
@@ -103,7 +104,7 @@ require("loginCondition.php");
   
   }
   .form-title{
-    font-size: 1.5rem;
+    font-size: 3rem;
     font-weight: bold;
     text-align: center;
     padding: 1.3rem;
@@ -290,8 +291,8 @@ require("loginCondition.php");
     animation: growLine 1s ease-out 1s forwards;
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
-    left: 22%;
-    bottom:65px;
+    left: 20%;
+    bottom:55px;
   }
 
   
