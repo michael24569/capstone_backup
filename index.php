@@ -19,8 +19,6 @@ require("loginCondition.php");
    
 </head>
 <body >
-
-
 <div class="blur-box">
  <!-- Animated Text Section -->
 <div class="animated-container">
@@ -28,10 +26,6 @@ require("loginCondition.php");
   <div class="animated-text">for Tagaytay Memorial Park</div>
   <div class="line"></div>
 </div>
-
-
-
-
 
    <div class="container" id="signin">
         <div class="login-form">
@@ -81,7 +75,7 @@ require("loginCondition.php");
     
  }
   body {
-   
+    font-family: 'MyFont';
     height: 100vh;
     background-color: #c9d6ff;
     background: linear-gradient(to right,#e2e2e2,#c9d6ff);
@@ -302,8 +296,8 @@ require("loginCondition.php");
     animation: growLine 1s ease-out 1s forwards;
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
-    left: 23%;
-    bottom:88px;
+    left: 22%;
+    bottom:65px;
   }
 
   
