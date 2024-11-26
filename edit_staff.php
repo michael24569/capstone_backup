@@ -12,41 +12,52 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['username'])) {
 $error_message = "";
 $success_message = "";
 
+// Handle password verification AJAX request
 if (isset($_POST['verify_password'])) {
     $id = mysqli_real_escape_string($conn, $_POST['staff_id']);
     $current_password = $_POST['current_password'];
     
-    $query = "SELECT password FROM staff WHERE id = ?";
+    $query = "SELECT password, accountStatus FROM staff WHERE id = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "s", $id);
     mysqli_stmt_execute($stmt);
     $result = mysqli_stmt_get_result($stmt);
     $user = mysqli_fetch_assoc($result);
     
-    $is_valid = false;
+    $response = array(
+        'status' => 'invalid',
+        'message' => 'Invalid password'
+    );
     
     if ($user) {
-        // First check if it's a modern password hash
-        if (password_get_info($user['password'])['algo'] !== 0) {
-            $is_valid = password_verify($current_password, $user['password']);
-        } 
-        // If not a modern hash, check if it's an MD5 hash
-        else {
-            $md5_password = md5($current_password);
-            $is_valid = ($md5_password === $user['password']);
+        $stored_password = trim($user['password']); // Remove any whitespace
+        $is_valid = false;
+        
+        // First try direct comparison with MD5
+        $md5_password = md5($current_password);
+        if ($md5_password === $stored_password) {
+            $is_valid = true;
             
-            // Optionally upgrade to modern hash if MD5 matched
-            if ($is_valid) {
-                $modern_hash = password_hash($current_password, PASSWORD_DEFAULT);
-                $upgrade_query = "UPDATE staff SET password = ? WHERE id = ?";
-                $upgrade_stmt = mysqli_prepare($conn, $upgrade_query);
-                mysqli_stmt_bind_param($upgrade_stmt, "ss", $modern_hash, $id);
-                mysqli_stmt_execute($upgrade_stmt);
-            }
+            // Upgrade to modern hash if you want
+            $modern_hash = password_hash($current_password, PASSWORD_DEFAULT);
+            $upgrade_query = "UPDATE staff SET password = ? WHERE id = ?";
+            $upgrade_stmt = mysqli_prepare($conn, $upgrade_query);
+            mysqli_stmt_bind_param($upgrade_stmt, "ss", $modern_hash, $id);
+            mysqli_stmt_execute($upgrade_stmt);
+        } 
+        // If MD5 doesn't match, try password_verify for modern hashes
+        elseif (strlen($stored_password) > 32) {
+            $is_valid = password_verify($current_password, $stored_password);
+        }
+        
+        if ($is_valid) {
+            $response['status'] = 'valid';
+            $response['message'] = 'Password verified successfully';
         }
     }
     
-    echo $is_valid ? "valid" : "invalid";
+    header('Content-Type: application/json');
+    echo json_encode($response);
     exit();
 }
 // Fetch staff member data
@@ -57,7 +68,7 @@ if (isset($_GET['id'])) {
     $staff = mysqli_fetch_assoc($result);
 
     if (!$staff) {
-        header("Location: statusAccount.php");
+        header("Location: admin_status.php");
         exit();
     }
 }
@@ -305,94 +316,50 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 
             <div class="btn-container">
                 <button type="submit" class="btn-edit">Save Changes</button>
-                <a href="statusAccount.php" class="btn-cancel">Cancel</a>
+                <a href="admin_status.php" class="btn-cancel">Cancel</a>
             </div>
         </form>
     </div>
 
     <script>
         document.getElementById('verifyPasswordBtn').addEventListener('click', function() {
-            const currentPassword = document.getElementById('current_password').value;
-            const staffId = document.querySelector('input[name="id"]').value;
-            const statusDiv = document.getElementById('passwordStatus');
-            const newPasswordSection = document.getElementById('newPasswordSection');
-            
-            if (!currentPassword) {
-                statusDiv.textContent = 'Please enter your current password';
-                statusDiv.className = 'password-status error';
-                return;
-            }
+    const currentPassword = document.getElementById('current_password').value;
+    const staffId = document.querySelector('input[name="id"]').value;
+    const statusDiv = document.getElementById('passwordStatus');
+    const newPasswordSection = document.getElementById('newPasswordSection');
+    
+    if (!currentPassword) {
+        statusDiv.textContent = 'Please enter your current password';
+        statusDiv.className = 'password-status error';
+        return;
+    }
 
-            // Send AJAX request to verify password
-            fetch(window.location.href, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `verify_password=1&staff_id=${staffId}&current_password=${encodeURIComponent(currentPassword)}`
-            })
-            .then(response => response.text())
-            .then(result => {
-                if (result === 'valid') {
-                    statusDiv.textContent = 'Password verified successfully';
-                    statusDiv.className = 'password-status success';
-                    newPasswordSection.style.display = 'block';
-                    document.getElementById('current_password').readOnly = true;
-                    this.disabled = true;
-                } else {
-                    statusDiv.textContent = 'Invalid password';
-                    statusDiv.className = 'password-status error';
-                    newPasswordSection.style.display = 'none';
-                }
-            })
-            .catch(error => {
-                statusDiv.textContent = 'Error verifying password';
-                statusDiv.className = 'password-status error';
-            });
-        });
-
-        // Form validation
-        document.getElementById('editForm').addEventListener('submit', function(e) {
-            const fullname = document.getElementById('fullname').value.trim();
-            const username = document.getElementById('username').value.trim();
-            const email = document.getElementById('email').value.trim();
-            const newPassword = document.getElementById('new_password').value;
-            const confirmPassword = document.getElementById('confirm_password').value;
-            
-            let isValid = true;
-            let errorMessage = '';
-
-            if (fullname.length < 2) {
-                errorMessage += 'Full name must be at least 2 characters long\n';
-                isValid = false;
-            }
-
-            if (username.length < 3) {
-                errorMessage += 'Username must be at least 3 characters long\n';
-                isValid = false;
-            }
-
-            if (!email.match(/^[^\s@]+@[^\s@]+\.[^\s@]+$/)) {
-                errorMessage += 'Please enter a valid email address\n';
-                isValid = false;
-            }
-
-            if (newPassword || confirmPassword) {
-                if (newPassword !== confirmPassword) {
-                    errorMessage += 'New passwords do not match\n';
-                    isValid = false;
-                }
-                if (newPassword.length < 8) {
-                    errorMessage += 'New password must be at least 8 characters long\n';
-                    isValid = false;
-                }
-            }
-
-            if (!isValid) {
-                e.preventDefault();
-                alert(errorMessage);
-            }
-        });
+    // Send AJAX request to verify password
+    fetch(window.location.href, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/x-www-form-urlencoded',
+        },
+        body: `verify_password=1&staff_id=${staffId}&current_password=${encodeURIComponent(currentPassword)}`
+    })
+    .then(response => response.json())
+    .then(result => {
+        statusDiv.textContent = result.message;
+        if (result.status === 'valid') {
+            statusDiv.className = 'password-status success';
+            newPasswordSection.style.display = 'block';
+            document.getElementById('current_password').readOnly = true;
+            this.disabled = true;
+        } else {
+            statusDiv.className = 'password-status error';
+            newPasswordSection.style.display = 'none';
+        }
+    })
+    .catch(error => {
+        statusDiv.textContent = 'Error verifying password';
+        statusDiv.className = 'password-status error';
+    });
+});
     </script>
 </body>
 </html>
