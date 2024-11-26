@@ -101,7 +101,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         class="btn btn-primary <?php echo $row['accountStatus'] == 'Active' ? 'btn-red' : 'btn-green'; ?>" 
         onclick="updateStatus(<?php echo $row['id']; ?>, '<?php echo $row['accountStatus']; ?>')">
         <?php echo $row['accountStatus'] == 'Active' ? 'Deactivate' : 'Activate'; ?>
-    </button>
+                    </button>
+    <a href="edit_staff.php?id=<?php echo $row['id']; ?>" class="btn btn-edit">Edit</a>
+
 </td>
 
                     </tr>

@@ -108,6 +108,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .btn-edit {
+            justify-content: center;
+            text-align:center;
+            padding-top:10px;
+            width: 100px;
+            height: 40px;
+        }
         .top-left-button {
             fill: white;
             position: absolute;
@@ -242,7 +249,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                                     <td>${record.mem_address}</td>
                                     <td class="action-buttons">
                                         <a class='btn btn-edit' href='admin_update.php?id=${record.id}'>Edit</a>
-                                        <a href="admin_archiveCondition.php?id=${record.id}" class="btn btn-archive">Archive</a>
                                     </td>
                                 </tr>
                                 <tr class="divider-row">

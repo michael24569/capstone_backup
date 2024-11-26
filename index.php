@@ -67,7 +67,13 @@ require("loginCondition.php");
     margin: 0;
     box-sizing: border-box;
   }
-  
+  .blur-box {
+    width: 80%;
+    height:90%;
+    box-shadow: 0  0 30px 0px black;
+    border-radius: 15px;
+    
+ }
   body {
     font-family: 'MyFont';
     height: 100vh;
@@ -86,7 +92,7 @@ require("loginCondition.php");
     backdrop-filter: blur(30px);
     width: 450px;
     padding: 1.5rem;
-    margin-left: 70%;
+    margin-left: 55%;
     margin-top: 15%;
     padding: 50px;
     border-radius: 10px;

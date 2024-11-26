@@ -108,6 +108,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .btn-edit {
+            justify-content: center;
+            text-align:center;
+            padding-top:10px;
+            width: 100px;
+            height: 40px;
+        }
         .top-left-button {
             fill: white;
             position: absolute;
@@ -129,8 +136,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 </head>
 
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="sweetalert/jquery-3.7.1.min.js"></script>
-<script src="sweetalert/sweetalert2.all.min.js"></script>
 
 <body style="background: #071c14;"> 
     <button id="sidebarToggle" class="sidebar-toggle-btn">
@@ -177,9 +182,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 </tbody>
             </table>
             <div id="loadingSpinner" class="loading-spinner"></div>
-            <?php if (isset($_GET['m'])) : ?>
-            <div class="flash-data" data-flashdata="<?= htmlspecialchars($_GET['m']); ?>"></div>
-        <?php endif; ?> 
         </div>
     </div>
 
@@ -242,7 +244,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                                     <td>${record.mem_address}</td>
                                     <td class="action-buttons">
                                         <a class='btn btn-edit' href='update.php?id=${record.id}'>Edit</a>
-                                        <a href="archive.php?id=${record.id}" class="btn btn-archive">Archive</a>
                                     </td>
                                 </tr>
                                 <tr class="divider-row">
@@ -263,28 +264,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 });
         }
 
-        // Function to attach archive button listeners
-        function attachArchiveListeners() {
-            $('.btn-archive').off('click').on('click', function (e) {
-                e.preventDefault();
-                const href = $(this).attr('href');
 
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: 'Record will be archived!',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Confirm',
-                    cancelButtonText: 'Cancel'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        document.location.href = href;
-                    }
-                });
-            });
-        }
 
         // Initial load
         loadRecords();
