@@ -19,7 +19,21 @@ require("loginCondition.php");
    
 </head>
 <body >
-   <div class="container" id="signin">
+
+
+<div class="blur-box">
+ <!-- Animated Text Section -->
+<div class="animated-container">
+  <div class="animated-text">2D Mapping and<br>Management System</div>
+  <div class="animated-text">for Tagaytay Memorial Park</div>
+  <div class="line"></div>
+</div>
+
+
+
+
+
+    <div class="container" id="signin">
         <div class="login-form">
         <h1 class="form-title">Sign In</h1>
         <form action="" method="post">
@@ -53,7 +67,8 @@ require("loginCondition.php");
     </div>
     <style>
     
-* {
+ 
+    * {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
@@ -78,7 +93,8 @@ require("loginCondition.php");
     -webkit-backdrop-filter: blur(10px);
     width: 450px;
     padding: 1.5rem;
-    margin: 50px auto;
+    margin-left: 70%;
+    margin-top: 15%;
     border-radius: 10px;
     box-shadow: 0 8px 32px 0 #00000080;
 }
@@ -220,6 +236,75 @@ require("loginCondition.php");
   .space{
     padding-left: 20px;
   }
+/* animate */
+  .animated-container {
+    text-align: center;
+    position: absolute;
+    top: 43%;
+    left: 33%;
+    transform: translateX(-50%);
+    width:100%;
+    margin-top:-40px;
+    
+    
+  }
+  .animated-text {
+    text-shadow: 
+        1px 1px 0px #000,      /* Top-left shadow */
+       -1px -1px 0px #000,    /* Bottom-right shadow */
+        1px -1px 0px #000,     /* Bottom-left shadow */
+       -1px 1px 0px #000;      /* Top-right shadow */
+    
+    font-size: 3.1rem;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    transform: translateX(-1000px); /* Starts far left off-screen */
+    animation: lightSpeedInLeft 1s ease-in forwards; /* Animation applied */
+}
+
+@keyframes lightSpeedInLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-1000px) skewX(30deg); /* Skew and off-screen */
+    }
+    60% {
+        opacity: 1;
+        transform: translateX(30px) skewX(-10deg); /* Near final position */
+    }
+    80% {
+        transform: translateX(-10px) skewX(5deg); /* Slight rebound effect */
+    }
+    100% {
+        opacity:1;
+        transform: translateX(0) skewX(0); /* Final position */
+    }
+}
+  .line {
+    border-radius:10px;
+    width: 0; /* Initial width, since animation grows */
+    height: 5px; /* Thickness of the line */
+    background: white;
+    margin: 10px auto 0; /* Centers it vertically */
+    
+    animation: growLine 1s ease-out 1s forwards;
+    transform: rotate(90deg); /* Rotates the line */
+    position: relative; /* Add relative positioning */
+    left: 22%;
+    bottom:65px;
+  }
+
+  
+
+  @keyframes growLine {
+    from {
+      width: 0;
+    }
+    to {
+      width: 360px;
+    }
+  }
+
   </style>
   <script>
   // will not accept space
