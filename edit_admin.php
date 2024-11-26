@@ -10,6 +10,11 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || $_SESSION['role'
     exit();
 }
 
+function toProperCase($str) {
+    return ucwords(strtolower(trim($str)));
+}
+
+
 $error_message = "";
 $success_message = "";
 $admin_id = $_SESSION['id']; // Use session ID instead of GET parameter
@@ -241,7 +246,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 </head>
 <body style="background: #071c14;">
     <div class="edit-form-container">
-        <h2>Edit Admin Profile</h2>
+        <h2>Edit Admin Account</h2>
         
         <?php if ($error_message): ?>
             <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
@@ -252,21 +257,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         <?php endif; ?>
 
         <form method="POST" action="" id="editForm">
-            <div class="form-group">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars($admin['fullname']); ?>" required>
-            </div>
+        <div class="form-group">
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required>
+</div>
 
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($admin['username']); ?>" required>
-            </div>
+<div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($admin['username'])); ?>" required>
+</div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($admin['email']); ?>" required>
-            </div>
-
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars(strtolower($admin['email'])); ?>" required>
+</div>
             <div id="passwordVerificationSection">
                 <h3>Change Password</h3>
                 <div class="current-password-container">

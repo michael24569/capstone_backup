@@ -8,6 +8,9 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['username'])) {
     header("Location: index.php");
     exit();
 }
+function toProperCase($str) {
+    return ucwords(strtolower(trim($str)));
+}
 
 $error_message = "";
 $success_message = "";
@@ -276,19 +279,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($staff['id']); ?>">
             
             <div class="form-group">
-                <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars($staff['fullname']); ?>" required>
-            </div>
+    <label for="fullname">Full Name</label>
+    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($staff['fullname'])); ?>" required>
+</div>
 
-            <div class="form-group">
-                <label for="username">Username</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($staff['username']); ?>" required>
-            </div>
+<div class="form-group">
+    <label for="username">Username</label>
+    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($staff['username'])); ?>" required>
+</div>
 
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($staff['email']); ?>" required>
-            </div>
+<div class="form-group">
+    <label for="email">Email</label>
+    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars(strtolower($staff['email'])); ?>" required>
+</div>
 
             <div id="passwordVerificationSection">
                 <h3>Password Verification</h3>
