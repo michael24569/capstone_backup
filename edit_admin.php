@@ -58,6 +58,7 @@ if (!$admin) {
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $fullname = trim($_POST['fullname']);
+    $username = trim($_POST['username']);
     $email = trim($_POST['email']);
     $current_password = isset($_POST['current_password']) ? $_POST['current_password'] : '';
     $new_password = isset($_POST['new_password']) ? $_POST['new_password'] : '';
@@ -67,40 +68,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
         $error_message = "Invalid email format";
     } else {
-        // Initialize the update query with prepared statement
-        $update_fields = ["fullname = ?", "email = ?"];
-        $param_types = "ss";
-        $params = [$fullname, $email];
+        // Check if username already exists (excluding current admin)
+        $check_username = "SELECT id FROM admin WHERE username = ? AND id != ?";
+        $stmt = mysqli_prepare($conn, $check_username);
+        mysqli_stmt_bind_param($stmt, "si", $username, $admin_id);
+        mysqli_stmt_execute($stmt);
+        $username_result = mysqli_stmt_get_result($stmt);
         
-        // If new password is provided and verified
-        if (!empty($new_password)) {
-            if ($new_password !== $confirm_password) {
-                $error_message = "New passwords do not match";
-            } elseif (strlen($new_password) < 8) {
-                $error_message = "New password must be at least 8 characters long";
-            } else {
-                $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-                $update_fields[] = "password = ?";
-                $param_types .= "s";
-                $params[] = $hashed_password;
+        if (mysqli_num_rows($username_result) > 0) {
+            $error_message = "Username already exists";
+        } else {
+            // Initialize the update query with prepared statement
+            $update_fields = ["fullname = ?", "username = ?", "email = ?"];
+            $param_types = "sss";
+            $params = [$fullname, $username, $email];
+            
+            // If new password is provided and verified
+            if (!empty($new_password)) {
+                if ($new_password !== $confirm_password) {
+                    $error_message = "New passwords do not match";
+                } elseif (strlen($new_password) < 8) {
+                    $error_message = "New password must be at least 8 characters long";
+                } else {
+                    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+                    $update_fields[] = "password = ?";
+                    $param_types .= "s";
+                    $params[] = $hashed_password;
+                }
             }
-        }
-        
-        if (empty($error_message)) {
-            $param_types .= "i";
-            $params[] = $admin_id;
             
-            $update_query = "UPDATE admin SET " . implode(", ", $update_fields) . " WHERE id = ?";
-            $stmt = mysqli_prepare($conn, $update_query);
-            mysqli_stmt_bind_param($stmt, $param_types, ...$params);
-            
-            if (mysqli_stmt_execute($stmt)) {
-                $success_message = "Your information has been updated successfully";
-                // Refresh admin data
-                $result = mysqli_query($conn, "SELECT * FROM admin WHERE id = $admin_id");
-                $admin = mysqli_fetch_assoc($result);
-            } else {
-                $error_message = "Error updating information: " . mysqli_error($conn);
+            if (empty($error_message)) {
+                $param_types .= "i";
+                $params[] = $admin_id;
+                
+                $update_query = "UPDATE admin SET " . implode(", ", $update_fields) . " WHERE id = ?";
+                $stmt = mysqli_prepare($conn, $update_query);
+                mysqli_stmt_bind_param($stmt, $param_types, ...$params);
+                
+                if (mysqli_stmt_execute($stmt)) {
+                    $success_message = "Your information has been updated successfully";
+                    // Update session username if username was changed
+                    if ($_SESSION['username'] !== $username) {
+                        $_SESSION['username'] = $username;
+                    }
+                    // Refresh admin data
+                    $result = mysqli_query($conn, "SELECT * FROM admin WHERE id = $admin_id");
+                    $admin = mysqli_fetch_assoc($result);
+                } else {
+                    $error_message = "Error updating information: " . mysqli_error($conn);
+                }
             }
         }
     }
@@ -242,6 +258,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             </div>
 
             <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars($admin['username']); ?>" required>
+            </div>
+
+            <div class="form-group">
                 <label for="email">Email</label>
                 <input type="email" id="email" name="email" value="<?php echo htmlspecialchars($admin['email']); ?>" required>
             </div>
@@ -272,7 +293,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 
             <div class="btn-container">
                 <button type="submit" class="btn-edit">Save Changes</button>
-                <a href="dashboard.php" class="btn-cancel">Cancel</a>
+                <a href="admin_status.php" class="btn-cancel">Cancel</a>
             </div>
         </form>
     </div>
