@@ -19,8 +19,6 @@ require("loginCondition.php");
    
 </head>
 <body >
-
-
 <div class="blur-box">
  <!-- Animated Text Section -->
 <div class="animated-container">
@@ -28,10 +26,6 @@ require("loginCondition.php");
   <div class="animated-text">for Tagaytay Memorial Park</div>
   <div class="line"></div>
 </div>
-
-
-
-
 
     <div class="container" id="signin">
         <div class="login-form">
