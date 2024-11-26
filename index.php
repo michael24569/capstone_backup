@@ -88,9 +88,8 @@ require("loginCondition.php");
     z-index: 10;
   }
   .container {
-    background: linear-gradient(135deg, #ffffff1a, #ffffff00);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(135deg, #ffffffd8, #ffffffd8);
+    backdrop-filter: blur(30px);
     width: 450px;
     padding: 1.5rem;
     margin-left: 70%;
