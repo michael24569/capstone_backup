@@ -631,7 +631,7 @@ z-index: 10;
 
 }
 .C22ndflr{
-  font-size: 25px;
+  font-size: 22px;
   cursor: pointer;
   top: 45%;
   position: absolute;
@@ -722,7 +722,7 @@ z-index: 10;
 
 }
 .C12ndflr{
-  font-size: 25px;
+  font-size: 22px;
   cursor: pointer;
   top: 45%;
   position: absolute;
@@ -2428,6 +2428,7 @@ z-index: 10;
 
 
 .C12ndS{
+  font-size: 22px;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -2515,6 +2516,7 @@ z-index: 10;
 
 
 .C12ndS2{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -2596,12 +2598,13 @@ z-index: 10;
 
 
 .C11stS1{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
   width: 100%;
   height: 100%;
-  padding: 30px 20px;
+  padding: 30px 25px;
   background-color: #15291d;
   border-radius: 20px;
   z-index: 10;
@@ -2634,6 +2637,7 @@ z-index: 10;
 
 /*blk3*/
 .C11stblk3{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -2713,6 +2717,7 @@ z-index: 10;
 
 /*blk4*/
 .C11stblk4{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -2833,6 +2838,7 @@ z-index: 10;
 
 
 .C11stS2{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5072,6 +5078,7 @@ z-index: 10;
 
 
 .C21stflrS1{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5151,6 +5158,7 @@ z-index: 10;
 
 /**/
 .C22ndflrblk3{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5231,6 +5239,8 @@ z-index: 10;
 
 
 .C22ndflrblk4{     
+  font-size: 22px;
+
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5310,6 +5320,7 @@ z-index: 10;
 
 
 .C21stflrblk3{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5390,6 +5401,7 @@ z-index: 10;
 
 
 .C21stflrblk4{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5471,6 +5483,7 @@ z-index: 10;
 
 
 .C12ndblk3{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5553,6 +5566,7 @@ z-index: 10;
 
 
 .C12ndblk4{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5637,6 +5651,7 @@ z-index: 10;
 
 
 .C21stflrS2{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5717,6 +5732,7 @@ z-index: 10;
 
 
 .C22ndflrS1{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5797,6 +5813,7 @@ z-index: 10;
 
 
 .C22ndflrS2{     
+  font-size: 22px;
   position: absolute;
   right: 0%;
   top: 0%;
@@ -5916,7 +5933,7 @@ z-index: 10;
 
 .LotOverview:hover {
   width: 210px; 
-  height: 400px;
+  height: 420px;
 }
 
 .LotOverview:hover .Content{

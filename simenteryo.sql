@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 25, 2024 at 11:56 AM
+-- Generation Time: Nov 26, 2024 at 03:28 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -33,33 +33,15 @@ CREATE TABLE `admin` (
   `username` varchar(100) NOT NULL,
   `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `accountStatus` varchar(100) NOT NULL,
-  `token_reset` varchar(64) DEFAULT NULL,
-  `token_expiry` datetime DEFAULT NULL
+  `accountStatus` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`, `token_reset`, `token_expiry`) VALUES
-(1, 'Michael Enoza', 'TCAO_Admin', 'michael.enoza@citycollegeoftagaytay.edu.ph', '$2y$10$IFdua7wa0U.5AljfZf2lxuHx84XK1H4pjXhvQRb0ayVTus0ZTqjAC', 'Active', '1a407ffb84b518b2f4de846b68e823a7940951d53f8122272c3b864a8f5673b8', '2024-11-19 06:44:11');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `archive`
---
-
-CREATE TABLE `archive` (
-  `id` int(11) NOT NULL,
-  `Lot_No` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `mem_lots` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `mem_sts` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `LO_name` varchar(61) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `mem_address` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `timestamp` datetime NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+INSERT INTO `admin` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`) VALUES
+(1, 'Michael Enoza', 'Tcao_admin', 'michael.enoza@citycollegeoftagaytay.edu.ph', '$2y$10$xIl6dpgbCCjujnwLnnAgtOXAnR8d2/kAqbSG8zMnNyOqtOV3e8Iwe', 'Active');
 
 -- --------------------------------------------------------
 
@@ -1578,17 +1560,15 @@ CREATE TABLE `staff` (
   `username` varchar(100) NOT NULL,
   `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `accountStatus` varchar(100) NOT NULL,
-  `token_reset` varchar(64) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `token_expiry` datetime DEFAULT NULL
+  `accountStatus` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`, `token_reset`, `token_expiry`) VALUES
-(52, 'Michael Enoza', 'Enoza1121', 'enozamichael12@gmail.com', '$2y$10$A9pnO0VuOfged.aPHXoOr.Nc.fyCOV4tniDNx3xhQKR1IKxv8qyLG', 'Active', NULL, NULL);
+INSERT INTO `staff` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`) VALUES
+(52, 'Michael Enoza', 'enoza1121', 'enozamichael12@gmail.com', '$2y$10$A9pnO0VuOfged.aPHXoOr.Nc.fyCOV4tniDNx3xhQKR1IKxv8qyLG', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -1600,12 +1580,6 @@ INSERT INTO `staff` (`id`, `fullname`, `username`, `email`, `password`, `account
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `email` (`email`);
-
---
--- Indexes for table `archive`
---
-ALTER TABLE `archive`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `records`
@@ -1635,12 +1609,6 @@ ALTER TABLE `staff`
 --
 ALTER TABLE `admin`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `archive`
---
-ALTER TABLE `archive`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1269;
 
 --
 -- AUTO_INCREMENT for table `records`

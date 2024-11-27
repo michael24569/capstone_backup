@@ -30,16 +30,17 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['backup_file'])) {
             if (!empty($statement)) {
                 try {
                     if ($conn->query($statement) === FALSE) {
-                        echo "Error executing statement: " . $conn->error . "<br>";
+                        echo "<div class='message error'>Error executing statement: " . $conn->error . "</div>";
                     }
                 } catch (mysqli_sql_exception $e) {
-                    echo "Error executing statement: " . $e->getMessage() . "<br>";
+                    echo"<div class='message error'>Error executing statement: " . $e->getMessage() . "</div>";
                 }
             }
         }
-        echo "Database imported successfully. <a href='index.php'>Go back to login</a>";
+        echo "<div class='message1 success'>Database imported successfully.</div>";
+        echo "<a href='index.php' class='button'>Go back to login</a>";
     } else {
-        echo "Error creating database: " . $conn->error;
+        echo "<div class='message error'>Error creating database: " . $conn->error . "</div>";
     }
 
     $conn->close();
@@ -50,17 +51,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['backup_file'])) {
 <html>
 <head>
     <title>Setup Database</title>
+    <link rel="stylesheet" href="setupdb.css">
 </head>
+
 <body>
-    <h1>Setup Database</h1>
-    <form method="post" enctype="multipart/form-data">
-        <label for="database_name">Database Name:</label>
-        <input type="text" id="database_name" name="database_name" required>
-        <br><br>
-        <label for="backup_file">Select Backup File:</label>
-        <input type="file" id="backup_file" name="backup_file" accept=".sql" required>
-        <br><br>
-        <button type="submit">Upload and Import</button>
-    </form>
+    <div class="container">
+        <h1>Setup Database</h1>
+        <form method="post" enctype="multipart/form-data">
+            <label for="database_name">Database Name:</label>
+            <input type="text" id="database_name" name="database_name" required>
+
+            <label for="backup_file">Select Backup File:</label>
+            <input type="file" id="backup_file" name="backup_file" accept=".sql" required>
+
+            <button type="submit">Upload and Import</button>
+        </form>
+    </div>
 </body>
 </html>

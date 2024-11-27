@@ -25,8 +25,14 @@ require("loginCondition.php");
   <div class="animated-text">2D Mapping and<br>Management System</div>
   <div class="animated-text">for Tagaytay Memorial Park</div>
   <div class="line"></div>
+  
 </div>
-
+<div class="seal">
+    <img src ="images/seal.png" alt="Tagaytay City Seal">
+  </div>
+  <div class="cctlogo">
+    <img src ="images/cctlogo.png" alt="City College of Tagaytay">
+  </div>
     <div class="container" id="signin">
         <div class="login-form">
         <h1 class="form-title">Sign In</h1>
@@ -82,20 +88,22 @@ require("loginCondition.php");
     justify-content: center;
     align-items: center;
     display: flex;
-    background-image: url('images/s2.jpg');
+    background: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    url('images/s2.jpg');
     background-size: cover;
     background-position: center;
     z-index: 10;
+    
   }
   .container {
-    background: linear-gradient(135deg, #ffffffd8, #ffffffd8);
-    backdrop-filter: blur(30px);
+    background-color:#ffffff9a;
+    backdrop-filter: blur(5px);
     width: 450px;
-    padding: 1.5rem;
+    padding:20px;
     margin-left: 55%;
     margin-top: 15%;
-    padding: 50px;
-    border-radius: 10px;
+    border-radius: 5px;
     box-shadow: 0 8px 32px 0 #00000080;
 }
   form{
@@ -103,7 +111,7 @@ require("loginCondition.php");
   
   }
   .form-title{
-    font-size: 3rem;
+    font-size: 4rem;
     font-weight: bold;
     text-align: center;
     padding: 1.3rem;
@@ -156,9 +164,10 @@ require("loginCondition.php");
     font-size: 15px;
   }
   .btn{
-    font-size: 1.1rem;
+    font-family: 'MyFont';
+    font-size: 1.5rem;
     padding: 15px 0;
-    border-radius: 5px;
+    border-radius: 50px;
     outline: none;
     border: none;
     width: 100%;
@@ -236,12 +245,39 @@ require("loginCondition.php");
   .space{
     padding-left: 20px;
   }
+
+  .seal {
+    text-align: center;
+    
+    }
+
+    .seal img {
+    position:absolute;
+    max-width: 8%; 
+    height: auto; 
+    margin-top:27%;
+    margin-left:-26%;
+    z-index: 10000;
+    }
+    .cctlogo {
+    text-align: center;
+    
+    }
+
+    .cctlogo img {
+    position:absolute;
+    max-width: 7%; 
+    height: auto; 
+    margin-top:27%;
+    margin-left:-16%;
+    z-index: 10000;
+    }
 /* animate */
   .animated-container {
     text-align: center;
     position: absolute;
     top: 43%;
-    left: 33%;
+    left: 32%;
     transform: translateX(-50%);
     width:100%;
     margin-top:-40px;
@@ -255,43 +291,25 @@ require("loginCondition.php");
         1px -1px 0px #000,     /* Bottom-left shadow */
        -1px 1px 0px #000;      /* Top-right shadow */
     
-    font-size: 3.1rem;
+    font-size: 3.3rem;
     font-weight: bold;
     color: white;
-    opacity: 0;
-    transform: translateX(-1000px); /* Starts far left off-screen */
-    animation: lightSpeedInLeft 1s ease-in forwards; /* Animation applied */
+    
 }
 
-@keyframes lightSpeedInLeft {
-    0% {
-        opacity: 0;
-        transform: translateX(-1000px) skewX(30deg); /* Skew and off-screen */
-    }
-    60% {
-        opacity: 1;
-        transform: translateX(30px) skewX(-10deg); /* Near final position */
-    }
-    80% {
-        transform: translateX(-10px) skewX(5deg); /* Slight rebound effect */
-    }
-    100% {
-        opacity:1;
-        transform: translateX(0) skewX(0); /* Final position */
-    }
-}
+
   .line {
     border-radius:10px;
     width: 0; /* Initial width, since animation grows */
     height: 5px; /* Thickness of the line */
     background: white;
-    margin: 10px auto 0; /* Centers it vertically */
-    
+    margin: 10px auto; /* Centers it vertically */
+
     animation: growLine 1s ease-out 1s forwards;
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
-    left: 20%;
-    bottom:55px;
+    left: 21%;
+    bottom:72px;
   }
 
   
@@ -301,7 +319,7 @@ require("loginCondition.php");
       width: 0;
     }
     to {
-      width: 360px;
+      width: 400px;
     }
   }
 
