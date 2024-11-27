@@ -29,8 +29,12 @@ require("loginCondition.php");
 
     <div class="container" id="signin">
         <div class="login-form">
+        <div class="icon-signIn">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="signIn-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M399 384.2C376.9 345.8 335.4 320 288 320l-64 0c-47.4 0-88.9 25.8-111 64.2c35.2 39.2 86.2 63.8 143 63.8s107.8-24.7 143-63.8zM0 256a256 256 0 1 1 512 0A256 256 0 1 1 0 256zm256 16a72 72 0 1 0 0-144 72 72 0 1 0 0 144z"/></svg>
+      
+        </div>
         <h1 class="form-title">Sign In</h1>
-        <form action="" method="post">
+         <form action="" method="post">
             <div class="input-group">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="input-icon">
       <path d="M224 256A128 128 0 1 0 224 0a128 128 0 1 0 0 256zm-45.7 48C79.8 304 0 383.8 0 482.3C0 498.7 13.3 512 29.7 512l388.6 0c16.4 0 29.7-13.3 29.7-29.7C448 383.8 368.2 304 269.7 304l-91.4 0z" />
@@ -88,7 +92,7 @@ require("loginCondition.php");
     z-index: 10;
   }
   .container {
-    background: linear-gradient(135deg, #ffffffd8, #ffffffd8);
+    background: linear-gradient(135deg, #f8f8f892, #f8f8f890);
     backdrop-filter: blur(30px);
     width: 450px;
     padding: 1.5rem;
@@ -291,7 +295,7 @@ require("loginCondition.php");
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
     left: 20%;
-    bottom:55px;
+    bottom:30px;
   }
 
   
@@ -301,10 +305,16 @@ require("loginCondition.php");
       width: 0;
     }
     to {
-      width: 360px;
+      width: 400px;
     }
   }
-
+  .signIn-icon {
+    width: 60px;
+    height: 60px;
+  }
+  .icon-signIn {
+    margin-left: 45%;
+  }
   </style>
   <script>
   // will not accept space

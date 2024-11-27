@@ -325,6 +325,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     </div>
 
     <script>
+          document.getElementById('current_password').addEventListener('input', function(e) {
+    this.value = this.value.replace(/\s/g, ''); // Remove spaces
+  });
+  document.getElementById('new_password').addEventListener('input', function(e) {
+    this.value = this.value.replace(/\s/g, ''); // Remove spaces
+  });
+  document.getElementById('confirm_password').addEventListener('input', function(e) {
+    this.value = this.value.replace(/\s/g, ''); // Remove spaces
+  });
+
         document.getElementById('verifyPasswordBtn').addEventListener('click', function() {
     const currentPassword = document.getElementById('current_password').value;
     const staffId = document.querySelector('input[name="id"]').value;

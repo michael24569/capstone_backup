@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <br>
                     <button class='btn btn-search' type="submit"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"/></svg>Search</button>
                     <div class="emailUpdate">
-                    <a href="edit_admin.php" class="btn btn-edit">Edit Admin Information</a>
+                    <a href="edit_admin.php" class="btn btn-green">Edit Admin Information</a>
                     </div>
                 </div>
             </form>
@@ -95,15 +95,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         <td><?php echo ucwords(strtolower(htmlspecialchars($row['username']))); ?></td>
                         <td><?php echo ucwords(strtolower(htmlspecialchars($row['email']))); ?></td>
                         <td id="status-<?php echo $row['id']; ?>"><?php echo ucwords(strtolower(htmlspecialchars($row['accountStatus']))); ?></td>
-<td class="action-button">
+<td class="action-buttons">
+<a href="edit_staff.php?id=<?php echo $row['id']; ?>" class="btn btn-green">Edit</a>
     <button 
         id="status-btn-<?php echo $row['id']; ?>" 
         class="btn btn-primary <?php echo $row['accountStatus'] == 'Active' ? 'btn-red' : 'btn-green'; ?>" 
         onclick="updateStatus(<?php echo $row['id']; ?>, '<?php echo $row['accountStatus']; ?>')">
         <?php echo $row['accountStatus'] == 'Active' ? 'Deactivate' : 'Activate'; ?>
                     </button>
-    <a href="edit_staff.php?id=<?php echo $row['id']; ?>" class="btn btn-edit">Edit</a>
-
 </td>
 
                     </tr>
@@ -131,7 +130,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
-    <script src="paiyakan.js"></script>
 
     <script>
 function updateStatus(id, currentStatus) {

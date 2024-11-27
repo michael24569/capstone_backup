@@ -136,8 +136,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 </head>
 
 <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-<script src="sweetalert/jquery-3.7.1.min.js"></script>
-<script src="sweetalert/sweetalert2.all.min.js"></script>
+
 
 <body style="background: #071c14;"> 
     <button id="sidebarToggle" class="sidebar-toggle-btn">
@@ -269,28 +268,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 });
         }
 
-        // Function to attach archive button listeners
-        function attachArchiveListeners() {
-            $('.btn-archive').off('click').on('click', function (e) {
-                e.preventDefault();
-                const href = $(this).attr('href');
-
-                Swal.fire({
-                    title: 'Are you sure?',
-                    text: 'Record will be archived!',
-                    icon: 'warning',
-                    showCancelButton: true,
-                    confirmButtonColor: '#3085d6',
-                    cancelButtonColor: '#d33',
-                    confirmButtonText: 'Confirm',
-                    cancelButtonText: 'Cancel'
-                }).then((result) => {
-                    if (result.isConfirmed) {
-                        document.location.href = href;
-                    }
-                });
-            });
-        }
 
         // Initial load
         loadRecords();

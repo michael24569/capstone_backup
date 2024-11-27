@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2024 at 03:19 PM
+-- Generation Time: Nov 26, 2024 at 03:28 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`) VALUES
-(1, 'Michael Enoza', 'Tcao_admin', 'michael.enoza@citycollegeoftagaytay.edu.ph', '$2y$10$V1LtGyQ9Zqkn0U0N751EPevUeYAnUp5Nuj4citDMZc5kpMFADKr8e', 'Active');
+(1, 'Michael Enoza', 'Tcao_admin', 'michael.enoza@citycollegeoftagaytay.edu.ph', '$2y$10$xIl6dpgbCCjujnwLnnAgtOXAnR8d2/kAqbSG8zMnNyOqtOV3e8Iwe', 'Active');
 
 -- --------------------------------------------------------
 
