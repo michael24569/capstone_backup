@@ -3,6 +3,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['backup_file'])) {
     $databaseName = trim($_POST['database_name']);
     $backupFile = $_FILES['backup_file']['tmp_name'];
     $fileError = $_FILES['backup_file']['error'];
+    
+    // Validate database name
+    if ($databaseName !== 'simenteryo') {
+        die("Error: Database name must be 'simenteryo'. Please enter the correct database name.");
+    }
 
     if ($fileError !== UPLOAD_ERR_OK) {
         die("Error uploading file: " . $fileError);
@@ -50,17 +55,50 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['backup_file'])) {
 <html>
 <head>
     <title>Setup Database</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+            margin-top: 5px;
+        }
+    </style>
 </head>
 <body>
     <h1>Setup Database</h1>
-    <form method="post" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data" onsubmit="return validateForm()">
         <label for="database_name">Database Name:</label>
         <input type="text" id="database_name" name="database_name" required>
+        <div id="name_error" class="error">Database name must be 'simenteryo'</div>
         <br><br>
         <label for="backup_file">Select Backup File:</label>
         <input type="file" id="backup_file" name="backup_file" accept=".sql" required>
         <br><br>
         <button type="submit">Upload and Import</button>
     </form>
+
+    <script>
+        function validateForm() {
+            const databaseName = document.getElementById('database_name').value.trim();
+            const errorElement = document.getElementById('name_error');
+            
+            if (databaseName !== 'simenteryo') {
+                errorElement.style.display = 'block';
+                return false;
+            }
+            
+            errorElement.style.display = 'none';
+            return true;
+        }
+
+        // Real-time validation
+        document.getElementById('database_name').addEventListener('input', function() {
+            const errorElement = document.getElementById('name_error');
+            if (this.value.trim() !== 'simenteryo') {
+                errorElement.style.display = 'block';
+            } else {
+                errorElement.style.display = 'none';
+            }
+        });
+    </script>
 </body>
 </html>

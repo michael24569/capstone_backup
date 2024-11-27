@@ -205,6 +205,7 @@ tbody, thead, .form-control, td {
   display: inline-block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+  cursor: pointer;
 }
 .btn-red {
   background-color: #f44336;
@@ -212,6 +213,7 @@ tbody, thead, .form-control, td {
   display: inline-block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
+  cursor: pointer;
 }
 .emailUpdate{
     justify-content: flex-end;

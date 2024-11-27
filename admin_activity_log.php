@@ -26,7 +26,6 @@ $sql = "SELECT role, fullname, Lot_No, mem_sts, action, timestamp
 $result = $conn->query($sql);
 ?>
 
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,17 +35,68 @@ $result = $conn->query($sql);
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="logoutmodal.css">
     <style>
-   
-        /* Add pagination styles */
+        @font-face {
+  font-family: 'MyFont';
+  src: url('fonts/Inter.ttf') format('ttf'),
+}
+        .main-container {
+            padding: 20px;
+            margin-left: 5rem;
+            width: calc(100% - 5rem);
+        }
+
+        .table-container {
+            background-color: #f3f3f3;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            overflow-x: auto;
+        }
+
+        .table-header {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .styled-table {
+            border-collapse: collapse;
+            margin: 0 auto;
+            font-size: 0.9em;
+            font-family: 'MyFont';
+            width: 100%;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+            background-color: white;
+        }
+
+        .styled-table thead tr {
+            background-color: #033512;
+            color: white;
+            text-align: left;
+        }
+
+        .styled-table th,
+        .styled-table td {
+            padding: 12px 15px;
+        }
+
+        .styled-table tbody tr {
+            border-bottom: 1px solid #dddddd;
+        }
+
+        .styled-table tbody tr:nth-of-type(even) {
+            background-color: #f8f8f8;
+        }
+
         .pagination {
             margin-top: 20px;
             display: flex;
             justify-content: center;
             gap: 10px;
-            padding-bottom: 10px;
+            padding: 10px 0;
         }
         
-        .pagination a, .pagination span {
+        .pagination a, 
+        .pagination span {
             padding: 8px 16px;
             text-decoration: none;
             background-color: #4CAF50;
@@ -67,6 +117,38 @@ $result = $conn->query($sql);
             background-color: #cccccc;
             cursor: not-allowed;
         }
+
+        .top-left-button {
+            fill: white;
+            position: absolute;
+            top: 10px;
+            left: 0px;
+            background-color: transparent;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .top-left-button svg {
+            width: 24px;
+            height: 24px;
+        }
+
+        @media screen and (max-width: 768px) {
+            .main-container {
+                margin-left: 0;
+                width: 100%;
+                padding: 10px;
+            }
+
+            .table-container {
+                padding: 10px;
+            }
+
+            .styled-table {
+                font-size: 0.8em;
+            }
+        }
     </style>
 </head>
 <body>
@@ -75,65 +157,68 @@ $result = $conn->query($sql);
             <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
         </svg>
     </button>
+
     <?php include 'admin_sidebar.php'; ?>
    
-    <div class="audit" class="center_record">
-        <div class="table-responsive">
-            <h1 id="header1">Activity Logs</h2>
-        </div>
-        <table class="styled-table text-center">
-            <thead>
-                <tr>
-                    <th>Role</th>
-                    <th>Staff Fullname</th>
-                    <th>Lot No.</th>
-                    <th>Memorial Name</th>
-                    <th>Action</th>
-                    <th>Timestamp</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php while ($row = $result->fetch_assoc()): ?>
+    <div class="main-container">
+        <div class="table-container">
+            <div class="table-header">
+                <h1>Activity Logs</h1>
+            </div>
+            <table class="styled-table">
+                <thead>
                     <tr>
-                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['role']))); ?></td>
-                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['fullname']))); ?></td>
-                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['Lot_No']))); ?></td>
-                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_sts']))); ?></td>
-                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['action']))); ?></td>
-                        <td><?php echo ucwords(strtolower(htmlspecialchars($row['timestamp']))); ?></td>
+                        <th>Role</th>
+                        <th>Staff Fullname</th>
+                        <th>Lot No.</th>
+                        <th>Memorial Name</th>
+                        <th>Action</th>
+                        <th>Timestamp</th>
                     </tr>
-                <?php endwhile; ?>
-            </tbody>
-        </table>
+                </thead>
+                <tbody>
+                    <?php while ($row = $result->fetch_assoc()): ?>
+                        <tr>
+                            <td><?php echo ucwords(strtolower(htmlspecialchars($row['role']))); ?></td>
+                            <td><?php echo ucwords(strtolower(htmlspecialchars($row['fullname']))); ?></td>
+                            <td><?php echo ucwords(strtolower(htmlspecialchars($row['Lot_No']))); ?></td>
+                            <td><?php echo ucwords(strtolower(htmlspecialchars($row['mem_sts']))); ?></td>
+                            <td><?php echo ucwords(strtolower(htmlspecialchars($row['action']))); ?></td>
+                            <td><?php echo ucwords(strtolower(htmlspecialchars($row['timestamp']))); ?></td>
+                        </tr>
+                    <?php endwhile; ?>
+                </tbody>
+            </table>
 
-        <!-- Pagination -->
-        <div class="pagination">
-            <?php
-            // Previous page link
-            if ($page > 1) {
-                echo "<a href='?page=" . ($page-1) . "'>&laquo; Previous</a>";
-            } else {
-                echo "<span class='disabled'>&laquo; Previous</span>";
-            }
-            
-            // Page numbers
-            for ($i = max(1, $page - 2); $i <= min($totalPages, $page + 2); $i++) {
-                if ($i == $page) {
-                    echo "<span class='active'>$i</span>";
+            <div class="pagination">
+                <?php
+                // Previous page link
+                if ($page > 1) {
+                    echo "<a href='?page=" . ($page-1) . "'>&laquo; Previous</a>";
                 } else {
-                    echo "<a href='?page=$i'>$i</a>";
+                    echo "<span class='disabled'>&laquo; Previous</span>";
                 }
-            }
-            
-            // Next page link
-            if ($page < $totalPages) {
-                echo "<a href='?page=" . ($page+1) . "'>Next &raquo;</a>";
-            } else {
-                echo "<span class='disabled'>Next &raquo;</span>";
-            }
-            ?>
+                
+                // Page numbers
+                for ($i = max(1, $page - 2); $i <= min($totalPages, $page + 2); $i++) {
+                    if ($i == $page) {
+                        echo "<span class='active'>$i</span>";
+                    } else {
+                        echo "<a href='?page=$i'>$i</a>";
+                    }
+                }
+                
+                // Next page link
+                if ($page < $totalPages) {
+                    echo "<a href='?page=" . ($page+1) . "'>Next &raquo;</a>";
+                } else {
+                    echo "<span class='disabled'>Next &raquo;</span>";
+                }
+                ?>
+            </div>
         </div>
     </div>
+
     <!-- logout confirmation modal -->
     <div id="confirmModal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -148,7 +233,6 @@ $result = $conn->query($sql);
                
     <script src="script.js"></script>
     <script>
-        // Anti-zoom script remains the same
         document.addEventListener('wheel', function(e) {
             if (e.ctrlKey) {
                 e.preventDefault();

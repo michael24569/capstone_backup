@@ -72,7 +72,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     } else {
                         popupContent.innerHTML = `
                             <div id="backgroundContent" style="text-align: left;">
-                                <h4 style="color: red;">Status: Sold</h4>
+                                <h4 style="color: red;">Status: Owned</h4>
                                 <hr><br>
                                 <div>
                                     <label>Lot Number: ${(data.Lot_No || '').toProperCase()}</label>

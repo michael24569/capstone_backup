@@ -59,7 +59,7 @@ body {
   text-decoration: none;
 }
 
-.sidebar ul li a .icon {
+.sidebar ul li a .icon{
   position: relative;
   display: flex;
   justify-content: center;
@@ -69,6 +69,7 @@ body {
   font-size: 1.5rem;
   color: #222222;
 }
+
 
 .sidebar ul li a .text {
   font-family: 'MyFont';
@@ -155,7 +156,10 @@ body {
     font-size: 10px;
   }
 }
-
+.sidebar-header:hover{
+  cursor: default;
+  background: #dee7e2;
+}
 
 
 
