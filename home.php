@@ -13,7 +13,7 @@ checkStaffAccess();
     </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Administrator</title>
+    <title>Home for Staffs</title>
     
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="map.css">
@@ -313,7 +313,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
 
@@ -388,7 +388,7 @@ checkStaffAccess();
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Unavailable</span>
+                  <span>Owned</span>
                 </div>
               </div>
                 
@@ -464,7 +464,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                
@@ -539,7 +539,7 @@ checkStaffAccess();
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Unavailable</span>
+                  <span>Owned</span>
                 </div>
               </div>
 
@@ -620,7 +620,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
               
@@ -699,7 +699,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
 
@@ -816,7 +816,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
 
@@ -879,7 +879,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block1 side b -->
@@ -940,7 +940,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block 2 side A -->
@@ -1001,7 +1001,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
          <!--columbarium 2 1st floor block 2 side b -->
@@ -1062,7 +1062,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side A -->
@@ -1121,7 +1121,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side B -->
@@ -1185,7 +1185,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side A -->
@@ -1249,7 +1249,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side B -->
@@ -1351,7 +1351,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side A-->
@@ -1415,7 +1415,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side B-->
@@ -1478,7 +1478,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side A-->
@@ -1541,7 +1541,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side B-->
@@ -1606,7 +1606,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 3 Side A-->
@@ -1671,7 +1671,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 3 Side B-->
@@ -1735,7 +1735,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side A-->
@@ -1798,7 +1798,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side B-->
@@ -1897,7 +1897,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 1 Side A-->
@@ -1961,7 +1961,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 1 Side B-->
@@ -2027,7 +2027,7 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Owned</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
@@ -2095,7 +2095,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 2 Side B-->
@@ -2158,7 +2158,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side A-->
@@ -2222,7 +2222,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side B-->
@@ -2286,7 +2286,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side A-->
@@ -2349,7 +2349,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side B-->
@@ -2438,7 +2438,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             
@@ -2502,7 +2502,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             
@@ -2568,7 +2568,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             
@@ -2632,7 +2632,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             
@@ -2704,7 +2704,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             
@@ -2768,7 +2768,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
             
@@ -2840,7 +2840,7 @@ checkStaffAccess();
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned</span>
             </div>
           </div>
         <!--Columbarium 1 2nd floor block 2 side A-->
@@ -2905,7 +2905,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
         <!--Columbarium 1 2nd floor block 2 side B-->
@@ -3016,7 +3016,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
             
@@ -3105,7 +3105,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                 <div class="petergrid" id="petergrid">
@@ -3206,7 +3206,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
     
@@ -3305,7 +3305,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                 <div class="judegrid" id="judegrid">
@@ -3531,7 +3531,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                 <div class="johngrid" id="johngrid">
@@ -3699,7 +3699,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                 <div class="josephgrid" id="josephgrid">
@@ -3910,7 +3910,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
             <div class="jamesgrid" id="jamesgrid">
@@ -4232,7 +4232,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                   <div class="matthewgrid" id="matthewgrid">
@@ -4259,7 +4259,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
 
@@ -4448,7 +4448,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                 <div class="dominicgrid" id="dominicgrid">
@@ -4802,7 +4802,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
             <div class="markgrid" id="markgrid">
@@ -4863,7 +4863,7 @@ checkStaffAccess();
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned</span>
                     </div>
                   </div>
                 <div class="isidoregrid" id="isidoregrid">
@@ -4904,7 +4904,7 @@ checkStaffAccess();
                             </div>
                         <div class="legendList">
                           <div class="legendU Unavailable"></div>
-                          <span>Unavailable</span>
+                          <span>Owned</span>
                         </div>
                       </div>
                       <div class="pmgrid" id="pmgrid">
