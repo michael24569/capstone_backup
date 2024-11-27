@@ -123,15 +123,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         body {
            font-family: 'MyFont';
             height: 100vh;
-            background-color: #005434;
+            background-color: #071c14;
             justify-content: center;
             align-items: center;
             display: flex;
+
         }
         .container {
             background: #f4f4f4;
-            width: 850px;
-            padding: 1.5rem;
+            width: 700px;
+            padding:1rem;
             margin: 10px auto;
             border-radius: 10px;
             box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
