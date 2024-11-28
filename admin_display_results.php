@@ -149,7 +149,6 @@ function displayRecordStatus() {
     </style>
 </head>
 <body style="background: #071c14;"> 
-
 <h1>Summary of Status Report</h1><br>
 
 <table>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 26, 2024 at 03:28 PM
+-- Generation Time: Nov 28, 2024 at 02:55 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -1529,8 +1529,8 @@ INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_ad
 (1483, '2', 'Lawn Lots', 'Apartment1', 'John David Pasion', 'Tagaytay City'),
 (1484, '1', 'Lawn Lots', 'Apartment2', 'Kyle Cyrus Ambat', 'Tagaytay CIty'),
 (1488, '1', 'Lawn Lots', 'Columbarium2', 'John Enoza', 'Tagaytay City'),
-(1497, '186', 'Lawn Lots', 'St. Michael', 'Liam weird', 'Tagaytay City'),
-(1499, '144', 'Lawn Lots', 'St. Michael', 'Jai Perena', '');
+(1497, '186', 'Lawn Lots', 'Columbarium2', 'Liam weird', 'Tagaytay City'),
+(1499, '144', 'Lawn Lots', 'Columbarium1', 'Jai Perena', '');
 
 -- --------------------------------------------------------
 
@@ -1547,6 +1547,14 @@ CREATE TABLE `record_logs` (
   `action` varchar(50) DEFAULT NULL,
   `timestamp` datetime DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `record_logs`
+--
+
+INSERT INTO `record_logs` (`id`, `role`, `fullname`, `Lot_No`, `mem_sts`, `action`, `timestamp`) VALUES
+(35, 'Staff', 'Michael Enoza', '144', 'Columbarium1', 'updated', '2024-11-28 20:25:37'),
+(36, 'Staff', 'Michael Enoza', '186', 'Columbarium2', 'updated', '2024-11-28 20:26:02');
 
 -- --------------------------------------------------------
 
@@ -1620,7 +1628,7 @@ ALTER TABLE `records`
 -- AUTO_INCREMENT for table `record_logs`
 --
 ALTER TABLE `record_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=35;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
 
 --
 -- AUTO_INCREMENT for table `staff`
