@@ -8,10 +8,11 @@ try {
     include 'db-connection.php'; // Adjust to your database connection logic
     if (!$conn) {
         throw new Exception("Database connection failed");
+
+        
     }
 } catch (Exception $e) {
-    $databaseError = $e->getMessage();
-    // Redirect to a database setup page
+    $_SESSION['database_error'] = true;
     header("Location: setup-database.php");
     exit();
 }

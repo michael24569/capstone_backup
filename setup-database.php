@@ -1,7 +1,15 @@
 <?php  
+session_start();
+
+// Check if there's no database error session - if not, redirect to index
+if (!isset($_SESSION['database_error'])) {
+    header("Location: index.php");
+    exit();
+}
+
 $error_message = '';  
-$success_message = ''; // New variable for success message
-$databaseName = 'simenteryo'; // Assign database name directly  
+$success_message = ''; 
+$databaseName = 'simenteryo';  
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {     
     if (isset($_FILES['backup_file'])) {         
@@ -11,18 +19,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($fileError !== UPLOAD_ERR_OK) {             
             $error_message = "Error uploading file: " . $fileError;         
         } else {             
-            // Connect to MySQL without specifying the database             
             $conn = new mysqli("localhost", "root", "");             
             if ($conn->connect_error) {                 
                 $error_message = "Connection failed: " . $conn->connect_error;             
             } else {                 
-                // Create the database if it doesn't exist                 
                 $sql = "CREATE DATABASE IF NOT EXISTS `$databaseName`";                 
                 if ($conn->query($sql) === TRUE) {                     
                     $conn->select_db($databaseName);                                          
-                    // Read the SQL file                     
                     $commands = file_get_contents($backupFile);                                          
-                    // Split commands by the default delimiter                     
                     $statements = explode(';', $commands);                                          
                     $has_error = false;                     
                     foreach ($statements as $statement) {                         
@@ -42,7 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }                     
                     }                                          
                     if (!$has_error) {                         
-                        $success_message = "Database imported successfully.";                     
+                        $success_message = "Database imported successfully.";
+                        // Remove the database error session immediately after successful import
+                        unset($_SESSION['database_error']);        
+                        
                     }                 
                 } else {                     
                     $error_message = "Error creating database: " . $conn->error;                 
@@ -57,7 +64,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <html> 
 <head>     
     <title>Setup Database</title>     
-    <link rel="stylesheet" href="setupdb.css">     
+    <link rel="stylesheet" href="setupdb.css"> 
+    <script type="text/javascript">
+    // Prevent back navigation
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
+</script>
+
     <style>         
         .error-message {             
             color: red;             
@@ -113,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             setTimeout(function() {                 
                 document.getElementById('overlay').style.display = 'none';                 
                 document.getElementById('success-popup').style.display = 'none';
-                window.location.href="index.php";          
+                window.location.href = "index.php";          
             }, 1500);         
         </script>     
     <?php endif; ?> 
