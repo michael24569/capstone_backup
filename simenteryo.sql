@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2024 at 05:56 AM
+-- Generation Time: Nov 30, 2024 at 09:30 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -41,7 +41,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`) VALUES
-(1, 'Michael Enoza', 'Tcao_admin', 'michael.enoza@citycollegeoftagaytay.edu.ph', '$2y$10$xIl6dpgbCCjujnwLnnAgtOXAnR8d2/kAqbSG8zMnNyOqtOV3e8Iwe', 'Active');
+(1, 'Michael Enoza', 'Tcao_admin', 'michael.enoza@citycollegeoftagaytay.edu.ph', '$2y$10$rPDLnwXL5pxk7Ac./Mnjru6CKppxF8EuDVe7H/J.TRDZbTzdWEnfu', 'Active');
 
 -- --------------------------------------------------------
 
@@ -1530,7 +1530,8 @@ INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_ad
 (1484, '1', 'Lawn Lots', 'Apartment2', 'Kyle Cyrus Ambat', 'Tagaytay CIty'),
 (1488, '1', 'Lawn Lots', 'Columbarium2', 'John Enoza', 'Tagaytay City'),
 (1497, '186', 'Lawn Lots', 'Columbarium2', 'Liam weird', 'Tagaytay City'),
-(1499, '144', 'Lawn Lots', 'Columbarium1', 'Jai Perena', '');
+(1499, '144', 'Lawn Lots', 'Columbarium1', 'Jai Perena', ''),
+(1512, '45', 'Lawn Lots', 'Columbarium1', 'Malcolm Yabia', 'Tagaytay City');
 
 -- --------------------------------------------------------
 
@@ -1554,7 +1555,8 @@ CREATE TABLE `record_logs` (
 
 INSERT INTO `record_logs` (`id`, `role`, `fullname`, `Lot_No`, `mem_sts`, `action`, `timestamp`) VALUES
 (35, 'Staff', 'Michael Enoza', '144', 'Columbarium1', 'updated', '2024-11-28 20:25:37'),
-(36, 'Staff', 'Michael Enoza', '186', 'Columbarium2', 'updated', '2024-11-28 20:26:02');
+(36, 'Staff', 'Michael Enoza', '186', 'Columbarium2', 'updated', '2024-11-28 20:26:02'),
+(37, 'Admin', 'Michael Enoza', '45', 'Columbarium1', 'created', '2024-11-30 15:33:28');
 
 -- --------------------------------------------------------
 
@@ -1576,7 +1578,10 @@ CREATE TABLE `staff` (
 --
 
 INSERT INTO `staff` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`) VALUES
-(52, 'Michael Enoza', 'enoza1121', 'enozamichael12@gmail.com', '$2y$10$A9pnO0VuOfged.aPHXoOr.Nc.fyCOV4tniDNx3xhQKR1IKxv8qyLG', 'Active');
+(52, 'Michael Enoza', 'Enoza1121', 'enozamichael12@gmail.com', '$2y$10$MPYI/MKZurigm68j5Xi1h.5xxSe5bxY0J0Hi0pqf./8fOIjqlV3aO', 'Active'),
+(53, 'John D. Enoza', 'John12', 'enozajohn26@gmail.com', '$2y$10$.73crU8q4mvYdVikM/MDZ.vxJRnlgwiBiTTcC3ur9pwOZu/EoLVbO', 'Active'),
+(54, 'John David Pasion', 'david12', 'johndavidpasion@gmail.com', '$2y$10$b2YRzw3lbv9FDe8HjiHyX.7eFVFZmzEjmLC1H89PFfLlXGmI27IUe', 'Inactive'),
+(58, 'Malcolm Yabia', 'yabia12', 'malcolmyabia@gmail.com', '$2y$10$lnNF3I9COPbCa0M1qzBUkOKJL9QYjXMlwh3HF33xWg5MpW/U/Mb5e', 'Active');
 
 --
 -- Indexes for dumped tables
@@ -1622,19 +1627,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `records`
 --
 ALTER TABLE `records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1512;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1513;
 
 --
 -- AUTO_INCREMENT for table `record_logs`
 --
 ALTER TABLE `record_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=37;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
