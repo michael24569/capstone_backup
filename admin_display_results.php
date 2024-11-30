@@ -146,9 +146,11 @@ function displayRecordStatus() {
         .back-button {
             margin-top: 20px;
         }
+            
     </style>
 </head>
 <body style="background: #071c14;"> 
+
 <h1>Summary of Status Report</h1><br>
 
 <table>
@@ -226,14 +228,66 @@ body {
 }
 
 .main-content {
-  text-align: center;
-  z-index: 10;
+    flex: 1;
+    margin-left: 200px; /* Initial margin when sidebar is visible */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: margin-left 0.3s ease;
+    color: white;
+    text-align: center;
+}
+.sidebar.hidden {
+    transform: translateX(-200px); /* Hide the sidebar */
+}
+
+/* Center content when sidebar is hidden */
+.main-content.center {
+    margin-left: 0;
+}
+.print-button {
+    position: absolute;
+    top: 40px;
+    right: 20px;
+    background-color: #3d8b40;
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.print-button:hover {
+    background-color: #4CAF50;
+}
+
+
+@media print {
+    body {
+        background: white;
+    }
+
+    .sidebar {
+        display: none !important;
+    }
+
+    .main-content {
+        margin-left: 0 !important;
+    }
+    table {
+        margin: auto;
+    }
+    button, .top-left-button {
+        display: none !important; /* Hide buttons in print view */
+    }
 }
     </style>
 </head>
 <body>
 <?php include 'admin_sidebar.php'; ?>
 <!-- Popup Structure -->
+<button id="print" class="print-button">Print</button>
 <button class="top-left-button" onclick="toggleSidebar()">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
     <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
@@ -301,9 +355,45 @@ document.getElementById('closeReportPopup').addEventListener('click', function()
                 e.preventDefault();
             }
         });
+
+
+        document.getElementById('print').addEventListener('click', function () {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    // Temporarily hide the sidebar
+    sidebar.classList.add('hidden');
+    mainContent.classList.add('center');
+
+    // Trigger the print dialog
+    window.print();
+
+    // Restore the sidebar after printing
+    setTimeout(() => {
+        sidebar.classList.remove('hidden');
+        mainContent.classList.remove('center');
+    }, 1000); // Delay to ensure the print dialog is triggered first
+});
+
+// Ensure the sidebar is always hidden when printing
+window.addEventListener('beforeprint', () => {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    sidebar.classList.add('hidden');
+    mainContent.classList.add('center');
+});
+
+// Restore the layout after printing
+window.addEventListener('afterprint', () => {
+    const sidebar = document.getElementById('sidebar');
+    const mainContent = document.getElementById('mainContent');
+
+    sidebar.classList.remove('hidden');
+    mainContent.classList.remove('center');
+});
 </script>
+
 <script src="paiyakan.js"></script>
-
-
 </body>
 </html>

@@ -232,6 +232,7 @@ $result = $conn->query($sql);
     </div>
                
     <script src="script.js"></script>
+    <script src="paiyakan.js"></script>
     <script>
         document.addEventListener('wheel', function(e) {
             if (e.ctrlKey) {

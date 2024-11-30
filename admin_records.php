@@ -167,16 +167,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 </head>
 
 <body style="background: #071c14;">
-    <button id="sidebarToggle" class="sidebar-toggle-btn">
-        <ion-icon name="menu-outline"></ion-icon>
-    </button>
+    <button class="top-left-button" onclick="toggleSidebar()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+  </svg>
+</button>
     <?php include 'admin_sidebar.php'; ?>
     
     <div id="recordsContent" class="center_record">
         <div id="alertBox" class="alert"></div>
         <div class="table-responsive">
             <h1 id="header1">Records Section</h1>
-            <a class="btn btn-primary btn-add" href="admin_addRecord.php" role="button">
+            <a class="btn btn-add" href="admin_addRecord.php" role="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon">
                     <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
                 </svg>
@@ -273,6 +275,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="paiyakan.js"></script>
     <script>
         // Dynamic search functionality
         document.getElementById('searchInput').addEventListener('input', function() {

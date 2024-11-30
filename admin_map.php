@@ -247,6 +247,31 @@ checkAdminAccess();
         .suggestion-item:hover {
             background-color: #f0f0f0;
         }
+
+/* Resize for smaller screens */
+@media (max-width: 768px) {
+    .form-control {
+        width: 60%;  /* Adjust width for tablets */
+        font-size: 10px;
+    }
+
+    .btn-search {
+        width: 10px;
+        height: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .form-control {
+        width: 1%;  /* Adjust width for mobile */
+        font-size: 5px;
+    }
+
+    .btn-search {
+        width: 5px;
+        height: 5px;
+    }
+}
     </style>
 
 </head>

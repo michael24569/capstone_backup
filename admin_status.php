@@ -200,20 +200,26 @@ tbody, thead, .form-control, td {
       
 
     .btn-green {
-  background-color: #4CAF50;
+  background-color: #479149;
   justify-content: center;
   display: inline-block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   cursor: pointer;
 }
+.btn-green:hover {
+    background-color: #4CAF50;
+}
 .btn-red {
-  background-color: #f44336;
+  background-color: #c3352b;
   justify-content: center;
   display: inline-block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   text-align: center;
   cursor: pointer;
+}
+.btn-red:hover {
+    background-color: #f44336;
 }
 .emailUpdate{
     justify-content: flex-end;

@@ -297,7 +297,7 @@ body {
 }
 
 .btn-add {
-  background-color: #4CAF50;
+  background-color: #479149;
   margin-bottom: 20px;
   display: inline-block;
   box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
@@ -306,19 +306,19 @@ body {
  
 }
 .btn-add:hover{
-  background-color: #479149;
+  background-color: #4CAF50;
 
 } 
 .btn-edit {
   right: 100px;
   border-radius: 10px;
-  background-color: #4CAF50;
+  background-color: #479149;
   margin-right: 5px;
   padding: 10px;
   
 }
 .btn-edit:hover{
-  background-color: #3e9141;
+  background-color: #4CAF50;
 
 }
 
@@ -332,12 +332,12 @@ body {
   cursor: pointer;
   border-radius: 10px;
   padding-left:15px;
-  background-color: #3f2afc;
+  background-color: #2e21a7;
   text-align: center;
   font-family: 'MyFont';
 }
 .btn-search:hover{
-  background-color: #2e21a7;
+  background-color: #3f2afc;
 
   
 }
