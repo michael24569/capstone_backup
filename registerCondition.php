@@ -20,8 +20,8 @@ if (isset($_POST['signup'])) {
     $fullname = htmlspecialchars(trim($_POST['fullname']));
     $username = htmlspecialchars(trim($_POST['username']));
     $email = htmlspecialchars(trim($_POST['email']));
-    $password = $_POST['password'];
-    $confirm_password = $_POST['confirm_password'];
+    $password = trim($_POST['password']);
+    $confirm_password = trim($_POST['confirm_password']);
 
     // Determine the account status based on the number of active accounts
     $status = determineAccountStatus($conn);
@@ -39,10 +39,14 @@ if (isset($_POST['signup'])) {
         // Validate password
         if (strlen($password) < 8) {
             $error = "Password must be at least 8 characters.";
-        } elseif (!preg_match("/[a-zA-Z]/", $password)) {
-            $error = "Password must contain at least one letter.";
+        } elseif (!preg_match("/[a-z]/", $password)) {
+            $error = "Password must contain at least one lowercase letter.";
+        } elseif (!preg_match("/[A-Z]/", $password)) {
+            $error = "Password must contain at least one uppercase letter.";
         } elseif (!preg_match("/[0-9]/", $password)) {
             $error = "Password must contain at least one number.";
+        } elseif (!preg_match("/[\W_]/", $password)) { // Special characters
+            $error = "Password must contain at least one special character (e.g., !@#$%^&*).";
         } elseif ($password !== $confirm_password) {
             $error = "Passwords do not match!";
         } else {
@@ -56,6 +60,10 @@ if (isset($_POST['signup'])) {
             if ($stmt->execute()) {
                 // Store a success message instead of redirecting
                 $successful = "Successfully registered!";
+                
+                $_POST['fullname'] = '';
+                $_POST['username'] = '';
+                $_POST['email'] = '';
             } else {
                 // Store an error message if the query fails
                 $error = "Error during registration. Please try again.";

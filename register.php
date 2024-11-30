@@ -26,17 +26,17 @@ if (!isset($_SESSION['id'])) {
     
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input type="text" name="fullname" id="fullname" placeholder="Full Name" required >
+            <input type="text" name="fullname" id="fullname" placeholder="Full Name" value="<?php echo htmlspecialchars($_POST['fullname'] ?? ''); ?>"required >
             <label for="fullname">Full Name</label>
         </div>
         <div class="input-group">
             <i class="fas fa-user"></i>
-            <input type="username" name="username" id="username" placeholder="Username" required >
+            <input type="username" name="username" id="username" placeholder="Username" value="<?php echo htmlspecialchars($_POST['username'] ?? ''); ?>"required >
             <label for="username">Username</label>
         </div>
         <div class="input-group">
             <i class="fas fa-envelope"></i>
-            <input type="email" name="email" id="email" placeholder="Email" required >
+            <input type="email" name="email" id="email" placeholder="Email" value="<?php echo htmlspecialchars($_POST['email'] ?? ''); ?>"required >
             <label for="email">Email</label>
         </div>
         <div class="input-group">
@@ -70,7 +70,7 @@ if (!isset($_SESSION['id'])) {
     <div class="back">
         <div class="space">
         <i class="fas fa-angle-left" ></i>
-        <a href="admin_status.php" class="back">Back</a>
+        <a href="admin_status.php" class="back">Cancel</a>
         </div>
     </div>
 

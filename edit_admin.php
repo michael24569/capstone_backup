@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkAdminAccess(); // Make sure only admin can access
+checkAdminAccess(); // Ensure only admin can access
 require("db-connection.php");
 
 // Verify admin is logged in
@@ -13,7 +13,6 @@ if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || $_SESSION['role'
 function toProperCase($str) {
     return ucwords(strtolower(trim($str)));
 }
-
 
 $error_message = "";
 $success_message = "";
@@ -88,12 +87,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             $param_types = "sss";
             $params = [$fullname, $username, $email];
             
-            // If new password is provided and verified
             if (!empty($new_password)) {
                 if ($new_password !== $confirm_password) {
                     $error_message = "New passwords do not match";
                 } elseif (strlen($new_password) < 8) {
                     $error_message = "New password must be at least 8 characters long";
+                } elseif (!preg_match("/[a-z]/", $new_password)) {
+                    $error_message = "Password must contain at least one lowercase letter.";
+                }  elseif (!preg_match("/[A-Z]/", $new_password)) {
+                    $error_message = "Password must contain at least one uppercase letter.";
+                } elseif (!preg_match("/[0-9]/", $new_password)) {
+                    $error_message = "Password must contain at least one number.";
+                } elseif (!preg_match("/[\W_]/", $new_password)) { // Must contain at least one special character
+                    $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
                 } else {
                     $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
                     $update_fields[] = "password = ?";
@@ -136,7 +142,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     <title>Edit Admin Profile</title>
     <link rel="stylesheet" href="style1.css">
     <style>
-        .edit-form-container {
+.edit-form-container {
             max-width: 600px;
             margin: 50px auto;
             padding: 20px;
@@ -241,8 +247,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 
         .password-status.success {
             color: #4CAF50;
-        }
-    </style>
+        }    </style>
 </head>
 <body style="background: #071c14;">
     <div class="edit-form-container">
@@ -257,20 +262,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         <?php endif; ?>
 
         <form method="POST" action="" id="editForm">
-        <div class="form-group">
-    <label for="fullname">Full Name</label>
-    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required>
-</div>
+            <div class="form-group">
+                <label for="fullname">Full Name</label>
+                <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required>
+            </div>
 
-<div class="form-group">
-    <label for="username">Username</label>
-    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($admin['username'])); ?>" required>
-</div>
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($admin['username'])); ?>" required>
+            </div>
 
-<div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars(strtolower($admin['email'])); ?>" required>
-</div>
+            <div class="form-group">
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars(strtolower($admin['email'])); ?>" required>
+            </div>
+
             <div id="passwordVerificationSection">
                 <h3>Change Password</h3>
                 <div class="current-password-container">
@@ -303,52 +309,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     </div>
 
     <script>
-             document.getElementById('current_password').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\s/g, ''); // Remove spaces
-  });
-  document.getElementById('new_password').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\s/g, ''); // Remove spaces
-  });
-  document.getElementById('confirm_password').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\s/g, ''); // Remove spaces
-  });
-  
+        document.getElementById('current_password').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\s/g, ''); // Remove spaces
+        });
+
+        document.getElementById('new_password').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\s/g, ''); // Remove spaces
+        });
+
+        document.getElementById('confirm_password').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\s/g, ''); // Remove spaces
+        });
+
         document.getElementById('verifyPasswordBtn').addEventListener('click', function() {
-            const currentPassword = document.getElementById('current_password').value;
-            const statusDiv = document.getElementById('passwordStatus');
-            const newPasswordSection = document.getElementById('newPasswordSection');
+            var currentPassword = document.getElementById('current_password').value;
             
-            if (!currentPassword) {
-                statusDiv.textContent = 'Please enter your current password';
-                statusDiv.className = 'password-status error';
+            if (currentPassword === "") {
+                document.getElementById('passwordStatus').innerText = "Please enter your current password.";
                 return;
             }
-
-            // Send AJAX request to verify password
-            fetch(window.location.href, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded',
-                },
-                body: `verify_password=1&current_password=${encodeURIComponent(currentPassword)}`
-            })
-            .then(response => response.json())
-            .then(result => {
-                statusDiv.textContent = result.message;
-                if (result.status === 'valid') {
-                    statusDiv.className = 'password-status success';
-                    newPasswordSection.style.display = 'block';
-                    document.getElementById('current_password').readOnly = true;
-                    this.disabled = true;
-                } else {
-                    statusDiv.className = 'password-status error';
-                    newPasswordSection.style.display = 'none';
+            
+            var formData = new FormData();
+            formData.append('verify_password', true);
+            formData.append('current_password', currentPassword);
+            
+            var xhr = new XMLHttpRequest();
+            xhr.open('POST', '', true);
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    var response = JSON.parse(xhr.responseText);
+                    if (response.status === 'valid') {
+                        document.getElementById('passwordStatus').innerText = response.message;
+                        document.getElementById('newPasswordSection').style.display = 'block';
+                    } else {
+                        document.getElementById('passwordStatus').innerText = response.message;
+                    }
                 }
-            })
-            .catch(error => {
-                statusDiv.textContent = 'Error verifying password';
-                statusDiv.className = 'password-status error';
-            });
+            };
+            xhr.send(formData);
         });
     </script>
 </body>

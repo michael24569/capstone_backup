@@ -96,35 +96,46 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             $error_message = "Username already exists";
         } else {
             // Initialize the update query
-            $update_query = "UPDATE staff SET 
-                fullname = '$fullname',
-                username = '$username',
-                email = '$email'";
-            
-            // If new password is provided and verified, add to update query
-            if (!empty($new_password)) {
-                if ($new_password !== $confirm_password) {
-                    $error_message = "New passwords do not match";
-                } elseif (strlen($new_password) < 8) {
-                    $error_message = "New password must be at least 8 characters long";
-                } else {
-                    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-                    $update_query .= ", password = '$hashed_password'";
-                }
-            }
-            
-            if (empty($error_message)) {
-                $update_query .= " WHERE id = '$id'";
-                
-                if (mysqli_query($conn, $update_query)) {
-                    $success_message = "Staff information updated successfully";
-                    // Refresh staff data
-                    $result = mysqli_query($conn, "SELECT * FROM staff WHERE id = '$id'");
-                    $staff = mysqli_fetch_assoc($result);
-                } else {
-                    $error_message = "Error updating information: " . mysqli_error($conn);
-                }
-            }
+$update_query = "UPDATE staff SET 
+fullname = '$fullname',
+username = '$username',
+email = '$email'";
+
+// Check if new password is provided and is valid
+if (!empty($new_password)) {
+if ($new_password !== $confirm_password) {
+    $error_message = "New passwords do not match";
+} elseif (strlen($new_password) < 8) {
+    $error_message = "New password must be at least 8 characters long";
+} elseif (!preg_match("/[a-z]/", $new_password)) {
+    $error_message = "Password must contain at least one lowercaseletter.";
+}  elseif (!preg_match("/[A-Z]/", $new_password)) {
+    $error_message = "Password must contain at least one uppercase letter.";
+} elseif (!preg_match("/[0-9]/", $new_password)) {
+    $error_message = "Password must contain at least one number.";
+} elseif (!preg_match("/[\W_]/", $new_password)) { // Must contain at least one special character
+    $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
+} else {
+    // If new password is valid, hash it and prepare to update it
+    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+    $update_query .= ", password = '$hashed_password'"; // Append to update query
+}
+}
+
+// Proceed only if no error message
+if (empty($error_message)) {
+$update_query .= " WHERE id = '$id'";  // Append the WHERE condition to the query
+
+if (mysqli_query($conn, $update_query)) {
+    $success_message = "Staff information updated successfully";
+    // Refresh staff data
+    $result = mysqli_query($conn, "SELECT * FROM staff WHERE id = '$id'");
+    $staff = mysqli_fetch_assoc($result);
+} else {
+    $error_message = "Error updating information: " . mysqli_error($conn);
+}
+}
+
         }
     }
 }
