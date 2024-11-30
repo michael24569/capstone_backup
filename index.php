@@ -101,9 +101,10 @@ require("loginCondition.php");
     
   }
   .container {
-    background: linear-gradient(135deg, #ffffffd8, #ffffffec);
-    backdrop-filter: blur(30px);
-    width: 450px;
+    background-color:#ffffff93;
+
+    backdrop-filter: blur(5px);
+    width: 400px;
     padding:20px;
     margin-left: 55%;
     margin-top: 15%;
@@ -313,7 +314,7 @@ require("loginCondition.php");
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
     left: 21%;
-    bottom:55px;
+    bottom:40px;
   }
 
   
@@ -323,7 +324,7 @@ require("loginCondition.php");
       width: 0;
     }
     to {
-      width: 400px;
+      width: 410px;
     }
   }
   .signIn-icon {

@@ -10,6 +10,7 @@
                 <span class="text" style="font-size: 15px;">Tagaytay Memorial Park</span>
             </a>
         </li>
+        <br>
         <li>
             <a href="home.php" onclick="showHome()">
                 <span class="icon">
