@@ -176,7 +176,7 @@ checkStaffAccess();
     width: 100%;
     height: 100%;
     display: flex;
-    background-image: url('images/loginIMG.jpg');
+    background-image: url('images/s2.jpg');
     background-size: cover;
     background-position: center;
     justify-content: center;
