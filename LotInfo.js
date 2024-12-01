@@ -9,7 +9,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
         '.grid-itemmark, .grid-itemluke, .grid-itemisidore, .grid-itemmatthew, .grid-itemC2blk3A, .grid-itemC2blk3B, .grid-itemC2blk4A, ' +
         '.grid-itemC2blk4B, .grid-itemblk3AC2, .grid-itemblk3BC2, .grid-itemblk4AC2, .grid-itemblk4BC2, .grid-itemC1S11A, .grid-itemC1S11B, ' +
         '.grid-itemC1S22A, .grid-itemC1S22B, .grid-itemC1BLK3A, .grid-itemC1BLK3B, .grid-itemC1BLK4A, .grid-itemC1BLK4B, .grid-itemC1blk3A2nd, ' +
-        '.grid-itemC1blk3B2nd, .grid-itemC1blk4A2nd, .grid-itemC1blk4A2nd, .grid-itempm'); // Include all relevant classes
+        '.grid-itemC1blk3B2nd, .grid-itemC1blk4A2nd, .grid-itemC1blk4B2nd, .grid-itempm'); // Include all relevant classes
     const popup = document.getElementById('itemPopup');
     const popupContent = document.getElementById('popupContent');
     const closePopup = document.getElementById('closePopup');
