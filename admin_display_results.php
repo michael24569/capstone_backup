@@ -212,6 +212,12 @@ function displayRecordStatus() {
             .view-details, .close-modal {
                 display: none;
             }
+                 .sidebar {
+        display: none !important;
+    }
+        .summary-table {
+           display: none !important;
+}
             body {
                 background: white;
             }
