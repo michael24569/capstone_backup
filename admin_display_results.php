@@ -591,6 +591,22 @@ body {
   
   
 }  
+  #print {
+    position: absolute;
+    top: 55px;
+    right: 10px;
+    background-color: #479149;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    z-index: 10;
+}
+    .input-icon {
+  height:15px; fill:white;
+  margin-right: 10px;
+}
     </style>
 </head>
  <link rel="stylesheet" href="style1.css">
@@ -681,9 +697,9 @@ body {
         </div>
     </ul>
 </div>
-
+<button id="print" class="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M168 80c-13.3 0-24 10.7-24 24l0 304c0 8.4-1.4 16.5-4.1 24L440 432c13.3 0 24-10.7 24-24l0-304c0-13.3-10.7-24-24-24L168 80zM72 480c-39.8 0-72-32.2-72-72L0 112C0 98.7 10.7 88 24 88s24 10.7 24 24l0 296c0 13.3 10.7 24 24 24s24-10.7 24-24l0-304c0-39.8 32.2-72 72-72l272 0c39.8 0 72 32.2 72 72l0 304c0 39.8-32.2 72-72 72L72 480zM176 136c0-13.3 10.7-24 24-24l96 0c13.3 0 24 10.7 24 24l0 80c0 13.3-10.7 24-24 24l-96 0c-13.3 0-24-10.7-24-24l0-80zm200-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg>Print</button>
     <h1>Summary of Status Report</h1>
-    
+    <br>
     <table class="summary-table">
         <tr>
             <th>Location</th>
@@ -743,6 +759,24 @@ body {
             event.target.style.display = "none";
         }
     }
+
+       // Prevent zoom using wheel event
+        document.addEventListener("wheel", function(e) {
+            if (e.ctrlKey) {
+                e.preventDefault();
+            }
+        }, { passive: false });
+
+        // Prevent zoom using keydown events
+        document.addEventListener("keydown", function(e) {
+            if ((e.ctrlKey || e.metaKey) && (e.key === "+" || e.key === "-" || e.key === "=")) {
+                e.preventDefault();
+            }
+        });
+
+        document.getElementById("print").addEventListener("click", function() {
+    window.print();
+});
     </script>
 </body>
 </html>';
