@@ -252,17 +252,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         </div>
     </div>
 
-    <!-- Modals remain the same -->
-    <div id="confirmModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <h2>Logout Confirmation</h2>
-            <p>Are you sure you want to logout?</p>
-            <div class="modal-buttons">
-                <button id="confirmButton" class="btn btn-confirm">Confirm</button>
-                <button id="cancelButton" class="btn btn-cancel">Cancel</button>
-            </div>
-        </div>
-    </div>
                              <!-- Logout confirmation modal -->
    <div id="confirmModal" class="modal" style="display: none;">
         <div class="modal-content">

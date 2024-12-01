@@ -60,20 +60,20 @@ function displayRecordStatus() {
 
    $recordStatus = $_SESSION['record_status'];
     $memorialNames = [
-        'grid-itemA3' => 'apartment 3 side a',
-        'grid-itemB3' => 'apartment 3 side b',
-        'grid-itemA2' => 'apartment 2 side a',
-        'grid-itemB2' => 'apartment 2 side b',
-        'grid-itemA' => 'apartment 1 side a',
-        'grid-itemB' => 'apartment 1 side b',
+        'grid-itemA3' => 'Apartment 3 side a',
+        'grid-itemB3' => 'Apartment 3 side b',
+        'grid-itemA2' => 'Apartment 2 side a',
+        'grid-itemB2' => 'Apartment 2 side b',
+        'grid-itemA' => 'Apartment 1 side a',
+        'grid-itemB' => 'Apartment 1 side b',
         'grid-itemC2S1A' => 'Columbarium 2 (1st floor block 1) side a',
         'grid-itemC2S1B' => 'Columbarium 2 (1st floor block 1) side b',
         'grid-itemC2S2A' => 'Columbarium 2 (1st floor block 2) side a',
         'grid-itemC2S2B' => 'Columbarium 2 (1st floor block 2) side b',
         'grid-itemC2blk3A' => 'Columbarium 2 (1st floor block 3) side a',
         'grid-itemC2blk3B' => 'Columbarium 2 (1st floor block 3) side b',
-        'grid-itemC2blk4A' => 'Columbarium 2 (1st floor block 4) side a', // Fixed naming
-        'grid-itemC2blk4B' => 'Columbarium 2 (1st floor block 4) side b', // Fixed naming
+        'grid-itemC2blk4A' => 'Columbarium 2 (1st floor block 4) side a', 
+        'grid-itemC2blk4B' => 'Columbarium 2 (1st floor block 4) side b', 
         'grid-itemC2S12A' => 'Columbarium 2 (2nd floor block 1) side a',
         'grid-itemC2S12B' => 'Columbarium 2 (2nd floor block 1) side b',
         'grid-itemC2S22A' => 'Columbarium 2 (2nd floor block 2) side a',
@@ -96,7 +96,7 @@ function displayRecordStatus() {
         'grid-itemC1SB' => 'Columbarium 1 (2nd floor block 2) side b',
         'grid-itemC1blk3A2nd' => 'Columbarium 1 (2nd floor block 3) side a',
         'grid-itemC1blk3B2nd' => 'Columbarium 1 (2nd floor block 3) side b',
-        'grid-itemC1blk4A2nd' => 'Columbarium 1 (2nd floor block 4) side a', // This was the problematic mapping
+        'grid-itemC1blk4A2nd' => 'Columbarium 1 (2nd floor block 4) side a',
         'grid-itemC1blk4B2nd' => 'Columbarium 1 (2nd floor block 4) side b',
         'grid-itemRAF' => 'St. Rafael',
         'grid-itempeter' => 'St. Peter',
@@ -123,14 +123,7 @@ function displayRecordStatus() {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Record Status Summary</title>
     <style>
-        body {
-            display: block;
-            justify-content: start;
-            align-items: start;
-            height: 100vh;
-            padding-top: 20px;
-            background: #071c14;
-        }
+
         .summary-table {
             width: 95%;
             margin: 20px auto;
@@ -157,6 +150,7 @@ function displayRecordStatus() {
             padding: 5px 10px;
             cursor: pointer;
             border-radius: 4px;
+            font-family: "MyFont";
         }
         .view-details:hover {
             background-color: #4CAF50;
@@ -218,6 +212,20 @@ function displayRecordStatus() {
         .summary-table {
            display: none !important;
 }
+           .details-modal {
+        display: block !important;
+        position: static;
+        background: white;
+        border: none;
+        box-shadow: none;
+    }
+
+    .details-modal .modal-content {
+        width: 100%;
+        margin: 0;
+    }
+
+           
             body {
                 background: white;
             }
@@ -235,19 +243,16 @@ function displayRecordStatus() {
                 box-shadow: none;
             }
         }
-          * {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-body {
-  font-family: "Michroma", "sans-serif";
-  height: 100vh;
-  transition: 0.8s;
-  background: #071c14;
-}
+  
+  body {
+            display: block;
+            justify-content: start;
+            align-items: start;
+            height: 100vh;
+            padding-top: 20px;
+            background: #071c14;
+            
+        }
 /* Sidebar Styles */
 .sidebar {
   z-index: 100000;
@@ -598,8 +603,9 @@ body {
   
 }  
   #print {
+    font-family: "MyFont";
     position: absolute;
-    top: 55px;
+    top: 65px;
     right: 10px;
     background-color: #479149;
     color: white;
@@ -612,6 +618,108 @@ body {
     .input-icon {
   height:15px; fill:white;
   margin-right: 10px;
+}
+  @keyframes popIn {
+    0% {
+        opacity: 0;           /* Start fully transparent */
+        transform: scale(0.8); /* Start slightly smaller */
+    }
+    100% {
+        opacity: 1;           /* Fully visible */
+        transform: scale(1);  /* Full size */
+    }
+}
+
+.mudal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none; /* Start hidden */
+}
+
+.modal-contint {
+    background: white;
+    padding: 40px;
+    border-radius: 8px;
+   padding: 50px;
+   margin-left: -30px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    animation: popIn 0.3s ease-out; /* Apply pop-in animation */
+}
+h2 {
+    text-align: start;
+    margin-top: -35px;
+}
+p {
+    padding-top: 1%;
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: -40px;
+    margin-right: -40px;
+    gap: 8px;
+}
+
+.btn-confirm, .btn-cancel {
+    padding: 10px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+
+.btn-confirm {
+    margin-top:20px;
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-cancel {
+    margin-top:20px;
+
+    background-color: #dc3545;
+    color: white;
+}
+.btn-cancel:hover{
+    background-color: #b82e3c;
+    transform: scale(1.2);
+    
+}
+.btn-confirm:hover{
+    background-color: #218d3a;
+    
+    transform: scale(1.2);
+    
+}
+.alert {
+    position: fixed;
+    top: 20%;
+    right: 38%;
+    padding: 10px 20px;
+    border-radius: 5px;
+    color: white;
+    font-weight: bold;
+    display: none; /* Start hidden */
+    z-index: 1000;
+    animation: popIn 0.3s ease-out; /* Apply pop-in animation */
+    
+}
+
+.alert-success {
+    background-color: #28a745;
+}
+
+.alert-error {
+    background-color: #dc3545;
 }
     </style>
 </head>
@@ -706,6 +814,7 @@ body {
 <button id="print" class="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M168 80c-13.3 0-24 10.7-24 24l0 304c0 8.4-1.4 16.5-4.1 24L440 432c13.3 0 24-10.7 24-24l0-304c0-13.3-10.7-24-24-24L168 80zM72 480c-39.8 0-72-32.2-72-72L0 112C0 98.7 10.7 88 24 88s24 10.7 24 24l0 296c0 13.3 10.7 24 24 24s24-10.7 24-24l0-304c0-39.8 32.2-72 72-72l272 0c39.8 0 72 32.2 72 72l0 304c0 39.8-32.2 72-72 72L72 480zM176 136c0-13.3 10.7-24 24-24l96 0c13.3 0 24 10.7 24 24l0 80c0 13.3-10.7 24-24 24l-96 0c-13.3 0-24-10.7-24-24l0-80zm200-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg>Print</button>
     <h1>Summary of Status Report</h1>
     <br>
+    <br>
     <table class="summary-table">
         <tr>
             <th>Location</th>
@@ -724,13 +833,14 @@ body {
     }
 
     echo '</table>';
+    
 
     // Create modals for each group
     foreach ($grouped as $key => $group) {
         echo "<div id='modal-$key' class='details-modal'>
             <div class='modal-content'>
                 <span class='close-modal' onclick='hideDetails(\"$key\")'>&times;</span>
-                <h2 style='color: #004100;'>{$group['name']} Details</h2>
+                <h2 style='color: #004100;margin-top: 1px;'>{$group['name']} Details</h2>
                 <table class='details-table'>
                     <tr>
                         <th>Location</th>
@@ -748,7 +858,20 @@ body {
         
         echo "</table>
             </div>
-        </div>";
+        </div>
+        
+         <div id='confirmModal' class='mudal' style='display: none;'>
+        <div class='modal-contint'>
+            <h2>Logout Confirmation</h2>
+            <p>Are you sure you want to logout?</p>
+            <br>
+            <div class='modal-buttons'>
+                <button id='confirmButton' class='btn btn-confirm'>Confirm</button>
+                <button id='cancelButton' class='btn btn-cancel'>Cancel</button>
+            </div>
+        </div>
+    </div>
+        ";
     }
 
     echo '<script>
@@ -782,6 +905,25 @@ body {
 
         document.getElementById("print").addEventListener("click", function() {
     window.print();
+});
+
+    // When the user clicks the logout button, show the modal
+document.getElementById("sidebarLogoutButton").addEventListener("click", function(event) {
+    event.preventDefault(); // Prevent the default logout action
+    const modal = document.getElementById("confirmModal");
+    modal.style.display = "flex"; // Show the modal
+});
+
+// When the user clicks the cancel button, hide the modal
+document.getElementById("cancelButton").addEventListener("click", function() {
+    const modal = document.getElementById("confirmModal");
+    modal.style.display = "none"; // Hide the modal
+});
+
+
+// When the user clicks the confirm button, proceed with the logout
+document.getElementById("confirmButton").addEventListener("click", function() {
+    window.location.href = "logout.php"; // Redirect to the logout page
 });
     </script>
 </body>
