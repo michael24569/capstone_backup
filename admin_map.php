@@ -331,11 +331,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
 
@@ -406,11 +406,11 @@ checkAdminAccess();
                     <div class="legends">Legend</div>
                     <div class="legendList">
                     <div class="legendU Available"></div>
-                    <span>Available</span>
+                    <span>Available lots</span>
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Owned</span>
+                  <span>Owned lots</span>
                 </div>
               </div>
                 
@@ -482,11 +482,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                
@@ -557,11 +557,11 @@ checkAdminAccess();
                     <div class="legends">Legend</div>
                     <div class="legendList">
                     <div class="legendU Available"></div>
-                    <span>Available</span>
+                    <span>Available lots</span>
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Owned</span>
+                  <span>Owned lots</span>
                 </div>
               </div>
 
@@ -638,11 +638,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
               
@@ -717,11 +717,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
 
@@ -834,11 +834,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
 
@@ -897,11 +897,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block1 side b -->
@@ -958,11 +958,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block 2 side A -->
@@ -1019,11 +1019,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
          <!--columbarium 2 1st floor block 2 side b -->
@@ -1080,11 +1080,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side A -->
@@ -1139,11 +1139,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side B -->
@@ -1203,11 +1203,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side A -->
@@ -1267,11 +1267,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side B -->
@@ -1369,11 +1369,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side A-->
@@ -1433,11 +1433,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side B-->
@@ -1496,11 +1496,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side A-->
@@ -1559,11 +1559,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side B-->
@@ -1624,11 +1624,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 3 Side A-->
@@ -1689,11 +1689,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 3 Side B-->
@@ -1753,11 +1753,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side A-->
@@ -1816,11 +1816,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side B-->
@@ -1915,11 +1915,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 1 Side A-->
@@ -1979,11 +1979,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 1 Side B-->
@@ -2049,11 +2049,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Owned</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned lots</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 2 Side A-->
@@ -2113,11 +2113,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 2 Side B-->
@@ -2176,11 +2176,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side A-->
@@ -2240,11 +2240,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side B-->
@@ -2304,11 +2304,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side A-->
@@ -2367,11 +2367,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side B-->
@@ -2456,11 +2456,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2520,11 +2520,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2586,11 +2586,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2650,11 +2650,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2722,11 +2722,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2786,11 +2786,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2858,11 +2858,11 @@ checkAdminAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
         <!--Columbarium 1 2nd floor block 2 side A-->
@@ -2923,11 +2923,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--Columbarium 1 2nd floor block 2 side B-->
@@ -3034,11 +3034,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             
@@ -3123,11 +3123,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="petergrid" id="petergrid">
@@ -3224,11 +3224,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
     
@@ -3323,11 +3323,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="judegrid" id="judegrid">
@@ -3549,11 +3549,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="johngrid" id="johngrid">
@@ -3717,11 +3717,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="josephgrid" id="josephgrid">
@@ -3928,11 +3928,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             <div class="jamesgrid" id="jamesgrid">
@@ -4250,11 +4250,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                   <div class="matthewgrid" id="matthewgrid">
@@ -4277,11 +4277,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
 
@@ -4466,11 +4466,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="dominicgrid" id="dominicgrid">
@@ -4820,11 +4820,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             <div class="markgrid" id="markgrid">
@@ -4848,11 +4848,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             <div class="lukegrid" id="lukegrid">
@@ -4881,11 +4881,11 @@ checkAdminAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="isidoregrid" id="isidoregrid">
@@ -4922,11 +4922,11 @@ checkAdminAccess();
                             <div class="legends">Legend</div>
                             <div class="legendList">
                             <div class="legendU Available"></div>
-                            <span>Available</span>
+                            <span>Available lots</span>
                             </div>
                         <div class="legendList">
                           <div class="legendU Unavailable"></div>
-                          <span>Owned</span>
+                          <span>Owned lots</span>
                         </div>
                       </div>
                       <div class="pmgrid" id="pmgrid">
