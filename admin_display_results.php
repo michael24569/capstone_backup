@@ -126,9 +126,10 @@ function displayRecordStatus() {
 
         .summary-table {
             width: 95%;
-            margin: 20px auto;
+            margin: 30px auto;
             border-collapse: collapse;
             margin-left: 70px;
+            margin-top: 20px;
         }
         .summary-table th, .summary-table td {
             padding: 12px;
@@ -199,37 +200,57 @@ function displayRecordStatus() {
             color: white;
         }
         h1 {
+            margin-top:110px;
             color: white;
             text-align: center;
         }
-        @media print {
-            .view-details, .close-modal {
-                display: none;
-            }
-                 .sidebar {
+       /* Hide elements by default on main page */
+.seal, .cctlogo, .address {
+    display: none;
+}
+
+/* Main page background */
+body {
+    display: block;
+    justify-content: start;
+    align-items: start;
+    height: 100vh;
+    padding-top: 20px;
+    background: #071c14;
+}
+
+/* Print-specific styles */
+/* Existing styles remain the same until the print media query */
+
+@media print {
+    .print-button {
+display: none;
+  }
+    .view-details, .close-modal {
+        display: none;
+    }
+    .sidebar {
         display: none !important;
     }
-        .summary-table {
-           display: none !important;
-}
-           .details-modal {
+    .summary-table {
+        display: none !important;
+    }
+    .details-modal {
         display: block !important;
         position: static;
         background: white;
         border: none;
         box-shadow: none;
     }
-
     .details-modal .modal-content {
         width: 100%;
         margin: 0;
     }
-
-           
-            body {
-                background: white;
-            }
-            .details-modal {
+    body {
+        background: white;
+        margin: 0;
+    }
+        .details-modal {
                 position: static;
                 display: block;
                 width: 100%;
@@ -242,17 +263,57 @@ function displayRecordStatus() {
                 width: 100%;
                 box-shadow: none;
             }
-        }
-  
-  body {
-            display: block;
-            justify-content: start;
-            align-items: start;
-            height: 100vh;
-            padding-top: 20px;
-            background: #071c14;
-            
-        }
+    .seal {
+        display: block;
+        text-align: center;
+    }
+    .seal img {
+        position: absolute;
+        max-width: 6.5%;
+        height: auto;
+        margin-top: -1%;
+        margin-left: -41%;
+        z-index: 10000;
+    }
+    .cctlogo {
+        display: block;
+        text-align: center;
+    }
+    .cctlogo img {
+        position: absolute;
+        max-width: 6.5%;
+        height: auto;
+        margin-top: -1%;
+        margin-left: 38%;
+        z-index: 10000;
+    }
+    .address {
+        display: block;
+        color: black;
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        z-index: 1000;
+    }
+    .address h3 {
+        margin-bottom: 10px;
+    }
+    .address h2 {
+        font-weight: bold;
+        margin: -5px;
+    }
+    /* Modified reportHeader positioning for print */
+    .reportHeader {
+        margin-top: 120px !important; /* Increased margin for print */
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
 /* Sidebar Styles */
 .sidebar {
   z-index: 100000;
@@ -605,7 +666,7 @@ function displayRecordStatus() {
   #print {
     font-family: "MyFont";
     position: absolute;
-    top: 65px;
+    top:95px;
     right: 10px;
     background-color: #479149;
     color: white;
@@ -721,6 +782,11 @@ p {
 .alert-error {
     background-color: #dc3545;
 }
+
+.reportHeader {
+margin-top: -10px;
+  }
+  
     </style>
 </head>
  <link rel="stylesheet" href="style1.css">
@@ -812,7 +878,23 @@ p {
     </ul>
 </div>
 <button id="print" class="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M168 80c-13.3 0-24 10.7-24 24l0 304c0 8.4-1.4 16.5-4.1 24L440 432c13.3 0 24-10.7 24-24l0-304c0-13.3-10.7-24-24-24L168 80zM72 480c-39.8 0-72-32.2-72-72L0 112C0 98.7 10.7 88 24 88s24 10.7 24 24l0 296c0 13.3 10.7 24 24 24s24-10.7 24-24l0-304c0-39.8 32.2-72 72-72l272 0c39.8 0 72 32.2 72 72l0 304c0 39.8-32.2 72-72 72L72 480zM176 136c0-13.3 10.7-24 24-24l96 0c13.3 0 24 10.7 24 24l0 80c0 13.3-10.7 24-24 24l-96 0c-13.3 0-24-10.7-24-24l0-80zm200-24l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l32 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-32 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zM200 272l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24zm0 80l208 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-208 0c-13.3 0-24-10.7-24-24s10.7-24 24-24z"/></svg>Print</button>
-    <h1>Summary of Status Report</h1>
+    
+<br><div class="seal">
+    <img src ="images/seal.png" alt="Tagaytay City Seal">
+  </div>
+  <div class="cctlogo">
+    <img src ="images/cctlogo.png" alt="Tagaytay City Seal">
+  </div>
+<br>
+<div class="address">
+    <h3>Republic of the Philippines</h3>
+    <h3>City of Tagaytay</h3>
+    <h2>CITY COLLEGE OF TAGAYTAY</h2><br>
+    <h3>Tagaytay City Assessor</h3><br>
+</div>
+
+
+    <h1 class="reportHeader">Summary of Status Report</h1>
     <br>
     <br>
     <table class="summary-table">
