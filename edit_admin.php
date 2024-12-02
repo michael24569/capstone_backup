@@ -338,11 +338,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             xhr.onreadystatechange = function() {
                 if (xhr.readyState === XMLHttpRequest.DONE) {
                     var response = JSON.parse(xhr.responseText);
+                    passwordStatus.className = 'password-status ' + (response.status === 'valid' ? 'success' : 'error');
+                    passwordStatus.innerText = response.message;
+                    
                     if (response.status === 'valid') {
-                        document.getElementById('passwordStatus').innerText = response.message;
                         document.getElementById('newPasswordSection').style.display = 'block';
-                    } else {
-                        document.getElementById('passwordStatus').innerText = response.message;
                     }
                 }
             };

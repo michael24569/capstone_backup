@@ -10,7 +10,7 @@ checkStaffAccess();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Administrator</title>
+    <title>Home for Staffs</title>
     
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="map.css">
@@ -331,11 +331,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
 
@@ -406,11 +406,11 @@ checkStaffAccess();
                     <div class="legends">Legend</div>
                     <div class="legendList">
                     <div class="legendU Available"></div>
-                    <span>Available</span>
+                    <span>Available lots</span>
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Owned</span>
+                  <span>Owned lots</span>
                 </div>
               </div>
                 
@@ -471,8 +471,8 @@ checkStaffAccess();
                 <div data-lotno="100" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">100</div>
                             </div>
             </div>
-            <div class="A3sideA" id="A3sideA"><br></tb>Side A</div>
-           <div class="A3sideB" id="A3sideB"><br></tb>Side B</div>
+            <div class="A3sideA tooltip" id="A3sideA" data-tooltip="Front"><br></tb>Side A</div>
+           <div class="A3sideB tooltip" id="A3sideB" class="tooltip" data-tooltip="Back"><br></tb>Side B</div>
            <button id="A3closePopup" class="A3close-button">&times;</button>
         </div>
              <div class="A2" id="A2"><h3 style="color: #e9f9ef;">Apartment 2</h3><br><h5 style="color:#e9f9ef;">Select Side</h5>
@@ -482,11 +482,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                
@@ -557,11 +557,11 @@ checkStaffAccess();
                     <div class="legends">Legend</div>
                     <div class="legendList">
                     <div class="legendU Available"></div>
-                    <span>Available</span>
+                    <span>Available lots</span>
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Owned</span>
+                  <span>Owned lots</span>
                 </div>
               </div>
 
@@ -623,8 +623,8 @@ checkStaffAccess();
                 
                 </div>
             </div>
-                <div class="A2sideA" id="A2sideA"><br></tb>Side A</div>
-              <div class="A2sideB" id="A2sideB"><br></tb>Side B</div>
+                <div class="A2sideA tooltip" id="A2sideA" data-tooltip="Front"><br></tb>Side A</div>
+              <div class="A2sideB tooltip" id="A2sideB" data-tooltip="Back"><br></tb>Side B</div>
               <button id="A2closePopup" class="A2close-button">&times;</button>
            </div>     
           <div class="A1" id="A1"><h3 style="color: #e9f9ef;">Apartment 1</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
@@ -638,11 +638,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
               
@@ -717,11 +717,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
 
@@ -783,8 +783,8 @@ checkStaffAccess();
             <div data-lotno="100" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">100</div>
                     </div>
         </div>
-            <div class="A1sideA" id="A1sideA"><br></tb>Side A</div>
-           <div class="A1sideB" id="A1sideB"><br></tb>Side B</div>
+            <div class="A1sideA tooltip" id="A1sideA" data-tooltip="Front"><br></tb>Side A</div>
+           <div class="A1sideB tooltip" id="A1sideB" data-tooltip="Back"><br></tb>Side B</div>
            <button id="A1closePopup" class="A1close-button">&times;</button>
            
         </div>
@@ -803,27 +803,27 @@ checkStaffAccess();
                 </div>
 
                 <div class="C21stflrS1" id="C21stflrS1"><h3 style="color: #e9f9ef;">Columbarium 2 (1st floor Block 1)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C2S1SA" id="C2S1SA"><br></tb>Side A</div>
-                    <div class="C2S1SB" id="C2S1SB"><br></tb>Side B</div>
+                    <div class="C2S1SA tooltip" id="C2S1SA" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C2S1SB tooltip" id="C2S1SB" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C2S1closePopup" class="C2S1closebutton">&times;</button>
                 </div>
 
 
                 <div class="C21stflrS2" id="C21stflrS2"><h3 style="color: #e9f9ef;">Columbarium 2 (1st floor Block 2)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C2S2SA" id="C2S2SA"><br></tb>Side A</div>
-                    <div class="C2S2SB" id="C2S2SB"><br></tb>Side B</div>
+                    <div class="C2S2SA tooltip" id="C2S2SA" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C2S2SB tooltip" id="C2S2SB" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C2S2closePopup" class="C2S2closebutton">&times;</button>
                 </div>
 <!--BLK-->
 
                 <div class="C21stflrblk3" id="C21stflrblk3"><h3 style="color: #e9f9ef;">Columbarium 2 (1st floor Block 3)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C2S2blk3A" id="C2S2blk3A"><br></tb>Side A</div>
-                    <div class="C2S2blk3B" id="C2S2blk3B"><br></tb>Side B</div>
+                    <div class="C2S2blk3A tooltip" id="C2S2blk3A" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C2S2blk3B tooltip" id="C2S2blk3B" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C2S2closePopupblk3" class="C2S2closebuttonblk3">&times;</button>
                 </div>
                 <div class="C21stflrblk4" id="C21stflrblk4"><h3 style="color: #e9f9ef;">Columbarium 2 (1st floor Block 4)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C2S2blk4A" id="C2S2blk4A"><br></tb>Side A</div>
-                    <div class="C2S2blk4B" id="C2S2blk4B"><br></tb>Side B</div>
+                    <div class="C2S2blk4A tooltip" id="C2S2blk4A" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C2S2blk4B tooltip" id="C2S2blk4B" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C2S2closePopupblk4" class="C2S2closebuttonblk4">&times;</button>
                 </div>
 
@@ -834,11 +834,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
 
@@ -897,11 +897,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block1 side b -->
@@ -958,11 +958,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block 2 side A -->
@@ -1019,11 +1019,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
          <!--columbarium 2 1st floor block 2 side b -->
@@ -1080,11 +1080,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side A -->
@@ -1139,11 +1139,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side B -->
@@ -1203,11 +1203,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side A -->
@@ -1267,11 +1267,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side B -->
@@ -1337,26 +1337,26 @@ checkStaffAccess();
                 </div>  
              
                 <div class="C22ndflrS1" id="C22ndflrS1"><h3 style="color: #e9f9ef;">Columbarium 2 (2nd floor Block 1)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C22SA" id="C22SA"><br></tb>Side A</div>
-                    <div class="C22SB" id="C22SB"><br></tb>Side B</div>
+                    <div class="C22SA tooltip" id="C22SA" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C22SB tooltip" id="C22SB" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C22S1closePopup" class="C22S1closebutton">&times;</button>
                 </div>
 
                 <div class="C22ndflrS2" id="C22ndflrS2"><h3 style="color: #e9f9ef;">Columbarium 2 (2nd floor Block 2)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C22SA2" id="C22SA2"><br></tb>Side A</div>
-                    <div class="C22SB2" id="C22SB2"><br></tb>Side B</div>
+                    <div class="C22SA2 tooltip" id="C22SA2" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C22SB2 tooltip" id="C22SB2" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C22S2closePopup" class="C22S2closebutton">&times;</button>
                 </div>
                 <!--2ndflr blck -->
                 <div class="C22ndflrblk3" id="C22ndflrblk3"><h3 style="color: #e9f9ef;">Columbarium 2 (2nd floor Block 3)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C22blk3A" id="C22blk3A"><br></tb>Side A</div>
-                    <div class="C22blk3B" id="C22blk3B"><br></tb>Side B</div>
+                    <div class="C22blk3A tooltip" id="C22blk3A" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C22blk3B tooltip" id="C22blk3B" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C22blk3closePopup" class="C22blk3closebutton">&times;</button>
                 </div>
 
                 <div class="C22ndflrblk4" id="C22ndflrblk4"><h3 style="color: #e9f9ef;">Columbarium 2 (2nd floor Block 4)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-                    <div class="C22blk4A" id="C22blk4A"><br></tb>Side A</div>
-                    <div class="C22blk4B" id="C22blk4B"><br></tb>Side B</div>
+                    <div class="C22blk4A tooltip" id="C22blk4A" data-tooltip="Front"><br></tb>Side A</div>
+                    <div class="C22blk4B tooltip" id="C22blk4B" data-tooltip="Back"><br></tb>Side B</div>
                    <button id="C22blk4closePopup" class="C22blk4closebutton">&times;</button>
                 </div>
 
@@ -1369,11 +1369,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side A-->
@@ -1433,11 +1433,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side B-->
@@ -1496,11 +1496,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side A-->
@@ -1559,11 +1559,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side B-->
@@ -1624,11 +1624,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 3 Side A-->
@@ -1689,11 +1689,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 3 Side B-->
@@ -1753,11 +1753,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side A-->
@@ -1816,11 +1816,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side B-->
@@ -1891,21 +1891,21 @@ checkStaffAccess();
             <button id="C1closePopup1st" class="C1close-button1st">&times;</button>
         </div>
 <!--block3 C1 1st  --> <div class="C11stblk3" id="C11stblk3"><h3 style="color: #e9f9ef;">Columbarium 1 (1st floor Block 3)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-            <div class="C11stflrblk3A" id="C11stflrblk3A"><br></tb>Side A</div>
-            <div class="C11stflrblk3B" id="C11stflrblk3B"><br></tb>Side B</div>
+            <div class="C11stflrblk3A tooltip" id="C11stflrblk3A" data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C11stflrblk3B tooltip" id="C11stflrblk3B" data-tooltip="Back"><br></tb>Side B</div>
            <button id="C11stclosePopupblk3" class="C11stclosebuttonblk3">&times;</button>
         </div>
 <!-- blck4-->        
 
         <div class="C11stblk4" id="C11stblk4"><h3 style="color: #e9f9ef;">Columbarium 1 (1st floor Block 4)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-            <div class="C11stflrblk4A" id="C11stflrblk4A"><br></tb>Side A</div>
-            <div class="C11stflrblk4B" id="C11stflrblk4B"><br></tb>Side B</div>
+            <div class="C11stflrblk4A tooltip" id="C11stflrblk4A" data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C11stflrblk4B tooltip" id="C11stflrblk4B" data-tooltip="Back"><br></tb>Side B</div>
            <button id="C11stclosePopupblk4" class="C11stclosebuttonblk4">&times;</button>
         </div>
 <!-- -->        
         <div class="C11stS1" id="C11stS1"><h3 style="color: #e9f9ef;">Columbarium 1 (1st floor Block 1)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-            <div class="C11stflrSSA" id="C11stflrSSA"><br></tb>Side A</div>
-            <div class="C11stflrSSB" id="C11stflrSSB"><br></tb>Side B</div>
+            <div class="C11stflrSSA tooltip" id="C11stflrSSA" data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C11stflrSSB tooltip" id="C11stflrSSB" data-tooltip="Back"><br></tb>Side B</div>
            <button id="C11stclosePopupS" class="C11stclosebuttonS">&times;</button>
         </div>
         <div class="C1GRIDS11A" id="C1GRIDS11A"><h3 style="color: white;">Side A</h3><br>
@@ -1915,11 +1915,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 1 Side A-->
@@ -1979,11 +1979,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 1 Side B-->
@@ -2037,8 +2037,8 @@ checkStaffAccess();
 
 
         <div class="C11stS2" id="C11stS2"><h3 style="color: #e9f9ef;">Columbarium 1 (1st floor block 2)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
-            <div class="C11stflrS2SA" id="C11stflrS2SA"><br></tb>Side A</div>
-            <div class="C11stflrS2SB" id="C11stflrS2SB"><br></tb>Side B</div>
+            <div class="C11stflrS2SA tooltip" id="C11stflrS2SA" data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C11stflrS2SB tooltip" id="C11stflrS2SB" data-tooltip="Back"><br></tb>Side B</div>
            <button id="C11stclosePopupS2" class="C11stclosebuttonS2">&times;</button>
     
         </div>
@@ -2049,11 +2049,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Owned</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Unavailable</span>
+              <span>Owned lots</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 2 Side A-->
@@ -2113,11 +2113,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 2 Side B-->
@@ -2176,11 +2176,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side A-->
@@ -2240,11 +2240,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side B-->
@@ -2304,11 +2304,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side A-->
@@ -2367,11 +2367,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side B-->
@@ -2437,14 +2437,14 @@ checkStaffAccess();
         </div>
         
         <div class="C12ndS" id="C12ndS"><h3 style="color: #e9f9ef;">Columbarium 1 (2nd floor Block 1)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>     
-            <div class="C12ndflrSSA" id="C12ndflrSSA"><br></tb>Side A</div>
-            <div class="C12ndflrSSB" id="C12ndflrSSB"><br></tb>Side B</div>
+            <div class="C12ndflrSSA tooltip" id="C12ndflrSSA" data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C12ndflrSSB tooltip" id="C12ndflrSSB" data-tooltip="Back"><br></tb>Side B</div>
            <button id="C12ndclosePopupS" class="C12ndclosebuttonS">&times;</button>
         </div>
         <!--blk3 2nd floorsides-->
         <div class="C12ndblk3" id="C12ndblk3"><h3 style="color: #e9f9ef;">Columbarium 1 (2nd floor Block 3)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>     
-            <div class="C12ndflrblk3A" id="C12ndflrblk3A"><br></tb>Side A</div>
-            <div class="C12ndflrblk3B" id="C12ndflrblk3B"><br></tb>Side B</div>
+            <div class="C12ndflrblk3A tooltip" id="C12ndflrblk3A" data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C12ndflrblk3B tooltip" id="C12ndflrblk3B" data-tooltip="Back"><br></tb>Side B</div>
            <button id="C12ndclosePopupblk3" class="C12ndclosebuttonblk3">&times;</button>
         </div>
 
@@ -2456,11 +2456,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2520,11 +2520,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2586,11 +2586,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2650,68 +2650,68 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
         <!--Columbrarium 1 2nd floor block 4 Side B-->
 
             <div class="C1GRIDblk4B2ndGrid" id="C1GRIDblk4B2ndGrid">
-<div data-lotno="601" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">601</div>
-<div data-lotno="602" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">602</div>
-<div data-lotno="603" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">603</div>
-<div data-lotno="604" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">604</div>
-<div data-lotno="605" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">605</div>
-<div data-lotno="606" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">606</div>
-<div data-lotno="607" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">607</div>
-<div data-lotno="608" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">608</div>
-<div data-lotno="609" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">609</div>
-<div data-lotno="610" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">610</div>
+<div data-lotno="601" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">601</div>
+<div data-lotno="602" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">602</div>
+<div data-lotno="603" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">603</div>
+<div data-lotno="604" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">604</div>
+<div data-lotno="605" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">605</div>
+<div data-lotno="606" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">606</div>
+<div data-lotno="607" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">607</div>
+<div data-lotno="608" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">608</div>
+<div data-lotno="609" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">609</div>
+<div data-lotno="610" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">610</div>
 
-<div data-lotno="611" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">611</div>
-<div data-lotno="612" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">612</div>
-<div data-lotno="613" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">613</div>
-<div data-lotno="614" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">614</div>
-<div data-lotno="615" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">615</div>
-<div data-lotno="616" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">616</div>
-<div data-lotno="617" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">617</div>
-<div data-lotno="618" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">618</div>
-<div data-lotno="619" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">619</div>
-<div data-lotno="620" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">620</div>
+<div data-lotno="611" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">611</div>
+<div data-lotno="612" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">612</div>
+<div data-lotno="613" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">613</div>
+<div data-lotno="614" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">614</div>
+<div data-lotno="615" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">615</div>
+<div data-lotno="616" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">616</div>
+<div data-lotno="617" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">617</div>
+<div data-lotno="618" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">618</div>
+<div data-lotno="619" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">619</div>
+<div data-lotno="620" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">620</div>
 
-<div data-lotno="621" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">621</div>
-<div data-lotno="622" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">622</div>
-<div data-lotno="623" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">623</div>
-<div data-lotno="624" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">624</div>
-<div data-lotno="625" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">625</div>
-<div data-lotno="626" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">626</div>
-<div data-lotno="627" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">627</div>
-<div data-lotno="628" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">628</div>
-<div data-lotno="629" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">629</div>
-<div data-lotno="630" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">630</div>
+<div data-lotno="621" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">621</div>
+<div data-lotno="622" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">622</div>
+<div data-lotno="623" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">623</div>
+<div data-lotno="624" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">624</div>
+<div data-lotno="625" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">625</div>
+<div data-lotno="626" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">626</div>
+<div data-lotno="627" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">627</div>
+<div data-lotno="628" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">628</div>
+<div data-lotno="629" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">629</div>
+<div data-lotno="630" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">630</div>
 
-<div data-lotno="631" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">631</div>
-<div data-lotno="632" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">632</div>
-<div data-lotno="633" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">633</div>
-<div data-lotno="634" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">634</div>
-<div data-lotno="635" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">635</div>
-<div data-lotno="636" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">636</div>
-<div data-lotno="637" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">637</div>
-<div data-lotno="638" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">638</div>
-<div data-lotno="639" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">639</div>
-<div data-lotno="640" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">640</div>
+<div data-lotno="631" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">631</div>
+<div data-lotno="632" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">632</div>
+<div data-lotno="633" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">633</div>
+<div data-lotno="634" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">634</div>
+<div data-lotno="635" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">635</div>
+<div data-lotno="636" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">636</div>
+<div data-lotno="637" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">637</div>
+<div data-lotno="638" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">638</div>
+<div data-lotno="639" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">639</div>
+<div data-lotno="640" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">640</div>
 
             
             </div>
         </div>
 
         <div class="C12ndblk4" id="C12ndblk4"><h3 style="color: #e9f9ef;">Columbarium 1 (2nd floor Block 4)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>     
-            <div class="C12ndflrblk4A" id="C12ndflrblk4A"><br></tb>Side A</div>
-            <div class="C12ndflrblk4B" id="C12ndflrblk4B"><br></tb>Side B</div>
+            <div class="C12ndflrblk4A tooltip" id="C12ndflrblk4A"data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C12ndflrblk4B tooltip" id="C12ndflrblk4B"data-tooltip="Back"><br></tb>Side B</div>
            <button id="C12ndclosePopupblk4" class="C12ndclosebuttonblk4">&times;</button>
         </div>
          
@@ -2722,11 +2722,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2786,11 +2786,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
             
@@ -2847,8 +2847,8 @@ checkStaffAccess();
 
         <div class="C12ndS2" id="C12ndS2"><h3 style="color: #e9f9ef;">Columbarium 1 (2nd floor Block 2)</h3><br><h5 style="color: #e9f9ef;">Select Side</h5>
              
-            <div class="C12ndS2flrSSA" id="C12ndS2flrSSA"><br></tb>Side A</div>
-            <div class="C12ndS2flrSSB" id="C12ndS2flrSSB"><br></tb>Side B</div>
+            <div class="C12ndS2flrSSA tooltip" id="C12ndS2flrSSA" data-tooltip="Front"><br></tb>Side A</div>
+            <div class="C12ndS2flrSSB tooltip" id="C12ndS2flrSSB" data-tooltip="Back"><br></tb>Side B</div>
            <button id="C12ndclosePopupS2" class="C12ndclosebuttonS2">&times;</button>
 
            <div class="C1GRIDSA" id="C1GRIDSA"><h3 style="color: white;">Side A</h3><br>
@@ -2858,11 +2858,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available</span>
+                <span>Available lots</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned</span>
+              <span>Owned lots</span>
             </div>
           </div>
         <!--Columbarium 1 2nd floor block 2 side A-->
@@ -2923,11 +2923,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
         <!--Columbarium 1 2nd floor block 2 side B-->
@@ -3034,11 +3034,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             
@@ -3123,11 +3123,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="petergrid" id="petergrid">
@@ -3224,11 +3224,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
     
@@ -3323,11 +3323,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="judegrid" id="judegrid">
@@ -3549,11 +3549,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="johngrid" id="johngrid">
@@ -3717,11 +3717,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="josephgrid" id="josephgrid">
@@ -3928,11 +3928,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             <div class="jamesgrid" id="jamesgrid">
@@ -4250,11 +4250,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                   <div class="matthewgrid" id="matthewgrid">
@@ -4277,11 +4277,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
 
@@ -4466,11 +4466,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="dominicgrid" id="dominicgrid">
@@ -4820,11 +4820,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             <div class="markgrid" id="markgrid">
@@ -4848,11 +4848,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Unavailable</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
             <div class="lukegrid" id="lukegrid">
@@ -4881,11 +4881,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available</span>
+                        <span>Available lots</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned</span>
+                      <span>Owned lots</span>
                     </div>
                   </div>
                 <div class="isidoregrid" id="isidoregrid">
@@ -4922,11 +4922,11 @@ checkStaffAccess();
                             <div class="legends">Legend</div>
                             <div class="legendList">
                             <div class="legendU Available"></div>
-                            <span>Available</span>
+                            <span>Available lots</span>
                             </div>
                         <div class="legendList">
                           <div class="legendU Unavailable"></div>
-                          <span>Owned</span>
+                          <span>Owned lots</span>
                         </div>
                       </div>
                       <div class="pmgrid" id="pmgrid">
@@ -4955,30 +4955,30 @@ checkStaffAccess();
         <div class="Content">
           <p class="overview-title">Lot Overview</p>
           <div class="lotdetails">
-            <h4 style="text-align: center; font-weight: bold;">I. FAMILY ESTATE</h4>
-                <p style="font-size: 12px;">St. Lukes - 11 Lots</p>
-                <p style="font-size: 12px;">St. Mark -  7 Lots</p>
-                <p style="font-size: 12px;">St. Michael - 6 Lots</p>
-                <p style="font-size: 12px;">St. Patrick - 6 Lots</p>
+            <h4 style="font-weight: bold;">I. FAMILY ESTATE</h4>
+                <p style="font-size: 15px;">St. Lukes - 11 Lots</p>
+                <p style="font-size: 15px;">St. Mark -  7 Lots</p>
+                <p style="font-size: 15px;">St. Michael - 6 Lots</p>
+                <p style="font-size: 15px;">St. Patrick - 6 Lots</p>
                 <hr>
-                <p style="font-size: 12px; font-weight: bold;" >SUB TOTAL - 30 Lots</p><br>
-                <h4 style="text-align: center; font-weight: bold;">II. GARDEN ESTATE</h4>
-                <p style="font-size: 12px;">St. Isidore - 19 Lots</p>
-                <p style="font-size: 12px;">St. Matthew -  8 Lots</p>
+                <p style="font-size: 15px; font-weight: bold;" >SUB TOTAL - 30 Lots</p><br>
+                <h4 style="font-weight: bold;">II. GARDEN ESTATE</h4>
+                <p style="font-size: 15px;">St. Isidore - 19 Lots</p>
+                <p style="font-size: 15px;">St. Matthew -  8 Lots</p>
                 <hr>
-                <p style="font-size: 12px; font-weight: bold;">SUB TOTAL - 27 Lots</p><br>
-                <h4 style="text-align: center; font-weight: bold;">II. LAWN LOTS</h4>
-                <p style="font-size: 12px;">St. Jude - 186 Lots</p>
-                <p style="font-size: 12px;">St. John -  135 Lots</p>
-                <p style="font-size: 12px;">St. Joseph - 173 Lots</p>
-                <p style="font-size: 12px;">St. James -  273 Lots</p>
-                <p style="font-size: 12px;">St. Dominic - 304 Lots</p>
-                <p style="font-size: 12px;">St. Augustin -  149 Lots</p>
-                <p style="font-size: 12px;">St. Rafael - 58 Lots</p>
-                <p style="font-size: 12px;">St. Peter -  71 Lots</p>
-                <p style="font-size: 12px;">St. Paul -  71 Lots</p>
+                <p style="font-size: 15px; font-weight: bold;">SUB TOTAL - 27 Lots</p><br>
+                <h4 style="font-weight: bold;">II. LAWN LOTS</h4>
+                <p style="font-size: 15px;">St. Jude - 186 Lots</p>
+                <p style="font-size: 15px;">St. John -  135 Lots</p>
+                <p style="font-size: 15px;">St. Joseph - 173 Lots</p>
+                <p style="font-size: 15px;">St. James -  273 Lots</p>
+                <p style="font-size: 15px;">St. Dominic - 304 Lots</p>
+                <p style="font-size: 15px;">St. Augustin -  149 Lots</p>
+                <p style="font-size: 15px;">St. Rafael - 58 Lots</p>
+                <p style="font-size: 15px;">St. Peter -  71 Lots</p>
+                <p style="font-size: 15px;">St. Paul -  71 Lots</p>
                 <hr>
-                <p  style="font-size: 12px; font-weight: bold;">SUB TOTAL - 1420 Lots</p>
+                <p  style="font-size: 15px; font-weight: bold;">SUB TOTAL - 1420 Lots</p>
      
           </div>
         </div>

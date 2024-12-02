@@ -169,7 +169,7 @@ $result = $conn->query($sql);
                 <thead>
                     <tr>
                         <th>Role</th>
-                        <th>Staff Fullname</th>
+                        <th>User Fullname</th>
                         <th>Lot No.</th>
                         <th>Memorial Name</th>
                         <th>Action</th>

@@ -167,16 +167,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 </head>
 
 <body style="background: #071c14;">
-    <button id="sidebarToggle" class="sidebar-toggle-btn">
-        <ion-icon name="menu-outline"></ion-icon>
-    </button>
+    <button class="top-left-button" onclick="toggleSidebar()">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
+    <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
+  </svg>
+</button>
     <?php include 'staff_sidebar.php'; ?>
     
     <div id="recordsContent" class="center_record">
         <div id="alertBox" class="alert"></div>
         <div class="table-responsive">
             <h1 id="header1">Records Section</h1>
-            <a class="btn btn-primary btn-add" href="addRecord.php" role="button">
+            <a class="btn btn-add" href="addRecord.php" role="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon">
                     <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
                 </svg>
@@ -208,7 +210,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                             <td><?php echo ucwords(strtolower($row['LO_name'])); ?></td>
                             <td><?php echo ucwords(strtolower($row['mem_address'])); ?></td>
                             <td class="action-buttons">
-                                <a class='btn btn-edit' href='update.php?id=<?php echo $row['id']; ?>'>Edit</a>
+                                <a class='btn btn-edit' href='update.php?id=<?php echo $row['id']; ?>'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>Edit</a>
                             </td>
                         </tr>
                         <tr class="divider-row">
@@ -250,17 +252,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         </div>
     </div>
 
-    <!-- Modals remain the same -->
-    <div id="confirmModal" class="modal" style="display: none;">
-        <div class="modal-content">
-            <h2>Logout Confirmation</h2>
-            <p>Are you sure you want to logout?</p>
-            <div class="modal-buttons">
-                <button id="confirmButton" class="btn btn-confirm">Confirm</button>
-                <button id="cancelButton" class="btn btn-cancel">Cancel</button>
-            </div>
-        </div>
-    </div>
                              <!-- Logout confirmation modal -->
    <div id="confirmModal" class="modal" style="display: none;">
         <div class="modal-content">
@@ -273,6 +264,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         </div>
     </div>
     <script src="script.js"></script>
+    <script src="paiyakan.js"></script>
     <script>
         // Dynamic search functionality
         document.getElementById('searchInput').addEventListener('input', function() {

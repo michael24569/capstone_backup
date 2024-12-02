@@ -189,9 +189,10 @@ require("loginCondition.php");
     background-color: #337F5B;
   }
   .btn:focus {
-    font-size: 1.1rem;
+    font-family: 'MyFont';
+    font-size: 1.5rem;
     padding: 15px 0;
-    border-radius: 5px;
+    border-radius: 50px;
     outline: none;
     border: none;
     width: 100%;
