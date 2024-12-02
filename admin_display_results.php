@@ -129,6 +129,7 @@ function displayRecordStatus() {
             margin: 30px auto;
             border-collapse: collapse;
             margin-left: 70px;
+            margin-top: 20px;
         }
         .summary-table th, .summary-table td {
             padding: 12px;
@@ -203,34 +204,53 @@ function displayRecordStatus() {
             color: white;
             text-align: center;
         }
-        @media print {
-            .view-details, .close-modal {
-                display: none;
-            }
-                 .sidebar {
+       /* Hide elements by default on main page */
+.seal, .cctlogo, .address {
+    display: none;
+}
+
+/* Main page background */
+body {
+    display: block;
+    justify-content: start;
+    align-items: start;
+    height: 100vh;
+    padding-top: 20px;
+    background: #071c14;
+}
+
+/* Print-specific styles */
+/* Existing styles remain the same until the print media query */
+
+@media print {
+    .print-button {
+display: none;
+  }
+    .view-details, .close-modal {
+        display: none;
+    }
+    .sidebar {
         display: none !important;
     }
-        .summary-table {
-           display: none !important;
-}
-           .details-modal {
+    .summary-table {
+        display: none !important;
+    }
+    .details-modal {
         display: block !important;
         position: static;
         background: white;
         border: none;
         box-shadow: none;
     }
-
     .details-modal .modal-content {
         width: 100%;
         margin: 0;
     }
-
-           
-            body {
-                background: white;
-            }
-            .details-modal {
+    body {
+        background: white;
+        margin: 0;
+    }
+        .details-modal {
                 position: static;
                 display: block;
                 width: 100%;
@@ -243,17 +263,57 @@ function displayRecordStatus() {
                 width: 100%;
                 box-shadow: none;
             }
-        }
-  
-  body {
-            display: block;
-            justify-content: start;
-            align-items: start;
-            height: 100vh;
-            padding-top: 20px;
-            background: #071c14;
-            
-        }
+    .seal {
+        display: block;
+        text-align: center;
+    }
+    .seal img {
+        position: absolute;
+        max-width: 6.5%;
+        height: auto;
+        margin-top: -1%;
+        margin-left: -41%;
+        z-index: 10000;
+    }
+    .cctlogo {
+        display: block;
+        text-align: center;
+    }
+    .cctlogo img {
+        position: absolute;
+        max-width: 6.5%;
+        height: auto;
+        margin-top: -1%;
+        margin-left: 38%;
+        z-index: 10000;
+    }
+    .address {
+        display: block;
+        color: black;
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, 0);
+        text-align: center;
+        z-index: 1000;
+    }
+    .address h3 {
+        margin-bottom: 10px;
+    }
+    .address h2 {
+        font-weight: bold;
+        margin: -5px;
+    }
+    /* Modified reportHeader positioning for print */
+    .reportHeader {
+        margin-top: 120px !important; /* Increased margin for print */
+        position: relative;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+
 /* Sidebar Styles */
 .sidebar {
   z-index: 100000;
@@ -606,7 +666,7 @@ function displayRecordStatus() {
   #print {
     font-family: "MyFont";
     position: absolute;
-    top:630px;
+    top:95px;
     right: 10px;
     background-color: #479149;
     color: white;
@@ -723,50 +783,10 @@ p {
     background-color: #dc3545;
 }
 
-
-  .seal {
-    text-align: center;
-    }
-
-    .seal img {
-    position:absolute;
-    max-width: 6.5%; 
-    height: auto; 
-    margin-top:-1%;
-    margin-left:-41%;
-    z-index: 10000;
-    }
-    .cctlogo {
-    text-align: center;
-    
-    }
-
-    .cctlogo img {
-    position:absolute;
-    max-width: 6.5%; 
-    height: auto; 
-    margin-top:-1%;
-    margin-left:38%;
-    z-index: 10000;
-    }
-  .address {
-    color: white;
-    position: absolute;
-    top: 2%;
-    left: 50%;
-    transform: translate(-50%, 0);
-    text-align: center;
-    z-index: 1000;
+.reportHeader {
+margin-top: -10px;
   }
-
-  .address h3 {
-    margin-bottom:10px;
-  }
-
-  .address h2 {
-    font-weight: bold;
-    margin: -5px; 
-  }
+  
     </style>
 </head>
  <link rel="stylesheet" href="style1.css">
@@ -874,7 +894,7 @@ p {
 </div>
 
 
-    <h1>Summary of Status Report</h1>
+    <h1 class="reportHeader">Summary of Status Report</h1>
     <br>
     <br>
     <table class="summary-table">
