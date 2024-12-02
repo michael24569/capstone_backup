@@ -199,6 +199,7 @@ function displayRecordStatus() {
             color: white;
         }
         h1 {
+            margin-top:110px;
             color: white;
             text-align: center;
         }
@@ -605,7 +606,7 @@ function displayRecordStatus() {
   #print {
     font-family: "MyFont";
     position: absolute;
-    top:530px;
+    top:630px;
     right: 10px;
     background-color: #479149;
     color: white;
@@ -748,6 +749,24 @@ p {
     margin-left:38%;
     z-index: 10000;
     }
+  .address {
+    color: white;
+    position: absolute;
+    top: 2%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    text-align: center;
+    z-index: 1000;
+  }
+
+  .address h3 {
+    margin-bottom:10px;
+  }
+
+  .address h2 {
+    font-weight: bold;
+    margin: -5px; 
+  }
     </style>
 </head>
  <link rel="stylesheet" href="style1.css">
@@ -847,6 +866,13 @@ p {
     <img src ="images/cctlogo.png" alt="Tagaytay City Seal">
   </div>
 <br>
+<div class="address">
+    <h3>Republic of the Philippines</h3>
+    <h3>City of Tagaytay</h3>
+    <h2>CITY COLLEGE OF TAGAYTAY</h2><br>
+    <h3>Tagaytay City Assessor</h3><br>
+</div>
+
 
     <h1>Summary of Status Report</h1>
     <br>
