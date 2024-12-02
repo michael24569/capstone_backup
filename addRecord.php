@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         body {
             font-family: 'MyFont';
             height: 100vh;
-            background-color: #005434;";
+            background-color: #071c14;";
             justify-content: center;
             align-items: center;
             display: flex;
