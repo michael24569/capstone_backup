@@ -269,7 +269,7 @@ display: none;
     }
     .seal img {
         position: absolute;
-        max-width: 6.5%;
+        max-width: 10.5%;
         height: auto;
         margin-top: -1%;
         margin-left: -41%;
@@ -281,7 +281,7 @@ display: none;
     }
     .cctlogo img {
         position: absolute;
-        max-width: 6.5%;
+        max-width: 8.5%;
         height: auto;
         margin-top: -1%;
         margin-left: 38%;
@@ -889,8 +889,7 @@ margin-top: -10px;
 <div class="address">
     <h3>Republic of the Philippines</h3>
     <h3>City of Tagaytay</h3>
-    <h2>CITY COLLEGE OF TAGAYTAY</h2><br>
-    <h3>Tagaytay City Assessor</h3><br>
+    <h2>Office of the City Assessor</h2><br>
 </div>
 
 

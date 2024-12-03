@@ -11,8 +11,8 @@ require("loginCondition.php");
 <html lang="en">
 <head>
     <script type="text/javascript">
-   window.history.forward();
-</script>
+    window.history.forward();
+    </script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
@@ -315,7 +315,7 @@ require("loginCondition.php");
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
     left: 21%;
-    bottom:40px;
+    bottom:57px;
   }
 
   

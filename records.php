@@ -156,10 +156,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
         /* New styles for search input */
         #searchInput {
-            width: 40%;
+            width: 20%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 1px solid #ddd;
+            border: 2px solid #ddd;
             border-radius: 4px;
         }
 
