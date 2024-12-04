@@ -236,7 +236,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     alert.classList.remove('show');
                     alert.style.display = 'none';
                 }
-            }, 1000); // Adjust the time as needed
+            }, 2000); // Adjust the time as needed
         });
 
          //validate the number for the lotno
