@@ -3315,7 +3315,7 @@ checkAdminAccess();
                 <div data-lotno="71" data-memsts="St. Paul" data-memlot="Lawn Lots" class="grid-itempaul">71</div>
                 </div>
             </div>
-          <area shape="rect" coords="2681,197,3065,929" href="#" title="St. Jude">
+          <area shape="rect" coords="2681,197,3065,929" href="#" title="St. Jude" >
           <div class="Jude" id="Jude">
               St. Jude
             </div>
@@ -7130,6 +7130,7 @@ function showPopup() {
   popup.style.display = 'block';
   popup.style.animation = 'popupFade 2.7s ease forwards';
   
+  
   // Automatically remove the popup after the animation ends
   setTimeout(() => {
     popup.style.display = 'none';
@@ -7204,6 +7205,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(records => {
                 console.log("Fetched records:", records);
+                clearHighlights();
                 if (records.length === 0) {
                     popup.style.display = 'block'; // Show popup if no records
                     setTimeout(() => popup.style.display = 'none', 3000); // Hide after 3 seconds

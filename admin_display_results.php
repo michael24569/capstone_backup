@@ -899,8 +899,8 @@ margin-top: -10px;
     <table class="summary-table">
         <tr>
             <th>Location</th>
-            <th>Total Owned Lots</th>
-            <th>Total Available Lots</th>
+            <th>Total Owned Lots/Slots</th>
+            <th>Total Available Lots/Slots</th>
             <th>Action</th>
         </tr>';
         
@@ -925,8 +925,8 @@ margin-top: -10px;
                 <table class='details-table'>
                     <tr>
                         <th>Location</th>
-                        <th>Owned Lots</th>
-                        <th>Available Lots</th>
+                        <th>Owned Lots/Slots</th>
+                        <th>Available Lots/Slots</th>
                     </tr>";
         
         foreach ($group['items'] as $item) {
