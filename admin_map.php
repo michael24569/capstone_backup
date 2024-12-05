@@ -10,7 +10,7 @@ checkAdminAccess();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home Administrator</title>
+    <title>Home for Administrator</title>
     <script type="text/javascript">
    window.history.forward();
 </script>

@@ -19,7 +19,7 @@ unset($_SESSION['backup_file']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backup Records</title>
+    <title>Backup Database</title>
     
     <link rel="stylesheet" href="backupButton.css">
     <link rel="stylesheet" href="style1.css">

@@ -121,7 +121,7 @@ function displayRecordStatus() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Record Status Summary</title>
+    <title>Summary of Status Report</title>
     <style>
 
         .summary-table {

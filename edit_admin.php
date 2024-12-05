@@ -139,7 +139,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Admin Profile</title>
+    <title>Edit Admin Account</title>
     <link rel="stylesheet" href="style1.css">
     <style>
 .edit-form-container {
