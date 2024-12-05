@@ -24,15 +24,14 @@
 
 .modal-content {
     background: white;
-    padding: 40px;
+    text-align: center;
     border-radius: 8px;
-   padding: 50px;
-   margin-left: -30px;
+   padding: 70px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     animation: popIn 0.3s ease-out; /* Apply pop-in animation */
 }
 h2 {
-    text-align: start;
+    text-align: center;
     margin-top: -35px;
 }
 p {
@@ -43,8 +42,8 @@ p {
     display: flex;
     justify-content: center;
     margin-bottom: -45px;
-    padding-bottom: 10px;
-    gap: 10px;
+    padding-top: 30px;
+    gap: 15px;
 }
 
 .btn-confirm, .btn-cancel {
@@ -57,14 +56,12 @@ p {
 
 
 .btn-confirm {
-    margin-top:20px;
+
     background-color: #28a745;
     color: white;
 }
 
 .btn-cancel {
-    margin-top:20px;
-
     background-color: #dc3545;
     color: white;
 }

@@ -12,9 +12,9 @@ body {
   transition: 0.8s;
   background: #071c14;
 }
+
 /* Sidebar Styles */
 .sidebar {
-  z-index: 100000;
   font-size: 15px;
   bottom: 0px;
   position: fixed;
@@ -58,7 +58,7 @@ body {
   text-decoration: none;
 }
 
-.sidebar ul li a .icon{
+.sidebar ul li a .icon {
   position: relative;
   display: flex;
   justify-content: center;
@@ -68,7 +68,6 @@ body {
   font-size: 1.5rem;
   color: #222222;
 }
-
 
 .sidebar ul li a .text {
   font-family: 'MyFont';
@@ -160,6 +159,26 @@ body {
   background: #dee7e2;
 }
 
+
+.top-left-button {
+  fill: white;
+  position: absolute;
+  top: 10px;
+  left: 0px;
+  background-color: #4caf4f00;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.top-left-button svg {
+  width: 24px;
+  height: 24px;
+}
+
+.main-content {
+  text-align: center;
+}
 
 
 
