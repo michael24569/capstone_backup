@@ -7204,6 +7204,7 @@ document.addEventListener('DOMContentLoaded', () => {
             .then(response => response.json())
             .then(records => {
                 console.log("Fetched records:", records);
+                clearHighlights();
                 if (records.length === 0) {
                     popup.style.display = 'block'; // Show popup if no records
                     setTimeout(() => popup.style.display = 'none', 3000); // Hide after 3 seconds

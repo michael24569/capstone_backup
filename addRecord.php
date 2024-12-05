@@ -101,7 +101,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Records</title>
+    <title>Add Client Records</title>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
     <style>
@@ -171,6 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label class="col-sm-3 col-form-label">Memorial Lots</label>
                 <div class="col-sm-6">
                     <select class="form-control" name="mem_lots">
+                    <option value="None" <?php if ($mem_lots == "None") echo "selected"; ?>>None</option>
                     <option value="Family Estate" <?php if ($mem_lots == "Family Estate") echo "selected"; ?>>Family Estate</option>
                         <option value="Garden Lots" <?php if ($mem_lots == "Garden Lots") echo "selected"; ?>>Garden Lots</option>
                         <option value="Lawn Lots" <?php if ($mem_lots == "Lawn Lots") echo "selected"; ?>>Lawn Lots</option>
