@@ -136,14 +136,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 </div>
                
 
-    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script src="script.js"></script>
 
     <script>
+// Function to update status
 function updateStatus(id, currentStatus) {
     const newStatus = currentStatus === 'Active' ? 'Inactive' : 'Active';
-    
+
     // Send AJAX request to update status
     fetch('statusCondition.php', {
         method: 'POST',
@@ -158,19 +157,21 @@ function updateStatus(id, currentStatus) {
             // Update the status text and button text without reloading
             document.getElementById(`status-${id}`).textContent = newStatus;
             const button = document.getElementById(`status-btn-${id}`);
-            
+
             // Create SVG elements based on new status
             const svgIcon = newStatus === 'Active' ? `
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M384 128c70.7 0 128 57.3 128 128s-57.3 128-128 128l-192 0c-70.7 0-128-57.3-128-128s57.3-128 128-128l192 0zM576 256c0-106-86-192-192-192L192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192zM192 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/></svg>
-                Deactivate
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="input-icon">
+                   <path d="M384 128c70.7 0 128 57.3 128 128s-57.3 128-128 128l-192 0c-70.7 0-128-57.3-128-128s57.3-128 128-128l192 0zM576 256c0-106-86-192-192-192L192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192zM192 352a96 96 0 1 0 0-192 96 96 0 1 0 0 192z"/>
+               </svg>
+               Deactivate
             ` : `
-               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192s-86-192-192-192L192 64zm192 96a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
-                Activate
+               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="input-icon">
+                   <path d="M192 64C86 64 0 150 0 256S86 448 192 448l192 0c106 0 192-86 192-192s-86-192-192-192L192 64zm192 96a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/>
+               </svg>
+               Activate
             `;
-            
-            // Update button content
             button.innerHTML = svgIcon;
-            
+
             // Update the button's color based on new status
             if (newStatus === 'Active') {
                 button.classList.remove('btn-green');
@@ -179,32 +180,91 @@ function updateStatus(id, currentStatus) {
                 button.classList.remove('btn-red');
                 button.classList.add('btn-green');
             }
-            
+
             // Update the onclick attribute with the new status
             button.setAttribute('onclick', `updateStatus(${id}, '${newStatus}')`);
         } else {
-            alert('Failed to update status');
+            // Display custom notification for failure
+            showNotification('Failed to update status');
         }
     })
-    .catch(error => console.error('Error:', error));
+    .catch(error => showNotification(`Error: ${error.message}`));
 }
 
+// Function to show custom notification
+function showNotification(message) {
+    // Inject styles dynamically
+    const style = document.createElement('style');
+    style.textContent = `
+        .notification-popup {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #001f14;
+            color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: opacity 0.3s ease, transform 0.3s ease;
+            z-index: 100000;
+        }
+        .notification-popup.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        .notification-popup button {
+            margin-left:90px;
+            margin-top: 10px;
+            padding: 5px 10px;
+            background: #555;
+            border: none;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+        }
+        .notification-popup button:hover {
+            background: #777;
+        }
+    `;
+    document.head.appendChild(style);
 
-// anti zooom 
-    
-        // Prevent zoom using wheel event
-        document.addEventListener('wheel', function(e) {
-            if (e.ctrlKey) {
-                e.preventDefault();
-            }
-        }, { passive: false });
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'notification-popup';
+    notification.innerHTML = `
+        <div>${message}</div>
+        <button onclick="this.parentElement.remove()">Confirm</button>
+    `;
 
-        // Prevent zoom using keydown events
-        document.addEventListener('keydown', function(e) {
-            if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
-                e.preventDefault();
-            }
-        });
+    document.body.appendChild(notification);
+
+    // Animate notification
+    setTimeout(() => {
+        notification.classList.add('visible');
+    }, 10);
+
+    // Automatically remove after 5 seconds
+    setTimeout(() => {
+        notification.classList.remove('visible');
+        setTimeout(() => notification.remove(), 300);
+    }, 5000);
+}
+
+// Anti-zoom functionality
+document.addEventListener('wheel', function(e) {
+    if (e.ctrlKey) {
+        e.preventDefault();
+    }
+}, { passive: false });
+
+document.addEventListener('keydown', function(e) {
+    if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
+        e.preventDefault();
+    }
+});
+
 </script>
 <style>
     @font-face {
