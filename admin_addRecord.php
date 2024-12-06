@@ -101,37 +101,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add New Records</title>
+    <title>Add Client Records</title>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
-    
     <style>
-       * {
+          @font-face {
+    font-family: 'MyFont';
+    src: url('fonts/Inter.ttf') format('ttf'),
+}
+        * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
         }
-        @font-face {
-  font-family: 'MyFont';
-  src: url('fonts/Inter.ttf') format('ttf'),
-}
 
         body {
-           font-family: 'MyFont';
+            font-family: 'MyFont';
             height: 100vh;
-            background-color: #071c14;
+            background-color: #071c14;";
             justify-content: center;
             align-items: center;
             display: flex;
         }
+
         .container {
             background: #f4f4f4;
-            width: 850px;
             padding: 1.5rem;
+            width: 850px;
             margin: 10px auto;
             border-radius: 10px;
             box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
         }
+
         .form-control {
             width: 100%;
             max-width: 100%;
@@ -139,20 +140,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             white-space: nowrap;
             text-overflow: ellipsis;
         }
+
+       
     </style>
 </head>
 
 <body>
     <div class="container my-5">
         <h2 style="font-weight: bold;">Add New Record</h2>
-        <br>
+        
         <?php
         displayMessage($errorMessage, 'error');
         displayMessage($successMessage, 'success');
         ?>
 
         <form method="post">
-        <div class="row mb-3">
+            <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Lot No.</label>
                     <div class="col-sm-6">
                     <input 
@@ -160,7 +163,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         class="form-control" 
                         name="lot" 
                         value="<?php echo htmlspecialchars($lot) ?>" 
-                        oninput="validateNumber(this)" required>
+                        oninput="validateNumber(this)">
     </div>
 </div>
 
@@ -168,6 +171,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <label class="col-sm-3 col-form-label">Memorial Lots</label>
                 <div class="col-sm-6">
                     <select class="form-control" name="mem_lots">
+                    <option value="None" <?php if ($mem_lots == "None") echo "selected"; ?>>None</option>
                     <option value="Family Estate" <?php if ($mem_lots == "Family Estate") echo "selected"; ?>>Family Estate</option>
                         <option value="Garden Lots" <?php if ($mem_lots == "Garden Lots") echo "selected"; ?>>Garden Lots</option>
                         <option value="Lawn Lots" <?php if ($mem_lots == "Lawn Lots") echo "selected"; ?>>Lawn Lots</option>
@@ -207,7 +211,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Lot Owner</label>
                 <div class="col-sm-6">
-                    <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($name) ?>" required>
+                    <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($name) ?>">
                 </div>
             </div>
             <div class="row mb-3">
@@ -222,7 +226,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button type="submit" class="btn btn-outline-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="admin_records.php" role="button" onclick="showRecords()">Cancel</a>
+                    <a class="btn btn-outline-primary" href="admin_records.php" role="button" onclick="showRecords()">Back</a>
                 </div>
             </div>
         </form>
@@ -236,11 +240,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     alert.classList.remove('show');
                     alert.style.display = 'none';
                 }
-            }, 1000); // Adjust the time as needed
+            }, 2000); //S
         });
 
-         //validate the number for the lotno
-         function validateNumber(input) {
+        function validateNumber(input) {
     let value = parseInt(input.value, 10);
 
     if (isNaN(value) || value < 0) {

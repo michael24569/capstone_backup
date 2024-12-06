@@ -196,13 +196,13 @@ checkStaffAccess();
 
 
         <!-- logout confirmation modal -->
-<div id="confirmModal" class="modal" style="display: none;">
+        <div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
         <h2>Logout Confirmation</h2>
         <p>Are you sure you want to logout?</p>
         <div class="modal-buttons">
-            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
-            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+            <button id="confirmButton" class="btn btn-confirm">Yes, log me out</button>
+            <button id="cancelButton" class="btn btn-cancel">No, Stay here</button>
         </div>
     </div>
 </div>

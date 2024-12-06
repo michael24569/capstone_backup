@@ -121,7 +121,7 @@ function displayRecordStatus() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Record Status Summary</title>
+    <title>Summary of Status Report</title>
     <style>
 
         .summary-table {
@@ -221,20 +221,12 @@ body {
 
 /* Print-specific styles */
 /* Existing styles remain the same until the print media query */
-
 @media print {
-    .print-button {
-display: none;
-  }
-    .view-details, .close-modal {
-        display: none;
-    }
-    .sidebar {
-        display: none !important;
-    }
-    .summary-table {
-        display: none !important;
-    }
+    .print-button { display: none; }
+    .view-details, .close-modal { display: none; }
+    .sidebar { display: none !important; }
+    .summary-table { display: none !important; }
+
     .details-modal {
         display: block !important;
         position: static;
@@ -242,31 +234,38 @@ display: none;
         border: none;
         box-shadow: none;
     }
+
     .details-modal .modal-content {
         width: 100%;
         margin: 0;
+        margin-bottom: 20px;
     }
+
     body {
         background: white;
         margin: 0;
     }
-        .details-modal {
-                position: static;
-                display: block;
-                width: 100%;
-                height: auto;
-                background: none;
-            }
-            .modal-content {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                box-shadow: none;
-            }
+
+    .details-modal {
+        position: static;
+        display: block;
+        width: 100%;
+        height: auto;
+        background: none;
+    }
+
+    .modal-content {
+        margin: 0;
+        padding: 0;
+        width: 100%;
+        box-shadow: none;
+    }
+
     .seal {
         display: block;
         text-align: center;
     }
+
     .seal img {
         position: absolute;
         max-width: 10.5%;
@@ -275,10 +274,12 @@ display: none;
         margin-left: -41%;
         z-index: 10000;
     }
+
     .cctlogo {
         display: block;
         text-align: center;
     }
+
     .cctlogo img {
         position: absolute;
         max-width: 8.5%;
@@ -287,6 +288,7 @@ display: none;
         margin-left: 38%;
         z-index: 10000;
     }
+
     .address {
         display: block;
         color: black;
@@ -297,13 +299,16 @@ display: none;
         text-align: center;
         z-index: 1000;
     }
+
     .address h3 {
         margin-bottom: 10px;
     }
+
     .address h2 {
         font-weight: bold;
         margin: -5px;
     }
+
     /* Modified reportHeader positioning for print */
     .reportHeader {
         margin-top: 120px !important; /* Increased margin for print */
@@ -311,12 +316,49 @@ display: none;
         width: 100%;
         text-align: center;
     }
+
+    /* New styles for headers and table headers */
+    h1, h2, h3, h4, h5, h6 {
+        color: black !important;
+    }
+
+    table th {
+        color: black !important;
+        background-color: #f0f0f0 !important; /* Light gray background */
+    }
+
+    table {
+        border-collapse: collapse;
+    }
+
+    table, table th, table td {
+        border: 1px solid black !important;
+        background-color: #f0f0f0 !important;
+        color: black !important;
+    }
+
+
+  table thead,
+    table thead tr,
+    table thead th {
+        background-color: #006800 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
+
+    /* Fallback for browsers that might have issues */
+    table th {
+        background-color: #006800 !important;
+        color: white !important;
+        -webkit-print-color-adjust: exact !important;
+        print-color-adjust: exact !important;
+    }
 }
 
 
 /* Sidebar Styles */
 .sidebar {
-  z-index: 100000;
   font-size: 15px;
   bottom: 0px;
   position: fixed;
@@ -360,7 +402,7 @@ display: none;
   text-decoration: none;
 }
 
-.sidebar ul li a .icon{
+.sidebar ul li a .icon {
   position: relative;
   display: flex;
   justify-content: center;
@@ -370,7 +412,6 @@ display: none;
   font-size: 1.5rem;
   color: #222222;
 }
-
 
 .sidebar ul li a .text {
   font-family: "MyFont";
@@ -461,6 +502,7 @@ display: none;
   cursor: default;
   background: #dee7e2;
 }
+
 
 
 
@@ -706,16 +748,15 @@ display: none;
 
 .modal-contint {
     background: white;
-    padding: 40px;
     border-radius: 8px;
-   padding: 50px;
-   margin-left: -30px;
+    text-align: center;
+    padding: 70px;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
     animation: popIn 0.3s ease-out; /* Apply pop-in animation */
 }
 h2 {
     text-align: start;
-    margin-top: -35px;
+    margin-bottom: -10px;
 }
 p {
     padding-top: 1%;
@@ -723,10 +764,10 @@ p {
 
 .modal-buttons {
     display: flex;
-    justify-content: flex-end;
-    margin-bottom: -40px;
-    margin-right: -40px;
-    gap: 8px;
+    justify-content: center;
+    margin-bottom: -45px;
+    padding-top: 30px;
+    gap: 15px;
 }
 
 .btn-confirm, .btn-cancel {
@@ -739,14 +780,11 @@ p {
 
 
 .btn-confirm {
-    margin-top:20px;
     background-color: #28a745;
     color: white;
 }
 
 .btn-cancel {
-    margin-top:20px;
-
     background-color: #dc3545;
     color: white;
 }
@@ -947,8 +985,8 @@ margin-top: -10px;
             <p>Are you sure you want to logout?</p>
             <br>
             <div class='modal-buttons'>
-                <button id='confirmButton' class='btn btn-confirm'>Confirm</button>
-                <button id='cancelButton' class='btn btn-cancel'>Cancel</button>
+                <button id='confirmButton' class='btn btn-confirm'>Yes, log me out</button>
+                <button id='cancelButton' class='btn btn-cancel'>No, Stay here</button>
             </div>
         </div>
     </div>

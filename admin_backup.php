@@ -19,7 +19,7 @@ unset($_SESSION['backup_file']);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Backup Records</title>
+    <title>Backup Database</title>
     
     <link rel="stylesheet" href="backupButton.css">
     <link rel="stylesheet" href="style1.css">
@@ -90,6 +90,9 @@ unset($_SESSION['backup_file']);
     padding: 1% 0;
     position: relative;
   }
+  .successful {
+            transition: opacity 0.5s ease-out;
+        }
 </style>
 </head>
 <body style="background: #071c14;">
@@ -126,7 +129,7 @@ unset($_SESSION['backup_file']);
                 </p>
             <?php endif; ?>
             <?php if ($successful): ?>
-                <p class="successful" style="color: green; background-color: #dfd; padding-left: 80px; margin-bottom: 10px;">
+                <p id="successful" class="successful" style="color: green; background-color: #dfd; padding-left: 80px; margin-bottom: 10px;">
                     <?= htmlspecialchars($successful) ?>
                 </p>
                 <!-- Provide download link if backup is successful -->
@@ -146,8 +149,8 @@ unset($_SESSION['backup_file']);
         <h2>Logout Confirmation</h2>
         <p>Are you sure you want to logout?</p>
         <div class="modal-buttons">
-            <button id="confirmButton" class="btn btn-confirm">Confirm</button>
-            <button id="cancelButton" class="btn btn-cancel">Cancel</button>
+            <button id="confirmButton" class="btn btn-confirm">Yes, log me out</button>
+            <button id="cancelButton" class="btn btn-cancel">No, Stay here</button>
         </div>
     </div>
 </div>
@@ -168,6 +171,18 @@ unset($_SESSION['backup_file']);
         document.addEventListener('keydown', function(e) {
             if ((e.ctrlKey || e.metaKey) && (e.key === '+' || e.key === '-' || e.key === '=')) {
                 e.preventDefault();
+            }
+        });
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const successMessage = document.getElementById('successful');
+            if (successMessage) {
+                setTimeout(function() {
+                    successMessage.style.opacity = '0';
+                    setTimeout(function() {
+                        successMessage.style.display = 'none';
+                    }, 500);
+                }, 2000);
             }
         });
 </script>
