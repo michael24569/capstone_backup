@@ -214,7 +214,6 @@ function showNotification(message) {
         .notification-popup.visible {
             opacity: 1;
             transform: translateY(0);
-            
         }
         .notification-popup button {
             margin-left:90px;
