@@ -238,6 +238,7 @@ body {
     .details-modal .modal-content {
         width: 100%;
         margin: 0;
+        margin-bottom: 20px;
     }
 
     body {
@@ -754,8 +755,8 @@ body {
     animation: popIn 0.3s ease-out; /* Apply pop-in animation */
 }
 h2 {
-    text-align: center;
-    margin-top: -35px;
+    text-align: start;
+    margin-bottom: -10px;
 }
 p {
     padding-top: 1%;
