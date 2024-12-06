@@ -202,11 +202,11 @@ function showNotification(message) {
             position: fixed;
             top: 40%;
             right: 40%;
-            background: white;
+            background: #efe9e3;
             color: black;
             padding: 45px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
             opacity: 0;
             transition: opacity 0.3s ease, transform 0.3s ease;
             z-index: 100000;
