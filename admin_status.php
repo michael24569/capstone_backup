@@ -185,7 +185,7 @@ function updateStatus(id, currentStatus) {
             button.setAttribute('onclick', `updateStatus(${id}, '${newStatus}')`);
         } else {
             // Display custom notification for failure
-            showNotification('Failed to update status');
+            showNotification('Failed to Update Status');
         }
     })
     .catch(error => showNotification(`Error: ${error.message}`));
@@ -197,35 +197,37 @@ function showNotification(message) {
     const style = document.createElement('style');
     style.textContent = `
         .notification-popup {
+            font-size: 27px;
+            align-items: center;
             position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #001f14;
-            color: #fff;
-            padding: 20px;
+            top: 40%;
+            right: 40%;
+            background: white;
+            color: black;
+            padding: 45px;
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             opacity: 0;
-            transform: translateY(-10px);
             transition: opacity 0.3s ease, transform 0.3s ease;
             z-index: 100000;
         }
         .notification-popup.visible {
             opacity: 1;
             transform: translateY(0);
+            
         }
         .notification-popup button {
             margin-left:90px;
-            margin-top: 10px;
-            padding: 5px 10px;
-            background: #555;
+            margin-top: 30px;
+            padding: 10px 20px;
+            background: green;
             border: none;
             border-radius: 5px;
             color: #fff;
             cursor: pointer;
         }
         .notification-popup button:hover {
-            background: #777;
+            background: #029902;
         }
     `;
     document.head.appendChild(style);
