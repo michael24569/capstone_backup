@@ -329,7 +329,8 @@ tbody, thead, .form-control, td {
 }
 </style>
     
-</body>
+</body>  
+<!-- gi -->
 </html>
 <?php
 } else {
