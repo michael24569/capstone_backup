@@ -162,6 +162,15 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             border: 2px solid #ddd;
             border-radius: 4px;     
         }
+.clear-button {
+    cursor: pointer;
+    position: absolute;
+    left: 22.5%; /* Adjust based on your design */
+    top: 19.6%;
+    transform: translateY(-50%);
+    font-size: 25px; /* Adjust size as needed */
+    color: #aaa; /* Color of the clear button */
+}
 
     </style>
 </head>
@@ -186,6 +195,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </a>
             <br>
             <input class="form-control" type="text" id="searchInput" placeholder="Search records..." autocomplete="off">
+            <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
             
             <table class="styled-table text-center">
                 <thead>
@@ -273,7 +283,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             
             // Create XMLHttpRequest
             const xhr = new XMLHttpRequest();
-            xhr.open('GET', `dynamic_search.php?search=${encodeURIComponent(searchQuery)}`, true);
+            xhr.open('GET', `admin_pagination.php?search=${encodeURIComponent(searchQuery)}`, true);
             
             xhr.onload = function() {
                 if (this.status === 200) {
@@ -308,6 +318,65 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             }
         });
        
+
+        // clear search
+
+        searchInput.addEventListener('input', function () {
+        if (searchInput.value) {
+            clearButton.style.display = 'block'; // Show clear button
+        } else {
+            clearButton.style.display = 'none'; // Hide clear button
+        }
+    });
+
+    // Clear the input field when the clear button is clicked
+    clearButton.addEventListener('click', function () {
+        searchInput.value = ''; // Clear the input
+        clearButton.style.display = 'none'; // Hide the clear button
+        searchInput.focus(); // Optionally focus back on the input
+        document.getElementById("suggestions").style.display = "none";
+        clearHighlights();
+    });
+
+// for the clear button 
+// Update the clear button event listener
+clearButton.addEventListener('click', function () {
+    searchInput.value = ''; // Clear the input
+    clearButton.style.display = 'none'; // Hide the clear button
+    searchInput.focus(); // Focus back on the input
+    
+    // Trigger the search with empty value to refresh the results
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', 'admin_pagination.php?search=', true);
+    
+    xhr.onload = function() {
+        if (this.status === 200) {
+            const response = JSON.parse(this.responseText);
+            
+            // Update table body
+            const tableBody = document.getElementById('recordsTableBody');
+            tableBody.innerHTML = response.records || '<tr><td colspan="6">No records found</td></tr>';
+            
+            // Update pagination info
+            document.getElementById('paginationInfo').innerHTML = response.pagination_info || '';
+            
+            // Update pagination links
+            document.getElementById('paginationLinks').innerHTML = response.pagination_links || '';
+        }
+    };
+    
+    xhr.send();
+    
+    // Hide suggestions if they exist
+    if (document.getElementById("suggestions")) {
+        document.getElementById("suggestions").style.display = "none";
+    }
+    
+    // Clear highlights if that function exists
+    if (typeof clearHighlights === 'function') {
+        clearHighlights();
+    }
+});
     </script>
 </body>
 </html>
