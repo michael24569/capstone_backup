@@ -221,138 +221,189 @@ body {
 
 /* Print-specific styles */
 /* Existing styles remain the same until the print media query */
-@media print {
-    .print-button { display: none; }
-    .view-details, .close-modal { display: none; }
-    .sidebar { display: none !important; }
-    .summary-table { display: none !important; }
+@media print {     
+    .print-button { display: none; }     
+    .view-details, .close-modal { display: none; }     
+    .sidebar { display: none !important; }     
+    .summary-table { display: none !important; }      
+    
+    .details-modal {         
+        display: block !important;         
+        position: static;         
+        background: white;         
+        border: none;         
+        box-shadow: none;     
+    }      
 
-    .details-modal {
-        display: block !important;
-        position: static;
-        background: white;
-        border: none;
-        box-shadow: none;
-    }
+    .details-modal .modal-content {         
+        width: 100%;         
+        margin: 0;     
+    }      
 
-    .details-modal .modal-content {
-        width: 100%;
-        margin: 0;
-        margin-bottom: 20px;
-    }
+    body {         
+        background: white;         
+        margin: 0;     
+    }      
 
-    body {
-        background: white;
-        margin: 0;
-    }
-
-    .details-modal {
-        position: static;
-        display: block;
-        width: 100%;
-        height: auto;
+    .details-modal {         
+        position: static;         
+        display: block;         
+        width: 100%;         
+        height: auto;         
         background: none;
-    }
+        padding-bottom: 40px;
+    }      
 
-    .modal-content {
-        margin: 0;
-        padding: 0;
-        width: 100%;
-        box-shadow: none;
-    }
+    .modal-content {         
+        margin: 0;         
+        padding: 0;         
+        width: 100%;         
+        box-shadow: none;     
+    }      
 
-    .seal {
-        display: block;
-        text-align: center;
+    /* Repeating Header Solution */
+    @page {
+        margin: 1cm 2cm 2cm 2cm;
     }
-
-    .seal img {
-        position: absolute;
-        max-width: 10.5%;
-        height: auto;
-        margin-top: -1%;
-        margin-left: -41%;
-        z-index: 10000;
+     .section-break {
+        page-break-before: always;
+        padding-top: 160px;
     }
-
-    .cctlogo {
-        display: block;
-        text-align: center;
-    }
-
-    .cctlogo img {
-        position: absolute;
-        max-width: 8.5%;
-        height: auto;
-        margin-top: -1%;
-        margin-left: 38%;
-        z-index: 10000;
-    }
-
-    .address {
-        display: block;
-        color: black;
-        position: absolute;
-        top: 2%;
-        left: 50%;
-        transform: translate(-50%, 0);
-        text-align: center;
+    .header-group {
+     position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 120px;
+        background: white;
         z-index: 1000;
     }
 
-    .address h3 {
-        margin-bottom: 10px;
+    .seal {         
+        display: block;         
+        text-align: center;     
+    }      
+
+    .seal img {         
+        position: fixed;         
+        max-width: 10.5%;         
+        height: auto;         
+        top: 20px;
+        margin-left: -41%;         
+        z-index: 10000;     
+    }      
+
+    .cctlogo {         
+        display: block;         
+        text-align: center;     
+    }      
+
+    .cctlogo img {         
+        position: fixed;         
+        max-width: 8.5%;         
+        height: auto;         
+        top: 20px;
+        margin-left: 38%;         
+        z-index: 10000;     
+    }      
+
+    .address {         
+        display: block;         
+        color: black;         
+        position: fixed;         
+        top: 20px;         
+        left: 50%;         
+        transform: translate(-50%, 0);         
+        text-align: center;         
+        z-index: 1000;
+        background: white;     
+    }      
+
+    .address h3 {         
+        margin-bottom: 10px;     
+    }      
+
+    .address h2 {         
+        font-weight: bold;         
+        margin: -5px;     
+    }      
+
+    /* Modified reportHeader positioning for print */     
+    .reportHeader {         
+        margin-top: 120px !important; 
+        position: relative;         
+        width: 100%;         
+        text-align: center;     
+    }      
+
+    /* Headers and table styles */     
+    h1, h2, h3, h4, h5, h6 {         
+        color: black !important;     
+    }      
+         table {
+        page-break-inside: auto;
     }
 
-    .address h2 {
-        font-weight: bold;
-        margin: -5px;
+    table tr {
+        page-break-inside: avoid;
     }
 
-    /* Modified reportHeader positioning for print */
-    .reportHeader {
-        margin-top: 120px !important; /* Increased margin for print */
-        position: relative;
-        width: 100%;
-        text-align: center;
+    /* Prevent overlapping by adding padding to the table to account for header on new pages */
+    table thead {
+        display: table-header-group;
     }
 
-    /* New styles for headers and table headers */
-    h1, h2, h3, h4, h5, h6 {
-        color: black !important;
+    table tbody tr {
+        page-break-before: auto;
     }
 
-    table th {
-        color: black !important;
-        background-color: #f0f0f0 !important; /* Light gray background */
-    }
+    table th {         
+        color: black !important;         
+        background-color: #f0f0f0 !important;     
+    }      
 
-    table {
+    table {         
         border-collapse: collapse;
+        page-break-inside: auto;     
+    }      
+
+    table, table th, table td {         
+        border: 1px solid black !important;         
+        background-color: #f0f0f0 !important;         
+        color: black !important;     
+    }     
+
+    table thead,     
+    table thead tr,     
+    table thead th {         
+        background-color: #006800 !important;         
+        color: white !important;         
+        -webkit-print-color-adjust: exact !important;         
+        print-color-adjust: exact !important;     
+    }      
+
+    table th {         
+        background-color: #006800 !important;         
+        color: white !important;         
+        -webkit-print-color-adjust: exact !important;         
+        print-color-adjust: exact !important;     
+    } 
+
+    /* Ensure proper page breaks */
+    tr {
+        page-break-inside: avoid;
     }
-
-    table, table th, table td {
-        border: 1px solid black !important;
-        background-color: #f0f0f0 !important;
-        color: black !important;
+    .adjusted-table {
+        margin-top: 20px;
     }
-
-
-  table thead,
-    table thead tr,
-    table thead th {
-        background-color: #006800 !important;
-        color: white !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+    .adjusted-table tr {
+        padding-top: 15px;
     }
-
-    /* Fallback for browsers that might have issues */
-    table th {
-        background-color: #006800 !important;
-        color: white !important;
-        -webkit-print-color-adjust: exact !important;
-        print-color-adjust: exact !important;
+    .adjusted-table thead th {
+        padding-top: 10px;
+    }
+    .adjusted-table tbody tr:first-child {
+        padding-top: 20px;
     }
 }
 
@@ -756,7 +807,6 @@ body {
 }
 h2 {
     text-align: start;
-    margin-bottom: -10px;
 }
 p {
     padding-top: 1%;
@@ -956,10 +1006,16 @@ margin-top: -10px;
 
     // Create modals for each group
     foreach ($grouped as $key => $group) {
-        echo "<div id='modal-$key' class='details-modal'>
+        // Check if the group name is one of the specified groups
+        $addPageBreak = in_array($group['name'], ['Columbarium 1', 'Columbarium 2', 'Saints']);
+    
+        // Add the section-break class conditionally
+        $modalClass = $addPageBreak ? 'details-modal section-break' : 'details-modal';
+    
+        echo "<div id='modal-$key' class='$modalClass'>
             <div class='modal-content'>
                 <span class='close-modal' onclick='hideDetails(\"$key\")'>&times;</span>
-                <h2 style='color: #004100;margin-top: 1px;'>{$group['name']} Details</h2>
+                <h2 style='color: #004100; margin-top: 1px;'>{$group['name']} Details</h2>
                 <table class='details-table'>
                     <tr>
                         <th>Location</th>
