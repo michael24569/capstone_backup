@@ -12,6 +12,16 @@ function toProperCase($str) {
     return ucwords(strtolower(trim($str)));
 }
 
+$securityQuestions = [
+  'In what city were you born?',
+    'What was the name of your first school?',
+    'What was the first exam you failed?',
+    'What was the name of your first pet?',
+    'What is your favorite book?',
+    'What was your favorite subject in school?',
+    'Who was your childhood hero?'
+];
+
 $error_message = "";
 $success_message = "";
 
@@ -81,66 +91,65 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $id = mysqli_real_escape_string($conn, $_POST['id']);
     $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $security_question = mysqli_real_escape_string($conn, $_POST['security_question']);
+    
+    // Hash the security answer
+    $security_answer = trim($_POST['security_answer']);
+    $hashed_security_answer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
+    
     $current_password = isset($_POST['current_password']) ? $_POST['current_password'] : '';
     $new_password = isset($_POST['new_password']) ? $_POST['new_password'] : '';
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
     
-    // Validate email format
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error_message = "Invalid email format";
+    // Check if username already exists (excluding current user)
+    $check_username = mysqli_query($conn, "SELECT id FROM staff WHERE username = '$username' AND id != '$id'");
+    if (mysqli_num_rows($check_username) > 0) {
+        $error_message = "Username already exists";
     } else {
-        // Check if username already exists (excluding current user)
-        $check_username = mysqli_query($conn, "SELECT id FROM staff WHERE username = '$username' AND id != '$id'");
-        if (mysqli_num_rows($check_username) > 0) {
-            $error_message = "Username already exists";
-        } else {
-            // Initialize the update query
-$update_query = "UPDATE staff SET 
-fullname = '$fullname',
-username = '$username',
-email = '$email'";
+        // Initialize the update query
+        $update_query = "UPDATE staff SET 
+            fullname = '$fullname',
+            username = '$username',
+            security_question = '$security_question',
+            security_answer = '$hashed_security_answer'";
 
-// Check if new password is provided and is valid
-if (!empty($new_password)) {
-if ($new_password !== $confirm_password) {
-    $error_message = "New passwords do not match";
-} elseif (strlen($new_password) < 8) {
-    $error_message = "New password must be at least 8 characters long";
-} elseif (!preg_match("/[a-z]/", $new_password)) {
-    $error_message = "Password must contain at least one lowercaseletter.";
-}  elseif (!preg_match("/[A-Z]/", $new_password)) {
-    $error_message = "Password must contain at least one uppercase letter.";
-} elseif (!preg_match("/[0-9]/", $new_password)) {
-    $error_message = "Password must contain at least one number.";
-} elseif (!preg_match("/[\W_]/", $new_password)) { // Must contain at least one special character
-    $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
-} else {
-    // If new password is valid, hash it and prepare to update it
-    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-    $update_query .= ", password = '$hashed_password'"; // Append to update query
-}
-}
+        // Check if new password is provided and is valid
+        if (!empty($new_password)) {
+            if ($new_password !== $confirm_password) {
+                $error_message = "New passwords do not match";
+            } elseif (strlen($new_password) < 8) {
+                $error_message = "New password must be at least 8 characters long";
+            } elseif (!preg_match("/[a-z]/", $new_password)) {
+                $error_message = "Password must contain at least one lowercase letter.";
+            } elseif (!preg_match("/[A-Z]/", $new_password)) {
+                $error_message = "Password must contain at least one uppercase letter.";
+            } elseif (!preg_match("/[0-9]/", $new_password)) {
+                $error_message = "Password must contain at least one number.";
+            } elseif (!preg_match("/[\W_]/", $new_password)) { // Must contain at least one special character
+                $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
+            } else {
+                // If new password is valid, hash it and prepare to update it
+                $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+                $update_query .= ", password = '$hashed_password'"; // Append to update query
+            }
+        }
 
-// Proceed only if no error message
-if (empty($error_message)) {
-$update_query .= " WHERE id = '$id'";  // Append the WHERE condition to the query
+        // Proceed only if no error message
+        if (empty($error_message)) {
+            $update_query .= " WHERE id = '$id'";  // Append the WHERE condition to the query
 
-if (mysqli_query($conn, $update_query)) {
-    $success_message = "Staff information updated successfully";
-    // Refresh staff data
-    $result = mysqli_query($conn, "SELECT * FROM staff WHERE id = '$id'");
-    $staff = mysqli_fetch_assoc($result);
-} else {
-    $error_message = "Error updating information: " . mysqli_error($conn);
-}
-}
-
+            if (mysqli_query($conn, $update_query)) {
+                $success_message = "Staff information updated successfully";
+                // Refresh staff data
+                $result = mysqli_query($conn, "SELECT * FROM staff WHERE id = '$id'");
+                $staff = mysqli_fetch_assoc($result);
+            } else {
+                $error_message = "Error updating information: " . mysqli_error($conn);
+            }
         }
     }
 }
 ?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -214,6 +223,7 @@ if (mysqli_query($conn, $update_query)) {
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-top: 22px;
             margin-left: 10px;
         }
 
@@ -272,6 +282,21 @@ if (mysqli_query($conn, $update_query)) {
         .password-status.success {
             color: #4CAF50;
         }
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .input-group label {
+            margin-left: 10px;
+            margin-top: 6px;
+        }
+        .input-group input {
+            height: 30px;
+            padding-left: 10px;
+        }
     </style>
 </head>
 <body style="background: #071c14;">
@@ -291,19 +316,33 @@ if (mysqli_query($conn, $update_query)) {
             
             <div class="form-group">
     <label for="fullname">Full Name</label>
-    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($staff['fullname'])); ?>" required>
+    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($staff['fullname'])); ?>" required autocomplete="off">
 </div>
 
 <div class="form-group">
     <label for="username">Username</label>
-    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($staff['username'])); ?>" required>
+    <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($staff['username'])); ?>" required autocomplete="off">
 </div>
-
-<div class="form-group">
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" value="<?php echo htmlspecialchars(strtolower($staff['email'])); ?>" required>
-</div>
-
+<div class="input-group">
+                <i class="fas fa-question-circle"></i>
+                <select name="security_question">
+                    <option value="">Select Security Question</option>
+                    <?php foreach ($securityQuestions as $question): ?>
+                        <option value="<?php echo htmlspecialchars($question); ?>"
+                            <?php echo (isset($_POST['security_question']) && $_POST['security_question'] === $question) ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($question); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
+            </div>
+            
+            <div class="input-group">
+                <i class="fas fa-check-circle"></i>
+                <input type="text" name="security_answer" id="security_answer" placeholder="Security Answer" autocomplete="off"
+                    value="<?php echo htmlspecialchars($_POST['security_answer'] ?? ''); ?>">
+                <label for="security_answer">Security Answer</label>
+            </div>
+            
             <div id="passwordVerificationSection">
                 <h3>Password Verification</h3>
                 <div class="current-password-container">
@@ -336,15 +375,13 @@ if (mysqli_query($conn, $update_query)) {
     </div>
 
     <script>
-          document.getElementById('current_password').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\s/g, ''); // Remove spaces
-  });
-  document.getElementById('new_password').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\s/g, ''); // Remove spaces
-  });
-  document.getElementById('confirm_password').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\s/g, ''); // Remove spaces
-  });
+const inputIds = ['current_password', 'new_password','confirm_password'];
+    inputIds.forEach(id => {
+    const input = document.getElementById(id);
+        input.addEventListener('input', function() {
+        this.value = this.value.replace(/\s/g, ''); // Remove spaces
+        });
+    });
 
         document.getElementById('verifyPasswordBtn').addEventListener('click', function() {
     const currentPassword = document.getElementById('current_password').value;
@@ -384,6 +421,18 @@ if (mysqli_query($conn, $update_query)) {
         statusDiv.className = 'password-status error';
     });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var alert = document.querySelector('.success-message');
+                if (alert) {
+                    alert.classList.remove('show');
+                    alert.style.display = 'none';
+                }
+            }, 2000); //S
+        });
+
     </script>
 </body>
 </html>

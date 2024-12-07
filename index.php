@@ -59,6 +59,7 @@ require("loginCondition.php");
                 <label for="password">Password</label>
             </div>
             </div>
+            <p class="recover"><a href="forgot-password.php">Forgot password?</a></p>
             <?php
             if (isset($_SESSION['error'])) {
                 echo '<p class="error">' . $_SESSION['error'] . '</p>';

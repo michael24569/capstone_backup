@@ -1,22 +1,26 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkAdminAccess(); // Ensure only admin can access
+checkAdminAccess(); 
 require("db-connection.php");
-
-// Verify admin is logged in
-if (!isset($_SESSION['id']) || !isset($_SESSION['username']) || $_SESSION['role'] !== 'Admin') {
-    header("Location: index.php");
-    exit();
-}
 
 function toProperCase($str) {
     return ucwords(strtolower(trim($str)));
 }
 
+$securityQuestions = [
+  'In what city were you born?',
+    'What was the name of your first school?',
+    'What was the first exam you failed?',
+    'What was the name of your first pet?',
+    'What is your favorite book?',
+    'What was your favorite subject in school?',
+    'Who was your childhood hero?'
+];
+
 $error_message = "";
 $success_message = "";
-$admin_id = $_SESSION['id']; // Use session ID instead of GET parameter
+$admin_id = $_SESSION['id'];
 
 // Handle password verification AJAX request
 if (isset($_POST['verify_password'])) {
@@ -63,71 +67,68 @@ if (!$admin) {
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $fullname = trim($_POST['fullname']);
     $username = trim($_POST['username']);
-    $email = trim($_POST['email']);
     $current_password = isset($_POST['current_password']) ? $_POST['current_password'] : '';
     $new_password = isset($_POST['new_password']) ? $_POST['new_password'] : '';
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
+    $security_question = trim($_POST['security_question']);
+    $security_answer = trim($_POST['security_answer']);
+    $hashed_security_answer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
     
-    // Validate email format
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $error_message = "Invalid email format";
+    // Check if username already exists (excluding current admin)
+    $check_username = "SELECT id FROM admin WHERE username = ? AND id != ?";
+    $stmt = mysqli_prepare($conn, $check_username);
+    mysqli_stmt_bind_param($stmt, "si", $username, $admin_id);
+    mysqli_stmt_execute($stmt);
+    $username_result = mysqli_stmt_get_result($stmt);
+    
+    if (mysqli_num_rows($username_result) > 0) {
+        $error_message = "Username already exists";
     } else {
-        // Check if username already exists (excluding current admin)
-        $check_username = "SELECT id FROM admin WHERE username = ? AND id != ?";
-        $stmt = mysqli_prepare($conn, $check_username);
-        mysqli_stmt_bind_param($stmt, "si", $username, $admin_id);
-        mysqli_stmt_execute($stmt);
-        $username_result = mysqli_stmt_get_result($stmt);
+        // Initialize the update query with prepared statement
+        $update_fields = ["fullname = ?", "username = ?", "security_question = ?", "security_answer = ?"];
+        $param_types = "ssss";
+        $params = [$fullname, $username, $security_question, $hashed_security_answer];
         
-        if (mysqli_num_rows($username_result) > 0) {
-            $error_message = "Username already exists";
-        } else {
-            // Initialize the update query with prepared statement
-            $update_fields = ["fullname = ?", "username = ?", "email = ?"];
-            $param_types = "sss";
-            $params = [$fullname, $username, $email];
-            
-            if (!empty($new_password)) {
-                if ($new_password !== $confirm_password) {
-                    $error_message = "New passwords do not match";
-                } elseif (strlen($new_password) < 8) {
-                    $error_message = "New password must be at least 8 characters long";
-                } elseif (!preg_match("/[a-z]/", $new_password)) {
-                    $error_message = "Password must contain at least one lowercase letter.";
-                }  elseif (!preg_match("/[A-Z]/", $new_password)) {
-                    $error_message = "Password must contain at least one uppercase letter.";
-                } elseif (!preg_match("/[0-9]/", $new_password)) {
-                    $error_message = "Password must contain at least one number.";
-                } elseif (!preg_match("/[\W_]/", $new_password)) { // Must contain at least one special character
-                    $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
-                } else {
-                    $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
-                    $update_fields[] = "password = ?";
-                    $param_types .= "s";
-                    $params[] = $hashed_password;
-                }
+        if (!empty($new_password)) {
+            if ($new_password !== $confirm_password) {
+                $error_message = "New passwords do not match";
+            } elseif (strlen($new_password) < 8) {
+                $error_message = "New password must be at least 8 characters long";
+            } elseif (!preg_match("/[a-z]/", $new_password)) {
+                $error_message = "Password must contain at least one lowercase letter.";
+            } elseif (!preg_match("/[A-Z]/", $new_password)) {
+                $error_message = "Password must contain at least one uppercase letter.";
+            } elseif (!preg_match("/[0-9]/", $new_password)) {
+                $error_message = "Password must contain at least one number.";
+            } elseif (!preg_match("/[\W_]/", $new_password)) { // Must contain at least one special character
+                $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
+            } else {
+                $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
+                $update_fields[] = "password = ?";
+                $param_types .= "s";
+                $params[] = $hashed_password;
             }
+        }
+        
+        if (empty($error_message)) {
+            $param_types .= "i";
+            $params[] = $admin_id;
             
-            if (empty($error_message)) {
-                $param_types .= "i";
-                $params[] = $admin_id;
-                
-                $update_query = "UPDATE admin SET " . implode(", ", $update_fields) . " WHERE id = ?";
-                $stmt = mysqli_prepare($conn, $update_query);
-                mysqli_stmt_bind_param($stmt, $param_types, ...$params);
-                
-                if (mysqli_stmt_execute($stmt)) {
-                    $success_message = "Your information has been updated successfully";
-                    // Update session username if username was changed
-                    if ($_SESSION['username'] !== $username) {
-                        $_SESSION['username'] = $username;
-                    }
-                    // Refresh admin data
-                    $result = mysqli_query($conn, "SELECT * FROM admin WHERE id = $admin_id");
-                    $admin = mysqli_fetch_assoc($result);
-                } else {
-                    $error_message = "Error updating information: " . mysqli_error($conn);
+            $update_query = "UPDATE admin SET " . implode(", ", $update_fields) . " WHERE id = ?";
+            $stmt = mysqli_prepare($conn, $update_query);
+            mysqli_stmt_bind_param($stmt, $param_types, ...$params);
+            
+            if (mysqli_stmt_execute($stmt)) {
+                $success_message = "Your information has been updated successfully";
+                // Update session username if username was changed
+                if ($_SESSION['username'] !== $username) {
+                    $_SESSION['username'] = $username;
                 }
+                // Refresh admin data
+                $result = mysqli_query($conn, "SELECT * FROM admin WHERE id = $admin_id");
+                $admin = mysqli_fetch_assoc($result);
+            } else {
+                $error_message = "Error updating information: " . mysqli_error($conn);
             }
         }
     }
@@ -200,6 +201,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            margin-top: 22px;
             margin-left: 10px;
         }
 
@@ -247,7 +249,23 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 
         .password-status.success {
             color: #4CAF50;
-        }    </style>
+        }    
+        .input-group select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+        .input-group label {
+            margin-left: 10px;
+            margin-top: 6px;
+        }
+        .input-group input {
+            height: 30px;
+            padding-left: 10px;
+        }
+        </style>
 </head>
 <body style="background: #071c14;">
     <div class="edit-form-container">
@@ -264,19 +282,32 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         <form method="POST" action="" id="editForm">
             <div class="form-group">
                 <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required>
+                <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required autocomplete="off">
             </div>
 
             <div class="form-group">
                 <label for="username">Username</label>
-                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($admin['username'])); ?>" required>
+                <input type="text" id="username" name="username" value="<?php echo htmlspecialchars(toProperCase($admin['username'])); ?>" required autocomplete="off">
             </div>
-
-            <div class="form-group">
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" value="<?php echo htmlspecialchars(strtolower($admin['email'])); ?>" required>
+            <div class="input-group">
+                <i class="fas fa-question-circle"></i>
+                <select name="security_question" >
+                    <option value="">Select Security Question</option>
+                    <?php foreach ($securityQuestions as $question): ?>
+                        <option value="<?php echo htmlspecialchars($question); ?>"
+                            <?php echo (isset($_POST['security_question']) && $_POST['security_question'] === $question) ? 'selected' : ''; ?>>
+                            <?php echo htmlspecialchars($question); ?>
+                        </option>
+                    <?php endforeach; ?>
+                </select>
             </div>
-
+            
+            <div class="input-group">
+                <i class="fas fa-check-circle"></i>
+                <input type="text" name="security_answer" id="security_answer" placeholder="Security Answer" 
+                    value="<?php echo htmlspecialchars($_POST['security_answer'] ?? ''); ?>" autocomplete="off">
+                <label for="security_answer">Security Answer</label>
+            </div>
             <div id="passwordVerificationSection">
                 <h3>Change Password</h3>
                 <div class="current-password-container">
@@ -309,17 +340,13 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     </div>
 
     <script>
-        document.getElementById('current_password').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\s/g, ''); // Remove spaces
+const inputIds = ['current_password', 'new_password','confirm_password',];
+    inputIds.forEach(id => {
+    const input = document.getElementById(id);
+        input.addEventListener('input', function() {
+        this.value = this.value.replace(/\s/g, ''); // Remove spaces
         });
-
-        document.getElementById('new_password').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\s/g, ''); // Remove spaces
-        });
-
-        document.getElementById('confirm_password').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\s/g, ''); // Remove spaces
-        });
+    });
 
         document.getElementById('verifyPasswordBtn').addEventListener('click', function() {
             var currentPassword = document.getElementById('current_password').value;
@@ -347,6 +374,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
                 }
             };
             xhr.send(formData);
+        });
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(function() {
+                var alert = document.querySelector('.success-message');
+                if (alert) {
+                    alert.classList.remove('show');
+                    alert.style.display = 'none';
+                }
+            }, 2000); //S
         });
     </script>
 </body>

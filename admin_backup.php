@@ -182,7 +182,7 @@ unset($_SESSION['backup_file']);
                     setTimeout(function() {
                         successMessage.style.display = 'none';
                     }, 500);
-                }, 2000);
+                }, 5000);
             }
         });
 </script>

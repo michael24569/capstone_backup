@@ -1,49 +1,94 @@
 <?php
-$error = NULL;
-$successful = NULL;
+session_start();
+include 'db-connection.php';
 
-if ($_SERVER["REQUEST_METHOD"] === "POST") {
-    $token = $_POST["token"];
-    $token_hash = hash("sha256", $token);
-    $mysqli = require __DIR__ . "/db-connection.php";
+// Ensure user has verified security question
+if (!isset($_SESSION['can_reset_password']) || !$_SESSION['can_reset_password']) {
+    header("Location: forgot-password.php");
+    exit();
+}
 
-    // Check both staff and admin tables for the token
-    $sql = "SELECT 'staff' AS type, id, token_expiry FROM staff WHERE token_reset = ?
-            UNION
-            SELECT 'admin' AS type, id, token_expiry FROM admin WHERE token_reset = ?";
-    $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("ss", $token_hash, $token_hash);
-    $stmt->execute();
-    $result = $stmt->get_result();
-    $user = $result->fetch_assoc();
+$passwordError = null;
 
-    if ($user === null) {
-        $error = "Token not found.";
-    } elseif (strtotime($user["token_expiry"]) <= time()) {
-        $error = "Token has expired.";
-    } elseif (strlen($_POST["password"]) < 8) {
-        $error = "Password must be at least 8 characters.";
-    } elseif (!preg_match("/[a-z]/i", $_POST["password"])) {
-        $error = "Password must contain at least one letter.";
-    } elseif (!preg_match("/[0-9]/", $_POST["password"])) {
-        $error = "Password must contain at least one number.";
-    } elseif ($_POST["password"] !== $_POST["confirm_password"]) {
-        $error = "Passwords must match.";
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
+    $newPassword = $_POST['new_password'] ?? '';
+    $confirmPassword = $_POST['confirm_password'] ?? '';
+    
+    if (empty($newPassword) || empty($confirmPassword)) {
+        $passwordError = "Both password fields are required";
+    } elseif ($newPassword !== $confirmPassword) {
+        $passwordError = "Passwords do not match";
+    } elseif (strlen($newPassword) < 8) {
+        $passwordError = "Password must be at least 8 characters long";
+    } elseif (!preg_match("/[a-z]/", $newPassword)) {
+        $error_message = "Password must contain at least one lowercaseletter.";
+    }  elseif (!preg_match("/[A-Z]/", $newPassword)) {
+        $error_message = "Password must contain at least one uppercase letter.";
+    } elseif (!preg_match("/[0-9]/", $newPassword)) {
+        $error_message = "Password must contain at least one number.";
+    } elseif (!preg_match("/[\W_]/", $newPassword)) { // Must contain at least one special character
+        $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
     } else {
-        $password_hash = password_hash($_POST["password"], PASSWORD_DEFAULT);
-        $table = $user['type'];
-        $sql = "UPDATE $table SET password = ?, token_reset = NULL, token_expiry = NULL WHERE id = ?";
-        $stmt->close();
-        $stmt = $mysqli->prepare($sql);
-        $stmt->bind_param("si", $password_hash, $user["id"]);
-
-        if ($stmt->execute()) {
-            $successful = "Password updated. You can now login.";
+        // Hash the new password
+        $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
+        
+        // Determine which table to update based on stored role
+        $userId = $_SESSION['forgot_password_user']['id'];
+        $role = $_SESSION['forgot_password_user']['role'];
+        
+        $sql = $role === 'Staff' 
+            ? "UPDATE staff SET password = ? WHERE id = ?"
+            : "UPDATE admin SET password = ? WHERE id = ?";
+        
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "si", $hashedPassword, $userId);
+        
+        if (mysqli_stmt_execute($stmt)) {
+            // Clear sessions and redirect
+            unset($_SESSION['forgot_password_user']);
+            unset($_SESSION['can_reset_password']);
+            
+            $_SESSION['success_message'] = "Password successfully reset. Please log in.";
+            header("Location: index.php");
+            exit();
         } else {
-            $error = "Failed to update the password.";
+            $passwordError = "Error updating password. Please try again.";
         }
     }
-    $stmt->close();
-    $mysqli->close();
 }
 ?>
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Reset Password</title>
+</head>
+<body>
+    <h2>Reset Password</h2>
+    <?php if ($passwordError): ?>
+        <p style="color: red;"><?php echo $passwordError; ?></p>
+    <?php endif; ?>
+    
+    <form method="post" action="">
+        <label for="new_password">New Password:</label>
+        <input type="password" id="new_password" name="new_password" required>
+        
+        <label for="confirm_password">Confirm New Password:</label>
+        <input type="password" id="confirm_password" name="confirm_password" required>
+        
+        <input type="submit" name="reset_password" value="Reset Password">
+    </form>
+    
+    <p><a href="forgot-password.php">Back</a></p>
+
+    <script>
+    const inputIds = ['new_password', 'confirm_password'];
+        inputIds.forEach(id => {
+            const input = document.getElementById(id);
+            input.addEventListener('input', function() {
+                this.value = this.value.replace(/\s/g, ''); // Remove spaces
+            });
+        });
+    </script>
+</body>
+</html>

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Nov 30, 2024 at 09:30 AM
+-- Generation Time: Dec 07, 2024 at 03:39 PM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -31,17 +31,18 @@ CREATE TABLE `admin` (
   `id` int(11) NOT NULL,
   `fullname` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
-  `email` varchar(255) NOT NULL,
   `password` varchar(255) NOT NULL,
-  `accountStatus` varchar(100) NOT NULL
+  `accountStatus` varchar(100) NOT NULL,
+  `security_question` varchar(255) DEFAULT NULL,
+  `security_answer` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `admin`
 --
 
-INSERT INTO `admin` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`) VALUES
-(1, 'Michael Enoza', 'Tcao_admin', 'michael.enoza@citycollegeoftagaytay.edu.ph', '$2y$10$rPDLnwXL5pxk7Ac./Mnjru6CKppxF8EuDVe7H/J.TRDZbTzdWEnfu', 'Active');
+INSERT INTO `admin` (`id`, `fullname`, `username`, `password`, `accountStatus`, `security_question`, `security_answer`) VALUES
+(1, 'Michael Enoza', 'Tcao_admin', '$2y$10$hRHqHzHfoayaOHhz0FwLx.lawVAqWVbEmmrhegCQ5qrr4IYg7pCVe', 'Active', 'What was the name of your first school?', '$2y$10$1OLVL8HvR5G37A3yNGsJdumRpOAsgCoRlbAgGnmwUYprWM1TuzM3y');
 
 -- --------------------------------------------------------
 
@@ -1524,14 +1525,7 @@ INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_ad
 (1478, '12', NULL, 'St. Lukes', 'BOYET ZAIDE', NULL),
 (1479, '52', 'lawn lots', 'St. Paul', 'DORING T. GONZALES', ''),
 (1480, '14', 'Lawn Lots', 'St. Peter', 'ZENAIDA MEDINA', NULL),
-(1481, '161', 'Lawn Lots', 'St. Jude', 'ERFREN MENDOZA', NULL),
-(1482, '1', 'Lawn Lots', 'Apartment1', 'Michael Enoza', 'Tagaytay City'),
-(1483, '2', 'Lawn Lots', 'Apartment1', 'John David Pasion', 'Tagaytay City'),
-(1484, '1', 'Lawn Lots', 'Apartment2', 'Kyle Cyrus Ambat', 'Tagaytay CIty'),
-(1488, '1', 'Lawn Lots', 'Columbarium2', 'John Enoza', 'Tagaytay City'),
-(1497, '186', 'Lawn Lots', 'Columbarium2', 'Liam weird', 'Tagaytay City'),
-(1499, '144', 'Lawn Lots', 'Columbarium1', 'Jai Perena', ''),
-(1512, '45', 'Lawn Lots', 'Columbarium1', 'Malcolm Yabia', 'Tagaytay City');
+(1481, '161', 'Lawn Lots', 'St. Jude', 'ERFREN MENDOZA', NULL);
 
 -- --------------------------------------------------------
 
@@ -1556,7 +1550,10 @@ CREATE TABLE `record_logs` (
 INSERT INTO `record_logs` (`id`, `role`, `fullname`, `Lot_No`, `mem_sts`, `action`, `timestamp`) VALUES
 (35, 'Staff', 'Michael Enoza', '144', 'Columbarium1', 'updated', '2024-11-28 20:25:37'),
 (36, 'Staff', 'Michael Enoza', '186', 'Columbarium2', 'updated', '2024-11-28 20:26:02'),
-(37, 'Admin', 'Michael Enoza', '45', 'Columbarium1', 'created', '2024-11-30 15:33:28');
+(37, 'Admin', 'Michael Enoza', '45', 'Columbarium1', 'created', '2024-11-30 15:33:28'),
+(38, 'Admin', 'Michael Enoza', '28', 'Columbarium1', 'created', '2024-12-07 10:00:07'),
+(39, 'Admin', 'Michael Enoza', '29', 'Columbarium1', 'created', '2024-12-07 10:02:15'),
+(40, 'Admin', 'Michael Enoza', '40', 'Columbarium1', 'created', '2024-12-07 10:56:23');
 
 -- --------------------------------------------------------
 
@@ -1568,20 +1565,19 @@ CREATE TABLE `staff` (
   `id` int(11) NOT NULL,
   `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `username` varchar(100) NOT NULL,
-  `email` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
-  `accountStatus` varchar(100) NOT NULL
+  `accountStatus` varchar(100) NOT NULL,
+  `security_question` varchar(255) DEFAULT NULL,
+  `security_answer` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `staff`
 --
 
-INSERT INTO `staff` (`id`, `fullname`, `username`, `email`, `password`, `accountStatus`) VALUES
-(52, 'Michael Enoza', 'Enoza1121', 'enozamichael12@gmail.com', '$2y$10$MPYI/MKZurigm68j5Xi1h.5xxSe5bxY0J0Hi0pqf./8fOIjqlV3aO', 'Active'),
-(53, 'John D. Enoza', 'John12', 'enozajohn26@gmail.com', '$2y$10$.73crU8q4mvYdVikM/MDZ.vxJRnlgwiBiTTcC3ur9pwOZu/EoLVbO', 'Active'),
-(54, 'John David Pasion', 'david12', 'johndavidpasion@gmail.com', '$2y$10$b2YRzw3lbv9FDe8HjiHyX.7eFVFZmzEjmLC1H89PFfLlXGmI27IUe', 'Inactive'),
-(58, 'Malcolm Yabia', 'yabia12', 'malcolmyabia@gmail.com', '$2y$10$lnNF3I9COPbCa0M1qzBUkOKJL9QYjXMlwh3HF33xWg5MpW/U/Mb5e', 'Active');
+INSERT INTO `staff` (`id`, `fullname`, `username`, `password`, `accountStatus`, `security_question`, `security_answer`) VALUES
+(60, 'Michael D. Enoza', 'Enoza1121', '$2y$10$MTBYfpkAyFcJPUtlTaAbne.1k.J9rcxiYq6wjenaveuPgM3Y7eyF.', 'Active', 'In what city were you born?', '$2y$10$NQy4VgCd7bH3FAQYICgetOV4kbYY./uePz85BAjrc7dTzYpO7SMf.'),
+(61, 'John D. Enoza', 'John1121', '$2y$10$DsZ5TrTpbPqEFFNVE6Q/h.dFBmU6RDGbfazfmEdJjeDzQJu2bSW4m', 'Active', 'What was the name of your first pet?', '$2y$10$3CVAoy0NyHD7iq7Eh3E./O5i6n3wN3KBxxNz1lQWtJ3RarnilwI5.');
 
 --
 -- Indexes for dumped tables
@@ -1591,8 +1587,7 @@ INSERT INTO `staff` (`id`, `fullname`, `username`, `email`, `password`, `account
 -- Indexes for table `admin`
 --
 ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `records`
@@ -1610,8 +1605,7 @@ ALTER TABLE `record_logs`
 -- Indexes for table `staff`
 --
 ALTER TABLE `staff`
-  ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `email` (`email`);
+  ADD PRIMARY KEY (`id`);
 
 --
 -- AUTO_INCREMENT for dumped tables
@@ -1627,19 +1621,19 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT for table `records`
 --
 ALTER TABLE `records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1513;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1516;
 
 --
 -- AUTO_INCREMENT for table `record_logs`
 --
 ALTER TABLE `record_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
 
 --
 -- AUTO_INCREMENT for table `staff`
 --
 ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=59;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
