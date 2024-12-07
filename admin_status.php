@@ -197,47 +197,67 @@ function showNotification(message) {
     const style = document.createElement('style');
     style.textContent = `
         .notification-popup {
-            font-size: 27px;
+            font-size: 25px;
             align-items: center;
             position: fixed;
             top: 40%;
             right: 40%;
             background: white;
-            color: black;
-            padding: 45px;
+            color: #333;
+            border: 1px solid black;
+            padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
             opacity: 0;
-            transition: opacity 0.3s ease, transform 0.3s ease;
-            z-index: 100000;
-        }
+            z-index: 100000;           
+              animation: shake 0.3s ease-out; /* Apply the shake animation */
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-20px);
+  }
+  50% {
+    transform: translateX(20px);
+  }
+  75% {
+    transform: translateX(-20px);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+             .notification-popup p{
+            text-align:center;
+            font-size:15px;
+
+            }
         .notification-popup.visible {
             opacity: 1;
             transform: translateY(0);
-            
         }
-        .notification-popup button {
-            margin-left:90px;
-            margin-top: 30px;
-            padding: 10px 20px;
-            background: green;
-            border: none;
-            border-radius: 5px;
-            color: #fff;
-            cursor: pointer;
-        }
-        .notification-popup button:hover {
-            background: #029902;
+       
+        .warning-icon{
+        align-items: center;
+        margin-left:36%;
+        fill:red;
+        font-size: 50px;
         }
     `;
     document.head.appendChild(style);
+    
 
     // Create notification element
     const notification = document.createElement('div');
     notification.className = 'notification-popup';
     notification.innerHTML = `
+        <span class="warning-icon">⚠️</span>
         <div>${message}</div>
-        <button onclick="this.parentElement.remove()">Confirm</button>
+        <p>maximum 3 accounts</p>
+        
     `;
 
     document.body.appendChild(notification);
@@ -250,8 +270,8 @@ function showNotification(message) {
     // Automatically remove after 5 seconds
     setTimeout(() => {
         notification.classList.remove('visible');
-        setTimeout(() => notification.remove(), 300);
-    }, 5000);
+        setTimeout(() => notification.remove(), 100);
+    }, 2200);
 }
 
 // Anti-zoom functionality

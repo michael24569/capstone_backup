@@ -811,6 +811,29 @@ z-index: 10;
 
 
 }
+.Dominic::after {
+  font-size:13px;
+  content: "304 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Dominic:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
 .Dominic:hover{
   font-size: 17px;
 
@@ -833,6 +856,29 @@ z-index: 10;
   left: 50.2%;
   transition:  0.1s ease-in;
   
+}
+.Rafael::after {
+  font-size:13px;
+  content: "58 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Rafael:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 .Rafael:hover{
   background-color: #151716a2;
@@ -858,6 +904,29 @@ z-index: 10;
   left: 50.2%;
   transition:  0.1s ease-in;
 }
+.Peter::after {
+  font-size:13px;
+  content: "71 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Peter:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
 .Peter:hover{
   font-size: 17px;
 
@@ -879,6 +948,29 @@ z-index: 10;
   top: 56%; 
   left: 50.2%;
   transition:  0.1s ease-in;
+}
+.Paul::after {
+  font-size:13px;
+  content: "71 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Paul:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 .Paul:hover{
   font-size: 17px;
@@ -903,6 +995,29 @@ z-index: 10;
   transition:  0.1s ease-in;
 
 }
+.Jude::after {
+  font-size:13px;
+  content: "180 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Jude:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
 .Jude:hover{
     font-size: 17px;
 
@@ -911,6 +1026,7 @@ z-index: 10;
   
 }
 .John {
+  
   font-size: 25px;
 
   color: white;
@@ -925,6 +1041,29 @@ z-index: 10;
   left: 57.5%;
   transition:  0.1s ease-in;
 
+}
+.John::after {
+  font-size:13px;
+  content: "135 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.John:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 
 .John:hover{
@@ -950,6 +1089,29 @@ z-index: 10;
   transition:  0.1s ease-in;
 
 }
+.Joseph::after {
+  font-size:13px;
+  content: "173 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Joseph:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
 .Joseph:hover{
   font-size: 17px;
 
@@ -973,6 +1135,29 @@ z-index: 10;
   left: 74%;
   transition:  0.1s ease-in;
 
+}
+.James::after {
+  font-size:13px;
+  content: "273 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.James:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 .James:hover{
   font-size: 17px;
@@ -998,7 +1183,29 @@ z-index: 10;
   transition:  0.1s ease-in;
 
 }
+.Agustine::after {
+  font-size:13px;
+  content: "149 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
 
+.Agustine:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
 
 .Agustine:hover{
   font-size: 17px;
@@ -1021,6 +1228,29 @@ z-index: 10;
   top: 60%; 
   left: 72%;
   transition:  0.1s ease-in;
+}
+.Isidore::after {
+  font-size:13px;
+  content: "19 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Isidore:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 
 .Isidore:hover { 
@@ -1046,6 +1276,29 @@ z-index: 10;
   transition:  0.1s ease-in;
 
 }
+.Matthew::after {
+  font-size:13px;
+  content: "8 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Matthew:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
 .Matthew:hover{
   font-size: 15px;
 
@@ -1069,6 +1322,29 @@ z-index: 10;
   left: 53%;
   transition:  0.1s ease-in;
 
+}
+.Mark::after {
+  font-size:13px;
+  content: "7 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Mark:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 .Mark:hover{
   font-size: 17px;
@@ -1094,6 +1370,29 @@ z-index: 10;
   transition:  0.1s ease-in;
 
 }
+.Luke::after {
+  font-size:13px;
+  content: "11 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Luke:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
 .Luke:hover{
   font-size: 17px;
 
@@ -1116,6 +1415,29 @@ z-index: 10;
   left: 50%;
   transition:  0.1s ease-in;
 
+}
+.Michael::after {
+  font-size:13px;
+  content: "12 lots"; /* Tooltip text here */
+  visibility: hidden;
+  opacity: 0;
+  width: 65px;
+  background-color: #ffffffde;
+  color: black;
+  text-align: center;
+  border-radius: 5px;
+  padding: 5px;
+  position: absolute;
+  top: 100%; /* Position below the element */
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1;
+  transition: opacity .5s ease-in-out;
+}
+
+.Michael:hover::after {
+  visibility: visible;
+  opacity: 1;
 }
 .Michael:hover{
   font-size: 17px;
@@ -2190,7 +2512,7 @@ z-index: 10;
     padding: 5px 0; /
   }
   100% {
-    width: 336px; 
+    width: 395px; 
     opacity: 1; 
     padding: 5px 10px;
   }
@@ -2224,20 +2546,21 @@ z-index: 10;
   
   font-size: 20px;
   font-weight: bold;
-  margin-right: 60px;
-  margin-left: 20px;
+  margin-right: 50px;
+  margin-left: 10px;
   text-align: center;
 }
 
 .legendList {
+  text-align: center;
   font-size: 15.5px;
   display: flex;
   align-items: center;
-  margin-right:40px;
+  margin-right:20px;
 }
 
 .legendU {
-  width:20px;
+  width:15px;
   height: 15px;
   border-radius: 50%;
   margin-left: -10px; 
@@ -2245,12 +2568,13 @@ z-index: 10;
 
 .Available {
   background-color: green;
-  
+  margin:5px;
   
 }
 
 .Unavailable {
   background-color: blue;
+  margin:5px;
   
 }
 

@@ -79,13 +79,13 @@
     outline: none;
     border: none;
     width: 100%;
-    background-color: rgb(125, 125, 235);
+    background-color: #033512;
     color: white;
     cursor: pointer;
     transition: 0.9s;
   }
   .btn:hover{
-    background: #07001f;
+    background: #021d0a;
   }
   .links{
     display: flex;
