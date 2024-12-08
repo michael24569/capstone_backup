@@ -134,6 +134,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         .form-control {
+            border: 1px solid black;
             width: 100%;
             max-width: 100%;
             overflow: hidden;
