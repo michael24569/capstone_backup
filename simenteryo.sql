@@ -1,1641 +1,1725 @@
--- phpMyAdmin SQL Dump
--- version 5.2.1
--- https://www.phpmyadmin.net/
---
--- Host: 127.0.0.1
--- Generation Time: Dec 07, 2024 at 03:39 PM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.2.4
 
-SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-START TRANSACTION;
-SET time_zone = "+00:00";
-
-
-/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
-/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
-/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
-/*!40101 SET NAMES utf8mb4 */;
-
---
--- Database: `simenteryo`
---
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
 
 CREATE TABLE `admin` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(255) NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) NOT NULL,
   `accountStatus` varchar(100) NOT NULL,
   `security_question` varchar(255) DEFAULT NULL,
-  `security_answer` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `security_answer` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `admin`
---
+INSERT INTO admin VALUES("1","Michael Enoza","Tcao_admin","$2y$10$hRHqHzHfoayaOHhz0FwLx.lawVAqWVbEmmrhegCQ5qrr4IYg7pCVe","Active","What was the name of your first school?","$2y$10$1OLVL8HvR5G37A3yNGsJdumRpOAsgCoRlbAgGnmwUYprWM1TuzM3y");
 
-INSERT INTO `admin` (`id`, `fullname`, `username`, `password`, `accountStatus`, `security_question`, `security_answer`) VALUES
-(1, 'Michael Enoza', 'Tcao_admin', '$2y$10$hRHqHzHfoayaOHhz0FwLx.lawVAqWVbEmmrhegCQ5qrr4IYg7pCVe', 'Active', 'What was the name of your first school?', '$2y$10$1OLVL8HvR5G37A3yNGsJdumRpOAsgCoRlbAgGnmwUYprWM1TuzM3y');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `records`
---
-
-CREATE TABLE `records` (
-  `id` int(11) NOT NULL,
-  `Lot_No` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `mem_lots` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `mem_sts` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `LO_name` varchar(61) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
-  `mem_address` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
-
---
--- Dumping data for table `records`
---
-
-INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_address`) VALUES
-(1, '1', 'Family Estate', 'St. Michael', 'c/o MAYOR FRANCIS TOLENTINO', 'TAGAYTAY CITY'),
-(2, '2', 'Family Estate', 'St. Michael', 'c/o MAYOR FRANCIS TOLENTINO', 'TAGAYTAY CITY'),
-(3, '3', 'Family Estate', 'St. Michael', 'c/o MAYOR FRANCIS TOLENTINO', NULL),
-(4, '4', 'Family Estate', 'St. Michael', 'c/o MAYOR FRANCIS TOLENTINO', NULL),
-(5, '5', 'Family Estate', 'St. Michael', 'c/o MAYOR FRANCIS TOLENTINO', NULL),
-(6, '6', 'Family Estate', 'St. Michael', 'c/o MAYOR FRANCIS TOLENTINO', NULL),
-(7, '1', 'Family Estate', 'St. Patrick', 'ENGR. GREGORIO MONREAL', NULL),
-(8, '2', 'Family Estate', 'St. Patrick', 'NORBERTO SAN MATEO', NULL),
-(9, '5', 'Family Estate', 'St. Patrick', 'NORBERTO SAN MATEO', NULL),
-(10, '6', 'Family Estate', 'St. Patrick', 'TOMAS ONATE TOLENTINO', NULL),
-(11, '1', 'Family Estate', 'St. Mark', 'FELY MALABANAN', NULL),
-(12, '2', 'Family Estate', 'St. Mark', 'MANIA DORO', NULL),
-(13, '3', 'Family Estate', 'St. Mark', 'SIMON CONTRERAS c/o ALEXANDER CONTRERAS', NULL),
-(14, '4', 'Family Estate', 'St. Mark', 'VIRGILIO AMBION', NULL),
-(15, '5', 'Family Estate', 'St. Mark', 'BAURILE c/o VIRGILIO AMBION', NULL),
-(16, '6', 'Family Estate', 'St. Mark', 'RAFAEL ESTRADA', NULL),
-(17, '7', 'Family Estate', 'St. Mark', 'CELSO DE CASTRO', NULL),
-(18, '1', 'Family Estate', 'St. Lukes', 'c/o PLACIDA POBLETE DE GRANO', NULL),
-(19, '2', 'Family Estate', 'St. Lukes', 'MA.GRACE SULIT + ( CARMEN SULIT )', NULL),
-(20, '3', 'Family Estate', 'St. Lukes', 'ROBENTA SANGALANG c/o CECILIA BAYAS', NULL),
-(21, '4', 'Family Estate', 'St. Lukes', 'AMPARO VERGARA', NULL),
-(22, '5', 'Family Estate', 'St. Lukes', 'ROSEMARIE LERIO', NULL),
-(23, '6', 'Family Estate', 'St. Lukes', 'DAMASO, MALABANAN', NULL),
-(24, '7', 'Family Estate', 'St. Lukes', 'BALBINO DAMASO c/o DAMASO MALABANAN', NULL),
-(25, '8', 'Family Estate', 'St. Lukes', 'QUADALUPE MALABANAN', NULL),
-(26, '9', 'Family Estate', 'St. Lukes', 'JOSEFINA SUSA c/o NANETTE SUSA', NULL),
-(27, '10', 'Family Estate', 'St. Lukes', 'RUPERTO B. PANGILINAN', NULL),
-(28, '11', 'Family Estate', 'St. Lukes', 'ESTRELLA MURRAY', 'Southridge Su'),
-(29, '1', 'Garden Lots', 'St. Matthew', 'AVELINO SUMAGUI', NULL),
-(30, '2', 'Garden Lots', 'St. Matthew', 'DEMETRIO BALICA c/o CARMELITA LAUREL', 'Dapdap West'),
-(31, '3', 'Garden Lots', 'St. Matthew', 'FORTUNATO DE LEON c/o (ATE TESSIE CARAAN)', NULL),
-(32, '4', 'Garden Lots', 'St. Matthew', 'REPARATION SISTERS OF THE HOLY EUCHARIST', NULL),
-(33, '5', 'Garden Lots', 'St. Matthew', 'FLORENCIA ANGCAYA', NULL),
-(34, '6', 'Garden Lots', 'St. Matthew', 'ADELINA MIRANDA', NULL),
-(35, '7', 'Garden Lots', 'St. Matthew', 'YOLANDA BABIERA', 'Seiz de Junio'),
-(36, '8', 'Garden Lots', 'St. Matthew', 'BENITO MANALO / BAYOT c/o APOLONIA MANALO', 'Maitim'),
-(37, '1', 'Garden Lots', 'St. Isidore', 'MERLY LUNA c/o EFREN LUNA', NULL),
-(38, '2', 'Garden Lots', 'St. Isidore', 'TEODORO JAVIER', 'Talon Amadeo '),
-(39, '3', 'Garden Lots', 'St. Isidore', 'MANUEL DIGO c/o MANNY DIGO - CASTILLO\'S FAMILY', NULL),
-(40, '4', 'Garden Lots', 'St. Isidore', 'JUANA BAYOT', 'Kaybagal Nort'),
-(41, '5', 'Garden Lots', 'St. Isidore', 'CATALINA ANGCAYA c/o IDAD BURAZON', 'Kaybagal Nort'),
-(42, '6', 'Garden Lots', 'St. Isidore', '( ATTY.ISAGANI CORTEZ ) - Jennifer Bayot', 'Kaybagal'),
-(43, '7', 'Garden Lots', 'St. Isidore', 'CARLITO UMALI', NULL),
-(44, '8', 'Garden Lots', 'St. Isidore', 'LILIA ALVAREZ', NULL),
-(45, '9', 'Garden Lots', 'St. Isidore', 'LEOPOLDO UMALI c/o CARLITO UMALI', 'Francisco Tag'),
-(46, '10', 'Garden Lots', 'St. Isidore', 'ZOSIMO CONTRERAS c/o FRISCO AMBION', 'Francisco, Ta'),
-(47, '11', 'Garden Lots', 'St. Isidore', 'CESAR SEDUCON', NULL),
-(48, '12', 'Garden Lots', 'St. Isidore', 'ROSARIO LAGATA BY RODOLFO SANGCO & ROGER A. SANGCO', NULL),
-(49, '13', 'Garden Lots', 'St. Isidore', 'ROSARIO LAGATA BY RODOLFO SANGCO & ROGER A. SANGCO', NULL),
-(50, '14', 'Garden Lots', 'St. Isidore', 'JOVITA AMBAT MABUYO c/o MABUYO, REMY + MARCELINA H', NULL),
-(51, '15', 'Garden Lots', 'St. Isidore', 'MARIFE C. QUIAMBAO c/o NANDING ALVAREZ', NULL),
-(52, '16', 'Garden Lots', 'St. Isidore', 'FAYE AVILA c/o SAVINA AVILA', 'Kaybagal Cent'),
-(53, '17', 'Garden Lots', 'St. Isidore', 'GERRY RITZMANA c/o EMMA BATINO', 'Talon Amadeo '),
-(54, '18', 'Garden Lots', 'St. Isidore', 'CATALINA CARAAN - Paid by PRISCILA MAGCUYAO', NULL),
-(55, '19', 'Garden Lots', 'St. Isidore', 'CATALINA CARAAN', 'Brgy. Tolenti'),
-(56, '1', 'Lawn Lots', 'St. Rafael', 'AGRIFINA VILLANUEVA', NULL),
-(57, '2', 'Lawn Lots', 'St. Rafael', 'AGRIFINA VILLANUEVA', NULL),
-(58, '17', 'Lawn Lots', 'St. Rafael', 'AGRIFINA VILLANUEVA', NULL),
-(59, '18', 'Lawn Lots', 'St. Rafael', 'AGRIFINA VILLANUEVA', NULL),
-(60, '3', 'Lawn Lots', 'St. Rafael', 'ZENAIDA MARAAN', NULL),
-(61, '4', 'Lawn Lots', 'St. Rafael', 'ZENAIDA MARAAN', NULL),
-(62, '5', 'Lawn Lots', 'St. Rafael', 'ZENAIDA MARAAN', NULL),
-(63, '6', 'Lawn Lots', 'St. Rafael', 'ZENAIDA MARAAN', NULL),
-(64, '7', 'Lawn Lots', 'St. Rafael', 'DOMETRIO BARRIENTOS', NULL),
-(65, '8', 'Lawn Lots', 'St. Rafael', 'ABRAHAM PAUL B. SEPTIMO', NULL),
-(66, '9', 'Lawn Lots', 'St. Rafael', 'EDWITO CANGGAS', NULL),
-(67, '10', 'Lawn Lots', 'St. Rafael', 'HONORITO MESIONA', NULL),
-(68, '11', 'Lawn Lots', 'St. Rafael', 'ASUNCION P. OLAN', NULL),
-(69, '12', 'Lawn Lots', 'St. Rafael', 'ASUNCION P. OLAN', NULL),
-(70, '13', 'Lawn Lots', 'St. Rafael', 'ASUNCION P. OLAN', NULL),
-(71, '14', 'Lawn Lots', 'St. Rafael', 'ASUNCION P. OLAN', NULL),
-(72, '16', 'Lawn Lots', 'St. Rafael', 'HERMINIA BESA', NULL),
-(73, '18', 'Lawn Lots', 'St. Rafael', 'DOMINADOR PAGLIWANAN\r\nJESSIE PAGLIWANAN', NULL),
-(74, '19', 'Lawn Lots', 'St. Rafael', 'LAURO JAVIER\r\n', NULL),
-(75, '20', 'Lawn Lots', 'St. Rafael', 'RAFAEL G. ESCANILA\r\nANGEL ESCANILLA', NULL),
-(76, '21', 'Lawn Lots', 'St. Rafael', 'GERLISITA D. ONG ', NULL),
-(77, '22', 'Lawn Lots', 'St. Rafael', 'GERLISITA D. ONG ', NULL),
-(78, '23', 'Lawn Lots', 'St. Rafael', 'EULOGIA AMBION RAMOS', NULL),
-(79, '24', 'Lawn Lots', 'St. Rafael', 'JUANITO DEKDE', NULL),
-(80, '25', 'Lawn Lots', 'St. Rafael', 'COSME BATIBOT', NULL),
-(81, '26', 'Lawn Lots', 'St. Rafael', 'ISABELO M. UMALI', NULL),
-(82, '27', 'Lawn Lots', 'St. Rafael', 'JONATHAN CABESAS', NULL),
-(83, '28', 'Lawn Lots', 'St. Rafael', 'BENJAMIN ESTIGOY', NULL),
-(84, '29', 'Lawn Lots', 'St. Rafael', 'SUSAN PENALES', NULL),
-(85, '30', 'Lawn Lots', 'St. Rafael', 'SUSAN PENALES', NULL),
-(86, '31', 'Lawn Lots', 'St. Rafael', 'ROMY DIGO', NULL),
-(87, '32', 'Lawn Lots', 'St. Rafael', 'PUNONG MANGGA', NULL),
-(88, '33', 'Lawn Lots', 'St. Rafael', 'ROLANDO NIBAY', NULL),
-(89, '34', 'Lawn Lots', 'St. Rafael', 'ROLANDO NIBAY', NULL),
-(90, '35', 'Lawn Lots', 'St. Rafael', 'ISMERALDO DIGO', NULL),
-(91, '36', 'Lawn Lots', 'St. Rafael', 'SEGUNDA HERNANDEZ', NULL),
-(92, '37', 'Lawn Lots', 'St. Rafael', 'FELIX BUTARDO', NULL),
-(93, '38', 'Lawn Lots', 'St. Rafael', 'JIMMY TORRES', NULL),
-(94, '39', 'Lawn Lots', 'St. Rafael', 'JIMMY TORRES', NULL),
-(95, '40', 'Lawn Lots', 'St. Rafael', 'TERESITA V. CABRESA', NULL),
-(96, '41', 'Lawn Lots', 'St. Rafael', 'ARLENNIE D. MERCADO', NULL),
-(97, '42', 'Lawn Lots', 'St. Rafael', 'ELENA SEDA', NULL),
-(98, '43', 'Lawn Lots', 'St. Rafael', 'VICTOR RAMOS', NULL),
-(99, '44', 'Lawn Lots', 'St. Rafael', 'SIMPLICIO RAMOS', NULL),
-(100, '45', 'Lawn Lots', 'St. Rafael', 'LUCERA MOJICA', NULL),
-(101, '46', 'Lawn Lots', 'St. Rafael', 'JULIAN SANTIAGO', NULL),
-(102, '47', 'Lawn Lots', 'St. Rafael', 'EDGAR BRIONES', NULL),
-(103, '48', 'Lawn Lots', 'St. Rafael', 'LUCENA BAYOT ', NULL),
-(104, '49', 'Lawn Lots', 'St. Rafael', 'CARLOS D. SANTIAGO', NULL),
-(105, '50', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(106, '51', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(107, '52', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(108, '53', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(109, '54', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(110, '55', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(111, '56', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(112, '57', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(113, '58', 'Lawn Lots', 'St. Rafael', 'AVANO BARTOLOME', NULL),
-(114, '1', 'Lawn Lots', 'St. Peter', 'NELIA DE GUZMAN', NULL),
-(115, '2', 'Lawn Lots', 'St. Peter', 'NELIA DE GUZMAN', NULL),
-(116, '3', 'Lawn Lots', 'St. Peter', 'NELIA DE GUZMAN', NULL),
-(117, '4', 'Lawn Lots', 'St. Peter', 'NELIA DE GUZMAN', NULL),
-(118, '5', 'Lawn Lots', 'St. Peter', 'CARLITO CALANOG\r\nLYDIA GUTIERREZ', NULL),
-(119, '6', 'Lawn Lots', 'St. Peter', 'CARLITO CALANOG', NULL),
-(120, '7', 'Lawn Lots', 'St. Peter', 'EMILY VILLAMOR', NULL),
-(121, '8', 'Lawn Lots', 'St. Peter', 'MERMELITA ANGCAYA', NULL),
-(122, '9', 'Lawn Lots', 'St. Peter', 'ELEANOR POLINAR ', NULL),
-(123, '10', 'Lawn Lots', 'St. Peter', 'LEONYLA INGAN', NULL),
-(124, '11', 'Lawn Lots', 'St. Peter', 'ELIZABETH BAYOT', NULL),
-(125, '12', 'Lawn Lots', 'St. Peter', 'ELIZABETH BAYOT', NULL),
-(126, '13', 'Lawn Lots', 'St. Peter', 'ZENAIDA MEDINA', NULL),
-(127, '15', 'Lawn Lots', 'St. Peter', 'ELIZABETH BAYOT', NULL),
-(128, '16', 'Lawn Lots', 'St. Peter', 'ELIZABETH BAYOT', NULL),
-(129, '17', 'Lawn Lots', 'St. Peter', 'FELEUTAS BAYOT', NULL),
-(130, '18', 'Lawn Lots', 'St. Peter', 'FELEUTAS BAYOT', NULL),
-(131, '19', 'Lawn Lots', 'St. Peter', 'IRENEA PANGANIBAN', NULL),
-(132, '20', 'Lawn Lots', 'St. Peter', 'IRENEA PANGANIBAN', NULL),
-(133, '21', 'Lawn Lots', 'St. Peter', 'IRENEA PANGANIBAN', NULL),
-(134, '22', 'Lawn Lots', 'St. Peter', 'ROMULO ORTILLA\r\nLIZA DAPASEN', NULL),
-(135, '23', 'Lawn Lots', 'St. Peter', 'CONRADO PANGHULAN', NULL),
-(136, '24', 'Lawn Lots', 'St. Peter', 'PASTORA MAGABO', NULL),
-(137, '25', 'Lawn Lots', 'St. Peter', 'PASTORA MAGABO', NULL),
-(138, '26', 'Lawn Lots', 'St. Peter', 'ESTELITO SEDUCON', NULL),
-(139, '27', 'Lawn Lots', 'St. Peter', 'LYDIA GUTIERREZ', NULL),
-(140, '28', 'Lawn Lots', 'St. Peter', 'LYDIA GUTIERREZ', NULL),
-(141, '29', 'Lawn Lots', 'St. Peter', 'LYDIA GUTIERREZ', NULL),
-(142, '30', 'Lawn Lots', 'St. Peter', 'LYDIA GUTIERREZ', NULL),
-(143, '31', 'Lawn Lots', 'St. Peter', 'RUEL A. GUTIERREZ', NULL),
-(144, '32', 'Lawn Lots', 'St. Peter', 'ELENITA C DURTE', NULL),
-(145, '33', 'Lawn Lots', 'St. Peter', 'ELENITA C DURTE', NULL),
-(146, '34', 'Lawn Lots', 'St. Peter', 'ERLINDA M AMBION', NULL),
-(147, '35', 'Lawn Lots', 'St. Peter', 'RAMIL RODRIGUEZ ', NULL),
-(148, '36', 'Lawn Lots', 'St. Peter', 'SABAS AMBION', NULL),
-(149, '37', 'Lawn Lots', 'St. Peter', 'MACARIO BAYAD', NULL),
-(150, '38', 'Lawn Lots', 'St. Peter', 'ROSITA BAYAS', NULL),
-(151, '39', 'Lawn Lots', 'St. Peter', 'ANTERO BAYAS', NULL),
-(152, '40', 'Lawn Lots', 'St. Peter', 'CESARIO A. LINGAYONG', NULL),
-(153, '41', 'Lawn Lots', 'St. Peter', 'ANGIE O. ANTALLON', NULL),
-(154, '42', 'Lawn Lots', 'St. Peter', 'LEONA CARCOM', NULL),
-(155, '43', 'Lawn Lots', 'St. Peter', 'LORETA MAAYO', NULL),
-(156, '44', 'Lawn Lots', 'St. Peter', 'LORETA MAAYO', NULL),
-(157, '45', 'Lawn Lots', 'St. Peter', 'GEMENIANO GUTIERREZ', NULL),
-(158, '46', 'Lawn Lots', 'St. Peter', 'LOIDA A. GUTIERREZ', NULL),
-(159, '47', 'Lawn Lots', 'St. Peter', 'LENNIE G. CADAG', NULL),
-(160, '48', 'Lawn Lots', 'St. Peter', 'LENNIE G. CADAG', NULL),
-(161, '49', 'Lawn Lots', 'St. Peter', 'ARIAN MIRANDA', NULL),
-(162, '50', 'Lawn Lots', 'St. Peter', 'ANICETA MANAIG', NULL),
-(163, '51', 'Lawn Lots', 'St. Peter', 'OFELIA RABANO', NULL),
-(164, '52', 'Lawn Lots', 'St. Peter', 'SEGUNDA S. MIRANDA', NULL),
-(165, '53', 'Lawn Lots', 'St. Peter', 'OFELIA MIRANDA', NULL),
-(166, '54', 'Lawn Lots', 'St. Peter', 'ANDRES PAYAD', NULL),
-(167, '55', 'Lawn Lots', 'St. Peter', 'DOMINADOR BAYAS', NULL),
-(168, '56', 'Lawn Lots', 'St. Peter', 'MARIA BAYAS', NULL),
-(169, '57', 'Lawn Lots', 'St. Peter', 'MARILYN BAYAS', NULL),
-(170, '58', 'Lawn Lots', 'St. Peter', 'APOLLONIO BAYAS', NULL),
-(171, '59', 'Lawn Lots', 'St. Peter', 'ANAY', NULL),
-(172, '60', 'Lawn Lots', 'St. Peter', 'LAUREANO ANAY', NULL),
-(173, '61', 'Lawn Lots', 'St. Peter', 'BENECIA DIAZ OCHOA', NULL),
-(174, '62', 'Lawn Lots', 'St. Paul', 'AILLEEN CASTILLANO', NULL),
-(175, '63', 'Lawn Lots', 'St. Paul', 'AILLEEN CASTILLANO', NULL),
-(176, '64', 'Lawn Lots', 'St. Paul', 'AILLEEN CASTILLANO', NULL),
-(177, '65', 'Lawn Lots', 'St. Paul', 'MARY JEAN SAQUILAYAN', NULL),
-(178, '66', 'Lawn Lots', 'St. Paul', 'MARY JEAN SAQUILAYAN', NULL),
-(179, '67', 'Lawn Lots', 'St. Paul', 'MARY JEAN SAQUILAYAN', NULL),
-(180, '68', 'Lawn Lots', 'St. Peter', 'RELLEN GOSO', NULL),
-(181, '69', 'Lawn Lots', 'St. Peter', 'RELLEN GOSO', NULL),
-(182, '70', 'Lawn Lots', 'St. Peter', 'RELLEN GOSO', NULL),
-(183, '71', 'Lawn Lots', 'St. Peter', 'RELLEN GOSO', NULL),
-(184, '1', 'Lawn Lots', 'St. Paul', 'R', NULL),
-(185, '2', 'Lawn Lots', 'St. Paul', 'NEMENCIA AMBAT', NULL),
-(186, '3', 'Lawn Lots', 'St. Paul', 'VICENTE AMBAT', NULL),
-(187, '4', 'Lawn Lots', 'St. Paul', 'NIMENCIA S. VIVENCIO', NULL),
-(188, '5', 'Lawn Lots', 'St. Paul', 'CORNELIA CREUS', NULL),
-(189, '6', 'Lawn Lots', 'St. Paul', 'JUAN TERRIBLE', NULL),
-(190, '7', 'Lawn Lots', 'St. Paul', 'MAXIMO E. NOVENO', NULL),
-(191, '8', 'Lawn Lots', 'St. Paul', 'BENJAMIN CABAIS', NULL),
-(192, '9', 'Lawn Lots', 'St. Paul', 'REGALADO MANIMTIM', NULL),
-(193, '10', 'Lawn Lots', 'St. Paul', 'REGALADO MANIMTIM', NULL),
-(194, '11', 'Lawn Lots', 'St. Paul', 'EDELYN MANGCO', NULL),
-(195, '12', 'Lawn Lots', 'St. Paul', 'EDELYN MANGCO', NULL),
-(196, '13', 'Lawn Lots', 'St. Paul', 'EDELYN MANGCO', NULL),
-(197, '14', 'Lawn Lots', 'St. Paul', 'EDELYN MANGCO', NULL),
-(198, '15', 'Lawn Lots', 'St. Paul', 'ELIAS PAGLINAWAN', NULL),
-(199, '16', 'Lawn Lots', 'St. Paul', 'BENITO CARRERO', NULL),
-(200, '17', 'Lawn Lots', 'St. Paul', 'BENITO CARRERO', NULL),
-(201, '18', 'Lawn Lots', 'St. Paul', 'LUCAS MACE B. CHUA', NULL),
-(202, '19', 'Lawn Lots', 'St. Paul', 'RUEL CLEMENTE SR.', NULL),
-(203, '20', 'Lawn Lots', 'St. Paul', 'RUEL CLEMENTE SR.', NULL),
-(204, '21', 'Lawn Lots', 'St. Paul', 'RUEL CLEMENTE SR.', NULL),
-(205, '22', 'Lawn Lots', 'St. Paul', 'RUEL CLEMENTE SR.', NULL),
-(206, '23', 'Lawn Lots', 'St. Paul', 'NENEITA RUEZ MORANTE', NULL),
-(207, '24', 'Lawn Lots', 'St. Paul', 'NENEITA RUEZ MORANTE', NULL),
-(208, '25', 'Lawn Lots', 'St. Paul', 'NENEITA RUEZ MORANTE', NULL),
-(209, '26', 'Lawn Lots', 'St. Paul', 'NENEITA RUEZ MORANTE', NULL),
-(210, '27', 'Lawn Lots', 'St. Paul', 'NENEITA RUEZ MORANTE', NULL),
-(211, '28', 'Lawn Lots', 'St. Paul', 'AMELIA MANDERIN', NULL),
-(212, '29', 'Lawn Lots', 'St. Paul', 'AMELIA MANDERIN', NULL),
-(213, '30', 'Lawn Lots', 'St. Paul', 'AMELIA MANDERIN', NULL),
-(214, '31', 'Lawn Lots', 'St. Paul', 'EDGARDO PARRA', NULL),
-(215, '32', 'Lawn Lots', 'St. Paul', 'ANGELA ARIOLA', NULL),
-(216, '33', 'Lawn Lots', 'St. Paul', 'RONALD BAYBAY', NULL),
-(217, '34', 'Lawn Lots', 'St. Paul', 'VANGIE BAYLA', NULL),
-(218, '35', 'Lawn Lots', 'St. Paul', 'MELINDA PAJAWE', NULL),
-(219, '36', 'Lawn Lots', 'St. Paul', 'MAXIMINO MALABANAN', NULL),
-(220, '37', 'Lawn Lots', 'St. Paul', 'MAXIMINO MALABANAN', NULL),
-(221, '38', 'Lawn Lots', 'St. Paul', 'MAXIMINO MALABANAN', NULL),
-(222, '54', 'Lawn Lots', 'St. Paul', 'MAXIMINO MALABANAN', NULL),
-(223, '55', 'Lawn Lots', 'St. Paul', 'MAXIMINO MALABANAN', NULL),
-(224, '56', 'Lawn Lots', 'St. Paul', 'MAXIMINO MALABANAN', NULL),
-(225, '39', 'Lawn Lots', 'St. Paul', 'MARIEL CHRISTINE FETALINO', NULL),
-(226, '40', 'Lawn Lots', 'St. Paul', 'LEODIGARIO CARAAN', NULL),
-(227, '41', 'Lawn Lots', 'St. Paul', 'MACARIO PEJI', NULL),
-(228, '42', 'Lawn Lots', 'St. Paul', 'MACARIO PEJI', NULL),
-(229, '43', 'Lawn Lots', 'St. Paul', 'EVA VILLANUEVA', NULL),
-(230, '44', 'Lawn Lots', 'St. Paul', 'EVA VILLANUEVA', NULL),
-(231, '45', 'Lawn Lots', 'St. Paul', 'NENITA NOCEDAL', NULL),
-(232, '46', 'Lawn Lots', 'St. Paul', 'NERVILE VILLANUEVA', NULL),
-(233, '47', 'Lawn Lots', 'St. Paul', 'NERVILE VILLANUEVA', NULL),
-(234, '48', 'Lawn Lots', 'St. Paul', 'ROBERTO F. CANKY', NULL),
-(235, '49', 'Lawn Lots', 'St. Paul', 'ALFREDO IBAAN', NULL),
-(236, '50', 'Lawn Lots', 'St. Paul', 'CANUTO GONZALES', NULL),
-(237, '51', 'Lawn Lots', 'St. Paul', 'VIRGILIO GONZALES', NULL),
-(238, '52', 'Lawn Lots', 'St. Paul', 'DORING T. GONZALES ', NULL),
-(239, '53', 'Lawn Lots', 'St. Paul', 'DORING T. GONZALES', NULL),
-(240, '57', 'Lawn Lots', 'St. Paul', 'ZENAIDA GANUELAS', NULL),
-(241, '58', 'Lawn Lots', 'St. Paul', 'DONA JOSEF BENEDICT F. CARAAN', NULL),
-(242, '59', 'Lawn Lots', 'St. Paul', 'EVA VILLANUEVA', NULL),
-(243, '60', 'Lawn Lots', 'St. Paul', 'EVA JAVIER PEREY', NULL),
-(244, '61', 'Lawn Lots', 'St. Paul', 'NENITA NOCEDAL', NULL),
-(245, '62', 'Lawn Lots', 'St. Paul', 'NENITA NOCEDAL', NULL),
-(246, '63', 'Lawn Lots', 'St. Paul', 'ESTER VILLANUEVA', NULL),
-(247, '64', 'Lawn Lots', 'St. Paul', 'CLECOO BESA', NULL),
-(248, '65', 'Lawn Lots', 'St. Paul', 'PRISCILLA P. GEVADA', NULL),
-(249, '66', 'Lawn Lots', 'St. Paul', 'ROMEO BERNAE', NULL),
-(250, '67', 'Lawn Lots', 'St. Paul', 'CLAUDIO ARCEBUCHE', NULL),
-(251, '68', 'Lawn Lots', 'St. Paul', 'ZENAIDA T. ROSE', NULL),
-(252, '69', 'Lawn Lots', 'St. Paul', 'ROMULO R. LIBELO', NULL),
-(253, '70', 'Lawn Lots', 'St. Paul', 'ROBERTO PAGUYO', NULL),
-(254, '71', 'Lawn Lots', 'St. Paul', 'NOEL I. MENDOZA ', NULL),
-(255, '1', 'Lawn Lots', 'St. Augustin', 'BARTOLOME CATALOS', NULL),
-(256, '2', 'Lawn Lots', 'St. Augustin', 'BARTOLOME CATALOS', NULL),
-(257, '3', 'Lawn Lots', 'St. Augustin', 'BARTOLOME CATALOS', NULL),
-(258, '4', 'Lawn Lots', 'St. Augustin', 'BARTOLOME CATALOS', NULL),
-(259, '5', 'Lawn Lots', 'St. Augustin', 'ARMANDO BAYANI SR.', NULL),
-(260, '6', 'Lawn Lots', 'St. Augustin', 'FELICIDAD M. QUILAO', NULL),
-(261, '8', 'Lawn Lots', 'St. Augustin', 'CAMELA ABUEVA', NULL),
-(262, '9', 'Lawn Lots', 'St. Augustin', 'MARITESS AUSTRIA', NULL),
-(263, '10', 'Lawn Lots', 'St. Augustin', 'FLORIñA BAWAG DESIGAñO', NULL),
-(264, '11', 'Lawn Lots', 'St. Augustin', 'LAGASINO JESUS', NULL),
-(265, '12', 'Lawn Lots', 'St. Augustin', 'PASTOR LAUREL', NULL),
-(266, '13', 'Lawn Lots', 'St. Augustin', 'PASTOR LAUREL', NULL),
-(267, '28', 'Lawn Lots', 'St. Augustin', 'JUANA NATANAWAN', NULL),
-(268, '29', 'Lawn Lots', 'St. Augustin', 'LORETA ESPIRITU', NULL),
-(269, '30', 'Lawn Lots', 'St. Augustin', 'IRENE GUEVARRA', NULL),
-(270, '31', 'Lawn Lots', 'St. Augustin', 'IRENE GUEVARRA', NULL),
-(271, '32', 'Lawn Lots', 'St. Augustin', 'ANITA FERNANDEZ', NULL),
-(272, '33', 'Lawn Lots', 'St. Augustin', 'GALO BLACER\r\nALMA BLACER', NULL),
-(273, '34', 'Lawn Lots', 'St. Augustin', 'PASTOR LAUREL', NULL),
-(274, '35', 'Lawn Lots', 'St. Augustin', 'AQUILINO LAUREL', NULL),
-(275, '36', 'Lawn Lots', 'St. Augustin', 'RACHEL LAUREL JIMENEZ', NULL),
-(276, '37', 'Lawn Lots', 'St. Augustin', 'VICTORINA OLIMPIADA', NULL),
-(277, '38', 'Lawn Lots', 'St. Augustin', 'GREGORIO PAYAD', NULL),
-(278, '39', 'Lawn Lots', 'St. Augustin', 'HERNANI SANARES', NULL),
-(279, '40', 'Lawn Lots', 'St. Augustin', 'JULIET OLIMPADA', NULL),
-(280, '41', 'Lawn Lots', 'St. Augustin', 'RONEL NEPOMUCENO', NULL),
-(281, '42', 'Lawn Lots', 'St. Augustin', 'RONEL NEPOMUCENO', NULL),
-(282, '43', 'Lawn Lots', 'St. Augustin', 'HAZEL OLIMPIADA', NULL),
-(283, '44', 'Lawn Lots', 'St. Augustin', 'ISABELO SANGALANG', NULL),
-(284, '45', 'Lawn Lots', 'St. Augustin', 'CECILLA ANACAY ', NULL),
-(285, '46', 'Lawn Lots', 'St. Augustin', 'CECILLA ANACAY ', NULL),
-(286, '47', 'Lawn Lots', 'St. Augustin', 'BALERIANO ANGCAYA', NULL),
-(287, '48', 'Lawn Lots', 'St. Augustin', 'NELSON BAYOT', NULL),
-(288, '49', 'Lawn Lots', 'St. Augustin', 'NELSON BAYOT', NULL),
-(289, '50', 'Lawn Lots', 'St. Augustin', 'VICENTA M. PAYAD', NULL),
-(300, '51', 'Lawn Lots', 'St. Augustin', NULL, NULL),
-(301, '52', 'Lawn Lots', 'St. Augustin', 'RICARDO DOLLIENTE', NULL),
-(302, '53', 'Lawn Lots', 'St. Augustin', 'REMIECAR CABANILLA', NULL),
-(303, '54', 'Lawn Lots', 'St. Augustin', 'AMPARO VALENCIA', NULL),
-(304, '55', 'Lawn Lots', 'St. Augustin', 'JAIME AMBION', NULL),
-(305, '56', 'Lawn Lots', 'St. Augustin', 'REMIGIA T. CALINGASAN', NULL),
-(306, '57', 'Lawn Lots', 'St. Augustin', 'RUPERTO DE LEON\r\nLOURDES DE LEON', NULL),
-(307, '58', 'Lawn Lots', 'St. Augustin', 'MANY DIGO', NULL),
-(308, '59', 'Lawn Lots', 'St. Augustin', 'MANY DIGO', NULL),
-(309, '60', 'Lawn Lots', 'St. Augustin', 'JUANITA CASTRO', NULL),
-(310, '61', 'Lawn Lots', 'St. Augustin', 'MIGUEL BITUIN ', NULL),
-(311, '62', 'Lawn Lots', 'St. Augustin', 'LEONI DORIMON', NULL),
-(312, '63', 'Lawn Lots', 'St. Augustin', 'LORDWILL BAGTING', NULL),
-(313, '64', 'Lawn Lots', 'St. Augustin', 'LORDWILL BAGTING', NULL),
-(314, '65', 'Lawn Lots', 'St. Augustin', 'LORDWILL BAGTING', NULL),
-(315, '66', 'Lawn Lots', 'St. Augustin', 'ALPIE SANDOVAL', NULL),
-(316, '67', 'Lawn Lots', 'St. Augustin', 'BENITA SANDOVAL', NULL),
-(317, '68', 'Lawn Lots', 'St. Augustin', 'ANGKEL ANGCAYA', NULL),
-(318, '69', 'Lawn Lots', 'St. Augustin', 'CONCEPCION CAUSAREN', NULL),
-(319, '70', 'Lawn Lots', 'St. Augustin', 'RICARDO JUMANANG', NULL),
-(320, '71', 'Lawn Lots', 'St. Augustin', 'PEDRO DEGUZMAN', NULL),
-(321, '72', 'Lawn Lots', 'St. Augustin', 'ZOILO DE LA PEñA', NULL),
-(322, '73', 'Lawn Lots', 'St. Augustin', 'ZOILO DE LA PEñA', NULL),
-(323, '74', 'Lawn Lots', 'St. Augustin', 'ZOILO DE LA PEñA', NULL),
-(324, '75', 'Lawn Lots', 'St. Augustin', 'ZOILO DE LA PEñA', NULL),
-(325, '76', 'Lawn Lots', 'St. Augustin', NULL, NULL),
-(326, '77', 'Lawn Lots', 'St. Augustin', 'AUGUSTO MARASIGAN', NULL),
-(327, '78', 'Lawn Lots', 'St. Augustin', 'NORMA MARASIGAN', NULL),
-(328, '79', 'Lawn Lots', 'St. Augustin', 'MICHAEL ORTILLA', NULL),
-(329, '80', 'Lawn Lots', 'St. Augustin', 'GEOFFREY RAMOS', NULL),
-(330, '81', 'Lawn Lots', 'St. Augustin', 'NARCISO MANANSALA', NULL),
-(331, '82', 'Lawn Lots', 'St. Augustin', 'MA THERESA B. DE VERA', NULL),
-(332, '83', 'Lawn Lots', 'St. Augustin', 'MACARIA DE GUZMAN', NULL),
-(333, '84', 'Lawn Lots', 'St. Augustin', 'EDNA CANTAL', NULL),
-(334, '85', 'Lawn Lots', 'St. Augustin', 'FRANCISCO CASTILLO', NULL),
-(335, '86', 'Lawn Lots', 'St. Augustin', 'GORGONIO AREVALO', NULL),
-(336, '87', 'Lawn Lots', 'St. Augustin', 'ROLANDO PAYAS', NULL),
-(337, '88', 'Lawn Lots', 'St. Augustin', 'CRISPULO DE LEON', NULL),
-(338, '89', 'Lawn Lots', 'St. Augustin', 'FAUSTINO LAMBENTE\r\nJOSEFINA BRUNO', NULL),
-(339, '90', 'Lawn Lots', 'St. Augustin', 'JOSEFINA SANICO', NULL),
-(340, '91', 'Lawn Lots', 'St. Augustin', 'ALICIO FERNANDO', NULL),
-(341, '92', 'Lawn Lots', 'St. Augustin', 'ALICIO FERNANDO', NULL),
-(342, '93', 'Lawn Lots', 'St. Augustin', 'ALICIO FERNANDO', NULL),
-(343, '94', 'Lawn Lots', 'St. Augustin', 'EDILBERTA ABALOS', NULL),
-(344, '95', 'Lawn Lots', 'St. Augustin', 'MAMBERTO DESINGAñO', NULL),
-(345, '96', 'Lawn Lots', 'St. Augustin', 'ELSA REYES', NULL),
-(346, '97', 'Lawn Lots', 'St. Augustin', 'AMELIA GARCIA', NULL),
-(347, '98', 'Lawn Lots', 'St. Augustin', 'CLINTON LILANG', NULL),
-(348, '99', 'Lawn Lots', 'St. Augustin', 'MARITES AUSTRIA', NULL),
-(349, '100', 'Lawn Lots', 'St. Augustin', 'ROCELYN CARDINO', NULL),
-(350, '101', 'Lawn Lots', 'St. Augustin', 'MELCHOR MORILO\r\nGLORIA MORILO', NULL),
-(351, '102', 'Lawn Lots', 'St. Augustin', 'MELCHOR MORILO\r\nGLORIA MORILO', NULL),
-(352, '103', 'Lawn Lots', 'St. Augustin', 'MELCHOR MORILO\r\nGLORIA MORILO', NULL),
-(353, '104', 'Lawn Lots', 'St. Augustin', 'MELCHOR MORILO\r\nGLORIA MORILO', NULL),
-(354, '105', 'Lawn Lots', 'St. Augustin', 'AZUCENA D. ROCERO', NULL),
-(355, '106', 'Lawn Lots', 'St. Augustin', 'TERESITA SANARES', NULL),
-(356, '107', 'Lawn Lots', 'St. Augustin', 'TERESITA SANARES', NULL),
-(357, '108', 'Lawn Lots', 'St. Augustin', 'TEOFISTA A. JAVIER', NULL),
-(358, '109', 'Lawn Lots', 'St. Augustin', 'RODYEL NHICO VERGARA', NULL),
-(359, '110', 'Lawn Lots', 'St. Augustin', NULL, NULL),
-(360, '111', 'Lawn Lots', 'St. Augustin', 'JESUS LAGAJINO', NULL),
-(361, '112', 'Lawn Lots', 'St. Augustin', 'OFELIA C. LUMOD', NULL),
-(362, '113', 'Lawn Lots', 'St. Augustin', 'AMELIA GARCIA', NULL),
-(363, '114', 'Lawn Lots', 'St. Augustin', 'AMELIA GARCIA', NULL),
-(364, '115', 'Lawn Lots', 'St. Augustin', 'AMELIA GARCIA', NULL),
-(365, '116', 'Lawn Lots', 'St. Augustin', 'AMELIA GARCIA', NULL),
-(366, '117', 'Lawn Lots', 'St. Augustin', 'AMELIA GARCIA', NULL),
-(367, '124', 'Lawn Lots', 'St. Augustin', 'SHELLA B. LIMBO', NULL),
-(368, '125', 'Lawn Lots', 'St. Augustin', NULL, NULL),
-(369, '126', 'Lawn Lots', 'St. Augustin', 'ROSA MENDOZA', NULL),
-(370, '127', 'Lawn Lots', 'St. Augustin', 'MARILAN PASCUAL', NULL),
-(371, '128', 'Lawn Lots', 'St. Augustin', 'REBECCA ALDA', NULL),
-(372, '128', 'Lawn Lots', 'St. Augustin', 'REBECCA ALDA', NULL),
-(373, '129', 'Lawn Lots', 'St. Augustin', 'REBECCA ALDA', NULL),
-(374, '130', 'Lawn Lots', 'St. Augustin', 'JOSE MARASIGAN', NULL),
-(375, '131', 'Lawn Lots', 'St. Augustin', 'RICARDO ZALDE', NULL),
-(376, '132', 'Lawn Lots', 'St. Augustin', 'JUANITO PALO', NULL),
-(377, '133', 'Lawn Lots', 'St. Augustin', 'JUANITO PALO', NULL),
-(378, '134', 'Lawn Lots', 'St. Augustin', 'ROGELIO JAVIER', NULL),
-(379, '135', 'Lawn Lots', 'St. Augustin', 'EDILBERTO JAVIER', NULL),
-(380, '136', 'Lawn Lots', 'St. Augustin', 'KAPT. AYBROCIO LUNA', NULL),
-(381, '137', 'Lawn Lots', 'St. Augustin', 'ROMEO VILLANUEVA', NULL),
-(382, '138', 'Lawn Lots', 'St. Augustin', NULL, NULL),
-(383, '139', 'Lawn Lots', 'St. Augustin', NULL, NULL),
-(384, '140', 'Lawn Lots', 'St. Augustin', 'ELSA T. REYES', NULL),
-(385, '141', 'Lawn Lots', 'St. Augustin', 'ELSA T. REYES', NULL),
-(386, '142', 'Lawn Lots', 'St. Augustin', 'MA. NELIA', NULL),
-(387, '143', 'Lawn Lots', 'St. Augustin', 'ADELA M. MEDINA\r\nDERINDA AMBION', NULL),
-(388, '144', 'Lawn Lots', 'St. Augustin', 'MA. LOPAZ ANGCAYA', NULL),
-(389, '145', 'Lawn Lots', 'St. Augustin', 'NEIST AMBION', NULL),
-(390, '146', 'Lawn Lots', 'St. Augustin', 'ARTEMIO GUZMAN\r\nTEODORA GUAMAN', NULL),
-(391, '147', 'Lawn Lots', 'St. Augustin', 'ARTEMIO GUZMAN\r\nTEODORA GUAMAN', NULL),
-(392, '148', 'Lawn Lots', 'St. Augustin', 'ARTEMIO GUZMAN\r\nTEODORA GUAMAN', NULL),
-(393, '149', 'Lawn Lots', 'St. Augustin', 'ARTEMIO GUZMAN\r\nTEODORA GUAMAN', NULL),
-(394, '150', 'Lawn Lots', 'St. Augustin', 'MICAH ANDREA B. PALO\r\nRODEL PALO', NULL),
-(395, '151', 'Lawn Lots', 'St. Augustin', 'MICAH ANDREA B. PALO\r\nRODEL PALO', NULL),
-(396, '1', 'Lawn Lots', 'St. Joseph', 'BERNARDO CARAAN', NULL),
-(397, '2', 'Lawn Lots', 'St. Joseph', 'ELMER BETANZES', NULL),
-(398, '3', 'Lawn Lots', 'St. Joseph', 'FRANCISCA CARAAN', NULL),
-(399, '4', 'Lawn Lots', 'St. Joseph', 'ROGER P. SOCO', NULL),
-(400, '5', 'Lawn Lots', 'St. Joseph', 'NORMA BAYOT', NULL),
-(401, '6', 'Lawn Lots', 'St. Joseph', 'RICARDO N. RAMOS', NULL),
-(402, '15', 'Lawn Lots', 'St. Rafael', 'MARISSA MONTENEGRO', NULL),
-(403, '7', 'Lawn Lots', 'St. Joseph', 'RUBEN ORTILLA', NULL),
-(404, '8', 'Lawn Lots', 'St. Joseph', 'ARTEMIO C. BAYOT', NULL),
-(405, '9', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(406, '10', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(407, '11', 'Lawn Lots', 'St. Joseph', 'CRODERCIO AUSTRIA\r\nLEVEINO AUSTRIA', NULL),
-(408, '12', 'Lawn Lots', 'St. Joseph', 'EMETERIO A. AMBAT', NULL),
-(409, '13', 'Lawn Lots', 'St. Joseph', 'ERMA BAYTTON', NULL),
-(410, '14', 'Lawn Lots', 'St. Joseph', 'LAURO JAVIER\r\nIMELDA JAVIER', NULL),
-(411, '15', 'Lawn Lots', 'St. Joseph', 'LAURO JAVIER', NULL),
-(412, '16', 'Lawn Lots', 'St. Joseph', 'VICTORIA F. CAMBA', NULL),
-(413, '17', 'Lawn Lots', 'St. Joseph', 'VICTORIA F. CAMBA', NULL),
-(414, '18', 'Lawn Lots', 'St. Joseph', 'GRACE AMBAT', NULL),
-(415, '19', 'Lawn Lots', 'St. Joseph', 'LINDA AMBAT', NULL),
-(416, '20', 'Lawn Lots', 'St. Joseph', 'MAFE AMBAT', NULL),
-(417, '21', 'Lawn Lots', 'St. Joseph', 'MYRA AMBAT', NULL),
-(418, '22', 'Lawn Lots', 'St. Joseph', 'NIDA MORAL', NULL),
-(419, '23', 'Lawn Lots', 'St. Joseph', 'ROGELIO GONZALEZ', NULL),
-(420, '24', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(421, '25', 'Lawn Lots', 'St. Joseph', 'AMARIO CREUS', NULL),
-(422, '26', 'Lawn Lots', 'St. Joseph', 'AMARIO CREUS', NULL),
-(423, '27', 'Lawn Lots', 'St. Joseph', 'SONIA VERGARA', NULL),
-(424, '28', 'Lawn Lots', 'St. Joseph', 'SONIA VERGARA', NULL),
-(425, '29', 'Lawn Lots', 'St. Joseph', 'EDITHA VILLANUEVA', NULL),
-(426, '30', 'Lawn Lots', 'St. Joseph', 'CESAR MAGHIRANG', NULL),
-(427, '31', 'Lawn Lots', 'St. Joseph', 'CESAR MAGHIRANG', NULL),
-(428, '32', 'Lawn Lots', 'St. Joseph', 'SEVERA PEREZ TERRIBLE\r\nANNALYN K. ESPERITU', NULL),
-(429, '33', 'Lawn Lots', 'St. Joseph', 'DANILO LATOSA', NULL),
-(430, '34', 'Lawn Lots', 'St. Joseph', 'VICENTE PAYAD', NULL),
-(431, '35', 'Lawn Lots', 'St. Joseph', 'EUGERIA DE LOS SANTOS', NULL),
-(432, '36', 'Lawn Lots', 'St. Joseph', 'EUGERIA DE LOS SANTOS', NULL),
-(433, '37', 'Lawn Lots', 'St. Joseph', 'EUGERIA DE LOS SANTOS', NULL),
-(434, '38', 'Lawn Lots', 'St. Joseph', 'EUGERIA DE LOS SANTOS', NULL),
-(435, '39', 'Lawn Lots', 'St. Joseph', 'FRANKLYN MACASADYA', NULL),
-(436, '40', 'Lawn Lots', 'St. Joseph', 'CESAR DE CASTRO AGALA', NULL),
-(437, '41', 'Lawn Lots', 'St. Joseph', 'CARMELITA AGUILA', NULL),
-(438, '42', 'Lawn Lots', 'St. Joseph', 'SAEM KARL HEINZ AGUILA', NULL),
-(439, '43', 'Lawn Lots', 'St. Joseph', 'RODOLFO D. BURAZON', NULL),
-(440, '44', 'Lawn Lots', 'St. Joseph', 'JOEL BURAZON', NULL),
-(441, '45', 'Lawn Lots', 'St. Joseph', 'JIMMY M. PINAZO', NULL),
-(442, '46', 'Lawn Lots', 'St. Joseph', 'AURORA DULFDE', NULL),
-(443, '47', 'Lawn Lots', 'St. Joseph', 'JULIO ALBAY', NULL),
-(444, '48', 'Lawn Lots', 'St. Joseph', 'LUISITO BAYOT', NULL),
-(445, '49', 'Lawn Lots', 'St. Joseph', 'GEMMA PEJI', NULL),
-(446, '50', 'Lawn Lots', 'St. Joseph', 'BRENDA ARCANGEL', NULL),
-(447, '51', 'Lawn Lots', 'St. Joseph', 'BRENDA ARCANGEL', NULL),
-(448, '52', 'Lawn Lots', 'St. Joseph', 'BRENDA ARCANGEL', NULL),
-(449, '53', 'Lawn Lots', 'St. Joseph', 'SONIA VERGARA', NULL),
-(450, '54', 'Lawn Lots', 'St. Joseph', 'SONIA VERGARA', NULL),
-(451, '55', 'Lawn Lots', 'St. Joseph', 'NARCISA SAYSON', NULL),
-(452, '56', 'Lawn Lots', 'St. Joseph', 'HONORIO ROCHA', NULL),
-(453, '57', 'Lawn Lots', 'St. Joseph', 'MARIANO MENDOZA', NULL),
-(454, '58', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(455, '59', 'Lawn Lots', 'St. Joseph', 'MARIANO MENDOZA', NULL),
-(456, '60', 'Lawn Lots', 'St. Joseph', 'SHARON SOLIVEN', NULL),
-(457, '61', 'Lawn Lots', 'St. Joseph', 'ANNALIZA CALITIS', NULL),
-(458, '62', 'Lawn Lots', 'St. Joseph', 'ERMELINDA ANGELES', NULL),
-(459, '63', 'Lawn Lots', 'St. Joseph', 'ANGELITA NAVARIA', NULL),
-(460, '64', 'Lawn Lots', 'St. Joseph', 'NOEL MENDOZA', NULL),
-(461, '65', 'Lawn Lots', 'St. Joseph', 'EMMA GUMBA', NULL),
-(462, '66', 'Lawn Lots', 'St. Joseph', 'ELMER C. KALA', NULL),
-(463, '67', 'Lawn Lots', 'St. Joseph', 'EDWIN AMBION', NULL),
-(464, '68', 'Lawn Lots', 'St. Joseph', 'EDWIN AMBION', NULL),
-(465, '69', 'Lawn Lots', 'St. Joseph', 'ROBERTO NATANAWAN', NULL),
-(466, '70', 'Lawn Lots', 'St. Joseph', 'CHRISTIAN BERNARD DIAZ', NULL),
-(467, '71', 'Lawn Lots', 'St. Joseph', 'LEONCIA A. SANGALANG', NULL),
-(468, '72', 'Lawn Lots', 'St. Joseph', 'NENITA ESTARES\r\n', NULL),
-(469, '73', 'Lawn Lots', 'St. Joseph', 'NERISSA MAGNAYE', NULL),
-(470, '74', 'Lawn Lots', 'St. Joseph', 'ANTONIO CEDENIO', NULL),
-(471, '75', 'Lawn Lots', 'St. Joseph', 'LUIS CLEOFE', NULL),
-(472, '76', 'Lawn Lots', 'St. Joseph', 'SONNY C. DOMATO', NULL),
-(473, '77', 'Lawn Lots', 'St. Joseph', 'SONNY C. DOMATO', NULL),
-(474, '78', 'Lawn Lots', 'St. Joseph', 'SONNY C. DOMATO', NULL),
-(475, '79', 'Lawn Lots', 'St. Joseph', 'FRANCISCO ANGCAYA', NULL),
-(476, '80', 'Lawn Lots', 'St. Joseph', 'SHIRLEY ANGCAYA', NULL),
-(477, '81', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(478, '82', 'Lawn Lots', 'St. Joseph', 'NIMFA \r\nECHIE', NULL),
-(479, '83', 'Lawn Lots', 'St. Joseph', 'NIMFA \r\nECHIE', NULL),
-(480, '84', 'Lawn Lots', 'St. Joseph', 'NIMFA \r\nECHIE', NULL),
-(481, '85', 'Lawn Lots', 'St. Joseph', 'NIMFA \r\nECHIE', NULL),
-(482, '86', 'Lawn Lots', 'St. Joseph', 'NIMFA \r\nECHIE', NULL),
-(483, '87', 'Lawn Lots', 'St. Joseph', 'JUANA CORTEZ ANGCAYA', NULL),
-(484, '88', 'Lawn Lots', 'St. Joseph', 'JUANA CORTEZ ANGCAYA', NULL),
-(485, '89', 'Lawn Lots', 'St. Joseph', 'LAUREANO DELOS SANTOS', NULL),
-(486, '90', 'Lawn Lots', 'St. Joseph', 'WILSON DELOS SANTOS', NULL),
-(487, '91', 'Lawn Lots', 'St. Joseph', 'VICTORIANO DELOS SANTOS', NULL),
-(488, '92', 'Lawn Lots', 'St. Joseph', 'YOLANDA A. SALTING', NULL),
-(489, '93', 'Lawn Lots', 'St. Joseph', 'RAQUEL ROWENA A. RODRIGUEZ', NULL),
-(490, '94', 'Lawn Lots', 'St. Joseph', 'RAQUEL ROWENA A. RODRIGUEZ', NULL),
-(491, '95', 'Lawn Lots', 'St. Joseph', 'PEDRITO OLLER', NULL),
-(492, '96', 'Lawn Lots', 'St. Joseph', 'MARY-JANE ATEMAS', NULL),
-(493, '97', 'Lawn Lots', 'St. Joseph', 'ERNESTO S. RAYMUNDO', NULL),
-(494, '98', 'Lawn Lots', 'St. Joseph', 'RAQUEL BATUTAY', NULL),
-(495, '99', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(496, '100', 'Lawn Lots', 'St. Joseph', 'IMELDA NATUEL MANIMTIM', NULL),
-(497, '101', 'Lawn Lots', 'St. Joseph', 'ARTEMIO NATUEL', NULL),
-(498, '102', 'Lawn Lots', 'St. Joseph', 'ATE NEL', NULL),
-(499, '103', 'Lawn Lots', 'St. Joseph', 'ATE NEL', NULL),
-(500, '104', 'Lawn Lots', 'St. Joseph', 'LINDA', NULL),
-(501, '105', 'Lawn Lots', 'St. Joseph', 'AZUCENA ROCERO', NULL),
-(502, '106', 'Lawn Lots', 'St. Joseph', 'LIEZL', NULL),
-(503, '107', 'Lawn Lots', 'St. Joseph', 'MARIA LUISA FELLO', NULL),
-(504, '108', 'Lawn Lots', 'St. Joseph', 'TEOFISTA A. JAVIER\r\nTERESITA V. VERGARA', NULL),
-(505, '109', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(506, '110', 'Lawn Lots', 'St. Joseph', 'CAROLYN PENAFUERTE', NULL),
-(507, '111', 'Lawn Lots', 'St. Joseph', 'LILIA VIDAL BAYOT', NULL),
-(508, '112', 'Lawn Lots', 'St. Joseph', 'ARSENIA PATIñO', NULL),
-(509, '113', 'Lawn Lots', 'St. Joseph', 'NAOME JAVIER', NULL),
-(510, '114', 'Lawn Lots', 'St. Joseph', 'ANICETO CANOY KAYKULOT', NULL),
-(511, '115', 'Lawn Lots', 'St. Joseph', 'JONALYN DE CASTRO', NULL),
-(512, '116', 'Lawn Lots', 'St. Joseph', 'AUGUSTO PARRA', NULL),
-(513, '117', 'Lawn Lots', 'St. Joseph', 'ELMA PARRA', NULL),
-(514, '118', 'Lawn Lots', 'St. Joseph', 'ELMA PARRA', NULL),
-(515, '119', 'Lawn Lots', 'St. Joseph', 'CECILE QUILAO', NULL),
-(516, '120', 'Lawn Lots', 'St. Joseph', 'CECILE QUILAO', NULL),
-(517, '121', 'Lawn Lots', 'St. Joseph', 'CECILE QUILAO', NULL),
-(518, '122', 'Lawn Lots', 'St. Joseph', 'RANDY NARVAEZ', NULL),
-(519, '123', 'Lawn Lots', 'St. Joseph', 'MARCET JAVIER', NULL),
-(520, '124', 'Lawn Lots', 'St. Joseph', 'LORETO AMULONG', NULL),
-(521, '125', 'Lawn Lots', 'St. Joseph', 'LEVI MANIMTIM', NULL),
-(522, '126', 'Lawn Lots', 'St. Joseph', 'ROGER ESTOYA', NULL),
-(523, '127', 'Lawn Lots', 'St. Joseph', 'ROGER ESTOYA', NULL),
-(524, '128', 'Lawn Lots', 'St. Joseph', 'ROGER ESTOYA', NULL),
-(525, '129', 'Lawn Lots', 'St. Joseph', 'TERESA HOLAR', NULL),
-(526, '130', 'Lawn Lots', 'St. Joseph', 'EMMA MENDOZA', NULL),
-(527, '131', 'Lawn Lots', 'St. Joseph', 'MARYDALE V. DIOKNO', NULL),
-(528, '132', 'Lawn Lots', 'St. Joseph', 'ATE DO', NULL),
-(529, '133', 'Lawn Lots', 'St. Joseph', 'HILDA CARPIO', NULL),
-(530, '134', 'Lawn Lots', 'St. Joseph', 'FRANCISCO COLANDOG', NULL),
-(531, '135', 'Lawn Lots', 'St. Joseph', 'SATURNINO PARRA', NULL),
-(532, '136', 'Lawn Lots', 'St. Joseph', 'FELY DAYUTA', NULL),
-(533, '137', 'Lawn Lots', 'St. Joseph', 'MARILOU VELASCO', NULL),
-(534, '138', 'Lawn Lots', 'St. Joseph', 'LEONARDO VELASCO JR.', NULL),
-(535, '139', 'Lawn Lots', 'St. Joseph', 'CATALINA AMON', NULL),
-(536, '140', 'Lawn Lots', 'St. Joseph', 'MARILYN R. POBLETE', NULL),
-(537, '141', 'Lawn Lots', 'St. Joseph', 'JEAN B. ARIGORE', NULL),
-(538, '142', 'Lawn Lots', 'St. Joseph', 'KAREN NABO', NULL),
-(539, '143', 'Lawn Lots', 'St. Joseph', 'CATHERINE CAURES', NULL),
-(540, '144', 'Lawn Lots', 'St. Joseph', 'JERNA ARCULLO', NULL),
-(541, '145', 'Lawn Lots', 'St. Joseph', 'LUIS MENDOZA', NULL),
-(542, '146', 'Lawn Lots', 'St. Joseph', 'JOSEPHINE ARAO', NULL),
-(543, '147', 'Lawn Lots', 'St. Joseph', 'JOEL TIBAYAN', NULL),
-(544, '148', 'Lawn Lots', 'St. Joseph', 'JOEL TIBAYAN', NULL),
-(545, '149', 'Lawn Lots', 'St. Joseph', 'JOEL TIBAYAN', NULL),
-(546, '150', 'Lawn Lots', 'St. Joseph', 'LEONARDO SAMONTE', NULL),
-(547, '151', 'Lawn Lots', 'St. Joseph', 'EDISON ELPOS', NULL),
-(548, '152', 'Lawn Lots', 'St. Joseph', 'JOSE R. BAYBAY', NULL),
-(549, '153', 'Lawn Lots', 'St. Joseph', 'CEFERINO PASCUA\r\n', NULL),
-(550, '154', 'Lawn Lots', 'St. Joseph', 'AGAPITO M. CARAAN', NULL),
-(551, '155', 'Lawn Lots', 'St. Joseph', 'ROMEO VILLANUEVA', NULL),
-(552, '156', 'Lawn Lots', 'St. Joseph', 'ROMEO VILLANUEVA', NULL),
-(553, '172', 'Lawn Lots', 'St. Joseph', 'ROMEO VILLANUEVA', NULL),
-(554, '173', 'Lawn Lots', 'St. Joseph', 'ROMEO VILLANUEVA', NULL),
-(555, '157', 'Lawn Lots', 'St. Joseph', 'FELIX BERTO VILLA', NULL),
-(556, '158', 'Lawn Lots', 'St. Joseph', 'FELIX BERTO VILLA', NULL),
-(557, '159', 'Lawn Lots', 'St. Joseph', 'ANICIA M. QUILAO', NULL),
-(558, '160', 'Lawn Lots', 'St. Joseph', 'SANTOS ALFUENTE', NULL),
-(559, '161', 'Lawn Lots', 'St. Joseph', 'BERNARDO M. PINAZO', NULL),
-(560, '162', 'Lawn Lots', 'St. Joseph', 'JOSE M. BAYBAY', NULL),
-(561, '163', 'Lawn Lots', 'St. Joseph', 'JOEL TIBAYAN', NULL),
-(562, '164', 'Lawn Lots', 'St. Joseph', 'JOEL TIBAYAN', NULL),
-(563, '165', 'Lawn Lots', 'St. Joseph', 'JOEL TIBAYAN', NULL),
-(564, '166', 'Lawn Lots', 'St. Joseph', 'MICHAEL M. SOLIS\r\n', NULL),
-(565, '167', 'Lawn Lots', 'St. Joseph', 'RONALD OñATE', NULL),
-(566, '168', 'Lawn Lots', 'St. Joseph', 'RONALD OñATE', NULL),
-(567, '169', 'Lawn Lots', 'St. Joseph', NULL, NULL),
-(568, '170', 'Lawn Lots', 'St. Joseph', 'ROBERTO MANLANGIT', NULL),
-(569, '171', 'Lawn Lots', 'St. Joseph', 'ROBERTO MANLANGIT', NULL),
-(570, '1', 'Lawn Lots', 'St. John', 'CON CELSO DE CASTRO', NULL),
-(571, '2', 'Lawn Lots', 'St. John', 'BENEDICTO B. TIBAYAN SR.', NULL),
-(572, '3', 'Lawn Lots', 'St. John', 'MARIA RODRIGUEZ', NULL),
-(573, '4', 'Lawn Lots', 'St. John', 'DAVID RODRIGUEZ', NULL),
-(574, '5', 'Lawn Lots', 'St. John', 'HELEN ENRIQUEZ', NULL),
-(575, '6', 'Lawn Lots', 'St. John', 'FELINA MARAVILLA', NULL),
-(576, '7', 'Lawn Lots', 'St. John', 'ADORA S. PENALOSA', NULL),
-(577, '8', 'Lawn Lots', 'St. John', 'FELIX MAYUGA', NULL),
-(578, '9', 'Lawn Lots', 'St. John', 'ALONA MAYUGA', NULL),
-(579, '10', 'Lawn Lots', 'St. John', 'ALONA MAYUGA', NULL),
-(580, '11', 'Lawn Lots', 'St. John', 'ALONA MAYUGA', NULL),
-(581, '12', 'Lawn Lots', 'St. John', 'JACINTO DAñO', NULL),
-(582, '13', 'Lawn Lots', 'St. John', 'ARNEL F. CUADRASOL', NULL),
-(583, '14', 'Lawn Lots', 'St. John', 'TOMASA CASTILLO', NULL),
-(584, '15', 'Lawn Lots', 'St. John', 'TERESITA STA. MARIA', NULL),
-(585, '16', 'Lawn Lots', 'St. John', 'FELICIANO DAñO', NULL),
-(586, '17', 'Lawn Lots', 'St. John', 'FELICIANO DAñO', NULL),
-(587, '18', 'Lawn Lots', 'St. John', 'GREGORIA MANALO', NULL),
-(588, '19', 'Lawn Lots', 'St. John', 'ALFREDO TALEON', NULL),
-(589, '20', 'Lawn Lots', 'St. John', 'SABAS MANALO', NULL),
-(590, '21', 'Lawn Lots', 'St. John', 'JAIME ANASTACIO', NULL),
-(591, '22', 'Lawn Lots', 'St. John', 'ELISA BAYANI', NULL),
-(592, '23', 'Lawn Lots', 'St. John', 'BETTY JANE WILHITE', NULL),
-(593, '24', 'Lawn Lots', 'St. John', 'DOMINADOR R. CAZARTE', NULL),
-(594, '25', 'Lawn Lots', 'St. John', 'MARYLYN ', NULL),
-(595, '26', 'Lawn Lots', 'St. John', 'MARYLYN ', NULL),
-(596, '27', 'Lawn Lots', 'St. John', 'MARYLYN ', NULL),
-(597, '28', 'Lawn Lots', 'St. John', 'AGAPITO SUMAGUI', NULL),
-(598, '29', 'Lawn Lots', 'St. John', 'EDMUNDO JAYME', NULL),
-(599, '30', 'Lawn Lots', 'St. John', 'STEPHANIE G. ADRIANO', NULL),
-(600, '31', 'Lawn Lots', 'St. John', 'NORMA CABISON', NULL),
-(601, '32', 'Lawn Lots', 'St. John', 'CEFERINO LAMBON', NULL),
-(602, '33', 'Lawn Lots', 'St. John', NULL, NULL),
-(603, '34', 'Lawn Lots', 'St. John', 'ANGELITO YUSON', NULL),
-(604, '35', 'Lawn Lots', 'St. John', 'RAQUEL ROWENA A. RODRIGUEZ', NULL),
-(605, '36', 'Lawn Lots', 'St. John', 'CLEMENTE G. DOGELIO', NULL),
-(606, '37', 'Lawn Lots', 'St. John', 'EUCALIA DOGELIO', NULL),
-(607, '38', 'Lawn Lots', 'St. John', 'FELICIDAD V. BERNABE', NULL),
-(608, '39', 'Lawn Lots', 'St. John', 'LEOPOLDO B. ANACAY', NULL),
-(609, '40', 'Lawn Lots', 'St. John', 'NITA', NULL),
-(610, '41', 'Lawn Lots', 'St. John', 'JONATHAN G. REZMA', NULL),
-(611, '42', 'Lawn Lots', 'St. John', 'ARCELI P. ANGCAYA', NULL),
-(612, '43', 'Lawn Lots', 'St. John', 'ARCELI P. ANGCAYA', NULL),
-(613, '44', 'Lawn Lots', 'St. John', 'VICTORIA DEROS REYES', NULL),
-(614, '45', 'Lawn Lots', 'St. John', 'EDDIE CRIZALDO', NULL),
-(615, '46', 'Lawn Lots', 'St. John', NULL, NULL),
-(616, '47', 'Lawn Lots', 'St. John', 'ARNEL SARNE', NULL),
-(617, '48', 'Lawn Lots', 'St. John', 'MARITES LANSANG', NULL),
-(618, '49', 'Lawn Lots', 'St. John', 'JUANA M. TIGAON', NULL),
-(619, '50', 'Lawn Lots', 'St. John', NULL, NULL),
-(620, '51', 'Lawn Lots', 'St. John', 'LOURDES ESCALANTE', NULL),
-(621, '52', 'Lawn Lots', 'St. John', 'HERMENIO JALANDONI', NULL),
-(622, '53', 'Lawn Lots', 'St. John', 'RAQUEL ROWENA A . RODRIGUEZ', NULL),
-(623, '54', 'Lawn Lots', 'St. John', 'JESUS AQUINO', NULL),
-(624, '55', 'Lawn Lots', 'St. John', 'JESUS AQUINO', NULL),
-(625, '56', 'Lawn Lots', 'St. John', 'FLORENCIA M. DOGELIO', NULL),
-(626, '57', 'Lawn Lots', 'St. John', 'FLORENCIA M. DOGELIO', NULL),
-(627, '58', 'Lawn Lots', 'St. John', 'CASIANO DOGELIO', NULL),
-(628, '59', 'Lawn Lots', 'St. John', 'ELSA REYES', NULL),
-(629, '60', 'Lawn Lots', 'St. John', 'JUANA AMBION', NULL),
-(630, '61', 'Lawn Lots', 'St. John', 'MACARIO GONZALES', NULL),
-(631, '62', 'Lawn Lots', 'St. John', 'MA. TERESA S. SILVA', NULL),
-(632, '63', 'Lawn Lots', 'St. John', 'LAMBERTO DELAPEñA', NULL),
-(633, '64', 'Lawn Lots', 'St. John', 'ALONA MENDOZA', NULL),
-(634, '65', 'Lawn Lots', 'St. John', 'ALONA MENDOZA', NULL),
-(635, '66', 'Lawn Lots', 'St. John', 'ALONA MENDOZA', NULL),
-(636, '67', 'Lawn Lots', 'St. John', 'BERNARDINO DIOKNO', NULL),
-(637, '68', 'Lawn Lots', 'St. John', 'MARIANITO AMBAT', NULL),
-(638, '69', 'Lawn Lots', 'St. John', 'ELENA AMBAT', NULL),
-(639, '70', 'Lawn Lots', 'St. John', 'CHERRY AMBAT', NULL),
-(640, '71', 'Lawn Lots', 'St. John', 'NISTONIO P. MAGDADARO', NULL),
-(641, '72', 'Lawn Lots', 'St. John', 'ROSALINDA ABITONA', NULL),
-(642, '73', 'Lawn Lots', 'St. John', 'MAGNO FAJARDO', NULL),
-(643, '74', 'Lawn Lots', 'St. John', 'PURIFICACION E. FAJARDO', NULL),
-(644, '75', 'Lawn Lots', 'St. John', 'AMELITA C. BLEN', NULL),
-(645, '76', 'Lawn Lots', 'St. John', 'BLEN', NULL),
-(646, '77', 'Lawn Lots', 'St. John', 'ANTONIO ACUNOS', NULL),
-(647, '78', 'Lawn Lots', 'St. John', 'RAMIR V. CALLOS', NULL),
-(648, '79', 'Lawn Lots', 'St. John', 'DOMINGO COSTANTE', NULL),
-(649, '80', 'Lawn Lots', 'St. John', 'JOCELYN ANACAY', NULL),
-(650, '81', 'Lawn Lots', 'St. John', 'RESURRECION MANLANGIT', NULL),
-(651, '82', 'Lawn Lots', 'St. John', 'EMILIO MANLANGIT', NULL),
-(652, '83', 'Lawn Lots', 'St. John', 'EUSEBIO APOSTAL ROMAN', NULL),
-(653, '84', 'Lawn Lots', 'St. John', 'BEVERLYN VALENCIANO', NULL),
-(654, '85', 'Lawn Lots', 'St. John', 'MONTANO MIRANDA', NULL),
-(655, '86', 'Lawn Lots', 'St. John', 'BABYLYN SILVA', NULL),
-(656, '87', 'Lawn Lots', 'St. John', 'ELMER B ALAGAR', NULL),
-(657, '88', 'Lawn Lots', 'St. John', 'ELMER B ALAGAR', NULL),
-(658, '89', 'Lawn Lots', 'St. John', 'ELMER B ALAGAR', NULL),
-(659, '90', 'Lawn Lots', 'St. John', 'ELMER B ALAGAR', NULL),
-(660, '91', 'Lawn Lots', 'St. John', 'JAIME TORIO', NULL),
-(661, '92', 'Lawn Lots', 'St. John', 'JAIME TORIO', NULL),
-(662, '93', 'Lawn Lots', 'St. John', 'RESURRECION L . ISAY', NULL),
-(663, '94', 'Lawn Lots', 'St. John', 'RESURRECION L. BAY', NULL),
-(664, '95', 'Lawn Lots', 'St. John', 'BENJAMIN E. ANULONG', NULL),
-(665, '96', 'Lawn Lots', 'St. John', 'APOLINAR BONG JR. ', NULL),
-(666, '97', 'Lawn Lots', 'St. John', 'DOMINGO M. FAJARDO', NULL),
-(667, '98', 'Lawn Lots', 'St. John', 'CAMBERTO M. FAJARDO', NULL),
-(668, '99', 'Lawn Lots', 'St. John', NULL, NULL),
-(669, '100', 'Lawn Lots', 'St. John', 'ROMULO ROMELITO D. GONZALES', NULL),
-(670, '101', 'Lawn Lots', 'St. John', 'BENEDICTO CAGAYUNGAN SR.', NULL),
-(671, '102', 'Lawn Lots', 'St. John', 'ERNESTO R. PATAWE', NULL),
-(672, '103', 'Lawn Lots', 'St. John', 'ROWENA C. ADOLFO', NULL),
-(673, '104', 'Lawn Lots', 'St. John', 'FLAVIANA H. CRISTOBAL', NULL),
-(674, '105', 'Lawn Lots', 'St. John', 'FLAVIANA H. CRISTOBAL', NULL),
-(675, '106', 'Lawn Lots', 'St. John', 'FLAVIANA H. CRISTOBAL', NULL),
-(676, '107', 'Lawn Lots', 'St. John', 'MANLANGIT MILOREL', NULL),
-(677, '108', 'Lawn Lots', 'St. John', 'ZACARIA PARRA', NULL),
-(678, '109', 'Lawn Lots', 'St. John', 'ZACARIA PARRA', NULL),
-(679, '110', 'Lawn Lots', 'St. John', 'ZACARIA PARRA', NULL),
-(680, '111', 'Lawn Lots', 'St. John', 'ZACARIA PARRA', NULL),
-(681, '112', 'Lawn Lots', 'St. John', 'LORENA C. CABRERA', NULL),
-(682, '113', 'Lawn Lots', 'St. John', 'LORENA C. CABRERA', NULL),
-(683, '114', 'Lawn Lots', 'St. John', 'DANTE BAY', NULL),
-(684, '115', 'Lawn Lots', 'St. John', 'ELEADORA BAY', NULL),
-(685, '116', 'Lawn Lots', 'St. John', 'ANALYN AMBAT', NULL),
-(686, '117', 'Lawn Lots', 'St. John', 'DANTE BAY', NULL),
-(687, '118', 'Lawn Lots', 'St. John', 'JAYLENE T. JAVIER', NULL),
-(688, '119', 'Lawn Lots', 'St. John', 'FELINA AMBAT TORIO', NULL),
-(689, '120', 'Lawn Lots', 'St. John', 'ANTONIO P. BELTRAN', NULL),
-(690, '121', 'Lawn Lots', 'St. John', 'ANTONIO P. BELTRAN', NULL),
-(691, '122', 'Lawn Lots', 'St. John', 'NORMA R. MARCHA', NULL),
-(692, '123', 'Lawn Lots', 'St. John', 'LEOPOLDO CONSTANTE', NULL),
-(693, '124', 'Lawn Lots', 'St. John', 'MARIA CORENA', NULL),
-(694, '125', 'Lawn Lots', 'St. John', 'REYNALDO CACHO', NULL),
-(695, '126', 'Lawn Lots', 'St. John', 'PAULO BIANCA CACHO PICARANA\r\nREYNALDO CACHO', NULL),
-(696, '127', 'Lawn Lots', 'St. John', 'TERESA LAIDO \r\nMELANIE GATPANDAN', NULL),
-(697, '128', 'Lawn Lots', 'St. John', 'MERCEDES ANGELES', NULL),
-(698, '129', 'Lawn Lots', 'St. John', 'JOHN JOSE', NULL),
-(699, '130', 'Lawn Lots', 'St. John', 'ROMEO CHOZAS JR.', NULL),
-(700, '131', 'Lawn Lots', 'St. John', 'VIVIAN CHOZAS', NULL),
-(701, '132', 'Lawn Lots', 'St. John', 'TEODORA RIMARIN', NULL),
-(702, '133', 'Lawn Lots', 'St. John', 'FERCIVAL PAYAD', NULL),
-(703, '134', 'Lawn Lots', 'St. John', 'NANCY PAYAD', NULL),
-(704, '135', 'Lawn Lots', 'St. John', 'VALENTINO PAYAD', NULL),
-(705, '1', 'Lawn Lots', 'St. Dominic', 'DOMINGO AMULONG', NULL),
-(706, '2', 'Lawn Lots', 'St. Dominic', 'CONRADO BARLAW\r\nJOSE DE VERA', NULL),
-(707, '3', 'Lawn Lots', 'St. Dominic', 'MICHAEL MANLANGIT', NULL),
-(708, '4', 'Lawn Lots', 'St. Dominic', 'MARISSA B. DE OCAMPO', NULL),
-(709, '23', 'Lawn Lots', 'St. Dominic', 'MARISSA B. DE OCAMPO', NULL),
-(710, '42', 'Lawn Lots', 'St. Dominic', 'MARISSA B. DE OCAMPO', NULL),
-(711, '5', 'Lawn Lots', 'St. Dominic', 'LORENZA ABILISNA', NULL),
-(712, '6', 'Lawn Lots', 'St. Dominic', 'GUILLERMO TABILISMA', NULL),
-(713, '7', 'Lawn Lots', 'St. Dominic', 'WILLY C. MATIENZO', NULL),
-(714, '8', 'Lawn Lots', 'St. Dominic', 'FAUSTINO V. MANOLO', NULL),
-(715, '9', 'Lawn Lots', 'St. Dominic', 'CATOLINA MANALO', NULL),
-(716, '27', 'Lawn Lots', 'St. Dominic', 'CATOLINA MANALO', NULL),
-(717, '28', 'Lawn Lots', 'St. Dominic', 'CATOLINA MANALO', NULL),
-(718, '10', 'Lawn Lots', 'St. Dominic', 'VIRGINIA REYES', NULL),
-(719, '11', 'Lawn Lots', 'St. Dominic', 'REMIGIO MAALA', NULL),
-(720, '12', 'Lawn Lots', 'St. Dominic', 'MA. BELLA ORTEGA', NULL),
-(721, '13', 'Lawn Lots', 'St. Dominic', 'EUGENIO C. BORJA', NULL),
-(722, '32', 'Lawn Lots', 'St. Dominic', 'EUGENIO C. BORJA', NULL),
-(723, '51', 'Lawn Lots', 'St. Dominic', 'EUGENIO C. BORJA', NULL),
-(724, '14', 'Lawn Lots', 'St. Dominic', 'VIOLETA MANINGAS', NULL),
-(725, '15', 'Lawn Lots', 'St. Dominic', 'VERONA TOLEDO', NULL),
-(726, '16', 'Lawn Lots', 'St. Dominic', 'VERONA TOLEDO', NULL),
-(727, '17', 'Lawn Lots', 'St. Dominic', 'MARIA DONAIRE', NULL),
-(728, '18', 'Lawn Lots', 'St. Dominic', 'TEODORO B. BAYBAY', NULL),
-(729, '19', 'Lawn Lots', 'St. Dominic', 'MARINA A. BAYBAY', NULL),
-(730, '20', 'Lawn Lots', 'St. Dominic', 'JOEY V. ESTIPONA', NULL),
-(731, '21', 'Lawn Lots', 'St. Dominic', 'DOMINGO MENDOZA', NULL),
-(732, '22', 'Lawn Lots', 'St. Dominic', 'LORETA G. CABARRIBAN', NULL),
-(733, '24', 'Lawn Lots', 'St. Dominic', 'NORBERTO V. TABILISMA', NULL),
-(734, '25', 'Lawn Lots', 'St. Dominic', 'MERCEDEZ TABIUSMA', NULL),
-(735, '26', 'Lawn Lots', 'St. Dominic', 'EPIFANIO MATIENZO', NULL),
-(736, '27', 'Lawn Lots', 'St. Dominic', 'CATALINA MANALO', NULL),
-(737, '28', 'Lawn Lots', 'St. Dominic', 'CATALINA MANALO', NULL),
-(738, '29', 'Lawn Lots', 'St. Dominic', 'MYRNA G. MANIMTIM', NULL),
-(739, '30', 'Lawn Lots', 'St. Dominic', 'MYRNA G. MANIMTIM', NULL),
-(740, '48', 'Lawn Lots', 'St. Dominic', 'MYRNA G. MANIMTIM', NULL),
-(741, '49', 'Lawn Lots', 'St. Dominic', 'MYRNA G. MANIMTIM', NULL),
-(742, '50', 'Lawn Lots', 'St. Dominic', 'MYRNA G. MANIMTIM', NULL),
-(743, '31', 'Lawn Lots', 'St. Dominic', 'BELLA DATEGA', NULL),
-(744, '32', 'Lawn Lots', 'St. Dominic', 'EUGENIO C. BORJA', NULL),
-(745, '35', 'Lawn Lots', 'St. Dominic', 'VERONA TOLEDO', NULL),
-(746, '36', 'Lawn Lots', 'St. Dominic', 'MARIA DONAIRE', NULL),
-(747, '37', 'Lawn Lots', 'St. Dominic', 'TEODORO B. BAYBAY', NULL),
-(748, '38', 'Lawn Lots', 'St. Dominic', 'TEODORO B. BAYBAY', NULL),
-(749, '39', 'Lawn Lots', 'St. Dominic', 'ROLANDO ASUNCION', NULL),
-(750, '40', 'Lawn Lots', 'St. Dominic', 'ROSALINA DE LEON', NULL),
-(751, '41', 'Lawn Lots', 'St. Dominic', 'GUILLERMO PUCEDENTE', NULL),
-(752, '43', 'Lawn Lots', 'St. Dominic', 'ROVEL CONCEPCION', NULL),
-(753, '44', 'Lawn Lots', 'St. Dominic', 'FELIPE CARAAN', NULL),
-(754, '45', 'Lawn Lots', 'St. Dominic', 'JUANITA ENCARNACION', NULL),
-(755, '46', 'Lawn Lots', 'St. Dominic', 'FLOR TULAO', NULL),
-(756, '47', 'Lawn Lots', 'St. Dominic', 'FELICESIMA MANALO', NULL),
-(757, '48', 'Lawn Lots', 'St. Dominic', 'IMELDA M. OMI', NULL),
-(758, '49', 'Lawn Lots', 'St. Dominic', 'IMELDA M. OMI', NULL),
-(759, '50', 'Lawn Lots', 'St. Dominic', 'IMELDA M. OMI', NULL),
-(760, '29', 'Lawn Lots', 'St. Dominic', 'IMELDA M. OMI', NULL),
-(761, '30', 'Lawn Lots', 'St. Dominic', 'IMELDA M. OMI', NULL),
-(762, '51', 'Lawn Lots', 'St. Dominic', 'MARIA A. CAUSAREN', NULL),
-(763, '52', 'Lawn Lots', 'St. Dominic', 'MATEO AMBION', NULL),
-(764, '53', 'Lawn Lots', 'St. Dominic', 'BERTRAN AMBION', NULL),
-(765, '54', 'Lawn Lots', 'St. Dominic', 'JOSEPHINE FEBRER', NULL),
-(766, '55', 'Lawn Lots', 'St. Dominic', 'MARY CHARM RIZZA', NULL),
-(767, '56', 'Lawn Lots', 'St. Dominic', 'NICANOR BAYBAY', NULL),
-(768, '57', 'Lawn Lots', 'St. Dominic', 'TEODORO B. BAYBAY', NULL),
-(769, '58', 'Lawn Lots', 'St. Dominic', 'NORBERTO V. PANGANIBAN', NULL),
-(770, '59', 'Lawn Lots', 'St. Dominic', 'NORBERTO V. PANGANIBAN', NULL),
-(771, '77', 'Lawn Lots', 'St. Dominic', 'NORBERTO V. PANGANIBAN', NULL),
-(772, '78', 'Lawn Lots', 'St. Dominic', 'NORBERTO V. PANGANIBAN', NULL),
-(773, '96', 'Lawn Lots', 'St. Dominic', 'NORBERTO V. PANGANIBAN', NULL),
-(774, '97', 'Lawn Lots', 'St. Dominic', 'NORBERTO V. PANGANIBAN', NULL),
-(775, '60', 'Lawn Lots', 'St. Dominic', 'ESTELITA BALAIS', NULL),
-(776, '61', 'Lawn Lots', 'St. Dominic', 'ROSARIO RUFUERZO', NULL),
-(777, '62', 'Lawn Lots', 'St. Dominic', 'RENATO M. CONCEPCION\r\nRONALD CONCEPCION', NULL),
-(778, '63', 'Lawn Lots', 'St. Dominic', 'JOSELITO CARAAN', NULL),
-(779, '64', 'Lawn Lots', 'St. Dominic', 'JORGE ENCARNACION', NULL),
-(780, '65', 'Lawn Lots', 'St. Dominic', 'SHIRLEY DIVINO', NULL),
-(781, '66', 'Lawn Lots', 'St. Dominic', 'DIANA ESCABA', NULL),
-(782, '67', 'Lawn Lots', 'St. Dominic', 'MELCHOR MENDOZA', NULL),
-(783, '68', 'Lawn Lots', 'St. Dominic', 'ANNABELLE B. BAWAG', NULL);
-INSERT INTO `records` (`id`, `Lot_No`, `mem_lots`, `mem_sts`, `LO_name`, `mem_address`) VALUES
-(784, '69', 'Lawn Lots', 'St. Dominic', 'JOAQUIA PAJARILLO', NULL),
-(785, '70', 'Lawn Lots', 'St. Dominic', 'VIRGILIO MALIMBAN', NULL),
-(786, '71', 'Lawn Lots', 'St. Dominic', 'LOURDES SALCEDO', NULL),
-(787, '72', 'Lawn Lots', 'St. Dominic', 'DIZON E CUENCO', NULL),
-(788, '73', 'Lawn Lots', 'St. Dominic', 'ESTHER C. OLIVEROS', NULL),
-(789, '74', 'Lawn Lots', 'St. Dominic', 'JOSEFINA DALUPENE', NULL),
-(790, '75', 'Lawn Lots', 'St. Dominic', 'ROWENA EBINA MARANAN', NULL),
-(791, '76', 'Lawn Lots', 'St. Dominic', 'CEPRINO B. HERNANDEZ', NULL),
-(792, '95', 'Lawn Lots', 'St. Dominic', 'CEPRINO B. HERNANDEZ', NULL),
-(793, '79', 'Lawn Lots', 'St. Dominic', 'RENATO ATIENZA', NULL),
-(794, '80', 'Lawn Lots', 'St. Dominic', 'MARIA FE MENDOZA', NULL),
-(795, '81', 'Lawn Lots', 'St. Dominic', 'GERONIMO BELTRAN', NULL),
-(796, '82', 'Lawn Lots', 'St. Dominic', 'ROMEO EJEDA', NULL),
-(797, '83', 'Lawn Lots', 'St. Dominic', 'ALEXANDER LAVADIA', NULL),
-(798, '84', 'Lawn Lots', 'St. Dominic', 'SHIRLEY DIVINO', NULL),
-(799, '85', 'Lawn Lots', 'St. Dominic', 'DIANA ESCABA', NULL),
-(800, '86', 'Lawn Lots', 'St. Dominic', 'SOTERA EBO', NULL),
-(801, '87', 'Lawn Lots', 'St. Dominic', 'CLEOTILDE ANACAY\r\nROLANDO ANACAY', NULL),
-(802, '88', 'Lawn Lots', 'St. Dominic', 'JOAQUIN PAJARILO', NULL),
-(803, '89', 'Lawn Lots', 'St. Dominic', 'TEODORA ANCIANO', NULL),
-(804, '90', 'Lawn Lots', 'St. Dominic', 'TOMAS JIMENO', NULL),
-(805, '91', 'Lawn Lots', 'St. Dominic', 'ARNEL MARASIGAN\r\nVICE CELSO DE CASTRO', NULL),
-(806, '92', 'Lawn Lots', 'St. Dominic', 'RUEL TAYLON', NULL),
-(807, '93', 'Lawn Lots', 'St. Dominic', 'ADELEIDA DALUPERE', NULL),
-(808, '94', 'Lawn Lots', 'St. Dominic', 'MARIS ANTHONY ARTUS', NULL),
-(809, '98', 'Lawn Lots', 'St. Dominic', 'COLITA DE VERA', NULL),
-(810, '99', 'Lawn Lots', 'St. Dominic', 'MELQUIADES ORANA', NULL),
-(811, '100', 'Lawn Lots', 'St. Dominic', 'GENNINA GAJILOMO', NULL),
-(812, '101', 'Lawn Lots', 'St. Dominic', 'MERCEDITA N. CANO', NULL),
-(813, '102', 'Lawn Lots', 'St. Dominic', 'MERCEDITA CANO', NULL),
-(814, '103', 'Lawn Lots', 'St. Dominic', 'MAMERTA CAUSAREN', NULL),
-(815, '104', 'Lawn Lots', 'St. Dominic', 'GREGORIOSILVA', NULL),
-(816, '105', 'Lawn Lots', 'St. Dominic', 'SOTERA EBO', NULL),
-(817, '106', 'Lawn Lots', 'St. Dominic', 'JANETTE ANACAY', NULL),
-(818, '107', 'Lawn Lots', 'St. Dominic', 'JENNIFER BERNAL BULALAQUE', NULL),
-(819, '108', 'Lawn Lots', 'St. Dominic', 'JENNIFER BERNAL BULALAQUE', NULL),
-(820, '109', 'Lawn Lots', 'St. Dominic', 'TOMAS JIMENO', NULL),
-(821, '110', 'Lawn Lots', 'St. Dominic', 'FELINO QUILAO', NULL),
-(822, '111', 'Lawn Lots', 'St. Dominic', 'RUEL TAYLON', NULL),
-(823, '112', 'Lawn Lots', 'St. Dominic', 'CORAZON S. DELA CRUZ', NULL),
-(824, '113', 'Lawn Lots', 'St. Dominic', 'ANTONIO A. ARIUS', NULL),
-(825, '114', 'Lawn Lots', 'St. Dominic', 'EDILBERTO LUNAS', NULL),
-(826, '115', 'Lawn Lots', 'St. Dominic', 'LAPAG R. FERMA', NULL),
-(827, '116', 'Lawn Lots', 'St. Dominic', 'VALENTIN MASONGSONG', NULL),
-(828, '117', 'Lawn Lots', 'St. Dominic', 'ELISA CASTILLO', NULL),
-(829, '118', 'Lawn Lots', 'St. Dominic', 'ADORACION ARELLANO', NULL),
-(830, '119', 'Lawn Lots', 'St. Dominic', 'GENINA GAJILOMO', NULL),
-(831, '120', 'Lawn Lots', 'St. Dominic', 'ROSALINDA O. FELLO\r\nELSA F. DE LEON', NULL),
-(832, '121', 'Lawn Lots', 'St. Dominic', 'ELSA F. DE LEON', NULL),
-(833, '139', 'Lawn Lots', 'St. Dominic', 'ELSA F. DE LEON', NULL),
-(834, '140', 'Lawn Lots', 'St. Dominic', 'ELSA F. DE LEON', NULL),
-(835, '122', 'Lawn Lots', 'St. Dominic', 'SAMARIA PAZ', NULL),
-(836, '123', 'Lawn Lots', 'St. Dominic', 'FE BAQUE SILVA', NULL),
-(837, '124', 'Lawn Lots', 'St. Dominic', 'MIRIAM CAUSAREN', NULL),
-(838, '125', 'Lawn Lots', 'St. Dominic', 'RODOLFO CATUBAO', NULL),
-(839, '126', 'Lawn Lots', 'St. Dominic', 'SOLEDAD PEREYRA', NULL),
-(840, '127', 'Lawn Lots', 'St. Dominic', 'MERCY DAWA', NULL),
-(841, '128', 'Lawn Lots', 'St. Dominic', 'FLORINDA JAVIER', NULL),
-(842, '129', 'Lawn Lots', 'St. Dominic', 'RENATO C. BERGADO', NULL),
-(843, '130', 'Lawn Lots', 'St. Dominic', 'SUSAN BONIFACIO', NULL),
-(844, '131', 'Lawn Lots', 'St. Dominic', 'MA. ANICIA PARRA BAYOT', NULL),
-(845, '132', 'Lawn Lots', 'St. Dominic', 'MARIE ANTHONY', NULL),
-(846, '133', 'Lawn Lots', 'St. Dominic', 'NICANOR BAYBAY', NULL),
-(847, '134', 'Lawn Lots', 'St. Dominic', 'GERMAN ALIMOO', NULL),
-(848, '135', 'Lawn Lots', 'St. Dominic', 'JENNIFER MANGUILAO', NULL),
-(849, '136', 'Lawn Lots', 'St. Dominic', 'ELISA CASTILLO', NULL),
-(850, '137', 'Lawn Lots', 'St. Dominic', 'ARACELI T. ESPIRITU', NULL),
-(851, '138', 'Lawn Lots', 'St. Dominic', 'LETICIA DE LEON SAN ANDRES', NULL),
-(852, '141', 'Lawn Lots', 'St. Dominic', 'ELVIRA CARDENAS', NULL),
-(853, '142', 'Lawn Lots', 'St. Dominic', 'MARILOU ANCHEZA', NULL),
-(854, '143', 'Lawn Lots', 'St. Dominic', 'MARINO PENALES\r\nRAYMUNDO PENALES', NULL),
-(855, '144', 'Lawn Lots', 'St. Dominic', 'REYNALDO AGUILA', NULL),
-(856, '145', 'Lawn Lots', 'St. Dominic', 'TERESITA N. DIGO', NULL),
-(857, '146', 'Lawn Lots', 'St. Dominic', 'RUDY VISITACION', NULL),
-(858, '147', 'Lawn Lots', 'St. Dominic', 'FLORINDA JAVIER', NULL),
-(859, '148', 'Lawn Lots', 'St. Dominic', 'RUEL CANLAS', NULL),
-(860, '149', 'Lawn Lots', 'St. Dominic', 'JULIANA SARMIENTO', NULL),
-(861, '150', 'Lawn Lots', 'St. Dominic', 'ANDRES A. LANDICHO\r\nLEILANIE A. PARRA', NULL),
-(862, '151', 'Lawn Lots', 'St. Dominic', 'CARMEN COLI FLORES', NULL),
-(863, '152', 'Lawn Lots', 'St. Dominic', 'FRANCISCO B. BAYBAY', NULL),
-(864, '153', 'Lawn Lots', 'St. Dominic', 'SOFIA DE LUNA', NULL),
-(865, '154', 'Lawn Lots', 'St. Dominic', 'JENNIFER R. NANGUINAO', NULL),
-(866, '155', 'Lawn Lots', 'St. Dominic', 'ELMER MENDOZA', NULL),
-(867, '156', 'Lawn Lots', 'St. Dominic', 'MARIA PENAFIEL ORUGA', NULL),
-(868, '157', 'Lawn Lots', 'St. Dominic', 'SATURNINA BRAGANZA', NULL),
-(869, '158', 'Lawn Lots', 'St. Dominic', 'SOFIA CARLUM', NULL),
-(870, '159', 'Lawn Lots', 'St. Dominic', 'ROSALDO A. GAN\r\nTERESITA GAN', NULL),
-(871, '160', 'Lawn Lots', 'St. Dominic', 'VICTORIA F. KING ', NULL),
-(872, '161', 'Lawn Lots', 'St. Dominic', 'ELVIRA CARDEMS', NULL),
-(873, '162', 'Lawn Lots', 'St. Dominic', 'MARINO PENALES', NULL),
-(874, '163', 'Lawn Lots', 'St. Dominic', 'EDNA C. SABULAAN', NULL),
-(875, '164', 'Lawn Lots', 'St. Dominic', 'LEONIDA AGUDA', NULL),
-(876, '165', 'Lawn Lots', 'St. Dominic', 'RUDY VISITACION', NULL),
-(877, '166', 'Lawn Lots', 'St. Dominic', 'FLORINDA JAVIER', NULL),
-(878, '167', 'Lawn Lots', 'St. Dominic', 'RONALD C. BULAGTIAL', NULL),
-(879, '168', 'Lawn Lots', 'St. Dominic', 'JULIANA DE SAGUN SARMIENTO', NULL),
-(880, '169', 'Lawn Lots', 'St. Dominic', 'RAQUEL F. ASUNCION', NULL),
-(881, '188', 'Lawn Lots', 'St. Dominic', 'RAQUEL F. ASUNCION', NULL),
-(882, '207', 'Lawn Lots', 'St. Dominic', 'RAQUEL F. ASUNCION', NULL),
-(883, '170', 'Lawn Lots', 'St. Dominic', 'CONSOLACION AMBUNAN', NULL),
-(884, '171', 'Lawn Lots', 'St. Dominic', 'ERIBERTO DELA REA', NULL),
-(885, '172', 'Lawn Lots', 'St. Dominic', 'JAIME ORUGA', NULL),
-(886, '173', 'Lawn Lots', 'St. Dominic', 'LAUREANO P. ORUGA', NULL),
-(887, '174', 'Lawn Lots', 'St. Dominic', 'ELMER MENDOZA', NULL),
-(888, '175', 'Lawn Lots', 'St. Dominic', 'EMMANUEL B. MAKILING', NULL),
-(889, '176', 'Lawn Lots', 'St. Dominic', 'IRENE ROSA HAGAD', NULL),
-(890, '177', 'Lawn Lots', 'St. Dominic', 'PATRICK R. GAMBOA', NULL),
-(891, '178', 'Lawn Lots', 'St. Dominic', 'FRANCIS CABASI', NULL),
-(892, '179', 'Lawn Lots', 'St. Dominic', 'FRANCIS CABASI', NULL),
-(893, '180', 'Lawn Lots', 'St. Dominic', 'LUDIVICO FLORES', NULL),
-(894, '181', 'Lawn Lots', 'St. Dominic', 'GLORIA PENALES', NULL),
-(895, '182', 'Lawn Lots', 'St. Dominic', 'LAMBERTO BAURILE\r\nFELICISIMA BAURILE', NULL),
-(896, '183', 'Lawn Lots', 'St. Dominic', 'CICELIA H. AGUDA', NULL),
-(897, '184', 'Lawn Lots', 'St. Dominic', 'RUDY VISITACION', NULL),
-(898, '185', 'Lawn Lots', 'St. Dominic', 'JUANITO DE LUNA', NULL),
-(899, '186', 'Lawn Lots', 'St. Dominic', 'MANUELA DE LUNA', NULL),
-(900, '187', 'Lawn Lots', 'St. Dominic', 'JAYSON EUGENIO', NULL),
-(901, '188', 'Lawn Lots', 'St. Dominic', 'RAQUEL F. ASUNCION', NULL),
-(902, '189', 'Lawn Lots', 'St. Dominic', 'EDUARDO GUANEZO', NULL),
-(903, '190', 'Lawn Lots', 'St. Dominic', 'JERRY ARIOLA', NULL),
-(904, '191', 'Lawn Lots', 'St. Dominic', 'FEDERICO BESA SR.', NULL),
-(905, '192', 'Lawn Lots', 'St. Dominic', 'ELISA ERNI', NULL),
-(906, '193', 'Lawn Lots', 'St. Dominic', 'ELMER MENDOZA', NULL),
-(907, '194', 'Lawn Lots', 'St. Dominic', 'ROGELIO MONILLA\r\nMARLYN JULIA', NULL),
-(908, '195', 'Lawn Lots', 'St. Dominic', 'PATERNO DIOKNO', NULL),
-(909, '196', 'Lawn Lots', 'St. Dominic', 'FRANK ARTHUR TEANO', NULL),
-(910, '197', 'Lawn Lots', 'St. Dominic', 'FRANCIS CABAS', NULL),
-(911, '198', 'Lawn Lots', 'St. Dominic', 'RIZZA MALABANAN', NULL),
-(912, '199', 'Lawn Lots', 'St. Dominic', 'PILAR DIGO', NULL),
-(913, '200', 'Lawn Lots', 'St. Dominic', 'GLORIA PEREñA', NULL),
-(914, '201', 'Lawn Lots', 'St. Dominic', 'SATURNINO PERCADO', NULL),
-(915, '202', 'Lawn Lots', 'St. Dominic', 'VICTORIA HERNANDEZ', NULL),
-(916, '203', 'Lawn Lots', 'St. Dominic', 'RUDY VISITAZION', NULL),
-(917, '204', 'Lawn Lots', 'St. Dominic', 'JOYCE DE LUNA', NULL),
-(918, '205', 'Lawn Lots', 'St. Dominic', 'DOMINADOR DE LUNA', NULL),
-(919, '206', 'Lawn Lots', 'St. Dominic', 'MARISSA MARASIGAN', NULL),
-(920, '207', 'Lawn Lots', 'St. Dominic', 'RAQUEL F. ASUNCION', NULL),
-(921, '208', 'Lawn Lots', 'St. Dominic', 'PORFIRIO VALENZUELA', NULL),
-(922, '209', 'Lawn Lots', 'St. Dominic', 'AUREA/MARIO ROGERO', NULL),
-(923, '210', 'Lawn Lots', 'St. Dominic', 'CERIACO ROGERO', NULL),
-(924, '211', 'Lawn Lots', 'St. Dominic', 'SALVADOR M. AMULONG SR.', NULL),
-(925, '212', 'Lawn Lots', 'St. Dominic', 'JULIUS MANGA\r\nJULIA ANNE MANGA', NULL),
-(926, '213', 'Lawn Lots', 'St. Dominic', 'MARLYN', NULL),
-(927, '214', 'Lawn Lots', 'St. Dominic', 'REMEDIOS CORTEZ', NULL),
-(928, '215', 'Lawn Lots', 'St. Dominic', 'SHERYL D. TEANO', NULL),
-(929, '216', 'Lawn Lots', 'St. Dominic', 'FRANCIS CABASI', NULL),
-(930, '217', 'Lawn Lots', 'St. Dominic', 'CARLITO MALABANAN', NULL),
-(931, '218', 'Lawn Lots', 'St. Dominic', 'AURORA BAYOT', NULL),
-(932, '219', 'Lawn Lots', 'St. Dominic', 'GIDEON L. DAMILES', NULL),
-(933, '220', 'Lawn Lots', 'St. Dominic', 'DOMINGO PERLADO ', NULL),
-(934, '221', 'Lawn Lots', 'St. Dominic', 'ROSALINDA AMOROSO', NULL),
-(935, '222', 'Lawn Lots', 'St. Dominic', 'FRANCISCO P. LUNA', NULL),
-(936, '223', 'Lawn Lots', 'St. Dominic', 'MANUELA DE LUNA', NULL),
-(937, '224', 'Lawn Lots', 'St. Dominic', 'DOMINADOR DE LUNA', NULL),
-(938, '225', 'Lawn Lots', 'St. Dominic', 'JECERYN AMBULO', NULL),
-(939, '226', 'Lawn Lots', 'St. Dominic', 'FELIX HERNANDEZ', NULL),
-(940, '227', 'Lawn Lots', 'St. Dominic', 'VICKY M. CESICAR', NULL),
-(941, '228', 'Lawn Lots', 'St. Dominic', 'NERY A. LUCERNAS', NULL),
-(942, '229', 'Lawn Lots', 'St. Dominic', 'CERIACO ROGERO', NULL),
-(943, '230', 'Lawn Lots', 'St. Dominic', 'ALFREDO AGNO', NULL),
-(944, '231', 'Lawn Lots', 'St. Dominic', 'JOSEFA CORTEZ', NULL),
-(945, '232', 'Lawn Lots', 'St. Dominic', 'ISABEL REYES', NULL),
-(946, '233', 'Lawn Lots', 'St. Dominic', 'LEO C. REDURANTE', NULL),
-(947, '234', 'Lawn Lots', 'St. Dominic', 'ERNESTO VILLANUEVA', NULL),
-(948, '235', 'Lawn Lots', 'St. Dominic', 'IMELDA F. ARANNA', NULL),
-(949, '236', 'Lawn Lots', 'St. Dominic', 'RIZZA MALABANAN', NULL),
-(950, '237', 'Lawn Lots', 'St. Dominic', 'AURORA BAYOT', NULL),
-(951, '238', 'Lawn Lots', 'St. Dominic', 'GERBACIO NATANUAN', NULL),
-(952, '239', 'Lawn Lots', 'St. Dominic', 'MARIA DEL SOCORRO', NULL),
-(953, '240', 'Lawn Lots', 'St. Dominic', 'JEFFREY S. ENGALAN', NULL),
-(954, '241', 'Lawn Lots', 'St. Dominic', 'NENITA S. MALABANAN', NULL),
-(955, '242', 'Lawn Lots', 'St. Dominic', 'LORETA ORNALES\r\nVICTORIA DIMAANO', NULL),
-(956, '261', 'Lawn Lots', 'St. Dominic', 'LORETA ORNALES\r\nVICTORIA DIMAANO', NULL),
-(957, '280', 'Lawn Lots', 'St. Dominic', 'LORETA ORNALES\r\nVICTORIA DIMAANO', NULL),
-(958, '299', 'Lawn Lots', 'St. Dominic', 'LORETA ORNALES\r\nVICTORIA DIMAANO', NULL),
-(959, '243', 'Lawn Lots', 'St. Dominic', 'NESTOR DE LUNA', NULL),
-(960, '244', 'Lawn Lots', 'St. Dominic', 'JECERYN AMBULO', NULL),
-(961, '245', 'Lawn Lots', 'St. Dominic', 'MARIA HERNANDEZ', NULL),
-(962, '246', 'Lawn Lots', 'St. Dominic', 'JOSE MARANAN CESICAR', NULL),
-(963, '247', 'Lawn Lots', 'St. Dominic', 'IMELDA VILLANUEVA', NULL),
-(964, '248', 'Lawn Lots', 'St. Dominic', 'MERLITA LUNA', NULL),
-(965, '249', 'Lawn Lots', 'St. Dominic', 'SUSAN AGNO', NULL),
-(966, '250', 'Lawn Lots', 'St. Dominic', 'JOSEFA CORTEZ\r\nHERMIS CORTEZ', NULL),
-(967, '269', 'Lawn Lots', 'St. Dominic', 'JOSEFA CORTEZ\r\nHERMIS CORTEZ', NULL),
-(968, '251', 'Lawn Lots', 'St. Dominic', 'ALDRIEN NATANAUAN', NULL),
-(969, '252', 'Lawn Lots', 'St. Dominic', 'MARIA DOLORES R. BERTO', NULL),
-(970, '253', 'Lawn Lots', 'St. Dominic', 'VICTORIA VILLANUVA', NULL),
-(971, '254', 'Lawn Lots', 'St. Dominic', 'SUSANA DE ROJAS', NULL),
-(972, '255', 'Lawn Lots', 'St. Dominic', 'MARY CHARM RIZZA', NULL),
-(973, '256', 'Lawn Lots', 'St. Dominic', 'JUAN GABRIEL MEDINA', NULL),
-(974, '257', 'Lawn Lots', 'St. Dominic', 'MARIA DEL SOCORRO', NULL),
-(975, '258', 'Lawn Lots', 'St. Dominic', 'MARIA DEL SOCORRO', NULL),
-(976, '276', 'Lawn Lots', 'St. Dominic', 'MARIA DEL SOCORRO', NULL),
-(977, '277', 'Lawn Lots', 'St. Dominic', 'MARIA DEL SOCORRO', NULL),
-(978, '295', 'Lawn Lots', 'St. Dominic', 'MARIA DEL SOCORRO', NULL),
-(979, '296', 'Lawn Lots', 'St. Dominic', 'MARIA DEL SOCORRO', NULL),
-(980, '259', 'Lawn Lots', 'St. Dominic', 'CORNELIO MACABANAN', NULL),
-(981, '260', 'Lawn Lots', 'St. Dominic', 'EDILBERTO M. BARRIENTOS', NULL),
-(982, '262', 'Lawn Lots', 'St. Dominic', 'MECEDES BANIZON', NULL),
-(983, '263', 'Lawn Lots', 'St. Dominic', 'WINIFRED MANIO\r\nPRISCILLA MANIO', NULL),
-(984, '264', 'Lawn Lots', 'St. Dominic', 'MARIA AMULONG\r\nARCELI CANLAS', NULL),
-(985, '265', 'Lawn Lots', 'St. Dominic', 'SOLEDAD COMIA BAYBAY\r\nPIO BAYBAY', NULL),
-(986, '266', 'Lawn Lots', 'St. Dominic', 'AGAPITO CABELTES', NULL),
-(987, '267', 'Lawn Lots', 'St. Dominic', 'BRIGIDA AGNO', NULL),
-(988, '268', 'Lawn Lots', 'St. Dominic', 'BRIGIDA AGNO', NULL),
-(999, '269', 'Lawn Lots', 'St. Dominic', 'HERMES CORTEZ\r\nFERNANDO CORTEZ', NULL),
-(1000, '270', 'Lawn Lots', 'St. Dominic', 'ROSAURO S. FELIX', NULL),
-(1001, '271', 'Lawn Lots', 'St. Dominic', 'JULITA DE LUNA AMBION', NULL),
-(1002, '272', 'Lawn Lots', 'St. Dominic', 'PRESCILA DOGELIO', NULL),
-(1003, '273', 'Lawn Lots', 'St. Dominic', 'ESTRELITA MARCANDA', NULL),
-(1004, '274', 'Lawn Lots', 'St. Dominic', 'ESTEDLITA MARCAIDA', NULL),
-(1005, '275', 'Lawn Lots', 'St. Dominic', 'ARSENIA L. MEDINA', NULL),
-(1006, '276', 'Lawn Lots', 'St. Dominic', 'ELENA CUENCO', NULL),
-(1007, '278', 'Lawn Lots', 'St. Dominic', 'ANGELES CASTEN', NULL),
-(1008, '297', 'Lawn Lots', 'St. Dominic', 'ANGELES CASTEN', NULL),
-(1009, '279', 'Lawn Lots', 'St. Dominic', 'EDILBERTO M. BARRIENTOS', NULL),
-(1010, '281', 'Lawn Lots', 'St. Dominic', 'MERCEDES BAUZON', NULL),
-(1011, '282', 'Lawn Lots', 'St. Dominic', 'EDWARD Y. WAGAN', NULL),
-(1012, '283', 'Lawn Lots', 'St. Dominic', 'DANILO MEDINA', NULL),
-(1013, '284', 'Lawn Lots', 'St. Dominic', 'ENMAR ROMULO IBANEZ', NULL),
-(1014, '285', 'Lawn Lots', 'St. Dominic', 'JUAN CARLO E. BAYBAY', NULL),
-(1015, '286', 'Lawn Lots', 'St. Dominic', 'BRIGIDA AGNO\r\nTOLENTINO AGNO', NULL),
-(1016, '287', 'Lawn Lots', 'St. Dominic', 'ROLANDO NATANAUAN\r\nELMER NATANAUAN', NULL),
-(1017, '288', 'Lawn Lots', 'St. Dominic', 'JOSEFA CORTEZ', NULL),
-(1018, '289', 'Lawn Lots', 'St. Dominic', 'RODRIGO NATANAUAN', NULL),
-(1019, '290', 'Lawn Lots', 'St. Dominic', 'PAULINO AMBION\r\nMARIO AMBION', NULL),
-(1020, '291', 'Lawn Lots', 'St. Dominic', 'GABRIEL A. DOGELIO\r\nPRESCILA DOGELIO', NULL),
-(1021, '292', 'Lawn Lots', 'St. Dominic', 'IMELDA VILLANUEVA', NULL),
-(1022, '293', 'Lawn Lots', 'St. Dominic', 'IMELDA VILLANUEVA', NULL),
-(1023, '294', 'Lawn Lots', 'St. Dominic', 'ERNESTO L. MEDINA', NULL),
-(1024, '298', 'Lawn Lots', 'St. Dominic', 'FELICISIMA GARCIA', NULL),
-(1025, '300', 'Lawn Lots', 'St. Dominic', 'MERCEDES BAUZON', NULL),
-(1026, '301', 'Lawn Lots', 'St. Dominic', 'MARLONE D. BERNANDEZ', NULL),
-(1027, '302', 'Lawn Lots', 'St. Dominic', 'FELISA MEDINA\r\nRODEL MEDINA', NULL),
-(1028, '303', 'Lawn Lots', 'St. Dominic', 'MARIA ROMULO IBANEZ', NULL),
-(1029, '304', 'Lawn Lots', 'St. Dominic', 'MORINA BAYBAY', NULL),
-(1030, '1', 'Lawn Lots', 'St. James', 'ZENAIDA MARAAN', NULL),
-(1031, '2', 'Lawn Lots', 'St. James', 'ZENAIDA MARAAN', NULL),
-(1032, '14', 'Lawn Lots', 'St. James', 'ZENAIDA MARAAN', NULL),
-(1033, '15', 'Lawn Lots', 'St. James', 'ZENAIDA MARAAN', NULL),
-(1034, '3', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1035, '4', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1036, '15', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1037, '16', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1038, '27', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1039, '28', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1040, '39', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1041, '40', 'Lawn Lots', 'St. James', 'DAMASO MALABANAN', NULL),
-(1042, '5', 'Lawn Lots', 'St. James', 'GERONIMO MALABANAN', NULL),
-(1043, '6', 'Lawn Lots', 'St. James', 'GERONIMO MALABANAN', NULL),
-(1044, '7', 'Lawn Lots', 'St. James', 'IRENE OLAVIAGA', NULL),
-(1045, '8', 'Lawn Lots', 'St. James', 'FEBE ANACAY', NULL),
-(1046, '9', 'Lawn Lots', 'St. James', 'FEBE ANACAY', NULL),
-(1047, '10', 'Lawn Lots', 'St. James', 'MILAGRIMAS SAREL', NULL),
-(1048, '11', 'Lawn Lots', 'St. James', 'DELIO CORTEZ', NULL),
-(1049, '12', 'Lawn Lots', 'St. James', 'DELIO CORTEZ', NULL),
-(1050, '17', 'Lawn Lots', 'St. James', 'GERONIMO MALABANAN', NULL),
-(1051, '18', 'Lawn Lots', 'St. James', 'GERONIMO MALABANAN', NULL),
-(1052, '19', 'Lawn Lots', 'St. James', 'IRENE OLAVIAGA', NULL),
-(1053, '22', 'Lawn Lots', 'St. James', 'GODOFREDO MOJICA', NULL),
-(1054, '23', 'Lawn Lots', 'St. James', 'DELIO CORTEZ', NULL),
-(1055, '24', 'Lawn Lots', 'St. James', 'DELIO CORTEZ', NULL),
-(1056, '25', 'Lawn Lots', 'St. James', 'CARMEN DORIA\r\nPRECY CABRERA', NULL),
-(1057, '26', 'Lawn Lots', 'St. James', 'WILLIE MARAAN', NULL),
-(1058, '29', 'Lawn Lots', 'St. James', 'EULAUA OLEGARIO', NULL),
-(1059, '30', 'Lawn Lots', 'St. James', 'EULAUA OLEGARIO', NULL),
-(1060, '31', 'Lawn Lots', 'St. James', 'FROILAN ISLA', NULL),
-(1061, '32', 'Lawn Lots', 'St. James', 'MARIANO SOLANO\r\nAIDA PINEDA', NULL),
-(1062, '33', 'Lawn Lots', 'St. James', 'MATIAS T. AMBAT\r\nGERAROO T. AMBAT', NULL),
-(1063, '34', 'Lawn Lots', 'St. James', 'GERARDO AMBAT', NULL),
-(1064, '35', 'Lawn Lots', 'St. James', 'LYDIA DE GUZMAN', NULL),
-(1065, '36', 'Lawn Lots', 'St. James', 'CHRISTINE GRACE', NULL),
-(1066, '37', 'Lawn Lots', 'St. James', 'SALVADOR DORINA\r\nPRELY S. CABRERA', NULL),
-(1067, '38', 'Lawn Lots', 'St. James', 'WILLIE MARAAN', NULL),
-(1068, '41', 'Lawn Lots', 'St. James', 'EULALIA OLEGARIO', NULL),
-(1069, '42', 'Lawn Lots', 'St. James', 'EULALIA OLEGARIO', NULL),
-(1070, '43', 'Lawn Lots', 'St. James', 'EMEUANO ISLA JR.', NULL),
-(1071, '44', 'Lawn Lots', 'St. James', 'PASENCIA OCAMPO', NULL),
-(1072, '45', 'Lawn Lots', 'St. James', 'GERARDO AMBAT', NULL),
-(1073, '46', 'Lawn Lots', 'St. James', 'JUANITA AMBAT', NULL),
-(1074, '47', 'Lawn Lots', 'St. James', 'OSCAR MOJICA', NULL),
-(1075, '48', 'Lawn Lots', 'St. James', 'OSCAR MOJICA', NULL),
-(1076, '49', 'Lawn Lots', 'St. James', 'CONSORCIA BAYOT', NULL),
-(1077, '50', 'Lawn Lots', 'St. James', 'RUSELMO ERMINO', NULL),
-(1078, '51', 'Lawn Lots', 'St. James', NULL, NULL),
-(1079, '52', 'Lawn Lots', 'St. James', NULL, NULL),
-(1080, '53', 'Lawn Lots', 'St. James', 'REMEDIOS JAVIER', NULL),
-(1081, '54', 'Lawn Lots', 'St. James', 'MARGIE MESTIZO', NULL),
-(1082, '55', 'Lawn Lots', 'St. James', 'JOEL B. DELOS SANTOS', NULL),
-(1083, '56', 'Lawn Lots', 'St. James', 'TITO ANGCAYA\r\nESTER BAYBAY', NULL),
-(1084, '57', 'Lawn Lots', 'St. James', 'MA LIZA MARASIGAN', NULL),
-(1085, '58', 'Lawn Lots', 'St. James', 'JOEL CABRERA', NULL),
-(1086, '59', 'Lawn Lots', 'St. James', 'LYDIA DE GUZMAN', NULL),
-(1087, '60', 'Lawn Lots', 'St. James', 'BELEN CORTEZ', NULL),
-(1088, '61', 'Lawn Lots', 'St. James', 'OSCAR BAYOT', NULL),
-(1089, '62', 'Lawn Lots', 'St. James', 'LYDIA U. BAURILE', NULL),
-(1090, '63', 'Lawn Lots', 'St. James', 'REY HERNANDEZ', NULL),
-(1091, '64', 'Lawn Lots', 'St. James', 'MAXIMA R. BICOG', NULL),
-(1092, '65', 'Lawn Lots', 'St. James', 'SONIA MALABANAN', NULL),
-(1093, '66', 'Lawn Lots', 'St. James', 'FITOMENA M. JAVIER', NULL),
-(1094, '67', 'Lawn Lots', 'St. James', 'GREGORIO JAVIER', NULL),
-(1095, '68', 'Lawn Lots', 'St. James', 'LILIOSA LUNA\r\nLIEZL AMBROCIO', NULL),
-(1096, '69', 'Lawn Lots', 'St. James', 'DIOSDADO PORTUGAL', NULL),
-(1097, '70', 'Lawn Lots', 'St. James', 'DIOSDADO PORTUGAL', NULL),
-(1098, '71', 'Lawn Lots', 'St. James', 'LYDIA DE GUZMAN', NULL),
-(1099, '72', 'Lawn Lots', 'St. James', 'CHRISTINE GRACE CORTEZ', NULL),
-(1100, '73', 'Lawn Lots', 'St. James', 'OSCAR BAYOT', NULL),
-(1101, '74', 'Lawn Lots', 'St. James', NULL, NULL),
-(1102, '75', 'Lawn Lots', 'St. James', 'MICHAEL FELLO', NULL),
-(1103, '76', 'Lawn Lots', 'St. James', 'INDEPENDENCIA LLAZORE', NULL),
-(1104, '77', 'Lawn Lots', 'St. James', 'MARIA SUELTO\r\nERENIA AALA', NULL),
-(1105, '78', 'Lawn Lots', 'St. James', 'AQUILINA TERRIBLE', NULL),
-(1106, '79', 'Lawn Lots', 'St. James', 'ELRITERIO PABLO', NULL),
-(1107, '80', 'Lawn Lots', 'St. James', 'EDWIN AMBION', NULL),
-(1108, '81', 'Lawn Lots', 'St. James', 'CARLOS MEDINA', NULL),
-(1109, '82', 'Lawn Lots', 'St. James', 'MYRNA ANACAY', NULL),
-(1110, '83', 'Lawn Lots', 'St. James', 'JULIO BERGADO', NULL),
-(1111, '84', 'Lawn Lots', 'St. James', 'CHRISTINE GRACE CORTEZ\r\nBELEN CORTEZ', NULL),
-(1112, '85', 'Lawn Lots', 'St. James', 'OSCAR BAYOT', NULL),
-(1113, '86', 'Lawn Lots', 'St. James', 'DORCAS BAYOT', NULL),
-(1114, '87', 'Lawn Lots', 'St. James', 'APOLONIO C. BORJA', NULL),
-(1115, '88', 'Lawn Lots', 'St. James', 'IRVIN DE GUZMAN', NULL),
-(1116, '89', 'Lawn Lots', 'St. James', 'DANILO MANZANO', NULL),
-(1117, '90', 'Lawn Lots', 'St. James', NULL, NULL),
-(1118, '91', 'Lawn Lots', 'St. James', 'JASON M. MATULAC', NULL),
-(1119, '92', 'Lawn Lots', 'St. James', 'EDWIN ANIBESA', NULL),
-(1120, '93', 'Lawn Lots', 'St. James', 'CATHERINE JOY PANALIGAN', NULL),
-(1121, '94', 'Lawn Lots', 'St. James', 'SEVERO MARASIGAN', NULL),
-(1122, '95', 'Lawn Lots', 'St. James', 'LUCIA SERRA\r\nNAZARIO SERRA', NULL),
-(1123, '96', 'Lawn Lots', 'St. James', 'BELEN CORTEZ', NULL),
-(1124, '97', 'Lawn Lots', 'St. James', 'GUILLERMO GUNDAO', NULL),
-(1125, '108', 'Lawn Lots', 'St. James', 'GUILLERMO GUNDAO', NULL),
-(1126, '119', 'Lawn Lots', 'St. James', 'GUILLERMO GUNDAO', NULL),
-(1127, '98', 'Lawn Lots', 'St. James', 'ALICIO ACOSTA', NULL),
-(1128, '99', 'Lawn Lots', 'St. James', 'SALVACION YAMAMOTO', NULL),
-(1129, '100', 'Lawn Lots', 'St. James', 'GUILLERMA MERCADO', NULL),
-(1130, '101', 'Lawn Lots', 'St. James', 'IMELDA MANZANO', NULL),
-(1131, '103', 'Lawn Lots', 'St. James', 'ALONZO BAYOT\r\nHELEN BAYOT', NULL),
-(1132, '104', 'Lawn Lots', 'St. James', 'EDGARDO SIMSON\r\nSOCORIO SIMSON', NULL),
-(1133, '105', 'Lawn Lots', 'St. James', 'MENA T. RUNES', NULL),
-(1134, '106', 'Lawn Lots', 'St. James', 'ANITA A. CORTEZ', NULL),
-(1135, '107', 'Lawn Lots', 'St. James', 'ANITA A. CORTEZ', NULL),
-(1136, '108', 'Lawn Lots', 'St. James', 'GUILLERMA GUMBAO', NULL),
-(1137, '109', 'Lawn Lots', 'St. James', 'AUGUSTINIAN SISTERS SERVANTS', NULL),
-(1138, '120', 'Lawn Lots', 'St. James', 'AUGUSTINIAN SISTERS SERVANTS', NULL),
-(1139, '110', 'Lawn Lots', 'St. James', 'SALVACION YAMAMOTO', NULL),
-(1140, '111', 'Lawn Lots', 'St. James', NULL, NULL),
-(1141, '112', 'Lawn Lots', 'St. James', 'JUANITO MANZANO', NULL),
-(1142, '113', 'Lawn Lots', 'St. James', 'OLIVER PLATON', NULL),
-(1143, '114', 'Lawn Lots', 'St. James', 'ALONZO BAYOT\r\nHELEN BAYOT', NULL),
-(1144, '115', 'Lawn Lots', 'St. James', 'IRENEO CABRERA', NULL),
-(1145, '116', 'Lawn Lots', 'St. James', 'URSULA TUMBAGA', NULL),
-(1146, '117', 'Lawn Lots', 'St. James', 'ANITA CORTEZ', NULL),
-(1147, '118', 'Lawn Lots', 'St. James', 'ANITA CORTEZ', NULL),
-(1148, '119', 'Lawn Lots', 'St. James', 'GUILLERMA GUNDAO', NULL),
-(1149, '121', 'Lawn Lots', 'St. James', 'SALVACION YAMAMOTO', NULL),
-(1150, '122', 'Lawn Lots', 'St. James', 'SALVACION YAMAMOTO', NULL),
-(1151, '123', 'Lawn Lots', 'St. James', 'SALVACION YAMAMOTO', NULL),
-(1152, '124', 'Lawn Lots', 'St. James', 'OLIVER PLATON', NULL),
-(1153, '135', 'Lawn Lots', 'St. James', 'OLIVER PLATON', NULL),
-(1154, '146', 'Lawn Lots', 'St. James', 'OLIVER PLATON', NULL),
-(1155, '125', 'Lawn Lots', 'St. James', 'ELENA VILLANUEVA', NULL),
-(1156, '126', 'Lawn Lots', 'St. James', 'JESUS D. FAVIA', NULL),
-(1157, '127', 'Lawn Lots', 'St. James', 'MARIO TUMBAGA', NULL),
-(1158, '128', 'Lawn Lots', 'St. James', 'ANITA A. CORTEZ', NULL),
-(1159, '129', 'Lawn Lots', 'St. James', 'ANITA A. CORTEZ', NULL),
-(1160, '130', 'Lawn Lots', 'St. James', 'MARY GRACE BAYOT', NULL),
-(1161, '131', 'Lawn Lots', 'St. James', 'MG.B', NULL),
-(1162, '132', 'Lawn Lots', 'St. James', 'SALVACION YAMAMOTO', NULL),
-(1163, '102', 'Lawn Lots', 'St. James', 'MA LUIZ P. CAPAJE', NULL),
-(1164, '134', 'Lawn Lots', 'St. James', 'RONALDO C. PARDO', NULL),
-(1165, '136', 'Lawn Lots', 'St. James', 'VICTOR VILLANUEVA', NULL),
-(1166, '137', 'Lawn Lots', 'St. James', 'JUANITO ORE', NULL),
-(1167, '138', 'Lawn Lots', 'St. James', 'EUFROCINO C. KALA', NULL),
-(1168, '139', 'Lawn Lots', 'St. James', 'N. CORTEZ', NULL),
-(1169, '140', 'Lawn Lots', 'St. James', 'N. CORTEZ', NULL),
-(1170, '141', 'Lawn Lots', 'St. James', 'MGB', NULL),
-(1171, '142', 'Lawn Lots', 'St. James', 'MGB', NULL),
-(1172, '143', 'Lawn Lots', 'St. James', 'GUILLERMA MERCADO', NULL),
-(1173, '144', 'Lawn Lots', 'St. James', 'JOSE BONAUENTE', NULL),
-(1174, '145', 'Lawn Lots', 'St. James', 'FELICISIMO PANGANIBAN', NULL),
-(1175, '147', 'Lawn Lots', 'St. James', 'BENIDICK CABASI', NULL),
-(1176, '148', 'Lawn Lots', 'St. James', 'JUANA RODRIGUEZ', NULL),
-(1177, '149', 'Lawn Lots', 'St. James', 'ELENITA GONZALES', NULL),
-(1178, '150', 'Lawn Lots', 'St. James', 'JUANITO LUNA ', NULL),
-(1179, '151', 'Lawn Lots', 'St. James', 'ALBINO VERGARA \r\nAMELITA FERMA', NULL),
-(1180, '152', 'Lawn Lots', 'St. James', 'MGB', NULL),
-(1181, '153', 'Lawn Lots', 'St. James', 'MGB', NULL),
-(1182, '154', 'Lawn Lots', 'St. James', 'FLORESITA P. BUCO', NULL),
-(1183, '155', 'Lawn Lots', 'St. James', 'JOSE BONANENTE JR', NULL),
-(1184, '156', 'Lawn Lots', 'St. James', 'RACQUEL MANGUIAT', NULL),
-(1185, '157', 'Lawn Lots', 'St. James', 'RODOLFO GELOFIN OLLODO\r\n', NULL),
-(1186, '158', 'Lawn Lots', 'St. James', 'BENEDICA CABASI', NULL),
-(1187, '159', 'Lawn Lots', 'St. James', 'LYN RODRIGUEZ', NULL),
-(1188, '160', 'Lawn Lots', 'St. James', 'ELENITA S. GONZALES\r\nALFREDO GONZALES', NULL),
-(1189, '161', 'Lawn Lots', 'St. James', 'LUNA', NULL),
-(1190, '162', 'Lawn Lots', 'St. James', 'ANTONIO SILAN JR.', NULL),
-(1191, '163', 'Lawn Lots', 'St. James', 'REYNALDO VERGARA', NULL),
-(1192, '164', 'Lawn Lots', 'St. James', 'CECILIA V. OPO', NULL),
-(1193, '165', 'Lawn Lots', 'St. James', 'LETICIA ANGCAYA\r\nCARLOS ANGCAYA', NULL),
-(1194, '166', 'Lawn Lots', 'St. James', 'ANTONIO M. CRISOSTOMO', NULL),
-(1195, '167', 'Lawn Lots', 'St. James', 'ANTONIO M. CRISISTOMO', NULL),
-(1196, '168', 'Lawn Lots', 'St. James', 'EFREN CABRERA\r\nLEA CABRERA', NULL),
-(1197, '169', 'Lawn Lots', 'St. James', 'WILLIAM BUSTO', NULL),
-(1198, '170', 'Lawn Lots', 'St. James', 'EUGENIA A. JAYSON', NULL),
-(1199, '171', 'Lawn Lots', 'St. James', 'FELIPE MIRANDA', NULL),
-(1200, '172', 'Lawn Lots', 'St. James', 'FELIPE MIRANDA', NULL),
-(1201, '173', 'Lawn Lots', 'St. James', 'REYNALDO OPAGAZA SR.', NULL),
-(1202, '174', 'Lawn Lots', 'St. James', 'CECILIA V. OPO', NULL),
-(1203, '175', 'Lawn Lots', 'St. James', 'ST. BRIDGETS CONVENT', NULL),
-(1204, '176', 'Lawn Lots', 'St. James', 'ANTONIO CRISOSTOMO', NULL),
-(1205, '177', 'Lawn Lots', 'St. James', 'ANTONIO CRISOSTOMO', NULL),
-(1206, '178', 'Lawn Lots', 'St. James', 'DANILO SANARES', NULL),
-(1207, '179', 'Lawn Lots', 'St. James', 'MANUEL E. ESTRABELA', NULL),
-(1208, '180', 'Lawn Lots', 'St. James', 'R.E JAYSON EUGENIA\r\n', NULL),
-(1209, '181', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1210, '182', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1211, '191', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1212, '192', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1213, '201', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1214, '202', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1215, '211', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1216, '212', 'Lawn Lots', 'St. James', 'FELIPA MIRANDA', NULL),
-(1217, '183', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1218, '184', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1219, '193', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1220, '194', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1221, '203', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1222, '204', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1223, '214', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1224, '223', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1225, '23', 'Lawn Lots', 'St. James', 'FOCOCARE', NULL),
-(1226, '185', 'Lawn Lots', 'St. James', 'RONALD APDO\r\nEVELYN APDO', NULL),
-(1227, '186', 'Lawn Lots', 'St. James', 'R. ARMANDO BEDJA', NULL),
-(1228, '187', 'Lawn Lots', 'St. James', 'JENNILYN FOERSTER', NULL),
-(1229, '188', 'Lawn Lots', 'St. James', 'EVIE CUEVAS', NULL),
-(1230, '189', 'Lawn Lots', 'St. James', 'MARIANITO HERNANDEZ\r\nQUINTIN HERNANDEZ', NULL),
-(1231, '190', 'Lawn Lots', 'St. James', 'FRANCISCO DELA ROSA', NULL),
-(1232, '196', 'Lawn Lots', 'St. James', 'ARMANDO BEDUA', NULL),
-(1233, '197', 'Lawn Lots', 'St. James', 'JULIETA BISCOCHO', NULL),
-(1234, '198', 'Lawn Lots', 'St. James', 'EVIE CUEVAS', NULL),
-(1235, '199', 'Lawn Lots', 'St. James', 'MARIANITO HERNANDEZ', NULL),
-(1236, '200', 'Lawn Lots', 'St. James', 'LOLITA S. DIGO', NULL),
-(1237, '205', 'Lawn Lots', 'St. James', 'RAMON AQUINO', NULL),
-(1238, '206', 'Lawn Lots', 'St. James', 'ARMANDO BEDUA', NULL),
-(1239, '207', 'Lawn Lots', 'St. James', 'JULIETA BISCOCHO', NULL),
-(1240, '208', 'Lawn Lots', 'St. James', 'ANTONIO FERMACHO\r\nLEAH BESA', NULL),
-(1241, '209', 'Lawn Lots', 'St. James', 'MARIVIC ANTE', NULL),
-(1242, '210', 'Lawn Lots', 'St. James', 'MARIVIC ANTE', NULL),
-(1243, '215', 'Lawn Lots', 'St. James', 'RAMON AQUINO', NULL),
-(1244, '216', 'Lawn Lots', 'St. James', 'EVANGELINE ARIOLA', NULL),
-(1245, '217', 'Lawn Lots', 'St. James', 'MARIA P. TAYCO', NULL),
-(1246, '218', 'Lawn Lots', 'St. James', 'GARRY M. VILLANUEVA', NULL),
-(1247, '219', 'Lawn Lots', 'St. James', 'GAVINA BORJA', NULL),
-(1248, '220', 'Lawn Lots', 'St. James', 'LEWI BETITA', NULL),
-(1249, '221', 'Lawn Lots', 'St. James', 'LEWI BETITA', NULL),
-(1250, '224', 'Lawn Lots', 'St. James', 'LUCIL A. MARINDUGUE', NULL),
-(1251, '225', 'Lawn Lots', 'St. James', 'R. MARY D. KUA', NULL),
-(1252, '226', 'Lawn Lots', 'St. James', 'MARIA P. TAYCO', NULL),
-(1253, '227', 'Lawn Lots', 'St. James', 'GARRY VILLANUEVA', NULL),
-(1254, '228', 'Lawn Lots', 'St. James', 'GAVINA BORJA', NULL),
-(1255, '229', 'Lawn Lots', 'St. James', 'FELICIDAD GABAC RORIGUEZ\r\nMARCELO RODRIGUEZ', NULL),
-(1256, '230', 'Lawn Lots', 'St. James', 'MYRNA DE VILLA', NULL),
-(1257, '233', 'Lawn Lots', 'St. James', 'LUCIL MARINDUQUE', NULL),
-(1258, '234', 'Lawn Lots', 'St. James', 'NEMECIO DOGELIO', NULL),
-(1259, '235', 'Lawn Lots', 'St. James', 'EVANGELINE ARIOLA', NULL),
-(1260, '236', 'Lawn Lots', 'St. James', 'JUAN BALOSO\r\nALICIA BALOSO', NULL),
-(1261, '237', 'Lawn Lots', 'St. James', 'DIVINA VILLANUEVA', NULL),
-(1262, '238', 'Lawn Lots', 'St. James', 'RJLLEEN JAVIER', NULL),
-(1263, '239', 'Lawn Lots', 'St. James', 'INOCENCIA DACLES GABAC\r\nPERCILA GABAC', NULL),
-(1264, '242', 'Lawn Lots', 'St. James', 'GLENDA OMALES', NULL),
-(1265, '251', 'Lawn Lots', 'St. James', 'GLENDA OMALES', NULL),
-(1266, '243', 'Lawn Lots', 'St. James', 'R. MARY D. KUA', NULL),
-(1267, '244', 'Lawn Lots', 'St. James', 'JUANITA DE CASTRO', NULL),
-(1268, '245', 'Lawn Lots', 'St. James', 'JUANITA DE CASTRO', NULL),
-(1269, '254', 'Lawn Lots', 'St. James', 'JUANITA DE CASTRO', NULL),
-(1270, '263', 'Lawn Lots', 'St. James', 'JUANITA DE CASTRO', NULL),
-(1271, '246', 'Lawn Lots', 'St. James', 'NILDA CARPIO', NULL),
-(1272, '247', 'Lawn Lots', 'St. James', 'CATHY MENDOZA', NULL),
-(1273, '248', 'Lawn Lots', 'St. James', 'FLORENTINO AUSTRIA', NULL),
-(1274, '250', 'Lawn Lots', 'St. James', 'VIRGILIO N. VILLANUEVA', NULL),
-(1275, '252', 'Lawn Lots', 'St. James', 'MARY D. KUA', NULL),
-(1276, '253', 'Lawn Lots', 'St. James', 'JUANITA DE CASTRO', NULL),
-(1277, '255', 'Lawn Lots', 'St. James', 'ELSA REYES', NULL),
-(1278, '256', 'Lawn Lots', 'St. James', 'EZEKIEL JAVIER', NULL),
-(1279, '257', 'Lawn Lots', 'St. James', 'FLORENTINO AUSTRIA', NULL),
-(1280, '260', 'Lawn Lots', 'St. James', 'RONILO MEDINA', NULL),
-(1281, '261', 'Lawn Lots', 'St. James', 'RONILO MEDINA', NULL),
-(1282, '262', 'Lawn Lots', 'St. James', 'ANTONIO MONTEZA', NULL),
-(1283, '264', 'Lawn Lots', 'St. James', 'ERVIN SALAZAR', NULL),
-(1284, '265', 'Lawn Lots', 'St. James', 'NORINE MENDOZA', NULL),
-(1285, '266', 'Lawn Lots', 'St. James', 'C/O FOCOLARE\r\nLEO GANADEN', NULL),
-(1286, '267', 'Lawn Lots', 'St. James', 'ROMELO SESMA', NULL),
-(1287, '268', 'Lawn Lots', 'St. James', 'RONILO MEDINA', NULL),
-(1288, '269', 'Lawn Lots', 'St. James', 'RONICO MEDINA', NULL),
-(1289, '270', 'Lawn Lots', 'St. James', 'MARY JANE BAYHON\r\n\r\n', NULL),
-(1290, '271', 'Lawn Lots', 'St. James', 'MARY JANE BAYHON\r\n\r\n', NULL),
-(1291, '272', 'Lawn Lots', 'St. James', 'ELIZABETH VICTORIO O.', NULL),
-(1292, '273', 'Lawn Lots', 'St. James', 'MIGUELA AMBION\r\nCEFERINO AMBION', NULL),
-(1293, '1', 'Lawn Lots', 'St. Jude', 'ELIZABETH CARPIO\r\nBENITO CAMACHO', NULL),
-(1294, '2', 'Lawn Lots', 'St. Jude', 'BENITO CAMACHO', NULL),
-(1295, '3', 'Lawn Lots', 'St. Jude', 'CRISANTA D. AMBION', NULL),
-(1296, '4', 'Lawn Lots', 'St. Jude', 'JOSEPHINE A. SOLANO', NULL),
-(1297, '5', 'Lawn Lots', 'St. Jude', 'EPHRAIM AMBAT\r\nLEONIDA', NULL),
-(1298, '6', 'Lawn Lots', 'St. Jude', 'EPHRAIM AMBAT\r\nLEONIDA', NULL),
-(1299, '7', 'Lawn Lots', 'St. Jude', 'EMELITA BELINA', NULL),
-(1300, '8', 'Lawn Lots', 'St. Jude', 'FRANCISCO INGENIERO', NULL),
-(1301, '9', 'Lawn Lots', 'St. Jude', 'LEONARDO P. LANZA\r\nRONALD L. MECUA', NULL),
-(1302, '10', 'Lawn Lots', 'St. Jude', 'CAMILO RIVERA', NULL),
-(1303, '11', 'Lawn Lots', 'St. Jude', 'LILIBETH R. AQUINO', NULL),
-(1304, '12', 'Lawn Lots', 'St. Jude', 'IMELDA MABBAGO', NULL),
-(1305, '13', 'Lawn Lots', 'St. Jude', 'DOMINGO FABRIGA\r\nJAENA MAULLON', NULL),
-(1306, '14', 'Lawn Lots', 'St. Jude', 'DOMINGO FABRIGA\r\nJAENA MAULLON', NULL),
-(1307, '15', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1308, '16', 'Lawn Lots', 'St. Jude', 'LUISA Y DIZON\r\nMARLON DIZON', NULL),
-(1309, '17', 'Lawn Lots', 'St. Jude', 'GEORGE ESGANA', NULL),
-(1310, '18', 'Lawn Lots', 'St. Jude', 'ARNULFO ALEGA', NULL),
-(1311, '19', 'Lawn Lots', 'St. Jude', 'ROBERTO A. MANINGAT SR.', NULL),
-(1312, '20', 'Lawn Lots', 'St. Jude', 'DAISY S. MANINGAT', NULL),
-(1313, '21', 'Lawn Lots', 'St. Jude', 'JOCELYN ACEDILLO', NULL),
-(1314, '22', 'Lawn Lots', 'St. Jude', 'VIVENCIO PEFENIA', NULL),
-(1315, '23', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1316, '24', 'Lawn Lots', 'St. Jude', 'FELIPE LEABAN\r\nMARLON LEABAN', NULL),
-(1317, '25', 'Lawn Lots', 'St. Jude', 'SAIAS V. MAGBITANG', NULL),
-(1318, '26', 'Lawn Lots', 'St. Jude', 'ANGELINA BASCONCILLA', NULL),
-(1319, '27', 'Lawn Lots', 'St. Jude', 'LUZ LIBUTAN', NULL),
-(1320, '28', 'Lawn Lots', 'St. Jude', 'CHARLITO MONTERO SR.\r\nMICHAEL JHON MONTESO', NULL),
-(1321, '29', 'Lawn Lots', 'St. Jude', 'MADONNA M. PARRA', NULL),
-(1322, '30', 'Lawn Lots', 'St. Jude', 'ALFREDO GILLO', NULL),
-(1323, '31', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1324, '32', 'Lawn Lots', 'St. Jude', 'MAXIMA ROSAS', NULL),
-(1325, '33', 'Lawn Lots', 'St. Jude', 'MAXIMA ROSAS', NULL),
-(1326, '34', 'Lawn Lots', 'St. Jude', 'ZACHARRIE KEALSEY P ,MEER\r\nARSENIO MEER', NULL),
-(1327, '35', 'Lawn Lots', 'St. Jude', 'APOLONIA SARNO', NULL),
-(1328, '36', 'Lawn Lots', 'St. Jude', 'APOLONIA SARNO', NULL),
-(1329, '37', 'Lawn Lots', 'St. Jude', 'MARCIANA AMBITA', NULL),
-(1330, '38', 'Lawn Lots', 'St. Jude', 'MARCIANA AMBITA', NULL),
-(1331, '39', 'Lawn Lots', 'St. Jude', 'DOMINGO C. PAGADOR', NULL),
-(1332, '40', 'Lawn Lots', 'St. Jude', 'SESINANDITO ALMAZAN\r\nMARCELA ALMAZAN', NULL),
-(1333, '41', 'Lawn Lots', 'St. Jude', 'AMELIA CABILES', NULL),
-(1334, '42', 'Lawn Lots', 'St. Jude', 'ELICA O. ILAO', NULL),
-(1335, '43', 'Lawn Lots', 'St. Jude', 'LUZVIMINDA VILLANUEVA', NULL),
-(1336, '44', 'Lawn Lots', 'St. Jude', 'DENNIS ODAL\r\nALEX OCOP', NULL),
-(1337, '45', 'Lawn Lots', 'St. Jude', 'FABRIGA\r\n', NULL),
-(1338, '46', 'Lawn Lots', 'St. Jude', 'R. JAINA', NULL),
-(1339, '47', 'Lawn Lots', 'St. Jude', 'ANGELINA DE LEON', NULL),
-(1340, '48', 'Lawn Lots', 'St. Jude', 'ANGELINA DE LEON', NULL),
-(1341, '49', 'Lawn Lots', 'St. Jude', 'MERLITA DIMAPILIS', NULL),
-(1342, '50', 'Lawn Lots', 'St. Jude', 'ROBERTO S. MANINGAT', NULL),
-(1343, '51', 'Lawn Lots', 'St. Jude', 'DAISY LEA S. MANINGAT', NULL),
-(1344, '52', 'Lawn Lots', 'St. Jude', 'AGNES MOJICA', NULL),
-(1345, '53', 'Lawn Lots', 'St. Jude', 'JOSEPHINE MIRANDA', NULL),
-(1346, '54', 'Lawn Lots', 'St. Jude', 'RICARDO RAMOS\r\nRODERICK T. RAMOS', NULL),
-(1347, '55', 'Lawn Lots', 'St. Jude', 'ANNALYN ESPIRITU', NULL),
-(1348, '56', 'Lawn Lots', 'St. Jude', 'EPIFANIO C. ABENDANIO', NULL),
-(1349, '57', 'Lawn Lots', 'St. Jude', 'LEONIDA VILLANUEVA\r\nMARISSA DIMAPILIS', NULL),
-(1350, '58', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1351, '59', 'Lawn Lots', 'St. Jude', 'MARCIANA BARCA', NULL),
-(1352, '60', 'Lawn Lots', 'St. Jude', 'PATRICIO BAUTISTA\r\nAIMEE B. PELLOS', NULL),
-(1353, '61', 'Lawn Lots', 'St. Jude', 'FELIPE PIEZAGO', NULL),
-(1354, '62', 'Lawn Lots', 'St. Jude', 'CAROLINA CABRERA', NULL),
-(1355, '63', 'Lawn Lots', 'St. Jude', 'ANGELO JOBERT \r\nMA. THERESA SAVILLA', NULL),
-(1356, '64', 'Lawn Lots', 'St. Jude', 'MARYLEN A. DE CASTRO', NULL),
-(1357, '65', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1358, '66', 'Lawn Lots', 'St. Jude', 'ROMEO VILLANUEVA\r\nROSARIO VILLANUEVA', NULL),
-(1359, '67', 'Lawn Lots', 'St. Jude', 'IRENE GAILE ALMENDRAS', NULL),
-(1360, '68', 'Lawn Lots', 'St. Jude', 'HONEYLYN ALMENDRAS\r\nJOEL ALMENDRAS\r\n', NULL),
-(1361, '69', 'Lawn Lots', 'St. Jude', 'ROBERTO ALMENDRAS\r\nARIEL ALMENDRAS', NULL),
-(1362, '70', 'Lawn Lots', 'St. Jude', 'MICARIA ALMENDRAS\r\nARIEL ALMENDRAS', NULL),
-(1363, '71', 'Lawn Lots', 'St. Jude', 'RODEL SOLIS', NULL),
-(1364, '72', 'Lawn Lots', 'St. Jude', 'ELISA MERCADO', NULL),
-(1365, '73', 'Lawn Lots', 'St. Jude', 'ALEXANDER CREUS', NULL),
-(1366, '74', 'Lawn Lots', 'St. Jude', 'ALEXANDER CREUS', NULL),
-(1367, '75', 'Lawn Lots', 'St. Jude', 'ALEXANDER CREUS', NULL),
-(1368, '76', 'Lawn Lots', 'St. Jude', 'BENJAMIN HERNANDEZ', NULL),
-(1369, '77', 'Lawn Lots', 'St. Jude', 'ELINO MANALO', NULL),
-(1370, '78', 'Lawn Lots', 'St. Jude', 'ENGRACIO GARCIA', NULL),
-(1371, '79', 'Lawn Lots', 'St. Jude', 'DEMETRIO MENDOZA', NULL),
-(1372, '80', 'Lawn Lots', 'St. Jude', 'DEMETRIO MENDOZA', NULL),
-(1373, '81', 'Lawn Lots', 'St. Jude', 'SABAS PAYABAN\r\nRUBY ANNA PAYABAN', NULL),
-(1374, '82', 'Lawn Lots', 'St. Jude', 'JULIET P. AMBION', NULL),
-(1375, '83', 'Lawn Lots', 'St. Jude', 'CHRISTIAN YIA', NULL),
-(1376, '84', 'Lawn Lots', 'St. Jude', 'REYNALDO GERONIMO\r\nJULIANA GERONIMO', NULL),
-(1377, '85', 'Lawn Lots', 'St. Jude', 'RAMONSITO CANTON', NULL),
-(1378, '86', 'Lawn Lots', 'St. Jude', 'LOLIZA MEDINA', NULL),
-(1379, '87', 'Lawn Lots', 'St. Jude', 'ADDALANI HAND HURPA', NULL),
-(1380, '88', 'Lawn Lots', 'St. Jude', 'KARREN MANLUPIG', NULL),
-(1381, '89', 'Lawn Lots', 'St. Jude', 'ELVIRA R. GUEVERRA', NULL),
-(1382, '90', 'Lawn Lots', 'St. Jude', 'ESTELITA C. MARABUENO\r\nMARIA R. CARAAN', NULL),
-(1383, '91', 'Lawn Lots', 'St. Jude', 'SIXTO DELA PEñA\r\nJANIETA PEDRAZA', NULL),
-(1384, '92', 'Lawn Lots', 'St. Jude', 'SIXTO DELA PEñA\r\nJANIETA PEDRAZA', NULL),
-(1385, '93', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1386, '94', 'Lawn Lots', 'St. Jude', 'MARCELA HERNANDEZ \r\nREYNALDO HERNANDEZ', NULL),
-(1387, '95', 'Lawn Lots', 'St. Jude', 'MARCELA HERNANDEZ \r\nREYNALDO HERNANDEZ', NULL),
-(1388, '96', 'Lawn Lots', 'St. Jude', 'MARCELA HERNANDEZ \r\nREYNALDO HERNANDEZ', NULL),
-(1389, '97', 'Lawn Lots', 'St. Jude', 'ROMEO DE LEON\r\nRUFINA DE LEON', NULL),
-(1390, '98', 'Lawn Lots', 'St. Jude', 'ROMEO DE LEON\r\nRUFINA DE LEON', NULL),
-(1391, '99', 'Lawn Lots', 'St. Jude', 'CEFERINA MENDOZA', NULL),
-(1392, '100', 'Lawn Lots', 'St. Jude', 'NORBERTO ASUNCION', NULL),
-(1393, '101', 'Lawn Lots', 'St. Jude', 'PURITA ALMENDRAS', NULL),
-(1394, '102', 'Lawn Lots', 'St. Jude', 'PRECILLA OLIVA', NULL),
-(1395, '103', 'Lawn Lots', 'St. Jude', 'SOLTOBRAN G. BUENAOBRA', NULL),
-(1396, '104', 'Lawn Lots', 'St. Jude', 'DOMINGO TIBAYAN\r\nROWENA T. GEMEROSQ', NULL),
-(1397, '105', 'Lawn Lots', 'St. Jude', 'EMMA A. BENDO\r\nERINE BENDO', NULL),
-(1398, '106', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1399, '107', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1400, '108', 'Lawn Lots', 'St. Jude', 'MELANIO ANCHETA\r\nMELLER ANCHETA', NULL),
-(1401, '109', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1402, '110', 'Lawn Lots', 'St. Jude', 'DEMETRIO BAYBAY', NULL),
-(1403, '111', 'Lawn Lots', 'St. Jude', 'DEMETRIO BAYBAY', NULL),
-(1404, '112', 'Lawn Lots', 'St. Jude', 'FRANCISCO SEPINO\r\nBRIGIDA SEPINO', NULL),
-(1405, '113', 'Lawn Lots', 'St. Jude', 'FRANCISCO SEPINO\r\nBRIGIDA SEPINO', NULL),
-(1406, '114', 'Lawn Lots', 'St. Jude', 'FRANCISCO SEPINO\r\nBRIGIDA SEPINO', NULL),
-(1407, '115', 'Lawn Lots', 'St. Jude', 'BRIGIDO M. SEPINO', NULL),
-(1408, '116', 'Lawn Lots', 'St. Jude', 'MARIKO UETAKE', NULL),
-(1409, '117', 'Lawn Lots', 'St. Jude', 'MARIKO UETAKE', NULL),
-(1410, '118', 'Lawn Lots', 'St. Jude', 'FLOREN A. MELIBO', NULL),
-(1411, '119', 'Lawn Lots', 'St. Jude', 'LIBRADO ANGCAYA', NULL),
-(1412, '120', 'Lawn Lots', 'St. Jude', 'JENNIFER ANGCAYA', NULL),
-(1413, '121', 'Lawn Lots', 'St. Jude', 'JENNIFER ANGCAYA', NULL),
-(1414, '122', 'Lawn Lots', 'St. Jude', 'CONSORCIA CASTILLO', NULL),
-(1415, '123', 'Lawn Lots', 'St. Jude', 'CONSORCIA CASTILLO', NULL),
-(1416, '124', 'Lawn Lots', 'St. Jude', 'RICARDO VIBAR', NULL),
-(1417, '125', 'Lawn Lots', 'St. Jude', 'PERFECTO ROMULO', NULL),
-(1418, '126', 'Lawn Lots', 'St. Jude', 'EFREN MENDOZA', NULL),
-(1419, '127', 'Lawn Lots', 'St. Jude', 'EFREN MENDOZA', NULL),
-(1420, '128', 'Lawn Lots', 'St. Jude', 'EFREN MENDOZA', NULL),
-(1421, '157', 'Lawn Lots', 'St. Jude', 'EFREN MENDOZA', NULL),
-(1422, '158', 'Lawn Lots', 'St. Jude', 'EFREN MENDOZA', NULL),
-(1423, '159', 'Lawn Lots', 'St. Jude', 'EFREN MENDOZA', NULL),
-(1424, '129', 'Lawn Lots', 'St. Jude', 'SERGIO MARCEVA\r\nLIDDYLOU MARCEVA', NULL),
-(1425, '130', 'Lawn Lots', 'St. Jude', 'E. MENDOZA', NULL),
-(1426, '131', 'Lawn Lots', 'St. Jude', 'E. MENDOZA', NULL),
-(1427, '132', 'Lawn Lots', 'St. Jude', 'R. ANALUZ', NULL),
-(1428, '133', 'Lawn Lots', 'St. Jude', 'R. ANALUZ', NULL),
-(1429, '134', 'Lawn Lots', 'St. Jude', 'MELENCIO DE OCAMPO', NULL),
-(1430, '135', 'Lawn Lots', 'St. Jude', 'FLORENTINO M. PALO', NULL),
-(1431, '136', 'Lawn Lots', 'St. Jude', 'FLORENTINO M. PALO', NULL),
-(1432, '137', 'Lawn Lots', 'St. Jude', 'FLORENTINO M. PALO', NULL),
-(1433, '138', 'Lawn Lots', 'St. Jude', 'FLORENTINO M. PALO', NULL),
-(1434, '139', 'Lawn Lots', 'St. Jude', 'AILEEN M. DE MESA', NULL),
-(1435, '140', 'Lawn Lots', 'St. Jude', 'BELLA ESPIGAR MENDOZA', NULL),
-(1436, '141', 'Lawn Lots', 'St. Jude', 'RENE BAURILE', NULL),
-(1437, '142', 'Lawn Lots', 'St. Jude', 'RENE BAURILE', NULL),
-(1438, '143', 'Lawn Lots', 'St. Jude', 'LOLITA BAYBAY', NULL),
-(1439, '144', 'Lawn Lots', 'St. Jude', 'ZENAIDA BALAORO', NULL),
-(1440, '145', 'Lawn Lots', 'St. Jude', 'ZENAIDA BALAORO', NULL),
-(1441, '146', 'Lawn Lots', 'St. Jude', 'LEONILA B. MANDRIQUE\r\nLOLITA ', NULL),
-(1442, '147', 'Lawn Lots', 'St. Jude', 'LORENZO ABOYME \r\nVERONICA D. ABOYME', NULL),
-(1443, '148', 'Lawn Lots', 'St. Jude', 'MERCIDITA ALVAREZ', NULL),
-(1444, '149', 'Lawn Lots', 'St. Jude', 'NESTOR OMADTO\r\nGILBERT OMADTO', NULL),
-(1445, '150', 'Lawn Lots', 'St. Jude', 'NOVA SANGGALANG\r\nARIEL SANGGALANG', NULL),
-(1446, '151', 'Lawn Lots', 'St. Jude', 'MARLON SANGALANG\r\nJACKILINE P.PERIDO ', NULL),
-(1447, '152', 'Lawn Lots', 'St. Jude', 'MARLON SANGALANG', NULL),
-(1448, '153', 'Lawn Lots', 'St. Jude', 'DANIEL ANGCAYA', NULL),
-(1449, '154', 'Lawn Lots', 'St. Jude', 'MARIANO A. ANGCAYA\r\nMANOLITA M. ANGCAYA', NULL),
-(1450, '155', 'Lawn Lots', 'St. Jude', 'NICANOR AMBULO.\r\nABDON AMBULO', NULL),
-(1451, '156', 'Lawn Lots', 'St. Jude', 'JUSTINIANO RODIL\r\nTEODORO RODIL', NULL),
-(1452, '160', 'Lawn Lots', 'St. Jude', 'ERFREN MENDOZA', NULL),
-(1453, '162', 'Lawn Lots', 'St. Jude', 'ERFREN MENDOZA', NULL),
-(1454, '163', 'Lawn Lots', 'St. Jude', 'LUCIO A. ANGCAYA', NULL),
-(1455, '164', 'Lawn Lots', 'St. Jude', 'R. ANALUS', NULL),
-(1456, '165', 'Lawn Lots', 'St. Jude', 'ANGELITA MIRANDA', NULL),
-(1457, '166', 'Lawn Lots', 'St. Jude', 'ANGELITA MIRANDA', NULL),
-(1458, '167', 'Lawn Lots', 'St. Jude', 'ANGELITA MIRANDA', NULL),
-(1459, '168', 'Lawn Lots', 'St. Jude', 'ANGELITA MIRANDA', NULL),
-(1460, '169', 'Lawn Lots', 'St. Jude', 'FIDEL MENDOZA', NULL),
-(1461, '170', 'Lawn Lots', 'St. Jude', 'FIDEL MENDOZA', NULL),
-(1462, '171', 'Lawn Lots', 'St. Jude', 'FIDEL MENDOZA', NULL),
-(1463, '172', 'Lawn Lots', 'St. Jude', 'SHIRLY ENCILA', NULL),
-(1464, '173', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1465, '174', 'Lawn Lots', 'St. Jude', NULL, NULL),
-(1466, '175', 'Lawn Lots', 'St. Jude', 'CRISANTO VILLANUEVA', NULL),
-(1467, '176', 'Lawn Lots', 'St. Jude', 'CRISANTO VILLANUEVA', NULL),
-(1468, '177', 'Lawn Lots', 'St. Jude', 'ANDY PO LAGUERTA', NULL),
-(1469, '178', 'Lawn Lots', 'St. Jude', 'CONSOLACION TUQUERO\r\nNORMA TUQUERO', NULL),
-(1470, '179', 'Lawn Lots', 'St. Jude', 'MALLARI, EVELYN', NULL),
-(1471, '180', 'Lawn Lots', 'St. Jude', 'ANIANO BAYOT', NULL),
-(1472, '181', 'Lawn Lots', 'St. Jude', 'SUSAN GONZALEZ', NULL),
-(1473, '182', 'Lawn Lots', 'St. Jude', 'SUSAN GONZALEZ', NULL),
-(1474, '183', 'Lawn Lots', 'St. Jude', 'VICTORIA CRISOSTOMO\r\nAPRIANO CRISOSTOMO', NULL),
-(1475, '184', 'Lawn Lots', 'St. Jude', 'BENIGNO C. BAYOT', NULL),
-(1476, '185', 'Lawn Lots', 'St. Jude', 'PEDRO BAYOT ', NULL),
-(1477, '186', 'Lawn Lots', 'St. Jude', 'LEAH B. BAYOT\r\nPEDRO BAYOT', NULL),
-(1478, '12', NULL, 'St. Lukes', 'BOYET ZAIDE', NULL),
-(1479, '52', 'lawn lots', 'St. Paul', 'DORING T. GONZALES', ''),
-(1480, '14', 'Lawn Lots', 'St. Peter', 'ZENAIDA MEDINA', NULL),
-(1481, '161', 'Lawn Lots', 'St. Jude', 'ERFREN MENDOZA', NULL);
-
--- --------------------------------------------------------
-
---
--- Table structure for table `record_logs`
---
 
 CREATE TABLE `record_logs` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `role` varchar(100) NOT NULL,
   `fullname` varchar(255) DEFAULT NULL,
   `Lot_No` varchar(255) DEFAULT NULL,
   `mem_sts` varchar(255) DEFAULT NULL,
   `action` varchar(50) DEFAULT NULL,
-  `timestamp` datetime DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `timestamp` datetime DEFAULT current_timestamp(),
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=147 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `record_logs`
---
+INSERT INTO record_logs VALUES("35","Staff","Michael Enoza","144","Columbarium1","updated","2024-11-28 20:25:37");
+INSERT INTO record_logs VALUES("36","Staff","Michael Enoza","186","Columbarium2","updated","2024-11-28 20:26:02");
+INSERT INTO record_logs VALUES("37","Admin","Michael Enoza","45","Columbarium1","created","2024-11-30 15:33:28");
+INSERT INTO record_logs VALUES("38","Admin","Michael Enoza","28","Columbarium1","created","2024-12-07 10:00:07");
+INSERT INTO record_logs VALUES("39","Admin","Michael Enoza","29","Columbarium1","created","2024-12-07 10:02:15");
+INSERT INTO record_logs VALUES("40","Admin","Michael Enoza","40","Columbarium1","created","2024-12-07 10:56:23");
+INSERT INTO record_logs VALUES("41","Admin","Michael Enoza","1","Apartment1","created","2024-12-08 09:42:19");
+INSERT INTO record_logs VALUES("42","Admin","Michael Enoza","1","Apartment1","created","2024-12-08 14:04:00");
+INSERT INTO record_logs VALUES("43","Admin","Michael Enoza","2","Apartment1","created","2024-12-08 14:04:41");
+INSERT INTO record_logs VALUES("44","Admin","Michael Enoza","3","Apartment1","created","2024-12-08 14:05:12");
+INSERT INTO record_logs VALUES("45","Admin","Michael Enoza","4","Apartment1","created","2024-12-08 14:05:38");
+INSERT INTO record_logs VALUES("46","Admin","Michael Enoza","5","Apartment1","created","2024-12-08 14:06:13");
+INSERT INTO record_logs VALUES("47","Admin","Michael Enoza","6","Apartment1","created","2024-12-08 14:07:38");
+INSERT INTO record_logs VALUES("48","Admin","Michael Enoza","7","Apartment1","created","2024-12-08 14:08:25");
+INSERT INTO record_logs VALUES("49","Admin","Michael Enoza","8","Apartment1","created","2024-12-08 14:09:36");
+INSERT INTO record_logs VALUES("50","Admin","Michael Enoza","9","Apartment1","created","2024-12-08 14:10:04");
+INSERT INTO record_logs VALUES("51","Admin","Michael Enoza","10","Apartment1","created","2024-12-08 14:10:22");
+INSERT INTO record_logs VALUES("52","Admin","Michael Enoza","11","Apartment1","created","2024-12-08 14:10:56");
+INSERT INTO record_logs VALUES("53","Admin","Michael Enoza","12","Apartment1","created","2024-12-08 14:11:12");
+INSERT INTO record_logs VALUES("54","Admin","Michael Enoza","13","Apartment1","created","2024-12-08 14:11:37");
+INSERT INTO record_logs VALUES("55","Admin","Michael Enoza","14","Apartment1","created","2024-12-08 14:12:21");
+INSERT INTO record_logs VALUES("56","Admin","Michael Enoza","15","Apartment1","created","2024-12-08 14:12:54");
+INSERT INTO record_logs VALUES("57","Admin","Michael Enoza","16","Apartment1","created","2024-12-08 14:13:41");
+INSERT INTO record_logs VALUES("58","Admin","Michael Enoza","17","Apartment1","created","2024-12-08 14:14:19");
+INSERT INTO record_logs VALUES("59","Admin","Michael Enoza","18","Apartment1","created","2024-12-08 14:14:47");
+INSERT INTO record_logs VALUES("60","Admin","Michael Enoza","19","Apartment1","created","2024-12-08 14:15:21");
+INSERT INTO record_logs VALUES("61","Admin","Michael Enoza","20","Apartment1","created","2024-12-08 14:15:44");
+INSERT INTO record_logs VALUES("62","Admin","Michael Enoza","21","Apartment1","created","2024-12-08 14:16:09");
+INSERT INTO record_logs VALUES("63","Admin","Michael Enoza","22","Apartment1","created","2024-12-08 14:17:23");
+INSERT INTO record_logs VALUES("64","Admin","Michael Enoza","23","Apartment1","created","2024-12-08 14:18:42");
+INSERT INTO record_logs VALUES("65","Admin","Michael Enoza","23","Apartment1","updated","2024-12-08 14:19:39");
+INSERT INTO record_logs VALUES("66","Admin","Michael Enoza","24","Apartment1","created","2024-12-08 14:20:29");
+INSERT INTO record_logs VALUES("67","Admin","Michael Enoza","25","Apartment1","created","2024-12-08 14:20:55");
+INSERT INTO record_logs VALUES("68","Admin","Michael Enoza","26","Apartment1","created","2024-12-08 14:21:32");
+INSERT INTO record_logs VALUES("69","Admin","Michael Enoza","27","Apartment1","created","2024-12-08 14:21:58");
+INSERT INTO record_logs VALUES("70","Admin","Michael Enoza","28","St. Michael","created","2024-12-08 14:22:52");
+INSERT INTO record_logs VALUES("71","Admin","Michael Enoza","29","Apartment1","created","2024-12-08 14:23:21");
+INSERT INTO record_logs VALUES("72","Admin","Michael Enoza","30","Apartment1","created","2024-12-08 14:24:09");
+INSERT INTO record_logs VALUES("73","Admin","Michael Enoza","31","Apartment1","created","2024-12-08 14:24:55");
+INSERT INTO record_logs VALUES("74","Admin","Michael Enoza","32","Apartment1","created","2024-12-08 14:25:33");
+INSERT INTO record_logs VALUES("75","Admin","Michael Enoza","033","Apartment1","created","2024-12-08 14:26:53");
+INSERT INTO record_logs VALUES("76","Admin","Michael Enoza","28","Apartment1","updated","2024-12-08 14:33:04");
+INSERT INTO record_logs VALUES("77","Admin","Michael Enoza","33","Apartment1","created","2024-12-08 14:35:10");
+INSERT INTO record_logs VALUES("78","Admin","Michael Enoza","064","Apartment1","updated","2024-12-08 14:40:55");
+INSERT INTO record_logs VALUES("79","Admin","Michael Enoza","064","Apartment1","updated","2024-12-08 14:55:30");
+INSERT INTO record_logs VALUES("80","Admin","Michael Enoza","64","Apartment1","updated","2024-12-08 15:00:48");
+INSERT INTO record_logs VALUES("81","Admin","Michael Enoza","33","Apartment1","updated","2024-12-08 15:01:28");
+INSERT INTO record_logs VALUES("82","Admin","Michael Enoza","34","Apartment1","created","2024-12-08 15:05:33");
+INSERT INTO record_logs VALUES("83","Admin","Michael Enoza","35","Apartment1","created","2024-12-08 15:06:26");
+INSERT INTO record_logs VALUES("84","Admin","Michael Enoza","36","Apartment1","created","2024-12-08 15:06:56");
+INSERT INTO record_logs VALUES("85","Admin","Michael Enoza","37","Apartment1","created","2024-12-08 15:07:24");
+INSERT INTO record_logs VALUES("86","Admin","Michael Enoza","38","Apartment1","created","2024-12-08 15:08:57");
+INSERT INTO record_logs VALUES("87","Admin","Michael Enoza","39","Apartment1","created","2024-12-08 15:09:23");
+INSERT INTO record_logs VALUES("88","Admin","Michael Enoza","40","Apartment1","created","2024-12-08 15:10:32");
+INSERT INTO record_logs VALUES("89","Admin","Michael Enoza","41","Apartment1","created","2024-12-08 15:11:22");
+INSERT INTO record_logs VALUES("90","Admin","Michael Enoza","42","Apartment1","created","2024-12-08 15:11:58");
+INSERT INTO record_logs VALUES("91","Admin","Michael Enoza","43","Apartment1","created","2024-12-08 15:12:18");
+INSERT INTO record_logs VALUES("92","Admin","Michael Enoza","44","Apartment1","created","2024-12-08 15:12:37");
+INSERT INTO record_logs VALUES("93","Admin","Michael Enoza","45","Apartment1","created","2024-12-08 15:13:16");
+INSERT INTO record_logs VALUES("94","Admin","Michael Enoza","46","Apartment1","created","2024-12-08 15:13:48");
+INSERT INTO record_logs VALUES("95","Admin","Michael Enoza","47","Apartment1","created","2024-12-08 15:14:12");
+INSERT INTO record_logs VALUES("96","Admin","Michael Enoza","48","Apartment1","created","2024-12-08 15:15:25");
+INSERT INTO record_logs VALUES("97","Admin","Michael Enoza","49","Apartment1","created","2024-12-08 15:15:54");
+INSERT INTO record_logs VALUES("98","Admin","Michael Enoza","50","Apartment1","created","2024-12-08 15:16:18");
+INSERT INTO record_logs VALUES("99","Admin","Michael Enoza","51","Apartment1","created","2024-12-08 16:37:47");
+INSERT INTO record_logs VALUES("100","Admin","Michael Enoza","52","Apartment1","created","2024-12-08 16:38:13");
+INSERT INTO record_logs VALUES("101","Admin","Michael Enoza","53","Apartment1","created","2024-12-08 16:38:34");
+INSERT INTO record_logs VALUES("102","Admin","Michael Enoza","54","Apartment1","created","2024-12-08 16:39:00");
+INSERT INTO record_logs VALUES("103","Admin","Michael Enoza","55","Apartment1","created","2024-12-08 16:39:48");
+INSERT INTO record_logs VALUES("104","Admin","Michael Enoza","56","Apartment1","created","2024-12-08 16:41:16");
+INSERT INTO record_logs VALUES("105","Admin","Michael Enoza","57","Apartment1","created","2024-12-08 16:41:41");
+INSERT INTO record_logs VALUES("106","Admin","Michael Enoza","58","Apartment1","created","2024-12-08 16:42:01");
+INSERT INTO record_logs VALUES("107","Admin","Michael Enoza","59","Apartment1","created","2024-12-08 16:43:05");
+INSERT INTO record_logs VALUES("108","Admin","Michael Enoza","60","Apartment1","created","2024-12-08 16:43:26");
+INSERT INTO record_logs VALUES("109","Admin","Michael Enoza","61","Apartment1","created","2024-12-08 16:43:50");
+INSERT INTO record_logs VALUES("110","Admin","Michael Enoza","62","Apartment1","created","2024-12-08 16:46:03");
+INSERT INTO record_logs VALUES("111","Admin","Michael Enoza","63","Apartment1","created","2024-12-08 16:46:59");
+INSERT INTO record_logs VALUES("112","Admin","Michael Enoza","64","Apartment1","created","2024-12-08 16:49:00");
+INSERT INTO record_logs VALUES("113","Admin","Michael Enoza","65","Apartment1","created","2024-12-08 16:49:48");
+INSERT INTO record_logs VALUES("114","Admin","Michael Enoza","66","Apartment1","created","2024-12-08 16:50:27");
+INSERT INTO record_logs VALUES("115","Admin","Michael Enoza","67","Apartment1","created","2024-12-08 16:51:06");
+INSERT INTO record_logs VALUES("116","Admin","Michael Enoza","68","Apartment1","created","2024-12-08 16:51:46");
+INSERT INTO record_logs VALUES("117","Admin","Michael Enoza","69","Apartment1","created","2024-12-08 16:52:29");
+INSERT INTO record_logs VALUES("118","Admin","Michael Enoza","70","Apartment1","created","2024-12-08 16:53:16");
+INSERT INTO record_logs VALUES("119","Admin","Michael Enoza","71","Apartment1","created","2024-12-08 16:53:44");
+INSERT INTO record_logs VALUES("120","Admin","Michael Enoza","72","Apartment1","created","2024-12-08 16:54:10");
+INSERT INTO record_logs VALUES("121","Admin","Michael Enoza","73","Apartment1","created","2024-12-08 16:54:52");
+INSERT INTO record_logs VALUES("122","Admin","Michael Enoza","78","Apartment1","created","2024-12-08 16:55:21");
+INSERT INTO record_logs VALUES("123","Admin","Michael Enoza","73","Apartment1","updated","2024-12-08 16:56:18");
+INSERT INTO record_logs VALUES("124","Admin","Michael Enoza","79","Apartment1","created","2024-12-08 16:57:28");
+INSERT INTO record_logs VALUES("125","Admin","Michael Enoza","80","Apartment1","created","2024-12-08 16:58:22");
+INSERT INTO record_logs VALUES("126","Admin","Michael Enoza","81","Apartment1","created","2024-12-08 16:59:05");
+INSERT INTO record_logs VALUES("127","Admin","Michael Enoza","82","Apartment1","created","2024-12-08 16:59:50");
+INSERT INTO record_logs VALUES("128","Admin","Michael Enoza","83","Apartment1","created","2024-12-08 17:00:26");
+INSERT INTO record_logs VALUES("129","Admin","Michael Enoza","84","Apartment1","created","2024-12-08 17:00:59");
+INSERT INTO record_logs VALUES("130","Admin","Michael Enoza","85","Apartment1","created","2024-12-08 17:01:56");
+INSERT INTO record_logs VALUES("131","Admin","Michael Enoza","86","Apartment1","created","2024-12-08 17:02:49");
+INSERT INTO record_logs VALUES("132","Admin","Michael Enoza","87","Apartment1","created","2024-12-08 17:03:31");
+INSERT INTO record_logs VALUES("133","Admin","Michael Enoza","88","Apartment1","created","2024-12-08 17:04:01");
+INSERT INTO record_logs VALUES("134","Admin","Michael Enoza","89","Apartment1","created","2024-12-08 17:04:39");
+INSERT INTO record_logs VALUES("135","Admin","Michael Enoza","90","Apartment1","created","2024-12-08 17:05:00");
+INSERT INTO record_logs VALUES("136","Admin","Michael Enoza","91","Apartment1","created","2024-12-08 17:05:18");
+INSERT INTO record_logs VALUES("137","Admin","Michael Enoza","92","Apartment1","created","2024-12-08 17:14:05");
+INSERT INTO record_logs VALUES("138","Admin","Michael Enoza","93","Apartment1","created","2024-12-08 17:14:28");
+INSERT INTO record_logs VALUES("139","Admin","Michael Enoza","94","Apartment1","created","2024-12-08 17:17:17");
+INSERT INTO record_logs VALUES("140","Admin","Michael Enoza","95","Apartment1","created","2024-12-08 17:17:52");
+INSERT INTO record_logs VALUES("141","Admin","Michael Enoza","96","Apartment1","created","2024-12-08 17:18:31");
+INSERT INTO record_logs VALUES("142","Admin","Michael Enoza","97","Apartment1","created","2024-12-08 17:19:13");
+INSERT INTO record_logs VALUES("143","Admin","Michael Enoza","98","Apartment1","created","2024-12-08 17:20:45");
+INSERT INTO record_logs VALUES("144","Admin","Michael Enoza","99","Apartment1","created","2024-12-08 17:21:19");
+INSERT INTO record_logs VALUES("145","Admin","Michael Enoza","100","Apartment1","created","2024-12-08 17:23:02");
+INSERT INTO record_logs VALUES("146","Admin","Michael Enoza","640","Columbarium1","created","2024-12-08 18:11:39");
 
-INSERT INTO `record_logs` (`id`, `role`, `fullname`, `Lot_No`, `mem_sts`, `action`, `timestamp`) VALUES
-(35, 'Staff', 'Michael Enoza', '144', 'Columbarium1', 'updated', '2024-11-28 20:25:37'),
-(36, 'Staff', 'Michael Enoza', '186', 'Columbarium2', 'updated', '2024-11-28 20:26:02'),
-(37, 'Admin', 'Michael Enoza', '45', 'Columbarium1', 'created', '2024-11-30 15:33:28'),
-(38, 'Admin', 'Michael Enoza', '28', 'Columbarium1', 'created', '2024-12-07 10:00:07'),
-(39, 'Admin', 'Michael Enoza', '29', 'Columbarium1', 'created', '2024-12-07 10:02:15'),
-(40, 'Admin', 'Michael Enoza', '40', 'Columbarium1', 'created', '2024-12-07 10:56:23');
 
--- --------------------------------------------------------
+CREATE TABLE `records` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `Lot_No` varchar(50) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `mem_lots` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `mem_sts` varchar(12) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `LO_name` varchar(61) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  `mem_address` varchar(13) CHARACTER SET utf8 COLLATE utf8_general_ci DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=1615 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Table structure for table `staff`
---
+INSERT INTO records VALUES("1","1","Family Estate","St. Michael","c/o MAYOR FRANCIS TOLENTINO","TAGAYTAY CITY");
+INSERT INTO records VALUES("2","2","Family Estate","St. Michael","c/o MAYOR FRANCIS TOLENTINO","TAGAYTAY CITY");
+INSERT INTO records VALUES("3","3","Family Estate","St. Michael","c/o MAYOR FRANCIS TOLENTINO",NULL);
+INSERT INTO records VALUES("4","4","Family Estate","St. Michael","c/o MAYOR FRANCIS TOLENTINO",NULL);
+INSERT INTO records VALUES("5","5","Family Estate","St. Michael","c/o MAYOR FRANCIS TOLENTINO",NULL);
+INSERT INTO records VALUES("6","6","Family Estate","St. Michael","c/o MAYOR FRANCIS TOLENTINO",NULL);
+INSERT INTO records VALUES("7","1","Family Estate","St. Patrick","ENGR. GREGORIO MONREAL",NULL);
+INSERT INTO records VALUES("8","2","Family Estate","St. Patrick","NORBERTO SAN MATEO",NULL);
+INSERT INTO records VALUES("9","5","Family Estate","St. Patrick","NORBERTO SAN MATEO",NULL);
+INSERT INTO records VALUES("10","6","Family Estate","St. Patrick","TOMAS ONATE TOLENTINO",NULL);
+INSERT INTO records VALUES("11","1","Family Estate","St. Mark","FELY MALABANAN",NULL);
+INSERT INTO records VALUES("12","2","Family Estate","St. Mark","MANIA DORO",NULL);
+INSERT INTO records VALUES("13","3","Family Estate","St. Mark","SIMON CONTRERAS c/o ALEXANDER CONTRERAS",NULL);
+INSERT INTO records VALUES("14","4","Family Estate","St. Mark","VIRGILIO AMBION",NULL);
+INSERT INTO records VALUES("15","5","Family Estate","St. Mark","BAURILE c/o VIRGILIO AMBION",NULL);
+INSERT INTO records VALUES("16","6","Family Estate","St. Mark","RAFAEL ESTRADA",NULL);
+INSERT INTO records VALUES("17","7","Family Estate","St. Mark","CELSO DE CASTRO",NULL);
+INSERT INTO records VALUES("18","1","Family Estate","St. Lukes","c/o PLACIDA POBLETE DE GRANO",NULL);
+INSERT INTO records VALUES("19","2","Family Estate","St. Lukes","MA.GRACE SULIT + ( CARMEN SULIT )",NULL);
+INSERT INTO records VALUES("20","3","Family Estate","St. Lukes","ROBENTA SANGALANG c/o CECILIA BAYAS",NULL);
+INSERT INTO records VALUES("21","4","Family Estate","St. Lukes","AMPARO VERGARA",NULL);
+INSERT INTO records VALUES("22","5","Family Estate","St. Lukes","ROSEMARIE LERIO",NULL);
+INSERT INTO records VALUES("23","6","Family Estate","St. Lukes","DAMASO, MALABANAN",NULL);
+INSERT INTO records VALUES("24","7","Family Estate","St. Lukes","BALBINO DAMASO c/o DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("25","8","Family Estate","St. Lukes","QUADALUPE MALABANAN",NULL);
+INSERT INTO records VALUES("26","9","Family Estate","St. Lukes","JOSEFINA SUSA c/o NANETTE SUSA",NULL);
+INSERT INTO records VALUES("27","10","Family Estate","St. Lukes","RUPERTO B. PANGILINAN",NULL);
+INSERT INTO records VALUES("28","11","Family Estate","St. Lukes","ESTRELLA MURRAY","Southridge Su");
+INSERT INTO records VALUES("29","1","Garden Lots","St. Matthew","AVELINO SUMAGUI",NULL);
+INSERT INTO records VALUES("30","2","Garden Lots","St. Matthew","DEMETRIO BALICA c/o CARMELITA LAUREL","Dapdap West");
+INSERT INTO records VALUES("31","3","Garden Lots","St. Matthew","FORTUNATO DE LEON c/o (ATE TESSIE CARAAN)",NULL);
+INSERT INTO records VALUES("32","4","Garden Lots","St. Matthew","REPARATION SISTERS OF THE HOLY EUCHARIST",NULL);
+INSERT INTO records VALUES("33","5","Garden Lots","St. Matthew","FLORENCIA ANGCAYA",NULL);
+INSERT INTO records VALUES("34","6","Garden Lots","St. Matthew","ADELINA MIRANDA",NULL);
+INSERT INTO records VALUES("35","7","Garden Lots","St. Matthew","YOLANDA BABIERA","Seiz de Junio");
+INSERT INTO records VALUES("36","8","Garden Lots","St. Matthew","BENITO MANALO / BAYOT c/o APOLONIA MANALO","Maitim");
+INSERT INTO records VALUES("37","1","Garden Lots","St. Isidore","MERLY LUNA c/o EFREN LUNA",NULL);
+INSERT INTO records VALUES("38","2","Garden Lots","St. Isidore","TEODORO JAVIER","Talon Amadeo ");
+INSERT INTO records VALUES("39","3","Garden Lots","St. Isidore","MANUEL DIGO c/o MANNY DIGO - CASTILLO\'S FAMILY",NULL);
+INSERT INTO records VALUES("40","4","Garden Lots","St. Isidore","JUANA BAYOT","Kaybagal Nort");
+INSERT INTO records VALUES("41","5","Garden Lots","St. Isidore","CATALINA ANGCAYA c/o IDAD BURAZON","Kaybagal Nort");
+INSERT INTO records VALUES("42","6","Garden Lots","St. Isidore","( ATTY.ISAGANI CORTEZ ) - Jennifer Bayot","Kaybagal");
+INSERT INTO records VALUES("43","7","Garden Lots","St. Isidore","CARLITO UMALI",NULL);
+INSERT INTO records VALUES("44","8","Garden Lots","St. Isidore","LILIA ALVAREZ",NULL);
+INSERT INTO records VALUES("45","9","Garden Lots","St. Isidore","LEOPOLDO UMALI c/o CARLITO UMALI","Francisco Tag");
+INSERT INTO records VALUES("46","10","Garden Lots","St. Isidore","ZOSIMO CONTRERAS c/o FRISCO AMBION","Francisco, Ta");
+INSERT INTO records VALUES("47","11","Garden Lots","St. Isidore","CESAR SEDUCON",NULL);
+INSERT INTO records VALUES("48","12","Garden Lots","St. Isidore","ROSARIO LAGATA BY RODOLFO SANGCO & ROGER A. SANGCO",NULL);
+INSERT INTO records VALUES("49","13","Garden Lots","St. Isidore","ROSARIO LAGATA BY RODOLFO SANGCO & ROGER A. SANGCO",NULL);
+INSERT INTO records VALUES("50","14","Garden Lots","St. Isidore","JOVITA AMBAT MABUYO c/o MABUYO, REMY + MARCELINA H",NULL);
+INSERT INTO records VALUES("51","15","Garden Lots","St. Isidore","MARIFE C. QUIAMBAO c/o NANDING ALVAREZ",NULL);
+INSERT INTO records VALUES("52","16","Garden Lots","St. Isidore","FAYE AVILA c/o SAVINA AVILA","Kaybagal Cent");
+INSERT INTO records VALUES("53","17","Garden Lots","St. Isidore","GERRY RITZMANA c/o EMMA BATINO","Talon Amadeo ");
+INSERT INTO records VALUES("54","18","Garden Lots","St. Isidore","CATALINA CARAAN - Paid by PRISCILA MAGCUYAO",NULL);
+INSERT INTO records VALUES("55","19","Garden Lots","St. Isidore","CATALINA CARAAN","Brgy. Tolenti");
+INSERT INTO records VALUES("56","1","Lawn Lots","St. Rafael","AGRIFINA VILLANUEVA",NULL);
+INSERT INTO records VALUES("57","2","Lawn Lots","St. Rafael","AGRIFINA VILLANUEVA",NULL);
+INSERT INTO records VALUES("58","17","Lawn Lots","St. Rafael","AGRIFINA VILLANUEVA",NULL);
+INSERT INTO records VALUES("59","18","Lawn Lots","St. Rafael","AGRIFINA VILLANUEVA",NULL);
+INSERT INTO records VALUES("60","3","Lawn Lots","St. Rafael","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("61","4","Lawn Lots","St. Rafael","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("62","5","Lawn Lots","St. Rafael","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("63","6","Lawn Lots","St. Rafael","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("64","7","Lawn Lots","St. Rafael","DOMETRIO BARRIENTOS",NULL);
+INSERT INTO records VALUES("65","8","Lawn Lots","St. Rafael","ABRAHAM PAUL B. SEPTIMO",NULL);
+INSERT INTO records VALUES("66","9","Lawn Lots","St. Rafael","EDWITO CANGGAS",NULL);
+INSERT INTO records VALUES("67","10","Lawn Lots","St. Rafael","HONORITO MESIONA",NULL);
+INSERT INTO records VALUES("68","11","Lawn Lots","St. Rafael","ASUNCION P. OLAN",NULL);
+INSERT INTO records VALUES("69","12","Lawn Lots","St. Rafael","ASUNCION P. OLAN",NULL);
+INSERT INTO records VALUES("70","13","Lawn Lots","St. Rafael","ASUNCION P. OLAN",NULL);
+INSERT INTO records VALUES("71","14","Lawn Lots","St. Rafael","ASUNCION P. OLAN",NULL);
+INSERT INTO records VALUES("72","16","Lawn Lots","St. Rafael","HERMINIA BESA",NULL);
+INSERT INTO records VALUES("73","18","Lawn Lots","St. Rafael","DOMINADOR PAGLIWANAN\r\nJESSIE PAGLIWANAN",NULL);
+INSERT INTO records VALUES("74","19","Lawn Lots","St. Rafael","LAURO JAVIER\r\n",NULL);
+INSERT INTO records VALUES("75","20","Lawn Lots","St. Rafael","RAFAEL G. ESCANILA\r\nANGEL ESCANILLA",NULL);
+INSERT INTO records VALUES("76","21","Lawn Lots","St. Rafael","GERLISITA D. ONG ",NULL);
+INSERT INTO records VALUES("77","22","Lawn Lots","St. Rafael","GERLISITA D. ONG ",NULL);
+INSERT INTO records VALUES("78","23","Lawn Lots","St. Rafael","EULOGIA AMBION RAMOS",NULL);
+INSERT INTO records VALUES("79","24","Lawn Lots","St. Rafael","JUANITO DEKDE",NULL);
+INSERT INTO records VALUES("80","25","Lawn Lots","St. Rafael","COSME BATIBOT",NULL);
+INSERT INTO records VALUES("81","26","Lawn Lots","St. Rafael","ISABELO M. UMALI",NULL);
+INSERT INTO records VALUES("82","27","Lawn Lots","St. Rafael","JONATHAN CABESAS",NULL);
+INSERT INTO records VALUES("83","28","Lawn Lots","St. Rafael","BENJAMIN ESTIGOY",NULL);
+INSERT INTO records VALUES("84","29","Lawn Lots","St. Rafael","SUSAN PENALES",NULL);
+INSERT INTO records VALUES("85","30","Lawn Lots","St. Rafael","SUSAN PENALES",NULL);
+INSERT INTO records VALUES("86","31","Lawn Lots","St. Rafael","ROMY DIGO",NULL);
+INSERT INTO records VALUES("87","32","Lawn Lots","St. Rafael","PUNONG MANGGA",NULL);
+INSERT INTO records VALUES("88","33","Lawn Lots","St. Rafael","ROLANDO NIBAY",NULL);
+INSERT INTO records VALUES("89","34","Lawn Lots","St. Rafael","ROLANDO NIBAY",NULL);
+INSERT INTO records VALUES("90","35","Lawn Lots","St. Rafael","ISMERALDO DIGO",NULL);
+INSERT INTO records VALUES("91","36","Lawn Lots","St. Rafael","SEGUNDA HERNANDEZ",NULL);
+INSERT INTO records VALUES("92","37","Lawn Lots","St. Rafael","FELIX BUTARDO",NULL);
+INSERT INTO records VALUES("93","38","Lawn Lots","St. Rafael","JIMMY TORRES",NULL);
+INSERT INTO records VALUES("94","39","Lawn Lots","St. Rafael","JIMMY TORRES",NULL);
+INSERT INTO records VALUES("95","40","Lawn Lots","St. Rafael","TERESITA V. CABRESA",NULL);
+INSERT INTO records VALUES("96","41","Lawn Lots","St. Rafael","ARLENNIE D. MERCADO",NULL);
+INSERT INTO records VALUES("97","42","Lawn Lots","St. Rafael","ELENA SEDA",NULL);
+INSERT INTO records VALUES("98","43","Lawn Lots","St. Rafael","VICTOR RAMOS",NULL);
+INSERT INTO records VALUES("99","44","Lawn Lots","St. Rafael","SIMPLICIO RAMOS",NULL);
+INSERT INTO records VALUES("100","45","Lawn Lots","St. Rafael","LUCERA MOJICA",NULL);
+INSERT INTO records VALUES("101","46","Lawn Lots","St. Rafael","JULIAN SANTIAGO",NULL);
+INSERT INTO records VALUES("102","47","Lawn Lots","St. Rafael","EDGAR BRIONES",NULL);
+INSERT INTO records VALUES("103","48","Lawn Lots","St. Rafael","LUCENA BAYOT ",NULL);
+INSERT INTO records VALUES("104","49","Lawn Lots","St. Rafael","CARLOS D. SANTIAGO",NULL);
+INSERT INTO records VALUES("105","50","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("106","51","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("107","52","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("108","53","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("109","54","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("110","55","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("111","56","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("112","57","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("113","58","Lawn Lots","St. Rafael","AVANO BARTOLOME",NULL);
+INSERT INTO records VALUES("114","1","Lawn Lots","St. Peter","NELIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("115","2","Lawn Lots","St. Peter","NELIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("116","3","Lawn Lots","St. Peter","NELIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("117","4","Lawn Lots","St. Peter","NELIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("118","5","Lawn Lots","St. Peter","CARLITO CALANOG\r\nLYDIA GUTIERREZ",NULL);
+INSERT INTO records VALUES("119","6","Lawn Lots","St. Peter","CARLITO CALANOG",NULL);
+INSERT INTO records VALUES("120","7","Lawn Lots","St. Peter","EMILY VILLAMOR",NULL);
+INSERT INTO records VALUES("121","8","Lawn Lots","St. Peter","MERMELITA ANGCAYA",NULL);
+INSERT INTO records VALUES("122","9","Lawn Lots","St. Peter","ELEANOR POLINAR ",NULL);
+INSERT INTO records VALUES("123","10","Lawn Lots","St. Peter","LEONYLA INGAN",NULL);
+INSERT INTO records VALUES("124","11","Lawn Lots","St. Peter","ELIZABETH BAYOT",NULL);
+INSERT INTO records VALUES("125","12","Lawn Lots","St. Peter","ELIZABETH BAYOT",NULL);
+INSERT INTO records VALUES("126","13","Lawn Lots","St. Peter","ZENAIDA MEDINA",NULL);
+INSERT INTO records VALUES("127","15","Lawn Lots","St. Peter","ELIZABETH BAYOT",NULL);
+INSERT INTO records VALUES("128","16","Lawn Lots","St. Peter","ELIZABETH BAYOT",NULL);
+INSERT INTO records VALUES("129","17","Lawn Lots","St. Peter","FELEUTAS BAYOT",NULL);
+INSERT INTO records VALUES("130","18","Lawn Lots","St. Peter","FELEUTAS BAYOT",NULL);
+INSERT INTO records VALUES("131","19","Lawn Lots","St. Peter","IRENEA PANGANIBAN",NULL);
+INSERT INTO records VALUES("132","20","Lawn Lots","St. Peter","IRENEA PANGANIBAN",NULL);
+INSERT INTO records VALUES("133","21","Lawn Lots","St. Peter","IRENEA PANGANIBAN",NULL);
+INSERT INTO records VALUES("134","22","Lawn Lots","St. Peter","ROMULO ORTILLA\r\nLIZA DAPASEN",NULL);
+INSERT INTO records VALUES("135","23","Lawn Lots","St. Peter","CONRADO PANGHULAN",NULL);
+INSERT INTO records VALUES("136","24","Lawn Lots","St. Peter","PASTORA MAGABO",NULL);
+INSERT INTO records VALUES("137","25","Lawn Lots","St. Peter","PASTORA MAGABO",NULL);
+INSERT INTO records VALUES("138","26","Lawn Lots","St. Peter","ESTELITO SEDUCON",NULL);
+INSERT INTO records VALUES("139","27","Lawn Lots","St. Peter","LYDIA GUTIERREZ",NULL);
+INSERT INTO records VALUES("140","28","Lawn Lots","St. Peter","LYDIA GUTIERREZ",NULL);
+INSERT INTO records VALUES("141","29","Lawn Lots","St. Peter","LYDIA GUTIERREZ",NULL);
+INSERT INTO records VALUES("142","30","Lawn Lots","St. Peter","LYDIA GUTIERREZ",NULL);
+INSERT INTO records VALUES("143","31","Lawn Lots","St. Peter","RUEL A. GUTIERREZ",NULL);
+INSERT INTO records VALUES("144","32","Lawn Lots","St. Peter","ELENITA C DURTE",NULL);
+INSERT INTO records VALUES("145","33","Lawn Lots","St. Peter","ELENITA C DURTE",NULL);
+INSERT INTO records VALUES("146","34","Lawn Lots","St. Peter","ERLINDA M AMBION",NULL);
+INSERT INTO records VALUES("147","35","Lawn Lots","St. Peter","RAMIL RODRIGUEZ ",NULL);
+INSERT INTO records VALUES("148","36","Lawn Lots","St. Peter","SABAS AMBION",NULL);
+INSERT INTO records VALUES("149","37","Lawn Lots","St. Peter","MACARIO BAYAD",NULL);
+INSERT INTO records VALUES("150","38","Lawn Lots","St. Peter","ROSITA BAYAS",NULL);
+INSERT INTO records VALUES("151","39","Lawn Lots","St. Peter","ANTERO BAYAS",NULL);
+INSERT INTO records VALUES("152","40","Lawn Lots","St. Peter","CESARIO A. LINGAYONG",NULL);
+INSERT INTO records VALUES("153","41","Lawn Lots","St. Peter","ANGIE O. ANTALLON",NULL);
+INSERT INTO records VALUES("154","42","Lawn Lots","St. Peter","LEONA CARCOM",NULL);
+INSERT INTO records VALUES("155","43","Lawn Lots","St. Peter","LORETA MAAYO",NULL);
+INSERT INTO records VALUES("156","44","Lawn Lots","St. Peter","LORETA MAAYO",NULL);
+INSERT INTO records VALUES("157","45","Lawn Lots","St. Peter","GEMENIANO GUTIERREZ",NULL);
+INSERT INTO records VALUES("158","46","Lawn Lots","St. Peter","LOIDA A. GUTIERREZ",NULL);
+INSERT INTO records VALUES("159","47","Lawn Lots","St. Peter","LENNIE G. CADAG",NULL);
+INSERT INTO records VALUES("160","48","Lawn Lots","St. Peter","LENNIE G. CADAG",NULL);
+INSERT INTO records VALUES("161","49","Lawn Lots","St. Peter","ARIAN MIRANDA",NULL);
+INSERT INTO records VALUES("162","50","Lawn Lots","St. Peter","ANICETA MANAIG",NULL);
+INSERT INTO records VALUES("163","51","Lawn Lots","St. Peter","OFELIA RABANO",NULL);
+INSERT INTO records VALUES("164","52","Lawn Lots","St. Peter","SEGUNDA S. MIRANDA",NULL);
+INSERT INTO records VALUES("165","53","Lawn Lots","St. Peter","OFELIA MIRANDA",NULL);
+INSERT INTO records VALUES("166","54","Lawn Lots","St. Peter","ANDRES PAYAD",NULL);
+INSERT INTO records VALUES("167","55","Lawn Lots","St. Peter","DOMINADOR BAYAS",NULL);
+INSERT INTO records VALUES("168","56","Lawn Lots","St. Peter","MARIA BAYAS",NULL);
+INSERT INTO records VALUES("169","57","Lawn Lots","St. Peter","MARILYN BAYAS",NULL);
+INSERT INTO records VALUES("170","58","Lawn Lots","St. Peter","APOLLONIO BAYAS",NULL);
+INSERT INTO records VALUES("171","59","Lawn Lots","St. Peter","ANAY",NULL);
+INSERT INTO records VALUES("172","60","Lawn Lots","St. Peter","LAUREANO ANAY",NULL);
+INSERT INTO records VALUES("173","61","Lawn Lots","St. Peter","BENECIA DIAZ OCHOA",NULL);
+INSERT INTO records VALUES("174","62","Lawn Lots","St. Paul","AILLEEN CASTILLANO",NULL);
+INSERT INTO records VALUES("175","63","Lawn Lots","St. Paul","AILLEEN CASTILLANO",NULL);
+INSERT INTO records VALUES("176","64","Lawn Lots","St. Paul","AILLEEN CASTILLANO",NULL);
+INSERT INTO records VALUES("177","65","Lawn Lots","St. Paul","MARY JEAN SAQUILAYAN",NULL);
+INSERT INTO records VALUES("178","66","Lawn Lots","St. Paul","MARY JEAN SAQUILAYAN",NULL);
+INSERT INTO records VALUES("179","67","Lawn Lots","St. Paul","MARY JEAN SAQUILAYAN",NULL);
+INSERT INTO records VALUES("180","68","Lawn Lots","St. Peter","RELLEN GOSO",NULL);
+INSERT INTO records VALUES("181","69","Lawn Lots","St. Peter","RELLEN GOSO",NULL);
+INSERT INTO records VALUES("182","70","Lawn Lots","St. Peter","RELLEN GOSO",NULL);
+INSERT INTO records VALUES("183","71","Lawn Lots","St. Peter","RELLEN GOSO",NULL);
+INSERT INTO records VALUES("184","1","Lawn Lots","St. Paul","R",NULL);
+INSERT INTO records VALUES("185","2","Lawn Lots","St. Paul","NEMENCIA AMBAT",NULL);
+INSERT INTO records VALUES("186","3","Lawn Lots","St. Paul","VICENTE AMBAT",NULL);
+INSERT INTO records VALUES("187","4","Lawn Lots","St. Paul","NIMENCIA S. VIVENCIO",NULL);
+INSERT INTO records VALUES("188","5","Lawn Lots","St. Paul","CORNELIA CREUS",NULL);
+INSERT INTO records VALUES("189","6","Lawn Lots","St. Paul","JUAN TERRIBLE",NULL);
+INSERT INTO records VALUES("190","7","Lawn Lots","St. Paul","MAXIMO E. NOVENO",NULL);
+INSERT INTO records VALUES("191","8","Lawn Lots","St. Paul","BENJAMIN CABAIS",NULL);
+INSERT INTO records VALUES("192","9","Lawn Lots","St. Paul","REGALADO MANIMTIM",NULL);
+INSERT INTO records VALUES("193","10","Lawn Lots","St. Paul","REGALADO MANIMTIM",NULL);
+INSERT INTO records VALUES("194","11","Lawn Lots","St. Paul","EDELYN MANGCO",NULL);
+INSERT INTO records VALUES("195","12","Lawn Lots","St. Paul","EDELYN MANGCO",NULL);
+INSERT INTO records VALUES("196","13","Lawn Lots","St. Paul","EDELYN MANGCO",NULL);
+INSERT INTO records VALUES("197","14","Lawn Lots","St. Paul","EDELYN MANGCO",NULL);
+INSERT INTO records VALUES("198","15","Lawn Lots","St. Paul","ELIAS PAGLINAWAN",NULL);
+INSERT INTO records VALUES("199","16","Lawn Lots","St. Paul","BENITO CARRERO",NULL);
+INSERT INTO records VALUES("200","17","Lawn Lots","St. Paul","BENITO CARRERO",NULL);
+INSERT INTO records VALUES("201","18","Lawn Lots","St. Paul","LUCAS MACE B. CHUA",NULL);
+INSERT INTO records VALUES("202","19","Lawn Lots","St. Paul","RUEL CLEMENTE SR.",NULL);
+INSERT INTO records VALUES("203","20","Lawn Lots","St. Paul","RUEL CLEMENTE SR.",NULL);
+INSERT INTO records VALUES("204","21","Lawn Lots","St. Paul","RUEL CLEMENTE SR.",NULL);
+INSERT INTO records VALUES("205","22","Lawn Lots","St. Paul","RUEL CLEMENTE SR.",NULL);
+INSERT INTO records VALUES("206","23","Lawn Lots","St. Paul","NENEITA RUEZ MORANTE",NULL);
+INSERT INTO records VALUES("207","24","Lawn Lots","St. Paul","NENEITA RUEZ MORANTE",NULL);
+INSERT INTO records VALUES("208","25","Lawn Lots","St. Paul","NENEITA RUEZ MORANTE",NULL);
+INSERT INTO records VALUES("209","26","Lawn Lots","St. Paul","NENEITA RUEZ MORANTE",NULL);
+INSERT INTO records VALUES("210","27","Lawn Lots","St. Paul","NENEITA RUEZ MORANTE",NULL);
+INSERT INTO records VALUES("211","28","Lawn Lots","St. Paul","AMELIA MANDERIN",NULL);
+INSERT INTO records VALUES("212","29","Lawn Lots","St. Paul","AMELIA MANDERIN",NULL);
+INSERT INTO records VALUES("213","30","Lawn Lots","St. Paul","AMELIA MANDERIN",NULL);
+INSERT INTO records VALUES("214","31","Lawn Lots","St. Paul","EDGARDO PARRA",NULL);
+INSERT INTO records VALUES("215","32","Lawn Lots","St. Paul","ANGELA ARIOLA",NULL);
+INSERT INTO records VALUES("216","33","Lawn Lots","St. Paul","RONALD BAYBAY",NULL);
+INSERT INTO records VALUES("217","34","Lawn Lots","St. Paul","VANGIE BAYLA",NULL);
+INSERT INTO records VALUES("218","35","Lawn Lots","St. Paul","MELINDA PAJAWE",NULL);
+INSERT INTO records VALUES("219","36","Lawn Lots","St. Paul","MAXIMINO MALABANAN",NULL);
+INSERT INTO records VALUES("220","37","Lawn Lots","St. Paul","MAXIMINO MALABANAN",NULL);
+INSERT INTO records VALUES("221","38","Lawn Lots","St. Paul","MAXIMINO MALABANAN",NULL);
+INSERT INTO records VALUES("222","54","Lawn Lots","St. Paul","MAXIMINO MALABANAN",NULL);
+INSERT INTO records VALUES("223","55","Lawn Lots","St. Paul","MAXIMINO MALABANAN",NULL);
+INSERT INTO records VALUES("224","56","Lawn Lots","St. Paul","MAXIMINO MALABANAN",NULL);
+INSERT INTO records VALUES("225","39","Lawn Lots","St. Paul","MARIEL CHRISTINE FETALINO",NULL);
+INSERT INTO records VALUES("226","40","Lawn Lots","St. Paul","LEODIGARIO CARAAN",NULL);
+INSERT INTO records VALUES("227","41","Lawn Lots","St. Paul","MACARIO PEJI",NULL);
+INSERT INTO records VALUES("228","42","Lawn Lots","St. Paul","MACARIO PEJI",NULL);
+INSERT INTO records VALUES("229","43","Lawn Lots","St. Paul","EVA VILLANUEVA",NULL);
+INSERT INTO records VALUES("230","44","Lawn Lots","St. Paul","EVA VILLANUEVA",NULL);
+INSERT INTO records VALUES("231","45","Lawn Lots","St. Paul","NENITA NOCEDAL",NULL);
+INSERT INTO records VALUES("232","46","Lawn Lots","St. Paul","NERVILE VILLANUEVA",NULL);
+INSERT INTO records VALUES("233","47","Lawn Lots","St. Paul","NERVILE VILLANUEVA",NULL);
+INSERT INTO records VALUES("234","48","Lawn Lots","St. Paul","ROBERTO F. CANKY",NULL);
+INSERT INTO records VALUES("235","49","Lawn Lots","St. Paul","ALFREDO IBAAN",NULL);
+INSERT INTO records VALUES("236","50","Lawn Lots","St. Paul","CANUTO GONZALES",NULL);
+INSERT INTO records VALUES("237","51","Lawn Lots","St. Paul","VIRGILIO GONZALES",NULL);
+INSERT INTO records VALUES("238","52","Lawn Lots","St. Paul","DORING T. GONZALES ",NULL);
+INSERT INTO records VALUES("239","53","Lawn Lots","St. Paul","DORING T. GONZALES",NULL);
+INSERT INTO records VALUES("240","57","Lawn Lots","St. Paul","ZENAIDA GANUELAS",NULL);
+INSERT INTO records VALUES("241","58","Lawn Lots","St. Paul","DONA JOSEF BENEDICT F. CARAAN",NULL);
+INSERT INTO records VALUES("242","59","Lawn Lots","St. Paul","EVA VILLANUEVA",NULL);
+INSERT INTO records VALUES("243","60","Lawn Lots","St. Paul","EVA JAVIER PEREY",NULL);
+INSERT INTO records VALUES("244","61","Lawn Lots","St. Paul","NENITA NOCEDAL",NULL);
+INSERT INTO records VALUES("245","62","Lawn Lots","St. Paul","NENITA NOCEDAL",NULL);
+INSERT INTO records VALUES("246","63","Lawn Lots","St. Paul","ESTER VILLANUEVA",NULL);
+INSERT INTO records VALUES("247","64","Lawn Lots","St. Paul","CLECOO BESA",NULL);
+INSERT INTO records VALUES("248","65","Lawn Lots","St. Paul","PRISCILLA P. GEVADA",NULL);
+INSERT INTO records VALUES("249","66","Lawn Lots","St. Paul","ROMEO BERNAE",NULL);
+INSERT INTO records VALUES("250","67","Lawn Lots","St. Paul","CLAUDIO ARCEBUCHE",NULL);
+INSERT INTO records VALUES("251","68","Lawn Lots","St. Paul","ZENAIDA T. ROSE",NULL);
+INSERT INTO records VALUES("252","69","Lawn Lots","St. Paul","ROMULO R. LIBELO",NULL);
+INSERT INTO records VALUES("253","70","Lawn Lots","St. Paul","ROBERTO PAGUYO",NULL);
+INSERT INTO records VALUES("254","71","Lawn Lots","St. Paul","NOEL I. MENDOZA ",NULL);
+INSERT INTO records VALUES("255","1","Lawn Lots","St. Augustin","BARTOLOME CATALOS",NULL);
+INSERT INTO records VALUES("256","2","Lawn Lots","St. Augustin","BARTOLOME CATALOS",NULL);
+INSERT INTO records VALUES("257","3","Lawn Lots","St. Augustin","BARTOLOME CATALOS",NULL);
+INSERT INTO records VALUES("258","4","Lawn Lots","St. Augustin","BARTOLOME CATALOS",NULL);
+INSERT INTO records VALUES("259","5","Lawn Lots","St. Augustin","ARMANDO BAYANI SR.",NULL);
+INSERT INTO records VALUES("260","6","Lawn Lots","St. Augustin","FELICIDAD M. QUILAO",NULL);
+INSERT INTO records VALUES("261","8","Lawn Lots","St. Augustin","CAMELA ABUEVA",NULL);
+INSERT INTO records VALUES("262","9","Lawn Lots","St. Augustin","MARITESS AUSTRIA",NULL);
+INSERT INTO records VALUES("263","10","Lawn Lots","St. Augustin","FLORIñA BAWAG DESIGAñO",NULL);
+INSERT INTO records VALUES("264","11","Lawn Lots","St. Augustin","LAGASINO JESUS",NULL);
+INSERT INTO records VALUES("265","12","Lawn Lots","St. Augustin","PASTOR LAUREL",NULL);
+INSERT INTO records VALUES("266","13","Lawn Lots","St. Augustin","PASTOR LAUREL",NULL);
+INSERT INTO records VALUES("267","28","Lawn Lots","St. Augustin","JUANA NATANAWAN",NULL);
+INSERT INTO records VALUES("268","29","Lawn Lots","St. Augustin","LORETA ESPIRITU",NULL);
+INSERT INTO records VALUES("269","30","Lawn Lots","St. Augustin","IRENE GUEVARRA",NULL);
+INSERT INTO records VALUES("270","31","Lawn Lots","St. Augustin","IRENE GUEVARRA",NULL);
+INSERT INTO records VALUES("271","32","Lawn Lots","St. Augustin","ANITA FERNANDEZ",NULL);
+INSERT INTO records VALUES("272","33","Lawn Lots","St. Augustin","GALO BLACER\r\nALMA BLACER",NULL);
+INSERT INTO records VALUES("273","34","Lawn Lots","St. Augustin","PASTOR LAUREL",NULL);
+INSERT INTO records VALUES("274","35","Lawn Lots","St. Augustin","AQUILINO LAUREL",NULL);
+INSERT INTO records VALUES("275","36","Lawn Lots","St. Augustin","RACHEL LAUREL JIMENEZ",NULL);
+INSERT INTO records VALUES("276","37","Lawn Lots","St. Augustin","VICTORINA OLIMPIADA",NULL);
+INSERT INTO records VALUES("277","38","Lawn Lots","St. Augustin","GREGORIO PAYAD",NULL);
+INSERT INTO records VALUES("278","39","Lawn Lots","St. Augustin","HERNANI SANARES",NULL);
+INSERT INTO records VALUES("279","40","Lawn Lots","St. Augustin","JULIET OLIMPADA",NULL);
+INSERT INTO records VALUES("280","41","Lawn Lots","St. Augustin","RONEL NEPOMUCENO",NULL);
+INSERT INTO records VALUES("281","42","Lawn Lots","St. Augustin","RONEL NEPOMUCENO",NULL);
+INSERT INTO records VALUES("282","43","Lawn Lots","St. Augustin","HAZEL OLIMPIADA",NULL);
+INSERT INTO records VALUES("283","44","Lawn Lots","St. Augustin","ISABELO SANGALANG",NULL);
+INSERT INTO records VALUES("284","45","Lawn Lots","St. Augustin","CECILLA ANACAY ",NULL);
+INSERT INTO records VALUES("285","46","Lawn Lots","St. Augustin","CECILLA ANACAY ",NULL);
+INSERT INTO records VALUES("286","47","Lawn Lots","St. Augustin","BALERIANO ANGCAYA",NULL);
+INSERT INTO records VALUES("287","48","Lawn Lots","St. Augustin","NELSON BAYOT",NULL);
+INSERT INTO records VALUES("288","49","Lawn Lots","St. Augustin","NELSON BAYOT",NULL);
+INSERT INTO records VALUES("289","50","Lawn Lots","St. Augustin","VICENTA M. PAYAD",NULL);
+INSERT INTO records VALUES("300","51","Lawn Lots","St. Augustin",NULL,NULL);
+INSERT INTO records VALUES("301","52","Lawn Lots","St. Augustin","RICARDO DOLLIENTE",NULL);
+INSERT INTO records VALUES("302","53","Lawn Lots","St. Augustin","REMIECAR CABANILLA",NULL);
+INSERT INTO records VALUES("303","54","Lawn Lots","St. Augustin","AMPARO VALENCIA",NULL);
+INSERT INTO records VALUES("304","55","Lawn Lots","St. Augustin","JAIME AMBION",NULL);
+INSERT INTO records VALUES("305","56","Lawn Lots","St. Augustin","REMIGIA T. CALINGASAN",NULL);
+INSERT INTO records VALUES("306","57","Lawn Lots","St. Augustin","RUPERTO DE LEON\r\nLOURDES DE LEON",NULL);
+INSERT INTO records VALUES("307","58","Lawn Lots","St. Augustin","MANY DIGO",NULL);
+INSERT INTO records VALUES("308","59","Lawn Lots","St. Augustin","MANY DIGO",NULL);
+INSERT INTO records VALUES("309","60","Lawn Lots","St. Augustin","JUANITA CASTRO",NULL);
+INSERT INTO records VALUES("310","61","Lawn Lots","St. Augustin","MIGUEL BITUIN ",NULL);
+INSERT INTO records VALUES("311","62","Lawn Lots","St. Augustin","LEONI DORIMON",NULL);
+INSERT INTO records VALUES("312","63","Lawn Lots","St. Augustin","LORDWILL BAGTING",NULL);
+INSERT INTO records VALUES("313","64","Lawn Lots","St. Augustin","LORDWILL BAGTING",NULL);
+INSERT INTO records VALUES("314","65","Lawn Lots","St. Augustin","LORDWILL BAGTING",NULL);
+INSERT INTO records VALUES("315","66","Lawn Lots","St. Augustin","ALPIE SANDOVAL",NULL);
+INSERT INTO records VALUES("316","67","Lawn Lots","St. Augustin","BENITA SANDOVAL",NULL);
+INSERT INTO records VALUES("317","68","Lawn Lots","St. Augustin","ANGKEL ANGCAYA",NULL);
+INSERT INTO records VALUES("318","69","Lawn Lots","St. Augustin","CONCEPCION CAUSAREN",NULL);
+INSERT INTO records VALUES("319","70","Lawn Lots","St. Augustin","RICARDO JUMANANG",NULL);
+INSERT INTO records VALUES("320","71","Lawn Lots","St. Augustin","PEDRO DEGUZMAN",NULL);
+INSERT INTO records VALUES("321","72","Lawn Lots","St. Augustin","ZOILO DE LA PEñA",NULL);
+INSERT INTO records VALUES("322","73","Lawn Lots","St. Augustin","ZOILO DE LA PEñA",NULL);
+INSERT INTO records VALUES("323","74","Lawn Lots","St. Augustin","ZOILO DE LA PEñA",NULL);
+INSERT INTO records VALUES("324","75","Lawn Lots","St. Augustin","ZOILO DE LA PEñA",NULL);
+INSERT INTO records VALUES("325","76","Lawn Lots","St. Augustin",NULL,NULL);
+INSERT INTO records VALUES("326","77","Lawn Lots","St. Augustin","AUGUSTO MARASIGAN",NULL);
+INSERT INTO records VALUES("327","78","Lawn Lots","St. Augustin","NORMA MARASIGAN",NULL);
+INSERT INTO records VALUES("328","79","Lawn Lots","St. Augustin","MICHAEL ORTILLA",NULL);
+INSERT INTO records VALUES("329","80","Lawn Lots","St. Augustin","GEOFFREY RAMOS",NULL);
+INSERT INTO records VALUES("330","81","Lawn Lots","St. Augustin","NARCISO MANANSALA",NULL);
+INSERT INTO records VALUES("331","82","Lawn Lots","St. Augustin","MA THERESA B. DE VERA",NULL);
+INSERT INTO records VALUES("332","83","Lawn Lots","St. Augustin","MACARIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("333","84","Lawn Lots","St. Augustin","EDNA CANTAL",NULL);
+INSERT INTO records VALUES("334","85","Lawn Lots","St. Augustin","FRANCISCO CASTILLO",NULL);
+INSERT INTO records VALUES("335","86","Lawn Lots","St. Augustin","GORGONIO AREVALO",NULL);
+INSERT INTO records VALUES("336","87","Lawn Lots","St. Augustin","ROLANDO PAYAS",NULL);
+INSERT INTO records VALUES("337","88","Lawn Lots","St. Augustin","CRISPULO DE LEON",NULL);
+INSERT INTO records VALUES("338","89","Lawn Lots","St. Augustin","FAUSTINO LAMBENTE\r\nJOSEFINA BRUNO",NULL);
+INSERT INTO records VALUES("339","90","Lawn Lots","St. Augustin","JOSEFINA SANICO",NULL);
+INSERT INTO records VALUES("340","91","Lawn Lots","St. Augustin","ALICIO FERNANDO",NULL);
+INSERT INTO records VALUES("341","92","Lawn Lots","St. Augustin","ALICIO FERNANDO",NULL);
+INSERT INTO records VALUES("342","93","Lawn Lots","St. Augustin","ALICIO FERNANDO",NULL);
+INSERT INTO records VALUES("343","94","Lawn Lots","St. Augustin","EDILBERTA ABALOS",NULL);
+INSERT INTO records VALUES("344","95","Lawn Lots","St. Augustin","MAMBERTO DESINGAñO",NULL);
+INSERT INTO records VALUES("345","96","Lawn Lots","St. Augustin","ELSA REYES",NULL);
+INSERT INTO records VALUES("346","97","Lawn Lots","St. Augustin","AMELIA GARCIA",NULL);
+INSERT INTO records VALUES("347","98","Lawn Lots","St. Augustin","CLINTON LILANG",NULL);
+INSERT INTO records VALUES("348","99","Lawn Lots","St. Augustin","MARITES AUSTRIA",NULL);
+INSERT INTO records VALUES("349","100","Lawn Lots","St. Augustin","ROCELYN CARDINO",NULL);
+INSERT INTO records VALUES("350","101","Lawn Lots","St. Augustin","MELCHOR MORILO\r\nGLORIA MORILO",NULL);
+INSERT INTO records VALUES("351","102","Lawn Lots","St. Augustin","MELCHOR MORILO\r\nGLORIA MORILO",NULL);
+INSERT INTO records VALUES("352","103","Lawn Lots","St. Augustin","MELCHOR MORILO\r\nGLORIA MORILO",NULL);
+INSERT INTO records VALUES("353","104","Lawn Lots","St. Augustin","MELCHOR MORILO\r\nGLORIA MORILO",NULL);
+INSERT INTO records VALUES("354","105","Lawn Lots","St. Augustin","AZUCENA D. ROCERO",NULL);
+INSERT INTO records VALUES("355","106","Lawn Lots","St. Augustin","TERESITA SANARES",NULL);
+INSERT INTO records VALUES("356","107","Lawn Lots","St. Augustin","TERESITA SANARES",NULL);
+INSERT INTO records VALUES("357","108","Lawn Lots","St. Augustin","TEOFISTA A. JAVIER",NULL);
+INSERT INTO records VALUES("358","109","Lawn Lots","St. Augustin","RODYEL NHICO VERGARA",NULL);
+INSERT INTO records VALUES("359","110","Lawn Lots","St. Augustin",NULL,NULL);
+INSERT INTO records VALUES("360","111","Lawn Lots","St. Augustin","JESUS LAGAJINO",NULL);
+INSERT INTO records VALUES("361","112","Lawn Lots","St. Augustin","OFELIA C. LUMOD",NULL);
+INSERT INTO records VALUES("362","113","Lawn Lots","St. Augustin","AMELIA GARCIA",NULL);
+INSERT INTO records VALUES("363","114","Lawn Lots","St. Augustin","AMELIA GARCIA",NULL);
+INSERT INTO records VALUES("364","115","Lawn Lots","St. Augustin","AMELIA GARCIA",NULL);
+INSERT INTO records VALUES("365","116","Lawn Lots","St. Augustin","AMELIA GARCIA",NULL);
+INSERT INTO records VALUES("366","117","Lawn Lots","St. Augustin","AMELIA GARCIA",NULL);
+INSERT INTO records VALUES("367","124","Lawn Lots","St. Augustin","SHELLA B. LIMBO",NULL);
+INSERT INTO records VALUES("368","125","Lawn Lots","St. Augustin",NULL,NULL);
+INSERT INTO records VALUES("369","126","Lawn Lots","St. Augustin","ROSA MENDOZA",NULL);
+INSERT INTO records VALUES("370","127","Lawn Lots","St. Augustin","MARILAN PASCUAL",NULL);
+INSERT INTO records VALUES("371","128","Lawn Lots","St. Augustin","REBECCA ALDA",NULL);
+INSERT INTO records VALUES("372","128","Lawn Lots","St. Augustin","REBECCA ALDA",NULL);
+INSERT INTO records VALUES("373","129","Lawn Lots","St. Augustin","REBECCA ALDA",NULL);
+INSERT INTO records VALUES("374","130","Lawn Lots","St. Augustin","JOSE MARASIGAN",NULL);
+INSERT INTO records VALUES("375","131","Lawn Lots","St. Augustin","RICARDO ZALDE",NULL);
+INSERT INTO records VALUES("376","132","Lawn Lots","St. Augustin","JUANITO PALO",NULL);
+INSERT INTO records VALUES("377","133","Lawn Lots","St. Augustin","JUANITO PALO",NULL);
+INSERT INTO records VALUES("378","134","Lawn Lots","St. Augustin","ROGELIO JAVIER",NULL);
+INSERT INTO records VALUES("379","135","Lawn Lots","St. Augustin","EDILBERTO JAVIER",NULL);
+INSERT INTO records VALUES("380","136","Lawn Lots","St. Augustin","KAPT. AYBROCIO LUNA",NULL);
+INSERT INTO records VALUES("381","137","Lawn Lots","St. Augustin","ROMEO VILLANUEVA",NULL);
+INSERT INTO records VALUES("382","138","Lawn Lots","St. Augustin",NULL,NULL);
+INSERT INTO records VALUES("383","139","Lawn Lots","St. Augustin",NULL,NULL);
+INSERT INTO records VALUES("384","140","Lawn Lots","St. Augustin","ELSA T. REYES",NULL);
+INSERT INTO records VALUES("385","141","Lawn Lots","St. Augustin","ELSA T. REYES",NULL);
+INSERT INTO records VALUES("386","142","Lawn Lots","St. Augustin","MA. NELIA",NULL);
+INSERT INTO records VALUES("387","143","Lawn Lots","St. Augustin","ADELA M. MEDINA\r\nDERINDA AMBION",NULL);
+INSERT INTO records VALUES("388","144","Lawn Lots","St. Augustin","MA. LOPAZ ANGCAYA",NULL);
+INSERT INTO records VALUES("389","145","Lawn Lots","St. Augustin","NEIST AMBION",NULL);
+INSERT INTO records VALUES("390","146","Lawn Lots","St. Augustin","ARTEMIO GUZMAN\r\nTEODORA GUAMAN",NULL);
+INSERT INTO records VALUES("391","147","Lawn Lots","St. Augustin","ARTEMIO GUZMAN\r\nTEODORA GUAMAN",NULL);
+INSERT INTO records VALUES("392","148","Lawn Lots","St. Augustin","ARTEMIO GUZMAN\r\nTEODORA GUAMAN",NULL);
+INSERT INTO records VALUES("393","149","Lawn Lots","St. Augustin","ARTEMIO GUZMAN\r\nTEODORA GUAMAN",NULL);
+INSERT INTO records VALUES("394","150","Lawn Lots","St. Augustin","MICAH ANDREA B. PALO\r\nRODEL PALO",NULL);
+INSERT INTO records VALUES("395","151","Lawn Lots","St. Augustin","MICAH ANDREA B. PALO\r\nRODEL PALO",NULL);
+INSERT INTO records VALUES("396","1","Lawn Lots","St. Joseph","BERNARDO CARAAN",NULL);
+INSERT INTO records VALUES("397","2","Lawn Lots","St. Joseph","ELMER BETANZES",NULL);
+INSERT INTO records VALUES("398","3","Lawn Lots","St. Joseph","FRANCISCA CARAAN",NULL);
+INSERT INTO records VALUES("399","4","Lawn Lots","St. Joseph","ROGER P. SOCO",NULL);
+INSERT INTO records VALUES("400","5","Lawn Lots","St. Joseph","NORMA BAYOT",NULL);
+INSERT INTO records VALUES("401","6","Lawn Lots","St. Joseph","RICARDO N. RAMOS",NULL);
+INSERT INTO records VALUES("402","15","Lawn Lots","St. Rafael","MARISSA MONTENEGRO",NULL);
+INSERT INTO records VALUES("403","7","Lawn Lots","St. Joseph","RUBEN ORTILLA",NULL);
+INSERT INTO records VALUES("404","8","Lawn Lots","St. Joseph","ARTEMIO C. BAYOT",NULL);
+INSERT INTO records VALUES("405","9","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("406","10","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("407","11","Lawn Lots","St. Joseph","CRODERCIO AUSTRIA\r\nLEVEINO AUSTRIA",NULL);
+INSERT INTO records VALUES("408","12","Lawn Lots","St. Joseph","EMETERIO A. AMBAT",NULL);
+INSERT INTO records VALUES("409","13","Lawn Lots","St. Joseph","ERMA BAYTTON",NULL);
+INSERT INTO records VALUES("410","14","Lawn Lots","St. Joseph","LAURO JAVIER\r\nIMELDA JAVIER",NULL);
+INSERT INTO records VALUES("411","15","Lawn Lots","St. Joseph","LAURO JAVIER",NULL);
+INSERT INTO records VALUES("412","16","Lawn Lots","St. Joseph","VICTORIA F. CAMBA",NULL);
+INSERT INTO records VALUES("413","17","Lawn Lots","St. Joseph","VICTORIA F. CAMBA",NULL);
+INSERT INTO records VALUES("414","18","Lawn Lots","St. Joseph","GRACE AMBAT",NULL);
+INSERT INTO records VALUES("415","19","Lawn Lots","St. Joseph","LINDA AMBAT",NULL);
+INSERT INTO records VALUES("416","20","Lawn Lots","St. Joseph","MAFE AMBAT",NULL);
+INSERT INTO records VALUES("417","21","Lawn Lots","St. Joseph","MYRA AMBAT",NULL);
+INSERT INTO records VALUES("418","22","Lawn Lots","St. Joseph","NIDA MORAL",NULL);
+INSERT INTO records VALUES("419","23","Lawn Lots","St. Joseph","ROGELIO GONZALEZ",NULL);
+INSERT INTO records VALUES("420","24","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("421","25","Lawn Lots","St. Joseph","AMARIO CREUS",NULL);
+INSERT INTO records VALUES("422","26","Lawn Lots","St. Joseph","AMARIO CREUS",NULL);
+INSERT INTO records VALUES("423","27","Lawn Lots","St. Joseph","SONIA VERGARA",NULL);
+INSERT INTO records VALUES("424","28","Lawn Lots","St. Joseph","SONIA VERGARA",NULL);
+INSERT INTO records VALUES("425","29","Lawn Lots","St. Joseph","EDITHA VILLANUEVA",NULL);
+INSERT INTO records VALUES("426","30","Lawn Lots","St. Joseph","CESAR MAGHIRANG",NULL);
+INSERT INTO records VALUES("427","31","Lawn Lots","St. Joseph","CESAR MAGHIRANG",NULL);
+INSERT INTO records VALUES("428","32","Lawn Lots","St. Joseph","SEVERA PEREZ TERRIBLE\r\nANNALYN K. ESPERITU",NULL);
+INSERT INTO records VALUES("429","33","Lawn Lots","St. Joseph","DANILO LATOSA",NULL);
+INSERT INTO records VALUES("430","34","Lawn Lots","St. Joseph","VICENTE PAYAD",NULL);
+INSERT INTO records VALUES("431","35","Lawn Lots","St. Joseph","EUGERIA DE LOS SANTOS",NULL);
+INSERT INTO records VALUES("432","36","Lawn Lots","St. Joseph","EUGERIA DE LOS SANTOS",NULL);
+INSERT INTO records VALUES("433","37","Lawn Lots","St. Joseph","EUGERIA DE LOS SANTOS",NULL);
+INSERT INTO records VALUES("434","38","Lawn Lots","St. Joseph","EUGERIA DE LOS SANTOS",NULL);
+INSERT INTO records VALUES("435","39","Lawn Lots","St. Joseph","FRANKLYN MACASADYA",NULL);
+INSERT INTO records VALUES("436","40","Lawn Lots","St. Joseph","CESAR DE CASTRO AGALA",NULL);
+INSERT INTO records VALUES("437","41","Lawn Lots","St. Joseph","CARMELITA AGUILA",NULL);
+INSERT INTO records VALUES("438","42","Lawn Lots","St. Joseph","SAEM KARL HEINZ AGUILA",NULL);
+INSERT INTO records VALUES("439","43","Lawn Lots","St. Joseph","RODOLFO D. BURAZON",NULL);
+INSERT INTO records VALUES("440","44","Lawn Lots","St. Joseph","JOEL BURAZON",NULL);
+INSERT INTO records VALUES("441","45","Lawn Lots","St. Joseph","JIMMY M. PINAZO",NULL);
+INSERT INTO records VALUES("442","46","Lawn Lots","St. Joseph","AURORA DULFDE",NULL);
+INSERT INTO records VALUES("443","47","Lawn Lots","St. Joseph","JULIO ALBAY",NULL);
+INSERT INTO records VALUES("444","48","Lawn Lots","St. Joseph","LUISITO BAYOT",NULL);
+INSERT INTO records VALUES("445","49","Lawn Lots","St. Joseph","GEMMA PEJI",NULL);
+INSERT INTO records VALUES("446","50","Lawn Lots","St. Joseph","BRENDA ARCANGEL",NULL);
+INSERT INTO records VALUES("447","51","Lawn Lots","St. Joseph","BRENDA ARCANGEL",NULL);
+INSERT INTO records VALUES("448","52","Lawn Lots","St. Joseph","BRENDA ARCANGEL",NULL);
+INSERT INTO records VALUES("449","53","Lawn Lots","St. Joseph","SONIA VERGARA",NULL);
+INSERT INTO records VALUES("450","54","Lawn Lots","St. Joseph","SONIA VERGARA",NULL);
+INSERT INTO records VALUES("451","55","Lawn Lots","St. Joseph","NARCISA SAYSON",NULL);
+INSERT INTO records VALUES("452","56","Lawn Lots","St. Joseph","HONORIO ROCHA",NULL);
+INSERT INTO records VALUES("453","57","Lawn Lots","St. Joseph","MARIANO MENDOZA",NULL);
+INSERT INTO records VALUES("454","58","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("455","59","Lawn Lots","St. Joseph","MARIANO MENDOZA",NULL);
+INSERT INTO records VALUES("456","60","Lawn Lots","St. Joseph","SHARON SOLIVEN",NULL);
+INSERT INTO records VALUES("457","61","Lawn Lots","St. Joseph","ANNALIZA CALITIS",NULL);
+INSERT INTO records VALUES("458","62","Lawn Lots","St. Joseph","ERMELINDA ANGELES",NULL);
+INSERT INTO records VALUES("459","63","Lawn Lots","St. Joseph","ANGELITA NAVARIA",NULL);
+INSERT INTO records VALUES("460","64","Lawn Lots","St. Joseph","NOEL MENDOZA",NULL);
+INSERT INTO records VALUES("461","65","Lawn Lots","St. Joseph","EMMA GUMBA",NULL);
+INSERT INTO records VALUES("462","66","Lawn Lots","St. Joseph","ELMER C. KALA",NULL);
+INSERT INTO records VALUES("463","67","Lawn Lots","St. Joseph","EDWIN AMBION",NULL);
+INSERT INTO records VALUES("464","68","Lawn Lots","St. Joseph","EDWIN AMBION",NULL);
+INSERT INTO records VALUES("465","69","Lawn Lots","St. Joseph","ROBERTO NATANAWAN",NULL);
+INSERT INTO records VALUES("466","70","Lawn Lots","St. Joseph","CHRISTIAN BERNARD DIAZ",NULL);
+INSERT INTO records VALUES("467","71","Lawn Lots","St. Joseph","LEONCIA A. SANGALANG",NULL);
+INSERT INTO records VALUES("468","72","Lawn Lots","St. Joseph","NENITA ESTARES\r\n",NULL);
+INSERT INTO records VALUES("469","73","Lawn Lots","St. Joseph","NERISSA MAGNAYE",NULL);
+INSERT INTO records VALUES("470","74","Lawn Lots","St. Joseph","ANTONIO CEDENIO",NULL);
+INSERT INTO records VALUES("471","75","Lawn Lots","St. Joseph","LUIS CLEOFE",NULL);
+INSERT INTO records VALUES("472","76","Lawn Lots","St. Joseph","SONNY C. DOMATO",NULL);
+INSERT INTO records VALUES("473","77","Lawn Lots","St. Joseph","SONNY C. DOMATO",NULL);
+INSERT INTO records VALUES("474","78","Lawn Lots","St. Joseph","SONNY C. DOMATO",NULL);
+INSERT INTO records VALUES("475","79","Lawn Lots","St. Joseph","FRANCISCO ANGCAYA",NULL);
+INSERT INTO records VALUES("476","80","Lawn Lots","St. Joseph","SHIRLEY ANGCAYA",NULL);
+INSERT INTO records VALUES("477","81","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("478","82","Lawn Lots","St. Joseph","NIMFA \r\nECHIE",NULL);
+INSERT INTO records VALUES("479","83","Lawn Lots","St. Joseph","NIMFA \r\nECHIE",NULL);
+INSERT INTO records VALUES("480","84","Lawn Lots","St. Joseph","NIMFA \r\nECHIE",NULL);
+INSERT INTO records VALUES("481","85","Lawn Lots","St. Joseph","NIMFA \r\nECHIE",NULL);
+INSERT INTO records VALUES("482","86","Lawn Lots","St. Joseph","NIMFA \r\nECHIE",NULL);
+INSERT INTO records VALUES("483","87","Lawn Lots","St. Joseph","JUANA CORTEZ ANGCAYA",NULL);
+INSERT INTO records VALUES("484","88","Lawn Lots","St. Joseph","JUANA CORTEZ ANGCAYA",NULL);
+INSERT INTO records VALUES("485","89","Lawn Lots","St. Joseph","LAUREANO DELOS SANTOS",NULL);
+INSERT INTO records VALUES("486","90","Lawn Lots","St. Joseph","WILSON DELOS SANTOS",NULL);
+INSERT INTO records VALUES("487","91","Lawn Lots","St. Joseph","VICTORIANO DELOS SANTOS",NULL);
+INSERT INTO records VALUES("488","92","Lawn Lots","St. Joseph","YOLANDA A. SALTING",NULL);
+INSERT INTO records VALUES("489","93","Lawn Lots","St. Joseph","RAQUEL ROWENA A. RODRIGUEZ",NULL);
+INSERT INTO records VALUES("490","94","Lawn Lots","St. Joseph","RAQUEL ROWENA A. RODRIGUEZ",NULL);
+INSERT INTO records VALUES("491","95","Lawn Lots","St. Joseph","PEDRITO OLLER",NULL);
+INSERT INTO records VALUES("492","96","Lawn Lots","St. Joseph","MARY-JANE ATEMAS",NULL);
+INSERT INTO records VALUES("493","97","Lawn Lots","St. Joseph","ERNESTO S. RAYMUNDO",NULL);
+INSERT INTO records VALUES("494","98","Lawn Lots","St. Joseph","RAQUEL BATUTAY",NULL);
+INSERT INTO records VALUES("495","99","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("496","100","Lawn Lots","St. Joseph","IMELDA NATUEL MANIMTIM",NULL);
+INSERT INTO records VALUES("497","101","Lawn Lots","St. Joseph","ARTEMIO NATUEL",NULL);
+INSERT INTO records VALUES("498","102","Lawn Lots","St. Joseph","ATE NEL",NULL);
+INSERT INTO records VALUES("499","103","Lawn Lots","St. Joseph","ATE NEL",NULL);
+INSERT INTO records VALUES("500","104","Lawn Lots","St. Joseph","LINDA",NULL);
+INSERT INTO records VALUES("501","105","Lawn Lots","St. Joseph","AZUCENA ROCERO",NULL);
+INSERT INTO records VALUES("502","106","Lawn Lots","St. Joseph","LIEZL",NULL);
+INSERT INTO records VALUES("503","107","Lawn Lots","St. Joseph","MARIA LUISA FELLO",NULL);
+INSERT INTO records VALUES("504","108","Lawn Lots","St. Joseph","TEOFISTA A. JAVIER\r\nTERESITA V. VERGARA",NULL);
+INSERT INTO records VALUES("505","109","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("506","110","Lawn Lots","St. Joseph","CAROLYN PENAFUERTE",NULL);
+INSERT INTO records VALUES("507","111","Lawn Lots","St. Joseph","LILIA VIDAL BAYOT",NULL);
+INSERT INTO records VALUES("508","112","Lawn Lots","St. Joseph","ARSENIA PATIñO",NULL);
+INSERT INTO records VALUES("509","113","Lawn Lots","St. Joseph","NAOME JAVIER",NULL);
+INSERT INTO records VALUES("510","114","Lawn Lots","St. Joseph","ANICETO CANOY KAYKULOT",NULL);
+INSERT INTO records VALUES("511","115","Lawn Lots","St. Joseph","JONALYN DE CASTRO",NULL);
+INSERT INTO records VALUES("512","116","Lawn Lots","St. Joseph","AUGUSTO PARRA",NULL);
+INSERT INTO records VALUES("513","117","Lawn Lots","St. Joseph","ELMA PARRA",NULL);
+INSERT INTO records VALUES("514","118","Lawn Lots","St. Joseph","ELMA PARRA",NULL);
+INSERT INTO records VALUES("515","119","Lawn Lots","St. Joseph","CECILE QUILAO",NULL);
+INSERT INTO records VALUES("516","120","Lawn Lots","St. Joseph","CECILE QUILAO",NULL);
+INSERT INTO records VALUES("517","121","Lawn Lots","St. Joseph","CECILE QUILAO",NULL);
+INSERT INTO records VALUES("518","122","Lawn Lots","St. Joseph","RANDY NARVAEZ",NULL);
+INSERT INTO records VALUES("519","123","Lawn Lots","St. Joseph","MARCET JAVIER",NULL);
+INSERT INTO records VALUES("520","124","Lawn Lots","St. Joseph","LORETO AMULONG",NULL);
+INSERT INTO records VALUES("521","125","Lawn Lots","St. Joseph","LEVI MANIMTIM",NULL);
+INSERT INTO records VALUES("522","126","Lawn Lots","St. Joseph","ROGER ESTOYA",NULL);
+INSERT INTO records VALUES("523","127","Lawn Lots","St. Joseph","ROGER ESTOYA",NULL);
+INSERT INTO records VALUES("524","128","Lawn Lots","St. Joseph","ROGER ESTOYA",NULL);
+INSERT INTO records VALUES("525","129","Lawn Lots","St. Joseph","TERESA HOLAR",NULL);
+INSERT INTO records VALUES("526","130","Lawn Lots","St. Joseph","EMMA MENDOZA",NULL);
+INSERT INTO records VALUES("527","131","Lawn Lots","St. Joseph","MARYDALE V. DIOKNO",NULL);
+INSERT INTO records VALUES("528","132","Lawn Lots","St. Joseph","ATE DO",NULL);
+INSERT INTO records VALUES("529","133","Lawn Lots","St. Joseph","HILDA CARPIO",NULL);
+INSERT INTO records VALUES("530","134","Lawn Lots","St. Joseph","FRANCISCO COLANDOG",NULL);
+INSERT INTO records VALUES("531","135","Lawn Lots","St. Joseph","SATURNINO PARRA",NULL);
+INSERT INTO records VALUES("532","136","Lawn Lots","St. Joseph","FELY DAYUTA",NULL);
+INSERT INTO records VALUES("533","137","Lawn Lots","St. Joseph","MARILOU VELASCO",NULL);
+INSERT INTO records VALUES("534","138","Lawn Lots","St. Joseph","LEONARDO VELASCO JR.",NULL);
+INSERT INTO records VALUES("535","139","Lawn Lots","St. Joseph","CATALINA AMON",NULL);
+INSERT INTO records VALUES("536","140","Lawn Lots","St. Joseph","MARILYN R. POBLETE",NULL);
+INSERT INTO records VALUES("537","141","Lawn Lots","St. Joseph","JEAN B. ARIGORE",NULL);
+INSERT INTO records VALUES("538","142","Lawn Lots","St. Joseph","KAREN NABO",NULL);
+INSERT INTO records VALUES("539","143","Lawn Lots","St. Joseph","CATHERINE CAURES",NULL);
+INSERT INTO records VALUES("540","144","Lawn Lots","St. Joseph","JERNA ARCULLO",NULL);
+INSERT INTO records VALUES("541","145","Lawn Lots","St. Joseph","LUIS MENDOZA",NULL);
+INSERT INTO records VALUES("542","146","Lawn Lots","St. Joseph","JOSEPHINE ARAO",NULL);
+INSERT INTO records VALUES("543","147","Lawn Lots","St. Joseph","JOEL TIBAYAN",NULL);
+INSERT INTO records VALUES("544","148","Lawn Lots","St. Joseph","JOEL TIBAYAN",NULL);
+INSERT INTO records VALUES("545","149","Lawn Lots","St. Joseph","JOEL TIBAYAN",NULL);
+INSERT INTO records VALUES("546","150","Lawn Lots","St. Joseph","LEONARDO SAMONTE",NULL);
+INSERT INTO records VALUES("547","151","Lawn Lots","St. Joseph","EDISON ELPOS",NULL);
+INSERT INTO records VALUES("548","152","Lawn Lots","St. Joseph","JOSE R. BAYBAY",NULL);
+INSERT INTO records VALUES("549","153","Lawn Lots","St. Joseph","CEFERINO PASCUA\r\n",NULL);
+INSERT INTO records VALUES("550","154","Lawn Lots","St. Joseph","AGAPITO M. CARAAN",NULL);
+INSERT INTO records VALUES("551","155","Lawn Lots","St. Joseph","ROMEO VILLANUEVA",NULL);
+INSERT INTO records VALUES("552","156","Lawn Lots","St. Joseph","ROMEO VILLANUEVA",NULL);
+INSERT INTO records VALUES("553","172","Lawn Lots","St. Joseph","ROMEO VILLANUEVA",NULL);
+INSERT INTO records VALUES("554","173","Lawn Lots","St. Joseph","ROMEO VILLANUEVA",NULL);
+INSERT INTO records VALUES("555","157","Lawn Lots","St. Joseph","FELIX BERTO VILLA",NULL);
+INSERT INTO records VALUES("556","158","Lawn Lots","St. Joseph","FELIX BERTO VILLA",NULL);
+INSERT INTO records VALUES("557","159","Lawn Lots","St. Joseph","ANICIA M. QUILAO",NULL);
+INSERT INTO records VALUES("558","160","Lawn Lots","St. Joseph","SANTOS ALFUENTE",NULL);
+INSERT INTO records VALUES("559","161","Lawn Lots","St. Joseph","BERNARDO M. PINAZO",NULL);
+INSERT INTO records VALUES("560","162","Lawn Lots","St. Joseph","JOSE M. BAYBAY",NULL);
+INSERT INTO records VALUES("561","163","Lawn Lots","St. Joseph","JOEL TIBAYAN",NULL);
+INSERT INTO records VALUES("562","164","Lawn Lots","St. Joseph","JOEL TIBAYAN",NULL);
+INSERT INTO records VALUES("563","165","Lawn Lots","St. Joseph","JOEL TIBAYAN",NULL);
+INSERT INTO records VALUES("564","166","Lawn Lots","St. Joseph","MICHAEL M. SOLIS\r\n",NULL);
+INSERT INTO records VALUES("565","167","Lawn Lots","St. Joseph","RONALD OñATE",NULL);
+INSERT INTO records VALUES("566","168","Lawn Lots","St. Joseph","RONALD OñATE",NULL);
+INSERT INTO records VALUES("567","169","Lawn Lots","St. Joseph",NULL,NULL);
+INSERT INTO records VALUES("568","170","Lawn Lots","St. Joseph","ROBERTO MANLANGIT",NULL);
+INSERT INTO records VALUES("569","171","Lawn Lots","St. Joseph","ROBERTO MANLANGIT",NULL);
+INSERT INTO records VALUES("570","1","Lawn Lots","St. John","CON CELSO DE CASTRO",NULL);
+INSERT INTO records VALUES("571","2","Lawn Lots","St. John","BENEDICTO B. TIBAYAN SR.",NULL);
+INSERT INTO records VALUES("572","3","Lawn Lots","St. John","MARIA RODRIGUEZ",NULL);
+INSERT INTO records VALUES("573","4","Lawn Lots","St. John","DAVID RODRIGUEZ",NULL);
+INSERT INTO records VALUES("574","5","Lawn Lots","St. John","HELEN ENRIQUEZ",NULL);
+INSERT INTO records VALUES("575","6","Lawn Lots","St. John","FELINA MARAVILLA",NULL);
+INSERT INTO records VALUES("576","7","Lawn Lots","St. John","ADORA S. PENALOSA",NULL);
+INSERT INTO records VALUES("577","8","Lawn Lots","St. John","FELIX MAYUGA",NULL);
+INSERT INTO records VALUES("578","9","Lawn Lots","St. John","ALONA MAYUGA",NULL);
+INSERT INTO records VALUES("579","10","Lawn Lots","St. John","ALONA MAYUGA",NULL);
+INSERT INTO records VALUES("580","11","Lawn Lots","St. John","ALONA MAYUGA",NULL);
+INSERT INTO records VALUES("581","12","Lawn Lots","St. John","JACINTO DAñO",NULL);
+INSERT INTO records VALUES("582","13","Lawn Lots","St. John","ARNEL F. CUADRASOL",NULL);
+INSERT INTO records VALUES("583","14","Lawn Lots","St. John","TOMASA CASTILLO",NULL);
+INSERT INTO records VALUES("584","15","Lawn Lots","St. John","TERESITA STA. MARIA",NULL);
+INSERT INTO records VALUES("585","16","Lawn Lots","St. John","FELICIANO DAñO",NULL);
+INSERT INTO records VALUES("586","17","Lawn Lots","St. John","FELICIANO DAñO",NULL);
+INSERT INTO records VALUES("587","18","Lawn Lots","St. John","GREGORIA MANALO",NULL);
+INSERT INTO records VALUES("588","19","Lawn Lots","St. John","ALFREDO TALEON",NULL);
+INSERT INTO records VALUES("589","20","Lawn Lots","St. John","SABAS MANALO",NULL);
+INSERT INTO records VALUES("590","21","Lawn Lots","St. John","JAIME ANASTACIO",NULL);
+INSERT INTO records VALUES("591","22","Lawn Lots","St. John","ELISA BAYANI",NULL);
+INSERT INTO records VALUES("592","23","Lawn Lots","St. John","BETTY JANE WILHITE",NULL);
+INSERT INTO records VALUES("593","24","Lawn Lots","St. John","DOMINADOR R. CAZARTE",NULL);
+INSERT INTO records VALUES("594","25","Lawn Lots","St. John","MARYLYN ",NULL);
+INSERT INTO records VALUES("595","26","Lawn Lots","St. John","MARYLYN ",NULL);
+INSERT INTO records VALUES("596","27","Lawn Lots","St. John","MARYLYN ",NULL);
+INSERT INTO records VALUES("597","28","Lawn Lots","St. John","AGAPITO SUMAGUI",NULL);
+INSERT INTO records VALUES("598","29","Lawn Lots","St. John","EDMUNDO JAYME",NULL);
+INSERT INTO records VALUES("599","30","Lawn Lots","St. John","STEPHANIE G. ADRIANO",NULL);
+INSERT INTO records VALUES("600","31","Lawn Lots","St. John","NORMA CABISON",NULL);
+INSERT INTO records VALUES("601","32","Lawn Lots","St. John","CEFERINO LAMBON",NULL);
+INSERT INTO records VALUES("602","33","Lawn Lots","St. John",NULL,NULL);
+INSERT INTO records VALUES("603","34","Lawn Lots","St. John","ANGELITO YUSON",NULL);
+INSERT INTO records VALUES("604","35","Lawn Lots","St. John","RAQUEL ROWENA A. RODRIGUEZ",NULL);
+INSERT INTO records VALUES("605","36","Lawn Lots","St. John","CLEMENTE G. DOGELIO",NULL);
+INSERT INTO records VALUES("606","37","Lawn Lots","St. John","EUCALIA DOGELIO",NULL);
+INSERT INTO records VALUES("607","38","Lawn Lots","St. John","FELICIDAD V. BERNABE",NULL);
+INSERT INTO records VALUES("608","39","Lawn Lots","St. John","LEOPOLDO B. ANACAY",NULL);
+INSERT INTO records VALUES("609","40","Lawn Lots","St. John","NITA",NULL);
+INSERT INTO records VALUES("610","41","Lawn Lots","St. John","JONATHAN G. REZMA",NULL);
+INSERT INTO records VALUES("611","42","Lawn Lots","St. John","ARCELI P. ANGCAYA",NULL);
+INSERT INTO records VALUES("612","43","Lawn Lots","St. John","ARCELI P. ANGCAYA",NULL);
+INSERT INTO records VALUES("613","44","Lawn Lots","St. John","VICTORIA DEROS REYES",NULL);
+INSERT INTO records VALUES("614","45","Lawn Lots","St. John","EDDIE CRIZALDO",NULL);
+INSERT INTO records VALUES("615","46","Lawn Lots","St. John",NULL,NULL);
+INSERT INTO records VALUES("616","47","Lawn Lots","St. John","ARNEL SARNE",NULL);
+INSERT INTO records VALUES("617","48","Lawn Lots","St. John","MARITES LANSANG",NULL);
+INSERT INTO records VALUES("618","49","Lawn Lots","St. John","JUANA M. TIGAON",NULL);
+INSERT INTO records VALUES("619","50","Lawn Lots","St. John",NULL,NULL);
+INSERT INTO records VALUES("620","51","Lawn Lots","St. John","LOURDES ESCALANTE",NULL);
+INSERT INTO records VALUES("621","52","Lawn Lots","St. John","HERMENIO JALANDONI",NULL);
+INSERT INTO records VALUES("622","53","Lawn Lots","St. John","RAQUEL ROWENA A . RODRIGUEZ",NULL);
+INSERT INTO records VALUES("623","54","Lawn Lots","St. John","JESUS AQUINO",NULL);
+INSERT INTO records VALUES("624","55","Lawn Lots","St. John","JESUS AQUINO",NULL);
+INSERT INTO records VALUES("625","56","Lawn Lots","St. John","FLORENCIA M. DOGELIO",NULL);
+INSERT INTO records VALUES("626","57","Lawn Lots","St. John","FLORENCIA M. DOGELIO",NULL);
+INSERT INTO records VALUES("627","58","Lawn Lots","St. John","CASIANO DOGELIO",NULL);
+INSERT INTO records VALUES("628","59","Lawn Lots","St. John","ELSA REYES",NULL);
+INSERT INTO records VALUES("629","60","Lawn Lots","St. John","JUANA AMBION",NULL);
+INSERT INTO records VALUES("630","61","Lawn Lots","St. John","MACARIO GONZALES",NULL);
+INSERT INTO records VALUES("631","62","Lawn Lots","St. John","MA. TERESA S. SILVA",NULL);
+INSERT INTO records VALUES("632","63","Lawn Lots","St. John","LAMBERTO DELAPEñA",NULL);
+INSERT INTO records VALUES("633","64","Lawn Lots","St. John","ALONA MENDOZA",NULL);
+INSERT INTO records VALUES("634","65","Lawn Lots","St. John","ALONA MENDOZA",NULL);
+INSERT INTO records VALUES("635","66","Lawn Lots","St. John","ALONA MENDOZA",NULL);
+INSERT INTO records VALUES("636","67","Lawn Lots","St. John","BERNARDINO DIOKNO",NULL);
+INSERT INTO records VALUES("637","68","Lawn Lots","St. John","MARIANITO AMBAT",NULL);
+INSERT INTO records VALUES("638","69","Lawn Lots","St. John","ELENA AMBAT",NULL);
+INSERT INTO records VALUES("639","70","Lawn Lots","St. John","CHERRY AMBAT",NULL);
+INSERT INTO records VALUES("640","71","Lawn Lots","St. John","NISTONIO P. MAGDADARO",NULL);
+INSERT INTO records VALUES("641","72","Lawn Lots","St. John","ROSALINDA ABITONA",NULL);
+INSERT INTO records VALUES("642","73","Lawn Lots","St. John","MAGNO FAJARDO",NULL);
+INSERT INTO records VALUES("643","74","Lawn Lots","St. John","PURIFICACION E. FAJARDO",NULL);
+INSERT INTO records VALUES("644","75","Lawn Lots","St. John","AMELITA C. BLEN",NULL);
+INSERT INTO records VALUES("645","76","Lawn Lots","St. John","BLEN",NULL);
+INSERT INTO records VALUES("646","77","Lawn Lots","St. John","ANTONIO ACUNOS",NULL);
+INSERT INTO records VALUES("647","78","Lawn Lots","St. John","RAMIR V. CALLOS",NULL);
+INSERT INTO records VALUES("648","79","Lawn Lots","St. John","DOMINGO COSTANTE",NULL);
+INSERT INTO records VALUES("649","80","Lawn Lots","St. John","JOCELYN ANACAY",NULL);
+INSERT INTO records VALUES("650","81","Lawn Lots","St. John","RESURRECION MANLANGIT",NULL);
+INSERT INTO records VALUES("651","82","Lawn Lots","St. John","EMILIO MANLANGIT",NULL);
+INSERT INTO records VALUES("652","83","Lawn Lots","St. John","EUSEBIO APOSTAL ROMAN",NULL);
+INSERT INTO records VALUES("653","84","Lawn Lots","St. John","BEVERLYN VALENCIANO",NULL);
+INSERT INTO records VALUES("654","85","Lawn Lots","St. John","MONTANO MIRANDA",NULL);
+INSERT INTO records VALUES("655","86","Lawn Lots","St. John","BABYLYN SILVA",NULL);
+INSERT INTO records VALUES("656","87","Lawn Lots","St. John","ELMER B ALAGAR",NULL);
+INSERT INTO records VALUES("657","88","Lawn Lots","St. John","ELMER B ALAGAR",NULL);
+INSERT INTO records VALUES("658","89","Lawn Lots","St. John","ELMER B ALAGAR",NULL);
+INSERT INTO records VALUES("659","90","Lawn Lots","St. John","ELMER B ALAGAR",NULL);
+INSERT INTO records VALUES("660","91","Lawn Lots","St. John","JAIME TORIO",NULL);
+INSERT INTO records VALUES("661","92","Lawn Lots","St. John","JAIME TORIO",NULL);
+INSERT INTO records VALUES("662","93","Lawn Lots","St. John","RESURRECION L . ISAY",NULL);
+INSERT INTO records VALUES("663","94","Lawn Lots","St. John","RESURRECION L. BAY",NULL);
+INSERT INTO records VALUES("664","95","Lawn Lots","St. John","BENJAMIN E. ANULONG",NULL);
+INSERT INTO records VALUES("665","96","Lawn Lots","St. John","APOLINAR BONG JR. ",NULL);
+INSERT INTO records VALUES("666","97","Lawn Lots","St. John","DOMINGO M. FAJARDO",NULL);
+INSERT INTO records VALUES("667","98","Lawn Lots","St. John","CAMBERTO M. FAJARDO",NULL);
+INSERT INTO records VALUES("668","99","Lawn Lots","St. John",NULL,NULL);
+INSERT INTO records VALUES("669","100","Lawn Lots","St. John","ROMULO ROMELITO D. GONZALES",NULL);
+INSERT INTO records VALUES("670","101","Lawn Lots","St. John","BENEDICTO CAGAYUNGAN SR.",NULL);
+INSERT INTO records VALUES("671","102","Lawn Lots","St. John","ERNESTO R. PATAWE",NULL);
+INSERT INTO records VALUES("672","103","Lawn Lots","St. John","ROWENA C. ADOLFO",NULL);
+INSERT INTO records VALUES("673","104","Lawn Lots","St. John","FLAVIANA H. CRISTOBAL",NULL);
+INSERT INTO records VALUES("674","105","Lawn Lots","St. John","FLAVIANA H. CRISTOBAL",NULL);
+INSERT INTO records VALUES("675","106","Lawn Lots","St. John","FLAVIANA H. CRISTOBAL",NULL);
+INSERT INTO records VALUES("676","107","Lawn Lots","St. John","MANLANGIT MILOREL",NULL);
+INSERT INTO records VALUES("677","108","Lawn Lots","St. John","ZACARIA PARRA",NULL);
+INSERT INTO records VALUES("678","109","Lawn Lots","St. John","ZACARIA PARRA",NULL);
+INSERT INTO records VALUES("679","110","Lawn Lots","St. John","ZACARIA PARRA",NULL);
+INSERT INTO records VALUES("680","111","Lawn Lots","St. John","ZACARIA PARRA",NULL);
+INSERT INTO records VALUES("681","112","Lawn Lots","St. John","LORENA C. CABRERA",NULL);
+INSERT INTO records VALUES("682","113","Lawn Lots","St. John","LORENA C. CABRERA",NULL);
+INSERT INTO records VALUES("683","114","Lawn Lots","St. John","DANTE BAY",NULL);
+INSERT INTO records VALUES("684","115","Lawn Lots","St. John","ELEADORA BAY",NULL);
+INSERT INTO records VALUES("685","116","Lawn Lots","St. John","ANALYN AMBAT",NULL);
+INSERT INTO records VALUES("686","117","Lawn Lots","St. John","DANTE BAY",NULL);
+INSERT INTO records VALUES("687","118","Lawn Lots","St. John","JAYLENE T. JAVIER",NULL);
+INSERT INTO records VALUES("688","119","Lawn Lots","St. John","FELINA AMBAT TORIO",NULL);
+INSERT INTO records VALUES("689","120","Lawn Lots","St. John","ANTONIO P. BELTRAN",NULL);
+INSERT INTO records VALUES("690","121","Lawn Lots","St. John","ANTONIO P. BELTRAN",NULL);
+INSERT INTO records VALUES("691","122","Lawn Lots","St. John","NORMA R. MARCHA",NULL);
+INSERT INTO records VALUES("692","123","Lawn Lots","St. John","LEOPOLDO CONSTANTE",NULL);
+INSERT INTO records VALUES("693","124","Lawn Lots","St. John","MARIA CORENA",NULL);
+INSERT INTO records VALUES("694","125","Lawn Lots","St. John","REYNALDO CACHO",NULL);
+INSERT INTO records VALUES("695","126","Lawn Lots","St. John","PAULO BIANCA CACHO PICARANA\r\nREYNALDO CACHO",NULL);
+INSERT INTO records VALUES("696","127","Lawn Lots","St. John","TERESA LAIDO \r\nMELANIE GATPANDAN",NULL);
+INSERT INTO records VALUES("697","128","Lawn Lots","St. John","MERCEDES ANGELES",NULL);
+INSERT INTO records VALUES("698","129","Lawn Lots","St. John","JOHN JOSE",NULL);
+INSERT INTO records VALUES("699","130","Lawn Lots","St. John","ROMEO CHOZAS JR.",NULL);
+INSERT INTO records VALUES("700","131","Lawn Lots","St. John","VIVIAN CHOZAS",NULL);
+INSERT INTO records VALUES("701","132","Lawn Lots","St. John","TEODORA RIMARIN",NULL);
+INSERT INTO records VALUES("702","133","Lawn Lots","St. John","FERCIVAL PAYAD",NULL);
+INSERT INTO records VALUES("703","134","Lawn Lots","St. John","NANCY PAYAD",NULL);
+INSERT INTO records VALUES("704","135","Lawn Lots","St. John","VALENTINO PAYAD",NULL);
+INSERT INTO records VALUES("705","1","Lawn Lots","St. Dominic","DOMINGO AMULONG",NULL);
+INSERT INTO records VALUES("706","2","Lawn Lots","St. Dominic","CONRADO BARLAW\r\nJOSE DE VERA",NULL);
+INSERT INTO records VALUES("707","3","Lawn Lots","St. Dominic","MICHAEL MANLANGIT",NULL);
+INSERT INTO records VALUES("708","4","Lawn Lots","St. Dominic","MARISSA B. DE OCAMPO",NULL);
+INSERT INTO records VALUES("709","23","Lawn Lots","St. Dominic","MARISSA B. DE OCAMPO",NULL);
+INSERT INTO records VALUES("710","42","Lawn Lots","St. Dominic","MARISSA B. DE OCAMPO",NULL);
+INSERT INTO records VALUES("711","5","Lawn Lots","St. Dominic","LORENZA ABILISNA",NULL);
+INSERT INTO records VALUES("712","6","Lawn Lots","St. Dominic","GUILLERMO TABILISMA",NULL);
+INSERT INTO records VALUES("713","7","Lawn Lots","St. Dominic","WILLY C. MATIENZO",NULL);
+INSERT INTO records VALUES("714","8","Lawn Lots","St. Dominic","FAUSTINO V. MANOLO",NULL);
+INSERT INTO records VALUES("715","9","Lawn Lots","St. Dominic","CATOLINA MANALO",NULL);
+INSERT INTO records VALUES("716","27","Lawn Lots","St. Dominic","CATOLINA MANALO",NULL);
+INSERT INTO records VALUES("717","28","Lawn Lots","St. Dominic","CATOLINA MANALO",NULL);
+INSERT INTO records VALUES("718","10","Lawn Lots","St. Dominic","VIRGINIA REYES",NULL);
+INSERT INTO records VALUES("719","11","Lawn Lots","St. Dominic","REMIGIO MAALA",NULL);
+INSERT INTO records VALUES("720","12","Lawn Lots","St. Dominic","MA. BELLA ORTEGA",NULL);
+INSERT INTO records VALUES("721","13","Lawn Lots","St. Dominic","EUGENIO C. BORJA",NULL);
+INSERT INTO records VALUES("722","32","Lawn Lots","St. Dominic","EUGENIO C. BORJA",NULL);
+INSERT INTO records VALUES("723","51","Lawn Lots","St. Dominic","EUGENIO C. BORJA",NULL);
+INSERT INTO records VALUES("724","14","Lawn Lots","St. Dominic","VIOLETA MANINGAS",NULL);
+INSERT INTO records VALUES("725","15","Lawn Lots","St. Dominic","VERONA TOLEDO",NULL);
+INSERT INTO records VALUES("726","16","Lawn Lots","St. Dominic","VERONA TOLEDO",NULL);
+INSERT INTO records VALUES("727","17","Lawn Lots","St. Dominic","MARIA DONAIRE",NULL);
+INSERT INTO records VALUES("728","18","Lawn Lots","St. Dominic","TEODORO B. BAYBAY",NULL);
+INSERT INTO records VALUES("729","19","Lawn Lots","St. Dominic","MARINA A. BAYBAY",NULL);
+INSERT INTO records VALUES("730","20","Lawn Lots","St. Dominic","JOEY V. ESTIPONA",NULL);
+INSERT INTO records VALUES("731","21","Lawn Lots","St. Dominic","DOMINGO MENDOZA",NULL);
+INSERT INTO records VALUES("732","22","Lawn Lots","St. Dominic","LORETA G. CABARRIBAN",NULL);
+INSERT INTO records VALUES("733","24","Lawn Lots","St. Dominic","NORBERTO V. TABILISMA",NULL);
+INSERT INTO records VALUES("734","25","Lawn Lots","St. Dominic","MERCEDEZ TABIUSMA",NULL);
+INSERT INTO records VALUES("735","26","Lawn Lots","St. Dominic","EPIFANIO MATIENZO",NULL);
+INSERT INTO records VALUES("736","27","Lawn Lots","St. Dominic","CATALINA MANALO",NULL);
+INSERT INTO records VALUES("737","28","Lawn Lots","St. Dominic","CATALINA MANALO",NULL);
+INSERT INTO records VALUES("738","29","Lawn Lots","St. Dominic","MYRNA G. MANIMTIM",NULL);
+INSERT INTO records VALUES("739","30","Lawn Lots","St. Dominic","MYRNA G. MANIMTIM",NULL);
+INSERT INTO records VALUES("740","48","Lawn Lots","St. Dominic","MYRNA G. MANIMTIM",NULL);
+INSERT INTO records VALUES("741","49","Lawn Lots","St. Dominic","MYRNA G. MANIMTIM",NULL);
+INSERT INTO records VALUES("742","50","Lawn Lots","St. Dominic","MYRNA G. MANIMTIM",NULL);
+INSERT INTO records VALUES("743","31","Lawn Lots","St. Dominic","BELLA DATEGA",NULL);
+INSERT INTO records VALUES("744","32","Lawn Lots","St. Dominic","EUGENIO C. BORJA",NULL);
+INSERT INTO records VALUES("745","35","Lawn Lots","St. Dominic","VERONA TOLEDO",NULL);
+INSERT INTO records VALUES("746","36","Lawn Lots","St. Dominic","MARIA DONAIRE",NULL);
+INSERT INTO records VALUES("747","37","Lawn Lots","St. Dominic","TEODORO B. BAYBAY",NULL);
+INSERT INTO records VALUES("748","38","Lawn Lots","St. Dominic","TEODORO B. BAYBAY",NULL);
+INSERT INTO records VALUES("749","39","Lawn Lots","St. Dominic","ROLANDO ASUNCION",NULL);
+INSERT INTO records VALUES("750","40","Lawn Lots","St. Dominic","ROSALINA DE LEON",NULL);
+INSERT INTO records VALUES("751","41","Lawn Lots","St. Dominic","GUILLERMO PUCEDENTE",NULL);
+INSERT INTO records VALUES("752","43","Lawn Lots","St. Dominic","ROVEL CONCEPCION",NULL);
+INSERT INTO records VALUES("753","44","Lawn Lots","St. Dominic","FELIPE CARAAN",NULL);
+INSERT INTO records VALUES("754","45","Lawn Lots","St. Dominic","JUANITA ENCARNACION",NULL);
+INSERT INTO records VALUES("755","46","Lawn Lots","St. Dominic","FLOR TULAO",NULL);
+INSERT INTO records VALUES("756","47","Lawn Lots","St. Dominic","FELICESIMA MANALO",NULL);
+INSERT INTO records VALUES("757","48","Lawn Lots","St. Dominic","IMELDA M. OMI",NULL);
+INSERT INTO records VALUES("758","49","Lawn Lots","St. Dominic","IMELDA M. OMI",NULL);
+INSERT INTO records VALUES("759","50","Lawn Lots","St. Dominic","IMELDA M. OMI",NULL);
+INSERT INTO records VALUES("760","29","Lawn Lots","St. Dominic","IMELDA M. OMI",NULL);
+INSERT INTO records VALUES("761","30","Lawn Lots","St. Dominic","IMELDA M. OMI",NULL);
+INSERT INTO records VALUES("762","51","Lawn Lots","St. Dominic","MARIA A. CAUSAREN",NULL);
+INSERT INTO records VALUES("763","52","Lawn Lots","St. Dominic","MATEO AMBION",NULL);
+INSERT INTO records VALUES("764","53","Lawn Lots","St. Dominic","BERTRAN AMBION",NULL);
+INSERT INTO records VALUES("765","54","Lawn Lots","St. Dominic","JOSEPHINE FEBRER",NULL);
+INSERT INTO records VALUES("766","55","Lawn Lots","St. Dominic","MARY CHARM RIZZA",NULL);
+INSERT INTO records VALUES("767","56","Lawn Lots","St. Dominic","NICANOR BAYBAY",NULL);
+INSERT INTO records VALUES("768","57","Lawn Lots","St. Dominic","TEODORO B. BAYBAY",NULL);
+INSERT INTO records VALUES("769","58","Lawn Lots","St. Dominic","NORBERTO V. PANGANIBAN",NULL);
+INSERT INTO records VALUES("770","59","Lawn Lots","St. Dominic","NORBERTO V. PANGANIBAN",NULL);
+INSERT INTO records VALUES("771","77","Lawn Lots","St. Dominic","NORBERTO V. PANGANIBAN",NULL);
+INSERT INTO records VALUES("772","78","Lawn Lots","St. Dominic","NORBERTO V. PANGANIBAN",NULL);
+INSERT INTO records VALUES("773","96","Lawn Lots","St. Dominic","NORBERTO V. PANGANIBAN",NULL);
+INSERT INTO records VALUES("774","97","Lawn Lots","St. Dominic","NORBERTO V. PANGANIBAN",NULL);
+INSERT INTO records VALUES("775","60","Lawn Lots","St. Dominic","ESTELITA BALAIS",NULL);
+INSERT INTO records VALUES("776","61","Lawn Lots","St. Dominic","ROSARIO RUFUERZO",NULL);
+INSERT INTO records VALUES("777","62","Lawn Lots","St. Dominic","RENATO M. CONCEPCION\r\nRONALD CONCEPCION",NULL);
+INSERT INTO records VALUES("778","63","Lawn Lots","St. Dominic","JOSELITO CARAAN",NULL);
+INSERT INTO records VALUES("779","64","Lawn Lots","St. Dominic","JORGE ENCARNACION",NULL);
+INSERT INTO records VALUES("780","65","Lawn Lots","St. Dominic","SHIRLEY DIVINO",NULL);
+INSERT INTO records VALUES("781","66","Lawn Lots","St. Dominic","DIANA ESCABA",NULL);
+INSERT INTO records VALUES("782","67","Lawn Lots","St. Dominic","MELCHOR MENDOZA",NULL);
+INSERT INTO records VALUES("783","68","Lawn Lots","St. Dominic","ANNABELLE B. BAWAG",NULL);
+INSERT INTO records VALUES("784","69","Lawn Lots","St. Dominic","JOAQUIA PAJARILLO",NULL);
+INSERT INTO records VALUES("785","70","Lawn Lots","St. Dominic","VIRGILIO MALIMBAN",NULL);
+INSERT INTO records VALUES("786","71","Lawn Lots","St. Dominic","LOURDES SALCEDO",NULL);
+INSERT INTO records VALUES("787","72","Lawn Lots","St. Dominic","DIZON E CUENCO",NULL);
+INSERT INTO records VALUES("788","73","Lawn Lots","St. Dominic","ESTHER C. OLIVEROS",NULL);
+INSERT INTO records VALUES("789","74","Lawn Lots","St. Dominic","JOSEFINA DALUPENE",NULL);
+INSERT INTO records VALUES("790","75","Lawn Lots","St. Dominic","ROWENA EBINA MARANAN",NULL);
+INSERT INTO records VALUES("791","76","Lawn Lots","St. Dominic","CEPRINO B. HERNANDEZ",NULL);
+INSERT INTO records VALUES("792","95","Lawn Lots","St. Dominic","CEPRINO B. HERNANDEZ",NULL);
+INSERT INTO records VALUES("793","79","Lawn Lots","St. Dominic","RENATO ATIENZA",NULL);
+INSERT INTO records VALUES("794","80","Lawn Lots","St. Dominic","MARIA FE MENDOZA",NULL);
+INSERT INTO records VALUES("795","81","Lawn Lots","St. Dominic","GERONIMO BELTRAN",NULL);
+INSERT INTO records VALUES("796","82","Lawn Lots","St. Dominic","ROMEO EJEDA",NULL);
+INSERT INTO records VALUES("797","83","Lawn Lots","St. Dominic","ALEXANDER LAVADIA",NULL);
+INSERT INTO records VALUES("798","84","Lawn Lots","St. Dominic","SHIRLEY DIVINO",NULL);
+INSERT INTO records VALUES("799","85","Lawn Lots","St. Dominic","DIANA ESCABA",NULL);
+INSERT INTO records VALUES("800","86","Lawn Lots","St. Dominic","SOTERA EBO",NULL);
+INSERT INTO records VALUES("801","87","Lawn Lots","St. Dominic","CLEOTILDE ANACAY\r\nROLANDO ANACAY",NULL);
+INSERT INTO records VALUES("802","88","Lawn Lots","St. Dominic","JOAQUIN PAJARILO",NULL);
+INSERT INTO records VALUES("803","89","Lawn Lots","St. Dominic","TEODORA ANCIANO",NULL);
+INSERT INTO records VALUES("804","90","Lawn Lots","St. Dominic","TOMAS JIMENO",NULL);
+INSERT INTO records VALUES("805","91","Lawn Lots","St. Dominic","ARNEL MARASIGAN\r\nVICE CELSO DE CASTRO",NULL);
+INSERT INTO records VALUES("806","92","Lawn Lots","St. Dominic","RUEL TAYLON",NULL);
+INSERT INTO records VALUES("807","93","Lawn Lots","St. Dominic","ADELEIDA DALUPERE",NULL);
+INSERT INTO records VALUES("808","94","Lawn Lots","St. Dominic","MARIS ANTHONY ARTUS",NULL);
+INSERT INTO records VALUES("809","98","Lawn Lots","St. Dominic","COLITA DE VERA",NULL);
+INSERT INTO records VALUES("810","99","Lawn Lots","St. Dominic","MELQUIADES ORANA",NULL);
+INSERT INTO records VALUES("811","100","Lawn Lots","St. Dominic","GENNINA GAJILOMO",NULL);
+INSERT INTO records VALUES("812","101","Lawn Lots","St. Dominic","MERCEDITA N. CANO",NULL);
+INSERT INTO records VALUES("813","102","Lawn Lots","St. Dominic","MERCEDITA CANO",NULL);
+INSERT INTO records VALUES("814","103","Lawn Lots","St. Dominic","MAMERTA CAUSAREN",NULL);
+INSERT INTO records VALUES("815","104","Lawn Lots","St. Dominic","GREGORIOSILVA",NULL);
+INSERT INTO records VALUES("816","105","Lawn Lots","St. Dominic","SOTERA EBO",NULL);
+INSERT INTO records VALUES("817","106","Lawn Lots","St. Dominic","JANETTE ANACAY",NULL);
+INSERT INTO records VALUES("818","107","Lawn Lots","St. Dominic","JENNIFER BERNAL BULALAQUE",NULL);
+INSERT INTO records VALUES("819","108","Lawn Lots","St. Dominic","JENNIFER BERNAL BULALAQUE",NULL);
+INSERT INTO records VALUES("820","109","Lawn Lots","St. Dominic","TOMAS JIMENO",NULL);
+INSERT INTO records VALUES("821","110","Lawn Lots","St. Dominic","FELINO QUILAO",NULL);
+INSERT INTO records VALUES("822","111","Lawn Lots","St. Dominic","RUEL TAYLON",NULL);
+INSERT INTO records VALUES("823","112","Lawn Lots","St. Dominic","CORAZON S. DELA CRUZ",NULL);
+INSERT INTO records VALUES("824","113","Lawn Lots","St. Dominic","ANTONIO A. ARIUS",NULL);
+INSERT INTO records VALUES("825","114","Lawn Lots","St. Dominic","EDILBERTO LUNAS",NULL);
+INSERT INTO records VALUES("826","115","Lawn Lots","St. Dominic","LAPAG R. FERMA",NULL);
+INSERT INTO records VALUES("827","116","Lawn Lots","St. Dominic","VALENTIN MASONGSONG",NULL);
+INSERT INTO records VALUES("828","117","Lawn Lots","St. Dominic","ELISA CASTILLO",NULL);
+INSERT INTO records VALUES("829","118","Lawn Lots","St. Dominic","ADORACION ARELLANO",NULL);
+INSERT INTO records VALUES("830","119","Lawn Lots","St. Dominic","GENINA GAJILOMO",NULL);
+INSERT INTO records VALUES("831","120","Lawn Lots","St. Dominic","ROSALINDA O. FELLO\r\nELSA F. DE LEON",NULL);
+INSERT INTO records VALUES("832","121","Lawn Lots","St. Dominic","ELSA F. DE LEON",NULL);
+INSERT INTO records VALUES("833","139","Lawn Lots","St. Dominic","ELSA F. DE LEON",NULL);
+INSERT INTO records VALUES("834","140","Lawn Lots","St. Dominic","ELSA F. DE LEON",NULL);
+INSERT INTO records VALUES("835","122","Lawn Lots","St. Dominic","SAMARIA PAZ",NULL);
+INSERT INTO records VALUES("836","123","Lawn Lots","St. Dominic","FE BAQUE SILVA",NULL);
+INSERT INTO records VALUES("837","124","Lawn Lots","St. Dominic","MIRIAM CAUSAREN",NULL);
+INSERT INTO records VALUES("838","125","Lawn Lots","St. Dominic","RODOLFO CATUBAO",NULL);
+INSERT INTO records VALUES("839","126","Lawn Lots","St. Dominic","SOLEDAD PEREYRA",NULL);
+INSERT INTO records VALUES("840","127","Lawn Lots","St. Dominic","MERCY DAWA",NULL);
+INSERT INTO records VALUES("841","128","Lawn Lots","St. Dominic","FLORINDA JAVIER",NULL);
+INSERT INTO records VALUES("842","129","Lawn Lots","St. Dominic","RENATO C. BERGADO",NULL);
+INSERT INTO records VALUES("843","130","Lawn Lots","St. Dominic","SUSAN BONIFACIO",NULL);
+INSERT INTO records VALUES("844","131","Lawn Lots","St. Dominic","MA. ANICIA PARRA BAYOT",NULL);
+INSERT INTO records VALUES("845","132","Lawn Lots","St. Dominic","MARIE ANTHONY",NULL);
+INSERT INTO records VALUES("846","133","Lawn Lots","St. Dominic","NICANOR BAYBAY",NULL);
+INSERT INTO records VALUES("847","134","Lawn Lots","St. Dominic","GERMAN ALIMOO",NULL);
+INSERT INTO records VALUES("848","135","Lawn Lots","St. Dominic","JENNIFER MANGUILAO",NULL);
+INSERT INTO records VALUES("849","136","Lawn Lots","St. Dominic","ELISA CASTILLO",NULL);
+INSERT INTO records VALUES("850","137","Lawn Lots","St. Dominic","ARACELI T. ESPIRITU",NULL);
+INSERT INTO records VALUES("851","138","Lawn Lots","St. Dominic","LETICIA DE LEON SAN ANDRES",NULL);
+INSERT INTO records VALUES("852","141","Lawn Lots","St. Dominic","ELVIRA CARDENAS",NULL);
+INSERT INTO records VALUES("853","142","Lawn Lots","St. Dominic","MARILOU ANCHEZA",NULL);
+INSERT INTO records VALUES("854","143","Lawn Lots","St. Dominic","MARINO PENALES\r\nRAYMUNDO PENALES",NULL);
+INSERT INTO records VALUES("855","144","Lawn Lots","St. Dominic","REYNALDO AGUILA",NULL);
+INSERT INTO records VALUES("856","145","Lawn Lots","St. Dominic","TERESITA N. DIGO",NULL);
+INSERT INTO records VALUES("857","146","Lawn Lots","St. Dominic","RUDY VISITACION",NULL);
+INSERT INTO records VALUES("858","147","Lawn Lots","St. Dominic","FLORINDA JAVIER",NULL);
+INSERT INTO records VALUES("859","148","Lawn Lots","St. Dominic","RUEL CANLAS",NULL);
+INSERT INTO records VALUES("860","149","Lawn Lots","St. Dominic","JULIANA SARMIENTO",NULL);
+INSERT INTO records VALUES("861","150","Lawn Lots","St. Dominic","ANDRES A. LANDICHO\r\nLEILANIE A. PARRA",NULL);
+INSERT INTO records VALUES("862","151","Lawn Lots","St. Dominic","CARMEN COLI FLORES",NULL);
+INSERT INTO records VALUES("863","152","Lawn Lots","St. Dominic","FRANCISCO B. BAYBAY",NULL);
+INSERT INTO records VALUES("864","153","Lawn Lots","St. Dominic","SOFIA DE LUNA",NULL);
+INSERT INTO records VALUES("865","154","Lawn Lots","St. Dominic","JENNIFER R. NANGUINAO",NULL);
+INSERT INTO records VALUES("866","155","Lawn Lots","St. Dominic","ELMER MENDOZA",NULL);
+INSERT INTO records VALUES("867","156","Lawn Lots","St. Dominic","MARIA PENAFIEL ORUGA",NULL);
+INSERT INTO records VALUES("868","157","Lawn Lots","St. Dominic","SATURNINA BRAGANZA",NULL);
+INSERT INTO records VALUES("869","158","Lawn Lots","St. Dominic","SOFIA CARLUM",NULL);
+INSERT INTO records VALUES("870","159","Lawn Lots","St. Dominic","ROSALDO A. GAN\r\nTERESITA GAN",NULL);
+INSERT INTO records VALUES("871","160","Lawn Lots","St. Dominic","VICTORIA F. KING ",NULL);
+INSERT INTO records VALUES("872","161","Lawn Lots","St. Dominic","ELVIRA CARDEMS",NULL);
+INSERT INTO records VALUES("873","162","Lawn Lots","St. Dominic","MARINO PENALES",NULL);
+INSERT INTO records VALUES("874","163","Lawn Lots","St. Dominic","EDNA C. SABULAAN",NULL);
+INSERT INTO records VALUES("875","164","Lawn Lots","St. Dominic","LEONIDA AGUDA",NULL);
+INSERT INTO records VALUES("876","165","Lawn Lots","St. Dominic","RUDY VISITACION",NULL);
+INSERT INTO records VALUES("877","166","Lawn Lots","St. Dominic","FLORINDA JAVIER",NULL);
+INSERT INTO records VALUES("878","167","Lawn Lots","St. Dominic","RONALD C. BULAGTIAL",NULL);
+INSERT INTO records VALUES("879","168","Lawn Lots","St. Dominic","JULIANA DE SAGUN SARMIENTO",NULL);
+INSERT INTO records VALUES("880","169","Lawn Lots","St. Dominic","RAQUEL F. ASUNCION",NULL);
+INSERT INTO records VALUES("881","188","Lawn Lots","St. Dominic","RAQUEL F. ASUNCION",NULL);
+INSERT INTO records VALUES("882","207","Lawn Lots","St. Dominic","RAQUEL F. ASUNCION",NULL);
+INSERT INTO records VALUES("883","170","Lawn Lots","St. Dominic","CONSOLACION AMBUNAN",NULL);
+INSERT INTO records VALUES("884","171","Lawn Lots","St. Dominic","ERIBERTO DELA REA",NULL);
+INSERT INTO records VALUES("885","172","Lawn Lots","St. Dominic","JAIME ORUGA",NULL);
+INSERT INTO records VALUES("886","173","Lawn Lots","St. Dominic","LAUREANO P. ORUGA",NULL);
+INSERT INTO records VALUES("887","174","Lawn Lots","St. Dominic","ELMER MENDOZA",NULL);
+INSERT INTO records VALUES("888","175","Lawn Lots","St. Dominic","EMMANUEL B. MAKILING",NULL);
+INSERT INTO records VALUES("889","176","Lawn Lots","St. Dominic","IRENE ROSA HAGAD",NULL);
+INSERT INTO records VALUES("890","177","Lawn Lots","St. Dominic","PATRICK R. GAMBOA",NULL);
+INSERT INTO records VALUES("891","178","Lawn Lots","St. Dominic","FRANCIS CABASI",NULL);
+INSERT INTO records VALUES("892","179","Lawn Lots","St. Dominic","FRANCIS CABASI",NULL);
+INSERT INTO records VALUES("893","180","Lawn Lots","St. Dominic","LUDIVICO FLORES",NULL);
+INSERT INTO records VALUES("894","181","Lawn Lots","St. Dominic","GLORIA PENALES",NULL);
+INSERT INTO records VALUES("895","182","Lawn Lots","St. Dominic","LAMBERTO BAURILE\r\nFELICISIMA BAURILE",NULL);
+INSERT INTO records VALUES("896","183","Lawn Lots","St. Dominic","CICELIA H. AGUDA",NULL);
+INSERT INTO records VALUES("897","184","Lawn Lots","St. Dominic","RUDY VISITACION",NULL);
+INSERT INTO records VALUES("898","185","Lawn Lots","St. Dominic","JUANITO DE LUNA",NULL);
+INSERT INTO records VALUES("899","186","Lawn Lots","St. Dominic","MANUELA DE LUNA",NULL);
+INSERT INTO records VALUES("900","187","Lawn Lots","St. Dominic","JAYSON EUGENIO",NULL);
+INSERT INTO records VALUES("901","188","Lawn Lots","St. Dominic","RAQUEL F. ASUNCION",NULL);
+INSERT INTO records VALUES("902","189","Lawn Lots","St. Dominic","EDUARDO GUANEZO",NULL);
+INSERT INTO records VALUES("903","190","Lawn Lots","St. Dominic","JERRY ARIOLA",NULL);
+INSERT INTO records VALUES("904","191","Lawn Lots","St. Dominic","FEDERICO BESA SR.",NULL);
+INSERT INTO records VALUES("905","192","Lawn Lots","St. Dominic","ELISA ERNI",NULL);
+INSERT INTO records VALUES("906","193","Lawn Lots","St. Dominic","ELMER MENDOZA",NULL);
+INSERT INTO records VALUES("907","194","Lawn Lots","St. Dominic","ROGELIO MONILLA\r\nMARLYN JULIA",NULL);
+INSERT INTO records VALUES("908","195","Lawn Lots","St. Dominic","PATERNO DIOKNO",NULL);
+INSERT INTO records VALUES("909","196","Lawn Lots","St. Dominic","FRANK ARTHUR TEANO",NULL);
+INSERT INTO records VALUES("910","197","Lawn Lots","St. Dominic","FRANCIS CABAS",NULL);
+INSERT INTO records VALUES("911","198","Lawn Lots","St. Dominic","RIZZA MALABANAN",NULL);
+INSERT INTO records VALUES("912","199","Lawn Lots","St. Dominic","PILAR DIGO",NULL);
+INSERT INTO records VALUES("913","200","Lawn Lots","St. Dominic","GLORIA PEREñA",NULL);
+INSERT INTO records VALUES("914","201","Lawn Lots","St. Dominic","SATURNINO PERCADO",NULL);
+INSERT INTO records VALUES("915","202","Lawn Lots","St. Dominic","VICTORIA HERNANDEZ",NULL);
+INSERT INTO records VALUES("916","203","Lawn Lots","St. Dominic","RUDY VISITAZION",NULL);
+INSERT INTO records VALUES("917","204","Lawn Lots","St. Dominic","JOYCE DE LUNA",NULL);
+INSERT INTO records VALUES("918","205","Lawn Lots","St. Dominic","DOMINADOR DE LUNA",NULL);
+INSERT INTO records VALUES("919","206","Lawn Lots","St. Dominic","MARISSA MARASIGAN",NULL);
+INSERT INTO records VALUES("920","207","Lawn Lots","St. Dominic","RAQUEL F. ASUNCION",NULL);
+INSERT INTO records VALUES("921","208","Lawn Lots","St. Dominic","PORFIRIO VALENZUELA",NULL);
+INSERT INTO records VALUES("922","209","Lawn Lots","St. Dominic","AUREA/MARIO ROGERO",NULL);
+INSERT INTO records VALUES("923","210","Lawn Lots","St. Dominic","CERIACO ROGERO",NULL);
+INSERT INTO records VALUES("924","211","Lawn Lots","St. Dominic","SALVADOR M. AMULONG SR.",NULL);
+INSERT INTO records VALUES("925","212","Lawn Lots","St. Dominic","JULIUS MANGA\r\nJULIA ANNE MANGA",NULL);
+INSERT INTO records VALUES("926","213","Lawn Lots","St. Dominic","MARLYN",NULL);
+INSERT INTO records VALUES("927","214","Lawn Lots","St. Dominic","REMEDIOS CORTEZ",NULL);
+INSERT INTO records VALUES("928","215","Lawn Lots","St. Dominic","SHERYL D. TEANO",NULL);
+INSERT INTO records VALUES("929","216","Lawn Lots","St. Dominic","FRANCIS CABASI",NULL);
+INSERT INTO records VALUES("930","217","Lawn Lots","St. Dominic","CARLITO MALABANAN",NULL);
+INSERT INTO records VALUES("931","218","Lawn Lots","St. Dominic","AURORA BAYOT",NULL);
+INSERT INTO records VALUES("932","219","Lawn Lots","St. Dominic","GIDEON L. DAMILES",NULL);
+INSERT INTO records VALUES("933","220","Lawn Lots","St. Dominic","DOMINGO PERLADO ",NULL);
+INSERT INTO records VALUES("934","221","Lawn Lots","St. Dominic","ROSALINDA AMOROSO",NULL);
+INSERT INTO records VALUES("935","222","Lawn Lots","St. Dominic","FRANCISCO P. LUNA",NULL);
+INSERT INTO records VALUES("936","223","Lawn Lots","St. Dominic","MANUELA DE LUNA",NULL);
+INSERT INTO records VALUES("937","224","Lawn Lots","St. Dominic","DOMINADOR DE LUNA",NULL);
+INSERT INTO records VALUES("938","225","Lawn Lots","St. Dominic","JECERYN AMBULO",NULL);
+INSERT INTO records VALUES("939","226","Lawn Lots","St. Dominic","FELIX HERNANDEZ",NULL);
+INSERT INTO records VALUES("940","227","Lawn Lots","St. Dominic","VICKY M. CESICAR",NULL);
+INSERT INTO records VALUES("941","228","Lawn Lots","St. Dominic","NERY A. LUCERNAS",NULL);
+INSERT INTO records VALUES("942","229","Lawn Lots","St. Dominic","CERIACO ROGERO",NULL);
+INSERT INTO records VALUES("943","230","Lawn Lots","St. Dominic","ALFREDO AGNO",NULL);
+INSERT INTO records VALUES("944","231","Lawn Lots","St. Dominic","JOSEFA CORTEZ",NULL);
+INSERT INTO records VALUES("945","232","Lawn Lots","St. Dominic","ISABEL REYES",NULL);
+INSERT INTO records VALUES("946","233","Lawn Lots","St. Dominic","LEO C. REDURANTE",NULL);
+INSERT INTO records VALUES("947","234","Lawn Lots","St. Dominic","ERNESTO VILLANUEVA",NULL);
+INSERT INTO records VALUES("948","235","Lawn Lots","St. Dominic","IMELDA F. ARANNA",NULL);
+INSERT INTO records VALUES("949","236","Lawn Lots","St. Dominic","RIZZA MALABANAN",NULL);
+INSERT INTO records VALUES("950","237","Lawn Lots","St. Dominic","AURORA BAYOT",NULL);
+INSERT INTO records VALUES("951","238","Lawn Lots","St. Dominic","GERBACIO NATANUAN",NULL);
+INSERT INTO records VALUES("952","239","Lawn Lots","St. Dominic","MARIA DEL SOCORRO",NULL);
+INSERT INTO records VALUES("953","240","Lawn Lots","St. Dominic","JEFFREY S. ENGALAN",NULL);
+INSERT INTO records VALUES("954","241","Lawn Lots","St. Dominic","NENITA S. MALABANAN",NULL);
+INSERT INTO records VALUES("955","242","Lawn Lots","St. Dominic","LORETA ORNALES\r\nVICTORIA DIMAANO",NULL);
+INSERT INTO records VALUES("956","261","Lawn Lots","St. Dominic","LORETA ORNALES\r\nVICTORIA DIMAANO",NULL);
+INSERT INTO records VALUES("957","280","Lawn Lots","St. Dominic","LORETA ORNALES\r\nVICTORIA DIMAANO",NULL);
+INSERT INTO records VALUES("958","299","Lawn Lots","St. Dominic","LORETA ORNALES\r\nVICTORIA DIMAANO",NULL);
+INSERT INTO records VALUES("959","243","Lawn Lots","St. Dominic","NESTOR DE LUNA",NULL);
+INSERT INTO records VALUES("960","244","Lawn Lots","St. Dominic","JECERYN AMBULO",NULL);
+INSERT INTO records VALUES("961","245","Lawn Lots","St. Dominic","MARIA HERNANDEZ",NULL);
+INSERT INTO records VALUES("962","246","Lawn Lots","St. Dominic","JOSE MARANAN CESICAR",NULL);
+INSERT INTO records VALUES("963","247","Lawn Lots","St. Dominic","IMELDA VILLANUEVA",NULL);
+INSERT INTO records VALUES("964","248","Lawn Lots","St. Dominic","MERLITA LUNA",NULL);
+INSERT INTO records VALUES("965","249","Lawn Lots","St. Dominic","SUSAN AGNO",NULL);
+INSERT INTO records VALUES("966","250","Lawn Lots","St. Dominic","JOSEFA CORTEZ\r\nHERMIS CORTEZ",NULL);
+INSERT INTO records VALUES("967","269","Lawn Lots","St. Dominic","JOSEFA CORTEZ\r\nHERMIS CORTEZ",NULL);
+INSERT INTO records VALUES("968","251","Lawn Lots","St. Dominic","ALDRIEN NATANAUAN",NULL);
+INSERT INTO records VALUES("969","252","Lawn Lots","St. Dominic","MARIA DOLORES R. BERTO",NULL);
+INSERT INTO records VALUES("970","253","Lawn Lots","St. Dominic","VICTORIA VILLANUVA",NULL);
+INSERT INTO records VALUES("971","254","Lawn Lots","St. Dominic","SUSANA DE ROJAS",NULL);
+INSERT INTO records VALUES("972","255","Lawn Lots","St. Dominic","MARY CHARM RIZZA",NULL);
+INSERT INTO records VALUES("973","256","Lawn Lots","St. Dominic","JUAN GABRIEL MEDINA",NULL);
+INSERT INTO records VALUES("974","257","Lawn Lots","St. Dominic","MARIA DEL SOCORRO",NULL);
+INSERT INTO records VALUES("975","258","Lawn Lots","St. Dominic","MARIA DEL SOCORRO",NULL);
+INSERT INTO records VALUES("976","276","Lawn Lots","St. Dominic","MARIA DEL SOCORRO",NULL);
+INSERT INTO records VALUES("977","277","Lawn Lots","St. Dominic","MARIA DEL SOCORRO",NULL);
+INSERT INTO records VALUES("978","295","Lawn Lots","St. Dominic","MARIA DEL SOCORRO",NULL);
+INSERT INTO records VALUES("979","296","Lawn Lots","St. Dominic","MARIA DEL SOCORRO",NULL);
+INSERT INTO records VALUES("980","259","Lawn Lots","St. Dominic","CORNELIO MACABANAN",NULL);
+INSERT INTO records VALUES("981","260","Lawn Lots","St. Dominic","EDILBERTO M. BARRIENTOS",NULL);
+INSERT INTO records VALUES("982","262","Lawn Lots","St. Dominic","MECEDES BANIZON",NULL);
+INSERT INTO records VALUES("983","263","Lawn Lots","St. Dominic","WINIFRED MANIO\r\nPRISCILLA MANIO",NULL);
+INSERT INTO records VALUES("984","264","Lawn Lots","St. Dominic","MARIA AMULONG\r\nARCELI CANLAS",NULL);
+INSERT INTO records VALUES("985","265","Lawn Lots","St. Dominic","SOLEDAD COMIA BAYBAY\r\nPIO BAYBAY",NULL);
+INSERT INTO records VALUES("986","266","Lawn Lots","St. Dominic","AGAPITO CABELTES",NULL);
+INSERT INTO records VALUES("987","267","Lawn Lots","St. Dominic","BRIGIDA AGNO",NULL);
+INSERT INTO records VALUES("988","268","Lawn Lots","St. Dominic","BRIGIDA AGNO",NULL);
+INSERT INTO records VALUES("999","269","Lawn Lots","St. Dominic","HERMES CORTEZ\r\nFERNANDO CORTEZ",NULL);
+INSERT INTO records VALUES("1000","270","Lawn Lots","St. Dominic","ROSAURO S. FELIX",NULL);
+INSERT INTO records VALUES("1001","271","Lawn Lots","St. Dominic","JULITA DE LUNA AMBION",NULL);
+INSERT INTO records VALUES("1002","272","Lawn Lots","St. Dominic","PRESCILA DOGELIO",NULL);
+INSERT INTO records VALUES("1003","273","Lawn Lots","St. Dominic","ESTRELITA MARCANDA",NULL);
+INSERT INTO records VALUES("1004","274","Lawn Lots","St. Dominic","ESTEDLITA MARCAIDA",NULL);
+INSERT INTO records VALUES("1005","275","Lawn Lots","St. Dominic","ARSENIA L. MEDINA",NULL);
+INSERT INTO records VALUES("1006","276","Lawn Lots","St. Dominic","ELENA CUENCO",NULL);
+INSERT INTO records VALUES("1007","278","Lawn Lots","St. Dominic","ANGELES CASTEN",NULL);
+INSERT INTO records VALUES("1008","297","Lawn Lots","St. Dominic","ANGELES CASTEN",NULL);
+INSERT INTO records VALUES("1009","279","Lawn Lots","St. Dominic","EDILBERTO M. BARRIENTOS",NULL);
+INSERT INTO records VALUES("1010","281","Lawn Lots","St. Dominic","MERCEDES BAUZON",NULL);
+INSERT INTO records VALUES("1011","282","Lawn Lots","St. Dominic","EDWARD Y. WAGAN",NULL);
+INSERT INTO records VALUES("1012","283","Lawn Lots","St. Dominic","DANILO MEDINA",NULL);
+INSERT INTO records VALUES("1013","284","Lawn Lots","St. Dominic","ENMAR ROMULO IBANEZ",NULL);
+INSERT INTO records VALUES("1014","285","Lawn Lots","St. Dominic","JUAN CARLO E. BAYBAY",NULL);
+INSERT INTO records VALUES("1015","286","Lawn Lots","St. Dominic","BRIGIDA AGNO\r\nTOLENTINO AGNO",NULL);
+INSERT INTO records VALUES("1016","287","Lawn Lots","St. Dominic","ROLANDO NATANAUAN\r\nELMER NATANAUAN",NULL);
+INSERT INTO records VALUES("1017","288","Lawn Lots","St. Dominic","JOSEFA CORTEZ",NULL);
+INSERT INTO records VALUES("1018","289","Lawn Lots","St. Dominic","RODRIGO NATANAUAN",NULL);
+INSERT INTO records VALUES("1019","290","Lawn Lots","St. Dominic","PAULINO AMBION\r\nMARIO AMBION",NULL);
+INSERT INTO records VALUES("1020","291","Lawn Lots","St. Dominic","GABRIEL A. DOGELIO\r\nPRESCILA DOGELIO",NULL);
+INSERT INTO records VALUES("1021","292","Lawn Lots","St. Dominic","IMELDA VILLANUEVA",NULL);
+INSERT INTO records VALUES("1022","293","Lawn Lots","St. Dominic","IMELDA VILLANUEVA",NULL);
+INSERT INTO records VALUES("1023","294","Lawn Lots","St. Dominic","ERNESTO L. MEDINA",NULL);
+INSERT INTO records VALUES("1024","298","Lawn Lots","St. Dominic","FELICISIMA GARCIA",NULL);
+INSERT INTO records VALUES("1025","300","Lawn Lots","St. Dominic","MERCEDES BAUZON",NULL);
+INSERT INTO records VALUES("1026","301","Lawn Lots","St. Dominic","MARLONE D. BERNANDEZ",NULL);
+INSERT INTO records VALUES("1027","302","Lawn Lots","St. Dominic","FELISA MEDINA\r\nRODEL MEDINA",NULL);
+INSERT INTO records VALUES("1028","303","Lawn Lots","St. Dominic","MARIA ROMULO IBANEZ",NULL);
+INSERT INTO records VALUES("1029","304","Lawn Lots","St. Dominic","MORINA BAYBAY",NULL);
+INSERT INTO records VALUES("1030","1","Lawn Lots","St. James","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("1031","2","Lawn Lots","St. James","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("1032","14","Lawn Lots","St. James","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("1033","15","Lawn Lots","St. James","ZENAIDA MARAAN",NULL);
+INSERT INTO records VALUES("1034","3","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1035","4","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1036","15","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1037","16","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1038","27","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1039","28","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1040","39","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1041","40","Lawn Lots","St. James","DAMASO MALABANAN",NULL);
+INSERT INTO records VALUES("1042","5","Lawn Lots","St. James","GERONIMO MALABANAN",NULL);
+INSERT INTO records VALUES("1043","6","Lawn Lots","St. James","GERONIMO MALABANAN",NULL);
+INSERT INTO records VALUES("1044","7","Lawn Lots","St. James","IRENE OLAVIAGA",NULL);
+INSERT INTO records VALUES("1045","8","Lawn Lots","St. James","FEBE ANACAY",NULL);
+INSERT INTO records VALUES("1046","9","Lawn Lots","St. James","FEBE ANACAY",NULL);
+INSERT INTO records VALUES("1047","10","Lawn Lots","St. James","MILAGRIMAS SAREL",NULL);
+INSERT INTO records VALUES("1048","11","Lawn Lots","St. James","DELIO CORTEZ",NULL);
+INSERT INTO records VALUES("1049","12","Lawn Lots","St. James","DELIO CORTEZ",NULL);
+INSERT INTO records VALUES("1050","17","Lawn Lots","St. James","GERONIMO MALABANAN",NULL);
+INSERT INTO records VALUES("1051","18","Lawn Lots","St. James","GERONIMO MALABANAN",NULL);
+INSERT INTO records VALUES("1052","19","Lawn Lots","St. James","IRENE OLAVIAGA",NULL);
+INSERT INTO records VALUES("1053","22","Lawn Lots","St. James","GODOFREDO MOJICA",NULL);
+INSERT INTO records VALUES("1054","23","Lawn Lots","St. James","DELIO CORTEZ",NULL);
+INSERT INTO records VALUES("1055","24","Lawn Lots","St. James","DELIO CORTEZ",NULL);
+INSERT INTO records VALUES("1056","25","Lawn Lots","St. James","CARMEN DORIA\r\nPRECY CABRERA",NULL);
+INSERT INTO records VALUES("1057","26","Lawn Lots","St. James","WILLIE MARAAN",NULL);
+INSERT INTO records VALUES("1058","29","Lawn Lots","St. James","EULAUA OLEGARIO",NULL);
+INSERT INTO records VALUES("1059","30","Lawn Lots","St. James","EULAUA OLEGARIO",NULL);
+INSERT INTO records VALUES("1060","31","Lawn Lots","St. James","FROILAN ISLA",NULL);
+INSERT INTO records VALUES("1061","32","Lawn Lots","St. James","MARIANO SOLANO\r\nAIDA PINEDA",NULL);
+INSERT INTO records VALUES("1062","33","Lawn Lots","St. James","MATIAS T. AMBAT\r\nGERAROO T. AMBAT",NULL);
+INSERT INTO records VALUES("1063","34","Lawn Lots","St. James","GERARDO AMBAT",NULL);
+INSERT INTO records VALUES("1064","35","Lawn Lots","St. James","LYDIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("1065","36","Lawn Lots","St. James","CHRISTINE GRACE",NULL);
+INSERT INTO records VALUES("1066","37","Lawn Lots","St. James","SALVADOR DORINA\r\nPRELY S. CABRERA",NULL);
+INSERT INTO records VALUES("1067","38","Lawn Lots","St. James","WILLIE MARAAN",NULL);
+INSERT INTO records VALUES("1068","41","Lawn Lots","St. James","EULALIA OLEGARIO",NULL);
+INSERT INTO records VALUES("1069","42","Lawn Lots","St. James","EULALIA OLEGARIO",NULL);
+INSERT INTO records VALUES("1070","43","Lawn Lots","St. James","EMEUANO ISLA JR.",NULL);
+INSERT INTO records VALUES("1071","44","Lawn Lots","St. James","PASENCIA OCAMPO",NULL);
+INSERT INTO records VALUES("1072","45","Lawn Lots","St. James","GERARDO AMBAT",NULL);
+INSERT INTO records VALUES("1073","46","Lawn Lots","St. James","JUANITA AMBAT",NULL);
+INSERT INTO records VALUES("1074","47","Lawn Lots","St. James","OSCAR MOJICA",NULL);
+INSERT INTO records VALUES("1075","48","Lawn Lots","St. James","OSCAR MOJICA",NULL);
+INSERT INTO records VALUES("1076","49","Lawn Lots","St. James","CONSORCIA BAYOT",NULL);
+INSERT INTO records VALUES("1077","50","Lawn Lots","St. James","RUSELMO ERMINO",NULL);
+INSERT INTO records VALUES("1078","51","Lawn Lots","St. James",NULL,NULL);
+INSERT INTO records VALUES("1079","52","Lawn Lots","St. James",NULL,NULL);
+INSERT INTO records VALUES("1080","53","Lawn Lots","St. James","REMEDIOS JAVIER",NULL);
+INSERT INTO records VALUES("1081","54","Lawn Lots","St. James","MARGIE MESTIZO",NULL);
+INSERT INTO records VALUES("1082","55","Lawn Lots","St. James","JOEL B. DELOS SANTOS",NULL);
+INSERT INTO records VALUES("1083","56","Lawn Lots","St. James","TITO ANGCAYA\r\nESTER BAYBAY",NULL);
+INSERT INTO records VALUES("1084","57","Lawn Lots","St. James","MA LIZA MARASIGAN",NULL);
+INSERT INTO records VALUES("1085","58","Lawn Lots","St. James","JOEL CABRERA",NULL);
+INSERT INTO records VALUES("1086","59","Lawn Lots","St. James","LYDIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("1087","60","Lawn Lots","St. James","BELEN CORTEZ",NULL);
+INSERT INTO records VALUES("1088","61","Lawn Lots","St. James","OSCAR BAYOT",NULL);
+INSERT INTO records VALUES("1089","62","Lawn Lots","St. James","LYDIA U. BAURILE",NULL);
+INSERT INTO records VALUES("1090","63","Lawn Lots","St. James","REY HERNANDEZ",NULL);
+INSERT INTO records VALUES("1091","64","Lawn Lots","St. James","MAXIMA R. BICOG",NULL);
+INSERT INTO records VALUES("1092","65","Lawn Lots","St. James","SONIA MALABANAN",NULL);
+INSERT INTO records VALUES("1093","66","Lawn Lots","St. James","FITOMENA M. JAVIER",NULL);
+INSERT INTO records VALUES("1094","67","Lawn Lots","St. James","GREGORIO JAVIER",NULL);
+INSERT INTO records VALUES("1095","68","Lawn Lots","St. James","LILIOSA LUNA\r\nLIEZL AMBROCIO",NULL);
+INSERT INTO records VALUES("1096","69","Lawn Lots","St. James","DIOSDADO PORTUGAL",NULL);
+INSERT INTO records VALUES("1097","70","Lawn Lots","St. James","DIOSDADO PORTUGAL",NULL);
+INSERT INTO records VALUES("1098","71","Lawn Lots","St. James","LYDIA DE GUZMAN",NULL);
+INSERT INTO records VALUES("1099","72","Lawn Lots","St. James","CHRISTINE GRACE CORTEZ",NULL);
+INSERT INTO records VALUES("1100","73","Lawn Lots","St. James","OSCAR BAYOT",NULL);
+INSERT INTO records VALUES("1101","74","Lawn Lots","St. James",NULL,NULL);
+INSERT INTO records VALUES("1102","75","Lawn Lots","St. James","MICHAEL FELLO",NULL);
+INSERT INTO records VALUES("1103","76","Lawn Lots","St. James","INDEPENDENCIA LLAZORE",NULL);
+INSERT INTO records VALUES("1104","77","Lawn Lots","St. James","MARIA SUELTO\r\nERENIA AALA",NULL);
+INSERT INTO records VALUES("1105","78","Lawn Lots","St. James","AQUILINA TERRIBLE",NULL);
+INSERT INTO records VALUES("1106","79","Lawn Lots","St. James","ELRITERIO PABLO",NULL);
+INSERT INTO records VALUES("1107","80","Lawn Lots","St. James","EDWIN AMBION",NULL);
+INSERT INTO records VALUES("1108","81","Lawn Lots","St. James","CARLOS MEDINA",NULL);
+INSERT INTO records VALUES("1109","82","Lawn Lots","St. James","MYRNA ANACAY",NULL);
+INSERT INTO records VALUES("1110","83","Lawn Lots","St. James","JULIO BERGADO",NULL);
+INSERT INTO records VALUES("1111","84","Lawn Lots","St. James","CHRISTINE GRACE CORTEZ\r\nBELEN CORTEZ",NULL);
+INSERT INTO records VALUES("1112","85","Lawn Lots","St. James","OSCAR BAYOT",NULL);
+INSERT INTO records VALUES("1113","86","Lawn Lots","St. James","DORCAS BAYOT",NULL);
+INSERT INTO records VALUES("1114","87","Lawn Lots","St. James","APOLONIO C. BORJA",NULL);
+INSERT INTO records VALUES("1115","88","Lawn Lots","St. James","IRVIN DE GUZMAN",NULL);
+INSERT INTO records VALUES("1116","89","Lawn Lots","St. James","DANILO MANZANO",NULL);
+INSERT INTO records VALUES("1117","90","Lawn Lots","St. James",NULL,NULL);
+INSERT INTO records VALUES("1118","91","Lawn Lots","St. James","JASON M. MATULAC",NULL);
+INSERT INTO records VALUES("1119","92","Lawn Lots","St. James","EDWIN ANIBESA",NULL);
+INSERT INTO records VALUES("1120","93","Lawn Lots","St. James","CATHERINE JOY PANALIGAN",NULL);
+INSERT INTO records VALUES("1121","94","Lawn Lots","St. James","SEVERO MARASIGAN",NULL);
+INSERT INTO records VALUES("1122","95","Lawn Lots","St. James","LUCIA SERRA\r\nNAZARIO SERRA",NULL);
+INSERT INTO records VALUES("1123","96","Lawn Lots","St. James","BELEN CORTEZ",NULL);
+INSERT INTO records VALUES("1124","97","Lawn Lots","St. James","GUILLERMO GUNDAO",NULL);
+INSERT INTO records VALUES("1125","108","Lawn Lots","St. James","GUILLERMO GUNDAO",NULL);
+INSERT INTO records VALUES("1126","119","Lawn Lots","St. James","GUILLERMO GUNDAO",NULL);
+INSERT INTO records VALUES("1127","98","Lawn Lots","St. James","ALICIO ACOSTA",NULL);
+INSERT INTO records VALUES("1128","99","Lawn Lots","St. James","SALVACION YAMAMOTO",NULL);
+INSERT INTO records VALUES("1129","100","Lawn Lots","St. James","GUILLERMA MERCADO",NULL);
+INSERT INTO records VALUES("1130","101","Lawn Lots","St. James","IMELDA MANZANO",NULL);
+INSERT INTO records VALUES("1131","103","Lawn Lots","St. James","ALONZO BAYOT\r\nHELEN BAYOT",NULL);
+INSERT INTO records VALUES("1132","104","Lawn Lots","St. James","EDGARDO SIMSON\r\nSOCORIO SIMSON",NULL);
+INSERT INTO records VALUES("1133","105","Lawn Lots","St. James","MENA T. RUNES",NULL);
+INSERT INTO records VALUES("1134","106","Lawn Lots","St. James","ANITA A. CORTEZ",NULL);
+INSERT INTO records VALUES("1135","107","Lawn Lots","St. James","ANITA A. CORTEZ",NULL);
+INSERT INTO records VALUES("1136","108","Lawn Lots","St. James","GUILLERMA GUMBAO",NULL);
+INSERT INTO records VALUES("1137","109","Lawn Lots","St. James","AUGUSTINIAN SISTERS SERVANTS",NULL);
+INSERT INTO records VALUES("1138","120","Lawn Lots","St. James","AUGUSTINIAN SISTERS SERVANTS",NULL);
+INSERT INTO records VALUES("1139","110","Lawn Lots","St. James","SALVACION YAMAMOTO",NULL);
+INSERT INTO records VALUES("1140","111","Lawn Lots","St. James",NULL,NULL);
+INSERT INTO records VALUES("1141","112","Lawn Lots","St. James","JUANITO MANZANO",NULL);
+INSERT INTO records VALUES("1142","113","Lawn Lots","St. James","OLIVER PLATON",NULL);
+INSERT INTO records VALUES("1143","114","Lawn Lots","St. James","ALONZO BAYOT\r\nHELEN BAYOT",NULL);
+INSERT INTO records VALUES("1144","115","Lawn Lots","St. James","IRENEO CABRERA",NULL);
+INSERT INTO records VALUES("1145","116","Lawn Lots","St. James","URSULA TUMBAGA",NULL);
+INSERT INTO records VALUES("1146","117","Lawn Lots","St. James","ANITA CORTEZ",NULL);
+INSERT INTO records VALUES("1147","118","Lawn Lots","St. James","ANITA CORTEZ",NULL);
+INSERT INTO records VALUES("1148","119","Lawn Lots","St. James","GUILLERMA GUNDAO",NULL);
+INSERT INTO records VALUES("1149","121","Lawn Lots","St. James","SALVACION YAMAMOTO",NULL);
+INSERT INTO records VALUES("1150","122","Lawn Lots","St. James","SALVACION YAMAMOTO",NULL);
+INSERT INTO records VALUES("1151","123","Lawn Lots","St. James","SALVACION YAMAMOTO",NULL);
+INSERT INTO records VALUES("1152","124","Lawn Lots","St. James","OLIVER PLATON",NULL);
+INSERT INTO records VALUES("1153","135","Lawn Lots","St. James","OLIVER PLATON",NULL);
+INSERT INTO records VALUES("1154","146","Lawn Lots","St. James","OLIVER PLATON",NULL);
+INSERT INTO records VALUES("1155","125","Lawn Lots","St. James","ELENA VILLANUEVA",NULL);
+INSERT INTO records VALUES("1156","126","Lawn Lots","St. James","JESUS D. FAVIA",NULL);
+INSERT INTO records VALUES("1157","127","Lawn Lots","St. James","MARIO TUMBAGA",NULL);
+INSERT INTO records VALUES("1158","128","Lawn Lots","St. James","ANITA A. CORTEZ",NULL);
+INSERT INTO records VALUES("1159","129","Lawn Lots","St. James","ANITA A. CORTEZ",NULL);
+INSERT INTO records VALUES("1160","130","Lawn Lots","St. James","MARY GRACE BAYOT",NULL);
+INSERT INTO records VALUES("1161","131","Lawn Lots","St. James","MG.B",NULL);
+INSERT INTO records VALUES("1162","132","Lawn Lots","St. James","SALVACION YAMAMOTO",NULL);
+INSERT INTO records VALUES("1163","102","Lawn Lots","St. James","MA LUIZ P. CAPAJE",NULL);
+INSERT INTO records VALUES("1164","134","Lawn Lots","St. James","RONALDO C. PARDO",NULL);
+INSERT INTO records VALUES("1165","136","Lawn Lots","St. James","VICTOR VILLANUEVA",NULL);
+INSERT INTO records VALUES("1166","137","Lawn Lots","St. James","JUANITO ORE",NULL);
+INSERT INTO records VALUES("1167","138","Lawn Lots","St. James","EUFROCINO C. KALA",NULL);
+INSERT INTO records VALUES("1168","139","Lawn Lots","St. James","N. CORTEZ",NULL);
+INSERT INTO records VALUES("1169","140","Lawn Lots","St. James","N. CORTEZ",NULL);
+INSERT INTO records VALUES("1170","141","Lawn Lots","St. James","MGB",NULL);
+INSERT INTO records VALUES("1171","142","Lawn Lots","St. James","MGB",NULL);
+INSERT INTO records VALUES("1172","143","Lawn Lots","St. James","GUILLERMA MERCADO",NULL);
+INSERT INTO records VALUES("1173","144","Lawn Lots","St. James","JOSE BONAUENTE",NULL);
+INSERT INTO records VALUES("1174","145","Lawn Lots","St. James","FELICISIMO PANGANIBAN",NULL);
+INSERT INTO records VALUES("1175","147","Lawn Lots","St. James","BENIDICK CABASI",NULL);
+INSERT INTO records VALUES("1176","148","Lawn Lots","St. James","JUANA RODRIGUEZ",NULL);
+INSERT INTO records VALUES("1177","149","Lawn Lots","St. James","ELENITA GONZALES",NULL);
+INSERT INTO records VALUES("1178","150","Lawn Lots","St. James","JUANITO LUNA ",NULL);
+INSERT INTO records VALUES("1179","151","Lawn Lots","St. James","ALBINO VERGARA \r\nAMELITA FERMA",NULL);
+INSERT INTO records VALUES("1180","152","Lawn Lots","St. James","MGB",NULL);
+INSERT INTO records VALUES("1181","153","Lawn Lots","St. James","MGB",NULL);
+INSERT INTO records VALUES("1182","154","Lawn Lots","St. James","FLORESITA P. BUCO",NULL);
+INSERT INTO records VALUES("1183","155","Lawn Lots","St. James","JOSE BONANENTE JR",NULL);
+INSERT INTO records VALUES("1184","156","Lawn Lots","St. James","RACQUEL MANGUIAT",NULL);
+INSERT INTO records VALUES("1185","157","Lawn Lots","St. James","RODOLFO GELOFIN OLLODO\r\n",NULL);
+INSERT INTO records VALUES("1186","158","Lawn Lots","St. James","BENEDICA CABASI",NULL);
+INSERT INTO records VALUES("1187","159","Lawn Lots","St. James","LYN RODRIGUEZ",NULL);
+INSERT INTO records VALUES("1188","160","Lawn Lots","St. James","ELENITA S. GONZALES\r\nALFREDO GONZALES",NULL);
+INSERT INTO records VALUES("1189","161","Lawn Lots","St. James","LUNA",NULL);
+INSERT INTO records VALUES("1190","162","Lawn Lots","St. James","ANTONIO SILAN JR.",NULL);
+INSERT INTO records VALUES("1191","163","Lawn Lots","St. James","REYNALDO VERGARA",NULL);
+INSERT INTO records VALUES("1192","164","Lawn Lots","St. James","CECILIA V. OPO",NULL);
+INSERT INTO records VALUES("1193","165","Lawn Lots","St. James","LETICIA ANGCAYA\r\nCARLOS ANGCAYA",NULL);
+INSERT INTO records VALUES("1194","166","Lawn Lots","St. James","ANTONIO M. CRISOSTOMO",NULL);
+INSERT INTO records VALUES("1195","167","Lawn Lots","St. James","ANTONIO M. CRISISTOMO",NULL);
+INSERT INTO records VALUES("1196","168","Lawn Lots","St. James","EFREN CABRERA\r\nLEA CABRERA",NULL);
+INSERT INTO records VALUES("1197","169","Lawn Lots","St. James","WILLIAM BUSTO",NULL);
+INSERT INTO records VALUES("1198","170","Lawn Lots","St. James","EUGENIA A. JAYSON",NULL);
+INSERT INTO records VALUES("1199","171","Lawn Lots","St. James","FELIPE MIRANDA",NULL);
+INSERT INTO records VALUES("1200","172","Lawn Lots","St. James","FELIPE MIRANDA",NULL);
+INSERT INTO records VALUES("1201","173","Lawn Lots","St. James","REYNALDO OPAGAZA SR.",NULL);
+INSERT INTO records VALUES("1202","174","Lawn Lots","St. James","CECILIA V. OPO",NULL);
+INSERT INTO records VALUES("1203","175","Lawn Lots","St. James","ST. BRIDGETS CONVENT",NULL);
+INSERT INTO records VALUES("1204","176","Lawn Lots","St. James","ANTONIO CRISOSTOMO",NULL);
+INSERT INTO records VALUES("1205","177","Lawn Lots","St. James","ANTONIO CRISOSTOMO",NULL);
+INSERT INTO records VALUES("1206","178","Lawn Lots","St. James","DANILO SANARES",NULL);
+INSERT INTO records VALUES("1207","179","Lawn Lots","St. James","MANUEL E. ESTRABELA",NULL);
+INSERT INTO records VALUES("1208","180","Lawn Lots","St. James","R.E JAYSON EUGENIA\r\n",NULL);
+INSERT INTO records VALUES("1209","181","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1210","182","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1211","191","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1212","192","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1213","201","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1214","202","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1215","211","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1216","212","Lawn Lots","St. James","FELIPA MIRANDA",NULL);
+INSERT INTO records VALUES("1217","183","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1218","184","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1219","193","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1220","194","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1221","203","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1222","204","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1223","214","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1224","223","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1225","23","Lawn Lots","St. James","FOCOCARE",NULL);
+INSERT INTO records VALUES("1226","185","Lawn Lots","St. James","RONALD APDO\r\nEVELYN APDO",NULL);
+INSERT INTO records VALUES("1227","186","Lawn Lots","St. James","R. ARMANDO BEDJA",NULL);
+INSERT INTO records VALUES("1228","187","Lawn Lots","St. James","JENNILYN FOERSTER",NULL);
+INSERT INTO records VALUES("1229","188","Lawn Lots","St. James","EVIE CUEVAS",NULL);
+INSERT INTO records VALUES("1230","189","Lawn Lots","St. James","MARIANITO HERNANDEZ\r\nQUINTIN HERNANDEZ",NULL);
+INSERT INTO records VALUES("1231","190","Lawn Lots","St. James","FRANCISCO DELA ROSA",NULL);
+INSERT INTO records VALUES("1232","196","Lawn Lots","St. James","ARMANDO BEDUA",NULL);
+INSERT INTO records VALUES("1233","197","Lawn Lots","St. James","JULIETA BISCOCHO",NULL);
+INSERT INTO records VALUES("1234","198","Lawn Lots","St. James","EVIE CUEVAS",NULL);
+INSERT INTO records VALUES("1235","199","Lawn Lots","St. James","MARIANITO HERNANDEZ",NULL);
+INSERT INTO records VALUES("1236","200","Lawn Lots","St. James","LOLITA S. DIGO",NULL);
+INSERT INTO records VALUES("1237","205","Lawn Lots","St. James","RAMON AQUINO",NULL);
+INSERT INTO records VALUES("1238","206","Lawn Lots","St. James","ARMANDO BEDUA",NULL);
+INSERT INTO records VALUES("1239","207","Lawn Lots","St. James","JULIETA BISCOCHO",NULL);
+INSERT INTO records VALUES("1240","208","Lawn Lots","St. James","ANTONIO FERMACHO\r\nLEAH BESA",NULL);
+INSERT INTO records VALUES("1241","209","Lawn Lots","St. James","MARIVIC ANTE",NULL);
+INSERT INTO records VALUES("1242","210","Lawn Lots","St. James","MARIVIC ANTE",NULL);
+INSERT INTO records VALUES("1243","215","Lawn Lots","St. James","RAMON AQUINO",NULL);
+INSERT INTO records VALUES("1244","216","Lawn Lots","St. James","EVANGELINE ARIOLA",NULL);
+INSERT INTO records VALUES("1245","217","Lawn Lots","St. James","MARIA P. TAYCO",NULL);
+INSERT INTO records VALUES("1246","218","Lawn Lots","St. James","GARRY M. VILLANUEVA",NULL);
+INSERT INTO records VALUES("1247","219","Lawn Lots","St. James","GAVINA BORJA",NULL);
+INSERT INTO records VALUES("1248","220","Lawn Lots","St. James","LEWI BETITA",NULL);
+INSERT INTO records VALUES("1249","221","Lawn Lots","St. James","LEWI BETITA",NULL);
+INSERT INTO records VALUES("1250","224","Lawn Lots","St. James","LUCIL A. MARINDUGUE",NULL);
+INSERT INTO records VALUES("1251","225","Lawn Lots","St. James","R. MARY D. KUA",NULL);
+INSERT INTO records VALUES("1252","226","Lawn Lots","St. James","MARIA P. TAYCO",NULL);
+INSERT INTO records VALUES("1253","227","Lawn Lots","St. James","GARRY VILLANUEVA",NULL);
+INSERT INTO records VALUES("1254","228","Lawn Lots","St. James","GAVINA BORJA",NULL);
+INSERT INTO records VALUES("1255","229","Lawn Lots","St. James","FELICIDAD GABAC RORIGUEZ\r\nMARCELO RODRIGUEZ",NULL);
+INSERT INTO records VALUES("1256","230","Lawn Lots","St. James","MYRNA DE VILLA",NULL);
+INSERT INTO records VALUES("1257","233","Lawn Lots","St. James","LUCIL MARINDUQUE",NULL);
+INSERT INTO records VALUES("1258","234","Lawn Lots","St. James","NEMECIO DOGELIO",NULL);
+INSERT INTO records VALUES("1259","235","Lawn Lots","St. James","EVANGELINE ARIOLA",NULL);
+INSERT INTO records VALUES("1260","236","Lawn Lots","St. James","JUAN BALOSO\r\nALICIA BALOSO",NULL);
+INSERT INTO records VALUES("1261","237","Lawn Lots","St. James","DIVINA VILLANUEVA",NULL);
+INSERT INTO records VALUES("1262","238","Lawn Lots","St. James","RJLLEEN JAVIER",NULL);
+INSERT INTO records VALUES("1263","239","Lawn Lots","St. James","INOCENCIA DACLES GABAC\r\nPERCILA GABAC",NULL);
+INSERT INTO records VALUES("1264","242","Lawn Lots","St. James","GLENDA OMALES",NULL);
+INSERT INTO records VALUES("1265","251","Lawn Lots","St. James","GLENDA OMALES",NULL);
+INSERT INTO records VALUES("1266","243","Lawn Lots","St. James","R. MARY D. KUA",NULL);
+INSERT INTO records VALUES("1267","244","Lawn Lots","St. James","JUANITA DE CASTRO",NULL);
+INSERT INTO records VALUES("1268","245","Lawn Lots","St. James","JUANITA DE CASTRO",NULL);
+INSERT INTO records VALUES("1269","254","Lawn Lots","St. James","JUANITA DE CASTRO",NULL);
+INSERT INTO records VALUES("1270","263","Lawn Lots","St. James","JUANITA DE CASTRO",NULL);
+INSERT INTO records VALUES("1271","246","Lawn Lots","St. James","NILDA CARPIO",NULL);
+INSERT INTO records VALUES("1272","247","Lawn Lots","St. James","CATHY MENDOZA",NULL);
+INSERT INTO records VALUES("1273","248","Lawn Lots","St. James","FLORENTINO AUSTRIA",NULL);
+INSERT INTO records VALUES("1274","250","Lawn Lots","St. James","VIRGILIO N. VILLANUEVA",NULL);
+INSERT INTO records VALUES("1275","252","Lawn Lots","St. James","MARY D. KUA",NULL);
+INSERT INTO records VALUES("1276","253","Lawn Lots","St. James","JUANITA DE CASTRO",NULL);
+INSERT INTO records VALUES("1277","255","Lawn Lots","St. James","ELSA REYES",NULL);
+INSERT INTO records VALUES("1278","256","Lawn Lots","St. James","EZEKIEL JAVIER",NULL);
+INSERT INTO records VALUES("1279","257","Lawn Lots","St. James","FLORENTINO AUSTRIA",NULL);
+INSERT INTO records VALUES("1280","260","Lawn Lots","St. James","RONILO MEDINA",NULL);
+INSERT INTO records VALUES("1281","261","Lawn Lots","St. James","RONILO MEDINA",NULL);
+INSERT INTO records VALUES("1282","262","Lawn Lots","St. James","ANTONIO MONTEZA",NULL);
+INSERT INTO records VALUES("1283","264","Lawn Lots","St. James","ERVIN SALAZAR",NULL);
+INSERT INTO records VALUES("1284","265","Lawn Lots","St. James","NORINE MENDOZA",NULL);
+INSERT INTO records VALUES("1285","266","Lawn Lots","St. James","C/O FOCOLARE\r\nLEO GANADEN",NULL);
+INSERT INTO records VALUES("1286","267","Lawn Lots","St. James","ROMELO SESMA",NULL);
+INSERT INTO records VALUES("1287","268","Lawn Lots","St. James","RONILO MEDINA",NULL);
+INSERT INTO records VALUES("1288","269","Lawn Lots","St. James","RONICO MEDINA",NULL);
+INSERT INTO records VALUES("1289","270","Lawn Lots","St. James","MARY JANE BAYHON\r\n\r\n",NULL);
+INSERT INTO records VALUES("1290","271","Lawn Lots","St. James","MARY JANE BAYHON\r\n\r\n",NULL);
+INSERT INTO records VALUES("1291","272","Lawn Lots","St. James","ELIZABETH VICTORIO O.",NULL);
+INSERT INTO records VALUES("1292","273","Lawn Lots","St. James","MIGUELA AMBION\r\nCEFERINO AMBION",NULL);
+INSERT INTO records VALUES("1293","1","Lawn Lots","St. Jude","ELIZABETH CARPIO\r\nBENITO CAMACHO",NULL);
+INSERT INTO records VALUES("1294","2","Lawn Lots","St. Jude","BENITO CAMACHO",NULL);
+INSERT INTO records VALUES("1295","3","Lawn Lots","St. Jude","CRISANTA D. AMBION",NULL);
+INSERT INTO records VALUES("1296","4","Lawn Lots","St. Jude","JOSEPHINE A. SOLANO",NULL);
+INSERT INTO records VALUES("1297","5","Lawn Lots","St. Jude","EPHRAIM AMBAT\r\nLEONIDA",NULL);
+INSERT INTO records VALUES("1298","6","Lawn Lots","St. Jude","EPHRAIM AMBAT\r\nLEONIDA",NULL);
+INSERT INTO records VALUES("1299","7","Lawn Lots","St. Jude","EMELITA BELINA",NULL);
+INSERT INTO records VALUES("1300","8","Lawn Lots","St. Jude","FRANCISCO INGENIERO",NULL);
+INSERT INTO records VALUES("1301","9","Lawn Lots","St. Jude","LEONARDO P. LANZA\r\nRONALD L. MECUA",NULL);
+INSERT INTO records VALUES("1302","10","Lawn Lots","St. Jude","CAMILO RIVERA",NULL);
+INSERT INTO records VALUES("1303","11","Lawn Lots","St. Jude","LILIBETH R. AQUINO",NULL);
+INSERT INTO records VALUES("1304","12","Lawn Lots","St. Jude","IMELDA MABBAGO",NULL);
+INSERT INTO records VALUES("1305","13","Lawn Lots","St. Jude","DOMINGO FABRIGA\r\nJAENA MAULLON",NULL);
+INSERT INTO records VALUES("1306","14","Lawn Lots","St. Jude","DOMINGO FABRIGA\r\nJAENA MAULLON",NULL);
+INSERT INTO records VALUES("1307","15","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1308","16","Lawn Lots","St. Jude","LUISA Y DIZON\r\nMARLON DIZON",NULL);
+INSERT INTO records VALUES("1309","17","Lawn Lots","St. Jude","GEORGE ESGANA",NULL);
+INSERT INTO records VALUES("1310","18","Lawn Lots","St. Jude","ARNULFO ALEGA",NULL);
+INSERT INTO records VALUES("1311","19","Lawn Lots","St. Jude","ROBERTO A. MANINGAT SR.",NULL);
+INSERT INTO records VALUES("1312","20","Lawn Lots","St. Jude","DAISY S. MANINGAT",NULL);
+INSERT INTO records VALUES("1313","21","Lawn Lots","St. Jude","JOCELYN ACEDILLO",NULL);
+INSERT INTO records VALUES("1314","22","Lawn Lots","St. Jude","VIVENCIO PEFENIA",NULL);
+INSERT INTO records VALUES("1315","23","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1316","24","Lawn Lots","St. Jude","FELIPE LEABAN\r\nMARLON LEABAN",NULL);
+INSERT INTO records VALUES("1317","25","Lawn Lots","St. Jude","SAIAS V. MAGBITANG",NULL);
+INSERT INTO records VALUES("1318","26","Lawn Lots","St. Jude","ANGELINA BASCONCILLA",NULL);
+INSERT INTO records VALUES("1319","27","Lawn Lots","St. Jude","LUZ LIBUTAN",NULL);
+INSERT INTO records VALUES("1320","28","Lawn Lots","St. Jude","CHARLITO MONTERO SR.\r\nMICHAEL JHON MONTESO",NULL);
+INSERT INTO records VALUES("1321","29","Lawn Lots","St. Jude","MADONNA M. PARRA",NULL);
+INSERT INTO records VALUES("1322","30","Lawn Lots","St. Jude","ALFREDO GILLO",NULL);
+INSERT INTO records VALUES("1323","31","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1324","32","Lawn Lots","St. Jude","MAXIMA ROSAS",NULL);
+INSERT INTO records VALUES("1325","33","Lawn Lots","St. Jude","MAXIMA ROSAS",NULL);
+INSERT INTO records VALUES("1326","34","Lawn Lots","St. Jude","ZACHARRIE KEALSEY P ,MEER\r\nARSENIO MEER",NULL);
+INSERT INTO records VALUES("1327","35","Lawn Lots","St. Jude","APOLONIA SARNO",NULL);
+INSERT INTO records VALUES("1328","36","Lawn Lots","St. Jude","APOLONIA SARNO",NULL);
+INSERT INTO records VALUES("1329","37","Lawn Lots","St. Jude","MARCIANA AMBITA",NULL);
+INSERT INTO records VALUES("1330","38","Lawn Lots","St. Jude","MARCIANA AMBITA",NULL);
+INSERT INTO records VALUES("1331","39","Lawn Lots","St. Jude","DOMINGO C. PAGADOR",NULL);
+INSERT INTO records VALUES("1332","40","Lawn Lots","St. Jude","SESINANDITO ALMAZAN\r\nMARCELA ALMAZAN",NULL);
+INSERT INTO records VALUES("1333","41","Lawn Lots","St. Jude","AMELIA CABILES",NULL);
+INSERT INTO records VALUES("1334","42","Lawn Lots","St. Jude","ELICA O. ILAO",NULL);
+INSERT INTO records VALUES("1335","43","Lawn Lots","St. Jude","LUZVIMINDA VILLANUEVA",NULL);
+INSERT INTO records VALUES("1336","44","Lawn Lots","St. Jude","DENNIS ODAL\r\nALEX OCOP",NULL);
+INSERT INTO records VALUES("1337","45","Lawn Lots","St. Jude","FABRIGA\r\n",NULL);
+INSERT INTO records VALUES("1338","46","Lawn Lots","St. Jude","R. JAINA",NULL);
+INSERT INTO records VALUES("1339","47","Lawn Lots","St. Jude","ANGELINA DE LEON",NULL);
+INSERT INTO records VALUES("1340","48","Lawn Lots","St. Jude","ANGELINA DE LEON",NULL);
+INSERT INTO records VALUES("1341","49","Lawn Lots","St. Jude","MERLITA DIMAPILIS",NULL);
+INSERT INTO records VALUES("1342","50","Lawn Lots","St. Jude","ROBERTO S. MANINGAT",NULL);
+INSERT INTO records VALUES("1343","51","Lawn Lots","St. Jude","DAISY LEA S. MANINGAT",NULL);
+INSERT INTO records VALUES("1344","52","Lawn Lots","St. Jude","AGNES MOJICA",NULL);
+INSERT INTO records VALUES("1345","53","Lawn Lots","St. Jude","JOSEPHINE MIRANDA",NULL);
+INSERT INTO records VALUES("1346","54","Lawn Lots","St. Jude","RICARDO RAMOS\r\nRODERICK T. RAMOS",NULL);
+INSERT INTO records VALUES("1347","55","Lawn Lots","St. Jude","ANNALYN ESPIRITU",NULL);
+INSERT INTO records VALUES("1348","56","Lawn Lots","St. Jude","EPIFANIO C. ABENDANIO",NULL);
+INSERT INTO records VALUES("1349","57","Lawn Lots","St. Jude","LEONIDA VILLANUEVA\r\nMARISSA DIMAPILIS",NULL);
+INSERT INTO records VALUES("1350","58","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1351","59","Lawn Lots","St. Jude","MARCIANA BARCA",NULL);
+INSERT INTO records VALUES("1352","60","Lawn Lots","St. Jude","PATRICIO BAUTISTA\r\nAIMEE B. PELLOS",NULL);
+INSERT INTO records VALUES("1353","61","Lawn Lots","St. Jude","FELIPE PIEZAGO",NULL);
+INSERT INTO records VALUES("1354","62","Lawn Lots","St. Jude","CAROLINA CABRERA",NULL);
+INSERT INTO records VALUES("1355","63","Lawn Lots","St. Jude","ANGELO JOBERT \r\nMA. THERESA SAVILLA",NULL);
+INSERT INTO records VALUES("1356","64","Lawn Lots","St. Jude","MARYLEN A. DE CASTRO",NULL);
+INSERT INTO records VALUES("1357","65","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1358","66","Lawn Lots","St. Jude","ROMEO VILLANUEVA\r\nROSARIO VILLANUEVA",NULL);
+INSERT INTO records VALUES("1359","67","Lawn Lots","St. Jude","IRENE GAILE ALMENDRAS",NULL);
+INSERT INTO records VALUES("1360","68","Lawn Lots","St. Jude","HONEYLYN ALMENDRAS\r\nJOEL ALMENDRAS\r\n",NULL);
+INSERT INTO records VALUES("1361","69","Lawn Lots","St. Jude","ROBERTO ALMENDRAS\r\nARIEL ALMENDRAS",NULL);
+INSERT INTO records VALUES("1362","70","Lawn Lots","St. Jude","MICARIA ALMENDRAS\r\nARIEL ALMENDRAS",NULL);
+INSERT INTO records VALUES("1363","71","Lawn Lots","St. Jude","RODEL SOLIS",NULL);
+INSERT INTO records VALUES("1364","72","Lawn Lots","St. Jude","ELISA MERCADO",NULL);
+INSERT INTO records VALUES("1365","73","Lawn Lots","St. Jude","ALEXANDER CREUS",NULL);
+INSERT INTO records VALUES("1366","74","Lawn Lots","St. Jude","ALEXANDER CREUS",NULL);
+INSERT INTO records VALUES("1367","75","Lawn Lots","St. Jude","ALEXANDER CREUS",NULL);
+INSERT INTO records VALUES("1368","76","Lawn Lots","St. Jude","BENJAMIN HERNANDEZ",NULL);
+INSERT INTO records VALUES("1369","77","Lawn Lots","St. Jude","ELINO MANALO",NULL);
+INSERT INTO records VALUES("1370","78","Lawn Lots","St. Jude","ENGRACIO GARCIA",NULL);
+INSERT INTO records VALUES("1371","79","Lawn Lots","St. Jude","DEMETRIO MENDOZA",NULL);
+INSERT INTO records VALUES("1372","80","Lawn Lots","St. Jude","DEMETRIO MENDOZA",NULL);
+INSERT INTO records VALUES("1373","81","Lawn Lots","St. Jude","SABAS PAYABAN\r\nRUBY ANNA PAYABAN",NULL);
+INSERT INTO records VALUES("1374","82","Lawn Lots","St. Jude","JULIET P. AMBION",NULL);
+INSERT INTO records VALUES("1375","83","Lawn Lots","St. Jude","CHRISTIAN YIA",NULL);
+INSERT INTO records VALUES("1376","84","Lawn Lots","St. Jude","REYNALDO GERONIMO\r\nJULIANA GERONIMO",NULL);
+INSERT INTO records VALUES("1377","85","Lawn Lots","St. Jude","RAMONSITO CANTON",NULL);
+INSERT INTO records VALUES("1378","86","Lawn Lots","St. Jude","LOLIZA MEDINA",NULL);
+INSERT INTO records VALUES("1379","87","Lawn Lots","St. Jude","ADDALANI HAND HURPA",NULL);
+INSERT INTO records VALUES("1380","88","Lawn Lots","St. Jude","KARREN MANLUPIG",NULL);
+INSERT INTO records VALUES("1381","89","Lawn Lots","St. Jude","ELVIRA R. GUEVERRA",NULL);
+INSERT INTO records VALUES("1382","90","Lawn Lots","St. Jude","ESTELITA C. MARABUENO\r\nMARIA R. CARAAN",NULL);
+INSERT INTO records VALUES("1383","91","Lawn Lots","St. Jude","SIXTO DELA PEñA\r\nJANIETA PEDRAZA",NULL);
+INSERT INTO records VALUES("1384","92","Lawn Lots","St. Jude","SIXTO DELA PEñA\r\nJANIETA PEDRAZA",NULL);
+INSERT INTO records VALUES("1385","93","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1386","94","Lawn Lots","St. Jude","MARCELA HERNANDEZ \r\nREYNALDO HERNANDEZ",NULL);
+INSERT INTO records VALUES("1387","95","Lawn Lots","St. Jude","MARCELA HERNANDEZ \r\nREYNALDO HERNANDEZ",NULL);
+INSERT INTO records VALUES("1388","96","Lawn Lots","St. Jude","MARCELA HERNANDEZ \r\nREYNALDO HERNANDEZ",NULL);
+INSERT INTO records VALUES("1389","97","Lawn Lots","St. Jude","ROMEO DE LEON\r\nRUFINA DE LEON",NULL);
+INSERT INTO records VALUES("1390","98","Lawn Lots","St. Jude","ROMEO DE LEON\r\nRUFINA DE LEON",NULL);
+INSERT INTO records VALUES("1391","99","Lawn Lots","St. Jude","CEFERINA MENDOZA",NULL);
+INSERT INTO records VALUES("1392","100","Lawn Lots","St. Jude","NORBERTO ASUNCION",NULL);
+INSERT INTO records VALUES("1393","101","Lawn Lots","St. Jude","PURITA ALMENDRAS",NULL);
+INSERT INTO records VALUES("1394","102","Lawn Lots","St. Jude","PRECILLA OLIVA",NULL);
+INSERT INTO records VALUES("1395","103","Lawn Lots","St. Jude","SOLTOBRAN G. BUENAOBRA",NULL);
+INSERT INTO records VALUES("1396","104","Lawn Lots","St. Jude","DOMINGO TIBAYAN\r\nROWENA T. GEMEROSQ",NULL);
+INSERT INTO records VALUES("1397","105","Lawn Lots","St. Jude","EMMA A. BENDO\r\nERINE BENDO",NULL);
+INSERT INTO records VALUES("1398","106","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1399","107","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1400","108","Lawn Lots","St. Jude","MELANIO ANCHETA\r\nMELLER ANCHETA",NULL);
+INSERT INTO records VALUES("1401","109","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1402","110","Lawn Lots","St. Jude","DEMETRIO BAYBAY",NULL);
+INSERT INTO records VALUES("1403","111","Lawn Lots","St. Jude","DEMETRIO BAYBAY",NULL);
+INSERT INTO records VALUES("1404","112","Lawn Lots","St. Jude","FRANCISCO SEPINO\r\nBRIGIDA SEPINO",NULL);
+INSERT INTO records VALUES("1405","113","Lawn Lots","St. Jude","FRANCISCO SEPINO\r\nBRIGIDA SEPINO",NULL);
+INSERT INTO records VALUES("1406","114","Lawn Lots","St. Jude","FRANCISCO SEPINO\r\nBRIGIDA SEPINO",NULL);
+INSERT INTO records VALUES("1407","115","Lawn Lots","St. Jude","BRIGIDO M. SEPINO",NULL);
+INSERT INTO records VALUES("1408","116","Lawn Lots","St. Jude","MARIKO UETAKE",NULL);
+INSERT INTO records VALUES("1409","117","Lawn Lots","St. Jude","MARIKO UETAKE",NULL);
+INSERT INTO records VALUES("1410","118","Lawn Lots","St. Jude","FLOREN A. MELIBO",NULL);
+INSERT INTO records VALUES("1411","119","Lawn Lots","St. Jude","LIBRADO ANGCAYA",NULL);
+INSERT INTO records VALUES("1412","120","Lawn Lots","St. Jude","JENNIFER ANGCAYA",NULL);
+INSERT INTO records VALUES("1413","121","Lawn Lots","St. Jude","JENNIFER ANGCAYA",NULL);
+INSERT INTO records VALUES("1414","122","Lawn Lots","St. Jude","CONSORCIA CASTILLO",NULL);
+INSERT INTO records VALUES("1415","123","Lawn Lots","St. Jude","CONSORCIA CASTILLO",NULL);
+INSERT INTO records VALUES("1416","124","Lawn Lots","St. Jude","RICARDO VIBAR",NULL);
+INSERT INTO records VALUES("1417","125","Lawn Lots","St. Jude","PERFECTO ROMULO",NULL);
+INSERT INTO records VALUES("1418","126","Lawn Lots","St. Jude","EFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1419","127","Lawn Lots","St. Jude","EFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1420","128","Lawn Lots","St. Jude","EFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1421","157","Lawn Lots","St. Jude","EFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1422","158","Lawn Lots","St. Jude","EFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1423","159","Lawn Lots","St. Jude","EFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1424","129","Lawn Lots","St. Jude","SERGIO MARCEVA\r\nLIDDYLOU MARCEVA",NULL);
+INSERT INTO records VALUES("1425","130","Lawn Lots","St. Jude","E. MENDOZA",NULL);
+INSERT INTO records VALUES("1426","131","Lawn Lots","St. Jude","E. MENDOZA",NULL);
+INSERT INTO records VALUES("1427","132","Lawn Lots","St. Jude","R. ANALUZ",NULL);
+INSERT INTO records VALUES("1428","133","Lawn Lots","St. Jude","R. ANALUZ",NULL);
+INSERT INTO records VALUES("1429","134","Lawn Lots","St. Jude","MELENCIO DE OCAMPO",NULL);
+INSERT INTO records VALUES("1430","135","Lawn Lots","St. Jude","FLORENTINO M. PALO",NULL);
+INSERT INTO records VALUES("1431","136","Lawn Lots","St. Jude","FLORENTINO M. PALO",NULL);
+INSERT INTO records VALUES("1432","137","Lawn Lots","St. Jude","FLORENTINO M. PALO",NULL);
+INSERT INTO records VALUES("1433","138","Lawn Lots","St. Jude","FLORENTINO M. PALO",NULL);
+INSERT INTO records VALUES("1434","139","Lawn Lots","St. Jude","AILEEN M. DE MESA",NULL);
+INSERT INTO records VALUES("1435","140","Lawn Lots","St. Jude","BELLA ESPIGAR MENDOZA",NULL);
+INSERT INTO records VALUES("1436","141","Lawn Lots","St. Jude","RENE BAURILE",NULL);
+INSERT INTO records VALUES("1437","142","Lawn Lots","St. Jude","RENE BAURILE",NULL);
+INSERT INTO records VALUES("1438","143","Lawn Lots","St. Jude","LOLITA BAYBAY",NULL);
+INSERT INTO records VALUES("1439","144","Lawn Lots","St. Jude","ZENAIDA BALAORO",NULL);
+INSERT INTO records VALUES("1440","145","Lawn Lots","St. Jude","ZENAIDA BALAORO",NULL);
+INSERT INTO records VALUES("1441","146","Lawn Lots","St. Jude","LEONILA B. MANDRIQUE\r\nLOLITA ",NULL);
+INSERT INTO records VALUES("1442","147","Lawn Lots","St. Jude","LORENZO ABOYME \r\nVERONICA D. ABOYME",NULL);
+INSERT INTO records VALUES("1443","148","Lawn Lots","St. Jude","MERCIDITA ALVAREZ",NULL);
+INSERT INTO records VALUES("1444","149","Lawn Lots","St. Jude","NESTOR OMADTO\r\nGILBERT OMADTO",NULL);
+INSERT INTO records VALUES("1445","150","Lawn Lots","St. Jude","NOVA SANGGALANG\r\nARIEL SANGGALANG",NULL);
+INSERT INTO records VALUES("1446","151","Lawn Lots","St. Jude","MARLON SANGALANG\r\nJACKILINE P.PERIDO ",NULL);
+INSERT INTO records VALUES("1447","152","Lawn Lots","St. Jude","MARLON SANGALANG",NULL);
+INSERT INTO records VALUES("1448","153","Lawn Lots","St. Jude","DANIEL ANGCAYA",NULL);
+INSERT INTO records VALUES("1449","154","Lawn Lots","St. Jude","MARIANO A. ANGCAYA\r\nMANOLITA M. ANGCAYA",NULL);
+INSERT INTO records VALUES("1450","155","Lawn Lots","St. Jude","NICANOR AMBULO.\r\nABDON AMBULO",NULL);
+INSERT INTO records VALUES("1451","156","Lawn Lots","St. Jude","JUSTINIANO RODIL\r\nTEODORO RODIL",NULL);
+INSERT INTO records VALUES("1452","160","Lawn Lots","St. Jude","ERFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1453","162","Lawn Lots","St. Jude","ERFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1454","163","Lawn Lots","St. Jude","LUCIO A. ANGCAYA",NULL);
+INSERT INTO records VALUES("1455","164","Lawn Lots","St. Jude","R. ANALUS",NULL);
+INSERT INTO records VALUES("1456","165","Lawn Lots","St. Jude","ANGELITA MIRANDA",NULL);
+INSERT INTO records VALUES("1457","166","Lawn Lots","St. Jude","ANGELITA MIRANDA",NULL);
+INSERT INTO records VALUES("1458","167","Lawn Lots","St. Jude","ANGELITA MIRANDA",NULL);
+INSERT INTO records VALUES("1459","168","Lawn Lots","St. Jude","ANGELITA MIRANDA",NULL);
+INSERT INTO records VALUES("1460","169","Lawn Lots","St. Jude","FIDEL MENDOZA",NULL);
+INSERT INTO records VALUES("1461","170","Lawn Lots","St. Jude","FIDEL MENDOZA",NULL);
+INSERT INTO records VALUES("1462","171","Lawn Lots","St. Jude","FIDEL MENDOZA",NULL);
+INSERT INTO records VALUES("1463","172","Lawn Lots","St. Jude","SHIRLY ENCILA",NULL);
+INSERT INTO records VALUES("1464","173","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1465","174","Lawn Lots","St. Jude",NULL,NULL);
+INSERT INTO records VALUES("1466","175","Lawn Lots","St. Jude","CRISANTO VILLANUEVA",NULL);
+INSERT INTO records VALUES("1467","176","Lawn Lots","St. Jude","CRISANTO VILLANUEVA",NULL);
+INSERT INTO records VALUES("1468","177","Lawn Lots","St. Jude","ANDY PO LAGUERTA",NULL);
+INSERT INTO records VALUES("1469","178","Lawn Lots","St. Jude","CONSOLACION TUQUERO\r\nNORMA TUQUERO",NULL);
+INSERT INTO records VALUES("1470","179","Lawn Lots","St. Jude","MALLARI, EVELYN",NULL);
+INSERT INTO records VALUES("1471","180","Lawn Lots","St. Jude","ANIANO BAYOT",NULL);
+INSERT INTO records VALUES("1472","181","Lawn Lots","St. Jude","SUSAN GONZALEZ",NULL);
+INSERT INTO records VALUES("1473","182","Lawn Lots","St. Jude","SUSAN GONZALEZ",NULL);
+INSERT INTO records VALUES("1474","183","Lawn Lots","St. Jude","VICTORIA CRISOSTOMO\r\nAPRIANO CRISOSTOMO",NULL);
+INSERT INTO records VALUES("1475","184","Lawn Lots","St. Jude","BENIGNO C. BAYOT",NULL);
+INSERT INTO records VALUES("1476","185","Lawn Lots","St. Jude","PEDRO BAYOT ",NULL);
+INSERT INTO records VALUES("1477","186","Lawn Lots","St. Jude","LEAH B. BAYOT\r\nPEDRO BAYOT",NULL);
+INSERT INTO records VALUES("1478","12",NULL,"St. Lukes","BOYET ZAIDE",NULL);
+INSERT INTO records VALUES("1479","52","lawn lots","St. Paul","DORING T. GONZALES","");
+INSERT INTO records VALUES("1480","14","Lawn Lots","St. Peter","ZENAIDA MEDINA",NULL);
+INSERT INTO records VALUES("1481","161","Lawn Lots","St. Jude","ERFREN MENDOZA",NULL);
+INSERT INTO records VALUES("1517","1","None","Apartment1","Cecilia Carre","");
+INSERT INTO records VALUES("1518","2","None","Apartment1","Virginia Dabalus","");
+INSERT INTO records VALUES("1519","3","None","Apartment1","Jean Rose B. Jimenez","");
+INSERT INTO records VALUES("1520","4","None","Apartment1","Marc Leonard Nerizon","");
+INSERT INTO records VALUES("1521","5","None","Apartment1","Jerome De Vera","");
+INSERT INTO records VALUES("1522","6","None","Apartment1","Napoleon Franchie Besa + Marissa Franchie Besa","Purok 197, Ba");
+INSERT INTO records VALUES("1523","7","None","Apartment1","Jan Lester A. Arca/Fernando A. Burazon","");
+INSERT INTO records VALUES("1524","8","None","Apartment1","Dra Florence V. Rodriguez DMD c/o Mayor Agnes Tolentino","");
+INSERT INTO records VALUES("1525","9","None","Apartment1","Virgie B. Decilos","");
+INSERT INTO records VALUES("1526","10","None","Apartment1","Jose Rodriguez","");
+INSERT INTO records VALUES("1527","11","None","Apartment1","Marilou P. Anchefa","");
+INSERT INTO records VALUES("1528","12","None","Apartment1","Edwin P. Burgos","");
+INSERT INTO records VALUES("1529","13","None","Apartment1","Crispin N. Mercado","");
+INSERT INTO records VALUES("1530","14","None","Apartment1","Femerlyn P. Paner","");
+INSERT INTO records VALUES("1531","15","None","Apartment1","Shirley B. Ramirez","");
+INSERT INTO records VALUES("1532","16","None","Apartment1","Benito Mercado c/o Elena M.","");
+INSERT INTO records VALUES("1533","17","None","Apartment1","Rowena L. Daclan","");
+INSERT INTO records VALUES("1534","18","None","Apartment1","Lerma Makiling Deza","");
+INSERT INTO records VALUES("1535","19","None","Apartment1","Virginia A. Magnaye","");
+INSERT INTO records VALUES("1536","20","None","Apartment1","Samson Briones","");
+INSERT INTO records VALUES("1537","21","None","Apartment1","Annie M. Dirla","");
+INSERT INTO records VALUES("1538","22","None","Apartment1","Melchor L. Casaquite c/o Ofelia C. Paradas","");
+INSERT INTO records VALUES("1539","23","Family Estate","Apartment1","Alfredo Laurio Hila/ Ilyn Laurio Hila","");
+INSERT INTO records VALUES("1540","24","None","Apartment1","Levina Matulac c/o Kap Jojit Desengano","");
+INSERT INTO records VALUES("1541","25","None","Apartment1","Ma. Luz Reymundo","");
+INSERT INTO records VALUES("1542","26","None","Apartment1","Eduardo C. Natanuan","");
+INSERT INTO records VALUES("1543","27","None","Apartment1","Juanita Angcaya","");
+INSERT INTO records VALUES("1544","28","Family Estate","Apartment1","Maribel Concepcion","");
+INSERT INTO records VALUES("1545","29","None","Apartment1","Paulino T. Arcebuche","");
+INSERT INTO records VALUES("1546","30","None","Apartment1","Analy Mendoza","");
+INSERT INTO records VALUES("1547","31","None","Apartment1","Willermina Habon Golez","San Jose Taga");
+INSERT INTO records VALUES("1548","32","None","Apartment1","Marcelo Lacatan c/o Jerome Lacatan","Calabuso");
+INSERT INTO records VALUES("1550","33","None","Apartment1","Gloria A. Lacbayen / Rowena De Leon","");
+INSERT INTO records VALUES("1551","34","None","Apartment1","Rowena Generoso","");
+INSERT INTO records VALUES("1552","35","None","Apartment1","Ernesto Palagala","");
+INSERT INTO records VALUES("1553","36","None","Apartment1","Virginia Payad / Pepito Payad Jr.","");
+INSERT INTO records VALUES("1554","37","None","Apartment1","Mercedes Terrible Fajardo","");
+INSERT INTO records VALUES("1555","38","None","Apartment1","Diosdado D. Villanueva","Sta. Monica, ");
+INSERT INTO records VALUES("1556","39","None","Apartment1","Harold Evangelista","");
+INSERT INTO records VALUES("1557","40","None","Apartment1","Rodrigo Cinco / Lilian C. Arcullo","Kaybagal Nort");
+INSERT INTO records VALUES("1558","41","None","Apartment1","Richard Sta. Mina Bedua c/o Ronalyn","");
+INSERT INTO records VALUES("1559","42","None","Apartment1","Aileen Oyardo/Ildefonso","");
+INSERT INTO records VALUES("1560","43","None","Apartment1","Edgar Rosena","");
+INSERT INTO records VALUES("1561","44","None","Apartment1","Aida Paune","");
+INSERT INTO records VALUES("1562","45","None","Apartment1","Lilia Hills","");
+INSERT INTO records VALUES("1563","46","None","Apartment1","Renato M. Umali","");
+INSERT INTO records VALUES("1564","47","None","Apartment1","Silverio Gomid Jr.","");
+INSERT INTO records VALUES("1565","48","None","Apartment1","Erlinda C. Alarca","Pulong Talahi");
+INSERT INTO records VALUES("1566","49","None","Apartment1","Josephine A. Gajun","");
+INSERT INTO records VALUES("1567","50","None","Apartment1","Maricel Rodriguez","");
+INSERT INTO records VALUES("1568","51","None","Apartment1","Aurea T. Mercado","");
+INSERT INTO records VALUES("1569","52","None","Apartment1","Daylin M. Cuizon","");
+INSERT INTO records VALUES("1570","53","None","Apartment1","Jeric Sangalang","");
+INSERT INTO records VALUES("1571","54","None","Apartment1","Lorenzo Maraos","");
+INSERT INTO records VALUES("1572","55","None","Apartment1","Analiza Cacao","");
+INSERT INTO records VALUES("1573","56","None","Apartment1","Jepte Jr B. Dela Cruz","");
+INSERT INTO records VALUES("1574","57","None","Apartment1","Analito Dualino","");
+INSERT INTO records VALUES("1575","58","None","Apartment1","Sotera Garcia","");
+INSERT INTO records VALUES("1576","59","None","Apartment1","Michelle Betito","");
+INSERT INTO records VALUES("1577","60","None","Apartment1","Juanito Reyes","");
+INSERT INTO records VALUES("1578","61","None","Apartment1","Maria Teresa U. Garao","");
+INSERT INTO records VALUES("1579","62","None","Apartment1","Joan / Dominador Marquez","");
+INSERT INTO records VALUES("1580","63","None","Apartment1","Joshua Frederick Celis","");
+INSERT INTO records VALUES("1581","64","None","Apartment1","Raziloy Sumailla / Ponciano Casaiag","");
+INSERT INTO records VALUES("1582","65","None","Apartment1","Lionel Felones / Nilo Felones","");
+INSERT INTO records VALUES("1583","66","None","Apartment1","Jomari Rodriguez","");
+INSERT INTO records VALUES("1584","67","None","Apartment1","Emerenciana E. Quinalayo / Teresa E. Quinalayo","");
+INSERT INTO records VALUES("1585","68","None","Apartment1","Lovely Marinduque Dictaan","");
+INSERT INTO records VALUES("1586","69","None","Apartment1","Florencia M. Recto c/o Ma. Ana M. Recto","");
+INSERT INTO records VALUES("1587","70","None","Apartment1","Clarita Marquez","");
+INSERT INTO records VALUES("1588","71","None","Apartment1","Crisostomo A. Ambion","");
+INSERT INTO records VALUES("1589","72","None","Apartment1","Rachel M. Murillo","");
+INSERT INTO records VALUES("1590","73","None","Apartment1","Dennis R. Detito","");
+INSERT INTO records VALUES("1591","78","None","Apartment1","Ruth Andrin / Emiliana Estrada","");
+INSERT INTO records VALUES("1592","79","None","Apartment1","Erasto Peile Agundo","Saint Michael");
+INSERT INTO records VALUES("1593","80","None","Apartment1","Dulce Solis","Iruhin West");
+INSERT INTO records VALUES("1594","81","None","Apartment1","Rostato G. Guanezo","Sungay Tagayt");
+INSERT INTO records VALUES("1595","82","None","Apartment1","Oscar Badajos / Marilou Mabansag","");
+INSERT INTO records VALUES("1596","83","None","Apartment1","Mariano B. Olivares / Marlyn Olivares","");
+INSERT INTO records VALUES("1597","84","None","Apartment1","Lucila Digo Umali / Acela Recana","");
+INSERT INTO records VALUES("1598","85","None","Apartment1","Ma. Vidla C. Angcaya / Edmundo Bueza","");
+INSERT INTO records VALUES("1599","86","None","Apartment1","Donato Celis / Epifania Garcia A. Celis","");
+INSERT INTO records VALUES("1600","87","None","Apartment1","Nelda Guanezo / Rostayo Cuanezo","");
+INSERT INTO records VALUES("1601","88","None","Apartment1","Michael Angustia Centeno","");
+INSERT INTO records VALUES("1602","89","None","Apartment1","Shirley M. Mataho m/","");
+INSERT INTO records VALUES("1603","90","None","Apartment1","Adrian Pollansa","");
+INSERT INTO records VALUES("1604","91","None","Apartment1","Jesusa Moreno","");
+INSERT INTO records VALUES("1605","92","None","Apartment1","Engracia Delara","");
+INSERT INTO records VALUES("1606","93","None","Apartment1","Marilou Galvez","");
+INSERT INTO records VALUES("1607","94","None","Apartment1","Ana Erondo c/o Kap Celso Magsino","Patuto Malaki");
+INSERT INTO records VALUES("1608","95","None","Apartment1","c/o Monico M. Natividad","");
+INSERT INTO records VALUES("1609","96","None","Apartment1","Daughters of St. Dominic","");
+INSERT INTO records VALUES("1610","97","None","Apartment1","Ernesto Santos Enage / Van Joseph E. Casalme","");
+INSERT INTO records VALUES("1611","98","None","Apartment1","Quintin Fajardo / Juanito Fajardo","Calabuso Taga");
+INSERT INTO records VALUES("1612","99","None","Apartment1","Vedasto Duena","Maharlika Tag");
+INSERT INTO records VALUES("1613","100","None","Apartment1","Renato D. Mercado / Lilita V. Sampiano c/o Ate Jo Ferma","");
+
 
 CREATE TABLE `staff` (
-  `id` int(11) NOT NULL,
+  `id` int(11) NOT NULL AUTO_INCREMENT,
   `fullname` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `username` varchar(100) NOT NULL,
   `password` varchar(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL,
   `accountStatus` varchar(100) NOT NULL,
   `security_question` varchar(255) DEFAULT NULL,
-  `security_answer` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+  `security_answer` varchar(255) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
---
--- Dumping data for table `staff`
---
-
-INSERT INTO `staff` (`id`, `fullname`, `username`, `password`, `accountStatus`, `security_question`, `security_answer`) VALUES
-(60, 'Michael D. Enoza', 'Enoza1121', '$2y$10$MTBYfpkAyFcJPUtlTaAbne.1k.J9rcxiYq6wjenaveuPgM3Y7eyF.', 'Active', 'In what city were you born?', '$2y$10$NQy4VgCd7bH3FAQYICgetOV4kbYY./uePz85BAjrc7dTzYpO7SMf.'),
-(61, 'John D. Enoza', 'John1121', '$2y$10$DsZ5TrTpbPqEFFNVE6Q/h.dFBmU6RDGbfazfmEdJjeDzQJu2bSW4m', 'Active', 'What was the name of your first pet?', '$2y$10$3CVAoy0NyHD7iq7Eh3E./O5i6n3wN3KBxxNz1lQWtJ3RarnilwI5.');
-
---
--- Indexes for dumped tables
---
-
---
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `records`
---
-ALTER TABLE `records`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `record_logs`
---
-ALTER TABLE `record_logs`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `staff`
---
-ALTER TABLE `staff`
-  ADD PRIMARY KEY (`id`);
-
---
--- AUTO_INCREMENT for dumped tables
---
-
---
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
-
---
--- AUTO_INCREMENT for table `records`
---
-ALTER TABLE `records`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=1516;
-
---
--- AUTO_INCREMENT for table `record_logs`
---
-ALTER TABLE `record_logs`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=41;
-
---
--- AUTO_INCREMENT for table `staff`
---
-ALTER TABLE `staff`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=62;
-COMMIT;
-
-/*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
-/*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
-/*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
+INSERT INTO staff VALUES("60","Michael D. Enoza","Enoza1121","$2y$10$MTBYfpkAyFcJPUtlTaAbne.1k.J9rcxiYq6wjenaveuPgM3Y7eyF.","Active","In what city were you born?","$2y$10$NQy4VgCd7bH3FAQYICgetOV4kbYY./uePz85BAjrc7dTzYpO7SMf.");
+INSERT INTO staff VALUES("61","John D. Enoza","John1121","$2y$10$DsZ5TrTpbPqEFFNVE6Q/h.dFBmU6RDGbfazfmEdJjeDzQJu2bSW4m","Active","What was the name of your first pet?","$2y$10$3CVAoy0NyHD7iq7Eh3E./O5i6n3wN3KBxxNz1lQWtJ3RarnilwI5.");
+INSERT INTO staff VALUES("62","Kyle Cyrus Ambat","Kyle1121","$2y$10$YQot3uCJZ7gSj28FA1NI1OTJ45VQUMw.l8jUNOj8Y3cu/app32kE.","Active","What was the name of your first pet?","$2y$10$tdLXHQBp9qVwrUX3viChjusYFXkf3hsfk4ysv2EHV3NNbPpcOKWEC");
+INSERT INTO staff VALUES("63","Malcolm Yabia","Yabia1121","$2y$10$G.Ms5Ov./bRL0bVtVICJhOgy9Tn/J6ZJVOgFQNPY.uQeMhmw.qdgS","Inactive","In what city were you born?","$2y$10$k4Nd2RhY7CC0tc0Wik..q.iX4WP9qjMqSlzb1nhlnRrV0kn7UqCSW");

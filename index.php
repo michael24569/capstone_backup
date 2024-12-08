@@ -316,7 +316,7 @@ require("loginCondition.php");
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
     left: 21%;
-    bottom:57px;
+    bottom:40px;
   }
 
   

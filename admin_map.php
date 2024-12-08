@@ -7138,7 +7138,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (sectionDiv) {
                     sectionDiv.addEventListener('mouseenter', (e) => {
                         tooltip.style.display = 'block';
-                        tooltip.textContent = `Available Lots: ${totalUnmatched}`;
+                        tooltip.textContent = `Available Lots/Slots: ${totalUnmatched}`;
 
                         const updateTooltipPosition = (event) => {
                             tooltip.style.left = `${event.pageX + 10}px`;
