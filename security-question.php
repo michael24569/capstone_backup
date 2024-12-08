@@ -52,26 +52,25 @@ $securityQuestion = $_SESSION['forgot_password_user']['security_question'];
 <html>
 <head>
     <title>Security Question</title>
+    <link rel="stylesheet" href="security.css">
 </head>
 <body>
-    <h2>Security Question</h2>
     <?php if ($securityQuestionError): ?>
-        <p style="color: red;"><?php echo htmlspecialchars($securityQuestionError); ?></p>
+        <p class="error"><?php echo htmlspecialchars($securityQuestionError); ?></p>
     <?php endif; ?>
-    
-    <p>Security Question: <?php echo htmlspecialchars($securityQuestion); ?></p>
-    
+
     <form method="post" action="">
+        <h1>Security Question</h1>
+        <p>Security Question: <?php echo htmlspecialchars($securityQuestion); ?></p>
         <label for="security_answer">Your Answer:</label>
         <input type="text" id="security_answer" name="security_answer" required autocomplete="off">
         <input type="submit" name="verify_answer" value="Verify">
+        <p><a href="forgot-password.php"> ← Back</a></p>
     </form>
-    
-    <p><a href="forgot-password.php">Back</a></p>
     <script>
-    document.getElementById('security_answer').addEventListener('input', function(e) {
-    this.value = this.value.replace(/\s/g, ''); // Remove spaces
-});
+        document.getElementById('security_answer').addEventListener('input', function(e) {
+            this.value = this.value.replace(/\s/g, '');
+        });
     </script>
 </body>
 </html>
