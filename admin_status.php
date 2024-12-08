@@ -137,7 +137,99 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="script.js"></script>
 
     <script>
-// Function to update status
+// Global variable to track if a notification is currently shown
+let activeNotification = null;
+
+// Function to show custom notification
+function showNotification(message) {
+    // If there's already an active notification, remove it
+    if (activeNotification) {
+        activeNotification.remove();
+    }
+
+    // Inject styles dynamically if not already present
+    if (!document.getElementById('notification-styles')) {
+        const style = document.createElement('style');
+        style.id = 'notification-styles';
+        style.textContent = `
+            .notification-popup {
+                font-size: 25px;
+                align-items: center;
+                position: fixed;
+                top: 40%;
+                right: 40%;
+                background: white;
+                color: #333;
+                border: 1px solid black;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+                opacity: 0;
+                z-index: 100000;           
+                animation: shake 0.3s ease-out;
+                transition: opacity 0.3s ease-in-out;
+            }
+
+            @keyframes shake {
+                0% { transform: translateX(0); }
+                25% { transform: translateX(-20px); }
+                50% { transform: translateX(20px); }
+                75% { transform: translateX(-20px); }
+                100% { transform: translateX(0); }
+            }
+
+            .notification-popup p {
+                text-align: center;
+                font-size: 15px;
+            }
+
+            .notification-popup.visible {
+                opacity: 1;
+            }
+           
+            .warning-icon {
+                align-items: center;
+                margin-left: 36%;
+                fill: red;
+                font-size: 50px;
+            }
+        `;
+        document.head.appendChild(style);
+    }
+
+    // Create notification element
+    const notification = document.createElement('div');
+    notification.className = 'notification-popup';
+    notification.innerHTML = `
+        <span class="warning-icon">⚠️</span>
+        <div>${message}</div>
+        <p>maximum 3 accounts</p>
+    `;
+
+    // Store reference to current notification
+    activeNotification = notification;
+    document.body.appendChild(notification);
+
+    // Animate notification
+    requestAnimationFrame(() => {
+        notification.classList.add('visible');
+    });
+
+    // Remove notification after delay
+    setTimeout(() => {
+        notification.classList.remove('visible');
+        setTimeout(() => {
+            if (notification.parentNode) {
+                notification.remove();
+            }
+            if (activeNotification === notification) {
+                activeNotification = null;
+            }
+        }, 300);
+    }, 2200);
+}
+
+// Update the updateStatus function to use the new notification system
 function updateStatus(id, currentStatus) {
     const newStatus = currentStatus === 'Active' ? 'Inactive' : 'Active';
 
@@ -189,89 +281,6 @@ function updateStatus(id, currentStatus) {
     .catch(error => showNotification(`Error: ${error.message}`));
 }
 
-// Function to show custom notification
-function showNotification(message) {
-    // Inject styles dynamically
-    const style = document.createElement('style');
-    style.textContent = `
-        .notification-popup {
-            font-size: 25px;
-            align-items: center;
-            position: fixed;
-            top: 40%;
-            right: 40%;
-            background: white;
-            color: #333;
-            border: 1px solid black;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-            opacity: 0;
-            z-index: 100000;           
-              animation: shake 0.3s ease-out; /* Apply the shake animation */
-}
-
-@keyframes shake {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-20px);
-  }
-  50% {
-    transform: translateX(20px);
-  }
-  75% {
-    transform: translateX(-20px);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-             .notification-popup p{
-            text-align:center;
-            font-size:15px;
-
-            }
-        .notification-popup.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-       
-        .warning-icon{
-        align-items: center;
-        margin-left:36%;
-        fill:red;
-        font-size: 50px;
-        }
-    `;
-    document.head.appendChild(style);
-    
-
-    // Create notification element
-    const notification = document.createElement('div');
-    notification.className = 'notification-popup';
-    notification.innerHTML = `
-        <span class="warning-icon">⚠️</span>
-        <div>${message}</div>
-        <p>maximum 3 accounts</p>
-        
-    `;
-
-    document.body.appendChild(notification);
-
-    // Animate notification
-    setTimeout(() => {
-        notification.classList.add('visible');
-    }, 10);
-
-    // Automatically remove after 5 seconds
-    setTimeout(() => {
-        notification.classList.remove('visible');
-        setTimeout(() => notification.remove(), 100);
-    }, 2200);
-}
-
 // Anti-zoom functionality
 document.addEventListener('wheel', function(e) {
     if (e.ctrlKey) {
@@ -284,7 +293,6 @@ document.addEventListener('keydown', function(e) {
         e.preventDefault();
     }
 });
-
 </script>
 <style>
     @font-face {
