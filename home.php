@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkStaffAccess();
+checkAdminAccess();
 
 ?>
 <!DOCTYPE html>
@@ -7012,7 +7012,6 @@ sideB3Button.addEventListener('click', function(event) {
 
 
 });
-
 
 
 //Javascript condition for the div
