@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkAdminAccess();
+checkStaffAccess();
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ checkAdminAccess();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home for Administrator</title>
+    <title>Home for Staff</title>
     <script type="text/javascript">
    window.history.forward();
 </script>
@@ -4951,7 +4951,7 @@ checkAdminAccess();
        
     </div>
     
-    <?php include 'admin_sidebar.php'; ?>
+    <?php include 'staff_sidebar.php'; ?>
     
      <div class="LotOverview" id="overview">
         <div class="Content">
