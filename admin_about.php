@@ -193,11 +193,11 @@ checkAdminAccess();
         <div class="team-container">
             <div class="team-member">
                 <img src="aboutimg/kyle.png" alt="Team Member 1">
-                <div class="name">Kyle Cyrus Ambat <br><span>Developer<br>BSIT 4-1 </span></div>
+                <div class="name">Kyle Cyrus Ambat <br><span>Front-End Developer<br>BSIT 4-1 </span></div>
             </div>
             <div class="team-member">
                 <img src="aboutimg/michael.png" alt="Team Member 2">
-                <div class="name">Michael Enoza <br><span>Developer <br>BSIT 4-1</span></div>
+                <div class="name">Michael Enoza <br><span>Back-End Developer <br>BSIT 4-1</span></div>
             </div>
             <div class="team-member">
                 <img src="aboutimg/david.png" alt="Team Member 3">
