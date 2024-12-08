@@ -4951,7 +4951,7 @@ checkStaffAccess();
        
     </div>
     
-    <?php include 'staff_sidebar.php'; ?>
+    <?php include 'admin_sidebar.php'; ?>
     
      <div class="LotOverview" id="overview">
         <div class="Content">
@@ -7012,10 +7012,7 @@ sideB3Button.addEventListener('click', function(event) {
 
 
 });
-//columbarium Side A or B
-document.addEventListener('DOMContentLoaded', function() {
-   
-});
+
 
 
 //Javascript condition for the div

@@ -7012,10 +7012,6 @@ sideB3Button.addEventListener('click', function(event) {
 
 
 });
-//columbarium Side A or B
-document.addEventListener('DOMContentLoaded', function() {
-   
-});
 
 
 //Javascript condition for the div
