@@ -193,19 +193,19 @@ checkAdminAccess();
         <div class="team-container">
             <div class="team-member">
                 <img src="aboutimg/kyle.png" alt="Team Member 1">
-                <div class="name">Kyle Cyrus Ambat <br><span>Front-End Developer<br>BSIT 4-1 </span></div>
+                <div class="name">Kyle Cyrus Ambat <br><span>Sub Programmer<br>BSIT 4-1 </span></div>
             </div>
             <div class="team-member">
                 <img src="aboutimg/michael.png" alt="Team Member 2">
-                <div class="name">Michael Enoza <br><span>Back-End Developer <br>BSIT 4-1</span></div>
+                <div class="name">Michael Enoza <br><span>Main Programmer<br>BSIT 4-1</span></div>
             </div>
             <div class="team-member">
                 <img src="aboutimg/david.png" alt="Team Member 3">
-                <div class="name">John David Pasion <br><span>Documentation <br>BSIT 4-1</span></div>
+                <div class="name">John David Pasion <br><span>Documentation<br>BSIT 4-1</span></div>
             </div>
             <div class="team-member">
                 <img src="aboutimg/malcom.png" alt="Team Member 4">
-                <div class="name">Malcolm Yabia <br><span>Documentation <br>BSIT 4-1</span></div>
+                <div class="name">Malcolm Yabia <br><span>Documentation<br>BSIT 4-1</span></div>
             </div>
         </div>
     </div>
