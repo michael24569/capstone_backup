@@ -53,52 +53,55 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     $name = $row["LO_name"];
     $address = $row["mem_address"];
 } else {
-    $id = $_POST["id"];
-    $lot = $_POST["Lot_No"];
-    $mem_lots = $_POST["mem_lots"];
-    $mem_sts = $_POST["mem_sts"];
-    $name = $_POST["LO_name"];
-    $address = $_POST["mem_address"];
+    // Sanitize the input
+$id = $_POST["id"];
+$lot = ltrim($_POST["Lot_No"], '0'); // Remove leading zeros
+$mem_lots = $_POST["mem_lots"];
+$mem_sts = $_POST["mem_sts"];
+$name = $_POST["LO_name"];
+$address = $_POST["mem_address"];
 
-    do {
-        if (empty($lot) || empty($mem_lots) || empty($mem_sts) || empty($name)) {
-            $errorMessage = "All fields are required";
-            break;
-        }
+do {
+    if (empty($lot) || empty($mem_lots) || empty($mem_sts) || empty($name)) {
+        $errorMessage = "All fields are required";
+        break;
+    }
 
-        // Check for duplicates
-        $checkSql = "SELECT * FROM records WHERE Lot_No = ? AND mem_sts = ? AND id != ?";
-        $checkStmt = $conn->prepare($checkSql);
-        $checkStmt->bind_param("sss", $lot, $mem_sts, $id);
-        $checkStmt->execute();
-        $checkResult = $checkStmt->get_result();
+    // Check for duplicates
+    $checkSql = "SELECT * FROM records WHERE Lot_No = ? AND mem_sts = ? AND id != ?";
+    $checkStmt = $conn->prepare($checkSql);
+    $checkStmt->bind_param("sss", $lot, $mem_sts, $id);
+    $checkStmt->execute();
+    $checkResult = $checkStmt->get_result();
 
-        if ($checkResult->num_rows > 0) {
-            $errorMessage = "The lot has already been sold.";
-            break;
-        }
+    if ($checkResult->num_rows > 0) {
+        $errorMessage = "The lot has already been sold.";
+        break;
+    }
 
-        // Update the record
-        $sql = "UPDATE records SET Lot_No = ?, mem_lots = ?, mem_sts = ?, LO_name = ?, mem_address = ? WHERE id = ?";
-        $stmt = $conn->prepare($sql);
-        $stmt->bind_param("ssssss", $lot, $mem_lots, $mem_sts, $name, $address, $id);
-        $result = $stmt->execute();
+    // Update the record
+    $sql = "UPDATE records SET Lot_No = ?, mem_lots = ?, mem_sts = ?, LO_name = ?, mem_address = ? WHERE id = ?";
+    $stmt = $conn->prepare($sql);
+    $stmt->bind_param("ssssss", $lot, $mem_lots, $mem_sts, $name, $address, $id);
+    $result = $stmt->execute();
 
-        if (!$result) {
-            $errorMessage = "Invalid query: " . $conn->error;
-            break;
-        }
+    if (!$result) {
+        $errorMessage = "Invalid query: " . $conn->error;
+        break;
+    }
 
-        $fullname = $_SESSION['fullname'];
-        $userRole = $_SESSION['role'];
-        $action = "updated";
-        $logSql = "INSERT INTO record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
-        $logStmt = $conn->prepare($logSql);
-        $logStmt->bind_param("sssss", $userRole, $fullname, $lot, $mem_sts, $action);
-        $logStmt->execute();
+    // Log the update action
+    $fullname = $_SESSION['fullname'];
+    $userRole = $_SESSION['role'];
+    $action = "updated";
+    $logSql = "INSERT INTO record_logs (role, fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
+    $logStmt = $conn->prepare($logSql);
+    $logStmt->bind_param("sssss", $userRole, $fullname, $lot, $mem_sts, $action);
+    $logStmt->execute();
 
-        $successMessage = "Record updated successfully";
-    } while (false);
+    $successMessage = "Record updated successfully";
+} while (false);
+
 }
 ?>
 <!DOCTYPE html>
@@ -106,11 +109,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edit Clients Information</title>
+    <title>Update Records</title>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js" ></script>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
     <style>
-        * {
+         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
@@ -123,15 +126,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         body {
            font-family: 'MyFont';
             height: 100vh;
-            background-color: #005434;
+            background-color: #071c14;
             justify-content: center;
             align-items: center;
             display: flex;
+
         }
         .container {
             background: #f4f4f4;
-            width: 850px;
-            padding: 1.5rem;
+            width: 700px;
+            padding:1rem;
             margin: 10px auto;
             border-radius: 10px;
             box-shadow: 0 20px 35px rgba(0, 0, 1, 0.9);
@@ -148,6 +152,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
 <body>
     <div class="container my-5">
         <h2>Edit Clients Information</h2>
+        <br>
         <?php
         displayMessage($errorMessage, 'error');
         displayMessage($successMessage, 'success');
@@ -171,6 +176,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
                 <label class="col-sm-3 col-form-label">Memorial Lots</label>
                 <div class="col-sm-6">
                     <select class="form-control" name="mem_lots">
+                    <option value="None" <?php if ($mem_lots == "None") echo "selected"; ?>>None</option>
                         <option value="Family Estate" <?php if ($mem_lots == "Family Estate") echo "selected"; ?>>Family Estate</option>
                         <option value="Garden Lots" <?php if ($mem_lots == "Garden Lots") echo "selected"; ?>>Garden Lots</option>
                         <option value="Lawn Lots" <?php if ($mem_lots == "Lawn Lots") echo "selected"; ?>>Lawn Lots</option>
@@ -245,14 +251,36 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
         });
 
 
-        //validate the number for the lotno
         function validateNumber(input) {
-    let value = parseInt(input.value, 10);
-
-    if (isNaN(value) || value < 0) {
-        input.value = 0;
+    // Remove leading zeros and convert to number
+    let value = input.value.replace(/^0+/, '');
+    
+    // If the input was all zeros, keep a single zero
+    if (value === '') {
+        value = '0';
+    }
+    
+    // Convert to integer
+    let numValue = parseInt(value, 10);
+    
+    // Validate the number
+    if (isNaN(numValue) || numValue < 0) {
+        input.value = '0';
+    } else {
+        // Update the input value with the cleaned number
+        input.value = numValue.toString();
     }
 }
+
+// Add an input event listener to handle the validation as the user types
+document.addEventListener('DOMContentLoaded', function() {
+    const lotNoInput = document.querySelector('input[name="Lot_No"]');
+    if (lotNoInput) {
+        lotNoInput.addEventListener('input', function(e) {
+            validateNumber(this);
+        });
+    }
+});
     </script>
 </body>
 </html>

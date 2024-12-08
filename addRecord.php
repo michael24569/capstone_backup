@@ -29,7 +29,9 @@ function displayMessage($message, $type) {
         ";
     }
 }
-
+function normalizeLotNumber($lot) {
+    return intval($lot); 
+}
 $lot = "";
 $mem_lots = "";
 $mem_sts = "";
@@ -40,7 +42,9 @@ $errorMessage = "";
 $successMessage = "";
 
 function recordExists($connection, $lot, $mem_sts) {
-    // Check for duplicate Lot_No within a specific mem_sts
+
+    $normalizedLot = normalizeLotNumber($lot);
+
     $sqlLotCheck = "SELECT * FROM records WHERE Lot_No = ? AND mem_sts = ?";
     $stmtLotCheck = $connection->prepare($sqlLotCheck);
     $stmtLotCheck->bind_param("ss", $lot, $mem_sts);
@@ -64,13 +68,14 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($lot) || empty($mem_lots) || empty($mem_sts) || empty($name)) {
         $errorMessage = "All fields are required";
     } else {
+        $normalizedLot = normalizeLotNumber($lot);
         $duplicateCheck = recordExists($connection, $lot, $mem_sts);
         if ($duplicateCheck) {
             $errorMessage = $duplicateCheck;
         } else {
             $sql = "INSERT INTO records (Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
             $stmt = $connection->prepare($sql);
-            $stmt->bind_param("sssss", $lot, $mem_lots, $mem_sts, $name, $address);
+            $stmt->bind_param("sssss", $normalizedLot, $mem_lots, $mem_sts, $name, $address);
 
             if (!$stmt->execute()) {
                 $errorMessage = "Invalid query: " . $connection->error;
@@ -80,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $action = "created";
                 $logSql = "INSERT INTO record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
                 $logStmt = $connection->prepare($logSql);
-                $logStmt->bind_param("sssss",$userRole, $fullname, $lot, $mem_sts, $action);
+                $logStmt->bind_param("sssss",$userRole, $fullname, $normalizedLot, $mem_sts, $action);
                 $logStmt->execute();
                 
                 $lot = "";
