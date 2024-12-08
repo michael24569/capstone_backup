@@ -62,27 +62,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
 <html>
 <head>
     <title>Reset Password</title>
+    <link rel="stylesheet" href="reset.css">
 </head>
 <body>
-    <h2>Reset Password</h2>
-    <?php if ($passwordError): ?>
-        <p style="color: red;"><?php echo $passwordError; ?></p>
-    <?php endif; ?>
     
+
     <form method="post" action="">
+    <?php if ($passwordError): ?>
+        <p class="error"><?php echo htmlspecialchars($passwordError); ?></p>
+    <?php endif; ?>
+        <h1>Reset Password</h1>
         <label for="new_password">New Password:</label>
         <input type="password" id="new_password" name="new_password" required>
         
         <label for="confirm_password">Confirm New Password:</label>
         <input type="password" id="confirm_password" name="confirm_password" required>
         
+        <br>
         <input type="submit" name="reset_password" value="Reset Password">
+        <p><a href="forgot-password.php">← Back</a></p>
     </form>
-    
-    <p><a href="forgot-password.php">Back</a></p>
 
     <script>
-    const inputIds = ['new_password', 'confirm_password'];
+        const inputIds = ['new_password', 'confirm_password'];
         inputIds.forEach(id => {
             const input = document.getElementById(id);
             input.addEventListener('input', function() {

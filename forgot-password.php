@@ -54,21 +54,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
 
 <!DOCTYPE html>
 <html>
+    <link rel="stylesheet"href="forgotpass.css">
 <head>
     <title>Forgot Password</title>
 </head>
 <body>
-    <h2>Forgot Password</h2>
-    <?php if ($error): ?>
+<?php if ($error): ?>
         <p style="color: red;"><?php echo $error; ?></p>
     <?php endif; ?>
-    
+
     <form method="post" action="">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required autocomplete="off">
+        <br>
+        <h1>Forgot Password</h1>
+        <br>
+        
+        <input type="text" id="username" name="username" required autocomplete="off" placeholder="Username">
         <input type="submit" name="check_username" value="Next">
+        <p><a href="index.php"> ← Back to Login</a></p>
     </form>
-    
-    <p><a href="index.php">Back to Login</a></p>
 </body>
 </html>
