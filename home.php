@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkAdminAccess();
+checkStaffAccess();
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ checkAdminAccess();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home for Administrator</title>
+    <title>Home for Staff</title>
     <script type="text/javascript">
    window.history.forward();
 </script>
@@ -4951,7 +4951,7 @@ checkAdminAccess();
        
     </div>
     
-    <?php include 'admin_sidebar.php'; ?>
+    <?php include 'staff_sidebar.php'; ?>
     
      <div class="LotOverview" id="overview">
         <div class="Content">
@@ -7014,210 +7014,148 @@ sideB3Button.addEventListener('click', function(event) {
 });
 
 
-//Javascript condition for the div
-// Constants and configurations
-const CONFIG = {
-    COLORS: {
-        OCCUPIED: 'blue',
-        AVAILABLE: 'green'
-    },
-    ENDPOINTS: {
-        FETCH_RECORDS: 'fetch_all_records.php',
-        DISPLAY_RESULTS: 'admin_display_results.php'
-    },
-    SECTION_MAPPING: {
-        'Paul': ['grid-itempaul'],
-        'Mark': ['grid-itemmark'],
-        'Joseph': ['grid-itemjoseph'],
-        'Peter': ['grid-itempeter'],
-        'Rafael': ['grid-itemRAF'],
-        'Jude': ['grid-itemjude'],
-        'Agustine': ['grid-itemagustine'],
-        'Isidore': ['grid-itemisidore'],
-        'John': ['grid-itemjohn'],
-        'Matthew': ['grid-itemmatthew'],
-        'Luke': ['grid-itemluke'],
-        'Dominic': ['grid-itemdominic'],
-        'James': ['grid-itemjames'],
-        'Michael': ['grid-itempm'],
-        'Apart3': ['grid-itemA3', 'grid-itemB3'],
-        'Apart2': ['grid-itemA2', 'grid-itemB2'],
-        'Apart1': ['grid-itemA', 'grid-itemB'],
-        'Colum2': [
-            'grid-itemC2S1A', 'grid-itemC2S1B', 'grid-itemC2S2A', 'grid-itemC2S2B',
-            'grid-itemC2blk3A', 'grid-itemC2blk3B', 'grid-itemC2blk4A', 'grid-itemC2blk4B',
-            'grid-itemC2S12A', 'grid-itemC2S12B', 'grid-itemC2S22A', 'grid-itemC2S22B',
-            'grid-itemblk3AC2', 'grid-itemblk3BC2', 'grid-itemblk4AC2', 'grid-itemblk4BC2'
-        ],
-        'Colum1': [
-            'grid-itemC1S11A', 'grid-itemC1S11B', 'grid-itemC1S22A', 'grid-itemC1S22B',
-            'grid-itemC1BLK3A', 'grid-itemC1BLK3B', 'grid-itemC1BLK4A', 'grid-itemC1BLK4B',
-            'grid-itemC1blk3A2nd', 'grid-itemC1blk3B2nd', 'grid-itemC1blk4A2nd', 'grid-itemC1blk4B2nd',
-            'grid-itemC1S1A', 'grid-itemC1S1B', 'grid-itemC1SA', 'grid-itemC1SB'
-        ]
-    }
-};
+// JavaScript condition for the div
+document.addEventListener('DOMContentLoaded', () => {
+    fetch('fetch_all_records.php')
+        .then(response => response.json())
+        .then(records => {
+            console.log("Fetched records:", records);
 
-class TooltipManager {
-    constructor() {
-        this.tooltip = this.createTooltip();
-    }
-
-    createTooltip() {
-        const tooltip = document.createElement('div');
-        tooltip.style.cssText = `
-            position: absolute;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            padding: 5px 10px;
-            border-radius: 4px;
-            font-size: 14px;
-            pointer-events: none;
-            display: none;
-            z-index: 1000;
-        `;
-        document.body.appendChild(tooltip);
-        return tooltip;
-    }
-
-    show(text, x, y) {
-        this.tooltip.textContent = text;
-        this.tooltip.style.display = 'block';
-        this.updatePosition(x, y);
-    }
-
-    hide() {
-        this.tooltip.style.display = 'none';
-    }
-
-    updatePosition(x, y) {
-        this.tooltip.style.left = `${x + 10}px`;
-        this.tooltip.style.top = `${y + 10}px`;
-    }
-}
-
-class LotManager {
-    constructor() {
-        this.tooltipManager = new TooltipManager();
-        this.recordMap = new Map();
-    }
-
-    async initialize() {
-        try {
-            const records = await this.fetchRecords();
-            this.createRecordMap(records);
-            this.processSections();
-        } catch (error) {
-            console.error('Error initializing LotManager:', error);
-        }
-    }
-
-    async fetchRecords() {
-        const response = await fetch(CONFIG.ENDPOINTS.FETCH_RECORDS);
-        return await response.json();
-    }
-
-    createRecordMap(records) {
-        records.forEach(record => {
-            const key = `${record.Lot_No.trim()}_${record.mem_sts.trim()}`;
-            this.recordMap.set(key, true);
-        });
-    }
-
-    processSections() {
-        Object.entries(CONFIG.SECTION_MAPPING).forEach(([sectionId, gridClasses]) => {
-            const totalUnmatched = this.processGridClasses(gridClasses);
-            this.setupSectionHoverEffects(sectionId, totalUnmatched);
-        });
-    }
-
-    processGridClasses(gridClasses) {
-        let totalUnmatched = 0;
-        
-        gridClasses.forEach(gridClass => {
-            document.querySelectorAll(`.${gridClass}`).forEach(item => {
-                const isAvailable = this.processGridItem(item);
-                if (isAvailable) totalUnmatched++;
+            // Create a map for faster lookups
+            const recordMap = new Map();
+            records.forEach(record => {
+                const key = `${record.Lot_No.trim()}_${record.mem_sts.trim()}`;
+                recordMap.set(key, true);
             });
-        });
 
-        return totalUnmatched;
-    }
-
-    processGridItem(item) {
-        const lotNo = item.getAttribute('data-lotno')?.trim();
-        const memSts = item.getAttribute('data-memsts')?.trim();
-
-        if (lotNo && memSts) {
-            const key = `${lotNo}_${memSts}`;
-            const recordExists = this.recordMap.has(key);
-            
-            item.style.backgroundColor = recordExists ? 
-                CONFIG.COLORS.OCCUPIED : 
-                CONFIG.COLORS.AVAILABLE;
-
-            this.setupGridItemClickHandler(item);
-            return !recordExists;
-        } else {
-            item.style.backgroundColor = CONFIG.COLORS.AVAILABLE;
-            return true;
-        }
-    }
-
-    setupGridItemClickHandler(item) {
-        item.addEventListener('click', event => {
-            const lotNoClick = event.target.getAttribute('data-lotno');
-            const memStsClick = event.target.getAttribute('data-memsts');
-            const memLotClick = event.target.getAttribute('data-memlot');
-            // Handle click event as needed
-        });
-    }
-
-    setupSectionHoverEffects(sectionId, totalUnmatched) {
-        const sectionDiv = document.getElementById(sectionId);
-        if (!sectionDiv) return;
-
-        sectionDiv.style.cursor = 'pointer';
-
-        sectionDiv.addEventListener('mouseenter', (e) => {
-            this.tooltipManager.show(`Available Lots: ${totalUnmatched}`, e.pageX, e.pageY);
-            
-            const moveHandler = (event) => {
-                this.tooltipManager.updatePosition(event.pageX, event.pageY);
+            // Map section IDs to their corresponding grid-item classes
+            const sectionMapping = {
+                'Paul': ['grid-itempaul'],
+                'Mark': ['grid-itemmark'],
+                'Joseph': ['grid-itemjoseph'],
+                'Peter': ['grid-itempeter'],
+                'Rafael': ['grid-itemRAF'],
+                'Jude': ['grid-itemjude'],
+                'Agustine': ['grid-itemagustine'],
+                'Isidore': ['grid-itemisidore'],
+                'John': ['grid-itemjohn'],
+                'Matthew': ['grid-itemmatthew'],
+                'Luke': ['grid-itemluke'],
+                'Dominic': ['grid-itemdominic'],
+                'James': ['grid-itemjames'],
+                'Michael': ['grid-itempm'],
+                'Apart3': ['grid-itemA3', 'grid-itemB3'],
+                'Apart2': ['grid-itemA2', 'grid-itemB2'],
+                'Apart1': ['grid-itemA', 'grid-itemB'],
+                'Colum2': [
+                    'grid-itemC2S1A', 'grid-itemC2S1B', 'grid-itemC2S2A', 'grid-itemC2S2B',
+                    'grid-itemC2blk3A', 'grid-itemC2blk3B', 'grid-itemC2blk4A', 'grid-itemC2blk4B',
+                    'grid-itemC2S12A', 'grid-itemC2S12B', 'grid-itemC2S22A', 'grid-itemC2S22B',
+                    'grid-itemblk3AC2', 'grid-itemblk3BC2', 'grid-itemblk4AC2', 'grid-itemblk4BC2'
+                ],
+                'Colum1': [
+                    'grid-itemC1S11A', 'grid-itemC1S11B', 'grid-itemC1S22A', 'grid-itemC1S22B',
+                    'grid-itemC1BLK3A', 'grid-itemC1BLK3B', 'grid-itemC1BLK4A', 'grid-itemC1BLK4B',
+                    'grid-itemC1blk3A2nd', 'grid-itemC1blk3B2nd', 'grid-itemC1blk4A2nd', 'grid-itemC1blk4B2nd',
+                    'grid-itemC1S1A', 'grid-itemC1S1B', 'grid-itemC1SA', 'grid-itemC1SB'
+                ]
             };
-            
-            sectionDiv.addEventListener('mousemove', moveHandler);
-            sectionDiv.addEventListener('mouseleave', () => {
-                this.tooltipManager.hide();
-                sectionDiv.removeEventListener('mousemove', moveHandler);
-            });
-        });
-    }
 
-    async sendResultsToServer(results) {
-        try {
-            const response = await fetch(CONFIG.ENDPOINTS.DISPLAY_RESULTS, {
+            // Create tooltip element
+            const tooltip = document.createElement('div');
+            tooltip.style.cssText = `
+                position: absolute;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                font-size: 14px;
+                pointer-events: none;
+                display: none;
+                z-index: 1000;
+            `;
+            document.body.appendChild(tooltip);
+
+            // Process each section
+            Object.entries(sectionMapping).forEach(([sectionId, gridClasses]) => {
+                let totalUnmatched = 0;
+
+                // Process each grid class for the section
+                gridClasses.forEach(gridClass => {
+                    document.querySelectorAll(`.${gridClass}`).forEach(item => {
+                        const lotNo = item.getAttribute('data-lotno')?.trim();
+                        const memSts = item.getAttribute('data-memsts')?.trim();
+
+                        if (lotNo && memSts) {
+                            const key = `${lotNo}_${memSts}`;
+                            const recordExists = recordMap.has(key);
+
+                            if (recordExists) {
+                                item.style.backgroundColor = 'blue';
+                            } else {
+                                item.style.backgroundColor = 'green';
+                                totalUnmatched++;
+                            }
+
+                            item.addEventListener('click', event => {
+                                console.log('Clicked item:', {
+                                    lotNo: event.target.getAttribute('data-lotno'),
+                                    memSts: event.target.getAttribute('data-memsts'),
+                                    memLot: event.target.getAttribute('data-memlot')
+                                });
+                            });
+                        } else {
+                            item.style.backgroundColor = 'green';
+                            totalUnmatched++;
+                        }
+                    });
+                });
+
+                const sectionDiv = document.getElementById(sectionId);
+                if (sectionDiv) {
+                    sectionDiv.addEventListener('mouseenter', (e) => {
+                        tooltip.style.display = 'block';
+                        tooltip.textContent = `Available Lots: ${totalUnmatched}`;
+
+                        const updateTooltipPosition = (event) => {
+                            tooltip.style.left = `${event.pageX + 10}px`;
+                            tooltip.style.top = `${event.pageY + 10}px`;
+                        };
+
+                        updateTooltipPosition(e);
+                        sectionDiv.addEventListener('mousemove', updateTooltipPosition);
+                    });
+
+                    sectionDiv.addEventListener('mouseleave', () => {
+                        tooltip.style.display = 'none';
+                        sectionDiv.onmousemove = null;
+                    });
+
+                    sectionDiv.style.cursor = 'pointer';
+                }
+            });
+
+            const results = {}; // Assuming results should be declared for collecting data
+            console.log("Results:", results);
+
+            // Send data to PHP
+            fetch('admin_display_results.php', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(results)
-            });
-            
-            const data = await response.text();
-            console.log("Results received from PHP:", data);
-            document.getElementById('results').innerHTML = data;
-        } catch (error) {
-            console.error('Error sending data to PHP:', error);
-        }
-    }
-}
-
-// Initialize the application when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    const lotManager = new LotManager();
-    lotManager.initialize();
+                body: JSON.stringify(results),
+            })
+                .then(response => response.text())
+                .then(data => {
+                    console.log("Results received from PHP:", data);
+                    document.getElementById('results').innerHTML = data;
+                })
+                .catch(error => console.error('Error sending data to PHP:', error));
+        })
+        .catch(error => console.error('Error fetching records:', error));
 });
+
 // Create the popup div
 const popup = document.createElement('div');
 popup.id = 'noRecordPopup';
