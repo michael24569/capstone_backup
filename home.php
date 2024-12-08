@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkStaffccess();
+checkStaffAccess();
 
 ?>
 <!DOCTYPE html>
@@ -7025,84 +7025,121 @@ document.addEventListener('DOMContentLoaded', () => {
         .then(records => {
             console.log("Fetched records:", records);
 
-            // Step 1: Create a map for faster lookups
+            // Create a map for faster lookups
             const recordMap = new Map();
             records.forEach(record => {
                 const key = `${record.Lot_No.trim()}_${record.mem_sts.trim()}`;
                 recordMap.set(key, true);
             });
 
-            const classes = ['grid-itemA3', 'grid-itemB3', 'grid-itemA2', 'grid-itemB2', 'grid-itemA', 'grid-itemB',
-                'grid-itemC2S1A', 'grid-itemC2S1B', 'grid-itemC2S2A', 'grid-itemC2S2B', 'grid-itemC2S12A', 'grid-itemC2S12B',
-                'grid-itemC2S22A', 'grid-itemC2S22B', 'grid-itemC1S1A', 'grid-itemC1S1B', 'grid-itemC1SA', 'grid-itemC1SB',
-                'grid-itemRAF', 'grid-itempeter', 'grid-itempaul', 'grid-itemjude', 'grid-itemjohn', 'grid-itemjoseph',
-                'grid-itemjames', 'grid-itemmatthew', 'grid-itemagustine', 'grid-itemdominic', 'grid-itemmark', 'grid-itemluke',
-                'grid-itemisidore', 'grid-itemC2blk3A', 'grid-itemC2blk3B', 'grid-itemC2blk4A', 'grid-itemC2blk4B', 'grid-itemblk3AC2',
-                'grid-itemblk3BC2', 'grid-itemblk4AC2', 'grid-itemblk4BC2', 'grid-itemC1S11A', 'grid-itemC1S11B',
-                'grid-itemC1S22A', 'grid-itemC1S22B', 'grid-itemC1BLK3A', 'grid-itemC1BLK3B', 'grid-itemC1BLK4A',
-                'grid-itemC1BLK4B', 'grid-itemC1blk3A2nd', 'grid-itemC1blk3B2nd', 'grid-itemC1blk4A2nd', 'grid-itemC1blk4B2nd', 'grid-itempm'];
-            const results = {};
+            // Map section IDs to their corresponding grid-item classes
+            // Use arrays for sections with multiple grid classes
+            const sectionMapping = {
+                'Paul': ['grid-itempaul'],
+                'Mark': ['grid-itemmark'],
+                'Joseph': ['grid-itemjoseph'],
+                'Peter': ['grid-itempeter'],
+                'Rafael': ['grid-itemRAF'],
+                'Jude': ['grid-itemjude'],
+                'Agustine': ['grid-itemagustine'],
+                'Isidore': ['grid-itemisidore'],
+                'John': ['grid-itemjohn'],
+                'Matthew': ['grid-itemmatthew'],
+                'Luke': ['grid-itemluke'],
+                'Dominic': ['grid-itemdominic'],
+                'James': ['grid-itemjames'],
+                'Michael': ['grid-itempm'],
+                'Apart3': ['grid-itemA3', 'grid-itemB3'],
+                'Apart2': ['grid-itemA2', 'grid-itemB2'],
+                'Apart1': ['grid-itemA', 'grid-itemB'],
+                'Colum2': ['grid-itemC2S1A', 'grid-itemC2S1B','grid-itemC2S2A', 'grid-itemC2S2B', 'grid-itemC2blk3A', 'grid-itemC2blk3B', 'grid-itemC2blk4A', 'grid-itemC2blk4B',
+                    'grid-itemC2S12A', 'grid-itemC2S12B', 'grid-itemC2S22A', 'grid-itemC2S22B', 'grid-itemblk3AC2', 'grid-itemblk3BC2', 'grid-itemblk4AC2', 'grid-itemblk4BC2'
+                ],
+                'Colum1': ['grid-itemC1S11A', 'grid-itemC1S11B', 'grid-itemC1S22A', 'grid-itemC1S22B', 'grid-itemC1BLK3A', 'grid-itemC1BLK3B', 'grid-itemC1BLK4A', 'grid-itemC1BLK4B',
+                    'grid-itemC1blk3A2nd', 'grid-itemC1blk3B2nd', 'grid-itemC1blk4A2nd', 'grid-itemC1blk4B2nd', 'grid-itemC1S1A', 'grid-itemC1S1B', 'grid-itemC1SA', 'grid-itemC1SB',
+                ]
+                
+            };
 
-            // Step 2: Loop through classes and perform batch processing
-            classes.forEach(cls => {
-                let matched = 0;
-                let unmatched = 0;
+            // Create tooltip element
+            const tooltip = document.createElement('div');
+            tooltip.style.cssText = `
+                position: absolute;
+                background: rgba(0, 0, 0, 0.8);
+                color: white;
+                padding: 5px 10px;
+                border-radius: 4px;
+                font-size: 14px;
+                pointer-events: none;
+                display: none;
+                z-index: 1000;
+            `;
+            document.body.appendChild(tooltip);
 
-                document.querySelectorAll(`.${cls}`).forEach(item => {
-                    const lotNo = item.getAttribute('data-lotno') ? item.getAttribute('data-lotno').trim() : null;
-                    const memSts = item.getAttribute('data-memsts') ? item.getAttribute('data-memsts').trim() : null;
+            // Process each section
+            Object.entries(sectionMapping).forEach(([sectionId, gridClasses]) => {
+                let totalUnmatched = 0;
+                
+                // Process each grid class for the section
+                gridClasses.forEach(gridClass => {
+                    // Count unmatched records for this grid class
+                    document.querySelectorAll(`.${gridClass}`).forEach(item => {
+                        const lotNo = item.getAttribute('data-lotno') ? item.getAttribute('data-lotno').trim() : null;
+                        const memSts = item.getAttribute('data-memsts') ? item.getAttribute('data-memsts').trim() : null;
 
-                    if (lotNo && memSts) {
-                        const key = `${lotNo}_${memSts}`;
-                        const recordExists = recordMap.has(key);
+                        if (lotNo && memSts) {
+                            const key = `${lotNo}_${memSts}`;
+                            const recordExists = recordMap.has(key);
 
-                        if (recordExists) {
-                            item.style.backgroundColor = 'blue'; // Match found
-                            matched++;
+                            if (recordExists) {
+                                item.style.backgroundColor = 'blue';
+                            } else {
+                                item.style.backgroundColor = 'green';
+                                totalUnmatched++;
+                            }
+
+                            item.addEventListener('click', event => {
+                                const lotNoClick = event.target.getAttribute('data-lotno');
+                                const memStsClick = event.target.getAttribute('data-memsts');
+                                const memLotClick = event.target.getAttribute('data-memlot');
+                            });
                         } else {
-                            item.style.backgroundColor = 'green';  // No match found
-                            unmatched++;
+                            item.style.backgroundColor = 'green';
+                            totalUnmatched++;
                         }
-
-                        // Click event handler
-                        item.addEventListener('click', event => {
-                            const lotNoClick = event.target.getAttribute('data-lotno');
-                            const memStsClick = event.target.getAttribute('data-memsts');
-                            const memLotClick = event.target.getAttribute('data-memlot');
-
-                            // Removed the function that redirects to view_record.php
-                        });
-                    } else {
-                        // If lotNo or memSts is missing
-                        item.style.backgroundColor = 'green';  // No match found
-                        unmatched++;
-                        console.error('Missing lotNo or memSts for item:', item);
-                    }
+                    });
                 });
 
-                results[cls] = { matched, unmatched };
+                // Add hover functionality to the section div
+                const sectionDiv = document.getElementById(sectionId);
+                if (sectionDiv) {
+                    sectionDiv.addEventListener('mouseenter', (e) => {
+                        tooltip.style.display = 'block';
+                        tooltip.textContent = `Available Lots: ${totalUnmatched}`;
+                        
+                        // Position tooltip near the cursor
+                        const updateTooltipPosition = (event) => {
+                            const rect = sectionDiv.getBoundingClientRect();
+                            tooltip.style.left = `${event.pageX + 10}px`;
+                            tooltip.style.top = `${event.pageY + 10}px`;
+                        };
+                        
+                        updateTooltipPosition(e);
+                        sectionDiv.addEventListener('mousemove', updateTooltipPosition);
+                    });
+
+                    sectionDiv.addEventListener('mouseleave', () => {
+                        tooltip.style.display = 'none';
+                        sectionDiv.removeEventListener('mousemove', null);
+                    });
+
+                    // Add a subtle indicator that this element is hoverable
+                    sectionDiv.style.cursor = 'pointer';
+                }
             });
-
-            console.log("Results:", results);
-
-            // Send data to PHP
-            fetch('admin_display_results.php', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(results),
-            })
-            .then(response => response.text())
-            .then(data => {
-                console.log("Results received from PHP:", data);
-                document.getElementById('results').innerHTML = data;
-            })
-            .catch(error => console.error('Error sending data to PHP:', error));
         })
         .catch(error => console.error('Error fetching records:', error));
 });
-
 // Create the popup div
 const popup = document.createElement('div');
 popup.id = 'noRecordPopup';
