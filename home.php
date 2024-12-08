@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkStaffAccess();
+checkAdminAccess();
 
 ?>
 <!DOCTYPE html>
@@ -10,7 +10,7 @@ checkStaffAccess();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home for Staff</title>
+    <title>Home for Administrator</title>
     <script type="text/javascript">
    window.history.forward();
 </script>
@@ -4951,7 +4951,7 @@ checkStaffAccess();
        
     </div>
     
-    <?php include 'staff_sidebar.php'; ?>
+    <?php include 'admin_sidebar.php'; ?>
     
      <div class="LotOverview" id="overview">
         <div class="Content">
@@ -7014,7 +7014,6 @@ sideB3Button.addEventListener('click', function(event) {
 });
 
 
-// JavaScript condition for the div
 document.addEventListener('DOMContentLoaded', () => {
     fetch('fetch_all_records.php')
         .then(response => response.json())
@@ -7026,6 +7025,22 @@ document.addEventListener('DOMContentLoaded', () => {
             records.forEach(record => {
                 const key = `${record.Lot_No.trim()}_${record.mem_sts.trim()}`;
                 recordMap.set(key, true);
+            });
+
+            const classes = ['grid-itemA3', 'grid-itemB3', 'grid-itemA2', 'grid-itemB2', 'grid-itemA', 'grid-itemB',
+                'grid-itemC2S1A', 'grid-itemC2S1B', 'grid-itemC2S2A', 'grid-itemC2S2B', 'grid-itemC2S12A', 'grid-itemC2S12B',
+                'grid-itemC2S22A', 'grid-itemC2S22B', 'grid-itemC1S1A', 'grid-itemC1S1B', 'grid-itemC1SA', 'grid-itemC1SB',
+                'grid-itemRAF', 'grid-itempeter', 'grid-itempaul', 'grid-itemjude', 'grid-itemjohn', 'grid-itemjoseph',
+                'grid-itemjames', 'grid-itemmatthew', 'grid-itemagustine', 'grid-itemdominic', 'grid-itemmark', 'grid-itemluke',
+                'grid-itemisidore', 'grid-itemC2blk3A', 'grid-itemC2blk3B', 'grid-itemC2blk4A', 'grid-itemC2blk4B', 'grid-itemblk3AC2',
+                'grid-itemblk3BC2', 'grid-itemblk4AC2', 'grid-itemblk4BC2', 'grid-itemC1S11A', 'grid-itemC1S11B',
+                'grid-itemC1S22A', 'grid-itemC1S22B', 'grid-itemC1BLK3A', 'grid-itemC1BLK3B', 'grid-itemC1BLK4A',
+                'grid-itemC1BLK4B', 'grid-itemC1blk3A2nd', 'grid-itemC1blk3B2nd', 'grid-itemC1blk4A2nd', 'grid-itemC1blk4B2nd', 'grid-itempm'];
+            
+            // Initialize results object with each class having matched and unmatched properties
+            const results = {};
+            classes.forEach(cls => {
+                results[cls] = { matched: 0, unmatched: 0 };
             });
 
             // Map section IDs to their corresponding grid-item classes
@@ -7073,12 +7088,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 pointer-events: none;
                 display: none;
                 z-index: 1000;
+                max-width: 300px;
+                word-wrap: break-word;
             `;
             document.body.appendChild(tooltip);
 
             // Process each section
             Object.entries(sectionMapping).forEach(([sectionId, gridClasses]) => {
                 let totalUnmatched = 0;
+                let totalLots = 0;
 
                 // Process each grid class for the section
                 gridClasses.forEach(gridClass => {
@@ -7086,14 +7104,18 @@ document.addEventListener('DOMContentLoaded', () => {
                         const lotNo = item.getAttribute('data-lotno')?.trim();
                         const memSts = item.getAttribute('data-memsts')?.trim();
 
+                        totalLots++;
+
                         if (lotNo && memSts) {
                             const key = `${lotNo}_${memSts}`;
                             const recordExists = recordMap.has(key);
 
                             if (recordExists) {
                                 item.style.backgroundColor = 'blue';
+                                results[gridClass].matched++;
                             } else {
                                 item.style.backgroundColor = 'green';
+                                results[gridClass].unmatched++;
                                 totalUnmatched++;
                             }
 
@@ -7106,6 +7128,7 @@ document.addEventListener('DOMContentLoaded', () => {
                             });
                         } else {
                             item.style.backgroundColor = 'green';
+                            results[gridClass].unmatched++;
                             totalUnmatched++;
                         }
                     });
@@ -7135,7 +7158,6 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             });
 
-            const results = {}; // Assuming results should be declared for collecting data
             console.log("Results:", results);
 
             // Send data to PHP
