@@ -813,7 +813,6 @@ z-index: 10;
 }
 .Dominic::after {
   font-size:13px;
-  content: "304 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -859,7 +858,6 @@ z-index: 10;
 }
 .Rafael::after {
   font-size:13px;
-  content: "58 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -906,7 +904,6 @@ z-index: 10;
 }
 .Peter::after {
   font-size:13px;
-  content: "71 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -951,7 +948,6 @@ z-index: 10;
 }
 .Paul::after {
   font-size:13px;
-  content: "71 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -997,7 +993,6 @@ z-index: 10;
 }
 .Jude::after {
   font-size:13px;
-  content: "180 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1044,7 +1039,6 @@ z-index: 10;
 }
 .John::after {
   font-size:13px;
-  content: "135 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1091,7 +1085,6 @@ z-index: 10;
 }
 .Joseph::after {
   font-size:13px;
-  content: "173 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1138,7 +1131,6 @@ z-index: 10;
 }
 .James::after {
   font-size:13px;
-  content: "273 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1185,7 +1177,6 @@ z-index: 10;
 }
 .Agustine::after {
   font-size:13px;
-  content: "149 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1231,7 +1222,6 @@ z-index: 10;
 }
 .Isidore::after {
   font-size:13px;
-  content: "19 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1278,7 +1268,6 @@ z-index: 10;
 }
 .Matthew::after {
   font-size:13px;
-  content: "8 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1325,7 +1314,6 @@ z-index: 10;
 }
 .Mark::after {
   font-size:13px;
-  content: "7 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1372,7 +1360,6 @@ z-index: 10;
 }
 .Luke::after {
   font-size:13px;
-  content: "11 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
@@ -1418,7 +1405,6 @@ z-index: 10;
 }
 .Michael::after {
   font-size:13px;
-  content: "12 lots"; /* Tooltip text here */
   visibility: hidden;
   opacity: 0;
   width: 65px;
