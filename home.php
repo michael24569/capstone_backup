@@ -2,7 +2,7 @@
 <?php
 session_start();
 require_once 'security_check.php';
-checkStaffAccess();
+checkStaffccess();
 
 ?>
 <!DOCTYPE html>
@@ -12,8 +12,8 @@ checkStaffAccess();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home for Staff</title>
     <script type="text/javascript">
-    window.history.forward();
-    </script>
+   window.history.forward();
+</script>
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="map.css">
     <link rel="stylesheet" href="LotInfo.css">
@@ -333,70 +333,70 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
 
                 <button id="AA3closePopup" class="AA3closebutton">&times;</button>
                 <div class="SAa3Grid" id="SAa3Grid">
-                    <div data-lotno="1" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">1</div>
-        <div data-lotno="2" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">2</div>
-        <div data-lotno="3" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">3</div>
-        <div data-lotno="4" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">4</div>
-        <div data-lotno="5" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">5</div>
-        <div data-lotno="6" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">6</div>
-        <div data-lotno="7" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">7</div>
-        <div data-lotno="8" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">8</div>
-        <div data-lotno="9" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">9</div>
-        <div data-lotno="10" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">10</div>
+        <div data-lotno="1" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">1</div>
+        <div data-lotno="2" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">2</div>
+        <div data-lotno="3" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">3</div>
+        <div data-lotno="4" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">4</div>
+        <div data-lotno="5" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">5</div>
+        <div data-lotno="6" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">6</div>
+        <div data-lotno="7" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">7</div>
+        <div data-lotno="8" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">8</div>
+        <div data-lotno="9" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">9</div>
+        <div data-lotno="10" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">10</div>
         
-        <div data-lotno="11" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">11</div>
-        <div data-lotno="12" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">12</div>
-        <div data-lotno="13" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">13</div>
-        <div data-lotno="14" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">14</div>
-        <div data-lotno="15" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">15</div>
-        <div data-lotno="16" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">16</div>
-        <div data-lotno="17" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">17</div>
-        <div data-lotno="18" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">18</div>
-        <div data-lotno="19" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">19</div>
-        <div data-lotno="20" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">20</div>
+        <div data-lotno="11" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">11</div>
+        <div data-lotno="12" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">12</div>
+        <div data-lotno="13" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">13</div>
+        <div data-lotno="14" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">14</div>
+        <div data-lotno="15" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">15</div>
+        <div data-lotno="16" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">16</div>
+        <div data-lotno="17" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">17</div>
+        <div data-lotno="18" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">18</div>
+        <div data-lotno="19" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">19</div>
+        <div data-lotno="20" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">20</div>
         
-        <div data-lotno="21" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">21</div>
-        <div data-lotno="22" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">22</div>
-        <div data-lotno="23" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">23</div>
-        <div data-lotno="24" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">24</div>
-        <div data-lotno="25" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">25</div>
-        <div data-lotno="26" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">26</div>
-        <div data-lotno="27" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">27</div>
-        <div data-lotno="28" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">28</div>
-        <div data-lotno="29" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">29</div>
-        <div data-lotno="30" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">30</div>
+        <div data-lotno="21" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">21</div>
+        <div data-lotno="22" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">22</div>
+        <div data-lotno="23" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">23</div>
+        <div data-lotno="24" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">24</div>
+        <div data-lotno="25" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">25</div>
+        <div data-lotno="26" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">26</div>
+        <div data-lotno="27" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">27</div>
+        <div data-lotno="28" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">28</div>
+        <div data-lotno="29" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">29</div>
+        <div data-lotno="30" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">30</div>
         
-        <div data-lotno="31" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">31</div>
-        <div data-lotno="32" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">32</div>
-        <div data-lotno="33" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">33</div>
-        <div data-lotno="34" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">34</div>
-        <div data-lotno="35" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">35</div>
-        <div data-lotno="36" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">36</div>
-        <div data-lotno="37" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">37</div>
-        <div data-lotno="38" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">38</div>
-        <div data-lotno="39" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">39</div>
-        <div data-lotno="40" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">40</div>
+        <div data-lotno="31" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">31</div>
+        <div data-lotno="32" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">32</div>
+        <div data-lotno="33" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">33</div>
+        <div data-lotno="34" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">34</div>
+        <div data-lotno="35" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">35</div>
+        <div data-lotno="36" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">36</div>
+        <div data-lotno="37" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">37</div>
+        <div data-lotno="38" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">38</div>
+        <div data-lotno="39" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">39</div>
+        <div data-lotno="40" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">40</div>
         
-        <div data-lotno="41" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">41</div>
-        <div data-lotno="42" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">42</div>
-        <div data-lotno="43" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">43</div>
-        <div data-lotno="44" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">44</div>
-        <div data-lotno="45" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">45</div>
-        <div data-lotno="46" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">46</div>
-        <div data-lotno="47" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">47</div>
-        <div data-lotno="48" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">48</div>
-        <div data-lotno="49" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">49</div>
-        <div data-lotno="50" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemA3">50</div>
+        <div data-lotno="41" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">41</div>
+        <div data-lotno="42" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">42</div>
+        <div data-lotno="43" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">43</div>
+        <div data-lotno="44" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">44</div>
+        <div data-lotno="45" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">45</div>
+        <div data-lotno="46" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">46</div>
+        <div data-lotno="47" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">47</div>
+        <div data-lotno="48" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">48</div>
+        <div data-lotno="49" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">49</div>
+        <div data-lotno="50" data-memsts="Apartment3" data-memlot="None" class="grid-itemA3">50</div>
         
                     
                     </div>
@@ -408,69 +408,69 @@ checkStaffAccess();
                     <div class="legends">Legend</div>
                     <div class="legendList">
                     <div class="legendU Available"></div>
-                    <span>Available lots</span>
+                    <span>Available slot</span>
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Owned lots</span>
+                  <span>Owned slot</span>
                 </div>
               </div>
                 
               <div   div class="SBa3Grid" id="SBa3Grid">
-                <div data-lotno="51" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">51</div>
-                <div data-lotno="52" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">52</div>
-                <div data-lotno="53" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">53</div>
-                <div data-lotno="54" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">54</div>
-                <div data-lotno="55" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">55</div>
-                <div data-lotno="56" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">56</div>
-                <div data-lotno="57" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">57</div>
-                <div data-lotno="58" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">58</div>
-                <div data-lotno="59" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">59</div>
-                <div data-lotno="60" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">60</div>
+                <div data-lotno="51" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">51</div>
+                <div data-lotno="52" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">52</div>
+                <div data-lotno="53" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">53</div>
+                <div data-lotno="54" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">54</div>
+                <div data-lotno="55" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">55</div>
+                <div data-lotno="56" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">56</div>
+                <div data-lotno="57" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">57</div>
+                <div data-lotno="58" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">58</div>
+                <div data-lotno="59" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">59</div>
+                <div data-lotno="60" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">60</div>
                 
-                <div data-lotno="61" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">61</div>
-                <div data-lotno="62" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">62</div>
-                <div data-lotno="63" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">63</div>
-                <div data-lotno="64" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">64</div>
-                <div data-lotno="65" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">65</div>
-                <div data-lotno="66" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">66</div>
-                <div data-lotno="67" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">67</div>
-                <div data-lotno="68" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">68</div>
-                <div data-lotno="69" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">69</div>
-                <div data-lotno="70" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">70</div>
+                <div data-lotno="61" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">61</div>
+                <div data-lotno="62" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">62</div>
+                <div data-lotno="63" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">63</div>
+                <div data-lotno="64" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">64</div>
+                <div data-lotno="65" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">65</div>
+                <div data-lotno="66" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">66</div>
+                <div data-lotno="67" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">67</div>
+                <div data-lotno="68" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">68</div>
+                <div data-lotno="69" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">69</div>
+                <div data-lotno="70" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">70</div>
                 
-                <div data-lotno="71" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">71</div>
-                <div data-lotno="72" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">72</div>
-                <div data-lotno="73" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">73</div>
-                <div data-lotno="74" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">74</div>
-                <div data-lotno="75" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">75</div>
-                <div data-lotno="76" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">76</div>
-                <div data-lotno="77" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">77</div>
-                <div data-lotno="78" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">78</div>
-                <div data-lotno="79" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">79</div>
-                <div data-lotno="80" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">80</div>
+                <div data-lotno="71" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">71</div>
+                <div data-lotno="72" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">72</div>
+                <div data-lotno="73" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">73</div>
+                <div data-lotno="74" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">74</div>
+                <div data-lotno="75" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">75</div>
+                <div data-lotno="76" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">76</div>
+                <div data-lotno="77" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">77</div>
+                <div data-lotno="78" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">78</div>
+                <div data-lotno="79" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">79</div>
+                <div data-lotno="80" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">80</div>
                 
-                <div data-lotno="81" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">81</div>
-                <div data-lotno="82" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">82</div>
-                <div data-lotno="83" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">83</div>
-                <div data-lotno="84" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">84</div>
-                <div data-lotno="85" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">85</div>
-                <div data-lotno="86" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">86</div>
-                <div data-lotno="87" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">87</div>
-                <div data-lotno="88" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">88</div>
-                <div data-lotno="89" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">89</div>
-                <div data-lotno="90" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">90</div>
+                <div data-lotno="81" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">81</div>
+                <div data-lotno="82" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">82</div>
+                <div data-lotno="83" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">83</div>
+                <div data-lotno="84" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">84</div>
+                <div data-lotno="85" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">85</div>
+                <div data-lotno="86" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">86</div>
+                <div data-lotno="87" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">87</div>
+                <div data-lotno="88" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">88</div>
+                <div data-lotno="89" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">89</div>
+                <div data-lotno="90" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">90</div>
                 
-                <div data-lotno="91" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">91</div>
-                <div data-lotno="92" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">92</div>
-                <div data-lotno="93" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">93</div>
-                <div data-lotno="94" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">94</div>
-                <div data-lotno="95" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">95</div>
-                <div data-lotno="96" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">96</div>
-                <div data-lotno="97" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">97</div>
-                <div data-lotno="98" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">98</div>
-                <div data-lotno="99" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">99</div>
-                <div data-lotno="100" data-memsts="Apartment3" data-memlot="Lawn Lots" class="grid-itemB3">100</div>
+                <div data-lotno="91" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">91</div>
+                <div data-lotno="92" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">92</div>
+                <div data-lotno="93" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">93</div>
+                <div data-lotno="94" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">94</div>
+                <div data-lotno="95" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">95</div>
+                <div data-lotno="96" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">96</div>
+                <div data-lotno="97" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">97</div>
+                <div data-lotno="98" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">98</div>
+                <div data-lotno="99" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">99</div>
+                <div data-lotno="100" data-memsts="Apartment3" data-memlot="None" class="grid-itemB3">100</div>
                             </div>
             </div>
             <div class="A3sideA tooltip" id="A3sideA" data-tooltip="Front"><br></tb>Side A</div>
@@ -484,70 +484,70 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
                
                       <button id="AA2closePopup" class="AA2closebutton">&times;</button>
                       <div class="SAa2GridA2" id="SAa2GridA2">
-                        <div data-lotno="1" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">1</div>
-            <div data-lotno="2" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">2</div>
-            <div data-lotno="3" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">3</div>
-            <div data-lotno="4" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">4</div>
-            <div data-lotno="5" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">5</div>
-            <div data-lotno="6" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">6</div>
-            <div data-lotno="7" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">7</div>
-            <div data-lotno="8" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">8</div>
-            <div data-lotno="9" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">9</div>
-            <div data-lotno="10" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">10</div>
+                        <div data-lotno="1" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">1</div>
+            <div data-lotno="2" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">2</div>
+            <div data-lotno="3" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">3</div>
+            <div data-lotno="4" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">4</div>
+            <div data-lotno="5" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">5</div>
+            <div data-lotno="6" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">6</div>
+            <div data-lotno="7" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">7</div>
+            <div data-lotno="8" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">8</div>
+            <div data-lotno="9" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">9</div>
+            <div data-lotno="10" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">10</div>
             
-            <div data-lotno="11" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">11</div>
-            <div data-lotno="12" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">12</div>
-            <div data-lotno="13" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">13</div>
-            <div data-lotno="14" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">14</div>
-            <div data-lotno="15" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">15</div>
-            <div data-lotno="16" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">16</div>
-            <div data-lotno="17" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">17</div>
-            <div data-lotno="18" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">18</div>
-            <div data-lotno="19" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">19</div>
-            <div data-lotno="20" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">20</div>
+            <div data-lotno="11" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">11</div>
+            <div data-lotno="12" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">12</div>
+            <div data-lotno="13" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">13</div>
+            <div data-lotno="14" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">14</div>
+            <div data-lotno="15" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">15</div>
+            <div data-lotno="16" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">16</div>
+            <div data-lotno="17" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">17</div>
+            <div data-lotno="18" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">18</div>
+            <div data-lotno="19" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">19</div>
+            <div data-lotno="20" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">20</div>
             
-            <div data-lotno="21" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">21</div>
-            <div data-lotno="22" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">22</div>
-            <div data-lotno="23" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">23</div>
-            <div data-lotno="24" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">24</div>
-            <div data-lotno="25" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">25</div>
-            <div data-lotno="26" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">26</div>
-            <div data-lotno="27" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">27</div>
-            <div data-lotno="28" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">28</div>
-            <div data-lotno="29" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">29</div>
-            <div data-lotno="30" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">30</div>
+            <div data-lotno="21" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">21</div>
+            <div data-lotno="22" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">22</div>
+            <div data-lotno="23" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">23</div>
+            <div data-lotno="24" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">24</div>
+            <div data-lotno="25" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">25</div>
+            <div data-lotno="26" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">26</div>
+            <div data-lotno="27" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">27</div>
+            <div data-lotno="28" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">28</div>
+            <div data-lotno="29" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">29</div>
+            <div data-lotno="30" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">30</div>
             
-            <div data-lotno="31" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">31</div>
-            <div data-lotno="32" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">32</div>
-            <div data-lotno="33" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">33</div>
-            <div data-lotno="34" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">34</div>
-            <div data-lotno="35" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">35</div>
-            <div data-lotno="36" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">36</div>
-            <div data-lotno="37" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">37</div>
-            <div data-lotno="38" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">38</div>
-            <div data-lotno="39" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">39</div>
-            <div data-lotno="40" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">40</div>
+            <div data-lotno="31" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">31</div>
+            <div data-lotno="32" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">32</div>
+            <div data-lotno="33" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">33</div>
+            <div data-lotno="34" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">34</div>
+            <div data-lotno="35" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">35</div>
+            <div data-lotno="36" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">36</div>
+            <div data-lotno="37" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">37</div>
+            <div data-lotno="38" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">38</div>
+            <div data-lotno="39" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">39</div>
+            <div data-lotno="40" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">40</div>
             
-            <div data-lotno="41" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">41</div>
-            <div data-lotno="42" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">42</div>
-            <div data-lotno="43" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">43</div>
-            <div data-lotno="44" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">44</div>
-            <div data-lotno="45" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">45</div>
-            <div data-lotno="46" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">46</div>
-            <div data-lotno="47" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">47</div>
-            <div data-lotno="48" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">48</div>
-            <div data-lotno="49" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">49</div>
-            <div data-lotno="50" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemA2">50</div>
+            <div data-lotno="41" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">41</div>
+            <div data-lotno="42" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">42</div>
+            <div data-lotno="43" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">43</div>
+            <div data-lotno="44" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">44</div>
+            <div data-lotno="45" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">45</div>
+            <div data-lotno="46" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">46</div>
+            <div data-lotno="47" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">47</div>
+            <div data-lotno="48" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">48</div>
+            <div data-lotno="49" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">49</div>
+            <div data-lotno="50" data-memsts="Apartment2" data-memlot="None" class="grid-itemA2">50</div>
             
                         
                         </div>
@@ -559,69 +559,69 @@ checkStaffAccess();
                     <div class="legends">Legend</div>
                     <div class="legendList">
                     <div class="legendU Available"></div>
-                    <span>Available lots</span>
+                    <span>Available slot</span>
                     </div>
                 <div class="legendList">
                   <div class="legendU Unavailable"></div>
-                  <span>Owned lots</span>
+                  <span>Owned slot</span>
                 </div>
               </div>
 
               <div class="SBa2Grid" id="SBa2Grid">
-                <div data-lotno="51" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">51</div>
-    <div data-lotno="52" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">52</div>
-    <div data-lotno="53" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">53</div>
-    <div data-lotno="54" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">54</div>
-    <div data-lotno="55" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">55</div>
-    <div data-lotno="56" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">56</div>
-    <div data-lotno="57" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">57</div>
-    <div data-lotno="58" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">58</div>
-    <div data-lotno="59" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">59</div>
-    <div data-lotno="60" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">60</div>
+                <div data-lotno="51" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">51</div>
+    <div data-lotno="52" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">52</div>
+    <div data-lotno="53" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">53</div>
+    <div data-lotno="54" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">54</div>
+    <div data-lotno="55" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">55</div>
+    <div data-lotno="56" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">56</div>
+    <div data-lotno="57" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">57</div>
+    <div data-lotno="58" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">58</div>
+    <div data-lotno="59" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">59</div>
+    <div data-lotno="60" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">60</div>
     
-    <div data-lotno="61" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">61</div>
-    <div data-lotno="62" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">62</div>
-    <div data-lotno="63" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">63</div>
-    <div data-lotno="64" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">64</div>
-    <div data-lotno="65" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">65</div>
-    <div data-lotno="66" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">66</div>
-    <div data-lotno="67" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">67</div>
-    <div data-lotno="68" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">68</div>
-    <div data-lotno="69" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">69</div>
-    <div data-lotno="70" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">70</div>
+    <div data-lotno="61" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">61</div>
+    <div data-lotno="62" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">62</div>
+    <div data-lotno="63" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">63</div>
+    <div data-lotno="64" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">64</div>
+    <div data-lotno="65" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">65</div>
+    <div data-lotno="66" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">66</div>
+    <div data-lotno="67" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">67</div>
+    <div data-lotno="68" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">68</div>
+    <div data-lotno="69" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">69</div>
+    <div data-lotno="70" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">70</div>
     
-    <div data-lotno="71" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">71</div>
-    <div data-lotno="72" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">72</div>
-    <div data-lotno="73" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">73</div>
-    <div data-lotno="74" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">74</div>
-    <div data-lotno="75" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">75</div>
-    <div data-lotno="76" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">76</div>
-    <div data-lotno="77" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">77</div>
-    <div data-lotno="78" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">78</div>
-    <div data-lotno="79" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">79</div>
-    <div data-lotno="80" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">80</div>
+    <div data-lotno="71" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">71</div>
+    <div data-lotno="72" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">72</div>
+    <div data-lotno="73" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">73</div>
+    <div data-lotno="74" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">74</div>
+    <div data-lotno="75" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">75</div>
+    <div data-lotno="76" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">76</div>
+    <div data-lotno="77" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">77</div>
+    <div data-lotno="78" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">78</div>
+    <div data-lotno="79" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">79</div>
+    <div data-lotno="80" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">80</div>
     
-    <div data-lotno="81" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">81</div>
-    <div data-lotno="82" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">82</div>
-    <div data-lotno="83" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">83</div>
-    <div data-lotno="84" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">84</div>
-    <div data-lotno="85" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">85</div>
-    <div data-lotno="86" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">86</div>
-    <div data-lotno="87" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">87</div>
-    <div data-lotno="88" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">88</div>
-    <div data-lotno="89" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">89</div>
-    <div data-lotno="90" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">90</div>
+    <div data-lotno="81" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">81</div>
+    <div data-lotno="82" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">82</div>
+    <div data-lotno="83" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">83</div>
+    <div data-lotno="84" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">84</div>
+    <div data-lotno="85" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">85</div>
+    <div data-lotno="86" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">86</div>
+    <div data-lotno="87" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">87</div>
+    <div data-lotno="88" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">88</div>
+    <div data-lotno="89" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">89</div>
+    <div data-lotno="90" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">90</div>
     
-    <div data-lotno="91" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">91</div>
-    <div data-lotno="92" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">92</div>
-    <div data-lotno="93" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">93</div>
-    <div data-lotno="94" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">94</div>
-    <div data-lotno="95" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">95</div>
-    <div data-lotno="96" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">96</div>
-    <div data-lotno="97" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">97</div>
-    <div data-lotno="98" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">98</div>
-    <div data-lotno="99" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">99</div>
-    <div data-lotno="100" data-memsts="Apartment2" data-memlot="Lawn Lots" class="grid-itemB2">100</div>
+    <div data-lotno="91" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">91</div>
+    <div data-lotno="92" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">92</div>
+    <div data-lotno="93" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">93</div>
+    <div data-lotno="94" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">94</div>
+    <div data-lotno="95" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">95</div>
+    <div data-lotno="96" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">96</div>
+    <div data-lotno="97" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">97</div>
+    <div data-lotno="98" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">98</div>
+    <div data-lotno="99" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">99</div>
+    <div data-lotno="100" data-memsts="Apartment2" data-memlot="None" class="grid-itemB2">100</div>
                 
                 </div>
             </div>
@@ -640,70 +640,70 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
               
             
           <div class="SAa1GridA" id="SAa1GridA">
-    <div data-lotno="1" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">1</div>
-    <div data-lotno="2" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">2</div>
-    <div data-lotno="3" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">3</div>
-    <div data-lotno="4" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">4</div>
-    <div data-lotno="5" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">5</div>
-    <div data-lotno="6" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">6</div>
-    <div data-lotno="7" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">7</div>
-    <div data-lotno="8" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">8</div>
-    <div data-lotno="9" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">9</div>
-    <div data-lotno="10" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">10</div>
+    <div data-lotno="1" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">1</div>
+    <div data-lotno="2" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">2</div>
+    <div data-lotno="3" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">3</div>
+    <div data-lotno="4" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">4</div>
+    <div data-lotno="5" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">5</div>
+    <div data-lotno="6" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">6</div>
+    <div data-lotno="7" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">7</div>
+    <div data-lotno="8" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">8</div>
+    <div data-lotno="9" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">9</div>
+    <div data-lotno="10" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">10</div>
     
-    <div data-lotno="11" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">11</div>
-    <div data-lotno="12" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">12</div>
-    <div data-lotno="13" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">13</div>
-    <div data-lotno="14" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">14</div>
-    <div data-lotno="15" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">15</div>
-    <div data-lotno="16" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">16</div>
-    <div data-lotno="17" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">17</div>
-    <div data-lotno="18" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">18</div>
-    <div data-lotno="19" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">19</div>
-    <div data-lotno="20" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">20</div>
+    <div data-lotno="11" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">11</div>
+    <div data-lotno="12" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">12</div>
+    <div data-lotno="13" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">13</div>
+    <div data-lotno="14" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">14</div>
+    <div data-lotno="15" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">15</div>
+    <div data-lotno="16" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">16</div>
+    <div data-lotno="17" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">17</div>
+    <div data-lotno="18" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">18</div>
+    <div data-lotno="19" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">19</div>
+    <div data-lotno="20" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">20</div>
     
-    <div data-lotno="21" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">21</div>
-    <div data-lotno="22" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">22</div>
-    <div data-lotno="23" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">23</div>
-    <div data-lotno="24" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">24</div>
-    <div data-lotno="25" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">25</div>
-    <div data-lotno="26" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">26</div>
-    <div data-lotno="27" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">27</div>
-    <div data-lotno="28" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">28</div>
-    <div data-lotno="29" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">29</div>
-    <div data-lotno="30" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">30</div>
+    <div data-lotno="21" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">21</div>
+    <div data-lotno="22" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">22</div>
+    <div data-lotno="23" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">23</div>
+    <div data-lotno="24" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">24</div>
+    <div data-lotno="25" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">25</div>
+    <div data-lotno="26" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">26</div>
+    <div data-lotno="27" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">27</div>
+    <div data-lotno="28" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">28</div>
+    <div data-lotno="29" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">29</div>
+    <div data-lotno="30" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">30</div>
     
-    <div data-lotno="31" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">31</div>
-    <div data-lotno="32" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">32</div>
-    <div data-lotno="33" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">33</div>
-    <div data-lotno="34" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">34</div>
-    <div data-lotno="35" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">35</div>
-    <div data-lotno="36" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">36</div>
-    <div data-lotno="37" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">37</div>
-    <div data-lotno="38" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">38</div>
-    <div data-lotno="39" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">39</div>
-    <div data-lotno="40" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">40</div>
+    <div data-lotno="31" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">31</div>
+    <div data-lotno="32" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">32</div>
+    <div data-lotno="33" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">33</div>
+    <div data-lotno="34" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">34</div>
+    <div data-lotno="35" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">35</div>
+    <div data-lotno="36" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">36</div>
+    <div data-lotno="37" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">37</div>
+    <div data-lotno="38" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">38</div>
+    <div data-lotno="39" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">39</div>
+    <div data-lotno="40" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">40</div>
     
-    <div data-lotno="41" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">41</div>
-    <div data-lotno="42" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">42</div>
-    <div data-lotno="43" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">43</div>
-    <div data-lotno="44" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">44</div>
-    <div data-lotno="45" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">45</div>
-    <div data-lotno="46" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">46</div>
-    <div data-lotno="47" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">47</div>
-    <div data-lotno="48" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">48</div>
-    <div data-lotno="49" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">49</div>
-    <div data-lotno="50" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemA">50</div>
+    <div data-lotno="41" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">41</div>
+    <div data-lotno="42" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">42</div>
+    <div data-lotno="43" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">43</div>
+    <div data-lotno="44" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">44</div>
+    <div data-lotno="45" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">45</div>
+    <div data-lotno="46" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">46</div>
+    <div data-lotno="47" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">47</div>
+    <div data-lotno="48" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">48</div>
+    <div data-lotno="49" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">49</div>
+    <div data-lotno="50" data-memsts="Apartment1" data-memlot="None" class="grid-itemA">50</div>
             </div>
         </div>
         <div class="item-popup" id="itemPopup">
@@ -719,70 +719,70 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
 
           <div class="SBa1Grid" id="SBa1Grid">
        
-            <div data-lotno="51" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">51</div>
-            <div data-lotno="52" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">52</div>
-            <div data-lotno="53" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">53</div>
-            <div data-lotno="54" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">54</div>
-            <div data-lotno="55" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">55</div>
-            <div data-lotno="56" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">56</div>
-            <div data-lotno="57" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">57</div>
-            <div data-lotno="58" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">58</div>
-            <div data-lotno="59" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">59</div>
-            <div data-lotno="60" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">60</div>
+            <div data-lotno="51" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">51</div>
+            <div data-lotno="52" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">52</div>
+            <div data-lotno="53" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">53</div>
+            <div data-lotno="54" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">54</div>
+            <div data-lotno="55" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">55</div>
+            <div data-lotno="56" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">56</div>
+            <div data-lotno="57" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">57</div>
+            <div data-lotno="58" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">58</div>
+            <div data-lotno="59" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">59</div>
+            <div data-lotno="60" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">60</div>
             
-            <div data-lotno="61" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">61</div>
-            <div data-lotno="62" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">62</div>
-            <div data-lotno="63" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">63</div>
-            <div data-lotno="64" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">64</div>
-            <div data-lotno="65" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">65</div>
-            <div data-lotno="66" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">66</div>
-            <div data-lotno="67" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">67</div>
-            <div data-lotno="68" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">68</div>
-            <div data-lotno="69" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">69</div>
-            <div data-lotno="70" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">70</div>
+            <div data-lotno="61" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">61</div>
+            <div data-lotno="62" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">62</div>
+            <div data-lotno="63" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">63</div>
+            <div data-lotno="64" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">64</div>
+            <div data-lotno="65" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">65</div>
+            <div data-lotno="66" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">66</div>
+            <div data-lotno="67" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">67</div>
+            <div data-lotno="68" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">68</div>
+            <div data-lotno="69" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">69</div>
+            <div data-lotno="70" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">70</div>
             
-            <div data-lotno="71" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">71</div>
-            <div data-lotno="72" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">72</div>
-            <div data-lotno="73" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">73</div>
-            <div data-lotno="74" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">74</div>
-            <div data-lotno="75" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">75</div>
-            <div data-lotno="76" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">76</div>
-            <div data-lotno="77" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">77</div>
-            <div data-lotno="78" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">78</div>
-            <div data-lotno="79" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">79</div>
-            <div data-lotno="80" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">80</div>
+            <div data-lotno="71" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">71</div>
+            <div data-lotno="72" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">72</div>
+            <div data-lotno="73" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">73</div>
+            <div data-lotno="74" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">74</div>
+            <div data-lotno="75" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">75</div>
+            <div data-lotno="76" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">76</div>
+            <div data-lotno="77" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">77</div>
+            <div data-lotno="78" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">78</div>
+            <div data-lotno="79" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">79</div>
+            <div data-lotno="80" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">80</div>
             
-            <div data-lotno="81" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">81</div>
-            <div data-lotno="82" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">82</div>
-            <div data-lotno="83" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">83</div>
-            <div data-lotno="84" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">84</div>
-            <div data-lotno="85" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">85</div>
-            <div data-lotno="86" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">86</div>
-            <div data-lotno="87" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">87</div>
-            <div data-lotno="88" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">88</div>
-            <div data-lotno="89" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">89</div>
-            <div data-lotno="90" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">90</div>
+            <div data-lotno="81" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">81</div>
+            <div data-lotno="82" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">82</div>
+            <div data-lotno="83" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">83</div>
+            <div data-lotno="84" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">84</div>
+            <div data-lotno="85" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">85</div>
+            <div data-lotno="86" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">86</div>
+            <div data-lotno="87" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">87</div>
+            <div data-lotno="88" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">88</div>
+            <div data-lotno="89" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">89</div>
+            <div data-lotno="90" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">90</div>
             
-            <div data-lotno="91" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">91</div>
-            <div data-lotno="92" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">92</div>
-            <div data-lotno="93" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">93</div>
-            <div data-lotno="94" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">94</div>
-            <div data-lotno="95" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">95</div>
-            <div data-lotno="96" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">96</div>
-            <div data-lotno="97" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">97</div>
-            <div data-lotno="98" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">98</div>
-            <div data-lotno="99" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">99</div>
-            <div data-lotno="100" data-memsts="Apartment1" data-memlot="Lawn Lots" class="grid-itemB">100</div>
+            <div data-lotno="91" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">91</div>
+            <div data-lotno="92" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">92</div>
+            <div data-lotno="93" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">93</div>
+            <div data-lotno="94" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">94</div>
+            <div data-lotno="95" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">95</div>
+            <div data-lotno="96" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">96</div>
+            <div data-lotno="97" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">97</div>
+            <div data-lotno="98" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">98</div>
+            <div data-lotno="99" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">99</div>
+            <div data-lotno="100" data-memsts="Apartment1" data-memlot="None" class="grid-itemB">100</div>
                     </div>
         </div>
             <div class="A1sideA tooltip" id="A1sideA" data-tooltip="Front"><br></tb>Side A</div>
@@ -836,56 +836,56 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
 
                     <!--columbarium 2 1st floor block 1 side A -->
                     <div class="C2GRIDS1AGrid" id="C2GRIDS1AGrid">
-<div data-lotno="1" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">1</div>
-<div data-lotno="2" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">2</div>
-<div data-lotno="3" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">3</div>
-<div data-lotno="4" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">4</div>
-<div data-lotno="5" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">5</div>
-<div data-lotno="6" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">6</div>
-<div data-lotno="7" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">7</div>
-<div data-lotno="8" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">8</div>
-<div data-lotno="9" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">9</div>
-<div data-lotno="10" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">10</div>
-<div data-lotno="11" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">11</div>
-<div data-lotno="12" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">12</div>
-<div data-lotno="13" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">13</div>
-<div data-lotno="14" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">14</div>
-<div data-lotno="15" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">15</div>
-<div data-lotno="16" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">16</div>
-<div data-lotno="17" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">17</div>
-<div data-lotno="18" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">18</div>
-<div data-lotno="19" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">19</div>
-<div data-lotno="20" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">20</div>
-<div data-lotno="21" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">21</div>
-<div data-lotno="22" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">22</div>
-<div data-lotno="23" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">23</div>
-<div data-lotno="24" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">24</div>
-<div data-lotno="25" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">25</div>
-<div data-lotno="26" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">26</div>
-<div data-lotno="27" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">27</div>
-<div data-lotno="28" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">28</div>
-<div data-lotno="29" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">29</div>
-<div data-lotno="30" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">30</div>
-<div data-lotno="31" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">31</div>
-<div data-lotno="32" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">32</div>
-<div data-lotno="33" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">33</div>
-<div data-lotno="34" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">34</div>
-<div data-lotno="35" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">35</div>
-<div data-lotno="36" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">36</div>
-<div data-lotno="37" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">37</div>
-<div data-lotno="38" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">38</div>
-<div data-lotno="39" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">39</div>
-<div data-lotno="40" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1A">40</div>
+<div data-lotno="1" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">1</div>
+<div data-lotno="2" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">2</div>
+<div data-lotno="3" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">3</div>
+<div data-lotno="4" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">4</div>
+<div data-lotno="5" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">5</div>
+<div data-lotno="6" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">6</div>
+<div data-lotno="7" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">7</div>
+<div data-lotno="8" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">8</div>
+<div data-lotno="9" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">9</div>
+<div data-lotno="10" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">10</div>
+<div data-lotno="11" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">11</div>
+<div data-lotno="12" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">12</div>
+<div data-lotno="13" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">13</div>
+<div data-lotno="14" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">14</div>
+<div data-lotno="15" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">15</div>
+<div data-lotno="16" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">16</div>
+<div data-lotno="17" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">17</div>
+<div data-lotno="18" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">18</div>
+<div data-lotno="19" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">19</div>
+<div data-lotno="20" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">20</div>
+<div data-lotno="21" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">21</div>
+<div data-lotno="22" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">22</div>
+<div data-lotno="23" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">23</div>
+<div data-lotno="24" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">24</div>
+<div data-lotno="25" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">25</div>
+<div data-lotno="26" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">26</div>
+<div data-lotno="27" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">27</div>
+<div data-lotno="28" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">28</div>
+<div data-lotno="29" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">29</div>
+<div data-lotno="30" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">30</div>
+<div data-lotno="31" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">31</div>
+<div data-lotno="32" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">32</div>
+<div data-lotno="33" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">33</div>
+<div data-lotno="34" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">34</div>
+<div data-lotno="35" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">35</div>
+<div data-lotno="36" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">36</div>
+<div data-lotno="37" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">37</div>
+<div data-lotno="38" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">38</div>
+<div data-lotno="39" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">39</div>
+<div data-lotno="40" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1A">40</div>
 
                     
                     </div>
@@ -899,55 +899,55 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block1 side b -->
                     <div class="C2GRIDS1BGrid" id="C2GRIDS1BGrid">
-<div data-lotno="41" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">41</div>
-<div data-lotno="42" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">42</div>
-<div data-lotno="43" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">43</div>
-<div data-lotno="44" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">44</div>
-<div data-lotno="45" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">45</div>
-<div data-lotno="46" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">46</div>
-<div data-lotno="47" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">47</div>
-<div data-lotno="48" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">48</div>
-<div data-lotno="49" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">49</div>
-<div data-lotno="50" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">50</div>
-<div data-lotno="51" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">51</div>
-<div data-lotno="52" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">52</div>
-<div data-lotno="53" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">53</div>
-<div data-lotno="54" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">54</div>
-<div data-lotno="55" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">55</div>
-<div data-lotno="56" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">56</div>
-<div data-lotno="57" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">57</div>
-<div data-lotno="58" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">58</div>
-<div data-lotno="59" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">59</div>
-<div data-lotno="60" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">60</div>
-<div data-lotno="61" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">61</div>
-<div data-lotno="62" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">62</div>
-<div data-lotno="63" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">63</div>
-<div data-lotno="64" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">64</div>
-<div data-lotno="65" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">65</div>
-<div data-lotno="66" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">66</div>
-<div data-lotno="67" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">67</div>
-<div data-lotno="68" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">68</div>
-<div data-lotno="69" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">69</div>
-<div data-lotno="70" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">70</div>
-<div data-lotno="71" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">71</div>
-<div data-lotno="72" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">72</div>
-<div data-lotno="73" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">73</div>
-<div data-lotno="74" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">74</div>
-<div data-lotno="75" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">75</div>
-<div data-lotno="76" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">76</div>
-<div data-lotno="77" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">77</div>
-<div data-lotno="78" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">78</div>
-<div data-lotno="79" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">79</div>
-<div data-lotno="80" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S1B">80</div>
+<div data-lotno="41" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">41</div>
+<div data-lotno="42" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">42</div>
+<div data-lotno="43" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">43</div>
+<div data-lotno="44" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">44</div>
+<div data-lotno="45" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">45</div>
+<div data-lotno="46" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">46</div>
+<div data-lotno="47" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">47</div>
+<div data-lotno="48" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">48</div>
+<div data-lotno="49" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">49</div>
+<div data-lotno="50" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">50</div>
+<div data-lotno="51" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">51</div>
+<div data-lotno="52" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">52</div>
+<div data-lotno="53" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">53</div>
+<div data-lotno="54" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">54</div>
+<div data-lotno="55" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">55</div>
+<div data-lotno="56" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">56</div>
+<div data-lotno="57" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">57</div>
+<div data-lotno="58" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">58</div>
+<div data-lotno="59" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">59</div>
+<div data-lotno="60" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">60</div>
+<div data-lotno="61" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">61</div>
+<div data-lotno="62" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">62</div>
+<div data-lotno="63" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">63</div>
+<div data-lotno="64" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">64</div>
+<div data-lotno="65" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">65</div>
+<div data-lotno="66" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">66</div>
+<div data-lotno="67" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">67</div>
+<div data-lotno="68" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">68</div>
+<div data-lotno="69" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">69</div>
+<div data-lotno="70" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">70</div>
+<div data-lotno="71" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">71</div>
+<div data-lotno="72" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">72</div>
+<div data-lotno="73" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">73</div>
+<div data-lotno="74" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">74</div>
+<div data-lotno="75" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">75</div>
+<div data-lotno="76" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">76</div>
+<div data-lotno="77" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">77</div>
+<div data-lotno="78" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">78</div>
+<div data-lotno="79" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">79</div>
+<div data-lotno="80" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S1B">80</div>
 
                     </div>
                 </div>
@@ -960,55 +960,55 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 1st floor block 2 side A -->
                     <div class="C2GRIDS2AGrid" id="C2GRIDS2AGrid">
-<div data-lotno="81" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">81</div>
-<div data-lotno="82" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">82</div>
-<div data-lotno="83" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">83</div>
-<div data-lotno="84" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">84</div>
-<div data-lotno="85" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">85</div>
-<div data-lotno="86" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">86</div>
-<div data-lotno="87" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">87</div>
-<div data-lotno="88" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">88</div>
-<div data-lotno="89" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">89</div>
-<div data-lotno="90" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">90</div>
-<div data-lotno="91" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">91</div>
-<div data-lotno="92" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">92</div>
-<div data-lotno="93" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">93</div>
-<div data-lotno="94" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">94</div>
-<div data-lotno="95" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">95</div>
-<div data-lotno="96" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">96</div>
-<div data-lotno="97" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">97</div>
-<div data-lotno="98" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">98</div>
-<div data-lotno="99" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">99</div>
-<div data-lotno="100" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">100</div>
-<div data-lotno="101" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">101</div>
-<div data-lotno="102" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">102</div>
-<div data-lotno="103" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">103</div>
-<div data-lotno="104" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">104</div>
-<div data-lotno="105" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">105</div>
-<div data-lotno="106" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">106</div>
-<div data-lotno="107" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">107</div>
-<div data-lotno="108" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">108</div>
-<div data-lotno="109" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">109</div>
-<div data-lotno="110" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">110</div>
-<div data-lotno="111" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">111</div>
-<div data-lotno="112" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">112</div>
-<div data-lotno="113" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">113</div>
-<div data-lotno="114" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">114</div>
-<div data-lotno="115" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">115</div>
-<div data-lotno="116" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">116</div>
-<div data-lotno="117" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">117</div>
-<div data-lotno="118" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">118</div>
-<div data-lotno="119" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">119</div>
-<div data-lotno="120" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2A">120</div>
+<div data-lotno="81" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">81</div>
+<div data-lotno="82" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">82</div>
+<div data-lotno="83" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">83</div>
+<div data-lotno="84" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">84</div>
+<div data-lotno="85" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">85</div>
+<div data-lotno="86" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">86</div>
+<div data-lotno="87" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">87</div>
+<div data-lotno="88" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">88</div>
+<div data-lotno="89" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">89</div>
+<div data-lotno="90" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">90</div>
+<div data-lotno="91" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">91</div>
+<div data-lotno="92" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">92</div>
+<div data-lotno="93" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">93</div>
+<div data-lotno="94" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">94</div>
+<div data-lotno="95" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">95</div>
+<div data-lotno="96" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">96</div>
+<div data-lotno="97" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">97</div>
+<div data-lotno="98" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">98</div>
+<div data-lotno="99" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">99</div>
+<div data-lotno="100" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">100</div>
+<div data-lotno="101" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">101</div>
+<div data-lotno="102" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">102</div>
+<div data-lotno="103" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">103</div>
+<div data-lotno="104" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">104</div>
+<div data-lotno="105" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">105</div>
+<div data-lotno="106" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">106</div>
+<div data-lotno="107" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">107</div>
+<div data-lotno="108" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">108</div>
+<div data-lotno="109" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">109</div>
+<div data-lotno="110" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">110</div>
+<div data-lotno="111" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">111</div>
+<div data-lotno="112" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">112</div>
+<div data-lotno="113" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">113</div>
+<div data-lotno="114" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">114</div>
+<div data-lotno="115" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">115</div>
+<div data-lotno="116" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">116</div>
+<div data-lotno="117" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">117</div>
+<div data-lotno="118" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">118</div>
+<div data-lotno="119" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">119</div>
+<div data-lotno="120" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2A">120</div>
 
                     </div>
                 </div>
@@ -1021,55 +1021,55 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
          <!--columbarium 2 1st floor block 2 side b -->
                     <div class="C2GRIDS2BGrid" id="C2GRIDS2BGrid">
-<div data-lotno="121" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">121</div>
-<div data-lotno="122" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">122</div>
-<div data-lotno="123" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">123</div>
-<div data-lotno="124" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">124</div>
-<div data-lotno="125" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">125</div>
-<div data-lotno="126" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">126</div>
-<div data-lotno="127" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">127</div>
-<div data-lotno="128" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">128</div>
-<div data-lotno="129" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">129</div>
-<div data-lotno="130" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">130</div>
-<div data-lotno="131" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">131</div>
-<div data-lotno="132" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">132</div>
-<div data-lotno="133" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">133</div>
-<div data-lotno="134" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">134</div>
-<div data-lotno="135" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">135</div>
-<div data-lotno="136" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">136</div>
-<div data-lotno="137" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">137</div>
-<div data-lotno="138" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">138</div>
-<div data-lotno="139" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">139</div>
-<div data-lotno="140" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">140</div>
-<div data-lotno="141" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">141</div>
-<div data-lotno="142" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">142</div>
-<div data-lotno="143" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">143</div>
-<div data-lotno="144" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">144</div>
-<div data-lotno="145" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">145</div>
-<div data-lotno="146" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">146</div>
-<div data-lotno="147" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">147</div>
-<div data-lotno="148" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">148</div>
-<div data-lotno="149" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">149</div>
-<div data-lotno="150" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">150</div>
-<div data-lotno="151" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">151</div>
-<div data-lotno="152" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">152</div>
-<div data-lotno="153" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">153</div>
-<div data-lotno="154" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">154</div>
-<div data-lotno="155" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">155</div>
-<div data-lotno="156" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">156</div>
-<div data-lotno="157" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">157</div>
-<div data-lotno="158" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">158</div>
-<div data-lotno="159" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">159</div>
-<div data-lotno="160" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S2B">160</div>
+<div data-lotno="121" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">121</div>
+<div data-lotno="122" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">122</div>
+<div data-lotno="123" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">123</div>
+<div data-lotno="124" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">124</div>
+<div data-lotno="125" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">125</div>
+<div data-lotno="126" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">126</div>
+<div data-lotno="127" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">127</div>
+<div data-lotno="128" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">128</div>
+<div data-lotno="129" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">129</div>
+<div data-lotno="130" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">130</div>
+<div data-lotno="131" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">131</div>
+<div data-lotno="132" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">132</div>
+<div data-lotno="133" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">133</div>
+<div data-lotno="134" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">134</div>
+<div data-lotno="135" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">135</div>
+<div data-lotno="136" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">136</div>
+<div data-lotno="137" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">137</div>
+<div data-lotno="138" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">138</div>
+<div data-lotno="139" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">139</div>
+<div data-lotno="140" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">140</div>
+<div data-lotno="141" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">141</div>
+<div data-lotno="142" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">142</div>
+<div data-lotno="143" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">143</div>
+<div data-lotno="144" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">144</div>
+<div data-lotno="145" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">145</div>
+<div data-lotno="146" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">146</div>
+<div data-lotno="147" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">147</div>
+<div data-lotno="148" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">148</div>
+<div data-lotno="149" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">149</div>
+<div data-lotno="150" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">150</div>
+<div data-lotno="151" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">151</div>
+<div data-lotno="152" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">152</div>
+<div data-lotno="153" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">153</div>
+<div data-lotno="154" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">154</div>
+<div data-lotno="155" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">155</div>
+<div data-lotno="156" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">156</div>
+<div data-lotno="157" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">157</div>
+<div data-lotno="158" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">158</div>
+<div data-lotno="159" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">159</div>
+<div data-lotno="160" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S2B">160</div>
 
                     
                     </div>
@@ -1082,55 +1082,55 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side A -->
 <div class="C2GRIDblk3AGrid" id="C2GRIDblk3AGrid">
-<div data-lotno="161" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">161</div>
-<div data-lotno="162" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">162</div>
-<div data-lotno="163" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">163</div>
-<div data-lotno="164" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">164</div>
-<div data-lotno="165" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">165</div>
-<div data-lotno="166" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">166</div>
-<div data-lotno="167" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">167</div>
-<div data-lotno="168" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">168</div>
-<div data-lotno="169" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">169</div>
-<div data-lotno="170" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">170</div>
-<div data-lotno="171" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">171</div>
-<div data-lotno="172" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">172</div>
-<div data-lotno="173" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">173</div>
-<div data-lotno="174" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">174</div>
-<div data-lotno="175" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">175</div>
-<div data-lotno="176" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">176</div>
-<div data-lotno="177" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">177</div>
-<div data-lotno="178" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">178</div>
-<div data-lotno="179" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">179</div>
-<div data-lotno="180" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">180</div>
-<div data-lotno="181" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">181</div>
-<div data-lotno="182" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">182</div>
-<div data-lotno="183" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">183</div>
-<div data-lotno="184" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">184</div>
-<div data-lotno="185" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">185</div>
-<div data-lotno="186" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">186</div>
-<div data-lotno="187" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">187</div>
-<div data-lotno="188" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">188</div>
-<div data-lotno="189" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">189</div>
-<div data-lotno="190" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">190</div>
-<div data-lotno="191" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">191</div>
-<div data-lotno="192" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">192</div>
-<div data-lotno="193" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">193</div>
-<div data-lotno="194" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">194</div>
-<div data-lotno="195" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">195</div>
-<div data-lotno="196" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">196</div>
-<div data-lotno="197" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">197</div>
-<div data-lotno="198" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">198</div>
-<div data-lotno="199" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">199</div>
-<div data-lotno="200" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3A">200</div>
+<div data-lotno="161" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">161</div>
+<div data-lotno="162" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">162</div>
+<div data-lotno="163" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">163</div>
+<div data-lotno="164" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">164</div>
+<div data-lotno="165" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">165</div>
+<div data-lotno="166" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">166</div>
+<div data-lotno="167" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">167</div>
+<div data-lotno="168" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">168</div>
+<div data-lotno="169" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">169</div>
+<div data-lotno="170" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">170</div>
+<div data-lotno="171" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">171</div>
+<div data-lotno="172" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">172</div>
+<div data-lotno="173" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">173</div>
+<div data-lotno="174" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">174</div>
+<div data-lotno="175" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">175</div>
+<div data-lotno="176" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">176</div>
+<div data-lotno="177" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">177</div>
+<div data-lotno="178" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">178</div>
+<div data-lotno="179" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">179</div>
+<div data-lotno="180" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">180</div>
+<div data-lotno="181" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">181</div>
+<div data-lotno="182" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">182</div>
+<div data-lotno="183" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">183</div>
+<div data-lotno="184" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">184</div>
+<div data-lotno="185" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">185</div>
+<div data-lotno="186" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">186</div>
+<div data-lotno="187" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">187</div>
+<div data-lotno="188" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">188</div>
+<div data-lotno="189" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">189</div>
+<div data-lotno="190" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">190</div>
+<div data-lotno="191" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">191</div>
+<div data-lotno="192" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">192</div>
+<div data-lotno="193" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">193</div>
+<div data-lotno="194" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">194</div>
+<div data-lotno="195" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">195</div>
+<div data-lotno="196" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">196</div>
+<div data-lotno="197" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">197</div>
+<div data-lotno="198" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">198</div>
+<div data-lotno="199" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">199</div>
+<div data-lotno="200" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3A">200</div>
                     </div>
                 </div>
 
@@ -1141,58 +1141,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 3 side B -->
                     <div class="C2GRIDblk3BGrid" id="C2GRIDblk3BGrid">
-<div data-lotno="201" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">201</div>
-<div data-lotno="202" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">202</div>
-<div data-lotno="203" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">203</div>
-<div data-lotno="204" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">204</div>
-<div data-lotno="205" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">205</div>
-<div data-lotno="206" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">206</div>
-<div data-lotno="207" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">207</div>
-<div data-lotno="208" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">208</div>
-<div data-lotno="209" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">209</div>
-<div data-lotno="210" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">210</div>
+<div data-lotno="201" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">201</div>
+<div data-lotno="202" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">202</div>
+<div data-lotno="203" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">203</div>
+<div data-lotno="204" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">204</div>
+<div data-lotno="205" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">205</div>
+<div data-lotno="206" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">206</div>
+<div data-lotno="207" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">207</div>
+<div data-lotno="208" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">208</div>
+<div data-lotno="209" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">209</div>
+<div data-lotno="210" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">210</div>
 
-<div data-lotno="211" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">211</div>
-<div data-lotno="212" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">212</div>
-<div data-lotno="213" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">213</div>
-<div data-lotno="214" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">214</div>
-<div data-lotno="215" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">215</div>
-<div data-lotno="216" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">216</div>
-<div data-lotno="217" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">217</div>
-<div data-lotno="218" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">218</div>
-<div data-lotno="219" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">219</div>
-<div data-lotno="220" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">220</div>
+<div data-lotno="211" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">211</div>
+<div data-lotno="212" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">212</div>
+<div data-lotno="213" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">213</div>
+<div data-lotno="214" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">214</div>
+<div data-lotno="215" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">215</div>
+<div data-lotno="216" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">216</div>
+<div data-lotno="217" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">217</div>
+<div data-lotno="218" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">218</div>
+<div data-lotno="219" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">219</div>
+<div data-lotno="220" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">220</div>
 
-<div data-lotno="221" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">221</div>
-<div data-lotno="222" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">222</div>
-<div data-lotno="223" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">223</div>
-<div data-lotno="224" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">224</div>
-<div data-lotno="225" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">225</div>
-<div data-lotno="226" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">226</div>
-<div data-lotno="227" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">227</div>
-<div data-lotno="228" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">228</div>
-<div data-lotno="229" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">229</div>
-<div data-lotno="230" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">230</div>
+<div data-lotno="221" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">221</div>
+<div data-lotno="222" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">222</div>
+<div data-lotno="223" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">223</div>
+<div data-lotno="224" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">224</div>
+<div data-lotno="225" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">225</div>
+<div data-lotno="226" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">226</div>
+<div data-lotno="227" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">227</div>
+<div data-lotno="228" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">228</div>
+<div data-lotno="229" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">229</div>
+<div data-lotno="230" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">230</div>
 
-<div data-lotno="231" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">231</div>
-<div data-lotno="232" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">232</div>
-<div data-lotno="233" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">233</div>
-<div data-lotno="234" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">234</div>
-<div data-lotno="235" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">235</div>
-<div data-lotno="236" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">236</div>
-<div data-lotno="237" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">237</div>
-<div data-lotno="238" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">238</div>
-<div data-lotno="239" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">239</div>
-<div data-lotno="240" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk3B">240</div>
+<div data-lotno="231" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">231</div>
+<div data-lotno="232" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">232</div>
+<div data-lotno="233" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">233</div>
+<div data-lotno="234" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">234</div>
+<div data-lotno="235" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">235</div>
+<div data-lotno="236" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">236</div>
+<div data-lotno="237" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">237</div>
+<div data-lotno="238" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">238</div>
+<div data-lotno="239" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">239</div>
+<div data-lotno="240" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk3B">240</div>
 
                     </div>
                 </div>
@@ -1205,58 +1205,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side A -->
                     <div class="C2GRIDblk4AGrid" id="C2GRIDblk4AGrid">
-<div data-lotno="241" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">241</div>
-<div data-lotno="242" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">242</div>
-<div data-lotno="243" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">243</div>
-<div data-lotno="244" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">244</div>
-<div data-lotno="245" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">245</div>
-<div data-lotno="246" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">246</div>
-<div data-lotno="247" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">247</div>
-<div data-lotno="248" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">248</div>
-<div data-lotno="249" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">249</div>
-<div data-lotno="250" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">250</div>
+<div data-lotno="241" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">241</div>
+<div data-lotno="242" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">242</div>
+<div data-lotno="243" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">243</div>
+<div data-lotno="244" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">244</div>
+<div data-lotno="245" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">245</div>
+<div data-lotno="246" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">246</div>
+<div data-lotno="247" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">247</div>
+<div data-lotno="248" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">248</div>
+<div data-lotno="249" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">249</div>
+<div data-lotno="250" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">250</div>
 
-<div data-lotno="251" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">251</div>
-<div data-lotno="252" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">252</div>
-<div data-lotno="253" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">253</div>
-<div data-lotno="254" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">254</div>
-<div data-lotno="255" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">255</div>
-<div data-lotno="256" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">256</div>
-<div data-lotno="257" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">257</div>
-<div data-lotno="258" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">258</div>
-<div data-lotno="259" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">259</div>
-<div data-lotno="260" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">260</div>
+<div data-lotno="251" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">251</div>
+<div data-lotno="252" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">252</div>
+<div data-lotno="253" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">253</div>
+<div data-lotno="254" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">254</div>
+<div data-lotno="255" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">255</div>
+<div data-lotno="256" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">256</div>
+<div data-lotno="257" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">257</div>
+<div data-lotno="258" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">258</div>
+<div data-lotno="259" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">259</div>
+<div data-lotno="260" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">260</div>
 
-<div data-lotno="261" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">261</div>
-<div data-lotno="262" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">262</div>
-<div data-lotno="263" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">263</div>
-<div data-lotno="264" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">264</div>
-<div data-lotno="265" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">265</div>
-<div data-lotno="266" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">266</div>
-<div data-lotno="267" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">267</div>
-<div data-lotno="268" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">268</div>
-<div data-lotno="269" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">269</div>
-<div data-lotno="270" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">270</div>
+<div data-lotno="261" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">261</div>
+<div data-lotno="262" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">262</div>
+<div data-lotno="263" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">263</div>
+<div data-lotno="264" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">264</div>
+<div data-lotno="265" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">265</div>
+<div data-lotno="266" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">266</div>
+<div data-lotno="267" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">267</div>
+<div data-lotno="268" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">268</div>
+<div data-lotno="269" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">269</div>
+<div data-lotno="270" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">270</div>
 
-<div data-lotno="271" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">271</div>
-<div data-lotno="272" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">272</div>
-<div data-lotno="273" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">273</div>
-<div data-lotno="274" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">274</div>
-<div data-lotno="275" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">275</div>
-<div data-lotno="276" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">276</div>
-<div data-lotno="277" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">277</div>
-<div data-lotno="278" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">278</div>
-<div data-lotno="279" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">279</div>
-<div data-lotno="280" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4A">280</div>
+<div data-lotno="271" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">271</div>
+<div data-lotno="272" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">272</div>
+<div data-lotno="273" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">273</div>
+<div data-lotno="274" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">274</div>
+<div data-lotno="275" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">275</div>
+<div data-lotno="276" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">276</div>
+<div data-lotno="277" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">277</div>
+<div data-lotno="278" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">278</div>
+<div data-lotno="279" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">279</div>
+<div data-lotno="280" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4A">280</div>
 
                     </div>
                 </div>
@@ -1269,58 +1269,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
                     <!--columbarium 2 1st floor block 4 side B -->
                     <div class="C2GRIDblk4BGrid" id="C2GRIDblk4BGrid">
-<div data-lotno="281" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">281</div>
-<div data-lotno="282" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">282</div>
-<div data-lotno="283" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">283</div>
-<div data-lotno="284" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">284</div>
-<div data-lotno="285" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">285</div>
-<div data-lotno="286" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">286</div>
-<div data-lotno="287" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">287</div>
-<div data-lotno="288" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">288</div>
-<div data-lotno="289" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">289</div>
-<div data-lotno="290" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">290</div>
+<div data-lotno="281" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">281</div>
+<div data-lotno="282" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">282</div>
+<div data-lotno="283" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">283</div>
+<div data-lotno="284" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">284</div>
+<div data-lotno="285" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">285</div>
+<div data-lotno="286" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">286</div>
+<div data-lotno="287" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">287</div>
+<div data-lotno="288" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">288</div>
+<div data-lotno="289" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">289</div>
+<div data-lotno="290" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">290</div>
 
-<div data-lotno="291" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">291</div>
-<div data-lotno="292" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">292</div>
-<div data-lotno="293" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">293</div>
-<div data-lotno="294" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">294</div>
-<div data-lotno="295" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">295</div>
-<div data-lotno="296" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">296</div>
-<div data-lotno="297" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">297</div>
-<div data-lotno="298" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">298</div>
-<div data-lotno="299" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">299</div>
-<div data-lotno="300" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">300</div>
+<div data-lotno="291" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">291</div>
+<div data-lotno="292" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">292</div>
+<div data-lotno="293" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">293</div>
+<div data-lotno="294" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">294</div>
+<div data-lotno="295" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">295</div>
+<div data-lotno="296" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">296</div>
+<div data-lotno="297" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">297</div>
+<div data-lotno="298" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">298</div>
+<div data-lotno="299" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">299</div>
+<div data-lotno="300" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">300</div>
 
-<div data-lotno="301" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">301</div>
-<div data-lotno="302" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">302</div>
-<div data-lotno="303" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">303</div>
-<div data-lotno="304" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">304</div>
-<div data-lotno="305" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">305</div>
-<div data-lotno="306" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">306</div>
-<div data-lotno="307" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">307</div>
-<div data-lotno="308" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">308</div>
-<div data-lotno="309" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">309</div>
-<div data-lotno="310" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">310</div>
+<div data-lotno="301" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">301</div>
+<div data-lotno="302" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">302</div>
+<div data-lotno="303" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">303</div>
+<div data-lotno="304" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">304</div>
+<div data-lotno="305" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">305</div>
+<div data-lotno="306" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">306</div>
+<div data-lotno="307" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">307</div>
+<div data-lotno="308" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">308</div>
+<div data-lotno="309" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">309</div>
+<div data-lotno="310" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">310</div>
 
-<div data-lotno="311" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">311</div>
-<div data-lotno="312" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">312</div>
-<div data-lotno="313" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">313</div>
-<div data-lotno="314" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">314</div>
-<div data-lotno="315" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">315</div>
-<div data-lotno="316" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">316</div>
-<div data-lotno="317" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">317</div>
-<div data-lotno="318" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">318</div>
-<div data-lotno="319" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">319</div>
-<div data-lotno="320" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2blk4B">320</div>
+<div data-lotno="311" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">311</div>
+<div data-lotno="312" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">312</div>
+<div data-lotno="313" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">313</div>
+<div data-lotno="314" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">314</div>
+<div data-lotno="315" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">315</div>
+<div data-lotno="316" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">316</div>
+<div data-lotno="317" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">317</div>
+<div data-lotno="318" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">318</div>
+<div data-lotno="319" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">319</div>
+<div data-lotno="320" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2blk4B">320</div>
 
                     </div>
                 </div>
@@ -1371,58 +1371,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side A-->
                     <div class="C2GRIDS12AGrid" id="C2GRIDS12AGrid">
-<div data-lotno="321" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">321</div>
-<div data-lotno="322" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">322</div>
-<div data-lotno="323" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">323</div>
-<div data-lotno="324" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">324</div>
-<div data-lotno="325" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">325</div>
-<div data-lotno="326" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">326</div>
-<div data-lotno="327" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">327</div>
-<div data-lotno="328" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">328</div>
-<div data-lotno="329" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">329</div>
-<div data-lotno="330" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">330</div>
+<div data-lotno="321" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">321</div>
+<div data-lotno="322" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">322</div>
+<div data-lotno="323" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">323</div>
+<div data-lotno="324" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">324</div>
+<div data-lotno="325" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">325</div>
+<div data-lotno="326" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">326</div>
+<div data-lotno="327" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">327</div>
+<div data-lotno="328" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">328</div>
+<div data-lotno="329" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">329</div>
+<div data-lotno="330" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">330</div>
 
-<div data-lotno="331" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">331</div>
-<div data-lotno="332" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">332</div>
-<div data-lotno="333" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">333</div>
-<div data-lotno="334" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">334</div>
-<div data-lotno="335" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">335</div>
-<div data-lotno="336" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">336</div>
-<div data-lotno="337" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">337</div>
-<div data-lotno="338" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">338</div>
-<div data-lotno="339" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">339</div>
-<div data-lotno="340" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">340</div>
+<div data-lotno="331" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">331</div>
+<div data-lotno="332" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">332</div>
+<div data-lotno="333" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">333</div>
+<div data-lotno="334" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">334</div>
+<div data-lotno="335" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">335</div>
+<div data-lotno="336" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">336</div>
+<div data-lotno="337" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">337</div>
+<div data-lotno="338" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">338</div>
+<div data-lotno="339" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">339</div>
+<div data-lotno="340" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">340</div>
 
-<div data-lotno="341" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">341</div>
-<div data-lotno="342" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">342</div>
-<div data-lotno="343" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">343</div>
-<div data-lotno="344" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">344</div>
-<div data-lotno="345" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">345</div>
-<div data-lotno="346" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">346</div>
-<div data-lotno="347" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">347</div>
-<div data-lotno="348" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">348</div>
-<div data-lotno="349" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">349</div>
-<div data-lotno="350" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">350</div>
+<div data-lotno="341" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">341</div>
+<div data-lotno="342" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">342</div>
+<div data-lotno="343" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">343</div>
+<div data-lotno="344" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">344</div>
+<div data-lotno="345" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">345</div>
+<div data-lotno="346" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">346</div>
+<div data-lotno="347" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">347</div>
+<div data-lotno="348" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">348</div>
+<div data-lotno="349" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">349</div>
+<div data-lotno="350" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">350</div>
 
-<div data-lotno="351" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">351</div>
-<div data-lotno="352" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">352</div>
-<div data-lotno="353" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">353</div>
-<div data-lotno="354" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">354</div>
-<div data-lotno="355" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">355</div>
-<div data-lotno="356" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">356</div>
-<div data-lotno="357" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">357</div>
-<div data-lotno="358" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">358</div>
-<div data-lotno="359" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">359</div>
-<div data-lotno="360" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12A">360</div>
+<div data-lotno="351" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">351</div>
+<div data-lotno="352" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">352</div>
+<div data-lotno="353" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">353</div>
+<div data-lotno="354" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">354</div>
+<div data-lotno="355" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">355</div>
+<div data-lotno="356" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">356</div>
+<div data-lotno="357" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">357</div>
+<div data-lotno="358" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">358</div>
+<div data-lotno="359" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">359</div>
+<div data-lotno="360" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12A">360</div>
 
                     
                     </div>
@@ -1435,58 +1435,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 1 Side B-->
                     <div class="C2GRIDS12BGrid" id="C2GRIDS12BGrid">
-<div data-lotno="361" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">361</div>
-<div data-lotno="362" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">362</div>
-<div data-lotno="363" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">363</div>
-<div data-lotno="364" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">364</div>
-<div data-lotno="365" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">365</div>
-<div data-lotno="366" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">366</div>
-<div data-lotno="367" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">367</div>
-<div data-lotno="368" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">368</div>
-<div data-lotno="369" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">369</div>
-<div data-lotno="370" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">370</div>
+<div data-lotno="361" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">361</div>
+<div data-lotno="362" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">362</div>
+<div data-lotno="363" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">363</div>
+<div data-lotno="364" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">364</div>
+<div data-lotno="365" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">365</div>
+<div data-lotno="366" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">366</div>
+<div data-lotno="367" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">367</div>
+<div data-lotno="368" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">368</div>
+<div data-lotno="369" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">369</div>
+<div data-lotno="370" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">370</div>
 
-<div data-lotno="371" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">371</div>
-<div data-lotno="372" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">372</div>
-<div data-lotno="373" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">373</div>
-<div data-lotno="374" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">374</div>
-<div data-lotno="375" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">375</div>
-<div data-lotno="376" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">376</div>
-<div data-lotno="377" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">377</div>
-<div data-lotno="378" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">378</div>
-<div data-lotno="379" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">379</div>
-<div data-lotno="380" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">380</div>
+<div data-lotno="371" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">371</div>
+<div data-lotno="372" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">372</div>
+<div data-lotno="373" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">373</div>
+<div data-lotno="374" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">374</div>
+<div data-lotno="375" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">375</div>
+<div data-lotno="376" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">376</div>
+<div data-lotno="377" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">377</div>
+<div data-lotno="378" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">378</div>
+<div data-lotno="379" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">379</div>
+<div data-lotno="380" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">380</div>
 
-<div data-lotno="381" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">381</div>
-<div data-lotno="382" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">382</div>
-<div data-lotno="383" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">383</div>
-<div data-lotno="384" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">384</div>
-<div data-lotno="385" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">385</div>
-<div data-lotno="386" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">386</div>
-<div data-lotno="387" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">387</div>
-<div data-lotno="388" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">388</div>
-<div data-lotno="389" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">389</div>
-<div data-lotno="390" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">390</div>
+<div data-lotno="381" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">381</div>
+<div data-lotno="382" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">382</div>
+<div data-lotno="383" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">383</div>
+<div data-lotno="384" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">384</div>
+<div data-lotno="385" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">385</div>
+<div data-lotno="386" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">386</div>
+<div data-lotno="387" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">387</div>
+<div data-lotno="388" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">388</div>
+<div data-lotno="389" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">389</div>
+<div data-lotno="390" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">390</div>
 
-<div data-lotno="391" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">391</div>
-<div data-lotno="392" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">392</div>
-<div data-lotno="393" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">393</div>
-<div data-lotno="394" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">394</div>
-<div data-lotno="395" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">395</div>
-<div data-lotno="396" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">396</div>
-<div data-lotno="397" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">397</div>
-<div data-lotno="398" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">398</div>
-<div data-lotno="399" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">399</div>
-<div data-lotno="400" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S12B">400</div>
+<div data-lotno="391" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">391</div>
+<div data-lotno="392" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">392</div>
+<div data-lotno="393" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">393</div>
+<div data-lotno="394" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">394</div>
+<div data-lotno="395" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">395</div>
+<div data-lotno="396" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">396</div>
+<div data-lotno="397" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">397</div>
+<div data-lotno="398" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">398</div>
+<div data-lotno="399" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">399</div>
+<div data-lotno="400" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S12B">400</div>
 
                     </div>
                 </div>
@@ -1498,58 +1498,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side A-->
                     <div class="C2GRIDS22AGrid" id="C2GRIDS22AGrid">
-<div data-lotno="401" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">401</div>
-<div data-lotno="402" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">402</div>
-<div data-lotno="403" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">403</div>
-<div data-lotno="404" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">404</div>
-<div data-lotno="405" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">405</div>
-<div data-lotno="406" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">406</div>
-<div data-lotno="407" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">407</div>
-<div data-lotno="408" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">408</div>
-<div data-lotno="409" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">409</div>
-<div data-lotno="410" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">410</div>
+<div data-lotno="401" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">401</div>
+<div data-lotno="402" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">402</div>
+<div data-lotno="403" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">403</div>
+<div data-lotno="404" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">404</div>
+<div data-lotno="405" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">405</div>
+<div data-lotno="406" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">406</div>
+<div data-lotno="407" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">407</div>
+<div data-lotno="408" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">408</div>
+<div data-lotno="409" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">409</div>
+<div data-lotno="410" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">410</div>
 
-<div data-lotno="411" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">411</div>
-<div data-lotno="412" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">412</div>
-<div data-lotno="413" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">413</div>
-<div data-lotno="414" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">414</div>
-<div data-lotno="415" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">415</div>
-<div data-lotno="416" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">416</div>
-<div data-lotno="417" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">417</div>
-<div data-lotno="418" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">418</div>
-<div data-lotno="419" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">419</div>
-<div data-lotno="420" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">420</div>
+<div data-lotno="411" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">411</div>
+<div data-lotno="412" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">412</div>
+<div data-lotno="413" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">413</div>
+<div data-lotno="414" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">414</div>
+<div data-lotno="415" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">415</div>
+<div data-lotno="416" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">416</div>
+<div data-lotno="417" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">417</div>
+<div data-lotno="418" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">418</div>
+<div data-lotno="419" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">419</div>
+<div data-lotno="420" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">420</div>
 
-<div data-lotno="421" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">421</div>
-<div data-lotno="422" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">422</div>
-<div data-lotno="423" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">423</div>
-<div data-lotno="424" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">424</div>
-<div data-lotno="425" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">425</div>
-<div data-lotno="426" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">426</div>
-<div data-lotno="427" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">427</div>
-<div data-lotno="428" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">428</div>
-<div data-lotno="429" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">429</div>
-<div data-lotno="430" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">430</div>
+<div data-lotno="421" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">421</div>
+<div data-lotno="422" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">422</div>
+<div data-lotno="423" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">423</div>
+<div data-lotno="424" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">424</div>
+<div data-lotno="425" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">425</div>
+<div data-lotno="426" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">426</div>
+<div data-lotno="427" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">427</div>
+<div data-lotno="428" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">428</div>
+<div data-lotno="429" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">429</div>
+<div data-lotno="430" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">430</div>
 
-<div data-lotno="431" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">431</div>
-<div data-lotno="432" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">432</div>
-<div data-lotno="433" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">433</div>
-<div data-lotno="434" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">434</div>
-<div data-lotno="435" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">435</div>
-<div data-lotno="436" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">436</div>
-<div data-lotno="437" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">437</div>
-<div data-lotno="438" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">438</div>
-<div data-lotno="439" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">439</div>
-<div data-lotno="440" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22A">440</div>
+<div data-lotno="431" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">431</div>
+<div data-lotno="432" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">432</div>
+<div data-lotno="433" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">433</div>
+<div data-lotno="434" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">434</div>
+<div data-lotno="435" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">435</div>
+<div data-lotno="436" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">436</div>
+<div data-lotno="437" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">437</div>
+<div data-lotno="438" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">438</div>
+<div data-lotno="439" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">439</div>
+<div data-lotno="440" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22A">440</div>
 
                     </div>
                 </div>
@@ -1561,58 +1561,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 2 Side B-->
                     <div class="C2GRIDS22BGrid" id="C2GRIDS22BGrid">
-<div data-lotno="441" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">441</div>
-<div data-lotno="442" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">442</div>
-<div data-lotno="443" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">443</div>
-<div data-lotno="444" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">444</div>
-<div data-lotno="445" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">445</div>
-<div data-lotno="446" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">446</div>
-<div data-lotno="447" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">447</div>
-<div data-lotno="448" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">448</div>
-<div data-lotno="449" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">449</div>
-<div data-lotno="450" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">450</div>
+<div data-lotno="441" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">441</div>
+<div data-lotno="442" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">442</div>
+<div data-lotno="443" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">443</div>
+<div data-lotno="444" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">444</div>
+<div data-lotno="445" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">445</div>
+<div data-lotno="446" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">446</div>
+<div data-lotno="447" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">447</div>
+<div data-lotno="448" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">448</div>
+<div data-lotno="449" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">449</div>
+<div data-lotno="450" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">450</div>
 
-<div data-lotno="451" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">451</div>
-<div data-lotno="452" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">452</div>
-<div data-lotno="453" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">453</div>
-<div data-lotno="454" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">454</div>
-<div data-lotno="455" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">455</div>
-<div data-lotno="456" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">456</div>
-<div data-lotno="457" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">457</div>
-<div data-lotno="458" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">458</div>
-<div data-lotno="459" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">459</div>
-<div data-lotno="460" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">460</div>
+<div data-lotno="451" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">451</div>
+<div data-lotno="452" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">452</div>
+<div data-lotno="453" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">453</div>
+<div data-lotno="454" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">454</div>
+<div data-lotno="455" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">455</div>
+<div data-lotno="456" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">456</div>
+<div data-lotno="457" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">457</div>
+<div data-lotno="458" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">458</div>
+<div data-lotno="459" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">459</div>
+<div data-lotno="460" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">460</div>
 
-<div data-lotno="461" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">461</div>
-<div data-lotno="462" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">462</div>
-<div data-lotno="463" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">463</div>
-<div data-lotno="464" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">464</div>
-<div data-lotno="465" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">465</div>
-<div data-lotno="466" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">466</div>
-<div data-lotno="467" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">467</div>
-<div data-lotno="468" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">468</div>
-<div data-lotno="469" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">469</div>
-<div data-lotno="470" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">470</div>
+<div data-lotno="461" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">461</div>
+<div data-lotno="462" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">462</div>
+<div data-lotno="463" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">463</div>
+<div data-lotno="464" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">464</div>
+<div data-lotno="465" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">465</div>
+<div data-lotno="466" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">466</div>
+<div data-lotno="467" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">467</div>
+<div data-lotno="468" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">468</div>
+<div data-lotno="469" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">469</div>
+<div data-lotno="470" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">470</div>
 
-<div data-lotno="471" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">471</div>
-<div data-lotno="472" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">472</div>
-<div data-lotno="473" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">473</div>
-<div data-lotno="474" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">474</div>
-<div data-lotno="475" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">475</div>
-<div data-lotno="476" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">476</div>
-<div data-lotno="477" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">477</div>
-<div data-lotno="478" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">478</div>
-<div data-lotno="479" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">479</div>
-<div data-lotno="480" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemC2S22B">480</div>
+<div data-lotno="471" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">471</div>
+<div data-lotno="472" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">472</div>
+<div data-lotno="473" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">473</div>
+<div data-lotno="474" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">474</div>
+<div data-lotno="475" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">475</div>
+<div data-lotno="476" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">476</div>
+<div data-lotno="477" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">477</div>
+<div data-lotno="478" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">478</div>
+<div data-lotno="479" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">479</div>
+<div data-lotno="480" data-memsts="Columbarium2" data-memlot="None" class="grid-itemC2S22B">480</div>
 
                     
                     </div>
@@ -1626,58 +1626,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 3 Side A-->
                     <div class="C2blk3GRIDGrid" id="C2blk3GRIDGrid">
-<div data-lotno="481" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">481</div>
-<div data-lotno="482" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">482</div>
-<div data-lotno="483" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">483</div>
-<div data-lotno="484" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">484</div>
-<div data-lotno="485" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">485</div>
-<div data-lotno="486" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">486</div>
-<div data-lotno="487" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">487</div>
-<div data-lotno="488" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">488</div>
-<div data-lotno="489" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">489</div>
-<div data-lotno="490" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">490</div>
+<div data-lotno="481" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">481</div>
+<div data-lotno="482" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">482</div>
+<div data-lotno="483" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">483</div>
+<div data-lotno="484" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">484</div>
+<div data-lotno="485" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">485</div>
+<div data-lotno="486" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">486</div>
+<div data-lotno="487" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">487</div>
+<div data-lotno="488" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">488</div>
+<div data-lotno="489" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">489</div>
+<div data-lotno="490" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">490</div>
 
-<div data-lotno="491" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">491</div>
-<div data-lotno="492" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">492</div>
-<div data-lotno="493" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">493</div>
-<div data-lotno="494" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">494</div>
-<div data-lotno="495" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">495</div>
-<div data-lotno="496" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">496</div>
-<div data-lotno="497" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">497</div>
-<div data-lotno="498" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">498</div>
-<div data-lotno="499" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">499</div>
-<div data-lotno="500" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">500</div>
+<div data-lotno="491" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">491</div>
+<div data-lotno="492" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">492</div>
+<div data-lotno="493" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">493</div>
+<div data-lotno="494" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">494</div>
+<div data-lotno="495" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">495</div>
+<div data-lotno="496" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">496</div>
+<div data-lotno="497" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">497</div>
+<div data-lotno="498" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">498</div>
+<div data-lotno="499" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">499</div>
+<div data-lotno="500" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">500</div>
 
-<div data-lotno="501" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">501</div>
-<div data-lotno="502" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">502</div>
-<div data-lotno="503" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">503</div>
-<div data-lotno="504" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">504</div>
-<div data-lotno="505" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">505</div>
-<div data-lotno="506" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">506</div>
-<div data-lotno="507" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">507</div>
-<div data-lotno="508" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">508</div>
-<div data-lotno="509" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">509</div>
-<div data-lotno="510" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">510</div>
+<div data-lotno="501" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">501</div>
+<div data-lotno="502" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">502</div>
+<div data-lotno="503" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">503</div>
+<div data-lotno="504" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">504</div>
+<div data-lotno="505" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">505</div>
+<div data-lotno="506" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">506</div>
+<div data-lotno="507" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">507</div>
+<div data-lotno="508" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">508</div>
+<div data-lotno="509" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">509</div>
+<div data-lotno="510" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">510</div>
 
-<div data-lotno="511" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">511</div>
-<div data-lotno="512" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">512</div>
-<div data-lotno="513" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">513</div>
-<div data-lotno="514" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">514</div>
-<div data-lotno="515" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">515</div>
-<div data-lotno="516" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">516</div>
-<div data-lotno="517" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">517</div>
-<div data-lotno="518" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">518</div>
-<div data-lotno="519" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">519</div>
-<div data-lotno="520" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3AC2">520</div>
+<div data-lotno="511" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">511</div>
+<div data-lotno="512" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">512</div>
+<div data-lotno="513" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">513</div>
+<div data-lotno="514" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">514</div>
+<div data-lotno="515" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">515</div>
+<div data-lotno="516" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">516</div>
+<div data-lotno="517" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">517</div>
+<div data-lotno="518" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">518</div>
+<div data-lotno="519" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">519</div>
+<div data-lotno="520" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3AC2">520</div>
 
                     
                     </div>
@@ -1700,49 +1700,49 @@ checkStaffAccess();
                   </div>
         <!--columbarium 2 2nd floor block 3 Side B-->
                     <div class="C2blk3BGRIDGrid" id="C2blk3BGRIDGrid">
-<div data-lotno="521" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">521</div>
-<div data-lotno="522" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">522</div>
-<div data-lotno="523" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">523</div>
-<div data-lotno="524" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">524</div>
-<div data-lotno="525" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">525</div>
-<div data-lotno="526" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">526</div>
-<div data-lotno="527" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">527</div>
-<div data-lotno="528" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">528</div>
-<div data-lotno="529" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">529</div>
-<div data-lotno="530" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">530</div>
+<div data-lotno="521" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">521</div>
+<div data-lotno="522" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">522</div>
+<div data-lotno="523" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">523</div>
+<div data-lotno="524" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">524</div>
+<div data-lotno="525" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">525</div>
+<div data-lotno="526" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">526</div>
+<div data-lotno="527" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">527</div>
+<div data-lotno="528" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">528</div>
+<div data-lotno="529" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">529</div>
+<div data-lotno="530" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">530</div>
 
-<div data-lotno="531" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">531</div>
-<div data-lotno="532" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">532</div>
-<div data-lotno="533" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">533</div>
-<div data-lotno="534" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">534</div>
-<div data-lotno="535" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">535</div>
-<div data-lotno="536" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">536</div>
-<div data-lotno="537" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">537</div>
-<div data-lotno="538" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">538</div>
-<div data-lotno="539" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">539</div>
-<div data-lotno="540" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">540</div>
+<div data-lotno="531" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">531</div>
+<div data-lotno="532" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">532</div>
+<div data-lotno="533" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">533</div>
+<div data-lotno="534" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">534</div>
+<div data-lotno="535" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">535</div>
+<div data-lotno="536" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">536</div>
+<div data-lotno="537" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">537</div>
+<div data-lotno="538" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">538</div>
+<div data-lotno="539" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">539</div>
+<div data-lotno="540" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">540</div>
 
-<div data-lotno="541" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">541</div>
-<div data-lotno="542" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">542</div>
-<div data-lotno="543" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">543</div>
-<div data-lotno="544" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">544</div>
-<div data-lotno="545" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">545</div>
-<div data-lotno="546" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">546</div>
-<div data-lotno="547" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">547</div>
-<div data-lotno="548" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">548</div>
-<div data-lotno="549" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">549</div>
-<div data-lotno="550" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">550</div>
+<div data-lotno="541" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">541</div>
+<div data-lotno="542" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">542</div>
+<div data-lotno="543" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">543</div>
+<div data-lotno="544" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">544</div>
+<div data-lotno="545" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">545</div>
+<div data-lotno="546" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">546</div>
+<div data-lotno="547" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">547</div>
+<div data-lotno="548" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">548</div>
+<div data-lotno="549" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">549</div>
+<div data-lotno="550" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">550</div>
 
-<div data-lotno="551" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">551</div>
-<div data-lotno="552" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">552</div>
-<div data-lotno="553" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">553</div>
-<div data-lotno="554" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">554</div>
-<div data-lotno="555" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">555</div>
-<div data-lotno="556" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">556</div>
-<div data-lotno="557" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">557</div>
-<div data-lotno="558" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">558</div>
-<div data-lotno="559" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">559</div>
-<div data-lotno="560" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk3BC2">560</div>
+<div data-lotno="551" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">551</div>
+<div data-lotno="552" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">552</div>
+<div data-lotno="553" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">553</div>
+<div data-lotno="554" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">554</div>
+<div data-lotno="555" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">555</div>
+<div data-lotno="556" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">556</div>
+<div data-lotno="557" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">557</div>
+<div data-lotno="558" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">558</div>
+<div data-lotno="559" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">559</div>
+<div data-lotno="560" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk3BC2">560</div>
 
                     </div>
                 </div>
@@ -1755,58 +1755,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side A-->
                     <div class="C2blk4AGRIDGrid" id="C2blk4AGRIDGrid">
-<div data-lotno="561" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">561</div>
-<div data-lotno="562" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">562</div>
-<div data-lotno="563" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">563</div>
-<div data-lotno="564" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">564</div>
-<div data-lotno="565" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">565</div>
-<div data-lotno="566" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">566</div>
-<div data-lotno="567" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">567</div>
-<div data-lotno="568" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">568</div>
-<div data-lotno="569" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">569</div>
-<div data-lotno="570" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">570</div>
+<div data-lotno="561" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">561</div>
+<div data-lotno="562" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">562</div>
+<div data-lotno="563" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">563</div>
+<div data-lotno="564" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">564</div>
+<div data-lotno="565" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">565</div>
+<div data-lotno="566" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">566</div>
+<div data-lotno="567" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">567</div>
+<div data-lotno="568" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">568</div>
+<div data-lotno="569" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">569</div>
+<div data-lotno="570" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">570</div>
 
-<div data-lotno="571" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">571</div>
-<div data-lotno="572" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">572</div>
-<div data-lotno="573" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">573</div>
-<div data-lotno="574" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">574</div>
-<div data-lotno="575" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">575</div>
-<div data-lotno="576" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">576</div>
-<div data-lotno="577" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">577</div>
-<div data-lotno="578" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">578</div>
-<div data-lotno="579" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">579</div>
-<div data-lotno="580" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">580</div>
+<div data-lotno="571" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">571</div>
+<div data-lotno="572" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">572</div>
+<div data-lotno="573" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">573</div>
+<div data-lotno="574" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">574</div>
+<div data-lotno="575" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">575</div>
+<div data-lotno="576" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">576</div>
+<div data-lotno="577" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">577</div>
+<div data-lotno="578" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">578</div>
+<div data-lotno="579" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">579</div>
+<div data-lotno="580" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">580</div>
 
-<div data-lotno="581" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">581</div>
-<div data-lotno="582" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">582</div>
-<div data-lotno="583" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">583</div>
-<div data-lotno="584" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">584</div>
-<div data-lotno="585" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">585</div>
-<div data-lotno="586" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">586</div>
-<div data-lotno="587" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">587</div>
-<div data-lotno="588" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">588</div>
-<div data-lotno="589" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">589</div>
-<div data-lotno="590" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">590</div>
+<div data-lotno="581" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">581</div>
+<div data-lotno="582" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">582</div>
+<div data-lotno="583" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">583</div>
+<div data-lotno="584" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">584</div>
+<div data-lotno="585" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">585</div>
+<div data-lotno="586" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">586</div>
+<div data-lotno="587" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">587</div>
+<div data-lotno="588" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">588</div>
+<div data-lotno="589" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">589</div>
+<div data-lotno="590" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">590</div>
 
-<div data-lotno="591" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">591</div>
-<div data-lotno="592" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">592</div>
-<div data-lotno="593" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">593</div>
-<div data-lotno="594" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">594</div>
-<div data-lotno="595" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">595</div>
-<div data-lotno="596" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">596</div>
-<div data-lotno="597" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">597</div>
-<div data-lotno="598" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">598</div>
-<div data-lotno="599" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">599</div>
-<div data-lotno="600" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4AC2">600</div>
+<div data-lotno="591" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">591</div>
+<div data-lotno="592" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">592</div>
+<div data-lotno="593" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">593</div>
+<div data-lotno="594" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">594</div>
+<div data-lotno="595" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">595</div>
+<div data-lotno="596" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">596</div>
+<div data-lotno="597" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">597</div>
+<div data-lotno="598" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">598</div>
+<div data-lotno="599" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">599</div>
+<div data-lotno="600" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4AC2">600</div>
 
                     </div>
                 </div>
@@ -1818,58 +1818,58 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--columbarium 2 2nd floor block 4 Side B-->
                     <div class="C2blk4BGRIDGrid" id="C2blk4BGRIDGrid">
-<div data-lotno="601" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">601</div>
-<div data-lotno="602" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">602</div>
-<div data-lotno="603" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">603</div>
-<div data-lotno="604" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">604</div>
-<div data-lotno="605" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">605</div>
-<div data-lotno="606" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">606</div>
-<div data-lotno="607" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">607</div>
-<div data-lotno="608" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">608</div>
-<div data-lotno="609" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">609</div>
-<div data-lotno="610" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">610</div>
+<div data-lotno="601" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">601</div>
+<div data-lotno="602" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">602</div>
+<div data-lotno="603" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">603</div>
+<div data-lotno="604" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">604</div>
+<div data-lotno="605" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">605</div>
+<div data-lotno="606" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">606</div>
+<div data-lotno="607" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">607</div>
+<div data-lotno="608" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">608</div>
+<div data-lotno="609" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">609</div>
+<div data-lotno="610" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">610</div>
 
-<div data-lotno="611" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">611</div>
-<div data-lotno="612" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">612</div>
-<div data-lotno="613" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">613</div>
-<div data-lotno="614" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">614</div>
-<div data-lotno="615" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">615</div>
-<div data-lotno="616" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">616</div>
-<div data-lotno="617" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">617</div>
-<div data-lotno="618" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">618</div>
-<div data-lotno="619" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">619</div>
-<div data-lotno="620" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">620</div>
+<div data-lotno="611" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">611</div>
+<div data-lotno="612" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">612</div>
+<div data-lotno="613" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">613</div>
+<div data-lotno="614" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">614</div>
+<div data-lotno="615" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">615</div>
+<div data-lotno="616" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">616</div>
+<div data-lotno="617" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">617</div>
+<div data-lotno="618" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">618</div>
+<div data-lotno="619" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">619</div>
+<div data-lotno="620" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">620</div>
 
-<div data-lotno="621" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">621</div>
-<div data-lotno="622" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">622</div>
-<div data-lotno="623" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">623</div>
-<div data-lotno="624" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">624</div>
-<div data-lotno="625" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">625</div>
-<div data-lotno="626" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">626</div>
-<div data-lotno="627" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">627</div>
-<div data-lotno="628" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">628</div>
-<div data-lotno="629" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">629</div>
-<div data-lotno="630" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">630</div>
+<div data-lotno="621" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">621</div>
+<div data-lotno="622" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">622</div>
+<div data-lotno="623" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">623</div>
+<div data-lotno="624" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">624</div>
+<div data-lotno="625" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">625</div>
+<div data-lotno="626" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">626</div>
+<div data-lotno="627" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">627</div>
+<div data-lotno="628" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">628</div>
+<div data-lotno="629" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">629</div>
+<div data-lotno="630" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">630</div>
 
-<div data-lotno="631" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">631</div>
-<div data-lotno="632" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">632</div>
-<div data-lotno="633" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">633</div>
-<div data-lotno="634" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">634</div>
-<div data-lotno="635" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">635</div>
-<div data-lotno="636" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">636</div>
-<div data-lotno="637" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">637</div>
-<div data-lotno="638" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">638</div>
-<div data-lotno="639" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">639</div>
-<div data-lotno="640" data-memsts="Columbarium2" data-memlot="Lawn Lots" class="grid-itemblk4BC2">640</div>
+<div data-lotno="631" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">631</div>
+<div data-lotno="632" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">632</div>
+<div data-lotno="633" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">633</div>
+<div data-lotno="634" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">634</div>
+<div data-lotno="635" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">635</div>
+<div data-lotno="636" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">636</div>
+<div data-lotno="637" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">637</div>
+<div data-lotno="638" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">638</div>
+<div data-lotno="639" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">639</div>
+<div data-lotno="640" data-memsts="Columbarium2" data-memlot="None" class="grid-itemblk4BC2">640</div>
 
                     
                     </div>
@@ -1917,58 +1917,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 1 Side A-->
             <div class="C1GRIDS11AGrid" id="C1GRIDS11AGrid">
-<div data-lotno="1" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">1</div>
-<div data-lotno="2" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">2</div>
-<div data-lotno="3" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">3</div>
-<div data-lotno="4" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">4</div>
-<div data-lotno="5" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">5</div>
-<div data-lotno="6" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">6</div>
-<div data-lotno="7" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">7</div>
-<div data-lotno="8" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">8</div>
-<div data-lotno="9" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">9</div>
-<div data-lotno="10" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">10</div>
+<div data-lotno="1" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">1</div>
+<div data-lotno="2" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">2</div>
+<div data-lotno="3" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">3</div>
+<div data-lotno="4" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">4</div>
+<div data-lotno="5" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">5</div>
+<div data-lotno="6" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">6</div>
+<div data-lotno="7" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">7</div>
+<div data-lotno="8" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">8</div>
+<div data-lotno="9" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">9</div>
+<div data-lotno="10" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">10</div>
 
-<div data-lotno="11" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">11</div>
-<div data-lotno="12" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">12</div>
-<div data-lotno="13" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">13</div>
-<div data-lotno="14" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">14</div>
-<div data-lotno="15" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">15</div>
-<div data-lotno="16" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">16</div>
-<div data-lotno="17" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">17</div>
-<div data-lotno="18" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">18</div>
-<div data-lotno="19" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">19</div>
-<div data-lotno="20" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">20</div>
+<div data-lotno="11" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">11</div>
+<div data-lotno="12" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">12</div>
+<div data-lotno="13" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">13</div>
+<div data-lotno="14" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">14</div>
+<div data-lotno="15" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">15</div>
+<div data-lotno="16" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">16</div>
+<div data-lotno="17" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">17</div>
+<div data-lotno="18" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">18</div>
+<div data-lotno="19" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">19</div>
+<div data-lotno="20" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">20</div>
 
-<div data-lotno="21" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">21</div>
-<div data-lotno="22" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">22</div>
-<div data-lotno="23" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">23</div>
-<div data-lotno="24" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">24</div>
-<div data-lotno="25" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">25</div>
-<div data-lotno="26" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">26</div>
-<div data-lotno="27" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">27</div>
-<div data-lotno="28" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">28</div>
-<div data-lotno="29" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">29</div>
-<div data-lotno="30" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">30</div>
+<div data-lotno="21" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">21</div>
+<div data-lotno="22" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">22</div>
+<div data-lotno="23" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">23</div>
+<div data-lotno="24" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">24</div>
+<div data-lotno="25" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">25</div>
+<div data-lotno="26" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">26</div>
+<div data-lotno="27" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">27</div>
+<div data-lotno="28" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">28</div>
+<div data-lotno="29" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">29</div>
+<div data-lotno="30" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">30</div>
 
-<div data-lotno="31" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">31</div>
-<div data-lotno="32" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">32</div>
-<div data-lotno="33" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">33</div>
-<div data-lotno="34" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">34</div>
-<div data-lotno="35" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">35</div>
-<div data-lotno="36" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">36</div>
-<div data-lotno="37" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">37</div>
-<div data-lotno="38" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">38</div>
-<div data-lotno="39" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">39</div>
-<div data-lotno="40" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11A">40</div>
+<div data-lotno="31" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">31</div>
+<div data-lotno="32" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">32</div>
+<div data-lotno="33" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">33</div>
+<div data-lotno="34" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">34</div>
+<div data-lotno="35" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">35</div>
+<div data-lotno="36" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">36</div>
+<div data-lotno="37" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">37</div>
+<div data-lotno="38" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">38</div>
+<div data-lotno="39" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">39</div>
+<div data-lotno="40" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11A">40</div>
 
             
             </div>
@@ -1981,58 +1981,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 1 Side B-->
             <div class="C1GRIDS11BGrid" id="C1GRIDS11BGrid">
-<div data-lotno="41" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">41</div>
-<div data-lotno="42" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">42</div>
-<div data-lotno="43" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">43</div>
-<div data-lotno="44" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">44</div>
-<div data-lotno="45" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">45</div>
-<div data-lotno="46" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">46</div>
-<div data-lotno="47" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">47</div>
-<div data-lotno="48" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">48</div>
-<div data-lotno="49" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">49</div>
-<div data-lotno="50" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">50</div>
+<div data-lotno="41" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">41</div>
+<div data-lotno="42" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">42</div>
+<div data-lotno="43" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">43</div>
+<div data-lotno="44" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">44</div>
+<div data-lotno="45" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">45</div>
+<div data-lotno="46" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">46</div>
+<div data-lotno="47" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">47</div>
+<div data-lotno="48" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">48</div>
+<div data-lotno="49" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">49</div>
+<div data-lotno="50" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">50</div>
 
-<div data-lotno="51" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">51</div>
-<div data-lotno="52" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">52</div>
-<div data-lotno="53" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">53</div>
-<div data-lotno="54" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">54</div>
-<div data-lotno="55" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">55</div>
-<div data-lotno="56" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">56</div>
-<div data-lotno="57" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">57</div>
-<div data-lotno="58" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">58</div>
-<div data-lotno="59" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">59</div>
-<div data-lotno="60" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">60</div>
+<div data-lotno="51" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">51</div>
+<div data-lotno="52" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">52</div>
+<div data-lotno="53" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">53</div>
+<div data-lotno="54" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">54</div>
+<div data-lotno="55" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">55</div>
+<div data-lotno="56" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">56</div>
+<div data-lotno="57" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">57</div>
+<div data-lotno="58" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">58</div>
+<div data-lotno="59" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">59</div>
+<div data-lotno="60" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">60</div>
 
-<div data-lotno="61" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">61</div>
-<div data-lotno="62" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">62</div>
-<div data-lotno="63" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">63</div>
-<div data-lotno="64" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">64</div>
-<div data-lotno="65" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">65</div>
-<div data-lotno="66" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">66</div>
-<div data-lotno="67" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">67</div>
-<div data-lotno="68" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">68</div>
-<div data-lotno="69" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">69</div>
-<div data-lotno="70" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">70</div>
+<div data-lotno="61" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">61</div>
+<div data-lotno="62" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">62</div>
+<div data-lotno="63" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">63</div>
+<div data-lotno="64" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">64</div>
+<div data-lotno="65" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">65</div>
+<div data-lotno="66" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">66</div>
+<div data-lotno="67" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">67</div>
+<div data-lotno="68" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">68</div>
+<div data-lotno="69" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">69</div>
+<div data-lotno="70" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">70</div>
 
-<div data-lotno="71" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">71</div>
-<div data-lotno="72" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">72</div>
-<div data-lotno="73" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">73</div>
-<div data-lotno="74" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">74</div>
-<div data-lotno="75" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">75</div>
-<div data-lotno="76" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">76</div>
-<div data-lotno="77" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">77</div>
-<div data-lotno="78" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">78</div>
-<div data-lotno="79" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">79</div>
-<div data-lotno="80" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S11B">80</div>
+<div data-lotno="71" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">71</div>
+<div data-lotno="72" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">72</div>
+<div data-lotno="73" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">73</div>
+<div data-lotno="74" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">74</div>
+<div data-lotno="75" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">75</div>
+<div data-lotno="76" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">76</div>
+<div data-lotno="77" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">77</div>
+<div data-lotno="78" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">78</div>
+<div data-lotno="79" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">79</div>
+<div data-lotno="80" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S11B">80</div>
 
             </div>
         </div>
@@ -2051,58 +2051,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 2 Side A-->
             <div class="C1GRIDS22AGrid" id="C1GRIDS22AGrid">
-<div data-lotno="81" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">81</div>
-<div data-lotno="82" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">82</div>
-<div data-lotno="83" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">83</div>
-<div data-lotno="84" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">84</div>
-<div data-lotno="85" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">85</div>
-<div data-lotno="86" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">86</div>
-<div data-lotno="87" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">87</div>
-<div data-lotno="88" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">88</div>
-<div data-lotno="89" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">89</div>
-<div data-lotno="90" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">90</div>
+<div data-lotno="81" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">81</div>
+<div data-lotno="82" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">82</div>
+<div data-lotno="83" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">83</div>
+<div data-lotno="84" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">84</div>
+<div data-lotno="85" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">85</div>
+<div data-lotno="86" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">86</div>
+<div data-lotno="87" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">87</div>
+<div data-lotno="88" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">88</div>
+<div data-lotno="89" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">89</div>
+<div data-lotno="90" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">90</div>
 
-<div data-lotno="91" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">91</div>
-<div data-lotno="92" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">92</div>
-<div data-lotno="93" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">93</div>
-<div data-lotno="94" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">94</div>
-<div data-lotno="95" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">95</div>
-<div data-lotno="96" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">96</div>
-<div data-lotno="97" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">97</div>
-<div data-lotno="98" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">98</div>
-<div data-lotno="99" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">99</div>
-<div data-lotno="100" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">100</div>
+<div data-lotno="91" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">91</div>
+<div data-lotno="92" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">92</div>
+<div data-lotno="93" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">93</div>
+<div data-lotno="94" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">94</div>
+<div data-lotno="95" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">95</div>
+<div data-lotno="96" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">96</div>
+<div data-lotno="97" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">97</div>
+<div data-lotno="98" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">98</div>
+<div data-lotno="99" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">99</div>
+<div data-lotno="100" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">100</div>
 
-<div data-lotno="101" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">101</div>
-<div data-lotno="102" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">102</div>
-<div data-lotno="103" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">103</div>
-<div data-lotno="104" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">104</div>
-<div data-lotno="105" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">105</div>
-<div data-lotno="106" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">106</div>
-<div data-lotno="107" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">107</div>
-<div data-lotno="108" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">108</div>
-<div data-lotno="109" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">109</div>
-<div data-lotno="110" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">110</div>
+<div data-lotno="101" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">101</div>
+<div data-lotno="102" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">102</div>
+<div data-lotno="103" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">103</div>
+<div data-lotno="104" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">104</div>
+<div data-lotno="105" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">105</div>
+<div data-lotno="106" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">106</div>
+<div data-lotno="107" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">107</div>
+<div data-lotno="108" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">108</div>
+<div data-lotno="109" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">109</div>
+<div data-lotno="110" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">110</div>
 
-<div data-lotno="111" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">111</div>
-<div data-lotno="112" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">112</div>
-<div data-lotno="113" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">113</div>
-<div data-lotno="114" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">114</div>
-<div data-lotno="115" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">115</div>
-<div data-lotno="116" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">116</div>
-<div data-lotno="117" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">117</div>
-<div data-lotno="118" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">118</div>
-<div data-lotno="119" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">119</div>
-<div data-lotno="120" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22A">120</div>
+<div data-lotno="111" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">111</div>
+<div data-lotno="112" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">112</div>
+<div data-lotno="113" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">113</div>
+<div data-lotno="114" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">114</div>
+<div data-lotno="115" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">115</div>
+<div data-lotno="116" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">116</div>
+<div data-lotno="117" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">117</div>
+<div data-lotno="118" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">118</div>
+<div data-lotno="119" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">119</div>
+<div data-lotno="120" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22A">120</div>
 
             
             </div>
@@ -2115,58 +2115,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
 <!--columbarium 1 1st floor block 2 Side B-->
             <div class="C1GRIDS22BGrid" id="C1GRIDS22BGrid">
-<div data-lotno="121" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">121</div>
-<div data-lotno="122" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">122</div>
-<div data-lotno="123" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">123</div>
-<div data-lotno="124" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">124</div>
-<div data-lotno="125" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">125</div>
-<div data-lotno="126" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">126</div>
-<div data-lotno="127" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">127</div>
-<div data-lotno="128" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">128</div>
-<div data-lotno="129" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">129</div>
-<div data-lotno="130" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">130</div>
+<div data-lotno="121" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">121</div>
+<div data-lotno="122" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">122</div>
+<div data-lotno="123" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">123</div>
+<div data-lotno="124" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">124</div>
+<div data-lotno="125" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">125</div>
+<div data-lotno="126" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">126</div>
+<div data-lotno="127" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">127</div>
+<div data-lotno="128" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">128</div>
+<div data-lotno="129" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">129</div>
+<div data-lotno="130" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">130</div>
 
-<div data-lotno="131" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">131</div>
-<div data-lotno="132" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">132</div>
-<div data-lotno="133" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">133</div>
-<div data-lotno="134" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">134</div>
-<div data-lotno="135" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">135</div>
-<div data-lotno="136" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">136</div>
-<div data-lotno="137" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">137</div>
-<div data-lotno="138" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">138</div>
-<div data-lotno="139" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">139</div>
-<div data-lotno="140" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">140</div>
+<div data-lotno="131" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">131</div>
+<div data-lotno="132" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">132</div>
+<div data-lotno="133" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">133</div>
+<div data-lotno="134" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">134</div>
+<div data-lotno="135" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">135</div>
+<div data-lotno="136" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">136</div>
+<div data-lotno="137" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">137</div>
+<div data-lotno="138" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">138</div>
+<div data-lotno="139" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">139</div>
+<div data-lotno="140" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">140</div>
 
-<div data-lotno="141" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">141</div>
-<div data-lotno="142" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">142</div>
-<div data-lotno="143" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">143</div>
-<div data-lotno="144" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">144</div>
-<div data-lotno="145" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">145</div>
-<div data-lotno="146" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">146</div>
-<div data-lotno="147" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">147</div>
-<div data-lotno="148" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">148</div>
-<div data-lotno="149" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">149</div>
-<div data-lotno="150" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">150</div>
+<div data-lotno="141" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">141</div>
+<div data-lotno="142" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">142</div>
+<div data-lotno="143" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">143</div>
+<div data-lotno="144" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">144</div>
+<div data-lotno="145" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">145</div>
+<div data-lotno="146" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">146</div>
+<div data-lotno="147" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">147</div>
+<div data-lotno="148" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">148</div>
+<div data-lotno="149" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">149</div>
+<div data-lotno="150" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">150</div>
 
-<div data-lotno="151" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">151</div>
-<div data-lotno="152" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">152</div>
-<div data-lotno="153" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">153</div>
-<div data-lotno="154" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">154</div>
-<div data-lotno="155" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">155</div>
-<div data-lotno="156" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">156</div>
-<div data-lotno="157" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">157</div>
-<div data-lotno="158" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">158</div>
-<div data-lotno="159" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">159</div>
-<div data-lotno="160" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1S22B">160</div>
+<div data-lotno="151" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">151</div>
+<div data-lotno="152" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">152</div>
+<div data-lotno="153" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">153</div>
+<div data-lotno="154" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">154</div>
+<div data-lotno="155" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">155</div>
+<div data-lotno="156" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">156</div>
+<div data-lotno="157" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">157</div>
+<div data-lotno="158" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">158</div>
+<div data-lotno="159" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">159</div>
+<div data-lotno="160" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1S22B">160</div>
 
             
             </div>
@@ -2178,58 +2178,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side A-->
             <div class="C1GRIDBLK3AGrid" id="C1GRIDBLK3AGrid">
-<div data-lotno="161" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">161</div>
-<div data-lotno="162" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">162</div>
-<div data-lotno="163" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">163</div>
-<div data-lotno="164" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">164</div>
-<div data-lotno="165" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">165</div>
-<div data-lotno="166" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">166</div>
-<div data-lotno="167" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">167</div>
-<div data-lotno="168" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">168</div>
-<div data-lotno="169" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">169</div>
-<div data-lotno="170" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">170</div>
+<div data-lotno="161" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">161</div>
+<div data-lotno="162" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">162</div>
+<div data-lotno="163" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">163</div>
+<div data-lotno="164" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">164</div>
+<div data-lotno="165" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">165</div>
+<div data-lotno="166" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">166</div>
+<div data-lotno="167" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">167</div>
+<div data-lotno="168" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">168</div>
+<div data-lotno="169" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">169</div>
+<div data-lotno="170" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">170</div>
 
-<div data-lotno="171" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">171</div>
-<div data-lotno="172" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">172</div>
-<div data-lotno="173" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">173</div>
-<div data-lotno="174" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">174</div>
-<div data-lotno="175" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">175</div>
-<div data-lotno="176" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">176</div>
-<div data-lotno="177" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">177</div>
-<div data-lotno="178" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">178</div>
-<div data-lotno="179" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">179</div>
-<div data-lotno="180" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">180</div>
+<div data-lotno="171" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">171</div>
+<div data-lotno="172" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">172</div>
+<div data-lotno="173" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">173</div>
+<div data-lotno="174" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">174</div>
+<div data-lotno="175" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">175</div>
+<div data-lotno="176" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">176</div>
+<div data-lotno="177" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">177</div>
+<div data-lotno="178" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">178</div>
+<div data-lotno="179" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">179</div>
+<div data-lotno="180" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">180</div>
 
-<div data-lotno="181" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">181</div>
-<div data-lotno="182" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">182</div>
-<div data-lotno="183" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">183</div>
-<div data-lotno="184" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">184</div>
-<div data-lotno="185" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">185</div>
-<div data-lotno="186" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">186</div>
-<div data-lotno="187" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">187</div>
-<div data-lotno="188" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">188</div>
-<div data-lotno="189" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">189</div>
-<div data-lotno="190" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">190</div>
+<div data-lotno="181" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">181</div>
+<div data-lotno="182" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">182</div>
+<div data-lotno="183" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">183</div>
+<div data-lotno="184" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">184</div>
+<div data-lotno="185" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">185</div>
+<div data-lotno="186" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">186</div>
+<div data-lotno="187" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">187</div>
+<div data-lotno="188" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">188</div>
+<div data-lotno="189" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">189</div>
+<div data-lotno="190" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">190</div>
 
-<div data-lotno="191" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">191</div>
-<div data-lotno="192" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">192</div>
-<div data-lotno="193" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">193</div>
-<div data-lotno="194" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">194</div>
-<div data-lotno="195" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">195</div>
-<div data-lotno="196" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">196</div>
-<div data-lotno="197" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">197</div>
-<div data-lotno="198" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">198</div>
-<div data-lotno="199" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">199</div>
-<div data-lotno="200" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3A">200</div>
+<div data-lotno="191" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">191</div>
+<div data-lotno="192" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">192</div>
+<div data-lotno="193" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">193</div>
+<div data-lotno="194" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">194</div>
+<div data-lotno="195" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">195</div>
+<div data-lotno="196" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">196</div>
+<div data-lotno="197" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">197</div>
+<div data-lotno="198" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">198</div>
+<div data-lotno="199" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">199</div>
+<div data-lotno="200" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3A">200</div>
 
             </div>
         </div>
@@ -2242,58 +2242,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 3 Side B-->
             <div class="C1GRIDBLK3BGrid" id="C1GRIDBLK3BGrid">
-<div data-lotno="201" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">201</div>
-<div data-lotno="202" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">202</div>
-<div data-lotno="203" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">203</div>
-<div data-lotno="204" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">204</div>
-<div data-lotno="205" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">205</div>
-<div data-lotno="206" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">206</div>
-<div data-lotno="207" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">207</div>
-<div data-lotno="208" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">208</div>
-<div data-lotno="209" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">209</div>
-<div data-lotno="210" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">210</div>
+<div data-lotno="201" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">201</div>
+<div data-lotno="202" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">202</div>
+<div data-lotno="203" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">203</div>
+<div data-lotno="204" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">204</div>
+<div data-lotno="205" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">205</div>
+<div data-lotno="206" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">206</div>
+<div data-lotno="207" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">207</div>
+<div data-lotno="208" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">208</div>
+<div data-lotno="209" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">209</div>
+<div data-lotno="210" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">210</div>
 
-<div data-lotno="211" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">211</div>
-<div data-lotno="212" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">212</div>
-<div data-lotno="213" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">213</div>
-<div data-lotno="214" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">214</div>
-<div data-lotno="215" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">215</div>
-<div data-lotno="216" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">216</div>
-<div data-lotno="217" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">217</div>
-<div data-lotno="218" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">218</div>
-<div data-lotno="219" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">219</div>
-<div data-lotno="220" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">220</div>
+<div data-lotno="211" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">211</div>
+<div data-lotno="212" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">212</div>
+<div data-lotno="213" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">213</div>
+<div data-lotno="214" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">214</div>
+<div data-lotno="215" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">215</div>
+<div data-lotno="216" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">216</div>
+<div data-lotno="217" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">217</div>
+<div data-lotno="218" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">218</div>
+<div data-lotno="219" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">219</div>
+<div data-lotno="220" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">220</div>
 
-<div data-lotno="221" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">221</div>
-<div data-lotno="222" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">222</div>
-<div data-lotno="223" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">223</div>
-<div data-lotno="224" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">224</div>
-<div data-lotno="225" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">225</div>
-<div data-lotno="226" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">226</div>
-<div data-lotno="227" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">227</div>
-<div data-lotno="228" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">228</div>
-<div data-lotno="229" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">229</div>
-<div data-lotno="230" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">230</div>
+<div data-lotno="221" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">221</div>
+<div data-lotno="222" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">222</div>
+<div data-lotno="223" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">223</div>
+<div data-lotno="224" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">224</div>
+<div data-lotno="225" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">225</div>
+<div data-lotno="226" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">226</div>
+<div data-lotno="227" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">227</div>
+<div data-lotno="228" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">228</div>
+<div data-lotno="229" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">229</div>
+<div data-lotno="230" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">230</div>
 
-<div data-lotno="231" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">231</div>
-<div data-lotno="232" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">232</div>
-<div data-lotno="233" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">233</div>
-<div data-lotno="234" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">234</div>
-<div data-lotno="235" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">235</div>
-<div data-lotno="236" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">236</div>
-<div data-lotno="237" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">237</div>
-<div data-lotno="238" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">238</div>
-<div data-lotno="239" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">239</div>
-<div data-lotno="240" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK3B">240</div>
+<div data-lotno="231" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">231</div>
+<div data-lotno="232" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">232</div>
+<div data-lotno="233" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">233</div>
+<div data-lotno="234" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">234</div>
+<div data-lotno="235" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">235</div>
+<div data-lotno="236" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">236</div>
+<div data-lotno="237" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">237</div>
+<div data-lotno="238" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">238</div>
+<div data-lotno="239" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">239</div>
+<div data-lotno="240" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK3B">240</div>
 
             </div>
         </div>
@@ -2306,58 +2306,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side A-->
             <div class="C1GRIDBLK4AGrid" id="C1GRIDBLK4AGrid">
-<div data-lotno="241" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">241</div>
-<div data-lotno="242" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">242</div>
-<div data-lotno="243" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">243</div>
-<div data-lotno="244" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">244</div>
-<div data-lotno="245" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">245</div>
-<div data-lotno="246" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">246</div>
-<div data-lotno="247" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">247</div>
-<div data-lotno="248" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">248</div>
-<div data-lotno="249" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">249</div>
-<div data-lotno="250" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">250</div>
+<div data-lotno="241" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">241</div>
+<div data-lotno="242" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">242</div>
+<div data-lotno="243" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">243</div>
+<div data-lotno="244" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">244</div>
+<div data-lotno="245" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">245</div>
+<div data-lotno="246" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">246</div>
+<div data-lotno="247" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">247</div>
+<div data-lotno="248" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">248</div>
+<div data-lotno="249" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">249</div>
+<div data-lotno="250" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">250</div>
 
-<div data-lotno="251" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">251</div>
-<div data-lotno="252" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">252</div>
-<div data-lotno="253" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">253</div>
-<div data-lotno="254" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">254</div>
-<div data-lotno="255" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">255</div>
-<div data-lotno="256" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">256</div>
-<div data-lotno="257" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">257</div>
-<div data-lotno="258" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">258</div>
-<div data-lotno="259" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">259</div>
-<div data-lotno="260" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">260</div>
+<div data-lotno="251" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">251</div>
+<div data-lotno="252" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">252</div>
+<div data-lotno="253" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">253</div>
+<div data-lotno="254" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">254</div>
+<div data-lotno="255" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">255</div>
+<div data-lotno="256" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">256</div>
+<div data-lotno="257" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">257</div>
+<div data-lotno="258" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">258</div>
+<div data-lotno="259" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">259</div>
+<div data-lotno="260" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">260</div>
 
-<div data-lotno="261" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">261</div>
-<div data-lotno="262" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">262</div>
-<div data-lotno="263" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">263</div>
-<div data-lotno="264" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">264</div>
-<div data-lotno="265" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">265</div>
-<div data-lotno="266" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">266</div>
-<div data-lotno="267" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">267</div>
-<div data-lotno="268" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">268</div>
-<div data-lotno="269" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">269</div>
-<div data-lotno="270" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">270</div>
+<div data-lotno="261" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">261</div>
+<div data-lotno="262" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">262</div>
+<div data-lotno="263" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">263</div>
+<div data-lotno="264" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">264</div>
+<div data-lotno="265" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">265</div>
+<div data-lotno="266" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">266</div>
+<div data-lotno="267" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">267</div>
+<div data-lotno="268" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">268</div>
+<div data-lotno="269" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">269</div>
+<div data-lotno="270" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">270</div>
 
-<div data-lotno="271" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">271</div>
-<div data-lotno="272" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">272</div>
-<div data-lotno="273" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">273</div>
-<div data-lotno="274" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">274</div>
-<div data-lotno="275" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">275</div>
-<div data-lotno="276" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">276</div>
-<div data-lotno="277" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">277</div>
-<div data-lotno="278" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">278</div>
-<div data-lotno="279" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">279</div>
-<div data-lotno="280" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4A">280</div>
+<div data-lotno="271" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">271</div>
+<div data-lotno="272" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">272</div>
+<div data-lotno="273" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">273</div>
+<div data-lotno="274" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">274</div>
+<div data-lotno="275" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">275</div>
+<div data-lotno="276" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">276</div>
+<div data-lotno="277" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">277</div>
+<div data-lotno="278" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">278</div>
+<div data-lotno="279" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">279</div>
+<div data-lotno="280" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4A">280</div>
 
             </div>
         </div>
@@ -2369,58 +2369,58 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             <!--columbarium 1 1st floor block 4 Side B-->
             <div class="C1GRIDBLK4BGrid" id="C1GRIDBLK4BGrid">
-<div data-lotno="281" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">281</div>
-<div data-lotno="282" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">282</div>
-<div data-lotno="283" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">283</div>
-<div data-lotno="284" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">284</div>
-<div data-lotno="285" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">285</div>
-<div data-lotno="286" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">286</div>
-<div data-lotno="287" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">287</div>
-<div data-lotno="288" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">288</div>
-<div data-lotno="289" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">289</div>
-<div data-lotno="290" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">290</div>
+<div data-lotno="281" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">281</div>
+<div data-lotno="282" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">282</div>
+<div data-lotno="283" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">283</div>
+<div data-lotno="284" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">284</div>
+<div data-lotno="285" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">285</div>
+<div data-lotno="286" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">286</div>
+<div data-lotno="287" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">287</div>
+<div data-lotno="288" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">288</div>
+<div data-lotno="289" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">289</div>
+<div data-lotno="290" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">290</div>
 
-<div data-lotno="291" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">291</div>
-<div data-lotno="292" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">292</div>
-<div data-lotno="293" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">293</div>
-<div data-lotno="294" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">294</div>
-<div data-lotno="295" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">295</div>
-<div data-lotno="296" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">296</div>
-<div data-lotno="297" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">297</div>
-<div data-lotno="298" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">298</div>
-<div data-lotno="299" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">299</div>
-<div data-lotno="300" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">300</div>
+<div data-lotno="291" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">291</div>
+<div data-lotno="292" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">292</div>
+<div data-lotno="293" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">293</div>
+<div data-lotno="294" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">294</div>
+<div data-lotno="295" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">295</div>
+<div data-lotno="296" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">296</div>
+<div data-lotno="297" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">297</div>
+<div data-lotno="298" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">298</div>
+<div data-lotno="299" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">299</div>
+<div data-lotno="300" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">300</div>
 
-<div data-lotno="301" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">301</div>
-<div data-lotno="302" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">302</div>
-<div data-lotno="303" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">303</div>
-<div data-lotno="304" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">304</div>
-<div data-lotno="305" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">305</div>
-<div data-lotno="306" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">306</div>
-<div data-lotno="307" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">307</div>
-<div data-lotno="308" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">308</div>
-<div data-lotno="309" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">309</div>
-<div data-lotno="310" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">310</div>
+<div data-lotno="301" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">301</div>
+<div data-lotno="302" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">302</div>
+<div data-lotno="303" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">303</div>
+<div data-lotno="304" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">304</div>
+<div data-lotno="305" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">305</div>
+<div data-lotno="306" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">306</div>
+<div data-lotno="307" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">307</div>
+<div data-lotno="308" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">308</div>
+<div data-lotno="309" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">309</div>
+<div data-lotno="310" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">310</div>
 
-<div data-lotno="311" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">311</div>
-<div data-lotno="312" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">312</div>
-<div data-lotno="313" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">313</div>
-<div data-lotno="314" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">314</div>
-<div data-lotno="315" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">315</div>
-<div data-lotno="316" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">316</div>
-<div data-lotno="317" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">317</div>
-<div data-lotno="318" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">318</div>
-<div data-lotno="319" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">319</div>
-<div data-lotno="320" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1BLK4B">320</div>
+<div data-lotno="311" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">311</div>
+<div data-lotno="312" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">312</div>
+<div data-lotno="313" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">313</div>
+<div data-lotno="314" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">314</div>
+<div data-lotno="315" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">315</div>
+<div data-lotno="316" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">316</div>
+<div data-lotno="317" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">317</div>
+<div data-lotno="318" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">318</div>
+<div data-lotno="319" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">319</div>
+<div data-lotno="320" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1BLK4B">320</div>
 
             
             </div>
@@ -2458,60 +2458,60 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             
         <!--Columbrarium 1 2nd floor block 3 Side A-->
 
             <div class="C1GRIDblk3A2ndGrid" id="C1GRIDblk3A2ndGrid">
-<div data-lotno="481" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">481</div>
-<div data-lotno="482" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">482</div>
-<div data-lotno="483" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">483</div>
-<div data-lotno="484" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">484</div>
-<div data-lotno="485" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">485</div>
-<div data-lotno="486" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">486</div>
-<div data-lotno="487" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">487</div>
-<div data-lotno="488" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">488</div>
-<div data-lotno="489" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">489</div>
-<div data-lotno="490" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">490</div>
+<div data-lotno="481" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">481</div>
+<div data-lotno="482" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">482</div>
+<div data-lotno="483" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">483</div>
+<div data-lotno="484" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">484</div>
+<div data-lotno="485" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">485</div>
+<div data-lotno="486" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">486</div>
+<div data-lotno="487" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">487</div>
+<div data-lotno="488" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">488</div>
+<div data-lotno="489" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">489</div>
+<div data-lotno="490" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">490</div>
 
-<div data-lotno="491" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">491</div>
-<div data-lotno="492" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">492</div>
-<div data-lotno="493" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">493</div>
-<div data-lotno="494" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">494</div>
-<div data-lotno="495" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">495</div>
-<div data-lotno="496" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">496</div>
-<div data-lotno="497" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">497</div>
-<div data-lotno="498" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">498</div>
-<div data-lotno="499" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">499</div>
-<div data-lotno="500" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">500</div>
+<div data-lotno="491" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">491</div>
+<div data-lotno="492" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">492</div>
+<div data-lotno="493" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">493</div>
+<div data-lotno="494" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">494</div>
+<div data-lotno="495" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">495</div>
+<div data-lotno="496" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">496</div>
+<div data-lotno="497" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">497</div>
+<div data-lotno="498" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">498</div>
+<div data-lotno="499" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">499</div>
+<div data-lotno="500" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">500</div>
 
-<div data-lotno="501" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">501</div>
-<div data-lotno="502" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">502</div>
-<div data-lotno="503" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">503</div>
-<div data-lotno="504" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">504</div>
-<div data-lotno="505" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">505</div>
-<div data-lotno="506" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">506</div>
-<div data-lotno="507" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">507</div>
-<div data-lotno="508" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">508</div>
-<div data-lotno="509" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">509</div>
-<div data-lotno="510" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">510</div>
+<div data-lotno="501" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">501</div>
+<div data-lotno="502" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">502</div>
+<div data-lotno="503" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">503</div>
+<div data-lotno="504" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">504</div>
+<div data-lotno="505" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">505</div>
+<div data-lotno="506" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">506</div>
+<div data-lotno="507" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">507</div>
+<div data-lotno="508" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">508</div>
+<div data-lotno="509" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">509</div>
+<div data-lotno="510" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">510</div>
 
-<div data-lotno="511" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">511</div>
-<div data-lotno="512" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">512</div>
-<div data-lotno="513" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">513</div>
-<div data-lotno="514" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">514</div>
-<div data-lotno="515" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">515</div>
-<div data-lotno="516" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">516</div>
-<div data-lotno="517" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">517</div>
-<div data-lotno="518" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">518</div>
-<div data-lotno="519" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">519</div>
-<div data-lotno="520" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3A2nd">520</div>
+<div data-lotno="511" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">511</div>
+<div data-lotno="512" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">512</div>
+<div data-lotno="513" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">513</div>
+<div data-lotno="514" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">514</div>
+<div data-lotno="515" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">515</div>
+<div data-lotno="516" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">516</div>
+<div data-lotno="517" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">517</div>
+<div data-lotno="518" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">518</div>
+<div data-lotno="519" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">519</div>
+<div data-lotno="520" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3A2nd">520</div>
 
             </div>
         </div>
@@ -2522,60 +2522,60 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             
         <!--Columbrarium 1 2nd floor block 3 Side B-->
 
             <div class="C1GRIDblk3B2ndGrid" id="C1GRIDblk3B2ndGrid">
-<div data-lotno="521" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">521</div>
-<div data-lotno="522" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">522</div>
-<div data-lotno="523" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">523</div>
-<div data-lotno="524" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">524</div>
-<div data-lotno="525" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">525</div>
-<div data-lotno="526" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">526</div>
-<div data-lotno="527" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">527</div>
-<div data-lotno="528" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">528</div>
-<div data-lotno="529" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">529</div>
-<div data-lotno="530" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">530</div>
+<div data-lotno="521" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">521</div>
+<div data-lotno="522" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">522</div>
+<div data-lotno="523" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">523</div>
+<div data-lotno="524" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">524</div>
+<div data-lotno="525" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">525</div>
+<div data-lotno="526" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">526</div>
+<div data-lotno="527" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">527</div>
+<div data-lotno="528" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">528</div>
+<div data-lotno="529" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">529</div>
+<div data-lotno="530" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">530</div>
 
-<div data-lotno="531" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">531</div>
-<div data-lotno="532" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">532</div>
-<div data-lotno="533" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">533</div>
-<div data-lotno="534" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">534</div>
-<div data-lotno="535" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">535</div>
-<div data-lotno="536" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">536</div>
-<div data-lotno="537" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">537</div>
-<div data-lotno="538" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">538</div>
-<div data-lotno="539" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">539</div>
-<div data-lotno="540" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">540</div>
+<div data-lotno="531" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">531</div>
+<div data-lotno="532" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">532</div>
+<div data-lotno="533" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">533</div>
+<div data-lotno="534" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">534</div>
+<div data-lotno="535" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">535</div>
+<div data-lotno="536" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">536</div>
+<div data-lotno="537" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">537</div>
+<div data-lotno="538" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">538</div>
+<div data-lotno="539" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">539</div>
+<div data-lotno="540" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">540</div>
 
-<div data-lotno="541" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">541</div>
-<div data-lotno="542" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">542</div>
-<div data-lotno="543" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">543</div>
-<div data-lotno="544" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">544</div>
-<div data-lotno="545" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">545</div>
-<div data-lotno="546" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">546</div>
-<div data-lotno="547" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">547</div>
-<div data-lotno="548" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">548</div>
-<div data-lotno="549" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">549</div>
-<div data-lotno="550" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">550</div>
+<div data-lotno="541" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">541</div>
+<div data-lotno="542" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">542</div>
+<div data-lotno="543" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">543</div>
+<div data-lotno="544" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">544</div>
+<div data-lotno="545" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">545</div>
+<div data-lotno="546" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">546</div>
+<div data-lotno="547" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">547</div>
+<div data-lotno="548" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">548</div>
+<div data-lotno="549" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">549</div>
+<div data-lotno="550" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">550</div>
 
-<div data-lotno="551" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">551</div>
-<div data-lotno="552" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">552</div>
-<div data-lotno="553" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">553</div>
-<div data-lotno="554" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">554</div>
-<div data-lotno="555" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">555</div>
-<div data-lotno="556" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">556</div>
-<div data-lotno="557" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">557</div>
-<div data-lotno="558" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">558</div>
-<div data-lotno="559" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">559</div>
-<div data-lotno="560" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk3B2nd">560</div>
+<div data-lotno="551" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">551</div>
+<div data-lotno="552" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">552</div>
+<div data-lotno="553" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">553</div>
+<div data-lotno="554" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">554</div>
+<div data-lotno="555" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">555</div>
+<div data-lotno="556" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">556</div>
+<div data-lotno="557" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">557</div>
+<div data-lotno="558" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">558</div>
+<div data-lotno="559" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">559</div>
+<div data-lotno="560" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk3B2nd">560</div>
 
             </div>
         </div>
@@ -2588,60 +2588,60 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             
         <!--Columbrarium 1 2nd floor block 4 Side A-->
 
             <div class="C1GRIDblk4A2ndGrid" id="C1GRIDblk4A2ndGrid">
-<div data-lotno="561" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">561</div>
-<div data-lotno="562" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">562</div>
-<div data-lotno="563" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">563</div>
-<div data-lotno="564" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">564</div>
-<div data-lotno="565" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">565</div>
-<div data-lotno="566" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">566</div>
-<div data-lotno="567" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">567</div>
-<div data-lotno="568" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">568</div>
-<div data-lotno="569" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">569</div>
-<div data-lotno="570" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">570</div>
+<div data-lotno="561" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">561</div>
+<div data-lotno="562" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">562</div>
+<div data-lotno="563" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">563</div>
+<div data-lotno="564" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">564</div>
+<div data-lotno="565" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">565</div>
+<div data-lotno="566" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">566</div>
+<div data-lotno="567" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">567</div>
+<div data-lotno="568" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">568</div>
+<div data-lotno="569" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">569</div>
+<div data-lotno="570" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">570</div>
 
-<div data-lotno="571" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">571</div>
-<div data-lotno="572" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">572</div>
-<div data-lotno="573" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">573</div>
-<div data-lotno="574" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">574</div>
-<div data-lotno="575" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">575</div>
-<div data-lotno="576" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">576</div>
-<div data-lotno="577" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">577</div>
-<div data-lotno="578" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">578</div>
-<div data-lotno="579" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">579</div>
-<div data-lotno="580" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">580</div>
+<div data-lotno="571" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">571</div>
+<div data-lotno="572" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">572</div>
+<div data-lotno="573" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">573</div>
+<div data-lotno="574" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">574</div>
+<div data-lotno="575" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">575</div>
+<div data-lotno="576" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">576</div>
+<div data-lotno="577" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">577</div>
+<div data-lotno="578" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">578</div>
+<div data-lotno="579" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">579</div>
+<div data-lotno="580" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">580</div>
 
-<div data-lotno="581" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">581</div>
-<div data-lotno="582" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">582</div>
-<div data-lotno="583" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">583</div>
-<div data-lotno="584" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">584</div>
-<div data-lotno="585" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">585</div>
-<div data-lotno="586" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">586</div>
-<div data-lotno="587" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">587</div>
-<div data-lotno="588" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">588</div>
-<div data-lotno="589" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">589</div>
-<div data-lotno="590" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">590</div>
+<div data-lotno="581" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">581</div>
+<div data-lotno="582" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">582</div>
+<div data-lotno="583" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">583</div>
+<div data-lotno="584" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">584</div>
+<div data-lotno="585" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">585</div>
+<div data-lotno="586" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">586</div>
+<div data-lotno="587" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">587</div>
+<div data-lotno="588" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">588</div>
+<div data-lotno="589" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">589</div>
+<div data-lotno="590" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">590</div>
 
-<div data-lotno="591" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">591</div>
-<div data-lotno="592" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">592</div>
-<div data-lotno="593" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">593</div>
-<div data-lotno="594" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">594</div>
-<div data-lotno="595" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">595</div>
-<div data-lotno="596" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">596</div>
-<div data-lotno="597" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">597</div>
-<div data-lotno="598" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">598</div>
-<div data-lotno="599" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">599</div>
-<div data-lotno="600" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4A2nd">600</div>
+<div data-lotno="591" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">591</div>
+<div data-lotno="592" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">592</div>
+<div data-lotno="593" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">593</div>
+<div data-lotno="594" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">594</div>
+<div data-lotno="595" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">595</div>
+<div data-lotno="596" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">596</div>
+<div data-lotno="597" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">597</div>
+<div data-lotno="598" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">598</div>
+<div data-lotno="599" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">599</div>
+<div data-lotno="600" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4A2nd">600</div>
 
             </div>
         </div>
@@ -2652,60 +2652,60 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             
         <!--Columbrarium 1 2nd floor block 4 Side B-->
 
             <div class="C1GRIDblk4B2ndGrid" id="C1GRIDblk4B2ndGrid">
-<div data-lotno="601" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">601</div>
-<div data-lotno="602" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">602</div>
-<div data-lotno="603" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">603</div>
-<div data-lotno="604" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">604</div>
-<div data-lotno="605" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">605</div>
-<div data-lotno="606" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">606</div>
-<div data-lotno="607" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">607</div>
-<div data-lotno="608" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">608</div>
-<div data-lotno="609" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">609</div>
-<div data-lotno="610" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">610</div>
+<div data-lotno="601" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">601</div>
+<div data-lotno="602" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">602</div>
+<div data-lotno="603" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">603</div>
+<div data-lotno="604" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">604</div>
+<div data-lotno="605" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">605</div>
+<div data-lotno="606" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">606</div>
+<div data-lotno="607" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">607</div>
+<div data-lotno="608" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">608</div>
+<div data-lotno="609" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">609</div>
+<div data-lotno="610" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">610</div>
 
-<div data-lotno="611" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">611</div>
-<div data-lotno="612" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">612</div>
-<div data-lotno="613" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">613</div>
-<div data-lotno="614" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">614</div>
-<div data-lotno="615" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">615</div>
-<div data-lotno="616" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">616</div>
-<div data-lotno="617" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">617</div>
-<div data-lotno="618" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">618</div>
-<div data-lotno="619" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">619</div>
-<div data-lotno="620" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">620</div>
+<div data-lotno="611" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">611</div>
+<div data-lotno="612" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">612</div>
+<div data-lotno="613" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">613</div>
+<div data-lotno="614" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">614</div>
+<div data-lotno="615" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">615</div>
+<div data-lotno="616" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">616</div>
+<div data-lotno="617" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">617</div>
+<div data-lotno="618" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">618</div>
+<div data-lotno="619" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">619</div>
+<div data-lotno="620" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">620</div>
 
-<div data-lotno="621" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">621</div>
-<div data-lotno="622" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">622</div>
-<div data-lotno="623" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">623</div>
-<div data-lotno="624" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">624</div>
-<div data-lotno="625" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">625</div>
-<div data-lotno="626" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">626</div>
-<div data-lotno="627" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">627</div>
-<div data-lotno="628" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">628</div>
-<div data-lotno="629" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">629</div>
-<div data-lotno="630" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">630</div>
+<div data-lotno="621" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">621</div>
+<div data-lotno="622" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">622</div>
+<div data-lotno="623" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">623</div>
+<div data-lotno="624" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">624</div>
+<div data-lotno="625" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">625</div>
+<div data-lotno="626" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">626</div>
+<div data-lotno="627" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">627</div>
+<div data-lotno="628" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">628</div>
+<div data-lotno="629" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">629</div>
+<div data-lotno="630" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">630</div>
 
-<div data-lotno="631" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">631</div>
-<div data-lotno="632" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">632</div>
-<div data-lotno="633" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">633</div>
-<div data-lotno="634" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">634</div>
-<div data-lotno="635" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">635</div>
-<div data-lotno="636" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">636</div>
-<div data-lotno="637" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">637</div>
-<div data-lotno="638" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">638</div>
-<div data-lotno="639" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">639</div>
-<div data-lotno="640" data-memsts="Columbarium1" data-memlot="Lawn Lots" class="grid-itemC1blk4B2nd">640</div>
+<div data-lotno="631" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">631</div>
+<div data-lotno="632" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">632</div>
+<div data-lotno="633" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">633</div>
+<div data-lotno="634" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">634</div>
+<div data-lotno="635" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">635</div>
+<div data-lotno="636" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">636</div>
+<div data-lotno="637" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">637</div>
+<div data-lotno="638" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">638</div>
+<div data-lotno="639" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">639</div>
+<div data-lotno="640" data-memsts="Columbarium1" data-memlot="None" class="grid-itemC1blk4B2nd">640</div>
 
             
             </div>
@@ -2724,11 +2724,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             
@@ -2788,11 +2788,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
             
@@ -2860,11 +2860,11 @@ checkStaffAccess();
                 <div class="legends">Legend</div>
                 <div class="legendList">
                 <div class="legendU Available"></div>
-                <span>Available lots</span>
+                <span>Available slot</span>
                 </div>
             <div class="legendList">
               <div class="legendU Unavailable"></div>
-              <span>Owned lots</span>
+              <span>Owned slot</span>
             </div>
           </div>
         <!--Columbarium 1 2nd floor block 2 side A-->
@@ -2925,11 +2925,11 @@ checkStaffAccess();
                         <div class="legends">Legend</div>
                         <div class="legendList">
                         <div class="legendU Available"></div>
-                        <span>Available lots</span>
+                        <span>Available slot</span>
                         </div>
                     <div class="legendList">
                       <div class="legendU Unavailable"></div>
-                      <span>Owned lots</span>
+                      <span>Owned slot</span>
                     </div>
                   </div>
         <!--Columbarium 1 2nd floor block 2 side B-->
@@ -3315,7 +3315,7 @@ checkStaffAccess();
                 <div data-lotno="71" data-memsts="St. Paul" data-memlot="Lawn Lots" class="grid-itempaul">71</div>
                 </div>
             </div>
-          <area shape="rect" coords="2681,197,3065,929" href="#" title="St. Jude">
+          <area shape="rect" coords="2681,197,3065,929" href="#" title="St. Jude" >
           <div class="Jude" id="Jude">
               St. Jude
             </div>
@@ -4986,7 +4986,7 @@ checkStaffAccess();
         </div>
       </div>
       <!-- logout confirmation modal -->
-      <div id="confirmModal" class="modal" style="display: none;">
+<div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
         <h2>Logout Confirmation</h2>
         <p>Are you sure you want to logout?</p>
@@ -4999,7 +4999,6 @@ checkStaffAccess();
     <script src="paiyakan.js"></script>
     <script src="LotInfo.js"></script>
     <script src="script.js"></script>
-    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
     <script>
         
 
@@ -7130,6 +7129,7 @@ function showPopup() {
   popup.style.display = 'block';
   popup.style.animation = 'popupFade 2.7s ease forwards';
   
+  
   // Automatically remove the popup after the animation ends
   setTimeout(() => {
     popup.style.display = 'none';
@@ -7605,6 +7605,7 @@ document.addEventListener("DOMContentLoaded", function() {
         });
 
 
+             
     </script>
 </body>
 </html>
