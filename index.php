@@ -1,5 +1,4 @@
 <?php
-session_start();
 
 require_once 'security_check.php';
 userCheckLogin();
