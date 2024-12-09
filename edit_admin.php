@@ -144,8 +144,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     <link rel="stylesheet" href="style1.css">
     <style>
 .edit-form-container {
-            max-width: 600px;
-            margin: 50px auto;
+            margin-top:90px;
+            margin-left:35%;
+            width: 500px;
+            align-items:center;
             padding: 20px;
             background: #ffffff;
             border-radius: 8px;
@@ -153,9 +155,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         }
 
         .form-group {
-            margin-bottom: 20px;
             position: relative;
         }
+       
 
         .form-group label {
             display: block;

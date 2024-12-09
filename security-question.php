@@ -55,11 +55,12 @@ $securityQuestion = $_SESSION['forgot_password_user']['security_question'];
     <link rel="stylesheet" href="security.css">
 </head>
 <body>
+    
+
+    <form method="post" action="">
     <?php if ($securityQuestionError): ?>
         <p class="error"><?php echo htmlspecialchars($securityQuestionError); ?></p>
     <?php endif; ?>
-
-    <form method="post" action="">
         <h1>Security Question</h1>
         <p>Security Question: <?php echo htmlspecialchars($securityQuestion); ?></p>
         <label for="security_answer">Your Answer:</label>
