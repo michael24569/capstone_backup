@@ -67,10 +67,5 @@ $securityQuestion = $_SESSION['forgot_password_user']['security_question'];
         <input type="submit" name="verify_answer" value="Verify">
         <p><a href="forgot-password.php"> ← Back</a></p>
     </form>
-    <script>
-        document.getElementById('security_answer').addEventListener('input', function(e) {
-            this.value = this.value.replace(/\s/g, '');
-        });
-    </script>
 </body>
 </html>

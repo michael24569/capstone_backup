@@ -255,6 +255,25 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         input.value = 0;
     }
 }
+
+function validateNumber(input) {
+    let value = input.value.replace(/^0+/, '');
+    
+    // If the value is empty after removing zeros, set it to 0
+    if (value === '') {
+        value = '0';
+    }
+    
+    // Convert to integer
+    let numValue = parseInt(value, 10);
+    
+    // Validate if it's a number and not negative
+    if (isNaN(numValue) || numValue < 0) {
+        input.value = '0';
+    } else {
+        input.value = numValue.toString();
+    }
+}
     </script>
 </body>
 </html>

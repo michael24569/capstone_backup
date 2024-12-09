@@ -12,7 +12,11 @@ checkAdminAccess();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home for Administrator</title>
     <script type="text/javascript">
-   window.history.forward();
+    // Prevent back navigation
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
 </script>
     <link rel="stylesheet" href="mapstyle.css">
     <link rel="stylesheet" href="map.css">
