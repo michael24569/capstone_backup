@@ -205,7 +205,7 @@ function displayRecordStatus() {
             text-align: center;
         }
        /* Hide elements by default on main page */
-.seal, .cctlogo, .address {
+.seal, .assessorlogo, .address {
     display: none;
 }
 
@@ -713,8 +713,8 @@ p {
 <br><div class="seal">
     <img src ="images/seal.png" alt="Tagaytay City Seal">
   </div>
-  <div class="cctlogo">
-    <img src ="images/cctlogo.png" alt="Tagaytay City Seal">
+  <div class="assessorlogo">
+    <img src ="images/assessorlogo.png" alt="Tagaytay Assessor Seal">
   </div>
 <br>
 <div class="address">

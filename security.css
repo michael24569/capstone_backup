@@ -82,5 +82,5 @@ a:hover {
 .error {
     color: red;
     text-align: center;
-    animation: fadeIn 2s ease-in-out;
+    animation: fadeIn .5s ease-in-out;
 }
