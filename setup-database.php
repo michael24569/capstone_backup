@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     if (!$has_error) {                         
                         $success_message = "Database imported successfully.";
                         // Remove the database error session immediately after successful import
-                        unset($_SESSION['database-error']);        
+                        unset($_SESSION['database_error']);        
                         
                     }                 
                 } else {                     

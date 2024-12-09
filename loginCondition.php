@@ -1,25 +1,9 @@
 <?php
-session_start();
-
 $error = null;
-$databaseError = null;
+include 'db-connection.php';
 
-// Try connecting to the database
-try {
-    include 'db-connection.php'; // Adjust to your database connection logic
-    if (!$conn) {
-        throw new Exception("Database connection failed");
-
-        
-    }
-} catch (Exception $e) {
-    $_SESSION['database_error'] = true;
-    header("Location: setup-database.php");
-    exit();
-}
-
-// Main Sign-in Logic
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
+
     function validate($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -48,20 +32,23 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
 
+            // Check if the account is active
             if ($row['accountStatus'] !== 'Active') {
                 $error = "Account is not active. Please contact the administrator.";
-            } else if (password_verify($password, $row['password'])) {
+            }
+            // Check plain text password or hashed password
+            else if (password_verify($password, $row['password'])) {
                 loginUser($row, $row['role']);
             } else {
-                $error = "Incorrect password.";
+                $error = "Incorrect Username or Password";
             }
         } else {
-            $error = "Username not found.";
+            $error = "Incorrect Username or Password";
         }
     }
 
     if ($error !== null) {
-        $_SESSION['error'] = $error;
+        $_SESSION['error'] = $error;  // Store error in the session
         header("Location: index.php");
         exit();
     }
@@ -75,8 +62,9 @@ function loginUser($row, $role) {
 
     if ($role === 'Admin') {
         header('Location: admin_map.php');
+         // Redirect admin to admin dashboard
     } else if ($role === 'Staff') {
-        header('Location: home.php');
+        header('Location: home.php'); // Redirect staff to staff dashboard
     }
     exit();
 }
