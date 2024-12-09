@@ -255,7 +255,7 @@ function toggleSidebar() {
             }
         });
 </script>
-<script src="paiyakan.js"></script>
+
 </body>
 
 </html>
