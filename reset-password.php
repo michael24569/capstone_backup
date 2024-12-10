@@ -1,8 +1,11 @@
 <?php
 session_start();
 include 'db-connection.php';
+require_once 'security_check.php';
+userCheckLogin();
 
-// Ensure user has verified security question
+unset($_SESSION['forgot_password_user']);
+
 if (!isset($_SESSION['can_reset_password']) || !$_SESSION['can_reset_password']) {
     header("Location: index.php");
     exit();
