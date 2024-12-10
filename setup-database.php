@@ -63,6 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>     
     <title>Setup Database</title>     
     <link rel="stylesheet" href="setupdb.css"> 
+    <script type="text/javascript">
+    // Prevent back navigation
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
+</script>
     <style>         
         .error-message {             
             color: red;             

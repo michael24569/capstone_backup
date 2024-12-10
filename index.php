@@ -13,7 +13,13 @@ require("loginCondition.php");
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
-   
+    <script type="text/javascript">
+    // Prevent back navigation
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
+</script>
 </head>
 <body >
 <div class="blur-box">
