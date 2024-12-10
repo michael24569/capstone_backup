@@ -59,11 +59,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
     <title>Forgot Password</title>
 </head>
 <body>
-<?php if ($error): ?>
-        <p style="color: red;"><?php echo $error; ?></p>
-    <?php endif; ?>
+
 
     <form method="post" action="">
+    <?php if ($error): ?>
+        <p class="error"><?php echo $error; ?></p>
+    <?php endif; ?>
         <br>
         <h1>Forgot Password</h1>
         <br>

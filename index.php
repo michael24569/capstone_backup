@@ -34,8 +34,8 @@ require("loginCondition.php");
 <div class="seal">
     <img src ="images/seal.png" alt="Tagaytay City Seal">
   </div>
-  <div class="cctlogo">
-    <img src ="images/cctlogo.png" alt="City College of Tagaytay">
+  <div class="assessorlogo">
+    <img src ="images/assessorlogo.png" alt="Tagayatay City Assessors Seal">
   </div>
     <div class="container" id="signin">
         <div class="login-form">
@@ -264,22 +264,22 @@ require("loginCondition.php");
 
     .seal img {
     position:absolute;
-    max-width: 8%; 
+    max-height: 18%; 
     height: auto; 
-    margin-top:27%;
+    margin-top:28%;
     margin-left:-26%;
     z-index: 10000;
     }
-    .cctlogo {
+    .assessorlogo {
     text-align: center;
     
     }
 
-    .cctlogo img {
+    .assessorlogo img {
     position:absolute;
-    max-width: 7%; 
+    max-height: 18%; 
     height: auto; 
-    margin-top:27%;
+    margin-top:28%;
     margin-left:-16%;
     z-index: 10000;
     }

@@ -168,21 +168,22 @@ p {
         max-width: 10.5%;         
         height: auto;         
         top: 20px;
-        margin-left: -41%;         
+        margin-left: 38%;         
+      
         z-index: 10000;     
     }      
 
-    .cctlogo {         
+    .assessorlogo {         
         display: block;         
         text-align: center;     
     }      
 
-    .cctlogo img {         
+    .assessorlogo img {         
         position: fixed;         
-        max-width: 8.5%;         
+        max-width: 10.5%;         
         height: auto;         
         top: 20px;
-        margin-left: 38%;         
+        margin-left: -45%;             
         z-index: 10000;     
     }      
 
