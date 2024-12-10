@@ -1,9 +1,22 @@
+
 <?php
+
 $error = null;
-include 'db-connection.php';
+$databaseError = null;
 
+try {
+    include 'db-connection.php'; 
+    if (!$conn) {
+        throw new Exception("Database connection failed");
+        $_SESSION['forgot-passW'] = true;
+        
+    }
+} catch (Exception $e) {
+    $_SESSION['database_error'] = true;
+    header("Location: setup-database.php");
+    exit();
+}
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
-
     function validate($data) {
         $data = trim($data);
         $data = stripslashes($data);
@@ -32,23 +45,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
 
-            // Check if the account is active
             if ($row['accountStatus'] !== 'Active') {
                 $error = "Account is not active. Please contact the administrator.";
-            }
-            // Check plain text password or hashed password
-            else if (password_verify($password, $row['password'])) {
+            } else if (password_verify($password, $row['password'])) {
                 loginUser($row, $row['role']);
             } else {
-                $error = "Incorrect Username or Password";
+                $error = "Incorrect password.";
             }
         } else {
-            $error = "Incorrect Username or Password";
+            $error = "Username not found.";
         }
     }
 
     if ($error !== null) {
-        $_SESSION['error'] = $error;  // Store error in the session
+        $_SESSION['error'] = $error;
         header("Location: index.php");
         exit();
     }
@@ -62,9 +72,8 @@ function loginUser($row, $role) {
 
     if ($role === 'Admin') {
         header('Location: admin_map.php');
-         // Redirect admin to admin dashboard
     } else if ($role === 'Staff') {
-        header('Location: home.php'); // Redirect staff to staff dashboard
+        header('Location: home.php');
     }
     exit();
 }
