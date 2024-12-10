@@ -1,7 +1,6 @@
 <?php  
 session_start();
 
-// Check if there's no database error session - if not, redirect to index
 if (!isset($_SESSION['database_error'])) {
     header("Location: index.php");
     exit();
@@ -46,10 +45,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }                     
                     }                                          
                     if (!$has_error) {                         
-                        $success_message = "Database imported successfully.";
-                        // Remove the database error session immediately after successful import
-                        session_destroy();      
-                        
+                        $success_message = "Database imported successfully.";     
+                        unset($_SESSION['database-error']);
+                        session_destroy();
                     }                 
                 } else {                     
                     $error_message = "Error creating database: " . $conn->error;                 
@@ -65,14 +63,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>     
     <title>Setup Database</title>     
     <link rel="stylesheet" href="setupdb.css"> 
-    <script type="text/javascript">
-    // Prevent back navigation
-    window.history.pushState(null, null, window.location.href);
-    window.onpopstate = function () {
-        window.history.pushState(null, null, window.location.href);
-    };
-</script>
-
     <style>         
         .error-message {             
             color: red;             

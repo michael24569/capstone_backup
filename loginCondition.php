@@ -3,12 +3,11 @@
 
 $error = null;
 $databaseError = null;
-
+$_SESSION['forgot-passW'] = true; 
 try {
-    include 'db-connection.php'; 
+    include 'db-connection.php';
     if (!$conn) {
         throw new Exception("Database connection failed");
-        $_SESSION['forgot-passW'] = true;
         
     }
 } catch (Exception $e) {

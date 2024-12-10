@@ -2,6 +2,10 @@
 session_start();
 include 'db-connection.php';
 
+if(!isset($_SESSION['forgot-passW'])) {
+    header("Location: index.php");
+    exit();
+}
 $error = null;
 $securityQuestionError = null;
 
@@ -40,9 +44,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
             $_SESSION['forgot_password_user'] = [
                 'id' => $row['id'],
                 'role' => $row['role'],
-                'security_question' => $row['security_question']
+                'security_question' => $row['security_question'],
             ];
-            
             header("Location: security-question.php");
             exit();
         } else {

@@ -4,7 +4,7 @@ include 'db-connection.php';
 
 // Ensure user has verified security question
 if (!isset($_SESSION['can_reset_password']) || !$_SESSION['can_reset_password']) {
-    header("Location: forgot-password.php");
+    header("Location: index.php");
     exit();
 }
 
@@ -47,6 +47,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
             // Clear sessions and redirect
             unset($_SESSION['forgot_password_user']);
             unset($_SESSION['can_reset_password']);
+            unset($_SESSION['forgot-passW']);
+            session_destroy();
             
             $_SESSION['success_message'] = "Password successfully reset. Please log in.";
             header("Location: index.php");

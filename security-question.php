@@ -1,13 +1,12 @@
 <?php
 session_start();
 include 'db-connection.php';
+unset($_SESSION['forgot-passW']);
 
-// Ensure user has gone through first step
 if (!isset($_SESSION['forgot_password_user'])) {
     header("Location: forgot-password.php");
     exit();
 }
-
 $securityQuestionError = null;
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['verify_answer'])) {
