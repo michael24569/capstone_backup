@@ -12,13 +12,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     $start_from = ($page-1) * $records_per_page;
     
     $searchQuery = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
-
+    $searchField = isset($_GET['field']) ? mysqli_real_escape_string($conn, $_GET['field']) : 'Lot_No';
+    
     // Get total number of records
     $total_query = "SELECT COUNT(*) as total FROM records";
     if ($searchQuery != '') {
-        $total_query .= " WHERE Lot_No LIKE '%$searchQuery%' OR mem_lots LIKE '%$searchQuery%' 
-                         OR mem_sts LIKE '%$searchQuery%' OR LO_name LIKE '%$searchQuery%'";
+        $total_query .= " WHERE $searchField LIKE '%$searchQuery%'";
     }
+    
     $result = mysqli_query($conn, $total_query);
     $row = mysqli_fetch_assoc($result);
     $total_records = $row['total'];
@@ -27,11 +28,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     // Get records for current page
     $query = "SELECT * FROM records";
     if ($searchQuery != '') {
-        $query .= " WHERE Lot_No LIKE '%$searchQuery%' OR mem_lots LIKE '%$searchQuery%' 
-                   OR mem_sts LIKE '%$searchQuery%' OR LO_name LIKE '%$searchQuery%'";
+        // Use the selected field for searching
+        $query .= " WHERE $searchField LIKE '%$searchQuery%'";
     }
     $query .= " LIMIT $start_from, $records_per_page";
     $result = mysqli_query($conn, $query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,13 +167,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 .clear-button {
     cursor: pointer;
     position: absolute;
-    left: 22.5%; /* Adjust based on your design */
+    left: 32.5%; /* Adjust based on your design */
     top: 19.6%;
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */
 }
-
+.display {
+    display: flex;
+}
+.select {
+    height: 40px;
+    margin-right: 10px;
+    padding-left: 5px;
+    font-family: 'MyFont';
+}
     </style>
 </head>
 
@@ -187,15 +197,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         <div id="alertBox" class="alert"></div>
         <div class="table-responsive">
             <h1 id="header1">Records Section</h1>
-            <a class="btn btn-add" href="addRecord.php" role="button">
+            <a class="btn btn-add" href="admin_addRecord.php" role="button">
                 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon">
                     <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
                 </svg>
                 Add new record
             </a>
             <br>
+           <div class="display">
+           <select id="searchField" class="select" style="width: 150px;">
+        <option value="Lot_No">Lot No.</option>
+        <option value="mem_lots">Memorial Lots</option>
+        <option value="mem_sts">Memorial Name</option>
+        <option value="LO_name">Lot Owner</option>
+    </select>
             <input class="form-control" type="text" id="searchInput" placeholder="Search records..." autocomplete="off">
             <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
+           </div>
             
             <table class="styled-table text-center">
                 <thead>
@@ -220,7 +238,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                             <td><?php echo ucwords(strtolower($row['LO_name'])); ?></td>
                             <td><?php echo ucwords(strtolower($row['mem_address'])); ?></td>
                             <td class="action-buttons">
-                                <a class='btn btn-edit' href='update.php?id=<?php echo $row['id']; ?>'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>Edit</a>
+                                <a class='btn btn-edit' href='admin_update.php?id=<?php echo $row['id']; ?>'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>Edit</a>
                             </td>
                         </tr>
                         <tr class="divider-row">
@@ -277,33 +295,57 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
    <script src="paiyakan.js"></script>
 
     <script>
-        // Dynamic search functionality
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const searchQuery = this.value.trim();
+    // Dynamic search functionality
+const searchInput = document.getElementById('searchInput');
+const searchField = document.getElementById('searchField');
+const clearButton = document.getElementById('clearButton');
+
+function performSearch() {
+    const searchQuery = searchInput.value.trim();
+    const selectedField = searchField.value;
+    
+    // Create XMLHttpRequest
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}`, true);
+    
+    xhr.onload = function() {
+        if (this.status === 200) {
+            // Parse the JSON response
+            const response = JSON.parse(this.responseText);
             
-            // Create XMLHttpRequest
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', `staff_pagination.php?search=${encodeURIComponent(searchQuery)}`, true);
+            // Update table body
+            const tableBody = document.getElementById('recordsTableBody');
+            tableBody.innerHTML = response.records || '<tr><td colspan="6">No records found</td></tr>';
             
-            xhr.onload = function() {
-                if (this.status === 200) {
-                    // Parse the JSON response
-                    const response = JSON.parse(this.responseText);
-                    
-                    // Update table body
-                    const tableBody = document.getElementById('recordsTableBody');
-                    tableBody.innerHTML = response.records || '<tr><td colspan="6">No records found</td></tr>';
-                    
-                    // Update pagination info
-                    document.getElementById('paginationInfo').innerHTML = response.pagination_info || '';
-                    
-                    // Update pagination links
-                    document.getElementById('paginationLinks').innerHTML = response.pagination_links || '';
-                }
-            };
+            // Update pagination info
+            document.getElementById('paginationInfo').innerHTML = response.pagination_info || '';
             
-            xhr.send();
-        });
+            // Update pagination links
+            document.getElementById('paginationLinks').innerHTML = response.pagination_links || '';
+        }
+    };
+    
+    xhr.send();
+}
+
+// Add event listeners
+searchInput.addEventListener('input', function() {
+    if (this.value) {
+        clearButton.style.display = 'block';
+    } else {
+        clearButton.style.display = 'none';
+    }
+    performSearch();
+});
+
+searchField.addEventListener('change', performSearch);
+
+clearButton.addEventListener('click', function() {
+    searchInput.value = '';
+    clearButton.style.display = 'none';
+    searchInput.focus();
+    performSearch();
+});
 
         // Anti-zoom functionality
         document.addEventListener('wheel', function(e) {
@@ -347,7 +389,7 @@ clearButton.addEventListener('click', function () {
     
     // Trigger the search with empty value to refresh the results
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'staff_pagination.php?search=', true);
+    xhr.open('GET', 'dynamic_pagination.php?search=', true);
     
     xhr.onload = function() {
         if (this.status === 200) {

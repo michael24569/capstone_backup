@@ -12,13 +12,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     $start_from = ($page-1) * $records_per_page;
     
     $searchQuery = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
-
+    $searchField = isset($_GET['field']) ? mysqli_real_escape_string($conn, $_GET['field']) : 'Lot_No';
+    
     // Get total number of records
     $total_query = "SELECT COUNT(*) as total FROM records";
     if ($searchQuery != '') {
-        $total_query .= " WHERE Lot_No LIKE '%$searchQuery%' OR mem_lots LIKE '%$searchQuery%' 
-                         OR mem_sts LIKE '%$searchQuery%' OR LO_name LIKE '%$searchQuery%'";
+        $total_query .= " WHERE $searchField LIKE '%$searchQuery%'";
     }
+    
     $result = mysqli_query($conn, $total_query);
     $row = mysqli_fetch_assoc($result);
     $total_records = $row['total'];
@@ -27,11 +28,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     // Get records for current page
     $query = "SELECT * FROM records";
     if ($searchQuery != '') {
-        $query .= " WHERE Lot_No LIKE '%$searchQuery%' OR mem_lots LIKE '%$searchQuery%' 
-                   OR mem_sts LIKE '%$searchQuery%' OR LO_name LIKE '%$searchQuery%'";
+        // Use the selected field for searching
+        $query .= " WHERE $searchField LIKE '%$searchQuery%'";
     }
     $query .= " LIMIT $start_from, $records_per_page";
     $result = mysqli_query($conn, $query);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -165,13 +167,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 .clear-button {
     cursor: pointer;
     position: absolute;
-    left: 22.5%; /* Adjust based on your design */
+    left: 32.5%; /* Adjust based on your design */
     top: 19.6%;
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */
 }
-
+.display {
+    display: flex;
+}
+.select {
+    height: 40px;
+    margin-right: 10px;
+    padding-left: 5px;
+    font-family: 'MyFont';
+}
     </style>
 </head>
 
@@ -194,8 +204,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 Add new record
             </a>
             <br>
+           <div class="display">
+           <select id="searchField" class="select" style="width: 150px;">
+        <option value="Lot_No">Lot No.</option>
+        <option value="mem_lots">Memorial Lots</option>
+        <option value="mem_sts">Memorial Name</option>
+        <option value="LO_name">Lot Owner</option>
+    </select>
             <input class="form-control" type="text" id="searchInput" placeholder="Search records..." autocomplete="off">
             <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
+           </div>
             
             <table class="styled-table text-center">
                 <thead>
@@ -277,33 +295,57 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
    <script src="paiyakan.js"></script>
 
     <script>
-        // Dynamic search functionality
-        document.getElementById('searchInput').addEventListener('input', function() {
-            const searchQuery = this.value.trim();
+    // Dynamic search functionality
+const searchInput = document.getElementById('searchInput');
+const searchField = document.getElementById('searchField');
+const clearButton = document.getElementById('clearButton');
+
+function performSearch() {
+    const searchQuery = searchInput.value.trim();
+    const selectedField = searchField.value;
+    
+    // Create XMLHttpRequest
+    const xhr = new XMLHttpRequest();
+    xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}`, true);
+    
+    xhr.onload = function() {
+        if (this.status === 200) {
+            // Parse the JSON response
+            const response = JSON.parse(this.responseText);
             
-            // Create XMLHttpRequest
-            const xhr = new XMLHttpRequest();
-            xhr.open('GET', `admin_pagination.php?search=${encodeURIComponent(searchQuery)}`, true);
+            // Update table body
+            const tableBody = document.getElementById('recordsTableBody');
+            tableBody.innerHTML = response.records || '<tr><td colspan="6">No records found</td></tr>';
             
-            xhr.onload = function() {
-                if (this.status === 200) {
-                    // Parse the JSON response
-                    const response = JSON.parse(this.responseText);
-                    
-                    // Update table body
-                    const tableBody = document.getElementById('recordsTableBody');
-                    tableBody.innerHTML = response.records || '<tr><td colspan="6">No records found</td></tr>';
-                    
-                    // Update pagination info
-                    document.getElementById('paginationInfo').innerHTML = response.pagination_info || '';
-                    
-                    // Update pagination links
-                    document.getElementById('paginationLinks').innerHTML = response.pagination_links || '';
-                }
-            };
+            // Update pagination info
+            document.getElementById('paginationInfo').innerHTML = response.pagination_info || '';
             
-            xhr.send();
-        });
+            // Update pagination links
+            document.getElementById('paginationLinks').innerHTML = response.pagination_links || '';
+        }
+    };
+    
+    xhr.send();
+}
+
+// Add event listeners
+searchInput.addEventListener('input', function() {
+    if (this.value) {
+        clearButton.style.display = 'block';
+    } else {
+        clearButton.style.display = 'none';
+    }
+    performSearch();
+});
+
+searchField.addEventListener('change', performSearch);
+
+clearButton.addEventListener('click', function() {
+    searchInput.value = '';
+    clearButton.style.display = 'none';
+    searchInput.focus();
+    performSearch();
+});
 
         // Anti-zoom functionality
         document.addEventListener('wheel', function(e) {
@@ -347,7 +389,7 @@ clearButton.addEventListener('click', function () {
     
     // Trigger the search with empty value to refresh the results
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'admin_pagination.php?search=', true);
+    xhr.open('GET', 'dynamic_pagination.php?search=', true);
     
     xhr.onload = function() {
         if (this.status === 200) {
