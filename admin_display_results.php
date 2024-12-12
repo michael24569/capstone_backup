@@ -121,7 +121,7 @@ function displayRecordStatus() {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Summary of Status Report</title>
+    <title>Availability Status Report</title>
     <style>
 
         .summary-table {
@@ -724,7 +724,7 @@ p {
 </div>
 
 
-    <h1 class="reportHeader">Summary of Status Report</h1>
+    <h1 class="reportHeader">Availability Status Report</h1>
     <br>
     <br>
     <table class="summary-table">
