@@ -170,7 +170,7 @@ $result = $conn->query($sql);
                     <tr>
                         <th>Role</th>
                         <th>User Fullname</th>
-                        <th>Lot No.</th>
+                        <th>Lot/Slot No.</th>
                         <th>Memorial Name</th>
                         <th>Action</th>
                         <th>Timestamp</th>
