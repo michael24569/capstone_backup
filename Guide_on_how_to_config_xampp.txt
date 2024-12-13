@@ -1,0 +1,23 @@
+Using XAMPP Control Panel's Auto Start:
+
+
+Open XAMPP Control Panel as the Administrator
+Click on "Config" button (top right)
+Select "Service and Port Settings"
+Check the boxes for "Autostart Module" for both Apache and MySQL
+Click "Save"
+Restart XAMPP
+
+
+Using Windows Services (more reliable):
+
+
+Open XAMPP Control Panel as the Administrator
+Click on "Apache" service → Click "Service" button
+Do the same for MySQL service
+This installs them as Windows services
+Open Windows Services (services.msc) or simply press windows + R then search services.msc
+Find "Apache2.4" and "MySQL" services
+Right-click each → Properties
+Change "Startup type" to "Automatic"
+Click "Apply" and "OK"
