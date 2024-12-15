@@ -27,13 +27,30 @@ body {
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
 }
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 
+/* Style the image */
+.SBlogo {
+  height: 50px;
+  animation: rotate 20s linear infinite; 
+}
+
+.titLe{
+  font-weight: bold;
+}
 .sidebar.active {
   width: 300px; /* Expanded sidebar width */
 }
 
 .sidebar:hover {
-  width: 300px; /* Ensure that hover expands the sidebar */
+  width: 320px; /* Ensure that hover expands the sidebar */
 }
 
 /* Sidebar Content Styles */

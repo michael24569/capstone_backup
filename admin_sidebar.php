@@ -5,9 +5,10 @@
             <li>
             <a class="sidebar-header">
                 <span class="icon">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"  style="width: 24px; height: 24px; fill: #002d1c;"><!--!Font Awesome Free 6.7.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M176 0c-26.5 0-48 21.5-48 48l0 80-80 0c-26.5 0-48 21.5-48 48l0 32c0 26.5 21.5 48 48 48l80 0 0 208c0 26.5 21.5 48 48 48l32 0c26.5 0 48-21.5 48-48l0-208 80 0c26.5 0 48-21.5 48-48l0-32c0-26.5-21.5-48-48-48l-80 0 0-80c0-26.5-21.5-48-48-48L176 0z"/></svg>
+                <img class="SBlogo"src ="images/assessorlogo.png" alt="Tagayatay City Assessors Seal">
             </span>
-                <span class="text" style="font-size: 15px;">Tagaytay Memorial Park</span>
+            
+                <span class="text titLe" style="font-size: 15px;">2D Mapping and<br>Management System<br>for Tagaytay Memorial Park</span>
             </a>
         </li>
         <br>
