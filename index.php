@@ -4,7 +4,17 @@ session_start();
 require_once 'security_check.php';
 userCheckLogin();
 
+
+unset($_SESSION['can_reset_password']);
+
+
 require("loginCondition.php");
+
+if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
+  $_SESSION['forgot-passW'] = true; // Set session variable
+  header("Location: forgot-password.php"); // Redirect to forgot password page
+  exit();
+}
 
 ?>
 <!DOCTYPE html>
@@ -62,7 +72,7 @@ require("loginCondition.php");
                 <label for="password">Password</label>
             </div>
             </div>
-            <p class="recover"><a href="forgot-password.php">Forgot password?</a></p>
+            <p class="recover"><a href="?action=forgot-password">Forgot password?</a></p>
             <?php
             if (isset($_SESSION['error'])) {
                 echo '<p class="error">' . $_SESSION['error'] . '</p>';

@@ -93,10 +93,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $security_question = mysqli_real_escape_string($conn, $_POST['security_question']);
     
-    // Hash the security answer
+    // Initialize the update query
+    $update_query = "UPDATE staff SET 
+        fullname = '$fullname',
+        username = '$username',
+        security_question = '$security_question'";
+
+    // Check if a new security question is selected
     $security_answer = trim($_POST['security_answer']);
-    $hashed_security_answer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
     
+    // If a new security answer is provided, hash and update it
+    if (!empty($security_answer)) {
+        $hashed_security_answer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
+        $update_query .= ", security_answer = '$hashed_security_answer'";
+    }
+
+    // Rest of the password update logic remains the same...
     $current_password = isset($_POST['current_password']) ? $_POST['current_password'] : '';
     $new_password = isset($_POST['new_password']) ? $_POST['new_password'] : '';
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
@@ -106,13 +118,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     if (mysqli_num_rows($check_username) > 0) {
         $error_message = "Username already exists";
     } else {
-        // Initialize the update query
-        $update_query = "UPDATE staff SET 
-            fullname = '$fullname',
-            username = '$username',
-            security_question = '$security_question',
-            security_answer = '$hashed_security_answer'";
-
         // Check if new password is provided and is valid
         if (!empty($new_password)) {
             if ($new_password !== $confirm_password) {
@@ -326,22 +331,21 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 <div class="input-group">
                 <i class="fas fa-question-circle"></i>
                 <select name="security_question">
-                    <option value="">Select Security Question</option>
-                    <?php foreach ($securityQuestions as $question): ?>
-                        <option value="<?php echo htmlspecialchars($question); ?>"
-                            <?php echo (isset($_POST['security_question']) && $_POST['security_question'] === $question) ? 'selected' : ''; ?>>
-                            <?php echo htmlspecialchars($question); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+        <option value="">Select Security Question</option>
+        <?php foreach ($securityQuestions as $question): ?>
+            <option value="<?php echo htmlspecialchars($question); ?>"
+                <?php echo ($staff['security_question'] === $question) ? 'selected' : ''; ?>>
+                <?php echo htmlspecialchars($question); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
             </div>
             
             <div class="input-group">
-                <i class="fas fa-check-circle"></i>
-                <input type="text" name="security_answer" id="security_answer" placeholder="Security Answer" autocomplete="off"
-                    value="<?php echo htmlspecialchars($_POST['security_answer'] ?? ''); ?>">
-                <label for="security_answer">Security Answer</label>
-            </div>
+    <i class="fas fa-check-circle"></i>
+    <input type="text" name="security_answer" id="security_answer" placeholder="Security Answer" autocomplete="off">
+    <label for="security_answer">Security Answer</label>
+</div>
             
             <div id="passwordVerificationSection">
                 <h3>Password Verification</h3>

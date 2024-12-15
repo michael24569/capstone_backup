@@ -51,17 +51,19 @@ if (isset($_POST['verify_password'])) {
 }
 
 // Fetch admin data
-$query = "SELECT * FROM admin WHERE id = ?";
+$query = "SELECT fullname, username, security_question FROM admin WHERE id = ?";
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "i", $admin_id);
 mysqli_stmt_execute($stmt);
 $result = mysqli_stmt_get_result($stmt);
 $admin = mysqli_fetch_assoc($result);
 
+// Check if admin exists
 if (!$admin) {
     header("Location: index.php");
     exit();
 }
+
 
 // Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
@@ -72,7 +74,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
     $security_question = trim($_POST['security_question']);
     $security_answer = trim($_POST['security_answer']);
-    $hashed_security_answer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
     
     // Check if username already exists (excluding current admin)
     $check_username = "SELECT id FROM admin WHERE username = ? AND id != ?";
@@ -85,10 +86,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         $error_message = "Username already exists";
     } else {
         // Initialize the update query with prepared statement
-        $update_fields = ["fullname = ?", "username = ?", "security_question = ?", "security_answer = ?"];
-        $param_types = "ssss";
-        $params = [$fullname, $username, $security_question, $hashed_security_answer];
+        $update_fields = ["fullname = ?", "username = ?", "security_question = ?"];
+        $param_types = "sss";
+        $params = [$fullname, $username, $security_question];
         
+        // Only include security answer in update if it's provided
+        if (!empty($security_answer)) {
+            $hashed_security_answer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
+            $update_fields[] = "security_answer = ?";
+            $param_types .= "s";
+            $params[] = $hashed_security_answer;
+        }
+        
+        // Handle password update if provided
         if (!empty($new_password)) {
             if ($new_password !== $confirm_password) {
                 $error_message = "New passwords do not match";
@@ -100,7 +110,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
                 $error_message = "Password must contain at least one uppercase letter.";
             } elseif (!preg_match("/[0-9]/", $new_password)) {
                 $error_message = "Password must contain at least one number.";
-            } elseif (!preg_match("/[\W_]/", $new_password)) { // Must contain at least one special character
+            } elseif (!preg_match("/[\W_]/", $new_password)) {
                 $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
             } else {
                 $hashed_password = password_hash($new_password, PASSWORD_DEFAULT);
@@ -293,15 +303,15 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             </div>
             <div class="input-group">
                 <i class="fas fa-question-circle"></i>
-                <select name="security_question" >
-                    <option value="">Select Security Question</option>
-                    <?php foreach ($securityQuestions as $question): ?>
-                        <option value="<?php echo htmlspecialchars($question); ?>"
-                            <?php echo (isset($_POST['security_question']) && $_POST['security_question'] === $question) ? 'selected' : ''; ?>>
-                            <?php echo htmlspecialchars($question); ?>
-                        </option>
-                    <?php endforeach; ?>
-                </select>
+                <select name="security_question" id="security_question">
+        <option value="">Select Security Question</option>
+        <?php foreach ($securityQuestions as $question): ?>
+            <option value="<?php echo htmlspecialchars($question); ?>" 
+                <?php echo ($admin['security_question'] === $question) ? 'selected' : ''; ?>>
+                <?php echo htmlspecialchars($question); ?>
+            </option>
+        <?php endforeach; ?>
+    </select>
             </div>
             
             <div class="input-group">

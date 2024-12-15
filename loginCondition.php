@@ -3,7 +3,7 @@
 
 $error = null;
 $databaseError = null;
-$_SESSION['forgot-passW'] = true; 
+
 try {
     include 'db-connection.php';
     if (!$conn) {

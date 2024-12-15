@@ -4,12 +4,18 @@ include 'db-connection.php';
 require_once 'security_check.php';
 userCheckLogin();
 
-unset($_SESSION['forgot_password_user']);
+unset($_SESSION['access_question']);
+unset($_SESSION['forgot-passW']);
 
-if (!isset($_SESSION['can_reset_password']) || !$_SESSION['can_reset_password']) {
+if(!isset($_SESSION['can_reset_password'])) {
     header("Location: index.php");
     exit();
 }
+if (isset($_GET['action']) && $_GET['action'] == 'back_to_login') {
+    unset($_SESSION['can_reset_password']);
+    header("Location: index.php"); // Redirect to forgot password page
+    exit();
+  }
 
 $passwordError = null;
 
@@ -50,7 +56,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
             // Clear sessions and redirect
             unset($_SESSION['forgot_password_user']);
             unset($_SESSION['can_reset_password']);
-            unset($_SESSION['forgot-passW']);
+            unset($_SESSION['access-question']);
             session_destroy();
             
             $_SESSION['success_message'] = "Password successfully reset. Please log in.";
@@ -68,6 +74,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
 <head>
     <title>Reset Password</title>
     <link rel="stylesheet" href="reset.css">
+     <script type="text/javascript">
+    // Prevent back navigation
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
+</script>
 </head>
 <body>
     
@@ -85,7 +98,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
         
         <br>
         <input type="submit" name="reset_password" value="Reset Password">
-        <p><a href="forgot-password.php">← Back</a></p>
+        <p><a href="index.php">← Back</a></p>
     </form>
 
     <script>

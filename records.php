@@ -218,7 +218,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             <table class="styled-table text-center">
                 <thead>
                     <tr class="bg-dark text-black">
-                        <th>Lot No.</th>
+                        <th>Lot/Slot No.</th>
                         <th>Memorial Lots</th>
                         <th>Memorial Name</th>
                         <th>Lot Owner</th>
@@ -259,23 +259,23 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </div>
             <div class="pagination" id="paginationLinks">
                 <?php if($total_pages > 0) : ?>
-                    <a href="?page=1<?php echo $searchQuery ? '&search='.$searchQuery : ''; ?>" 
-                       class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">First</a>
-                    
-                    <a href="?page=<?php echo ($page-1); echo $searchQuery ? '&search='.$searchQuery : ''; ?>" 
-                       class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">←</a>
+    <a href="?page=1<?php echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+       class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">First</a>
+    
+    <a href="?page=<?php echo ($page-1); echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+       class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">←</a>
 
-                    <?php for($i = max(1, $page-2); $i <= min($total_pages, $page+2); $i++) : ?>
-                        <a href="?page=<?php echo $i; echo $searchQuery ? '&search='.$searchQuery : ''; ?>" 
-                           class="<?php echo $page == $i ? 'active' : ''; ?>"><?php echo $i; ?></a>
-                    <?php endfor; ?>
+    <?php for($i = max(1, $page-2); $i <= min($total_pages, $page+2); $i++) : ?>
+        <a href="?page=<?php echo $i; echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+           class="<?php echo $page == $i ? 'active' : ''; ?>"><?php echo $i; ?></a>
+    <?php endfor; ?>
 
-                    <a href="?page=<?php echo ($page+1); echo $searchQuery ? '&search='.$searchQuery : ''; ?>" 
-                       class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">→</a>
-                    
-                    <a href="?page=<?php echo $total_pages; echo $searchQuery ? '&search='.$searchQuery : ''; ?>" 
-                       class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">Last</a>
-                <?php endif; ?>
+    <a href="?page=<?php echo ($page+1); echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+       class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">→</a>
+    
+    <a href="?page=<?php echo $total_pages; echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+       class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">Last</a>
+<?php endif; ?>
             </div>
         </div>
     </div>
@@ -296,55 +296,72 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
     <script>
     // Dynamic search functionality
-const searchInput = document.getElementById('searchInput');
-const searchField = document.getElementById('searchField');
-const clearButton = document.getElementById('clearButton');
+    document.addEventListener('DOMContentLoaded', function() {
+    const searchInput = document.getElementById('searchInput');
+    const searchField = document.getElementById('searchField');
+    const clearButton = document.getElementById('clearButton');
 
-function performSearch() {
-    const searchQuery = searchInput.value.trim();
-    const selectedField = searchField.value;
-    
-    // Create XMLHttpRequest
-    const xhr = new XMLHttpRequest();
-    xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}`, true);
-    
-    xhr.onload = function() {
-        if (this.status === 200) {
-            // Parse the JSON response
-            const response = JSON.parse(this.responseText);
-            
-            // Update table body
-            const tableBody = document.getElementById('recordsTableBody');
-            tableBody.innerHTML = response.records || '<tr><td colspan="6">No records found</td></tr>';
-            
-            // Update pagination info
-            document.getElementById('paginationInfo').innerHTML = response.pagination_info || '';
-            
-            // Update pagination links
-            document.getElementById('paginationLinks').innerHTML = response.pagination_links || '';
-        }
-    };
-    
-    xhr.send();
-}
+    // Get URL parameters
+    const urlParams = new URLSearchParams(window.location.search);
+    const searchValue = urlParams.get('search');
+    const fieldValue = urlParams.get('field');
 
-// Add event listeners
-searchInput.addEventListener('input', function() {
-    if (this.value) {
+    // Set initial values from URL parameters
+    if (searchValue) {
+        searchInput.value = searchValue;
         clearButton.style.display = 'block';
-    } else {
-        clearButton.style.display = 'none';
     }
-    performSearch();
-});
+    if (fieldValue) {
+        searchField.value = fieldValue;
+    }
 
-searchField.addEventListener('change', performSearch);
+    function performSearch() {
+        const searchQuery = searchInput.value.trim();
+        const selectedField = searchField.value;
+        
+        const xhr = new XMLHttpRequest();
+        xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}`, true);
+        
+        xhr.onload = function() {
+            if (this.status === 200) {
+                const response = JSON.parse(this.responseText);
+                
+                // Update table body
+                const tableBody = document.getElementById('recordsTableBody');
+                tableBody.innerHTML = response.records || '<tr><td colspan="6">No records found</td></tr>';
+                
+                // Update pagination info and links while preserving search parameters
+                document.getElementById('paginationInfo').innerHTML = response.pagination_info || '';
+                document.getElementById('paginationLinks').innerHTML = response.pagination_links || '';
+                
+                // Update URL without refreshing the page
+                const newUrl = window.location.pathname + 
+                    `?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}`;
+                window.history.pushState({ path: newUrl }, '', newUrl);
+            }
+        };
+        
+        xhr.send();
+    }
 
-clearButton.addEventListener('click', function() {
-    searchInput.value = '';
-    clearButton.style.display = 'none';
-    searchInput.focus();
-    performSearch();
+    // Event listeners
+    searchInput.addEventListener('input', function() {
+        if (this.value) {
+            clearButton.style.display = 'block';
+        } else {
+            clearButton.style.display = 'none';
+        }
+        performSearch();
+    });
+
+    searchField.addEventListener('change', performSearch);
+
+    clearButton.addEventListener('click', function() {
+        searchInput.value = '';
+        clearButton.style.display = 'none';
+        searchInput.focus();
+        performSearch();
+    });
 });
 
         // Anti-zoom functionality
@@ -359,7 +376,6 @@ clearButton.addEventListener('click', function() {
                 e.preventDefault();
             }
         });
-       
 
         // clear search
 

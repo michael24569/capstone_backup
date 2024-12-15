@@ -2,6 +2,8 @@
 session_start();
 include 'db-connection.php';
 
+$_SESSION['access_question'] = true;
+
 if(!isset($_SESSION['forgot-passW'])) {
     header("Location: index.php");
     exit();
@@ -41,6 +43,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
             $row = mysqli_fetch_assoc($result);
             
             // Store user details in session for next step
+
             $_SESSION['forgot_password_user'] = [
                 'id' => $row['id'],
                 'role' => $row['role'],
@@ -60,6 +63,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
     <link rel="stylesheet"href="forgotpass.css">
 <head>
     <title>Forgot Password</title>
+    <script type="text/javascript">
+    // Prevent back navigation
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
+</script>
 </head>
 <body>
 

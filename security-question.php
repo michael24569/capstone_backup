@@ -5,8 +5,8 @@ include 'db-connection.php';
 unset($_SESSION['forgot-passW']);
 
 
-if (!isset($_SESSION['forgot_password_user'])) {
-    header("Location: forgot-password.php");
+if (!isset($_SESSION['access_question'])) {
+    header("Location: index.php");
     exit();
 }
 $securityQuestionError = null;
@@ -54,6 +54,13 @@ $securityQuestion = $_SESSION['forgot_password_user']['security_question'];
 <head>
     <title>Security Question</title>
     <link rel="stylesheet" href="security.css">
+    <script type="text/javascript">
+    // Prevent back navigation
+    window.history.pushState(null, null, window.location.href);
+    window.onpopstate = function () {
+        window.history.pushState(null, null, window.location.href);
+    };
+</script>
 </head>
 <body>
     
@@ -67,7 +74,7 @@ $securityQuestion = $_SESSION['forgot_password_user']['security_question'];
         <label for="security_answer">Your Answer:</label>
         <input type="text" id="security_answer" name="security_answer" required autocomplete="off">
         <input type="submit" name="verify_answer" value="Verify">
-        <p><a href="forgot-password.php"> ← Back</a></p>
+        <p><a href="unset_question.php"> ← Back</a></p>
     </form>
 </body>
 </html>
