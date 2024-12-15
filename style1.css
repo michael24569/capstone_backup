@@ -50,7 +50,7 @@ body {
 }
 
 .sidebar:hover {
-  width: 300px; /* Ensure that hover expands the sidebar */
+  width: 320px; /* Ensure that hover expands the sidebar */
 }
 
 /* Sidebar Content Styles */
