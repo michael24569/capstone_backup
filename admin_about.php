@@ -15,7 +15,6 @@ checkAdminAccess();
     
     
     <style>
- 
 /* Sidebar Toggle Button Styles */
 .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
