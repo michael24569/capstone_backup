@@ -19,7 +19,7 @@ $stmt->execute();
 $result = $stmt->get_result();
 
 header('Content-Type: application/json');
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 if ($result->num_rows > 0) {
     $record = $result->fetch_assoc();
     echo json_encode($record);

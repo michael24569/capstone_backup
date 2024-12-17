@@ -376,7 +376,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                 e.preventDefault();
             }
         });
-
+        // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
         // clear search
 
         searchInput.addEventListener('input', function () {

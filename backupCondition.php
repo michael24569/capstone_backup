@@ -41,6 +41,7 @@ if (empty($inputPassword)) {
 }
 
 if (checkAdminPassword($inputPassword, $connection)) {
+    // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
     // Backup logic for the entire database
     $tables = [];
     $sqlScript = "";

@@ -31,6 +31,7 @@ require ("reset-password.php");
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" href="recover.css">
 </head>
+<!-- Developers: Backend Developer: Michael Enoza, Frontednd Developer: Kyle Ambat -->
 <body style="background: #001f14;">
 <div class="container" id="signup">
     <h1 class="form-title">Reset Password</h1>

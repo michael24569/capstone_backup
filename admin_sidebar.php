@@ -21,6 +21,7 @@
                 <span class="text">Home</span>
             </a>
         </li>
+        <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
         <li>
             <a href="admin_records.php" onclick="showRecords()">
                 <span class="icon">

@@ -227,7 +227,7 @@ function showNotification(message) {
         }, 300);
     }, 2200);
 }
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 // Update the updateStatus function to use the new notification system
 function updateStatus(id, currentStatus) {
     const newStatus = currentStatus === 'Active' ? 'Inactive' : 'Active';

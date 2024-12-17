@@ -14,7 +14,7 @@ $sql = "SELECT * FROM records";
 $result = $conn->query($sql);
 
 $records = [];
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 while($row = $result->fetch_assoc()) {
     $records[] = $row;
 }

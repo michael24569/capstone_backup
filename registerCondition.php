@@ -77,7 +77,7 @@ if (isset($_POST['signup'])) {
                 
                 // Hash the security answer 
                 $hashedSecurityAnswer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
                 // Insert the new user data into the database using prepared statements
                 $stmt = $conn->prepare("INSERT INTO staff (username, fullName, accountStatus, password, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?)");
                 $stmt->bind_param("ssssss", 

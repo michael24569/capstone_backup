@@ -15,7 +15,7 @@ checkStaffAccess();
     
     
     <style>
- 
+ /* Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat */
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
   .sidebar-toggle-btn {

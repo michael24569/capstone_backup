@@ -35,7 +35,7 @@ $response = [
     'pagination_info' => '',     
     'pagination_links' => '' 
 ];  
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 // Generate records HTML
 if(mysqli_num_rows($result) > 0) {     
     $recordsHTML = '';     

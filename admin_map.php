@@ -3391,7 +3391,7 @@ checkAdminAccess();
                     <div data-lotno="48" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">48</div>
                     <div data-lotno="49" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">49</div>
                     <div data-lotno="50" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">50</div>
-                
+                <!-- Developers: Backend Developer: Michael Enoza , Frontend Developer: Kyle Ambat -->
                     <div data-lotno="51" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">51</div>
                     <div data-lotno="52" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">52</div>
                     <div data-lotno="53" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">53</div>

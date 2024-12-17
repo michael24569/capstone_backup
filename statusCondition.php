@@ -12,6 +12,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($row['active_count'] >= 3 && $newStatus == 'Active') {
         echo 'max_reached';
     } else {
+        // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
         // Update the status in the database
         $sql = "UPDATE staff SET accountStatus = '$newStatus' WHERE id = '$id'";
         $result = mysqli_query($conn, $sql);

@@ -69,6 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     window.onpopstate = function () {
         window.history.pushState(null, null, window.location.href);
     };
+    // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 </script>
     <style>         
         .error-message {             

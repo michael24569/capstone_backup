@@ -166,7 +166,7 @@ unset($_SESSION['error'], $_SESSION['successful']);
         form.appendChild(createHiddenInput('password', passwordInput));
         form.submit();
     }
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
     function createHiddenInput(name, value) {
         const input = document.createElement('input');
         input.type = 'hidden';

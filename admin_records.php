@@ -213,7 +213,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     </select>
             <input class="form-control" type="text" id="searchInput" placeholder="Search records..." autocomplete="off">
             <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
-           </div>
+</div>
             
             <table class="styled-table text-center">
                 <thead>
@@ -260,27 +260,27 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             <div class="pagination" id="paginationLinks">
                 <?php if($total_pages > 0) : ?>
     <a href="?page=1<?php echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
-       class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">First</a>
+    class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">First</a>
     
     <a href="?page=<?php echo ($page-1); echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
-       class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">←</a>
+    class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">←</a>
 
     <?php for($i = max(1, $page-2); $i <= min($total_pages, $page+2); $i++) : ?>
         <a href="?page=<?php echo $i; echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
-           class="<?php echo $page == $i ? 'active' : ''; ?>"><?php echo $i; ?></a>
+        class="<?php echo $page == $i ? 'active' : ''; ?>"><?php echo $i; ?></a>
     <?php endfor; ?>
-
+        <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
     <a href="?page=<?php echo ($page+1); echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
-       class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">→</a>
+    class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">→</a>
     
     <a href="?page=<?php echo $total_pages; echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
-       class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">Last</a>
+    class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">Last</a>
 <?php endif; ?>
             </div>
         </div>
     </div>
 
-                             <!-- Logout confirmation modal -->
+<!-- Logout confirmation modal -->
 <div id="confirmModal" class="modal" style="display: none;">
     <div class="modal-content">
         <h2>Logout Confirmation</h2>

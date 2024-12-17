@@ -38,6 +38,7 @@
                     <span class="text">Logout</span>
                 </a>
             </li>
+            <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
             <li>
                 <a href="admin_about.php">
                     <span class="icon">

@@ -121,6 +121,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                         <th>Timestamp</th>
                     </tr>
                 </thead>
+                <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
                 <tbody>
                     <?php 
                     while($row = mysqli_fetch_assoc($result)) {

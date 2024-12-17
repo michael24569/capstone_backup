@@ -18,7 +18,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'back_to_login') {
   }
 
 $passwordError = null;
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
     $newPassword = $_POST['new_password'] ?? '';
     $confirmPassword = $_POST['confirm_password'] ?? '';

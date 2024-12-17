@@ -24,7 +24,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['verify_answer'])) {
         $sql = $role === 'Staff'
             ? "SELECT security_answer FROM staff WHERE id = ?"
             : "SELECT security_answer FROM admin WHERE id = ?";
-        
+        // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "i", $userId);
         mysqli_stmt_execute($stmt);

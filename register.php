@@ -85,7 +85,7 @@ $securityQuestions = [
                     value="<?php echo htmlspecialchars($_POST['security_answer'] ?? ''); ?>" required autocomplete="off">
                 <label for="security_answer">Security Answer</label>
             </div>
-            
+            <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
             <?php
             if(isset($error)) {
                 echo "<p class='error'>$error</p>";

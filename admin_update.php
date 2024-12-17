@@ -101,7 +101,7 @@ do {
 
     $successMessage = "Record updated successfully";
 } while (false);
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 }
 ?>
 <!DOCTYPE html>
