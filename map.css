@@ -153,6 +153,11 @@ z-index: 10;
   background: #b3d1b3;
 }
 
+.iconcolor{
+  width: 24px; 
+  height: 24px; 
+  fill: #002d1c;
+}
 .sidebar ul li a {
   position: relative;
   display: flex;

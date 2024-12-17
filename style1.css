@@ -22,7 +22,7 @@ body {
   height: 100vh;
   background: #dee7e2;
   overflow: hidden;
-  transition: width 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for width and box-shadow */
+  transition: width 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for width and box-shqadow */
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
@@ -35,7 +35,11 @@ body {
     transform: rotate(360deg);
   }
 }
-
+.iconcolor{
+  width: 24px; 
+  height: 24px; 
+  fill: #002d1c;
+}
 /* Style the image */
 .SBlogo {
   height: 50px;
