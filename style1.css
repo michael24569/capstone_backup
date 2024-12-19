@@ -12,6 +12,7 @@ body {
   height: 100vh;
   transition: 0.8s;
   background: #071c14;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 
 /* Sidebar Styles */
@@ -433,10 +434,6 @@ li a:hover {
   background-color: #3f2afc;
 
   
-}
-@font-face {
-  font-family: 'MyFont';
-  src: url('fonts/Inter.ttf') format('ttf'),
 }
 
 /* Aligning Edit and Archive Buttons */

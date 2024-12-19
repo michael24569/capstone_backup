@@ -110,18 +110,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
     <style>
-          @font-face {
-    font-family: 'MyFont';
-    src: url('fonts/Inter.ttf') format('ttf'),
-}
+         
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
         }
 
         body {
-            font-family: 'MyFont';
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             height: 100vh;
             background-color: #071c14;";
             justify-content: center;
@@ -231,7 +230,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     <button type="submit" class="btn btn-outline-primary">Submit</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="records.php" role="button" onclick="showRecords()">Back</a>
+                    <a class="btn btn-outline-primary" href="records.php" role="button" onclick="showRecords()">Cancel</a>
                 </div>
             </div>
         </form>

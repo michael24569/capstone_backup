@@ -282,7 +282,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 <body style="background: #071c14;">
     <div class="edit-form-container">
         <h2>Edit Admin Account</h2>
-        
+        <br>
         <?php if ($error_message): ?>
             <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
         <?php endif; ?>

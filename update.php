@@ -101,7 +101,7 @@ do {
 
     $successMessage = "Record updated successfully";
 } while (false);
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 }
 ?>
 <!DOCTYPE html>
@@ -118,13 +118,9 @@ do {
             margin: 0;
             box-sizing: border-box;
         }
-        @font-face {
-  font-family: 'MyFont';
-  src: url('fonts/Inter.ttf') format('ttf'),
-}
 
         body {
-           font-family: 'MyFont';
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             height: 100vh;
             background-color: #071c14;
             justify-content: center;
@@ -150,9 +146,8 @@ do {
     </style>
 </head>
 <body>
-    <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
     <div class="container my-5">
-        <h2>Edit Clients Information</h2>
+        <h2 style="font-weight: bold;">Edit Clients Information</h2>
         <br>
         <?php
         displayMessage($errorMessage, 'error');
@@ -234,7 +229,7 @@ do {
                     <button type="submit" class="btn btn-outline-primary">Update Record</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="records.php" role="button">Back</a>
+                    <a class="btn btn-outline-primary" href="records.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

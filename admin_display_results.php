@@ -151,7 +151,7 @@ function displayRecordStatus() {
             padding: 5px 10px;
             cursor: pointer;
             border-radius: 4px;
-            font-family: "MyFont";
+            font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
         }
         .view-details:hover {
             background-color: #4CAF50;
@@ -401,7 +401,7 @@ body {
   border-collapse: collapse;
   margin: 10px 0;
   font-size: 0.9em;
-  font-family: "MyFont";
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
   width: 100%;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 }
@@ -488,17 +488,14 @@ body {
   padding-left:15px;
   background-color: #2e21a7;
   text-align: center;
-  font-family: "MyFont";
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
 }
 .btn-search:hover{
   background-color: #3f2afc;
 
   
 }
-@font-face {
-  font-family: "MyFont";
-  src: url("fonts/Inter.ttf") format("ttf"),
-}
+
 
 /* Aligning Edit and Archive Buttons */
 .action-buttons {
@@ -517,7 +514,7 @@ body {
   
 }  
   #print {
-    font-family: "MyFont";
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     position: absolute;
     top:95px;
     right: 10px;

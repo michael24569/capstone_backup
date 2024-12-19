@@ -164,9 +164,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     <title>Edit Staff Account</title>
     <link rel="stylesheet" href="style1.css">
     <style>
-        .edit-form-container {
-            max-width: 600px;
-            margin: 50px auto;
+.edit-form-container {
+            margin-top:90px;
+            margin-left:35%;
+            width: 500px;
+            align-items:center;
             padding: 20px;
             background: #ffffff;
             border-radius: 8px;
@@ -174,9 +176,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         }
 
         .form-group {
-            margin-bottom: 20px;
             position: relative;
         }
+       
 
         .form-group label {
             display: block;
@@ -188,7 +190,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         .form-group input {
             width: 100%;
             padding: 8px;
-            border: 1px solid #ddd;
+            border: 1px solid #333;
             border-radius: 4px;
             font-size: 16px;
         }
@@ -207,13 +209,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             padding: 10px;
             background-color: #E8F5E9;
             border-radius: 4px;
-        }
-
-        .password-feedback {
-            position: absolute;
-            right: 10px;
-            top: 35px;
-            color: #666;
         }
 
         .btn-container {
@@ -252,16 +247,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             text-decoration: none;
         }
 
-        .btn-edit:hover, .btn-cancel:hover, .btn-verify:hover {
-            opacity: 0.9;
-        }
-
-        .password-section {
-            margin-top: 20px;
-            padding-top: 20px;
-            border-top: 1px solid #ddd;
-        }
-
         #passwordVerificationSection {
             margin-top: 20px;
             padding: 15px;
@@ -287,7 +272,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
 
         .password-status.success {
             color: #4CAF50;
-        }
+        }    
         .input-group select {
             width: 100%;
             padding: 10px;
@@ -303,12 +288,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             height: 30px;
             padding-left: 10px;
         }
-    </style>
+        </style>
 </head>
 <body style="background: #071c14;">
     <div class="edit-form-container">
         <h2>Edit Staff Account</h2>
-        
+        <br>
         <?php if ($error_message): ?>
             <div class="error-message"><?php echo $error_message; ?></div>
         <?php endif; ?>

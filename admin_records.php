@@ -174,12 +174,13 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 }
 .display {
     display: flex;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 .select {
     height: 40px;
     margin-right: 10px;
     padding-left: 5px;
-    font-family: 'MyFont';
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
     </style>
 </head>

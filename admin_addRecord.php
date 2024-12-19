@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         body {
-            font-family: 'MyFont';
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             height: 100vh;
             background-color: #071c14;";
             justify-content: center;
