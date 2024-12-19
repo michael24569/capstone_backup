@@ -64,7 +64,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <div class="table-responsive">
             <h1 id="header1">Account Management</h1>
             <br>
-            <a href="register.php" class="btn btn-primary btn-add"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>Add new staff account</a>
+            <a href="register.php" class="btn btn-primary account-add-btn"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/></svg>Add new staff account</a>
                 <br>
                 
             <form method="GET" action="">
@@ -330,7 +330,54 @@ tbody, thead, .form-control, td {
 
 }
       
+.account-add-btn {
+    display: inline-block;
+    position: relative;
+    padding: 10px 20px;
+    border: 2px solid #479149; /* Border color */
+    border-radius: 5px;
+    color: #479149;
+    text-decoration: none;
+    font-size: 16px;
+    background: none; /* No background by default */
+    overflow: hidden;
+    transition: color 0.3s ease;
+    z-index: 1;
+}
 
+/* Sliding background effect */
+.account-add-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #479149; /* Background color */
+    z-index: -1;
+    transition: left 0.5s ease-in-out;
+}
+
+/* On hover, slide the background in */
+.account-add-btn:hover::before {
+    left: 0;
+}
+
+/* Change text and icon color on hover */
+.account-add-btn:hover {
+    color: white;
+}
+
+.input-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+    fill: #002d1c;
+    transition: fill 0.3s ease;
+}
+
+.account-add-btn:hover .input-icon {
+    fill: white;
+}
     .btn-green {
   background-color: #479149;
   justify-content: center;
