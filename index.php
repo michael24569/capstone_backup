@@ -90,6 +90,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
   }
   .blur-box {
     width: 80%;
@@ -99,7 +101,6 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     
  }
   body {
-    font-family: 'MyFont';
     height: 100vh;
     background-color: #c9d6ff;
     background: linear-gradient(to right,#e2e2e2,#c9d6ff);
@@ -183,7 +184,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     font-size: 15px;
   }
   .btn{
-    font-family: 'MyFont';
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-size: 1.5rem;
     padding: 15px 0;
     border-radius: 50px;

@@ -4,6 +4,8 @@
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 body {
@@ -98,6 +100,7 @@ z-index: 10;
 
 /* Sidebar Styles */
 .sidebar {
+  
   font-size: 15px;
   bottom: 0px;
   position: fixed;
@@ -128,7 +131,8 @@ z-index: 10;
 }
 
 .titLe{
-  font-weight: bold;
+  font-weight: bold;  
+  gap: 10px;
 }
 .sidebar.active {
   width: 300px; /* Expanded sidebar width */
@@ -142,23 +146,28 @@ z-index: 10;
 .sidebar ul {
   position: relative;
   height: 100vh;
+
 }
 
 .sidebar ul li {
   list-style: none;
 }
 
-.sidebar ul li:hover {
-  transition: 0.8s;
-  background: #b3d1b3;
-}
+
 
 .iconcolor{
   width: 24px; 
   height: 24px; 
   fill: #002d1c;
+  transition: all 0.4s ease-in-out;
+  
 }
+
 .sidebar ul li a {
+  text-decoration: none;
+  color: black; /* Default font color */
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
   position: relative;
   display: flex;
   white-space: nowrap;
@@ -166,6 +175,10 @@ z-index: 10;
 }
 
 .sidebar ul li a .icon {
+  
+  width: 24px;
+  height: 24px;
+  transition: all 0.4s ease-in-out;
   position: relative;
   display: flex;
   justify-content: center;
@@ -173,19 +186,55 @@ z-index: 10;
   min-width: 60px;
   height: 60px;
   font-size: 1.5rem;
-  color: #222222;
 }
 
-.sidebar ul li a .text {
-  font-family: 'MyFont';
+.sidebar ul li a .text{
+  width: 100%;
+  z-index: 0;
+  transition: all 0.4s ease-in-out;
   position: relative;
   height: 60px;
   display: flex;
   align-items: center;
-  font-size: 15px;
-  color: #222222;
-  text-transform: uppercase;
+  font-size: 20px;
+  text-transform:capitalize;
+  
+} 
+
+li a::before {
+  content: "";
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #002d1c;
+  transition: all 0.4s ease-in-out;
+  z-index: 0;
 }
+.text:hover{
+  color: #dee7e2;
+}
+li a:hover::before {
+  left: 0;
+  transition: all .5s ease;
+}
+
+li a:hover {
+
+  color: #dee7e2; /* Changes text and icon color to white */
+}
+
+ li a:hover .icon svg{
+  fill: #dee7e2; /* Ensures icon also turns white */
+}
+
+
+
+
 
 .sidebar .icon-logo {
   margin-bottom: 20px;
@@ -260,6 +309,16 @@ z-index: 10;
 .sidebar-header:hover{
   cursor: default;
   background: #dee7e2;
+}
+.nostyle{
+  background: #dee7e2;
+  color:#000;
+  transition-property: none;
+}
+.nostyle:hover{
+  
+  color:#000;
+  transition-property: none;
 }
 
 

@@ -1,52 +1,88 @@
 /* General Styling */
-@import url('https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,900&display=swap');
 * {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
 
 body {
-  font-family: "Poppins", sans-serif;
+  
   height: 100vh;
   background: #071c14;
 }
 
 /* Sidebar Styling */
 .sidebar {
+  font-size: 15px;
+  bottom: 0px;
   position: fixed;
-  width: 60px;
+  width: 60px; /* Sidebar width when collapsed */
   height: 100vh;
   background: #dee7e2;
   overflow: hidden;
-  transition: 0.5s;
+  transition: width 0.5s ease, box-shadow 0.3s ease; /* Smooth transition for width and box-shadow */
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
 }
 
-.sidebar:hover {
-  width: 350px;
+/* Set up the animation */
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
+/* Style the image */
+.SBlogo {
+  height: 50px;
+  animation: rotate 20s linear infinite; 
+}
+
+.titLe{
+  font-weight: bold;
+  
+}
+.sidebar.active {
+  width: 300px; /* Expanded sidebar width */
+}
+
+.sidebar:hover {
+  width: 320px; /* Ensure that hover expands the sidebar */
+}
+
+/* Sidebar Content Styles */
 .sidebar ul {
-  height: 100%;
-  width: 100%;
+  position: relative;
+  height: 100vh;
+
 }
 
 .sidebar ul li {
-  position: relative;
-  width: 100%;
   list-style: none;
 }
 
-.sidebar ul li:hover {
-  transition: 0.8s;
-  background: #b3d1b3;
+
+
+.iconcolor{
+  width: 24px; 
+  height: 24px; 
+  fill: #002d1c;
+  transition: all 0.4s ease-in-out;
+  
 }
 
 .sidebar ul li a {
+  text-decoration: none;
+  color: black; /* Default font color */
+  overflow: hidden;
+  transition: all 0.4s ease-in-out;
   position: relative;
   display: flex;
   white-space: nowrap;
@@ -54,6 +90,10 @@ body {
 }
 
 .sidebar ul li a .icon {
+  
+  width: 24px;
+  height: 24px;
+  transition: all 0.4s ease-in-out;
   position: relative;
   display: flex;
   justify-content: center;
@@ -61,17 +101,48 @@ body {
   min-width: 60px;
   height: 60px;
   font-size: 1.5rem;
-  color: #222222;
 }
 
-.sidebar ul li a .text {
+.sidebar ul li a .text{
+  width: 100%;
+  z-index: 0;
+  transition: all 0.4s ease-in-out;
   position: relative;
   height: 60px;
   display: flex;
   align-items: center;
-  font-size: 13px;
-  color: #222222;
-  text-transform: uppercase;
+  font-size: 20px;
+  text-transform:capitalize;
+  
+}  
+li a::before {
+  content: "";
+  position: absolute;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #002d1c;
+  transition: all 0.4s ease-in-out;
+  z-index: 0;
+}
+.text:hover{
+  color: #dee7e2;
+}
+li a:hover::before {
+  left: 0;
+}
+
+li a:hover {
+
+  color: #dee7e2; /* Changes text and icon color to white */
+}
+
+ li a:hover .icon svg{
+  fill: #dee7e2; /* Ensures icon also turns white */
 }
 
 .sidebar .icon-logo {

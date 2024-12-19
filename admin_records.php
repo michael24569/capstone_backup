@@ -46,12 +46,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
     <style>
         /* Previous styles remain the same */
-        @font-face {
-            font-family: 'MyFont';
-            src: url('fonts/Inter.ttf') format('ttf'),
-        }
+       
+       
         tbody, thead, .form-control, td {
-            font-family: 'MyFont';
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
         }
         .refresh-icon {
             background-color: #00000093;

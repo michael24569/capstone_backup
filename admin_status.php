@@ -324,12 +324,10 @@ const performSearch = debounce(() => {
 searchInput.addEventListener('input', performSearch);
 </script>
 <style>
-    @font-face {
-    font-family: 'MyFont';
-    src: url('fonts/Inter.ttf') format('ttf'),
-}
+  
 tbody, thead, .form-control, td {
-    font-family: 'MyFont';
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+
 }
       
 

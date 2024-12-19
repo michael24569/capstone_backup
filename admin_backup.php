@@ -25,6 +25,7 @@ unset($_SESSION['backup_file']);
     <link rel="stylesheet" href="style1.css">
     <link rel="stylesheet" href="logoutmodal.css">
 <style>
+  
     .sidebar-toggle-btn {
   display: none; /* Default: hidden, visible in responsive view */
   position: absolute; /* Position inside the sidebar */
@@ -186,7 +187,6 @@ unset($_SESSION['backup_file']);
             }
         });
 </script>
-<script src="paiyakan.js"></script>
 
 
 </body>
