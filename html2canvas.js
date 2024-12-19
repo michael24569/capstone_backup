@@ -2642,6 +2642,7 @@
             return 0;
         }
     }); };
+    // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
     var borderTopWidth = borderWidthForSide('top');
     var borderRightWidth = borderWidthForSide('right');
     var borderBottomWidth = borderWidthForSide('bottom');

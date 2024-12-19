@@ -9,7 +9,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 $name = $_GET['name'];
 $sql = "SELECT Lot_No, mem_sts FROM records WHERE LO_name LIKE ?";
 $stmt = $conn->prepare($sql);

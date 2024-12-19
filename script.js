@@ -55,7 +55,7 @@ document.getElementById('sidebarLogoutButton').addEventListener('click', functio
     const modal = document.getElementById('confirmModal');
     modal.style.display = 'flex'; // Show the modal
 });
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 // When the user clicks the cancel button, hide the modal
 document.getElementById('cancelButton').addEventListener('click', function() {
     const modal = document.getElementById('confirmModal');

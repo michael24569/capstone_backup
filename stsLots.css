@@ -670,7 +670,7 @@
 .stJude::-webkit-scrollbar-track {
   border-radius: 10px; 
 }
-
+/* Developers: Backup Developer: Michael Enoza, Frontend Developer: Kyle Ambat */
 .stJude::-webkit-scrollbar-thumb {
   background-color: #ccd5ce; 
   border-radius: 5px; 

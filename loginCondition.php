@@ -40,7 +40,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
         mysqli_stmt_bind_param($stmt, "ss", $username, $username);
         mysqli_stmt_execute($stmt);
         $result = mysqli_stmt_get_result($stmt);
-
+        // Developers: Backend Developer: Michael Enoza , Frontend Developer Kyle Ambat
         if (mysqli_num_rows($result) === 1) {
             $row = mysqli_fetch_assoc($result);
 

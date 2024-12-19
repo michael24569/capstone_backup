@@ -396,7 +396,7 @@ body {
     margin-left: 5rem;
 
 }
-
+// Developers Backend Developer: Michael Enoza , Frontend Developer: Kyle Ambat
 .styled-table {
   border-collapse: collapse;
   margin: 10px 0;

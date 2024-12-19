@@ -11,7 +11,7 @@ $mail = new PHPMailer(true);
 //$mail->SMTPDebug = SMTP::DEBUG_SERVER;
 $mail->isSMTP();
 $mail->SMTPAuth = true;
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 $mail->Host = "smtp.gmail.com";
 $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;
 $mail->Port = 587;

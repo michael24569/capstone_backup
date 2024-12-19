@@ -40,6 +40,7 @@ if ($_SERVER["REQUEST_METHOD"] === "POST") {
                 $mail->Body = <<<END
 Click <a href="http://localhost/capstone/create-newpass.php?token=$token">Here</a> to reset your password.
 END;
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
                 try {
                     $mail->send();
                     $successful = "Message sent, please check your inbox.";

@@ -150,6 +150,7 @@ do {
     </style>
 </head>
 <body>
+    <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
     <div class="container my-5">
         <h2>Edit Clients Information</h2>
         <br>

@@ -21,7 +21,7 @@ function checkStaffAccess() {
         exit();
     }
 }
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 function userCheckLogin() {
     if (isset($_SESSION['id']) && isset($_SESSION['role'])) {
     if ($_SESSION['role'] == 'Admin') {

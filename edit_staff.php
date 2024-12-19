@@ -118,6 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     if (mysqli_num_rows($check_username) > 0) {
         $error_message = "Username already exists";
     } else {
+        // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
         // Check if new password is provided and is valid
         if (!empty($new_password)) {
             if ($new_password !== $confirm_password) {

@@ -86,6 +86,7 @@
     cursor: pointer;
     transition: 0.9s;
   }
+  /* Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat */
   .btn:hover{
     background: #021d0a;
   }

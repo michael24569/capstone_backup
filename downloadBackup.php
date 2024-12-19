@@ -27,7 +27,7 @@ if (!file_exists($backup_directory) && !mkdir($backup_directory, 0777, true)) {
     header("Location: admin_backup.php");
     exit();
 }
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 // If the backup file exists and the backup time hasn't expired
 if (file_exists($backup_file_name) && (time() - $_SESSION['backup_time']) <= 30) {
     $new_file_path = $backup_directory . '/' . basename($backup_file_name);

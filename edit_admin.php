@@ -144,7 +144,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     }
 }
 ?>
-
+<!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
 <!DOCTYPE html>
 <html lang="en">
 <head>

@@ -303,7 +303,10 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     width:100%;
     margin-top:-40px;
     
-    
+    /*
+  Developers
+    ackend Developer: Michael Eñoza
+    Frontend Developer: Kyle Ambat */
   }
   .animated-text {
     text-shadow: 

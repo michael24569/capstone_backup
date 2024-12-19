@@ -43,6 +43,7 @@ if (isset($_GET["id"])) {
         $archiveStmt->bind_param("sssss", $row['Lot_No'], $row['mem_lots'], $row['mem_sts'], $row['LO_name'], $row['mem_address']);
         $archiveStmt->execute();
     }
+    // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
 
     // Delete the record from the records table
     $sql = "DELETE FROM records WHERE id = ?";

@@ -36,7 +36,7 @@ if (isset($_GET["id"])) {
         $logStmt = $connection->prepare($logSql);
         $logStmt->bind_param("sssss", $userRole, $fullname, $lot, $mem_sts, $action);
         $logStmt->execute();
-
+// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
         // Insert record into archive table
         $archiveSql = "INSERT INTO archive ( Lot_No, mem_lots, mem_sts, LO_name, mem_address, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
         $archiveStmt = $connection->prepare($archiveSql);

@@ -309,7 +309,7 @@ li a:hover {
 .blur {
   filter: blur(5px); /* Adjust the blur amount as needed */
 }
-
+/* Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat */
 /* Records Table Styling */
 @media (max-width: 600px) {
   th, td {

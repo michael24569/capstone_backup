@@ -42,6 +42,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
                     console.log('Fetch response status:', response.status);
                     return response.json();
                 })
+                // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
                 .then(data => {
                     console.log('Fetched data:', data);
                     if (data.message) {

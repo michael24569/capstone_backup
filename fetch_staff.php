@@ -20,7 +20,7 @@ if (isset($_GET['search'])) {
     }      
     
     $output = '';
-    
+    // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
     // Check if there are any results
     if (mysqli_num_rows($result) > 0) {
         while ($row = mysqli_fetch_assoc($result)) {         

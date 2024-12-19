@@ -542,6 +542,7 @@
         Michael.classList.remove('blurred');
 
     });
+    // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
     IDjohnclosebtn.addEventListener('click', () => {
         image.classList.remove('blurred');
         James.classList.remove('blurred');

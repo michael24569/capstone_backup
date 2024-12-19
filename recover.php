@@ -50,3 +50,4 @@
 </script>
 </body>
 </html>
+<!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
