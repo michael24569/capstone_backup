@@ -1,6 +1,9 @@
 <?php
 session_start(); // Start session to store messages
 
+// Set timezone to Philippines
+date_default_timezone_set('Asia/Manila');
+
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -92,7 +95,8 @@ if (checkAdminPassword($inputPassword, $connection)) {
     }
 
     if (!empty($sqlScript)) {
-        $backup_file_name = 'backup_' . time() . '.sql';
+        // Create backup filename with date and 12-hour time format with AM/PM (Philippine Time)
+        $backup_file_name = 'TMP_backup_' . date('Y-m-d_h-i-s_A') . '.sql';
         file_put_contents($backup_file_name, $sqlScript);
         $_SESSION['successful'] = "Backup File is Ready";
         $_SESSION['backup_file'] = $backup_file_name;

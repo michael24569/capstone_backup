@@ -229,7 +229,7 @@ do {
                     <button type="submit" class="btn btn-outline-primary">Update Record</button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="admin_records.php" role="button">Back</a>
+                    <a class="btn btn-outline-primary" href="admin_records.php" role="button">Cancel</a>
                 </div>
             </div>
         </form>

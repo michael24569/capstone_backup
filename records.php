@@ -175,12 +175,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 .display {
     display: flex;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
 }
 .select {
+    border-collapse: collapse;
     height: 40px;
     margin-right: 10px;
     padding-left: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+.select-hidden {
+    visibility: hidden !important;
+    pointer-events: none; /* Prevent interaction while hidden */
 }
     </style>
 </head>
@@ -205,7 +211,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </a>
             <br>
            <div class="display">
-           <select id="searchField" class="select" style="width: 150px;">
+           <select id="searchField" class="select options" style="width: 150px;">
         <option value="Lot_No">Lot No.</option>
         <option value="mem_lots">Memorial Lots</option>
         <option value="mem_sts">Memorial Name</option>
@@ -435,6 +441,34 @@ clearButton.addEventListener('click', function () {
         clearHighlights();
     }
 });
+
+// hide the select and the option when the sidebar is active when the user is hovering the sidebar
+document.addEventListener('DOMContentLoaded', function () {
+    const sidebar = document.querySelector('.sidebar');
+    const selectOptions = document.querySelector('.options');
+    let hideTimeout;
+    
+    // Hide the options with delay
+    const hideElements = () => {
+        // Clear any existing timeout
+        clearTimeout(hideTimeout);
+        // Set new timeout for 300ms delay
+        hideTimeout = setTimeout(() => {
+            selectOptions.classList.add('select-hidden');
+        }, 120); // 300ms delay
+    };
+
+    // Show the options immediately
+    const showElements = () => {
+        // Clear any pending hide timeout
+        clearTimeout(hideTimeout);
+        selectOptions.classList.remove('select-hidden');
+    };
+
+    sidebar.addEventListener('mouseenter', hideElements);
+    sidebar.addEventListener('mouseleave', showElements);
+});
+
     </script>
 </body>
 </html>

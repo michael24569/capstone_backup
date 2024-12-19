@@ -20,6 +20,7 @@ body {
   font-size: 15px;
   bottom: 0px;
   position: fixed;
+  z-index: 1000;
   width: 60px; /* Sidebar width when collapsed */
   height: 100vh;
   background: #dee7e2;
