@@ -28,7 +28,11 @@ checkAdminAccess();
   z-index: 1000; /* Ensure it appears above other elements */
 }
 
-
+.iconcolor{
+  width: 24px; 
+  height: 24px; 
+  fill: #002d1c;
+}
 
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
