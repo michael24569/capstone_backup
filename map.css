@@ -114,8 +114,19 @@ z-index: 10;
   box-shadow: 0 50px 40px black;
 }
 .sidebar li a.active {
-  background-color: rgb(16, 117, 16)
+  background-color: #002d1c;
+  color: #fff; /* Text color set to white */
 }
+
+.sidebar li a.active .icon svg {
+  fill: #fff; /* Icon color set to white */
+}
+
+.sidebar li a.active .text {
+  color: #fff; /* Text color explicitly set to white */
+}
+
+
 /* Set up the animation */
 @keyframes rotate {
   0% {

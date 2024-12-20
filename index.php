@@ -329,7 +329,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     animation: growLine 1s ease-out 1s forwards;
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
-    left: 21%;
+    left: 21.5%;
     bottom:40px;
   }
 
