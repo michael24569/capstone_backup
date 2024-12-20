@@ -184,10 +184,57 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     padding-left: 5px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
-.select-hidden {
-    visibility: hidden !important;
-    pointer-events: none; /* Prevent interaction while hidden */
+/* Basic button styling */
+.btn.btn-add {
+    margin-top:20px;
+    margin-left:1270px;
+    display: inline-block;
+    position: absolute;
+    padding: 10px 20px;
+    border: 2px solid #479149; /* Border color */
+    border-radius: 5px;
+    color: #479149;
+    text-decoration: none;
+    font-size: 16px;
+    background: none; /* No background by default */
+    overflow: hidden;
+    z-index: 1;
 }
+
+/* Sliding background effect */
+.btn.btn-add::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #479149; /* Background color */
+    z-index: -1;
+    transition: left 0.5s ease-in-out;
+}
+
+/* On hover, slide the background in */
+.btn.btn-add:hover::before {
+    left: 0;
+}
+
+/* Text and SVG color change on hover */
+.btn.btn-add:hover {
+    color: white;
+}
+
+.input-icon {
+    margin-right: 10px;
+    vertical-align: middle;
+    fill: #002d1c;
+    transition: fill 0.3s ease;
+}
+
+.btn.btn-add:hover .input-icon {
+    fill: white;
+}
+
     </style>
 </head>
 

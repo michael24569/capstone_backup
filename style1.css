@@ -29,6 +29,7 @@ body {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
+  z-index: 1000;
 }
 .sidebar li a.active {
   background-color: rgb(16, 117, 16)
