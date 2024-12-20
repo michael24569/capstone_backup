@@ -30,6 +30,9 @@ body {
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
 }
+.sidebar li a.active {
+  background-color: rgb(16, 117, 16)
+}
 
 /* Set up the animation */
 @keyframes rotate {
