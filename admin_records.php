@@ -696,98 +696,98 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-    // Replace the existing sidebar hover handling with this enhanced version
-    document.addEventListener('DOMContentLoaded', function() {
-        const sidebar = document.querySelector('.sidebar');
-        const selectElement = document.getElementById('searchField');
-        let isSelectOpen = false;
+// Enhanced sidebar hover handling
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    const selectElement = document.getElementById('searchField');
+    let isSelectOpen = false;
 
-        // Function to force close select
-        function forceCloseSelect() {
-            selectElement.blur();
-            isSelectOpen = false;
-            selectElement.classList.add('collapsed');
-            // Force the select to close by temporarily disabling it
-            selectElement.disabled = true;
-            setTimeout(() => {
-                selectElement.disabled = false;
-            }, 100);
+    // Function to force close select
+    function forceCloseSelect() {
+        selectElement.blur();
+        isSelectOpen = false;
+        selectElement.classList.add('collapsed');
+        // Force the select to close by temporarily disabling it
+        selectElement.disabled = true;
+        setTimeout(() => {
+            selectElement.disabled = false;
+        }, 10);
+    }
+
+    // Track select open state
+    selectElement.addEventListener('mousedown', function(e) {
+        if (sidebar.matches(':hover')) {
+            e.preventDefault();
+            return;
         }
-
-        // Track select open state
-        selectElement.addEventListener('mousedown', function(e) {
-            if (sidebar.matches(':hover')) {
-                e.preventDefault();
-                return;
-            }
-            isSelectOpen = !isSelectOpen;
-        });
-
-        selectElement.addEventListener('focus', function() {
-            if (sidebar.matches(':hover')) {
-                forceCloseSelect();
-            }
-        });
-
-        // Enhanced sidebar hover handling
-        sidebar.addEventListener('mouseenter', function() {
-            forceCloseSelect();
-        });
-
-        sidebar.addEventListener('mouseleave', function() {
-            selectElement.classList.remove('collapsed');
-        });
-
-        // Close select when clicking elsewhere
-        document.addEventListener('click', function(e) {
-            if (!selectElement.contains(e.target)) {
-                isSelectOpen = false;
-                selectElement.classList.remove('collapsed');
-            }
-        });
-
-        // Handle page visibility changes
-        document.addEventListener('visibilitychange', function() {
-            if (!document.hidden) {
-                forceCloseSelect();
-            }
-        });
-
-        // Handle history navigation
-        window.addEventListener('popstate', function() {
-            forceCloseSelect();
-        });
-
-        // Check if we're returning from update page
-        if (sessionStorage.getItem('returnFromUpdate') === 'true') {
-            // Clear the flag
-            sessionStorage.removeItem('returnFromUpdate');
-            // Force close the select
-            forceCloseSelect();
-        }
-
-        // Enhanced select element click handling
-        selectElement.addEventListener('click', function(e) {
-            if (sidebar.matches(':hover')) {
-                e.preventDefault();
-                forceCloseSelect();
-                return false;
-            }
-        });
-
-        // Add this to your existing popstate event listener
-        window.addEventListener('popstate', function() {
-            forceCloseSelect();
-            if (selectElement.classList.contains('select-hidden')) {
-                selectElement.classList.remove('select-hidden');
-            }
-        });
-
-        // Add cleanup on page unload
-        window.addEventListener('beforeunload', function() {
-            forceCloseSelect();
-        });
+        isSelectOpen = !isSelectOpen;
     });
+
+    selectElement.addEventListener('focus', function() {
+        if (sidebar.matches(':hover')) {
+            forceCloseSelect();
+        }
+    });
+
+    // Enhanced sidebar hover handling
+    sidebar.addEventListener('mouseenter', function() {
+        forceCloseSelect();
+    });
+
+    sidebar.addEventListener('mouseleave', function() {
+        selectElement.classList.remove('collapsed');
+    });
+
+    // Close select when clicking elsewhere
+    document.addEventListener('click', function(e) {
+        if (!selectElement.contains(e.target)) {
+            isSelectOpen = false;
+            selectElement.classList.remove('collapsed');
+        }
+    });
+
+    // Handle page visibility changes
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden) {
+            forceCloseSelect();
+        }
+    });
+
+    // Handle history navigation
+    window.addEventListener('popstate', function() {
+        forceCloseSelect();
+    });
+
+    // Check if we're returning from update page
+    if (sessionStorage.getItem('returnFromUpdate') === 'true') {
+        // Clear the flag
+        sessionStorage.removeItem('returnFromUpdate');
+        // Force close the select
+        forceCloseSelect();
+    }
+
+    // Enhanced select element click handling
+    selectElement.addEventListener('click', function(e) {
+        if (sidebar.matches(':hover')) {
+            e.preventDefault();
+            forceCloseSelect();
+            return false;
+        }
+    });
+
+    // Add this to your existing popstate event listener
+    window.addEventListener('popstate', function() {
+        forceCloseSelect();
+        if (selectElement.classList.contains('select-hidden')) {
+            selectElement.classList.remove('select-hidden');
+        }
+    });
+
+    // Add cleanup on page unload
+    window.addEventListener('beforeunload', function() {
+        forceCloseSelect();
+    });
+});
 
 // Add this at the start of your DOMContentLoaded event listener
 document.addEventListener('DOMContentLoaded', function() {

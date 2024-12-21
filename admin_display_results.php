@@ -520,7 +520,7 @@ body {
     font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
     position: absolute;
     top:95px;
-    right: 10px;
+    right: 40px;
     background-color: #479149;
     color: white;
     padding: 10px 20px;
@@ -561,6 +561,37 @@ p {
 
 .reportHeader {
     margin-top: -10px;
+    color: black;
+}
+.container {
+    width: calc(100% - 120px); /* Adjust width to account for sidebar */
+    margin-left: 100px; /* Reduce left margin */
+    margin-right: 20px; /* Add right margin */
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+@media print {
+    body * {
+        visibility: hidden;
+    }
+    .container, .container * {
+        visibility: visible;
+    }
+    .container {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        background-color: transparent; /* Remove background color */
+        box-shadow: none; /* Remove box shadow */
+    }
+    #print {
+        display: none;
+    }
 }
     </style>
 </head>
@@ -592,7 +623,7 @@ p {
             <a href="admin_records.php" class="' . (getCurrentPage() == 'admin_records.php' ? 'active' : '') . '">
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512" class="iconcolor">
-                        <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5l0-377.4c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8L0 454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5l0-370.3c0-12.1-6.8-23.3-18.1-27.6C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11L304 456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>
+                        <path d="M249.6 471.5c10.8 3.8 22.4-4.1 22.4-15.5l0-377.4c0-4.2-1.6-8.4-5-11C247.4 52 202.4 32 144 32C93.5 32 46.3 45.3 18.1 56.1C6.8 60.5 0 71.7 0 83.8L0 454.1c0 11.9 12.8 20.2 24.1 16.5C55.6 460.1 105.5 448 144 448c33.9 0 79 14 105.6 23.5zm76.8 0C353 462 398.1 448 432 448c38.5 0 88.4 12.1 119.9 22.6c11.3 3.8 24.1-4.6 24.1-16.5l0-370.3c0-12.7-5.1-24.9-14.1-33.9C529.7 45.3 482.5 32 432 32c-58.4 0-103.4 20-123 35.6c-3.3 2.6-5 6.8-5 11L304 456c0 11.4 11.7 19.3 22.4 15.5z"/></svg>
                 </span>
                 <span class="text">Records</span>
             </a>
@@ -628,7 +659,7 @@ p {
                 <span class="icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="iconcolor">
                     
-                    <path d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0z"/></svg> </span>
+                    <path d="M40 48C26.7 48 16 58.7 16 72l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24L40 48zM192 64c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32L192 64zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zm0 160c-17.7 0-32 14.3-32 32s14.3 32 32 32l288 0c17.7 0 32-14.3 32-32s-14.3-32-32-32l-288 0zM16 232l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24zM40 368c-13.3 0-24 10.7-24 24l0 48c0 13.3 10.7 24 24 24l48 0c13.3 0 24-10.7 24-24l0-48c0-13.3-10.7-24-24-24l-48 0c-13.3 0-24 10.7-24 24z"/></svg> </span>
                 <span class="text">Activity Log</span>
             </a>
         </li>
@@ -654,6 +685,7 @@ p {
         </div>
     </ul>
 </div>
+<div class="container">
 <button id="print" class="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M128 0C92.7 0 64 28.7 64 64l0 96 64 0 0-96 226.7 0L384 93.3l0 66.7 64 0 0-66.7c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0L128 0zM384 352l0 32 0 64-256 0 0-64 0-16 0-16 256 0zm64 32l32 0c17.7 0 32-14.3 32-32l0-96c0-35.3-28.7-64-64-64L64 192c-35.3 0-64 28.7-64 64l0 96c0 17.7 14.3 32 32 32l32 0 0 64c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-64zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>Print</button>
     
 <br><div class="seal">
@@ -738,6 +770,7 @@ p {
         ";
     }
 
+    echo '</div>'; // Close container div
     echo '<script>
     function showDetails(groupId) {
         document.getElementById("modal-" + groupId).style.display = "block";
@@ -776,20 +809,28 @@ document.getElementById("sidebarLogoutButton").addEventListener("click", functio
     event.preventDefault(); // Prevent the default logout action
     const modal = document.getElementById("confirmModal");
     modal.style.display = "flex"; // Show the modal
+    document.getElementById("print").style.pointerEvents = "none"; // Disable print button interactions
 });
 
 // When the user clicks the cancel button, hide the modal
 document.getElementById("cancelButton").addEventListener("click", function() {
     const modal = document.getElementById("confirmModal");
     modal.style.display = "none"; // Hide the modal
+    document.body.classList.remove("no-interaction"); // Enable interactions
+    document.getElementById("print").style.pointerEvents = "auto"; // Enable print button interactions
 });
-
 
 // When the user clicks the confirm button, proceed with the logout
 document.getElementById("confirmButton").addEventListener("click", function() {
     window.location.href = "logout.php"; // Redirect to the logout page
 });
     </script>
+    <style>
+        .no-interaction  {
+            pointer-events: none;
+        }
+        
+    </style>
 </body>
 </html>';
 }

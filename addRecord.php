@@ -264,37 +264,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         function validateNumber(input) {
             let value = input.value.replace(/^0+/, '');
             
-            // If the value is empty after removing zeros, set it to 0
+            // If the value is empty after removing zeros,
             if (value === '') {
-                value = '0';
-            }
-            
-            // Convert to integer
-            let numValue = parseInt(value, 10);
-            
-            // Validate if it's a number and not negative
-            if (isNaN(numValue) || numValue < 0) {
                 input.value = '0';
             } else {
-                input.value = numValue.toString();
+                input.value = value;
             }
         }
 
         function goBack() {
-            // Set a flag in sessionStorage to indicate we're coming back from add page
-            sessionStorage.setItem('returnFromAdd', 'true');
-            
-            // Navigate back
-            if (window.history && window.history.length > 1) {
-                window.history.back();
-            } else {
-                window.location.href = 'records.php';
-            }
-        }
-
-        // Prevent form resubmission when going back
-        if (window.history.replaceState) {
-            window.history.replaceState(null, null, window.location.href);
+            window.location.href = "records.php";
         }
     </script>
 </body>

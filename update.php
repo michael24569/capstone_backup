@@ -297,15 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function goBack() {
-    // Set a flag in sessionStorage to indicate we're coming back from update page
-    sessionStorage.setItem('returnFromUpdate', 'true');
-    
-    // Navigate back
-    if (window.history && window.history.length > 1) {
-        window.history.back();
-    } else {
-        window.location.href = 'records.php';
-    }
+    window.location.href = 'records.php';
 }
 
 // Prevent form resubmission when going back

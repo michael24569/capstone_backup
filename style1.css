@@ -17,10 +17,10 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
+  
   font-size: 15px;
   bottom: 0px;
   position: fixed;
-  z-index: 1000;
   width: 60px; /* Sidebar width when collapsed */
   height: 100vh;
   background: #dee7e2;
@@ -29,7 +29,6 @@ body {
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
   box-shadow: 0 50px 40px black;
-  z-index: 1000;
 }
 .sidebar li a.active {
   background-color: #002d1c;
@@ -43,6 +42,7 @@ body {
 .sidebar li a.active .text {
   color: #fff; /* Text color explicitly set to white */
 }
+
 
 /* Set up the animation */
 @keyframes rotate {
@@ -61,8 +61,8 @@ body {
 }
 
 .titLe{
-  font-weight: bold;
-  
+  font-weight: bold;  
+  gap: 10px;
 }
 .sidebar.active {
   width: 300px; /* Expanded sidebar width */
@@ -130,6 +130,7 @@ body {
   text-transform:capitalize;
   
 } 
+
 li a::before {
   content: "";
   position: absolute;
@@ -160,6 +161,11 @@ li a:hover {
  li a:hover .icon svg{
   fill: #dee7e2; /* Ensures icon also turns white */
 }
+
+
+
+
+
 .sidebar .icon-logo {
   margin-bottom: 20px;
 }
@@ -216,10 +222,6 @@ li a:hover {
     width: 50px;
   }
 
-  .sidebar:hover {
-    width: 150px;
-  }
-
   .sidebar ul li a .icon {
     min-width: 50px;
     height: 50px;
@@ -248,7 +250,6 @@ li a:hover {
   color:#000;
   transition-property: none;
 }
-
 
 .top-left-button {
   fill: white;

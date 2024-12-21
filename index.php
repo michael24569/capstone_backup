@@ -114,7 +114,7 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
   .container {
     background-color:#ffffff93;
 
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(20px);
     width: 400px;
     padding:20px;
     margin-left: 55%;

@@ -226,8 +226,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             cursor: pointer;
             margin-top: 22px;
             margin-left: 10px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        .btn-verify:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
         .btn-edit {
             background-color: #4CAF50;
             color: white;
@@ -235,8 +239,17 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        .btn-edit svg {
+            margin-right: 8px;
+        }
+        .btn-edit:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
         .btn-cancel {
             background-color: #f44336;
             color: white;
@@ -245,8 +258,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             border-radius: 4px;
             cursor: pointer;
             text-decoration: none;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
-
+        .btn-cancel:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        }
         #passwordVerificationSection {
             margin-top: 20px;
             padding: 15px;
@@ -358,7 +375,10 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             </div>
 
             <div class="btn-container">
-                <button type="submit" class="btn-edit">Save Changes</button>
+                <button type="submit" class="btn-edit">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" width="16" height="16"><!--! Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc. --><path d="M433.9 129.9L318.1 14.1C312.4 8.4 304.3 5.1 296 5.1H48C21.5 5.1 0 26.6 0 53.1V458.9C0 485.4 21.5 506.9 48 506.9H400C426.5 506.9 448 485.4 448 458.9V152C448 143.7 444.6 135.6 438.9 129.9zM224 416C206.3 416 192 401.7 192 384C192 366.3 206.3 352 224 352C241.7 352 256 366.3 256 384C256 401.7 241.7 416 224 416zM320 288H128V64H288V160H320V288z"/></svg>
+                    Save Changes
+                </button>
                 <a href="admin_status.php" class="btn-cancel">Cancel</a>
             </div>
         </form>
