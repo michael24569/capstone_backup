@@ -109,20 +109,20 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <title>Add Client Records</title>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js"></script>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-         
         * {
             padding: 0;
             margin: 0;
             box-sizing: border-box;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
         }
 
         body {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
             height: 100vh;
-            background-color: #071c14;";
+            background-color: #071c14;
             justify-content: center;
             align-items: center;
             display: flex;
@@ -145,7 +145,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             text-overflow: ellipsis;
         }
 
-       
+        /* Add button hover animation */
+        .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
+        }
     </style>
 </head>
 
@@ -161,22 +173,22 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         <form method="post">
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Lot No.</label>
-                    <div class="col-sm-6">
+                <div class="col-sm-6">
                     <input 
                         type="number" 
                         class="form-control" 
                         name="lot" 
                         value="<?php echo htmlspecialchars($lot) ?>" 
                         oninput="validateNumber(this)">
-    </div>
-</div>
+                </div>
+            </div>
 
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Memorial Lots</label>
                 <div class="col-sm-6">
                     <select class="form-control" name="mem_lots">
-                    <option value="None" <?php if ($mem_lots == "None") echo "selected"; ?>>None</option>
-                    <option value="Family Estate" <?php if ($mem_lots == "Family Estate") echo "selected"; ?>>Family Estate</option>
+                        <option value="None" <?php if ($mem_lots == "None") echo "selected"; ?>>None</option>
+                        <option value="Family Estate" <?php if ($mem_lots == "Family Estate") echo "selected"; ?>>Family Estate</option>
                         <option value="Garden Lots" <?php if ($mem_lots == "Garden Lots") echo "selected"; ?>>Garden Lots</option>
                         <option value="Lawn Lots" <?php if ($mem_lots == "Lawn Lots") echo "selected"; ?>>Lawn Lots</option>
                     </select>
@@ -184,34 +196,34 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="row mb-3">
-        <label class="col-sm-3 col-form-label">Memorial Name</label>
-        <div class="col-sm-6">
-            <select class="form-control" name="mem_sts">
-            <option value="St. Michael" <?php if ($mem_sts == "St. Michael") echo "selected"; ?>>St. Michael</option>
-            <option value="St. Patrick" <?php if ($mem_sts == "St. Patrick") echo "selected"; ?>>St. Patrick</option>
-            <option value="St. Mark" <?php if ($mem_sts == "St. Mark") echo "selected"; ?>>St. Mark</option>
-            <option value="St. Lukes" <?php if ($mem_sts == "St. Lukes") echo "selected"; ?>>St. Lukes</option>
-            <option value="St. Matthew" <?php if ($mem_sts == "St. Matthew") echo "selected"; ?>>St. Matthew</option>
-            <option value="St. Isidore" <?php if ($mem_sts == "St. Isidore") echo "selected"; ?>>St. Isidore</option>
-            <option value="St. Rafael" <?php if ($mem_sts == "St. Rafael") echo "selected"; ?>>St. Rafael</option>
-            <option value="St. Peter" <?php if ($mem_sts == "St. Peter") echo "selected"; ?>>St. Peter</option>
-            <option value="St. Paul" <?php if ($mem_sts == "St. Paul") echo "selected"; ?>>St. Paul</option>
-            <option value="St. Augustin" <?php if ($mem_sts == "St. Augustin") echo "selected"; ?>>St. Augustin</option>
-            <option value="St. Joseph" <?php if ($mem_sts == "St. Joseph") echo "selected"; ?>>St. Joseph</option>
-            <option value="St. John" <?php if ($mem_sts == "St. John") echo "selected"; ?>>St. John</option>
-            <option value="St. Dominic" <?php if ($mem_sts == "St. Dominic") echo "selected"; ?>>St. Dominic</option>
-            <option value="St. James" <?php if ($mem_sts == "St. James") echo "selected"; ?>>St. James</option>
-            <option value="St. Rafael" <?php if ($mem_sts == "St. Rafael") echo "selected"; ?>>St. Rafael</option>
-            <option value="St. Jude" <?php if ($mem_sts == "St. Jude") echo "selected"; ?>>St. Jude</option>
-            <option value="Apartment1" <?php if ($mem_sts == "Apartment1") echo "selected"; ?>>Apartment1</option>
-            <option value="Apartment2" <?php if ($mem_sts == "Apartment2") echo "selected"; ?>>Apartment2</option>
-            <option value="Apartment3" <?php if ($mem_sts == "Apartment3") echo "selected"; ?>>Apartment3</option>
-            <option value="Columbarium1" <?php if ($mem_sts == "Columbarium1") echo "selected"; ?>>Columbarium1</option>
-            <option value="Columbarium2" <?php if ($mem_sts == "Columbarium2") echo "selected"; ?>>Columbarium2</option>
-                <!-- Add more options as needed -->
-            </select>
-        </div>
-    </div>
+                <label class="col-sm-3 col-form-label">Memorial Name</label>
+                <div class="col-sm-6">
+                    <select class="form-control" name="mem_sts">
+                        <option value="St. Michael" <?php if ($mem_sts == "St. Michael") echo "selected"; ?>>St. Michael</option>
+                        <option value="St. Patrick" <?php if ($mem_sts == "St. Patrick") echo "selected"; ?>>St. Patrick</option>
+                        <option value="St. Mark" <?php if ($mem_sts == "St. Mark") echo "selected"; ?>>St. Mark</option>
+                        <option value="St. Lukes" <?php if ($mem_sts == "St. Lukes") echo "selected"; ?>>St. Lukes</option>
+                        <option value="St. Matthew" <?php if ($mem_sts == "St. Matthew") echo "selected"; ?>>St. Matthew</option>
+                        <option value="St. Isidore" <?php if ($mem_sts == "St. Isidore") echo "selected"; ?>>St. Isidore</option>
+                        <option value="St. Rafael" <?php if ($mem_sts == "St. Rafael") echo "selected"; ?>>St. Rafael</option>
+                        <option value="St. Peter" <?php if ($mem_sts == "St. Peter") echo "selected"; ?>>St. Peter</option>
+                        <option value="St. Paul" <?php if ($mem_sts == "St. Paul") echo "selected"; ?>>St. Paul</option>
+                        <option value="St. Augustin" <?php if ($mem_sts == "St. Augustin") echo "selected"; ?>>St. Augustin</option>
+                        <option value="St. Joseph" <?php if ($mem_sts == "St. Joseph") echo "selected"; ?>>St. Joseph</option>
+                        <option value="St. John" <?php if ($mem_sts == "St. John") echo "selected"; ?>>St. John</option>
+                        <option value="St. Dominic" <?php if ($mem_sts == "St. Dominic") echo "selected"; ?>>St. Dominic</option>
+                        <option value="St. James" <?php if ($mem_sts == "St. James") echo "selected"; ?>>St. James</option>
+                        <option value="St. Rafael" <?php if ($mem_sts == "St. Rafael") echo "selected"; ?>>St. Rafael</option>
+                        <option value="St. Jude" <?php if ($mem_sts == "St. Jude") echo "selected"; ?>>St. Jude</option>
+                        <option value="Apartment1" <?php if ($mem_sts == "Apartment1") echo "selected"; ?>>Apartment1</option>
+                        <option value="Apartment2" <?php if ($mem_sts == "Apartment2") echo "selected"; ?>>Apartment2</option>
+                        <option value="Apartment3" <?php if ($mem_sts == "Apartment3") echo "selected"; ?>>Apartment3</option>
+                        <option value="Columbarium1" <?php if ($mem_sts == "Columbarium1") echo "selected"; ?>>Columbarium1</option>
+                        <option value="Columbarium2" <?php if ($mem_sts == "Columbarium2") echo "selected"; ?>>Columbarium2</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="row mb-3">
                 <label class="col-sm-3 col-form-label">Lot Owner</label>
                 <div class="col-sm-6">
@@ -227,10 +239,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
             <div class="row mb-3">
                 <div class="col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-outline-primary">Submit</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="admin_records.php" role="button" onclick="showRecords()">Cancel</a>
+                    <button type="button" class="btn btn-danger" onclick="goBack()">Cancel</button>
                 </div>
             </div>
         </form>
@@ -248,31 +262,19 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         });
 
         function validateNumber(input) {
-    let value = parseInt(input.value, 10);
+            let value = input.value.replace(/^0+/, '');
+            
+            // If the value is empty after removing zeros,
+            if (value === '') {
+                input.value = '0';
+            } else {
+                input.value = value;
+            }
+        }
 
-    if (isNaN(value) || value < 0) {
-        input.value = 0;
-    }
-}
-
-function validateNumber(input) {
-    let value = input.value.replace(/^0+/, '');
-    
-    // If the value is empty after removing zeros, set it to 0
-    if (value === '') {
-        value = '0';
-    }
-    
-    // Convert to integer
-    let numValue = parseInt(value, 10);
-    
-    // Validate if it's a number and not negative
-    if (isNaN(numValue) || numValue < 0) {
-        input.value = '0';
-    } else {
-        input.value = numValue.toString();
-    }
-}
+        function goBack() {
+            window.location.href = "admin_records.php";
+        }
     </script>
 </body>
 </html>

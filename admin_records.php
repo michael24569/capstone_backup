@@ -7,7 +7,7 @@ checkAdminAccess();
 require("db-connection.php");
 
 if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
-    $records_per_page = 5;
+    $records_per_page = 7;
     $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
     $start_from = ($page-1) * $records_per_page;
     
@@ -46,8 +46,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
     <style>
         /* Previous styles remain the same */
-       
-       
         tbody, thead, .form-control, td {
             font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 
@@ -183,7 +181,37 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     border-collapse: collapse;
     height: 40px;
     margin-right: 10px;
-    padding-left: 5px;
+    padding: 5px 10px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid #002d1c;
+    border-radius: 20px;
+    background-color: transparent;
+    color: white;
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.select:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.select option {
+    background-color: #071c14;
+    color: white;
+    padding: 10px;
+}
+
+.select:focus {
+    border-color: #4CAF50;
+    box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
 /* Basic button styling */
@@ -241,6 +269,111 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     fill: white;
 }
 
+/* Update the select styles */
+.select {
+    height: 42px;  /* Match input height */
+    margin-right: 10px;
+    padding: 5px 35px 5px 15px; /* Increased right padding for icon */
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    border: 2px solid #002d1c;
+    border-radius: 20px;
+    background-color: rgba(7, 28, 20, 0.95); /* Darker background */
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='white' viewBox='0 0 16 16'%3E%3Cpath d='M7.247 11.14L2.451 5.658C1.885 5.013 2.345 4 3.204 4h9.592a1 1 0 0 1 .753 1.659l-4.796 5.48a1 1 0 0 1-1.506 0z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: calc(100% - 12px) center;
+    color: rgba(255, 255, 255, 0.9); /* Brighter text */
+    cursor: pointer;
+    outline: none;
+    transition: all 0.3s ease;
+    min-width: 150px;  /* Ensure minimum width */
+    font-size: 14px;  /* Adjust font size */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    text-shadow: 0 0 1px rgba(255, 255, 255, 0.5); /* Text glow effect */
+}
+
+.select:hover {
+    background-color: rgba(7, 28, 20, 0.98);
+    color: #fff;
+    text-shadow: 0 0 2px rgba(255, 255, 255, 0.7);
+}
+
+.select option {
+    background-color: #071c14;
+    color: #fff;
+    padding: 10px;
+    font-size: 14px;
+}
+
+/* Hide default arrow in IE */
+.select::-ms-expand {
+    display: none;
+}
+
+/* Add select wrapper for better positioning if needed */
+.select-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+/* Update the display container */
+.display {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 20px;
+    padding: 0 10px;
+}
+
+/* Update the search input */
+#searchInput {
+    height: 42px;  /* Match select height */
+    padding: 5px 15px;
+    margin-bottom: 0;  /* Remove bottom margin */
+    font-size: 14px;
+    min-width: 250px;
+}
+
+/* Update clear button position */
+.clear-button {
+    top: 50%;  /* Center vertically */
+    transform: translateY(-50%);
+    right: calc(100% - 500px);  /* Adjust based on your layout */
+    left: auto;
+}
+
+/* Add these new styles for select animation */
+.select option {
+    transition: all 0.3s ease;
+    transform-origin: top;
+}
+
+.select.collapsed option {
+    transform: scaleY(0);
+    opacity: 0;
+    pointer-events: none;
+}
+
+.select-hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+}
+
+/* Add these styles to fix the blinking line */
+.divider-row {
+    display: none; /* Hide the divider row completely */
+}
+
+.styled-table tr {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Add subtle border between rows */
+}
+
+.styled-table tr:last-child {
+    border-bottom: none; /* Remove border from last row */
+}
+
     </style>
 </head>
 
@@ -264,7 +397,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </a>
             <br>
            <div class="display">
-           <select id="searchField" class="select options" style="width: 150px;">
+           <select id="searchField" class="select">
         <option value="Lot_No">Lot No.</option>
         <option value="mem_lots">Memorial Lots</option>
         <option value="mem_sts">Memorial Name</option>
@@ -299,9 +432,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                             <td class="action-buttons">
                                 <a class='btn btn-edit' href='admin_update.php?id=<?php echo $row['id']; ?>'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>Edit</a>
                             </td>
-                        </tr>
-                        <tr class="divider-row">
-                            <td colspan="6"></td>
                         </tr>
                     <?php 
                         }
@@ -520,6 +650,197 @@ document.addEventListener('DOMContentLoaded', function () {
 
     sidebar.addEventListener('mouseenter', hideElements);
     sidebar.addEventListener('mouseleave', showElements);
+});
+
+// Add this to your existing JavaScript
+window.onload = function() {
+    // Store the current page state in sessionStorage
+    sessionStorage.setItem('lastRecordsState', {
+        page: <?php echo $page; ?>,
+        search: '<?php echo $searchQuery; ?>',
+        field: '<?php echo $searchField; ?>'
+    });
+};
+
+// When coming back to this page
+if (window.performance && window.performance.navigation.type === 2) {
+    // 2 is for back/forward navigation
+    const lastState = sessionStorage.getItem('lastRecordsState');
+    if (lastState) {
+        // Restore the previous state
+        const state = JSON.parse(lastState);
+        if (state.search) {
+            document.getElementById('searchInput').value = state.search;
+            document.getElementById('searchField').value = state.field;
+        }
+    }
+}
+
+// Add this to your existing JavaScript
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    const selectElement = document.getElementById('searchField');
+
+    sidebar.addEventListener('mouseenter', function() {
+        selectElement.blur(); // Remove focus from select
+        if(selectElement.size > 1) {
+            selectElement.size = 1; // Collapse the select options
+        }
+    });
+
+    // Prevent select from opening when sidebar is active
+    selectElement.addEventListener('mousedown', function(e) {
+        if(sidebar.matches(':hover')) {
+            e.preventDefault();
+        }
+    });
+});
+
+    // Replace the existing sidebar hover handling with this enhanced version
+    document.addEventListener('DOMContentLoaded', function() {
+        const sidebar = document.querySelector('.sidebar');
+        const selectElement = document.getElementById('searchField');
+        let isSelectOpen = false;
+
+        // Function to force close select
+        function forceCloseSelect() {
+            selectElement.blur();
+            isSelectOpen = false;
+            selectElement.classList.add('collapsed');
+            // Force the select to close by temporarily disabling it
+            selectElement.disabled = true;
+            setTimeout(() => {
+                selectElement.disabled = false;
+            }, 100);
+        }
+
+        // Track select open state
+        selectElement.addEventListener('mousedown', function(e) {
+            if (sidebar.matches(':hover')) {
+                e.preventDefault();
+                return;
+            }
+            isSelectOpen = !isSelectOpen;
+        });
+
+        selectElement.addEventListener('focus', function() {
+            if (sidebar.matches(':hover')) {
+                forceCloseSelect();
+            }
+        });
+
+        // Enhanced sidebar hover handling
+        sidebar.addEventListener('mouseenter', function() {
+            forceCloseSelect();
+        });
+
+        sidebar.addEventListener('mouseleave', function() {
+            selectElement.classList.remove('collapsed');
+        });
+
+        // Close select when clicking elsewhere
+        document.addEventListener('click', function(e) {
+            if (!selectElement.contains(e.target)) {
+                isSelectOpen = false;
+                selectElement.classList.remove('collapsed');
+            }
+        });
+
+        // Handle page visibility changes
+        document.addEventListener('visibilitychange', function() {
+            if (!document.hidden) {
+                forceCloseSelect();
+            }
+        });
+
+        // Handle history navigation
+        window.addEventListener('popstate', function() {
+            forceCloseSelect();
+        });
+
+        // Check if we're returning from update page
+        if (sessionStorage.getItem('returnFromUpdate') === 'true') {
+            // Clear the flag
+            sessionStorage.removeItem('returnFromUpdate');
+            // Force close the select
+            forceCloseSelect();
+        }
+
+        // Enhanced select element click handling
+        selectElement.addEventListener('click', function(e) {
+            if (sidebar.matches(':hover')) {
+                e.preventDefault();
+                forceCloseSelect();
+                return false;
+            }
+        });
+
+        // Add this to your existing popstate event listener
+        window.addEventListener('popstate', function() {
+            forceCloseSelect();
+            if (selectElement.classList.contains('select-hidden')) {
+                selectElement.classList.remove('select-hidden');
+            }
+        });
+
+        // Add cleanup on page unload
+        window.addEventListener('beforeunload', function() {
+            forceCloseSelect();
+        });
+    });
+
+// Add this at the start of your DOMContentLoaded event listener
+document.addEventListener('DOMContentLoaded', function() {
+    const sidebar = document.querySelector('.sidebar');
+    const selectElement = document.getElementById('searchField');
+    let isSelectOpen = false;
+
+    // Enhanced force close function
+    function forceCloseSelect() {
+        if (!selectElement) return;
+        
+        selectElement.blur();
+        isSelectOpen = false;
+        selectElement.classList.add('collapsed');
+        selectElement.size = 1; // Ensure dropdown is closed
+        
+        // Force the select to close
+        selectElement.disabled = true;
+        setTimeout(() => {
+            selectElement.disabled = false;
+            selectElement.style.pointerEvents = 'auto';
+        }, 100);
+    }
+
+    // Check for return flags immediately on page load
+    if (sessionStorage.getItem('returnFromUpdate') === 'true' || 
+        sessionStorage.getItem('forceCloseSelect') === 'true') {
+        
+        // Clear all related flags
+        sessionStorage.removeItem('returnFromUpdate');
+        sessionStorage.removeItem('forceCloseSelect');
+        
+        // Force close with slight delay to ensure DOM is ready
+        setTimeout(forceCloseSelect, 0);
+    }
+
+    // Prevent select from opening on return
+    selectElement.addEventListener('mousedown', function(e) {
+        if (sessionStorage.getItem('forceCloseSelect') === 'true') {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    // ...rest of your existing event listeners...
+
+    // Enhanced page visibility handling
+    document.addEventListener('visibilitychange', function() {
+        if (!document.hidden && sessionStorage.getItem('forceCloseSelect') === 'true') {
+            forceCloseSelect();
+            sessionStorage.removeItem('forceCloseSelect');
+        }
+    });
 });
 
     </script>

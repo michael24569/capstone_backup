@@ -187,26 +187,21 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     outline: none;
     border: none;
     width: 100%;
-    background-color: #005434;
+    background: linear-gradient(90deg, #005434, #337F5B);
     color: white;
     cursor: pointer;
-    transition: 0.9s;
-  }
-  .btn:hover{
-    background-color: #337F5B;
-  }
-  .btn:focus {
-    font-family: 'MyFont';
-    font-size: 1.5rem;
-    padding: 15px 0;
-    border-radius: 50px;
-    outline: none;
-    border: none;
-    width: 100%;
-    background-color: #337F5B;
-    color: white;
-    cursor: pointer;
-    transition: 0.9s;
+    transition: background 0.9s, transform 0.3s, box-shadow 0.3s;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+.btn:hover {
+    background: linear-gradient(90deg, #007a4d, #4cae7a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+.btn:focus {
+    background: linear-gradient(90deg, #007a4d, #4cae7a);
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
   .links{
     display: flex;
@@ -227,12 +222,11 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     color: blue;
   }
   .error {
-    color: #af4242;
-    background-color: #fde8ec;
-    padding: 15px;
-    transform: translateX(0px);
-    margin-bottom: 10px;
-    font-size: 15px;
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+    padding-bottom: 10px; /* Add padding to the error message */
+    padding-left: 2rem; /* Align with the input text */
   }
   .recover{
     text-align: right;

@@ -112,6 +112,8 @@ do {
     <title>Update Records</title>
     <script src="bootstrap-5.3.3-dist/js/bootstrap.bundle.min.js" ></script>
     <link href="bootstrap-5.3.3-dist/css/bootstrap.min.css" rel="stylesheet" >
+    <!-- Include Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
          * {
             padding: 0;
@@ -142,6 +144,20 @@ do {
             overflow: hidden;
             white-space: nowrap;
             text-overflow: ellipsis;
+        }
+        
+        /* Add button hover animation */
+        .btn {
+            transition: all 0.3s ease;
+        }
+        
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .btn:active {
+            transform: translateY(-1px);
         }
     </style>
 </head>
@@ -226,10 +242,12 @@ do {
 
             <div class="row mb-3">
                 <div class="col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-outline-primary">Update Record</button>
+                    <button type="submit" class="btn btn-primary">
+                        <i class="fas fa-save"></i> Save
+                    </button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <a class="btn btn-outline-primary" href="records.php" role="button">Cancel</a>
+                    <button type="button" class="btn btn-danger" onclick="goBack()">Cancel</button>
                 </div>
             </div>
         </form>
@@ -277,6 +295,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function goBack() {
+    // Set a flag in sessionStorage to indicate we're coming back from update page
+    sessionStorage.setItem('returnFromUpdate', 'true');
+    
+    // Navigate back
+    if (window.history && window.history.length > 1) {
+        window.history.back();
+    } else {
+        window.location.href = 'records.php';
+    }
+}
+
+// Prevent form resubmission when going back
+if (window.history.replaceState) {
+    window.history.replaceState(null, null, window.location.href);
+}
     </script>
 </body>
 </html>
