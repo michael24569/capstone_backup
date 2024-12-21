@@ -521,7 +521,7 @@ body {
     position: absolute;
     top:95px;
     right: 40px;
-    background-color: #479149;
+    background-color: #3d8b40;
     color: white;
     padding: 10px 20px;
     border: none;
@@ -529,6 +529,11 @@ body {
     cursor: pointer;
     z-index: 10;
 }
+#print:hover {
+
+background-color: #4CAF50;
+}
+
     .input-icon {
   height:15px; fill:white;
   margin-right: 10px;
@@ -593,6 +598,33 @@ p {
         display: none;
     }
 }
+    .btn-confirm {
+        background-color: #3d8b40;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    }
+    .btn-confirm:hover {
+        background-color: #4CAF50;
+    }
+    .no-interaction {
+        pointer-events: none;
+    }
+    .print-button-disabled {
+        background-color: #3d8b40;
+        color: white;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        border-radius: 4px;
+        font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    }
+    .print-button-disabled:hover {
+        background-color: #4CAF50;
+    }
     </style>
 </head>
 <link rel="stylesheet" href="style1.css">
@@ -810,6 +842,7 @@ document.getElementById("sidebarLogoutButton").addEventListener("click", functio
     const modal = document.getElementById("confirmModal");
     modal.style.display = "flex"; // Show the modal
     document.getElementById("print").style.pointerEvents = "none"; // Disable print button interactions
+    
 });
 
 // When the user clicks the cancel button, hide the modal
@@ -818,6 +851,7 @@ document.getElementById("cancelButton").addEventListener("click", function() {
     modal.style.display = "none"; // Hide the modal
     document.body.classList.remove("no-interaction"); // Enable interactions
     document.getElementById("print").style.pointerEvents = "auto"; // Enable print button interactions
+   
 });
 
 // When the user clicks the confirm button, proceed with the logout
