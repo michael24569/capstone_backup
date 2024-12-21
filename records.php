@@ -160,18 +160,20 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             width: 20%;
             padding: 10px;
             margin-bottom: 10px;
-            border: 2px solid #ddd;
-            border-radius: 4px;     
+            border: 2px solid #002d1c;
+            border-radius: 20px;     
         }
 .clear-button {
     cursor: pointer;
     position: absolute;
     left: 32.5%; /* Adjust based on your design */
-    top: 19.6%;
+    top: 14%;
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */
 }
+
+
 .display {
     display: flex;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
@@ -227,8 +229,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 .input-icon {
     margin-right: 10px;
     vertical-align: middle;
-    fill: #002d1c;
+    fill: white;
     transition: fill 0.3s ease;
+}
+.addicon{
+    fill: #479149;
+    height:20px;
 }
 
 .btn.btn-add:hover .input-icon {
@@ -251,7 +257,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         <div class="table-responsive">
             <h1 id="header1">Records Section</h1>
             <a class="btn btn-add" href="addRecord.php" role="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon addicon">
                     <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
                 </svg>
                 Add new record

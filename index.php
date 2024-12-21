@@ -24,9 +24,8 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login</title>
     <script type="text/javascript">
-    window.history.forward();
-    };
-</script>
+      window.history.forward();
+    </script>
 </head>
 <body >
 <div class="blur-box">

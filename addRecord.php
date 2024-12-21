@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $name = "";
                 $address = "";
 
-                $successMessage = "Client added successfully";
+                $successMessage = "Record added successfully";
             }
         }
     }

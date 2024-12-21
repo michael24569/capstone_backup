@@ -167,7 +167,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     cursor: pointer;
     position: absolute;
     left: 32.5%; /* Adjust based on your design */
-    top: 15%;
+    top: 14%;
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */
