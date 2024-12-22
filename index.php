@@ -114,12 +114,12 @@ if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
   .container {
     background-color:#ffffff93;
 
-    backdrop-filter: blur(20px);
+    backdrop-filter: blur(8px);
     width: 400px;
     padding:20px;
     margin-left: 55%;
     margin-top: 15%;
-    border-radius: 5px;
+    border-radius: 15px;
     box-shadow: 0 8px 32px 0 #00000080;
 }
   form{
