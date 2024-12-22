@@ -114,7 +114,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
-        .btn
         .btn-edit {
             justify-content: center;
             text-align:center;
@@ -233,13 +232,43 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     justify-content: center; /* Center the elements horizontally */
 }
 /* Basic button styling */
-.btn-add {
-    background-color: #479149;
+.btn.btn-add {
+    margin-left: 10px;
+    display: inline-block;
+    position: relative;
+    border: 2px solid #479149; /* Border color */
+    border-radius: 5px;
+    color: #479149;
     text-decoration: none;
-    padding: 10px;
-    border-radius: 10px;
+    font-size: 16px;
+    background: none; /* No background by default */
+    overflow: hidden;
+    z-index: 1;
+}
+
+/* Sliding background effect */
+.btn.btn-add::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: #479149; /* Background color */
+    z-index: -1;
+    transition: left 0.5s ease-in-out;
+}
+
+/* On hover, slide the background in */
+.btn.btn-add:hover::before {
+    left: 0;
+}
+
+/* Text and SVG color change on hover */
+.btn.btn-add:hover {
     color: white;
 }
+
 .input-icon {
     margin-right: 10px;
     vertical-align: middle;
@@ -247,8 +276,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     transition: fill 0.3s ease;
 }
 .addicon{
-    fill: white;
+    fill: #479149;
     height:20px;
+}
+
+.btn.btn-add:hover .input-icon {
+    fill: white;
 }
 
 /* Update the select styles */
@@ -364,6 +397,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             margin-bottom: 20px;
             padding: 0 10px;
         }
+        .btn.btn-add {
+            margin-top: 0; /* Remove top margin */
+            position: relative; /* Change position to relative */
+            z-index: 1000; /* Ensure the button is on top */
+            margin-left: 20px; /* Adjust to avoid overlap with sidebar */
+        }
         .select,
         #searchInput {
             margin-right: 0; /* Remove right margin */
@@ -384,7 +423,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         <div id="alertBox" class="alert"></div>
         <div class="table-responsive">
             <h1 id="header1">Records Section</h1>
-            <a class="btn-add" href="admin_addRecord.php" role="button">
+            <a class="btn btn-add" href="admin_addRecord.php" role="button">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon addicon">
                         <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
                     </svg>
