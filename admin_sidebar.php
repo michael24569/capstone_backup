@@ -5,7 +5,7 @@ $current_page = basename($_SERVER['PHP_SELF']);
 
     <ul><br>
             <li class="nostyle">
-            <a class="sidebar-header">
+            <a class="sidebar-header" style="pointer-events: none;">
                 <span class="icon nostyle">
                 <img class="SBlogo"src ="images/assessorlogo.png" alt="Tagayatay City Assessors Seal">
             </span>

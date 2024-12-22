@@ -7,34 +7,57 @@ checkAdminAccess();
 require("db-connection.php");
 
 if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
-    $records_per_page = 7;
-    $page = isset($_GET['page']) ? (int)$_GET['page'] : 1;
+    $records_per_page = 6;
+    $page = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
+    $page = ($page !== false && $page > 0) ? $page : 1;
     $start_from = ($page-1) * $records_per_page;
     
-    $searchQuery = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
-    $searchField = isset($_GET['field']) ? mysqli_real_escape_string($conn, $_GET['field']) : 'Lot_No';
+    $searchQuery = filter_input(INPUT_GET, 'search', FILTER_SANITIZE_STRING) ?? '';
+    $searchField = filter_input(INPUT_GET, 'field', FILTER_SANITIZE_STRING) ?? 'Lot_No';
     
-    // Get total number of records
-    $total_query = "SELECT COUNT(*) as total FROM records";
+    // Validate search field to prevent SQL injection
+    $allowed_fields = ['Lot_No', 'mem_lots', 'mem_sts', 'LO_name'];
+    if (!in_array($searchField, $allowed_fields)) {
+        $searchField = 'Lot_No';
+    }
+
+    // Get total number of records using prepared statement
     if ($searchQuery != '') {
-        $total_query .= " WHERE $searchField LIKE '%$searchQuery%'";
+        $total_query = "SELECT COUNT(*) as total FROM records WHERE $searchField LIKE ?";
+        $stmt = mysqli_prepare($conn, $total_query);
+        $searchParam = "%$searchQuery%";
+        mysqli_stmt_bind_param($stmt, "s", $searchParam);
+    } else {
+        $total_query = "SELECT COUNT(*) as total FROM records";
+        $stmt = mysqli_prepare($conn, $total_query);
     }
     
-    $result = mysqli_query($conn, $total_query);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
     $row = mysqli_fetch_assoc($result);
     $total_records = $row['total'];
     $total_pages = ceil($total_records / $records_per_page);
 
-    // Get records for current page
-    $query = "SELECT * FROM records";
+    // Get records for current page using prepared statement
     if ($searchQuery != '') {
-        // Use the selected field for searching
-        $query .= " WHERE $searchField LIKE '%$searchQuery%'";
+        $query = "SELECT * FROM records WHERE $searchField LIKE ? LIMIT ?, ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "sii", $searchParam, $start_from, $records_per_page);
+    } else {
+        $query = "SELECT * FROM records LIMIT ?, ?";
+        $stmt = mysqli_prepare($conn, $query);
+        mysqli_stmt_bind_param($stmt, "ii", $start_from, $records_per_page);
     }
-    $query .= " LIMIT $start_from, $records_per_page";
-    $result = mysqli_query($conn, $query);
+    
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
 
-?>
+    // Generate CSRF token
+    if (empty($_SESSION['csrf_token'])) {
+        $_SESSION['csrf_token'] = bin2hex(random_bytes(32));
+    }
+
+    ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -91,6 +114,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             0% { transform: rotate(0deg); }
             100% { transform: rotate(360deg); }
         }
+        .btn
         .btn-edit {
             justify-content: center;
             text-align:center;
@@ -134,7 +158,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
         .pagination-info {
             text-align: center;
-            color: white;
+            color: black;
             margin: 4px 0;
         }
 
@@ -169,13 +193,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */
-}
-
-
-.display {
-    display: flex;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    
 }
 .select {
     border-collapse: collapse;
@@ -213,47 +230,16 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     gap: 10px;
     margin-bottom: 20px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    justify-content: center; /* Center the elements horizontally */
 }
 /* Basic button styling */
-.btn.btn-add {
-    margin-top:20px;
-    margin-left:1270px;
-    display: inline-block;
-    position: absolute;
-    padding: 10px 20px;
-    border: 2px solid #479149; /* Border color */
-    border-radius: 5px;
-    color: #479149;
+.btn-add {
+    background-color: #479149;
     text-decoration: none;
-    font-size: 16px;
-    background: none; /* No background by default */
-    overflow: hidden;
-    z-index: 1;
-}
-
-/* Sliding background effect */
-.btn.btn-add::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -100%;
-    width: 100%;
-    height: 100%;
-    background: #479149; /* Background color */
-    z-index: -1;
-    transition: left 0.5s ease-in-out;
-}
-
-/* On hover, slide the background in */
-.btn.btn-add:hover::before {
-    left: 0;
-}
-
-/* Text and SVG color change on hover */
-.btn.btn-add:hover {
+    padding: 10px;
+    border-radius: 10px;
     color: white;
 }
-
 .input-icon {
     margin-right: 10px;
     vertical-align: middle;
@@ -261,18 +247,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     transition: fill 0.3s ease;
 }
 .addicon{
-    fill: #479149;
-    height:20px;
-}
-
-.btn.btn-add:hover .input-icon {
     fill: white;
+    height:20px;
 }
 
 /* Update the select styles */
 .select {
     height: 42px;  /* Match input height */
-    margin-right: 10px;
+    margin-right: 0; /* Remove right margin */
     padding: 5px 35px 5px 15px; /* Increased right padding for icon */
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     border: 2px solid #002d1c;
@@ -320,10 +302,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 /* Update the display container */
 .display {
     display: flex;
-    align-items: center;
+    align-items: start;
     gap: 15px;
     margin-bottom: 20px;
     padding: 0 10px;
+    justify-content: start; /* Center the elements horizontally */
 }
 
 /* Update the search input */
@@ -374,6 +357,17 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     border-bottom: none; /* Remove border from last row */
 }
 
+        .display {
+            display: flex;
+            align-items: flex-start; /* Align elements to the left */
+            gap: 10px;
+            margin-bottom: 20px;
+            padding: 0 10px;
+        }
+        .select,
+        #searchInput {
+            margin-right: 0; /* Remove right margin */
+        }
     </style>
 </head>
 
@@ -386,27 +380,26 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <?php include 'admin_sidebar.php'; ?>
     
     <div id="recordsContent" class="center_record">
+        <input type="hidden" name="csrf_token" value="<?php echo htmlspecialchars($_SESSION['csrf_token']); ?>">
         <div id="alertBox" class="alert"></div>
         <div class="table-responsive">
             <h1 id="header1">Records Section</h1>
-            <a class="btn btn-add" href="admin_addRecord.php" role="button">
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon addicon">
-                    <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
-                </svg>
-                Add new record
-            </a>
-            <br>
-           <div class="display">
-           <select id="searchField" class="select">
-        <option value="Lot_No">Lot No.</option>
-        <option value="mem_lots">Memorial Lots</option>
-        <option value="mem_sts">Memorial Name</option>
-        <option value="LO_name">Lot Owner</option>
-    </select>
-            <input class="form-control" type="text" id="searchInput" placeholder="Search records..." autocomplete="off">
-            <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
-</div>
-            
+            <a class="btn-add" href="admin_addRecord.php" role="button">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512" class="input-icon addicon">
+                        <path d="M96 128a128 128 0 1 1 256 0A128 128 0 1 1 96 128zM0 482.3C0 383.8 79.8 304 178.3 304l91.4 0C368.2 304 448 383.8 448 482.3c0 16.4-13.3 29.7-29.7 29.7L29.7 512C13.3 512 0 498.7 0 482.3zM504 312l0-64-64 0c-13.3 0-24-10.7-24-24s10.7-24 24-24l64 0 0-64c0-13.3 10.7-24 24-24s24 10.7 24 24l0 64 64 0c13.3 0 24 10.7 24 24s-10.7 24-24 24l-64 0 0 64c0 13.3-10.7 24-24 24s-24-10.7-24-24z"/>
+                    </svg>
+                    Add new record
+                </a>
+            <div class="display">
+                <select id="searchField" class="select">
+                    <option value="Lot_No">Lot No.</option>
+                    <option value="mem_lots">Memorial Lots</option>
+                    <option value="mem_sts">Memorial Name</option>
+                    <option value="LO_name">Lot Owner</option>
+                </select>
+                <input class="form-control" type="text" id="searchInput" placeholder="Search records..." autocomplete="off">
+                <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
+            </div>
             <table class="styled-table text-center">
                 <thead>
                     <tr class="bg-dark text-black">
@@ -423,14 +416,14 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                     if(mysqli_num_rows($result) > 0) {
                         while($row = mysqli_fetch_assoc($result)) {
                     ?>
-                        <tr data-id="<?php echo $row['id']; ?>">
-                            <td><?php echo ucwords(strtolower($row['Lot_No'])); ?></td>
-                            <td><?php echo ucwords(strtolower($row['mem_lots'])); ?></td>
-                            <td><?php echo ucwords(strtolower($row['mem_sts'])); ?></td>
-                            <td><?php echo ucwords(strtolower($row['LO_name'])); ?></td>
-                            <td><?php echo ucwords(strtolower($row['mem_address'])); ?></td>
+                        <tr data-id="<?php echo htmlspecialchars($row['id']); ?>">
+                            <td><?php echo htmlspecialchars(ucwords(strtolower($row['Lot_No']))); ?></td>
+                            <td><?php echo htmlspecialchars(ucwords(strtolower($row['mem_lots']))); ?></td>
+                            <td><?php echo htmlspecialchars(ucwords(strtolower($row['mem_sts']))); ?></td>
+                            <td><?php echo htmlspecialchars(ucwords(strtolower($row['LO_name']))); ?></td>
+                            <td><?php echo htmlspecialchars(ucwords(strtolower($row['mem_address']))); ?></td>
                             <td class="action-buttons">
-                                <a class='btn btn-edit' href='admin_update.php?id=<?php echo $row['id']; ?>'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>Edit</a>
+                                <a class='btn btn-edit' href='admin_update.php?id=<?php echo htmlspecialchars($row['id']); ?>&csrf_token=<?php echo urlencode($_SESSION['csrf_token']); ?>'><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M441 58.9L453.1 71c9.4 9.4 9.4 24.6 0 33.9L424 134.1 377.9 88 407 58.9c9.4-9.4 24.6-9.4 33.9 0zM209.8 256.2L344 121.9 390.1 168 255.8 302.2c-2.9 2.9-6.5 5-10.4 6.1l-58.5 16.7 16.7-58.5c1.1-3.9 3.2-7.5 6.1-10.4zM373.1 25L175.8 222.2c-8.7 8.7-15 19.4-18.3 31.1l-28.6 100c-2.4 8.4-.1 17.4 6.1 23.6s15.2 8.5 23.6 6.1l100-28.6c11.8-3.4 22.5-9.7 31.1-18.3L487 138.9c28.1-28.1 28.1-73.7 0-101.8L474.9 25C446.8-3.1 401.2-3.1 373.1 25zM88 64C39.4 64 0 103.4 0 152L0 424c0 48.6 39.4 88 88 88l272 0c48.6 0 88-39.4 88-88l0-112c0-13.3-10.7-24-24-24s-24 10.7-24 24l0 112c0 22.1-17.9 40-40 40L88 464c-22.1 0-40-17.9-40-40l0-272c0-22.1 17.9-40 40-40l112 0c13.3 0 24-10.7 24-24s-10.7-24-24-24L88 64z"/></svg>Edit</a>
                             </td>
                         </tr>
                     <?php 
@@ -448,21 +441,21 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             </div>
             <div class="pagination" id="paginationLinks">
                 <?php if($total_pages > 0) : ?>
-    <a href="?page=1<?php echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+    <a href="?page=1<?php echo $searchQuery ? '&search='.htmlspecialchars($searchQuery).'&field='.htmlspecialchars($searchField) : ''; ?>" 
     class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">First</a>
     
-    <a href="?page=<?php echo ($page-1); echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+    <a href="?page=<?php echo ($page-1); echo $searchQuery ? '&search='.htmlspecialchars($searchQuery).'&field='.htmlspecialchars($searchField) : ''; ?>" 
     class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">←</a>
 
     <?php for($i = max(1, $page-2); $i <= min($total_pages, $page+2); $i++) : ?>
-        <a href="?page=<?php echo $i; echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+        <a href="?page=<?php echo $i; echo $searchQuery ? '&search='.htmlspecialchars($searchQuery).'&field='.htmlspecialchars($searchField) : ''; ?>" 
         class="<?php echo $page == $i ? 'active' : ''; ?>"><?php echo $i; ?></a>
     <?php endfor; ?>
         <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
-    <a href="?page=<?php echo ($page+1); echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+    <a href="?page=<?php echo ($page+1); echo $searchQuery ? '&search='.htmlspecialchars($searchQuery).'&field='.htmlspecialchars($searchField) : ''; ?>" 
     class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">→</a>
     
-    <a href="?page=<?php echo $total_pages; echo $searchQuery ? '&search='.$searchQuery.'&field='.$searchField : ''; ?>" 
+    <a href="?page=<?php echo $total_pages; echo $searchQuery ? '&search='.htmlspecialchars($searchQuery).'&field='.htmlspecialchars($searchField) : ''; ?>" 
     class="<?php echo $page >= $total_pages ? 'disabled' : ''; ?>">Last</a>
 <?php endif; ?>
             </div>
@@ -507,9 +500,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     function performSearch() {
         const searchQuery = searchInput.value.trim();
         const selectedField = searchField.value;
+        const csrfToken = document.querySelector('input[name="csrf_token"]').value;
         
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}`, true);
+        xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}&csrf_token=${encodeURIComponent(csrfToken)}`, true);
         
         xhr.onload = function() {
             if (this.status === 200) {

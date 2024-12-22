@@ -63,6 +63,7 @@ body {
 .titLe{
   font-weight: bold;  
   gap: 10px;
+  margin: 10px;
 }
 .sidebar.active {
   width: 300px; /* Expanded sidebar width */
