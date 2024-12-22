@@ -7,7 +7,7 @@ checkAdminAccess();
 require("db-connection.php");
 
 if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
-    $records_per_page = 6;
+    $records_per_page = 7;
     $page = filter_input(INPUT_GET, 'page', FILTER_VALIDATE_INT);
     $page = ($page !== false && $page > 0) ? $page : 1;
     $start_from = ($page-1) * $records_per_page;
@@ -116,10 +116,29 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         }
         .btn-edit {
             justify-content: center;
-            text-align:center;
-            padding-top:10px;
-            width: 100px;
-            height: 40px;
+            text-align: center;
+            padding: 10px 20px;
+            width: auto;
+            height: auto;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: transform 0.3s ease, background-color 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 5px;
+            font-size: 14px;
+            cursor: pointer;
+        }
+        .btn-edit:hover {
+            transform: translateY(-5px);
+            background-color: #45a049;
+        }
+        .btn-edit svg {
+            fill: white;
+            width: 16px;
+            height: 16px;
         }
         .top-left-button {
             fill: white;
@@ -188,7 +207,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     cursor: pointer;
     position: absolute;
     left: 32.5%; /* Adjust based on your design */
-    top: 14%;
+    top: 19.3%;
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */
@@ -351,13 +370,6 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     min-width: 250px;
 }
 
-/* Update clear button position */
-.clear-button {
-    top: 50%;  /* Center vertically */
-    transform: translateY(-50%);
-    right: calc(100% - 500px);  /* Adjust based on your layout */
-    left: auto;
-}
 
 /* Add these new styles for select animation */
 .select option {
@@ -406,6 +418,10 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         .select,
         #searchInput {
             margin-right: 0; /* Remove right margin */
+        }
+        .center_record {
+            margin-top: -10px !important; /* Remove top margin */
+            
         }
     </style>
 </head>

@@ -51,12 +51,10 @@ p {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    transition: 1s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Update transition */
 }
 
-
 .btn-confirm {
-
     background-color: #28a745;
     color: white;
 }
@@ -65,17 +63,17 @@ p {
     background-color: #dc3545;
     color: white;
 }
-.btn-cancel:hover{
+
+.btn-cancel:hover {
     background-color: #b82e3c;
-    transform: scale(1.2);
-    
+    transform: translateY(-5px); /* Float up slightly on hover */
 }
-.btn-confirm:hover{
+
+.btn-confirm:hover {
     background-color: #218d3a;
-    
-    transform: scale(1.2);
-    
+    transform: translateY(-5px); /* Float up slightly on hover */
 }
+
 .alert {
     position: fixed;
     top: 20%;
