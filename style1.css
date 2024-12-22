@@ -17,7 +17,7 @@ body {
 
 /* Sidebar Styles */
 .sidebar {
-  
+  z-index: 100;
   font-size: 15px;
   bottom: 0px;
   position: fixed;
