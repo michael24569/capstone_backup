@@ -135,7 +135,12 @@ unset($_SESSION['backup_file']);
                 </p>
                 <!-- Provide download link if backup is successful -->
                 <?php if ($backup_file): ?>
-                    <a href="downloadBackup.php?file=<?= urlencode($backup_file) ?>" class="button btn-download">Proceed Backup</a>
+                    <a href="downloadBackup.php?file=<?= urlencode($backup_file) ?>" class="button btn-download" id="proceedBackupButton">Proceed Backup</a>
+                    <script>
+                        document.addEventListener('DOMContentLoaded', function() {
+                            document.querySelector('.btn-edit').style.display = 'none';
+                        });
+                    </script>
                 <?php endif; ?>
                 <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
             <?php endif; ?>

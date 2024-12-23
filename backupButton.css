@@ -262,17 +262,16 @@ li a:hover {
   .button{
     font-size: 1.1rem;
     max-width: 300px;
-    border-radius: 5px;
+    border-radius: 10px;
     outline: none;
     border: none;
     width: 100%;
     background-color: rgb(125, 125, 235);
     color: white;
     cursor: pointer;
-    transition: 0.9s;
+    transition: transform 0.3s ease, background 0.9s;
     text-align: center;
-
-
+    transform: translateY(0);
     padding: 10px 80px;
   text-decoration: none;
 
@@ -283,8 +282,18 @@ li a:hover {
   display: block;
   }
   .button:hover{
-    background: #07001f;
+    background: #5532c7;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
   }
+  .btn-download {
+    transform: translateY(0);
+    transition: transform 0.3s ease, background 0.9s;
+}
+
+.btn-download:hover {
+    transform: translateY(-5px);
+}
   .error {
     color: #af4242;
     background-color: #fde8ec;

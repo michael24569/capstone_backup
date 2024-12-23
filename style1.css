@@ -1,4 +1,3 @@
-
 * {
   padding: 0;
   margin: 0;
@@ -237,10 +236,7 @@ li a:hover {
     font-size: 10px;
   }
 }
-.sidebar-header:hover{
-  cursor: default;
-  background: #dee7e2;
-}
+
 .nostyle{
   background: #dee7e2;
   color:#000;
@@ -422,13 +418,14 @@ li a:hover {
 .btn-edit {
   right: 100px;
   border-radius: 10px;
-  background-color: #479149;
+  background-color: #4CAF50;
   margin-right: 5px;
   padding: 10px;
   
 }
 .btn-edit:hover{
-  background-color: #4CAF50;
+  background-color: #479149;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 
 }
 

@@ -131,7 +131,7 @@ function displayRecordStatus() {
             width: 95%;
             margin: 30px auto;
             border-collapse: collapse;
-            margin-left: 70px;
+            margin-left: 35px;
             margin-top: 20px;
         }
         .summary-table th, .summary-table td {
@@ -148,16 +148,19 @@ function displayRecordStatus() {
             color: black;
         }
         .view-details {
-            background-color: #3d8b40;
+            background-color: #4CAF50;
             color: white;
             border: none;
             padding: 5px 10px;
             cursor: pointer;
             border-radius: 4px;
             font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Add transition */
         }
         .view-details:hover {
-            background-color: #4CAF50;
+            background-color:  #3d8b40;
+            transform: translateY(-3px);  /* Float effect */
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .details-modal {
             display: none;
@@ -222,104 +225,6 @@ body {
     padding-top: 20px;
     background: #071c14;
 }
-
-/* Print-specific styles */
-/* Existing styles remain the same until the print media query */
-
-
-
-.sidebar .icon-logo {
-  margin-bottom: 20px;
-}
-
-.sidebar .icon-logo .text {
-  font-size: 11px;
-  font-weight: 300;
-  font-weight: bold;
-}
-
-.sidebar .icon-logo .text:hover {
-  background: #dee7e2;
-}
-
-.bottom {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-/* Sidebar Toggle Button Styles */
-.sidebar-toggle-btn {
-  display: none; /* Default: hidden, visible in responsive view */
-  position: absolute; 
-  top: 20px;
-  left: 15px;
-  background: none;
-  border: none;
-  padding: 10px;
-  cursor: pointer;
-  z-index: 1000; /* Ensure it appears above other elements */
-}
-
-
-
-/* Responsive design for smaller screens */
-@media screen and (max-width: 768px) {
-  .sidebar-toggle-btn {
-    display: block; /* Show the toggle button on smaller screens */
-  }
-
-  .sidebar {
-    transform: translateX(-100%); /* Hide sidebar by default */
-    transition: transform 0.3s ease-in-out; /* Smooth transition for sliding effect */
-  }
-
-  .sidebar.active {
-    transform: translateX(0); /* Show sidebar when active */
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .sidebar {
-    width: 50px;
-  }
-
-  .sidebar:hover {
-    width: 150px;
-  }
-
-  .sidebar ul li a .icon {
-    min-width: 50px;
-    height: 50px;
-    font-size: 1.2rem;
-  }
-
-  .sidebar ul li a .text {
-    font-size: 9px;
-  }
-
-  .sidebar .icon-logo .text {
-    font-size: 10px;
-  }
-}
-.sidebar-header:hover{
-  cursor: default;
-  background: #dee7e2;
-}
-
-
-.nostyle{
-  background: #dee7e2;
-  color:#000;
-  transition-property: none;
-}
-.nostyle:hover{
-  
-  color:#000;
-  transition-property: none;
-}
-
-
 
 
 /* Page Content Styling */
@@ -521,17 +426,20 @@ body {
     position: absolute;
     top:95px;
     right: 40px;
-    background-color: #3d8b40;
+    background-color: #4CAF50;
     color: white;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     z-index: 10;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;  /* Add transition */
 }
 #print:hover {
 
-background-color: #4CAF50;
+background-color: #3d8b40;
+transform: translateY(-3px);  /* Float effect */
+box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
     .input-icon {
@@ -633,11 +541,12 @@ p {
 
 <div class="sidebar">
     <ul><br>
-        <li class="nostyle">
-            <a class="sidebar-header">
+             <li class="nostyle">
+            <a class="sidebar-header" style="pointer-events: none;">
                 <span class="icon nostyle">
-                    <img class="SBlogo" src="images/assessorlogo.png" alt="Tagayatay City Assessors Seal">
-                </span>
+                <img class="SBlogo"src ="images/assessorlogo.png" alt="Tagayatay City Assessors Seal">
+            </span>
+            
                 <span class="text titLe nostyle" style="font-size: 18px;">2D Mapping and<br>Management System<br>for Tagaytay Memorial Park</span>
             </a>
         </li>

@@ -297,7 +297,7 @@ document.addEventListener('DOMContentLoaded', function() {
 });
 
 function goBack() {
-    window.location.href = 'records.php';
+    window.history.back();
 }
 
 // Prevent form resubmission when going back

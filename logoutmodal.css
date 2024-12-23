@@ -67,11 +67,13 @@ p {
 .btn-cancel:hover {
     background-color: #b82e3c;
     transform: translateY(-5px); /* Float up slightly on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .btn-confirm:hover {
     background-color: #218d3a;
     transform: translateY(-5px); /* Float up slightly on hover */
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
 }
 
 .alert {

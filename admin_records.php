@@ -120,7 +120,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             padding: 10px 20px;
             width: auto;
             height: auto;
-            background-color: #4CAF50;
+            background-color: #5aad5c;
             color: white;
             border: none;
             border-radius: 5px;
@@ -133,7 +133,8 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         }
         .btn-edit:hover {
             transform: translateY(-5px);
-            background-color: #45a049;
+            background-color: #479149;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
         }
         .btn-edit svg {
             fill: white;
@@ -207,7 +208,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     cursor: pointer;
     position: absolute;
     left: 32.5%; /* Adjust based on your design */
-    top: 19.3%;
+    top: 15.3%;
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */

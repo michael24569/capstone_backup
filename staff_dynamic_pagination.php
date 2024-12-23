@@ -1,6 +1,6 @@
 <?php 
 require("db-connection.php");  // Pagination settings 
-$records_per_page = 8; 
+$records_per_page = 7; 
 $page = isset($_GET['page']) ? (int)$_GET['page'] : 1; 
 $start_from = ($page-1) * $records_per_page;  
 
