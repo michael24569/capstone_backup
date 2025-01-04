@@ -7,7 +7,7 @@ date_default_timezone_set('Asia/Manila');
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "simenteryo";
+$database = "db_simenteryo";
 
 // Establish a connection to the database
 $connection = new mysqli($servername, $username, $password, $database);
@@ -22,7 +22,7 @@ $connection->set_charset("utf8");
 
 // Function to validate the admin password
 function checkAdminPassword($inputPassword, $connection) {
-    $query = "SELECT password FROM admin WHERE id = 1"; // Assuming admin ID is 1
+    $query = "SELECT password FROM tbl_admin WHERE id = 1"; // Assuming admin ID is 1
     $result = $connection->query($query);
     if ($result && $result->num_rows > 0) {
         $row = $result->fetch_assoc();

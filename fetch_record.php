@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "simenteryo";
+$dbname = "db_simenteryo";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -12,7 +12,7 @@ if ($conn->connect_error) {
 
 $lotNo = $_GET['lotno'] ?? '';
 $memSts = $_GET['memsts'] ?? '';
-$sql = "SELECT * FROM records WHERE Lot_No = ? AND mem_sts = ?";
+$sql = "SELECT * FROM tbl_records WHERE Lot_No = ? AND mem_sts = ?";
 $stmt = $conn->prepare($sql);
 $stmt->bind_param("ss", $lotNo, $memSts);
 $stmt->execute();

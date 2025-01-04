@@ -9,7 +9,7 @@ $searchQuery = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['
 $searchField = isset($_GET['field']) ? mysqli_real_escape_string($conn, $_GET['field']) : 'Lot_No';
 
 // Get total number of records
-$total_query = "SELECT COUNT(*) as total FROM records";
+$total_query = "SELECT COUNT(*) as total FROM tbl_records";
 if ($searchQuery != '') {
     // Use the selected field for searching
     $total_query .= " WHERE $searchField LIKE '%$searchQuery%'";
@@ -21,7 +21,7 @@ $total_records = $row['total'];
 $total_pages = ceil($total_records / $records_per_page);  
 
 // Get records for current page
-$query = "SELECT * FROM records";
+$query = "SELECT * FROM tbl_records";
 if ($searchQuery != '') {
     // Use the selected field for searching
     $query .= " WHERE $searchField LIKE '%$searchQuery%'";

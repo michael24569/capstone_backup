@@ -46,8 +46,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
         $role = $_SESSION['forgot_password_user']['role'];
         
         $sql = $role === 'Staff' 
-            ? "UPDATE staff SET password = ? WHERE id = ?"
-            : "UPDATE admin SET password = ? WHERE id = ?";
+            ? "UPDATE tbl_staff SET password = ? WHERE id = ?"
+            : "UPDATE tbl_admin SET password = ? WHERE id = ?";
         
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "si", $hashedPassword, $userId);

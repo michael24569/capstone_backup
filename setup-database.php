@@ -8,7 +8,7 @@ if (!isset($_SESSION['database_error'])) {
 
 $error_message = '';  
 $success_message = ''; 
-$databaseName = 'simenteryo';  
+$databaseName = 'db_simenteryo';  
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {     
     if (isset($_FILES['backup_file'])) {         

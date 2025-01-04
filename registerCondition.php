@@ -17,7 +17,7 @@ $securityQuestions = [
 
 function determineAccountStatus($conn) {
     // Check the number of active accounts
-    $result = mysqli_query($conn, "SELECT COUNT(*) as active_count FROM staff WHERE accountStatus = 'Active'");
+    $result = mysqli_query($conn, "SELECT COUNT(*) as active_count FROM tbl_staff WHERE accountStatus = 'Active'");
     $row = mysqli_fetch_assoc($result);
      
     if ($row['active_count'] >= 3) {
@@ -41,7 +41,7 @@ if (isset($_POST['signup'])) {
     $status = determineAccountStatus($conn);
 
     // Check if username already exists in the database using prepared statements
-    $stmt = $conn->prepare("SELECT * FROM staff WHERE username = ?");
+    $stmt = $conn->prepare("SELECT * FROM tbl_staff WHERE username = ?");
     $stmt->bind_param("s", $username);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -79,7 +79,7 @@ if (isset($_POST['signup'])) {
                 $hashedSecurityAnswer = password_hash(strtolower($security_answer), PASSWORD_DEFAULT);
 // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
                 // Insert the new user data into the database using prepared statements
-                $stmt = $conn->prepare("INSERT INTO staff (username, fullName, accountStatus, password, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?)");
+                $stmt = $conn->prepare("INSERT INTO tbl_staff (username, fullName, accountStatus, password, security_question, security_answer) VALUES (?, ?, ?, ?, ?, ?)");
                 $stmt->bind_param("ssssss", 
                     $username, 
                     $fullname, 

@@ -7,7 +7,7 @@ checkStaffAccess();
 $servername = "localhost";
 $username = "root";
 $password = "";
-$database = "simenteryo";
+$database = "db_simenteryo";
 
 // Create connection
 $connection = new mysqli($servername, $username, $password, $database);
@@ -45,7 +45,7 @@ function recordExists($connection, $lot, $mem_sts) {
 
     $normalizedLot = normalizeLotNumber($lot);
 
-    $sqlLotCheck = "SELECT * FROM records WHERE Lot_No = ? AND mem_sts = ?";
+    $sqlLotCheck = "SELECT * FROM tbl_records WHERE Lot_No = ? AND mem_sts = ?";
     $stmtLotCheck = $connection->prepare($sqlLotCheck);
     $stmtLotCheck->bind_param("ss", $lot, $mem_sts);
     $stmtLotCheck->execute();
@@ -73,7 +73,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         if ($duplicateCheck) {
             $errorMessage = $duplicateCheck;
         } else {
-            $sql = "INSERT INTO records (Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
+            $sql = "INSERT INTO tbl_records (Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
             $stmt = $connection->prepare($sql);
             $stmt->bind_param("sssss", $normalizedLot, $mem_lots, $mem_sts, $name, $address);
 
@@ -83,7 +83,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                 $fullname = $_SESSION['fullname']; 
                 $userRole = $_SESSION['role']; // Get the logged-in user's full name
                 $action = "created";
-                $logSql = "INSERT INTO record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
+                $logSql = "INSERT INTO tbl_record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
                 $logStmt = $connection->prepare($logSql);
                 $logStmt->bind_param("sssss",$userRole, $fullname, $normalizedLot, $mem_sts, $action);
                 $logStmt->execute();

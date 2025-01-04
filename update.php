@@ -35,7 +35,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     }
 
     $id = $_GET["id"];
-    $sql = "SELECT * FROM records WHERE id = ?";
+    $sql = "SELECT * FROM tbl_records WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("s", $id);
     $stmt->execute();
@@ -68,7 +68,7 @@ do {
     }
 
     // Check for duplicates
-    $checkSql = "SELECT * FROM records WHERE Lot_No = ? AND mem_sts = ? AND id != ?";
+    $checkSql = "SELECT * FROM tbl_records WHERE Lot_No = ? AND mem_sts = ? AND id != ?";
     $checkStmt = $conn->prepare($checkSql);
     $checkStmt->bind_param("sss", $lot, $mem_sts, $id);
     $checkStmt->execute();
@@ -80,7 +80,7 @@ do {
     }
 
     // Update the record
-    $sql = "UPDATE records SET Lot_No = ?, mem_lots = ?, mem_sts = ?, LO_name = ?, mem_address = ? WHERE id = ?";
+    $sql = "UPDATE tbl_records SET Lot_No = ?, mem_lots = ?, mem_sts = ?, LO_name = ?, mem_address = ? WHERE id = ?";
     $stmt = $conn->prepare($sql);
     $stmt->bind_param("ssssss", $lot, $mem_lots, $mem_sts, $name, $address, $id);
     $result = $stmt->execute();
@@ -94,7 +94,7 @@ do {
     $fullname = $_SESSION['fullname'];
     $userRole = $_SESSION['role'];
     $action = "updated";
-    $logSql = "INSERT INTO record_logs (role, fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
+    $logSql = "INSERT INTO tbl_record_logs (role, fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
     $logStmt = $conn->prepare($logSql);
     $logStmt->bind_param("sssss", $userRole, $fullname, $lot, $mem_sts, $action);
     $logStmt->execute();

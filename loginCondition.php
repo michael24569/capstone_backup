@@ -33,9 +33,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
     } else if (empty($password)) {
         $error = "Password is required";
     } else {
-        $sql = "SELECT *, 'Staff' AS role FROM staff WHERE username = ? 
+        $sql = "SELECT *, 'Staff' AS role FROM tbl_staff WHERE username = ? 
                 UNION 
-                SELECT *, 'Admin' AS role FROM admin WHERE username = ?";
+                SELECT *, 'Admin' AS role FROM tbl_admin WHERE username = ?";
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "ss", $username, $username);
         mysqli_stmt_execute($stmt);

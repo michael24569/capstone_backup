@@ -12,7 +12,7 @@ $page = max(1, $page);
 $offset = ($page - 1) * $recordsPerPage;
 
 // Get total records count
-$countSql = "SELECT COUNT(*) as total FROM record_logs";
+$countSql = "SELECT COUNT(*) as total FROM tbl_record_logs";
 $totalResult = mysqli_query($conn, $countSql);
 $totalRow = mysqli_fetch_assoc($totalResult);
 $totalRecords = $totalRow['total'];
@@ -20,7 +20,7 @@ $totalPages = ceil($totalRecords / $recordsPerPage);
 
 // Get records for current page
 $sql = "SELECT role, fullname, Lot_No, mem_sts, action, timestamp 
-        FROM record_logs 
+        FROM tbl_record_logs 
         ORDER BY timestamp DESC 
         LIMIT $offset, $recordsPerPage";
 $result = $conn->query($sql);

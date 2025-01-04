@@ -23,12 +23,12 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
     // Get total number of records using prepared statement
     if ($searchQuery != '') {
-        $total_query = "SELECT COUNT(*) as total FROM records WHERE $searchField LIKE ?";
+        $total_query = "SELECT COUNT(*) as total FROM tbl_records WHERE $searchField LIKE ?";
         $stmt = mysqli_prepare($conn, $total_query);
         $searchParam = "%$searchQuery%";
         mysqli_stmt_bind_param($stmt, "s", $searchParam);
     } else {
-        $total_query = "SELECT COUNT(*) as total FROM records";
+        $total_query = "SELECT COUNT(*) as total FROM tbl_records";
         $stmt = mysqli_prepare($conn, $total_query);
     }
     
@@ -40,11 +40,11 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
     // Get records for current page using prepared statement
     if ($searchQuery != '') {
-        $query = "SELECT * FROM records WHERE $searchField LIKE ? LIMIT ?, ?";
+        $query = "SELECT * FROM tbl_records WHERE $searchField LIKE ? LIMIT ?, ?";
         $stmt = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($stmt, "sii", $searchParam, $start_from, $records_per_page);
     } else {
-        $query = "SELECT * FROM records LIMIT ?, ?";
+        $query = "SELECT * FROM tbl_records LIMIT ?, ?";
         $stmt = mysqli_prepare($conn, $query);
         mysqli_stmt_bind_param($stmt, "ii", $start_from, $records_per_page);
     }

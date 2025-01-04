@@ -10,7 +10,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
 
     // Fetch search query
     $searchQuery = isset($_GET['search']) ? mysqli_real_escape_string($conn, $_GET['search']) : '';
-    $sql = "SELECT * FROM staff";
+    $sql = "SELECT * FROM tbl_staff";
     
     if ($searchQuery != '') {
         $sql .= " WHERE fullname LIKE '%$searchQuery%'";
@@ -30,7 +30,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $newStatus = mysqli_real_escape_string($conn, $_POST['status']);
 
     // Update the status in the database
-    $sql = "UPDATE staff SET accountStatus = '$newStatus' WHERE id = '$id'";
+    $sql = "UPDATE tbl_staff SET accountStatus = '$newStatus' WHERE id = '$id'";
     $result = mysqli_query($conn, $sql);
 
     if ($result) {

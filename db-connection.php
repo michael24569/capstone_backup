@@ -2,7 +2,7 @@
 $servername = "localhost";
 $uname = "root";
 $pword = "";
-$database = "simenteryo";
+$database = "db_simenteryo";
 
 $conn = mysqli_connect($servername, $uname, $pword, $database);
 

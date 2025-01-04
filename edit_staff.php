@@ -30,7 +30,7 @@ if (isset($_POST['verify_password'])) {
     $id = mysqli_real_escape_string($conn, $_POST['staff_id']);
     $current_password = $_POST['current_password'];
     
-    $query = "SELECT password, accountStatus FROM staff WHERE id = ?";
+    $query = "SELECT password, accountStatus FROM tbl_staff WHERE id = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "s", $id);
     mysqli_stmt_execute($stmt);
@@ -53,7 +53,7 @@ if (isset($_POST['verify_password'])) {
             
             // Upgrade to modern hash if you want
             $modern_hash = password_hash($current_password, PASSWORD_DEFAULT);
-            $upgrade_query = "UPDATE staff SET password = ? WHERE id = ?";
+            $upgrade_query = "UPDATE tbl_staff SET password = ? WHERE id = ?";
             $upgrade_stmt = mysqli_prepare($conn, $upgrade_query);
             mysqli_stmt_bind_param($upgrade_stmt, "ss", $modern_hash, $id);
             mysqli_stmt_execute($upgrade_stmt);
@@ -76,7 +76,7 @@ if (isset($_POST['verify_password'])) {
 // Fetch staff member data
 if (isset($_GET['id'])) {
     $staff_id = mysqli_real_escape_string($conn, $_GET['id']);
-    $query = "SELECT * FROM staff WHERE id = '$staff_id'";
+    $query = "SELECT * FROM tbl_staff WHERE id = '$staff_id'";
     $result = mysqli_query($conn, $query);
     $staff = mysqli_fetch_assoc($result);
 
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $security_question = mysqli_real_escape_string($conn, $_POST['security_question']);
     
     // Initialize the update query
-    $update_query = "UPDATE staff SET 
+    $update_query = "UPDATE tbl_staff SET 
         fullname = '$fullname',
         username = '$username',
         security_question = '$security_question'";
@@ -114,7 +114,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
     
     // Check if username already exists (excluding current user)
-    $check_username = mysqli_query($conn, "SELECT id FROM staff WHERE username = '$username' AND id != '$id'");
+    $check_username = mysqli_query($conn, "SELECT id FROM tbl_staff WHERE username = '$username' AND id != '$id'");
     if (mysqli_num_rows($check_username) > 0) {
         $error_message = "Username already exists";
     } else {
@@ -147,7 +147,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             if (mysqli_query($conn, $update_query)) {
                 $success_message = "Staff information updated successfully";
                 // Refresh staff data
-                $result = mysqli_query($conn, "SELECT * FROM staff WHERE id = '$id'");
+                $result = mysqli_query($conn, "SELECT * FROM tbl_staff WHERE id = '$id'");
                 $staff = mysqli_fetch_assoc($result);
             } else {
                 $error_message = "Error updating information: " . mysqli_error($conn);

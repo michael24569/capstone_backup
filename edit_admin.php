@@ -26,7 +26,7 @@ $admin_id = $_SESSION['id'];
 if (isset($_POST['verify_password'])) {
     $current_password = $_POST['current_password'];
     
-    $query = "SELECT password FROM admin WHERE id = ?";
+    $query = "SELECT password FROM tbl_admin WHERE id = ?";
     $stmt = mysqli_prepare($conn, $query);
     mysqli_stmt_bind_param($stmt, "i", $admin_id);
     mysqli_stmt_execute($stmt);
@@ -51,7 +51,7 @@ if (isset($_POST['verify_password'])) {
 }
 
 // Fetch admin data
-$query = "SELECT fullname, username, security_question FROM admin WHERE id = ?";
+$query = "SELECT fullname, username, security_question FROM tbl_admin WHERE id = ?";
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "i", $admin_id);
 mysqli_stmt_execute($stmt);
@@ -76,7 +76,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $security_answer = trim($_POST['security_answer']);
     
     // Check if username already exists (excluding current admin)
-    $check_username = "SELECT id FROM admin WHERE username = ? AND id != ?";
+    $check_username = "SELECT id FROM tbl_admin WHERE username = ? AND id != ?";
     $stmt = mysqli_prepare($conn, $check_username);
     mysqli_stmt_bind_param($stmt, "si", $username, $admin_id);
     mysqli_stmt_execute($stmt);
@@ -124,7 +124,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             $param_types .= "i";
             $params[] = $admin_id;
             
-            $update_query = "UPDATE admin SET " . implode(", ", $update_fields) . " WHERE id = ?";
+            $update_query = "UPDATE tbl_admin SET " . implode(", ", $update_fields) . " WHERE id = ?";
             $stmt = mysqli_prepare($conn, $update_query);
             mysqli_stmt_bind_param($stmt, $param_types, ...$params);
             
@@ -135,7 +135,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
                     $_SESSION['username'] = $username;
                 }
                 // Refresh admin data
-                $result = mysqli_query($conn, "SELECT * FROM admin WHERE id = $admin_id");
+                $result = mysqli_query($conn, "SELECT * FROM tbl_admin WHERE id = $admin_id");
                 $admin = mysqli_fetch_assoc($result);
             } else {
                 $error_message = "Error updating information: " . mysqli_error($conn);

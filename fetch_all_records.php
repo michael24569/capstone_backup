@@ -2,7 +2,7 @@
 $servername = "localhost";
 $username = "root";
 $password = "";
-$dbname = "simenteryo";
+$dbname = "db_simenteryo";
 
 $conn = new mysqli($servername, $username, $password, $dbname);
 
@@ -10,7 +10,7 @@ if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT * FROM records";
+$sql = "SELECT * FROM tbl_records";
 $result = $conn->query($sql);
 
 $records = [];

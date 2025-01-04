@@ -4,9 +4,9 @@ $token_hash = hash("sha256", $token);
 $mysqli = require __DIR__ . "/db-connection.php";
 
 // Check both staff and admin tables for the token
-$sql = "SELECT 'staff' AS type, id, token_expiry FROM staff WHERE token_reset = ?
+$sql = "SELECT 'staff' AS type, id, token_expiry FROM tbl_staff WHERE token_reset = ?
         UNION
-        SELECT 'admin' AS type, id, token_expiry FROM admin WHERE token_reset = ?";
+        SELECT 'admin' AS type, id, token_expiry FROM tbl_admin WHERE token_reset = ?";
 $stmt = $mysqli->prepare($sql);
 $stmt->bind_param("ss", $token_hash, $token_hash);
 $stmt->execute();

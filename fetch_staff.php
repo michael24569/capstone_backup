@@ -7,7 +7,7 @@ require("db-connection.php");
 
 if (isset($_GET['search'])) {     
     $searchQuery = mysqli_real_escape_string($conn, $_GET['search']);     
-    $sql = "SELECT * FROM staff";          
+    $sql = "SELECT * FROM tbl_staff";          
     
     if ($searchQuery != '') {         
         $sql .= " WHERE fullname LIKE '%$searchQuery%'";     

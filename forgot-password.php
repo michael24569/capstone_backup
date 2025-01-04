@@ -30,9 +30,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
         $error = "Please enter a username";
     } else {
         // Check in both staff and admin tables
-        $sql = "SELECT id, security_question, security_answer, 'Staff' AS role FROM staff WHERE username = ?
+        $sql = "SELECT id, security_question, security_answer, 'Staff' AS role FROM tbl_staff WHERE username = ?
                 UNION
-                SELECT id, security_question, security_answer, 'Admin' AS role FROM admin WHERE username = ?";
+                SELECT id, security_question, security_answer, 'Admin' AS role FROM tbl_admin WHERE username = ?";
         
         $stmt = mysqli_prepare($conn, $sql);
         mysqli_stmt_bind_param($stmt, "ss", $username, $username);
