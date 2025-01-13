@@ -1,6 +1,18 @@
 <?php
 session_start();
 
+// Add this near the start of the file after session_start()
+if (isset($_SERVER['HTTP_REFERER'])) {
+    $referer = $_SERVER['HTTP_REFERER'];
+    if (strpos($referer, 'admin_map.php') !== false) {
+        $_SESSION['return_to'] = 'admin_map.php';
+    } else if (strpos($referer, 'admin_records.php') !== false) {
+        $_SESSION['return_to'] = 'admin_records.php';
+    } else {
+        $_SESSION['return_to'] = 'admin_records.php'; // default fallback
+    }
+}
+
 require_once 'security_check.php';
 checkAdminAccess();
 
@@ -58,6 +70,35 @@ function recordExists($connection, $lot, $mem_sts) {
     return false;
 }
 
+function validateMemorialLots($mem_sts, $mem_lots) {
+    // Check for Apartments and Columbarium
+    $specialLots = ['Apartment1', 'Apartment2', 'Apartment3', 'Columbarium1', 'Columbarium2'];
+    if (in_array($mem_sts, $specialLots) && $mem_lots !== 'None') {
+        return ['valid' => false, 'message' => "This memorial name only accept None memorial type"];
+    }
+
+    // Check for specific saints that only accept Family Estate
+    $familyEstateSaints = ['St. Michael', 'St. Patrick', 'St. Mark', 'St. Lukes'];
+    if (in_array($mem_sts, $familyEstateSaints) && $mem_lots !== 'Family Estate') {
+        return ['valid' => false, 'message' => "This memorial name only accept Family Estate memorial type"];
+    }
+
+    // Check for saints that only accept Garden Lots
+    $gardenLotsSaints = ['St. Matthew', 'St. Isidore'];
+    if (in_array($mem_sts, $gardenLotsSaints) && $mem_lots !== 'Garden Lots') {
+        return ['valid' => false, 'message' => "This memorial name only accept Garden Lots memorial type"];
+    }
+
+    // Check for saints that only accept Lawn Lots
+    $lawnLotsSaints = ['St. Jude', 'St. John', 'St. Joseph', 'St. James', 'St. Dominic', 
+                       'St. Augustin', 'St. Paul', 'St. Peter', 'St. Rafael'];
+    if (in_array($mem_sts, $lawnLotsSaints) && $mem_lots !== 'Lawn Lots') {
+        return ['valid' => false, 'message' => "This memorial name only accept Lawn Lots memorial type"];
+    }
+
+    return ['valid' => true, 'message' => ''];
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $lot = $_POST["lot"];
     $mem_lots = $_POST["mem_lots"];
@@ -68,33 +109,38 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($lot) || empty($mem_lots) || empty($mem_sts) || empty($name)) {
         $errorMessage = "All fields are required";
     } else {
-        $normalizedLot = normalizeLotNumber($lot);
-        $duplicateCheck = recordExists($connection, $lot, $mem_sts);
-        if ($duplicateCheck) {
-            $errorMessage = $duplicateCheck;
+        $validationResult = validateMemorialLots($mem_sts, $mem_lots);
+        if (!$validationResult['valid']) {
+            $errorMessage = $validationResult['message'];
         } else {
-            $sql = "INSERT INTO tbl_records (Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
-            $stmt = $connection->prepare($sql);
-            $stmt->bind_param("sssss", $normalizedLot, $mem_lots, $mem_sts, $name, $address);
-
-            if (!$stmt->execute()) {
-                $errorMessage = "Invalid query: " . $connection->error;
+            $normalizedLot = normalizeLotNumber($lot);
+            $duplicateCheck = recordExists($connection, $lot, $mem_sts);
+            if ($duplicateCheck) {
+                $errorMessage = $duplicateCheck;
             } else {
-                $fullname = $_SESSION['fullname']; 
-                $userRole = $_SESSION['role']; // Get the logged-in user's full name
-                $action = "created";
-                $logSql = "INSERT INTO tbl_record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
-                $logStmt = $connection->prepare($logSql);
-                $logStmt->bind_param("sssss",$userRole, $fullname, $normalizedLot, $mem_sts, $action);
-                $logStmt->execute();
-                
-                $lot = "";
-                $mem_lots = "";
-                $mem_sts = "";
-                $name = "";
-                $address = "";
+                $sql = "INSERT INTO tbl_records (Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
+                $stmt = $connection->prepare($sql);
+                $stmt->bind_param("sssss", $normalizedLot, $mem_lots, $mem_sts, $name, $address);
 
-                $successMessage = "Record added successfully";
+                if (!$stmt->execute()) {
+                    $errorMessage = "Invalid query: " . $connection->error;
+                } else {
+                    $fullname = $_SESSION['fullname']; 
+                    $userRole = $_SESSION['role']; // Get the logged-in user's full name
+                    $action = "created";
+                    $logSql = "INSERT INTO tbl_record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
+                    $logStmt = $connection->prepare($logSql);
+                    $logStmt->bind_param("sssss",$userRole, $fullname, $normalizedLot, $mem_sts, $action);
+                    $logStmt->execute();
+                    
+                    $lot = "";
+                    $mem_lots = "";
+                    $mem_sts = "";
+                    $name = "";
+                    $address = "";
+
+                    $successMessage = "Record added successfully";
+                }
             }
         }
     }
@@ -273,7 +319,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         }
 
         function goBack() {
-            window.location.href = "admin_records.php";
+            window.location.href = "<?php echo $_SESSION['return_to'] ?? 'admin_records.php'; ?>";
         }
     </script>
 </body>
