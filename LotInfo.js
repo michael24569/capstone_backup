@@ -1,6 +1,5 @@
 String.prototype.toProperCase = function() { return this.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); }); };
 
-
 document.addEventListener('DOMContentLoaded', (event) => {
     const gridItems = document.querySelectorAll('.grid-itemA3, .grid-itemB3, .grid-itemA2, .grid-itemB2, .grid-itemA,.grid-itemB, .grid-itemC2S1A, ' +
         '.grid-itemC2S1B, .grid-itemC2S2A, .grid-itemC2S2B, .grid-itemC2S12A, .grid-itemC2S12B, .grid-itemC2S22A, ' +
@@ -19,6 +18,17 @@ document.addEventListener('DOMContentLoaded', (event) => {
             const lotNo = this.getAttribute('data-lotno');
             const memSts = this.getAttribute('data-memsts');
             const memLot = this.getAttribute('data-memlot');
+
+            // Check if the div has a green background (available)
+            const computedStyle = window.getComputedStyle(this);
+            if (computedStyle.backgroundColor === 'rgb(0, 128, 0)') { // green color
+                // Check the current page URL to determine if we're on admin or staff page
+                const isAdminPage = window.location.pathname.includes('admin_map');
+                // Redirect to appropriate add record page based on user type
+                const redirectPath = isAdminPage ? 'admin_addRecord.php' : 'addRecord.php';
+                window.location.href = `${redirectPath}?lotno=${lotNo}&memsts=${memSts}&memlot=${memLot}`;
+                return;
+            }
 
             const parentContainer = this.closest('.SAa3Grid, .SBa3Grid, .SAa2GridA2, .SBa2Grid, .SAa1GridA, .SBa1Grid, .C2GRIDS1AGrid, ' +
                 '.C2GRIDS1BGrid, .C2GRIDS2AGrid, .C2GRIDS2BGrid, .C2GRIDS12AGrid, .C2GRIDS12BGrid, .C2GRIDS22AGrid, .C2GRIDS22BGrid, ' +

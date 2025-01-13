@@ -171,6 +171,7 @@ function displayRecordStatus() {
             height: 100%;
             background-color: rgba(0,0,0,0.7);
             z-index: 1000;
+            overflow: auto; /* Ensure the modal can scroll if content is too large */
         }
         .modal-content {
             background-color: white;
@@ -182,6 +183,7 @@ function displayRecordStatus() {
             position: relative;
             max-height: 80vh;
             overflow-y: auto;
+            z-index: 1001; /* Ensure content is above the modal background */
         }
         .close-modal {
             position: absolute;
@@ -533,6 +535,106 @@ p {
     .print-button-disabled:hover {
         background-color: #4CAF50;
     }
+    
+    /* Print Modal Styles */
+    .modals {
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .modal-conteent {
+        background-color: #fff;
+        padding: 50px 40px;
+        border-radius: 8px;
+        width: 380px;
+        height: 250px;
+        min-height: 200px;
+        position: relative;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        overflow: hidden;
+    }
+
+    .modal-conteent h2 {
+        margin: 0;
+        color: #033512;
+        font-size: 1.5em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .modal-conteent p {
+        margin: 0;
+        color: #333;
+        font-size: 1.1em;
+        text-align: center;
+        width: 100%;
+    }
+
+    .modal-buttons {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 15px;
+        width: 100%;
+        margin-top: 5px;
+        padding-bottom: 20px;
+        
+    }
+
+    .btn-confirm, .btn-cancel {
+        min-width: 140px;
+        padding: 8px 15px;
+        font-size: 1em;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-align: center;
+    }
+
+    .close-modal {
+        position: absolute;
+        right: 15px;
+        top: 10px;
+        font-size: 24px;
+        cursor: pointer;
+        color: #666;
+        line-height: 1;
+    }
+
+    /* Ensure modal appears above all other content and stays centered */
+    #confirmPrintModal {
+        z-index: 2000;
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+
+    /* Remove scrollbar and maintain centering */
+    #confirmPrintModal .modal-content {
+        position: relative;
+        transform: none;
+        margin: 0;
+    }
+
+    /* Prevent body scroll when modal is open */
+    body.modal-open {
+        overflow: hidden;
+    }
     </style>
 </head>
 <link rel="stylesheet" href="style1.css">
@@ -628,6 +730,17 @@ p {
 </div>
 <div class="container">
 <button id="print" class="print-button"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  class="input-icon"><!--!Font Awesome Free 6.7.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M128 0C92.7 0 64 28.7 64 64l0 96 64 0 0-96 226.7 0L384 93.3l0 66.7 64 0 0-66.7c0-17-6.7-33.3-18.7-45.3L400 18.7C388 6.7 371.7 0 354.7 0L128 0zM384 352l0 32 0 64-256 0 0-64 0-16 0-16 256 0zm64 32l32 0c17.7 0 32-14.3 32-32l0-96c0-35.3-28.7-64-64-64L64 192c-35.3 0-64 28.7-64 64l0 96c0 17.7 14.3 32 32 32l32 0 0 64c0 35.3 28.7 64 64 64l256 0c35.3 0 64-28.7 64-64l0-64zM432 248a24 24 0 1 1 0 48 24 24 0 1 1 0-48z"/></svg>Print</button>
+<div id="confirmPrintModal" class="modals" style="display: none;">
+    <div class="modal-conteent">
+        <span class="close-modal" onclick="hidePrintModal()">&times;</span>
+        <h2>Print Confirmation</h2>
+        <p>Are you sure you want to print the report?</p>
+        <div class="modal-buttons">
+            <button id="confirmPrintButton" class="btn btn-confirm">Yes, print report</button>
+            <button id="cancelPrintButton" class="btn btn-cancel">No, cancel</button>
+        </div>
+    </div>
+</div>
     
 <br><div class="seal">
     <img src ="images/seal.png" alt="Tagaytay City Seal">
@@ -742,8 +855,25 @@ p {
         });
 
         document.getElementById("print").addEventListener("click", function() {
+    document.getElementById("confirmPrintModal").style.display = "flex";
+    document.body.classList.add("modal-open");
+});
+
+document.getElementById("confirmPrintButton").addEventListener("click", function() {
+    document.getElementById("confirmPrintModal").style.display = "none";
+    document.body.classList.remove("modal-open");
     window.print();
 });
+
+document.getElementById("cancelPrintButton").addEventListener("click", function() {
+    document.getElementById("confirmPrintModal").style.display = "none";
+    document.body.classList.remove("modal-open");
+});
+
+function hidePrintModal() {
+    document.getElementById("confirmPrintModal").style.display = "none";
+    document.body.classList.remove("modal-open");
+}
 
     // When the user clicks the logout button, show the modal
 document.getElementById("sidebarLogoutButton").addEventListener("click", function(event) {
