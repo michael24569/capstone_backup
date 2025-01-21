@@ -28,6 +28,35 @@ function displayMessage($message, $type) {
     }
 }
 
+function validateMemorialLots($mem_sts, $mem_lots) {
+    // Check for Apartments and Columbarium
+    $specialLots = ['Apartment1', 'Apartment2', 'Apartment3', 'Columbarium1', 'Columbarium2'];
+    if (in_array($mem_sts, $specialLots) && $mem_lots !== 'None') {
+        return ['valid' => false, 'message' => "This memorial name only accept None memorial type"];
+    }
+
+    // Check for specific saints that only accept Family Estate
+    $familyEstateSaints = ['St. Michael', 'St. Patrick', 'St. Mark', 'St. Lukes'];
+    if (in_array($mem_sts, $familyEstateSaints) && $mem_lots !== 'Family Estate') {
+        return ['valid' => false, 'message' => "This memorial name only accept Family Estate memorial type"];
+    }
+
+    // Check for saints that only accept Garden Lots
+    $gardenLotsSaints = ['St. Matthew', 'St. Isidore'];
+    if (in_array($mem_sts, $gardenLotsSaints) && $mem_lots !== 'Garden Lots') {
+        return ['valid' => false, 'message' => "This memorial name only accept Garden Lots memorial type"];
+    }
+
+    // Check for saints that only accept Lawn Lots
+    $lawnLotsSaints = ['St. Jude', 'St. John', 'St. Joseph', 'St. James', 'St. Dominic', 
+                       'St. Augustin', 'St. Paul', 'St. Peter', 'St. Rafael'];
+    if (in_array($mem_sts, $lawnLotsSaints) && $mem_lots !== 'Lawn Lots') {
+        return ['valid' => false, 'message' => "This memorial name only accept Lawn Lots memorial type"];
+    }
+
+    return ['valid' => true, 'message' => ''];
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET["id"])) {
         header("Location: admin_map.php");
@@ -64,6 +93,13 @@ $address = $_POST["mem_address"];
 do {
     if (empty($lot) || empty($mem_lots) || empty($mem_sts) || empty($name)) {
         $errorMessage = "All fields are required";
+        break;
+    }
+
+    // Validate memorial lots
+    $validation = validateMemorialLots($mem_sts, $mem_lots);
+    if (!$validation['valid']) {
+        $errorMessage = $validation['message'];
         break;
     }
 
