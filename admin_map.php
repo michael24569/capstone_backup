@@ -10,7 +10,7 @@ checkAdminAccess();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home for Administrator</title>
+    <title>Home for System Administrator</title>
     <script type="text/javascript">
     window.history.forward();
     </script>
@@ -3387,7 +3387,7 @@ checkAdminAccess();
                     <div data-lotno="48" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">48</div>
                     <div data-lotno="49" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">49</div>
                     <div data-lotno="50" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">50</div>
-                <!-- Developers: Backend Developer: Michael Enoza , Frontend Developer: Kyle Ambat -->
+                
                     <div data-lotno="51" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">51</div>
                     <div data-lotno="52" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">52</div>
                     <div data-lotno="53" data-memsts="St. Jude" data-memlot="Lawn Lots" class="grid-itemjude">53</div>
@@ -3770,7 +3770,7 @@ checkAdminAccess();
     <div data-lotno="38" data-memsts="St. Joseph" data-memlot="Lawn Lots" class="grid-itemjoseph">38</div>
     <div data-lotno="39" data-memsts="St. Joseph" data-memlot="Lawn Lots" class="grid-itemjoseph">39</div>
     <div data-lotno="40" data-memsts="St. Joseph" data-memlot="Lawn Lots" class="grid-itemjoseph">40</div>
-    
+    <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
     <div data-lotno="41" data-memsts="St. Joseph" data-memlot="Lawn Lots" class="grid-itemjoseph">41</div>
     <div data-lotno="42" data-memsts="St. Joseph" data-memlot="Lawn Lots" class="grid-itemjoseph">42</div>
     <div data-lotno="43" data-memsts="St. Joseph" data-memlot="Lawn Lots" class="grid-itemjoseph">43</div>
@@ -7679,6 +7679,8 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         });
 
+
+             
     </script>
 </body>
 </html>
