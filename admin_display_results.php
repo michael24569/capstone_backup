@@ -555,7 +555,7 @@ p {
         padding: 50px 40px;
         border-radius: 8px;
         width: 380px;
-        height: 250px;
+        height: 200px;
         min-height: 200px;
         position: relative;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
