@@ -99,6 +99,50 @@ function validateMemorialLots($mem_sts, $mem_lots) {
     return ['valid' => true, 'message' => ''];
 }
 
+function validateLotNumber($mem_sts, $lot) {
+    // Define lot limits for each saint/location
+    $lotLimits = [
+        'St. Mark' => 7,
+        'St. Lukes' => 12,
+        'St. Matthew' => 6,
+        'St. Jude' => 186,
+        'St. John' => 135,
+        'St. Joseph' => 173,
+        'St. James' => 273,
+        'St. Michael' => 6,
+        'St. Patrick' => 6,
+        'St. Dominic' => 303,
+        'St. Isidore' => 19,
+        'St. Augustin' => 151,
+        'St. Rafael' => 58,
+        'St. Peter' => 71,
+        'St. Paul' => 71
+    ];
+
+    // Check for specific saint limits
+    if (isset($lotLimits[$mem_sts])) {
+        if ($lot < 1 || $lot > $lotLimits[$mem_sts]) {
+            return ['valid' => false, 'message' => "$mem_sts lots must be between 1 and {$lotLimits[$mem_sts]}"];
+        }
+    }
+
+    // Validate Apartments
+    if (strpos($mem_sts, 'Apartment') !== false) {
+        if ($lot < 1 || $lot > 100) {
+            return ['valid' => false, 'message' => "Apartment lots must be between 1 and 100"];
+        }
+    }
+    
+    // Validate Columbarium
+    if (strpos($mem_sts, 'Columbarium') !== false) {
+        if ($lot < 1 || $lot > 640) {
+            return ['valid' => false, 'message' => "Columbarium lots must be between 1 and 640"];
+        }
+    }
+    
+    return ['valid' => true, 'message' => ''];
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $lot = $_POST["lot"];
     $mem_lots = $_POST["mem_lots"];
@@ -109,37 +153,44 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if (empty($lot) || empty($mem_lots) || empty($mem_sts) || empty($name)) {
         $errorMessage = "All fields are required";
     } else {
-        $validationResult = validateMemorialLots($mem_sts, $mem_lots);
-        if (!$validationResult['valid']) {
-            $errorMessage = $validationResult['message'];
+        // First validate lot number
+        $lotValidation = validateLotNumber($mem_sts, $lot);
+        if (!$lotValidation['valid']) {
+            $errorMessage = $lotValidation['message'];
         } else {
-            $normalizedLot = normalizeLotNumber($lot);
-            $duplicateCheck = recordExists($connection, $lot, $mem_sts);
-            if ($duplicateCheck) {
-                $errorMessage = $duplicateCheck;
+            // Then validate memorial lots
+            $validationResult = validateMemorialLots($mem_sts, $mem_lots);
+            if (!$validationResult['valid']) {
+                $errorMessage = $validationResult['message'];
             } else {
-                $sql = "INSERT INTO tbl_records (Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
-                $stmt = $connection->prepare($sql);
-                $stmt->bind_param("sssss", $normalizedLot, $mem_lots, $mem_sts, $name, $address);
-
-                if (!$stmt->execute()) {
-                    $errorMessage = "Invalid query: " . $connection->error;
+                $normalizedLot = normalizeLotNumber($lot);
+                $duplicateCheck = recordExists($connection, $lot, $mem_sts);
+                if ($duplicateCheck) {
+                    $errorMessage = $duplicateCheck;
                 } else {
-                    $fullname = $_SESSION['fullname']; 
-                    $userRole = $_SESSION['role']; // Get the logged-in user's full name
-                    $action = "created";
-                    $logSql = "INSERT INTO tbl_record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
-                    $logStmt = $connection->prepare($logSql);
-                    $logStmt->bind_param("sssss",$userRole, $fullname, $normalizedLot, $mem_sts, $action);
-                    $logStmt->execute();
-                    
-                    $lot = "";
-                    $mem_lots = "";
-                    $mem_sts = "";
-                    $name = "";
-                    $address = "";
+                    $sql = "INSERT INTO tbl_records (Lot_No, mem_lots, mem_sts, LO_name, mem_address) VALUES (?, ?, ?, ?, ?)";
+                    $stmt = $connection->prepare($sql);
+                    $stmt->bind_param("sssss", $normalizedLot, $mem_lots, $mem_sts, $name, $address);
 
-                    $successMessage = "Record added successfully";
+                    if (!$stmt->execute()) {
+                        $errorMessage = "Invalid query: " . $connection->error;
+                    } else {
+                        $fullname = $_SESSION['fullname']; 
+                        $userRole = $_SESSION['role']; // Get the logged-in user's full name
+                        $action = "created";
+                        $logSql = "INSERT INTO tbl_record_logs (role,fullname, Lot_No, mem_sts, action, timestamp) VALUES (?, ?, ?, ?, ?, NOW())";
+                        $logStmt = $connection->prepare($logSql);
+                        $logStmt->bind_param("sssss",$userRole, $fullname, $normalizedLot, $mem_sts, $action);
+                        $logStmt->execute();
+                        
+                        $lot = "";
+                        $mem_lots = "";
+                        $mem_sts = "";
+                        $name = "";
+                        $address = "";
+
+                        $successMessage = "Record added successfully";
+                    }
                 }
             }
         }

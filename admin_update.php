@@ -28,6 +28,79 @@ function displayMessage($message, $type) {
     }
 }
 
+function validateMemorialLots($mem_sts, $mem_lots) {
+    // Check for Apartments and Columbarium
+    $specialLots = ['Apartment1', 'Apartment2', 'Apartment3', 'Columbarium1', 'Columbarium2'];
+    if (in_array($mem_sts, $specialLots) && $mem_lots !== 'None') {
+        return ['valid' => false, 'message' => "This memorial name only accept None memorial type"];
+    }
+
+    // Check for specific saints that only accept Family Estate
+    $familyEstateSaints = ['St. Michael', 'St. Patrick', 'St. Mark', 'St. Lukes'];
+    if (in_array($mem_sts, $familyEstateSaints) && $mem_lots !== 'Family Estate') {
+        return ['valid' => false, 'message' => "This memorial name only accept Family Estate memorial type"];
+    }
+
+    // Check for saints that only accept Garden Lots
+    $gardenLotsSaints = ['St. Matthew', 'St. Isidore'];
+    if (in_array($mem_sts, $gardenLotsSaints) && $mem_lots !== 'Garden Lots') {
+        return ['valid' => false, 'message' => "This memorial name only accept Garden Lots memorial type"];
+    }
+
+    // Check for saints that only accept Lawn Lots
+    $lawnLotsSaints = ['St. Jude', 'St. John', 'St. Joseph', 'St. James', 'St. Dominic', 
+                       'St. Augustin', 'St. Paul', 'St. Peter', 'St. Rafael'];
+    if (in_array($mem_sts, $lawnLotsSaints) && $mem_lots !== 'Lawn Lots') {
+        return ['valid' => false, 'message' => "This memorial name only accept Lawn Lots memorial type"];
+    }
+
+    return ['valid' => true, 'message' => ''];
+}
+
+function validateLotNumber($mem_sts, $lot) {
+    // Define lot limits for each saint/location
+    $lotLimits = [
+        'St. Mark' => 7,
+        'St. Lukes' => 12,
+        'St. Matthew' => 6,
+        'St. Jude' => 186,
+        'St. John' => 135,
+        'St. Joseph' => 173,
+        'St. James' => 273,
+        'St. Michael' => 6,
+        'St. Patrick' => 6,
+        'St. Dominic' => 303,
+        'St. Isidore' => 19,
+        'St. Augustin' => 151,
+        'St. Rafael' => 58,
+        'St. Peter' => 71,
+        'St. Paul' => 71
+    ];
+
+    // Check for specific saint limits
+    if (isset($lotLimits[$mem_sts])) {
+        if ($lot < 1 || $lot > $lotLimits[$mem_sts]) {
+            return ['valid' => false, 'message' => "$mem_sts lots must be between 1 and {$lotLimits[$mem_sts]}"];
+        }
+    }
+
+    // Validate Apartments
+    if (strpos($mem_sts, 'Apartment') !== false) {
+        if ($lot < 1 || $lot > 100) {
+            return ['valid' => false, 'message' => "Apartment lots must be between 1 and 100"];
+        }
+    }
+    
+    // Validate Columbarium
+    if (strpos($mem_sts, 'Columbarium') !== false) {
+        if ($lot < 1 || $lot > 640) {
+            return ['valid' => false, 'message' => "Columbarium lots must be between 1 and 640"];
+        }
+    }
+    
+    return ['valid' => true, 'message' => ''];
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'GET') {
     if (!isset($_GET["id"])) {
         header("Location: admin_map.php");
@@ -64,6 +137,20 @@ $address = $_POST["mem_address"];
 do {
     if (empty($lot) || empty($mem_lots) || empty($mem_sts) || empty($name)) {
         $errorMessage = "All fields are required";
+        break;
+    }
+
+    // First validate lot number
+    $lotValidation = validateLotNumber($mem_sts, $lot);
+    if (!$lotValidation['valid']) {
+        $errorMessage = $lotValidation['message'];
+        break;
+    }
+
+    // Validate memorial lots
+    $validation = validateMemorialLots($mem_sts, $mem_lots);
+    if (!$validation['valid']) {
+        $errorMessage = $validation['message'];
         break;
     }
 
@@ -247,7 +334,7 @@ do {
                     </button>
                 </div>
                 <div class="col-sm-3 d-grid">
-                    <button type="button" class="btn btn-danger" onclick="goBack()">Cancel</button>
+                    <button type="button" class="btn btn-danger" onclick="window.location.href='admin_records.php'">Cancel</button>
                 </div>
             </div>
         </form>
@@ -295,10 +382,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
-
-function goBack() {
-    window.history.back();
-}
 
 // Prevent form resubmission when going back
 if (window.history.replaceState) {
