@@ -9,11 +9,19 @@ unset($_SESSION['can_reset_password']);
 
 
 require("loginCondition.php");
+if(isset($_SESSION['forgot-passW'])) {
+  header("Location: forgot-password.php");
+  exit();
+}
+
 
 if (isset($_GET['action']) && $_GET['action'] == 'forgot-password') {
   $_SESSION['forgot-passW'] = true; // Set session variable
   header("Location: forgot-password.php"); // Redirect to forgot password page
   exit();
+}
+else {
+  unset($_SESSION['forgot-passW']);
 }
 
 ?>

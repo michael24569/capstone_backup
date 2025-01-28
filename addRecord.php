@@ -322,7 +322,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             </div>
 
             <div class="row mb-3">
-                <label class="col-sm-3 col-form-label">Lot Owner</label>
+                <label class="col-sm-3 col-form-label">Property Owner</label>
                 <div class="col-sm-6">
                     <input type="text" class="form-control" name="name" value="<?php echo htmlspecialchars($name) ?>" autocomplete='off'>
                 </div>

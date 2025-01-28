@@ -2,6 +2,13 @@
 session_start();
 include 'db-connection.php';
 
+// Add session cleanup when coming back from login
+if (isset($_GET['clear'])) {
+    unset($_SESSION['forgot-passW']);
+    header("Location: index.php");
+    exit();
+}
+
 $_SESSION['access_question'] = true;
 
 if(!isset($_SESSION['forgot-passW'])) {
@@ -63,13 +70,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
     <link rel="stylesheet"href="forgotpass.css">
 <head>
     <title>Forgot Password</title>
-    <script type="text/javascript">
-    // Prevent back navigation
-    window.history.pushState(null, null, window.location.href);
-    window.onpopstate = function () {
-        window.history.pushState(null, null, window.location.href);
-    };
-</script>
+
 </head>
 <body>
 
@@ -84,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['check_username'])) {
         
         <input type="text" id="username" name="username" required autocomplete="off" placeholder="Username">
         <input type="submit" name="check_username" value="Next">
-        <p><a href="index.php"> ← Back to Login</a></p>
+        <p><a href="forgot-password.php?clear=1"> ← Back to Login</a></p>
     </form>
 </body>
 </html>

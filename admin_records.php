@@ -445,7 +445,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                     <option value="Lot_No">Lot No.</option>
                     <option value="mem_lots">Memorial Lots</option>
                     <option value="mem_sts">Memorial Name</option>
-                    <option value="LO_name">Lot Owner</option>
+                    <option value="LO_name">Property Owner</option>
                 </select>
                 <input class="form-control" type="text" id="searchInput" placeholder="Search records" autocomplete="off">
                 <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
@@ -456,7 +456,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                         <th>Lot/Slot No.</th>
                         <th>Memorial Lots</th>
                         <th>Memorial Name</th>
-                        <th>Lot Owner</th>
+                        <th>Property Owner</th>
                         <th>Address</th>
                         <th>Action</th>
                     </tr>
