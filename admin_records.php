@@ -361,7 +361,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         }
         .btn.btn-add {
             padding:7px 17px;
-    margin-left:1280px;
+    margin-left:1210px;
     position: absolute;
     border: 2px solid #479149; /* Border color */
     border-radius: 5px;

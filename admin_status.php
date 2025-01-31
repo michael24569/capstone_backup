@@ -500,6 +500,7 @@ tbody, thead, .form-control, td {
 .emailUpdate{
     display: flex;
    margin-left: 1075px;
+   margin-right: 10px;
 }
 .input-group {
     display: flex;
