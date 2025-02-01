@@ -112,7 +112,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>             
             <label for="backup_file">Select Backup File:</label>             
             <input type="file" id="backup_file" name="backup_file" accept=".sql" required>             
-            <button type="submit">Upload and Import</button>         
+            <button type="submit">Import Database</button>         
         </form>     
     </div>     
     <div class="overlay" id="overlay"></div>     
