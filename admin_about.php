@@ -182,6 +182,28 @@ checkAdminAccess();
 .main-content {
   text-align: center;
 }
+
+.info-container {
+    background-color: white;
+    margin: 50px auto; /* Changed to auto for horizontal centering */
+    padding: 30px;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block; /* Changed from absolute to block */
+}
+
+.info-container h2 {
+    color: #071c14;
+    margin-bottom: 20px;
+    padding-top: 15px;
+}
+
+.info-container p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
     </style>
 </head>
 <body>
@@ -211,6 +233,23 @@ checkAdminAccess();
                 <img src="aboutimg/malcom.png" alt="Team Member 4">
                 <div class="name">Malcolm Yabia <br><span>Documentation<br>BSIT 4-1</span></div>
             </div>
+        </div>
+
+        <div class="info-container">
+            <h2>System Overview</h2>
+            <p> This web-based system is designed to efficiently manage property ownership records, visualize mapping data, and streamline administrative tasks. It provides an integrated platform that ensures data accuracy, secure storage, and easy access for authorized users.
+            </p>
+            <br>
+            <h2>Key Features:</h2>
+            <br>
+            <p><strong>Account Module:</strong> Manages user authentication and access control to ensure secure login and data protection.</p>
+            <p><strong>Record Module:</strong> Enables adding, updating, and maintaining property owner records with high accuracy.</p>
+            <p><strong>Mapping Module:</strong> Provides a dynamic 2D map interface to visualize property ownership and related data.</p>
+            <p><strong>Report Module:</strong> Generates detailed reports showing the number of owned and available lots in specific areas like Saints, Columbarium, and Apartments.</p>
+            <p><strong>Backup Module:</strong> Ensures data integrity through reliable backup and restoration processes.</p>
+            <p><strong>Activity Log Module:</strong> Tracks all user activities within the system for monitoring and security purposes.
+Purpose and Benefits:
+The system aims to improve workflow efficiency by automating the retrieval of property owner records in Tagaytay Memorial Park, enhancing data accessibility, and ensuring secure record-keeping. It helps organizations manage property-related data seamlessly, making operations faster, more accurate, and more reliable.</p>
         </div>
     </div>
 

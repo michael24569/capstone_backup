@@ -15,7 +15,25 @@ checkStaffAccess();
     
     
     <style>
- /* Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat */
+/* Sidebar Toggle Button Styles */
+.sidebar-toggle-btn {
+  display: none; /* Default: hidden, visible in responsive view */
+  position: absolute; 
+  top: 20px;
+  left: 15px;
+  background: none;
+  border: none;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1000; /* Ensure it appears above other elements */
+}
+
+.iconcolor{
+  width: 24px; 
+  height: 24px; 
+  fill: #002d1c;
+}
+
 /* Responsive design for smaller screens */
 @media screen and (max-width: 768px) {
   .sidebar-toggle-btn {
@@ -55,6 +73,7 @@ checkStaffAccess();
     font-size: 10px;
   }
 }
+
 
 
         body {
@@ -163,6 +182,28 @@ checkStaffAccess();
 .main-content {
   text-align: center;
 }
+
+.info-container {
+    background-color: white;
+    margin: 50px auto; /* Changed to auto for horizontal centering */
+    padding: 30px;
+    width: 1000px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    display: block; /* Changed from absolute to block */
+}
+
+.info-container h2 {
+    color: #071c14;
+    margin-bottom: 20px;
+    padding-top: 15px;
+}
+
+.info-container p {
+    color: #333;
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
     </style>
 </head>
 <body>
@@ -170,6 +211,7 @@ checkStaffAccess();
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512">
     <path d="M0 96C0 78.3 14.3 64 32 64l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 128C14.3 128 0 113.7 0 96zM0 256c0-17.7 14.3-32 32-32l384 0c17.7 0 32 14.3 32 32s-14.3 32-32 32L32 288c-17.7 0-32-14.3-32-32zM448 416c0 17.7-14.3 32-32 32L32 448c-17.7 0-32-14.3-32-32s14.3-32 32-32l384 0c17.7 0 32 14.3 32 32z"/>
   </svg>
+  <!-- Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat -->
 </button>
 <?php include 'staff_sidebar.php'; ?>
     <div class="container">
@@ -185,12 +227,29 @@ checkStaffAccess();
             </div>
             <div class="team-member">
                 <img src="aboutimg/david.png" alt="Team Member 3">
-                <div class="name">John David Pasion <br><span>Documentation <br>BSIT 4-1</span></div>
+                <div class="name">John David Pasion <br><span>Documentation<br>BSIT 4-1</span></div>
             </div>
             <div class="team-member">
                 <img src="aboutimg/malcom.png" alt="Team Member 4">
-                <div class="name">Malcolm Yabia <br><span>Documentation <br>BSIT 4-1</span></div>
+                <div class="name">Malcolm Yabia <br><span>Documentation<br>BSIT 4-1</span></div>
             </div>
+        </div>
+
+        <div class="info-container">
+            <h2>System Overview</h2>
+            <p> This web-based system is designed to efficiently manage property ownership records, visualize mapping data, and streamline administrative tasks. It provides an integrated platform that ensures data accuracy, secure storage, and easy access for authorized users.
+            </p>
+            <br>
+            <h2>Key Features:</h2>
+            <br>
+            <p><strong>Account Module:</strong> Manages user authentication and access control to ensure secure login and data protection.</p>
+            <p><strong>Record Module:</strong> Enables adding, updating, and maintaining property owner records with high accuracy.</p>
+            <p><strong>Mapping Module:</strong> Provides a dynamic 2D map interface to visualize property ownership and related data.</p>
+            <p><strong>Report Module:</strong> Generates detailed reports showing the number of owned and available lots in specific areas like Saints, Columbarium, and Apartments.</p>
+            <p><strong>Backup Module:</strong> Ensures data integrity through reliable backup and restoration processes.</p>
+            <p><strong>Activity Log Module:</strong> Tracks all user activities within the system for monitoring and security purposes.
+Purpose and Benefits:
+The system aims to improve workflow efficiency by automating the retrieval of property owner records in Tagaytay Memorial Park, enhancing data accessibility, and ensuring secure record-keeping. It helps organizations manage property-related data seamlessly, making operations faster, more accurate, and more reliable.</p>
         </div>
     </div>
 
@@ -239,7 +298,7 @@ function toggleSidebar() {
             }
         });
 </script>
-<script src="paiyakan.js"></script>
+
 </body>
 
 </html>
