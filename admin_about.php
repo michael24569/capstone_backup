@@ -182,28 +182,80 @@ checkAdminAccess();
 .main-content {
   text-align: center;
 }
+/* Button Styling */
+.toggle-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #007b5e, #004d3a);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-in-out;
+}
 
-.info-container {
-    background-color: white;
-    margin: 50px auto; /* Changed to auto for horizontal centering */
+.toggle-btn:hover {
+    background: linear-gradient(135deg, #009970, #005a43);
+    transform: scale(1.05);
+}
+
+/* Info Container */
+#infoContainer {
+    display: none;
+    background: #ffffff;
+    margin: 30px auto;
     padding: 30px;
-    width: 1000px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: block; /* Changed from absolute to block */
+    max-width: 1000px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
 }
 
+/* Show animation */
+#infoContainer.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Heading Styling */
 .info-container h2 {
-    color: #071c14;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #007b5e;
+    border-bottom: 3px solid #007b5e;
+    padding-bottom: 10px;
     margin-bottom: 20px;
-    padding-top: 15px;
+    text-align: center;
 }
 
+/* Paragraph Styling */
 .info-container p {
+    font-size: 1rem;
     color: #333;
-    line-height: 1.6;
-    margin-bottom: 10px;
+    line-height: 1.8;
+    text-align: justify;
+    margin-bottom: 15px;
 }
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    #infoContainer {
+        max-width: 90%;
+        padding: 20px;
+    }
+    .toggle-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+
     </style>
 </head>
 <body>
@@ -234,8 +286,8 @@ checkAdminAccess();
                 <div class="name">Malcolm Yabia <br><span>Documentation<br>BSIT 4-1</span></div>
             </div>
         </div>
-
-        <div class="info-container">
+        <button class="toggle-btn" onclick="toggleInfo()">Show System Overview</button>
+        <div class="info-container" id="infoContainer">
             <h2>System Overview</h2>
             <p> This web-based system is designed to efficiently manage property ownership records, visualize mapping data, and streamline administrative tasks. It provides an integrated platform that ensures data accuracy, secure storage, and easy access for authorized users.
             </p>
@@ -265,6 +317,24 @@ The system aims to improve workflow efficiency by automating the retrieval of pr
         </div>
     </div>
 </div>
+<script>
+function toggleInfo() {
+    var infoContainer = document.getElementById("infoContainer");
+    var button = document.querySelector(".toggle-btn");
+
+    if (infoContainer.classList.contains("show")) {
+        infoContainer.classList.remove("show");
+        setTimeout(() => infoContainer.style.display = "none", 500); // Wait for animation to finish
+        button.textContent = "Show System Overview";
+    } else {
+        infoContainer.style.display = "block";
+        setTimeout(() => infoContainer.classList.add("show"), 10);
+        button.textContent = "Hide System Overview";
+    }
+}
+</script>
+
+
 <script src="script.js"></script>
     <script>
 
