@@ -361,7 +361,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         }
         .btn.btn-add {
             padding:7px 17px;
-    margin-left:1280px;
+    margin-left:1210px;
     position: absolute;
     border: 2px solid #479149; /* Border color */
     border-radius: 5px;
@@ -553,7 +553,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         const csrfToken = document.querySelector('input[name="csrf_token"]').value;
         
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', `staff_dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}&csrf_token=${encodeURIComponent(csrfToken)}`, true);
+        xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}&csrf_token=${encodeURIComponent(csrfToken)}`, true);
         
         xhr.onload = function() {
             if (this.status === 200) {
@@ -638,7 +638,7 @@ clearButton.addEventListener('click', function () {
     
     // Trigger the search with empty value to refresh the results
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'staff_dynamic_pagination.php?search=', true);
+    xhr.open('GET', 'dynamic_pagination.php?search=', true);
     
     xhr.onload = function() {
         if (this.status === 200) {
