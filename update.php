@@ -246,6 +246,59 @@ do {
         .btn:active {
             transform: translateY(-1px);
         }
+
+        /* Add custom modal styling */
+        .modal-dialog {
+            display: flex;
+            align-items: center;
+            min-height: calc(100% - 1rem);
+        }
+        
+        .modal-content {
+            margin: auto;
+            border-radius: 10px;
+        }
+        
+        .modal-body {
+            text-align: center;
+            padding: 2rem;
+            font-size: 1.1rem;
+        }
+
+        .modal-footer {
+            display: flex;
+            justify-content: flex-start; 
+            padding: 1rem;
+            border-top: 1px solid #dee2e6;
+        }
+
+        .modal-header {
+            padding: 1rem;
+            border-bottom: 1px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .modal-title {
+            font-weight: bold;
+            margin: 0;
+        }
+
+        .btn-close {
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            padding: 0;
+            cursor: pointer;
+            font-weight: bold;
+            opacity: 0.5;
+            transition: opacity 0.2s;
+        }
+
+        .btn-close:hover {
+            opacity: 1;
+        }
     </style>
 </head>
 <body>
@@ -256,7 +309,7 @@ do {
         displayMessage($errorMessage, 'error');
         displayMessage($successMessage, 'success');
         ?>
-        <form method="post">
+        <form method="post" id="updateForm">
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>">
             
             <div class="row mb-3">
@@ -329,7 +382,7 @@ do {
 
             <div class="row mb-3">
                 <div class="col-sm-3 d-grid">
-                    <button type="submit" class="btn btn-primary">
+                    <button type="button" class="btn btn-primary" onclick="showConfirmModal()">
                         <i class="fas fa-save"></i> Save
                     </button>
                 </div>
@@ -339,6 +392,26 @@ do {
             </div>
         </form>
     </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal fade" id="confirmModal" tabindex="-1" aria-labelledby="confirmModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirmModalLabel">Confirm Changes</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close">&times;</button>
+                </div>
+                <div class="modal-body">
+                    Are you sure you want to save these changes?
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-success" onclick="submitForm()">Save Changes</button>
+                    <button type="button" class="btn btn-danger" data-bs-dismiss="modal">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Auto-hide the alert after 5 seconds
         document.addEventListener('DOMContentLoaded', function() {
@@ -382,6 +455,15 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 });
+
+function showConfirmModal() {
+    const modal = new bootstrap.Modal(document.getElementById('confirmModal'));
+    modal.show();
+}
+
+function submitForm() {
+    document.getElementById('updateForm').submit();
+}
 
 // Prevent form resubmission when going back
 if (window.history.replaceState) {

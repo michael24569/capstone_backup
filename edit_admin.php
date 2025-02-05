@@ -294,9 +294,49 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             height: 30px;
             padding-left: 10px;
         }
+        /* Add modal styles */
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+
+        .modal-content {
+            background-color: white;
+            padding: 20px;
+            border-radius: 8px;
+            width: 400px;
+            text-align: center;
+        }
+
+        .modal-buttons {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+        }
         </style>
 </head>
 <body style="background: #071c14;">
+    <!-- Add confirmation modal -->
+    <div id="confirmationModal" class="modal" style="display: none;">
+        <div class="modal-content">
+            <h3>Confirm Changes</h3>
+            <p>Are you sure you want to save these changes?</p>
+            <div class="modal-buttons">
+                <button id="confirmSave" class="btn-edit">Yes, Save Changes</button>
+                <button id="cancelSave" class="btn-cancel">Cancel</button>
+            </div>
+        </div>
+    </div>
+
     <div class="edit-form-container">
         <h2>Edit Admin Account</h2>
         <br>
@@ -417,6 +457,30 @@ const inputIds = ['current_password', 'new_password','confirm_password',];
                     alert.style.display = 'none';
                 }
             }, 2000); //S
+        });
+
+        // Add form submission handling
+        document.getElementById('editForm').addEventListener('submit', function(e) {
+            e.preventDefault(); // Prevent form submission
+            document.getElementById('confirmationModal').style.display = 'flex';
+        });
+
+        // Handle confirmation modal buttons
+        document.getElementById('confirmSave').addEventListener('click', function() {
+            document.getElementById('confirmationModal').style.display = 'none';
+            document.getElementById('editForm').submit(); // Actually submit the form
+        });
+
+        document.getElementById('cancelSave').addEventListener('click', function() {
+            document.getElementById('confirmationModal').style.display = 'none';
+        });
+
+        // Close modal if clicking outside
+        window.addEventListener('click', function(event) {
+            const modal = document.getElementById('confirmationModal');
+            if (event.target === modal) {
+                modal.style.display = 'none';
+            }
         });
     </script>
 </body>

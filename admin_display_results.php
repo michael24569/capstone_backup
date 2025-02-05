@@ -2,7 +2,21 @@
 session_start();
 
 require_once 'security_check.php';
+require_once 'db-connection.php'; // Include the database connection
 checkAdminAccess();
+
+function getAdminFullName() {
+    global $conn; // Use the global database connection
+    $adminId = $_SESSION['id']; // Assuming admin ID is stored in session
+    $query = "SELECT fullname FROM tbl_admin WHERE id = ?";
+    $stmt = $conn->prepare($query);
+    $stmt->bind_param("i", $adminId);
+    $stmt->execute();
+    $stmt->bind_result($fullname);
+    $stmt->fetch();
+    $stmt->close();
+    return $fullname;
+}
 
 function handlePostRequest() {
     $json = file_get_contents('php://input');
@@ -118,6 +132,7 @@ function displayRecordStatus() {
     ];
 
     $grouped = groupRecords($recordStatus, $memorialNames);
+    $adminFullName = getAdminFullName(); // Get the admin's full name
 
     echo '<!DOCTYPE html>
 <html lang="en">
@@ -506,6 +521,14 @@ p {
     }
     #print {
         display: none;
+    }
+    .prepared-by {
+        visibility: visible;
+        position: fixed;
+        bottom: 20px;
+        left: 20px;
+        font-size: 1em;
+        color: black;
     }
 }
     .btn-confirm {
@@ -905,6 +928,7 @@ document.getElementById("confirmButton").addEventListener("click", function() {
         
     </style>
 </body>
+<p class="prepared-by">Prepared by: ' . htmlspecialchars($adminFullName) . '</p>
 </html>';
 }
 
