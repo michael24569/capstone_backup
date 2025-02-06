@@ -32,7 +32,7 @@ if (!file_exists($backup_directory) && !mkdir($backup_directory, 0777, true)) {
 if (file_exists($backup_file_name) && (time() - $_SESSION['backup_time']) <= 30) {
     $new_file_path = $backup_directory . '/' . basename($backup_file_name);
     if (rename($backup_file_name, $new_file_path)) {
-        $_SESSION['successful'] = "Backup file moved to Backup Files.";
+        $_SESSION['successful'] = "Database backup successfully!";
     } else {
         error_log("Failed to move backup file: $backup_file_name to $new_file_path");
         $_SESSION['error'] = "Failed to move backup file to Backup Files: " . error_get_last()['message'];
