@@ -24,6 +24,12 @@ else {
   unset($_SESSION['forgot-passW']);
 }
 
+// Check if the user is locked out
+if (isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) {
+    $remaining_time = $_SESSION['lockout_time'] - time();
+    $_SESSION['error'] = "Too many failed login attempts. Please try again in $remaining_time seconds.";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">

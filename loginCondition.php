@@ -1,4 +1,3 @@
-
 <?php
 
 $error = null;
@@ -21,6 +20,19 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
         $data = stripslashes($data);
         $data = htmlspecialchars($data);
         return $data;
+    }
+
+    // Initialize login attempts if not set
+    if (!isset($_SESSION['login_attempts'])) {
+        $_SESSION['login_attempts'] = 0;
+    }
+
+    // Check if the user is locked out
+    if (isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) {
+        $remaining_time = $_SESSION['lockout_time'] - time();
+        $_SESSION['error'] = "Too many failed login attempts. Please try again in $remaining_time seconds.";
+        header("Location: index.php");
+        exit();
     }
 
     $username = validate($_POST['username'] ?? '');
@@ -57,9 +69,29 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['signin'])) {
     }
 
     if ($error !== null) {
-        $_SESSION['error'] = $error;
+        $_SESSION['login_attempts'] += 1;
+
+        // Lockout logic
+        if ($_SESSION['login_attempts'] >= 3) {
+            $lockout_duration = 180; // 3 minutes
+            if (isset($_SESSION['lockout_duration'])) {
+                $_SESSION['lockout_duration'] += 120; // Add 2 minutes
+            } else {
+                $_SESSION['lockout_duration'] = $lockout_duration;
+            }
+            $_SESSION['lockout_time'] = time() + $_SESSION['lockout_duration'];
+            $_SESSION['login_attempts'] = 0; // Reset attempts after lockout
+            $_SESSION['error'] = "Too many failed login attempts. Please try again in " . $_SESSION['lockout_duration'] . " seconds.";
+        } else {
+            $_SESSION['error'] = $error;
+        }
+
         header("Location: index.php");
         exit();
+    } else {
+        // Reset login attempts on successful login
+        $_SESSION['login_attempts'] = 0;
+        unset($_SESSION['lockout_duration']);
     }
 }
 
