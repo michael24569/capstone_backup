@@ -400,7 +400,11 @@ hr {
     <p><strong>Backup Module:</strong> Ensures data integrity through reliable backup and restoration processes.</p>
     <p><strong>Activity Log Module:</strong> Tracks all user activities within the system for monitoring and security purposes.</p>
 </div>
+<<<<<<< HEAD
 <br><hr>
+=======
+
+>>>>>>> 60900f6c69b675f77113a4bb790cf475f4d86ea1
 <button class="toggle-btn" onclick="toggleResearchers()">Researchers</button>
 
 <div class="team-container">
@@ -431,7 +435,11 @@ hr {
 <br>
 <br>
 <br>
+<<<<<<< HEAD
 <br><br>
+=======
+<br>
+>>>>>>> 60900f6c69b675f77113a4bb790cf475f4d86ea1
 
         <!-- logout confirmation modal -->
         <div id="confirmModal" class="modal" style="display: none;">

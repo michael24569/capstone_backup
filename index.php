@@ -24,6 +24,12 @@ else {
   unset($_SESSION['forgot-passW']);
 }
 
+// Check if the user is locked out
+if (isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) {
+    $remaining_time = $_SESSION['lockout_time'] - time();
+    $_SESSION['error'] = "Too many failed login attempts. Please try again in $remaining_time seconds.";
+}
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -125,7 +131,7 @@ else {
     backdrop-filter: blur(8px);
     width: 400px;
     padding:20px;
-    margin-left: 55%;
+    margin-left: 62%;
     margin-top: 15%;
     border-radius: 15px;
     box-shadow: 0 8px 32px 0 #00000080;
@@ -275,7 +281,7 @@ else {
     max-height: 18%; 
     height: auto; 
     margin-top:28%;
-    margin-left:-26%;
+    margin-left:-23%;
     z-index: 10000;
     }
     .assessorlogo {
@@ -288,7 +294,7 @@ else {
     max-height: 18%; 
     height: auto; 
     margin-top:28%;
-    margin-left:-16%;
+    margin-left:-13%;
     z-index: 10000;
     }
 /* animate */
@@ -296,7 +302,7 @@ else {
     text-align: center;
     position: absolute;
     top: 43%;
-    left: 32%;
+    left: 35%;
     transform: translateX(-50%);
     width:100%;
     margin-top:-40px;
@@ -330,8 +336,8 @@ else {
     animation: growLine 1s ease-out 1s forwards;
     transform: rotate(90deg); /* Rotates the line */
     position: relative; /* Add relative positioning */
-    left: 21.5%;
-    bottom:40px;
+    left: 23.5%;
+    bottom:29px;
   }
 
   
@@ -341,7 +347,7 @@ else {
       width: 0;
     }
     to {
-      width: 410px;
+      width: 460px;
     }
   }
   .signIn-icon {
