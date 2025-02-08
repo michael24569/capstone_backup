@@ -459,7 +459,9 @@ tbody, thead, .form-control, td {
 }
 
 .btnpos {
-    margin-left: 170px;
+    justify-content: end;
+    display: flex-end;
+    margin-left: 100px;
 }
 
 
