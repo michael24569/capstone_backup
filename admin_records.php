@@ -418,6 +418,32 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             margin-top: -10px !important; /* Remove top margin */
             
         }
+        .search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-text {
+    color:rgb(6, 24, 7);
+    position: absolute;
+    top: -20px;
+    margin-left:10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.search-container:hover .search-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.select {
+    padding: 10px;
+    font-size: 14px;
+}
+
     </style>
 </head>
 
@@ -440,13 +466,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                     </svg>
                     Add new record
                 </a>
+                
             <div class="display">
+            
+                    <div class="search-container">
+                <label for="searchField" class="search-text">Search by:</label>
                 <select id="searchField" class="select">
-                    <option value="Lot_No">Lot No.</option>
-                    <option value="mem_lots">Memorial Lots</option>
-                    <option value="mem_sts">Memorial Name</option>
-                    <option value="LO_name">Property Owner</option>
-                </select>
+                <option value="Lot_No">Lot No.</option>
+                <option value="mem_lots">Memorial Lots</option>
+                <option value="mem_sts">Memorial Name</option>
+                <option value="LO_name">Property Owner</option>
+    </select>
+</div>
                 <input class="form-control" type="text" id="searchInput" placeholder="Search records" autocomplete="off">
                 <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
             </div>

@@ -400,7 +400,7 @@ tbody, thead, .form-control, td {
 /* */
 
 .btnedit {
-    margin-right:-10px;
+    margin-right:-25px;
     display: inline-block;
     position: relative;
     padding: 7px 17px;

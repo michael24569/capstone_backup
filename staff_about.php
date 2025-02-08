@@ -182,27 +182,196 @@ checkStaffAccess();
 .main-content {
   text-align: center;
 }
+/* Button Styling */
+.toggle-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: white;
+    background: linear-gradient(135deg, #007b5e, #004d3a);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    box-shadow: 0 4px 10px #000000;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle-btn:hover {
+    background: linear-gradient(135deg, #009970, #005a43);
+    transform: scale(1.05);
+}
+
+/* Add fade-in animation */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px); /* Starts slightly below */
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0); /* Ends in the original position */
+    }
+}
 
 .info-container {
-    background-color: white;
-    margin: 50px auto; /* Changed to auto for horizontal centering */
+    background-color: #fff; /* White background for container */
+    color: #303030; /* Dark text color */
     padding: 30px;
-    width: 1000px;
-    border-radius: 10px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    display: block; /* Changed from absolute to block */
+    border-radius: 8px;
+    margin: 20px auto;
+    width: 90%;
+    max-width: 1000px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    animation: fadeIn 1s ease-out; /* Apply fade-in animation */
 }
 
-.info-container h2 {
-    color: #071c14;
-    margin-bottom: 20px;
-    padding-top: 15px;
+h2.section-title {
+    color: #98fb98; /* Light green color for headers */
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
-.info-container p {
-    color: #333;
+p {
+    font-size: 16px;
     line-height: 1.6;
     margin-bottom: 10px;
+}
+
+strong {
+    color: #021f02; /* Dark green color for important text */
+}
+
+br {
+    margin-bottom: 15px;
+}
+
+@media (max-width: 600px) {
+    .info-container {
+        padding: 15px;
+    }
+
+    h2.section-title {
+        font-size: 20px;
+    }
+
+    p {
+        font-size: 14px;
+    }
+}
+
+
+/* Researchers Section */
+#researchersContainer {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#researchersContainer img {
+    width: 200px;
+    height: auto;
+    margin: 10px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px #000000;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+    .info-container {
+        max-width: 90%;
+        padding: 20px;
+    }
+    .toggle-btn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+}
+/* Fade In Down and Fade Out Up for Researchers Section */
+#researchersContainer {
+    display: none;
+    text-align: center;
+    margin-top: 20px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* When the Researchers section is visible (fade-in down effect) */
+/* When the Researchers section is visible (fade-in down effect) */
+#researchersContainer.show {
+    display: block;
+    opacity: 1;
+    transform: translateY(0);
+    animation: fadeInDown 0.5s ease forwards;
+}
+
+/* When the Researchers section is hidden (fade-out up effect) */
+#researchersContainer.hide {
+    animation: fadeOutUp 0.5s ease forwards;
+    opacity: 0;
+    transform: translateY(-20px);
+}
+
+/* Keyframes for Fade-In Down */
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Keyframes for Fade-Out Up */
+@keyframes fadeOutUp {
+    0% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+}
+
+
+/* Team Member Hover Effect */
+.team-member {
+    width: 100%;
+    max-width: 250px;
+    text-align: center;
+    margin-bottom: 20px;
+    transition: transform 0.3s;
+}
+
+.team-member img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.team-member:hover {
+    transform: scale(1.05);
+}
+
+.team-member .name {
+    margin-top: 10px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: white;
+    opacity: 0;
+    filter: blur(4px);
+    animation: fadeInBlur 2s forwards;
+}
+hr {
+    border: none;
+    height: 2px;
+    background-color:#023103; /* Green color */
+    margin: 2px 0; 
 }
     </style>
 </head>
@@ -216,43 +385,53 @@ checkStaffAccess();
 <?php include 'staff_sidebar.php'; ?>
     <div class="container">
         <h1>About Us</h1>
-        <div class="team-container">
-            <div class="team-member">
-                <img src="aboutimg/kyle.png" alt="Team Member 1">
-                <div class="name">Kyle Cyrus Ambat <br><span>Sub Programmer<br>BSIT 4-1 </span></div>
-            </div>
-            <div class="team-member">
-                <img src="aboutimg/michael.png" alt="Team Member 2">
-                <div class="name">Michael Enoza <br><span>Main Programmer<br>BSIT 4-1</span></div>
-            </div>
-            <div class="team-member">
-                <img src="aboutimg/david.png" alt="Team Member 3">
-                <div class="name">John David Pasion <br><span>Documentation<br>BSIT 4-1</span></div>
-            </div>
-            <div class="team-member">
-                <img src="aboutimg/malcom.png" alt="Team Member 4">
-                <div class="name">Malcolm Yabia <br><span>Documentation<br>BSIT 4-1</span></div>
-            </div>
-        </div>
+        
 
-        <div class="info-container">
-            <h2>System Overview</h2>
-            <p> This web-based system is designed to efficiently manage property ownership records, visualize mapping data, and streamline administrative tasks. It provides an integrated platform that ensures data accuracy, secure storage, and easy access for authorized users.
-            </p>
-            <br>
-            <h2>Key Features:</h2>
-            <br>
-            <p><strong>Account Module:</strong> Manages user authentication and access control to ensure secure login and data protection.</p>
-            <p><strong>Record Module:</strong> Enables adding, updating, and maintaining property owner records with high accuracy.</p>
-            <p><strong>Mapping Module:</strong> Provides a dynamic 2D map interface to visualize property ownership and related data.</p>
-            <p><strong>Report Module:</strong> Generates detailed reports showing the number of owned and available lots in specific areas like Saints, Columbarium, and Apartments.</p>
-            <p><strong>Backup Module:</strong> Ensures data integrity through reliable backup and restoration processes.</p>
-            <p><strong>Activity Log Module:</strong> Tracks all user activities within the system for monitoring and security purposes.
-Purpose and Benefits:
-The system aims to improve workflow efficiency by automating the retrieval of property owner records in Tagaytay Memorial Park, enhancing data accessibility, and ensuring secure record-keeping. It helps organizations manage property-related data seamlessly, making operations faster, more accurate, and more reliable.</p>
-        </div>
+<!-- System Overview (Always Visible) -->
+<div class="info-container"><br>
+    <h2>System Overview</h2><hr>
+    <p>This web-based system is designed to efficiently manage property ownership records, visualize mapping data, and streamline administrative tasks. It provides an integrated platform that ensures data accuracy, secure storage, and easy access for authorized users.</p>
+    <br><br>
+    <h2>Key Features</h2><hr>
+    <p><strong>Account Module:</strong> Manages user authentication and access control to ensure secure login and data protection.</p>
+    <p><strong>Record Module:</strong> Enables adding, updating, and maintaining property owner records with high accuracy.</p>
+    <p><strong>Mapping Module:</strong> Provides a dynamic 2D map interface to visualize property ownership and related data.</p>
+    <p><strong>Report Module:</strong> Generates detailed reports showing the number of owned and available lots in specific areas like Saints, Columbarium, and Apartments.</p>
+    <p><strong>Backup Module:</strong> Ensures data integrity through reliable backup and restoration processes.</p>
+    <p><strong>Activity Log Module:</strong> Tracks all user activities within the system for monitoring and security purposes.</p>
+</div>
+<br><hr>
+<button class="toggle-btn" onclick="toggleResearchers()">Researchers</button>
+
+<div class="team-container">
+    <div class="team-member">
+        <img src="aboutimg/kyle.png" alt="Team Member 1">
+        <div class="name">Kyle Cyrus Ambat <br><span>Sub Programmer<br>BSIT 4-1 </span></div>
     </div>
-
+    <div class="team-member">
+        <img src="aboutimg/michael.png" alt="Team Member 2">
+        <div class="name">Michael Enoza <br><span>Main Programmer<br>BSIT 4-1</span></div>
+    </div>
+    <div class="team-member">
+        <img src="aboutimg/david.png" alt="Team Member 3">
+        <div class="name">John David Pasion <br><span>Documentation<br>BSIT 4-1</span></div>
+    </div>
+    <div class="team-member">
+        <img src="aboutimg/malcom.png" alt="Team Member 4">
+        <div class="name">Malcolm Yabia <br><span>Documentation<br>BSIT 4-1</span></div>
+    </div>
+</div>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br><br>
 
         <!-- logout confirmation modal -->
         <div id="confirmModal" class="modal" style="display: none;">
@@ -265,6 +444,49 @@ The system aims to improve workflow efficiency by automating the retrieval of pr
         </div>
     </div>
 </div>
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    var toggleBtn = document.querySelector(".toggle-btn");
+    var researchersContainer = document.querySelector(".team-container");
+
+    // Ensure the Researchers section starts hidden
+    researchersContainer.style.display = "none";
+
+    toggleBtn.addEventListener("click", function () {
+        // Show the researchers section
+        if (researchersContainer.style.display === "none" || researchersContainer.style.display === "") {
+            researchersContainer.style.display = "flex";
+            toggleBtn.textContent = "Hide Researchers";
+
+            // Apply fade-in effect and smooth scroll to the researchers section
+            researchersContainer.classList.add("show");
+            researchersContainer.classList.remove("hide");
+
+            // Smooth scroll to the researchers section
+            researchersContainer.scrollIntoView({ behavior: "smooth" });
+        } else {
+            // Hide the researchers section and fade out
+            toggleBtn.textContent = "Researchers";
+            researchersContainer.classList.add("hide");
+            researchersContainer.classList.remove("show");
+
+            // After the animation, hide the section to prevent it from being interactive
+            setTimeout(function() {
+                researchersContainer.style.display = "none";
+
+                // Smooth automatic scroll up after hiding
+                window.scrollTo({
+                    top: 0,
+                    behavior: "smooth"
+                });
+            }, 500); // Delay to match the animation duration
+        }
+    });
+});
+
+</script>
+
+
 <script src="script.js"></script>
     <script>
 
