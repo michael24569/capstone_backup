@@ -329,7 +329,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                         class="form-control" 
                         name="lot" 
                         value="<?php echo htmlspecialchars($lot) ?>" 
-                        oninput="validateNumber(this)">
+                        oninput="validateNumber(this)"
+                        autocomplete ='off'>
                 </div>
             </div>
 
