@@ -208,7 +208,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     cursor: pointer;
     position: absolute;
     left: 32.5%; /* Adjust based on your design */
-    top: 15.3%;
+    top: 16.3%;
     transform: translateY(-50%);
     font-size: 25px; /* Adjust size as needed */
     color: #aaa; /* Color of the clear button */
@@ -418,6 +418,32 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
             margin-top: -10px !important; /* Remove top margin */
             
         }
+        .search-container {
+    position: relative;
+    display: inline-block;
+}
+
+.search-text {
+    color:rgb(6, 24, 7);
+    position: absolute;
+    top: -20px;
+    margin-left:10px;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    pointer-events: none;
+}
+
+.search-container:hover .search-text {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.select {
+    padding: 10px;
+    font-size: 14px;
+}
+
     </style>
 </head>
 
@@ -440,13 +466,18 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
                     </svg>
                     Add new record
                 </a>
+                
             <div class="display">
+            
+                    <div class="search-container">
+                <label for="searchField" class="search-text">Search by:</label>
                 <select id="searchField" class="select">
-                    <option value="Lot_No">Lot No.</option>
-                    <option value="mem_lots">Memorial Lots</option>
-                    <option value="mem_sts">Memorial Name</option>
-                    <option value="LO_name">Property Owner</option>
-                </select>
+                <option value="Lot_No">Lot No.</option>
+                <option value="mem_lots">Memorial Lots</option>
+                <option value="mem_sts">Memorial Name</option>
+                <option value="LO_name">Property Owner</option>
+    </select>
+</div>
                 <input class="form-control" type="text" id="searchInput" placeholder="Search records" autocomplete="off">
                 <span id="clearButton" class="clear-button" style="display: none;">&times;</span>
             </div>
@@ -553,7 +584,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         const csrfToken = document.querySelector('input[name="csrf_token"]').value;
         
         const xhr = new XMLHttpRequest();
-        xhr.open('GET', `dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}&csrf_token=${encodeURIComponent(csrfToken)}`, true);
+        xhr.open('GET', `staff_dynamic_pagination.php?search=${encodeURIComponent(searchQuery)}&field=${encodeURIComponent(selectedField)}&csrf_token=${encodeURIComponent(csrfToken)}`, true);
         
         xhr.onload = function() {
             if (this.status === 200) {
@@ -638,7 +669,7 @@ clearButton.addEventListener('click', function () {
     
     // Trigger the search with empty value to refresh the results
     const xhr = new XMLHttpRequest();
-    xhr.open('GET', 'dynamic_pagination.php?search=', true);
+    xhr.open('GET', 'staff_dynamic_pagination.php?search=', true);
     
     xhr.onload = function() {
         if (this.status === 200) {

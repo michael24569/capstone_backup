@@ -401,6 +401,9 @@ hr {
     <p><strong>Activity Log Module:</strong> Tracks all user activities within the system for monitoring and security purposes.</p>
 </div>
 
+<br><hr>
+
+
 <button class="toggle-btn" onclick="toggleResearchers()">Researchers</button>
 
 <div class="team-container">
@@ -431,7 +434,7 @@ hr {
 <br>
 <br>
 <br>
-<br>
+
 
         <!-- logout confirmation modal -->
         <div id="confirmModal" class="modal" style="display: none;">
