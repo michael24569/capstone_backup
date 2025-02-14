@@ -370,7 +370,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             
             <div class="form-group">
     <label for="fullname">Full Name</label>
-    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($staff['fullname'])); ?>" required autocomplete="off">
+    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($staff['fullname'])); ?>" required autocomplete="off"
+           pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
 </div>
 
 <div class="form-group">
