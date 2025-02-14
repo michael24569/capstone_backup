@@ -8,7 +8,10 @@ if (!isset($_GET['file'])) {
 }
 
 $backup_file_name = urldecode($_GET['file']);
-$backup_directory = 'C:\Users\user\Downloads\Backup Files'; // Update your backup directory path
+
+// Get the current user's profile path and set the backup directory in the Downloads folder
+$userProfile = getenv('USERPROFILE');
+$backup_directory = $userProfile . '/Downloads/Backup Files';
 
 // Check if the backup has expired (i.e., 30 seconds after it was created)
 if (isset($_SESSION['backup_time']) && (time() - $_SESSION['backup_time']) > 30) {

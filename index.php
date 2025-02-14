@@ -24,10 +24,11 @@ else {
   unset($_SESSION['forgot-passW']);
 }
 
-// Check if the user is locked out
-if (isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) {
-    $remaining_time = $_SESSION['lockout_time'] - time();
-    $_SESSION['error'] = "Too many failed login attempts. Please try again in $remaining_time seconds.";
+// Updated lockout check: verify session or persistent cookie
+if ((isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) ||
+    (isset($_COOKIE['persistent_lockout_time']) && time() < $_COOKIE['persistent_lockout_time'])) {
+    $lockout_expiry = isset($_SESSION['lockout_time']) ? $_SESSION['lockout_time'] : $_COOKIE['persistent_lockout_time'];
+    $_SESSION['error'] = "Too many failed login attempts. Please try again in " . ($lockout_expiry - time()) . " seconds.";
 }
 
 ?>
@@ -84,8 +85,19 @@ if (isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) {
             </div>
             <p class="recover"><a href="?action=forgot-password">Forgot password?</a></p>
             <?php
+            // Replace error output with a countdown container if locked out
             if (isset($_SESSION['error'])) {
-                echo '<p class="error">' . $_SESSION['error'] . '</p>';
+                $lockoutExpiry = 0;
+                if(isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']){
+                    $lockoutExpiry = $_SESSION['lockout_time'];
+                } elseif(isset($_COOKIE['persistent_lockout_time']) && time() < $_COOKIE['persistent_lockout_time']){
+                    $lockoutExpiry = $_COOKIE['persistent_lockout_time'];
+                }
+                if($lockoutExpiry > time()){
+                    echo '<p class="error" id="countdownTimer" data-lockout-expiry="'.$lockoutExpiry.'"></p>';
+                } else {
+                    echo '<p class="error">' . $_SESSION['error'] . '</p>';
+                }
                 unset($_SESSION['error']);
             }
             ?>
@@ -398,6 +410,26 @@ if (isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) {
                 e.preventDefault();
             }
         });
+
+    // Countdown script
+    document.addEventListener('DOMContentLoaded', function() {
+      var countdownEl = document.getElementById('countdownTimer');
+      if(countdownEl){
+        var expiry = parseInt(countdownEl.getAttribute('data-lockout-expiry'));
+        function updateCountdown(){
+          var remaining = expiry - Math.floor(Date.now()/1000);
+          if(remaining > 0) {
+            countdownEl.textContent = "Too many failed login attempts. Please try again in " + remaining + " seconds.";
+          } else {
+            countdownEl.textContent = "";
+            clearInterval(interval);
+            location.reload(); // reload page when lockout expires
+          }
+        }
+        updateCountdown();
+        var interval = setInterval(updateCountdown, 1000);
+      }
+    });
 
 </script>
 
