@@ -76,7 +76,8 @@ if (isset($_POST['verify_password'])) {
 // Fetch staff member data
 if (isset($_GET['id'])) {
     $staff_id = mysqli_real_escape_string($conn, $_GET['id']);
-    $query = "SELECT * FROM tbl_staff WHERE id = '$staff_id'";
+    // Modified to retrieve security_answer as well
+    $query = "SELECT *, security_answer FROM tbl_staff WHERE id = '$staff_id'";
     $result = mysqli_query($conn, $query);
     $staff = mysqli_fetch_assoc($result);
 
@@ -92,6 +93,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $fullname = mysqli_real_escape_string($conn, $_POST['fullname']);
     $username = mysqli_real_escape_string($conn, $_POST['username']);
     $security_question = mysqli_real_escape_string($conn, $_POST['security_question']);
+    $security_answer = trim($_POST['security_answer']);
+    
+    // New check: if the security question has changed, require a new answer.
+    if ($security_question !== $staff['security_question'] && empty($security_answer)) {
+        $error_message = "Please provide an answer for the new security question.";
+    }
     
     // Initialize the update query
     $update_query = "UPDATE tbl_staff SET 
@@ -363,7 +370,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             
             <div class="form-group">
     <label for="fullname">Full Name</label>
-    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($staff['fullname'])); ?>" required autocomplete="off">
+    <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($staff['fullname'])); ?>" required autocomplete="off"
+           pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
 </div>
 
 <div class="form-group">
@@ -385,7 +393,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             
             <div class="input-group">
     <i class="fas fa-check-circle"></i>
-    <input type="text" name="security_answer" id="security_answer" placeholder="Security Answer" autocomplete="off">
+    <input type="text" name="security_answer" id="security_answer" placeholder="Security Answer"
+        value="" autocomplete="off">
     <label for="security_answer">Security Answer</label>
 </div>
             

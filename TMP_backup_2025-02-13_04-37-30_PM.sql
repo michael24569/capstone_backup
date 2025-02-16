@@ -11,7 +11,7 @@ CREATE TABLE `tbl_admin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO tbl_admin VALUES("1","Michael Enoza","Tcao_admin","$2y$10$LqTl.gy5o25s48UVJ3S.9uMBdKRAJfhw8qQkkb3pCTtIbte6SxNRu","Active","What was the name of your first school?","$2y$10$1OLVL8HvR5G37A3yNGsJdumRpOAsgCoRlbAgGnmwUYprWM1TuzM3y");
+INSERT INTO tbl_admin VALUES("1","Michael Enoza","Tcao_admin","$2y$10$LqTl.gy5o25s48UVJ3S.9uMBdKRAJfhw8qQkkb3pCTtIbte6SxNRu","Active","What was the first exam you failed?","$2y$10$jrdpS1SmveAW/8A83Y1sIO86TxKK5nEaNp72AHAv67nT8JqQn4f5u");
 
 
 CREATE TABLE `tbl_record_logs` (
@@ -23,19 +23,8 @@ CREATE TABLE `tbl_record_logs` (
   `action` varchar(50) DEFAULT NULL,
   `timestamp` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO tbl_record_logs VALUES("1","Admin","Michael Enoza","1","Columbarium1","created","2024-12-21 12:56:06");
-INSERT INTO tbl_record_logs VALUES("2","Admin","Michael Enoza","2","Columbarium1","created","2024-12-21 13:57:34");
-INSERT INTO tbl_record_logs VALUES("3","Admin","Michael Enoza","3","Columbarium1","created","2024-12-21 13:57:59");
-INSERT INTO tbl_record_logs VALUES("4","Admin","Michael Enoza","4","Columbarium2","created","2024-12-21 14:03:26");
-INSERT INTO tbl_record_logs VALUES("5","Admin","Michael Enoza","5","Columbarium1","created","2024-12-21 17:22:30");
-INSERT INTO tbl_record_logs VALUES("6","Staff","Michael D. Enoza","6","Columbarium2","created","2024-12-21 17:24:31");
-INSERT INTO tbl_record_logs VALUES("7","Admin","Michael Enoza","1","St. Michael","updated","2024-12-21 18:20:26");
-INSERT INTO tbl_record_logs VALUES("8","Admin","Michael Enoza","6","Columbarium2","updated","2024-12-21 18:24:25");
-INSERT INTO tbl_record_logs VALUES("9","Staff","Michael D. Enoza","100","Apartment1","updated","2024-12-21 19:05:25");
-INSERT INTO tbl_record_logs VALUES("10","Admin","Michael Enoza","2","St. Michael","updated","2024-12-21 19:52:01");
-INSERT INTO tbl_record_logs VALUES("11","Admin","Michael Enoza","4","St. Michael","updated","2024-12-21 19:52:09");
 
 
 CREATE TABLE `tbl_records` (
@@ -1715,7 +1704,7 @@ CREATE TABLE `tbl_staff` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=64 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO tbl_staff VALUES("60","Michael D. Enoza","Enoza1121","$2y$10$MTBYfpkAyFcJPUtlTaAbne.1k.J9rcxiYq6wjenaveuPgM3Y7eyF.","Active","In what city were you born?","$2y$10$NQy4VgCd7bH3FAQYICgetOV4kbYY./uePz85BAjrc7dTzYpO7SMf.");
+INSERT INTO tbl_staff VALUES("60","Michael D. Enoza","Enoza1121","$2y$10$MTBYfpkAyFcJPUtlTaAbne.1k.J9rcxiYq6wjenaveuPgM3Y7eyF.","Active","Who was your childhood hero?","$2y$10$ZtokZfWfa9L7IP4HZkk1Wev5NQKxL2KevBgoFZ1eweUqy1KGjKwye");
 INSERT INTO tbl_staff VALUES("61","John D. Enoza","John1121","$2y$10$DsZ5TrTpbPqEFFNVE6Q/h.dFBmU6RDGbfazfmEdJjeDzQJu2bSW4m","Active","What was the name of your first pet?","$2y$10$3CVAoy0NyHD7iq7Eh3E./O5i6n3wN3KBxxNz1lQWtJ3RarnilwI5.");
 INSERT INTO tbl_staff VALUES("62","Kyle Cyrus Ambat","Kyle1121","$2y$10$YQot3uCJZ7gSj28FA1NI1OTJ45VQUMw.l8jUNOj8Y3cu/app32kE.","Active","What was the name of your first pet?","$2y$10$tdLXHQBp9qVwrUX3viChjusYFXkf3hsfk4ysv2EHV3NNbPpcOKWEC");
 INSERT INTO tbl_staff VALUES("63","Malcolm Yabia","Yabia1121","$2y$10$G.Ms5Ov./bRL0bVtVICJhOgy9Tn/J6ZJVOgFQNPY.uQeMhmw.qdgS","Inactive","In what city were you born?","$2y$10$k4Nd2RhY7CC0tc0Wik..q.iX4WP9qjMqSlzb1nhlnRrV0kn7UqCSW");

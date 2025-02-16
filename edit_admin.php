@@ -50,8 +50,8 @@ if (isset($_POST['verify_password'])) {
     exit();
 }
 
-// Fetch admin data
-$query = "SELECT fullname, username, security_question FROM tbl_admin WHERE id = ?";
+// Fetch admin data (modified to include security_answer)
+$query = "SELECT fullname, username, security_question, security_answer FROM tbl_admin WHERE id = ?";
 $stmt = mysqli_prepare($conn, $query);
 mysqli_stmt_bind_param($stmt, "i", $admin_id);
 mysqli_stmt_execute($stmt);
@@ -74,6 +74,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     $confirm_password = isset($_POST['confirm_password']) ? $_POST['confirm_password'] : '';
     $security_question = trim($_POST['security_question']);
     $security_answer = trim($_POST['security_answer']);
+    
+    // New check: if the security question has changed, require a new answer.
+    if ($security_question !== $admin['security_question'] && empty($security_answer)) {
+        $error_message = "Please provide an answer for the new security question.";
+    }
     
     // Check if username already exists (excluding current admin)
     $check_username = "SELECT id FROM tbl_admin WHERE username = ? AND id != ?";
@@ -351,7 +356,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
         <form method="POST" action="" id="editForm">
             <div class="form-group">
                 <label for="fullname">Full Name</label>
-                <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required autocomplete="off">
+                <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required autocomplete="off"
+                       pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
             </div>
 
             <div class="form-group">
@@ -374,7 +380,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             <div class="input-group">
                 <i class="fas fa-check-circle"></i>
                 <input type="text" name="security_answer" id="security_answer" placeholder="Security Answer" 
-                    value="<?php echo htmlspecialchars($_POST['security_answer'] ?? ''); ?>" autocomplete="off">
+                    value="" autocomplete="off">
                 <label for="security_answer">Security Answer</label>
             </div>
             <div id="passwordVerificationSection">

@@ -44,7 +44,8 @@ $securityQuestions = [
             <div class="input-group">
                 <i class="fas fa-user"></i>
                 <input type="text" name="fullname" id="fullname" placeholder="Full Name" 
-                    value="<?php echo htmlspecialchars($_POST['fullname'] ?? ''); ?>" required autocomplete="off">
+                    value="<?php echo htmlspecialchars($_POST['fullname'] ?? ''); ?>" required autocomplete="off"
+                    pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
                 <label for="fullname">Full Name</label>
             </div>
             
