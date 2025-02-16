@@ -400,10 +400,11 @@ tbody, thead, .form-control, td {
 /* */
 
 .btnedit {
-    margin-right:-25px;
+    margin-right:-10px;
     display: inline-block;
+    text-align: center;
     position: relative;
-    padding: 7px 13px;
+    padding: 4px 8px;
     border: 2px solid #479149; /* Border color */
     border-radius: 5px;
     color: #479149;

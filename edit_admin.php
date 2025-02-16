@@ -343,7 +343,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
     </div>
 
     <div class="edit-form-container">
-        <h2>Edit Admin Account</h2>
+        <h2>Edit System Administrator Account</h2>
         <br>
         <?php if ($error_message): ?>
             <div class="error-message"><?php echo htmlspecialchars($error_message); ?></div>
@@ -357,7 +357,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && !isset($_POST['verify_password'])) {
             <div class="form-group">
                 <label for="fullname">Full Name</label>
                 <input type="text" id="fullname" name="fullname" value="<?php echo htmlspecialchars(toProperCase($admin['fullname'])); ?>" required autocomplete="off"
-                       pattern="[A-Za-z\s]+" title="Only letters and spaces allowed">
+                       pattern="[A-Za-z.\s]+" title="Only letters, dots, and spaces allowed">
             </div>
 
             <div class="form-group">
