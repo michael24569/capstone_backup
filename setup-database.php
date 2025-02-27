@@ -1,13 +1,22 @@
 <?php  
 session_start();
 
-if (!isset($_SESSION['database_error'])) {
+// Allow access for both database error and success message cases
+if (!isset($_SESSION['database_error']) && !isset($_SESSION['setup_success'])) {
     header("Location: index.php");
     exit();
 }
 
-$error_message = '';  
-$success_message = ''; 
+$error_message = '';
+$success_message = '';
+
+// Check for success message
+if (isset($_SESSION['setup_success'])) {
+    $success_message = $_SESSION['setup_success'];
+    unset($_SESSION['setup_success']);
+    // Don't unset database_error here to allow viewing the success message
+}
+
 $databaseName = 'db_simenteryo';  
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {     
@@ -45,9 +54,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                         }                     
                     }                                          
                     if (!$has_error) {                         
-                        $success_message = "Database imported successfully.";     
-                        unset($_SESSION['database-error']);
-                        session_destroy();
+                        $_SESSION['setup_success'] = "Database imported successfully.";
+                        unset($_SESSION['database_error']);
+                        header("Location: " . $_SERVER['PHP_SELF']);
+                        exit();
                     }                 
                 } else {                     
                     $error_message = "Error creating database: " . $conn->error;                 
@@ -70,7 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         window.history.pushState(null, null, window.location.href);
     };
     // Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
-</script>
+    </script>
     <style>         
         .error-message {             
             color: red;             
@@ -120,14 +130,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <?php echo htmlspecialchars($success_message); ?>     
     </div>     
     <?php if (!empty($success_message)): ?>         
-        <script>             
+        <script>
             document.getElementById('overlay').style.display = 'block';             
             document.getElementById('success-popup').style.display = 'block';             
             setTimeout(function() {                 
                 document.getElementById('overlay').style.display = 'none';                 
-                document.getElementById('success-popup').style.display = 'none';
+                document.getElementById('success-popup').style.display = 'none';                 
                 window.location.href = "index.php";          
-            }, 1500);         
+            }, 2000); // Increased timeout to 2 seconds for better visibility
         </script>     
     <?php endif; ?> 
 </body> 
