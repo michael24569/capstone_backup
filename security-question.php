@@ -1,5 +1,6 @@
 <?php
 session_start();
+$securityQuestionError = ""; // added initialization
 include 'db-connection.php';
 
 unset($_SESSION['forgot-passW']);
