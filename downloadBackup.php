@@ -9,36 +9,55 @@ if (!isset($_GET['file'])) {
 
 $backup_file_name = urldecode($_GET['file']);
 
-// Get the current user's profile path and set the backup directory in the Downloads folder
-$userProfile = getenv('USERPROFILE');
-$backup_directory = $userProfile . '/Downloads/Backup Files';
+// Set the backup directory path correctly
+$backup_directory = 'C:/Users/Lenovo/Downloads/Backup Files';
 
-// Check if the backup has expired (i.e., 30 seconds after it was created)
+// Check if the backup has expired
 if (isset($_SESSION['backup_time']) && (time() - $_SESSION['backup_time']) > 30) {
     if (file_exists($backup_file_name)) {
-        unlink($backup_file_name); // Delete the expired file
+        unlink($backup_file_name);
         $_SESSION['error'] = "Backup file expired and was deleted.";
     }
     header("Location: admin_backup.php");
     exit();
 }
 
-// Ensure the backup directory exists
-if (!file_exists($backup_directory) && !mkdir($backup_directory, 0777, true)) {
-    error_log("Failed to create directory: $backup_directory");
-    $_SESSION['error'] = "Failed to create backup directory: " . error_get_last()['message'];
-    header("Location: admin_backup.php");
-    exit();
+// Create backup directory if it doesn't exist
+if (!file_exists($backup_directory)) {
+    try {
+        if (!mkdir($backup_directory, 0777, true)) {
+            throw new Exception("Failed to create backup directory");
+        }
+        // Set proper permissions for the new directory
+        chmod($backup_directory, 0777);
+    } catch (Exception $e) {
+        $_SESSION['error'] = "Failed to create backup directory: " . $e->getMessage();
+        header("Location: admin_backup.php");
+        exit();
+    }
 }
-// Developers: Backend Developer: Michael Enoza, Frontend Developer: Kyle Ambat
-// If the backup file exists and the backup time hasn't expired
+
+// Process the backup file
 if (file_exists($backup_file_name) && (time() - $_SESSION['backup_time']) <= 30) {
-    $new_file_path = $backup_directory . '/' . basename($backup_file_name);
-    if (rename($backup_file_name, $new_file_path)) {
-        $_SESSION['successful'] = "Database backup successfully!";
-    } else {
-        error_log("Failed to move backup file: $backup_file_name to $new_file_path");
-        $_SESSION['error'] = "Failed to move backup file to Backup Files: " . error_get_last()['message'];
+    $new_file_path = str_replace('\\', '/', $backup_directory . '/' . basename($backup_file_name));
+    
+    try {
+        if (!is_readable($backup_file_name)) {
+            throw new Exception("Source file is not readable");
+        }
+        
+        if (!is_writable($backup_directory)) {
+            throw new Exception("Backup directory is not writable");
+        }
+        
+        if (copy($backup_file_name, $new_file_path)) {
+            unlink($backup_file_name);
+            $_SESSION['successful'] = "Database backup successfully saved to Downloads/Backup Files!";
+        } else {
+            throw new Exception("Failed to copy file");
+        }
+    } catch (Exception $e) {
+        $_SESSION['error'] = "Backup failed: " . $e->getMessage();
     }
 } else {
     $_SESSION['error'] = "Backup file not found or backup time expired.";

@@ -11,7 +11,7 @@ CREATE TABLE `tbl_admin` (
   PRIMARY KEY (`id`)
 ) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
-INSERT INTO tbl_admin VALUES("1","Michael Enoza","Tcao_admin","$2y$10$LqTl.gy5o25s48UVJ3S.9uMBdKRAJfhw8qQkkb3pCTtIbte6SxNRu","Active","What was the first exam you failed?","$2y$10$jrdpS1SmveAW/8A83Y1sIO86TxKK5nEaNp72AHAv67nT8JqQn4f5u");
+INSERT INTO tbl_admin VALUES("1","Gloria Penales","Tcao_admin","$2y$10$LqTl.gy5o25s48UVJ3S.9uMBdKRAJfhw8qQkkb3pCTtIbte6SxNRu","Active","What was the first exam you failed?","$2y$10$jrdpS1SmveAW/8A83Y1sIO86TxKK5nEaNp72AHAv67nT8JqQn4f5u");
 
 
 CREATE TABLE `tbl_record_logs` (
@@ -23,8 +23,9 @@ CREATE TABLE `tbl_record_logs` (
   `action` varchar(50) DEFAULT NULL,
   `timestamp` datetime DEFAULT current_timestamp(),
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
+INSERT INTO tbl_record_logs VALUES("1","System Administrator","Michael Enoza","1","St. Michael","updated","2025-02-14 13:31:11");
 
 
 CREATE TABLE `tbl_records` (
