@@ -9,15 +9,8 @@ if (!isset($_GET['file'])) {
 
 $backup_file_name = urldecode($_GET['file']);
 
-// Set the default backup directory path
-$default_backup_directory = 'C:/Users/Lenovo/Downloads/Backup Files';
-
-// Override the backup directory if a different directory is specified in the session
-if (isset($_SESSION['alt_backup_directory']) && !empty($_SESSION['alt_backup_directory'])) {
-    $backup_directory = $_SESSION['alt_backup_directory'];
-} else {
-    $backup_directory = $default_backup_directory;
-}
+// Set the backup directory path correctly
+$backup_directory = 'C:/Users/Lenovo/Downloads/Backup Files';
 
 // Check if the backup has expired
 if (isset($_SESSION['backup_time']) && (time() - $_SESSION['backup_time']) > 30) {
@@ -59,7 +52,7 @@ if (file_exists($backup_file_name) && (time() - $_SESSION['backup_time']) <= 30)
         
         if (copy($backup_file_name, $new_file_path)) {
             unlink($backup_file_name);
-            $_SESSION['successful'] = "Database backup successfully saved to " . $backup_directory . "!";
+            $_SESSION['successful'] = "Database backup successfully!";
         } else {
             throw new Exception("Failed to copy file");
         }
