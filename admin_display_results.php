@@ -505,6 +505,9 @@ p {
 .prepared-by{
 visibility: hidden;
 }
+.prepared{
+visibility: hidden;
+}
 @media print {
     body * {
         visibility: hidden;
@@ -528,10 +531,23 @@ visibility: hidden;
     .prepared-by {
         visibility: visible;
         position: fixed;
-        bottom: 20px;
+        bottom: 35px;
         left: 20px;
         font-size: 1em;
         color: black;
+        text-decoration: underline;
+    }
+    .prepared {
+        visibility: visible;
+        position: fixed;
+        bottom: 20px;
+        left: 35px;
+        font-size: 1em;
+        font-weight: bold;
+        color: black;
+    }
+    .ayos{
+    display: block;
     }
 }
     .btn-confirm {
@@ -931,7 +947,9 @@ document.getElementById("confirmButton").addEventListener("click", function() {
         
     </style>
 </body>
+<div class="ayos">
 <p class="prepared-by">Prepared by: ' . htmlspecialchars($adminFullName) . '</p>
+<p class="prepared">System Administrator</p></div>
 </html>';
 }
 
