@@ -949,7 +949,7 @@ document.getElementById("confirmButton").addEventListener("click", function() {
 </body>
 <div class="ayos">
 <p class="prepared-by">Prepared by: ' . htmlspecialchars($adminFullName) . '</p>
-<p class="prepared">System Administrator / City Assessors  head</p></div>
+<p class="prepared">City Assessors Head / System Administrator</p></div>
 </html>';
 }
 
