@@ -1,5 +1,6 @@
 <?php
 session_start();
+date_default_timezone_set('Asia/Manila'); // Set timezone to Philippines
 
 require_once 'security_check.php';
 require_once 'db-connection.php'; // Include the database connection
@@ -963,7 +964,7 @@ document.getElementById("confirmButton").addEventListener("click", function() {
 <div class="ayos">
 <p class="prepared-by">Prepared by: ' . htmlspecialchars($adminFullName) . '</p>
 <p class="prepared">City Assessors Head / System Administrator</p>
-<p class="timestamp">Date: ' . date('Y-m-d H:i:s') . '</p>
+<p class="timestamp">Date: ' . date('F j, Y h:i A') . '</p>
 </div>
 </html>';
 }
