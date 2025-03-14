@@ -533,6 +533,7 @@ visibility: hidden;
         position: fixed;
         bottom: 35px;
         left: 50px;
+        display: space-between;
         font-size: 1em;
         color: black;
         text-decoration: underline;
@@ -868,6 +869,7 @@ visibility: hidden;
 
     echo '</div>'; // Close container div
     echo '<script>
+    
     function showDetails(groupId) {
         document.getElementById("modal-" + groupId).style.display = "block";
     }

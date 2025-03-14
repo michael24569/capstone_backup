@@ -182,7 +182,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
         }
 
         .pagination a.active {
-            background-color: #45a049;
+            background-color:rgb(48, 114, 52);
             color: white;
         }
 
@@ -528,7 +528,7 @@ if (isset($_SESSION['id']) && isset($_SESSION['username'])) {
     <a href="?page=<?php echo ($page-1); echo $searchQuery ? '&search='.htmlspecialchars($searchQuery).'&field='.htmlspecialchars($searchField) : ''; ?>" 
     class="<?php echo $page <= 1 ? 'disabled' : ''; ?>">←</a>
 
-    <?php for($i = max(1, $page-2); $i <= min($total_pages, $page+2); $i++) : ?>
+    <?php for($i = max(1, $page-2); $i <= min($total_pages, $page); $i++) : ?>
         <a href="?page=<?php echo $i; echo $searchQuery ? '&search='.htmlspecialchars($searchQuery).'&field='.htmlspecialchars($searchField) : ''; ?>" 
         class="<?php echo $page == $i ? 'active' : ''; ?>"><?php echo $i; ?></a>
     <?php endfor; ?>

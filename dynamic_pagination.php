@@ -71,7 +71,7 @@ if($total_pages > 0) {
         ($page <= 1 ? 'class="disabled"' : '').'>←</a>';          
     
     // Page number links     
-    for($i = max(1, $page-2); $i <= min($total_pages, $page+2); $i++) {         
+    for($i = max(1, $page-2); $i <= min($total_pages, $page); $i++) {         
         $paginationHTML .= '<a href="?page='.$i.($searchQuery ? '&search='.urlencode($searchQuery).'&field='.urlencode($searchField) : '').'" '.                            
             ($page == $i ? 'class="active"' : '').'>'.$i.'</a>';     
     }          
