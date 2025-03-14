@@ -532,7 +532,7 @@ visibility: hidden;
         visibility: visible;
         position: fixed;
         bottom: 35px;
-        left: 20px;
+        left: 50px;
         font-size: 1em;
         color: black;
         text-decoration: underline;
@@ -541,7 +541,7 @@ visibility: hidden;
         visibility: visible;
         position: fixed;
         bottom: 20px;
-        left: 35px;
+        left: 20px;
         font-size: 1em;
         font-weight: bold;
         color: black;
@@ -949,7 +949,7 @@ document.getElementById("confirmButton").addEventListener("click", function() {
 </body>
 <div class="ayos">
 <p class="prepared-by">Prepared by: ' . htmlspecialchars($adminFullName) . '</p>
-<p class="prepared">System Administrator</p></div>
+<p class="prepared">System Administrator / City Assessors  head</p></div>
 </html>';
 }
 
