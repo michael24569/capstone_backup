@@ -508,6 +508,9 @@ visibility: hidden;
 .prepared{
 visibility: hidden;
 }
+.timestamp{
+visibility: hidden;
+}
 @media print {
     body * {
         visibility: hidden;
@@ -532,7 +535,7 @@ visibility: hidden;
         visibility: visible;
         position: fixed;
         bottom: 35px;
-        left: 50px;
+        left: 20px;
         display: space-between;
         font-size: 1em;
         color: black;
@@ -545,6 +548,14 @@ visibility: hidden;
         left: 20px;
         font-size: 1em;
         font-weight: bold;
+        color: black;
+    }
+    .timestamp {
+        visibility: visible;
+        position: fixed;
+        bottom: 35px;
+        right: 50px;
+        font-size: 1em;
         color: black;
     }
     .ayos{
@@ -951,7 +962,9 @@ document.getElementById("confirmButton").addEventListener("click", function() {
 </body>
 <div class="ayos">
 <p class="prepared-by">Prepared by: ' . htmlspecialchars($adminFullName) . '</p>
-<p class="prepared">City Assessors Head / System Administrator</p></div>
+<p class="prepared">City Assessors Head / System Administrator</p>
+<p class="timestamp">Date: ' . date('Y-m-d H:i:s') . '</p>
+</div>
 </html>';
 }
 
