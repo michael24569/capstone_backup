@@ -1,6 +1,11 @@
 <?php
 session_start();
 
+// Add cache control headers
+header("Cache-Control: no-store, no-cache, must-revalidate, max-age=0");
+header("Cache-Control: post-check=0, pre-check=0", false);
+header("Pragma: no-cache");
+
 require_once 'security_check.php';
 userCheckLogin();
 
@@ -37,12 +42,34 @@ if ((isset($_SESSION['lockout_time']) && time() < $_SESSION['lockout_time']) ||
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
     <title>Login</title>
     <script type="text/javascript">
-      window.history.forward();
+        // Prevent going back
+        window.history.forward();
+        function noBack() {
+            window.history.forward();
+        }
+        
+        // Handle browser back button
+        window.onload = function() {
+            if (typeof history.pushState !== "undefined") {
+                history.pushState(null, null, location.href);
+            }
+            window.onpopstate = function () {
+                history.go(1);
+            };
+        }
+        
+        // Disable right-click
+        document.addEventListener('contextmenu', function(e) {
+            e.preventDefault();
+        });
     </script>
 </head>
-<body >
+<body onload="noBack();" onpageshow="if (event.persisted) noBack();" onunload="">
 <div class="blur-box">
  <!-- Animated Text Section -->
 <div class="animated-container">
