@@ -30,13 +30,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['reset_password'])) {
     } elseif (strlen($newPassword) < 8) {
         $passwordError = "Password must be at least 8 characters long";
     } elseif (!preg_match("/[a-z]/", $newPassword)) {
-        $error_message = "Password must contain at least one lowercaseletter.";
+        $passwordError = "Password must contain at least one lowercase letter.";
     }  elseif (!preg_match("/[A-Z]/", $newPassword)) {
-        $error_message = "Password must contain at least one uppercase letter.";
+        $passwordError = "Password must contain at least one uppercase letter.";
     } elseif (!preg_match("/[0-9]/", $newPassword)) {
-        $error_message = "Password must contain at least one number.";
+        $passwordError = "Password must contain at least one number.";
     } elseif (!preg_match("/[\W_]/", $newPassword)) { // Must contain at least one special character
-        $error_message = "Password must contain at least one special character (e.g., !@#$%^&*).";
+        $passwordError = "Password must contain at least one special character (e.g., !@#$%^&*).";
     } else {
         // Hash the new password
         $hashedPassword = password_hash($newPassword, PASSWORD_DEFAULT);
